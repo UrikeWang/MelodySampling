@@ -11,7 +11,12 @@ import Firebase
 
 class SignUpViewController: UIViewController {
 
+    var ref: DatabaseReference!
+    
+    var userID = ""
+    
     @IBOutlet weak var uIDLabel: UILabel!
+    
     @IBOutlet weak var emailField: UITextField!
 
     @IBOutlet weak var passwordField: UITextField!
