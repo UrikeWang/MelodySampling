@@ -11,7 +11,16 @@ import Firebase
 
 class SignUpViewController: UIViewController {
 
+    var ref: DatabaseReference!
+
+    let userAccount = ""
+
+    let userFullName = "Test User"
+
+    let profileImageURL = ""
+
     @IBOutlet weak var uIDLabel: UILabel!
+
     @IBOutlet weak var emailField: UITextField!
 
     @IBOutlet weak var passwordField: UITextField!
@@ -50,7 +59,6 @@ class SignUpViewController: UIViewController {
                     print(error)
                     self.uIDLabel.text = "\(error)"
                 }
-
                 return
             }
 
@@ -59,8 +67,45 @@ class SignUpViewController: UIViewController {
             print(user.uid)
 
             self.uIDLabel.text = "\(text)! 你的 uid 是 \(user.uid)"
+
+            self.ref = Database.database().reference()
+
+            let userRef = self.ref.child("users/\(user.uid)")
+
+            let currentTime = Date().timeIntervalSince1970
+
+            userRef.setValue(["uid": user.uid, "fullName": self.userFullName, "createdTime": currentTime, "userAccount": self.userAccount, "profilePicURL": self.profileImageURL])
+
         }
 
+        performSegue(withIdentifier: "showLoginSuccess", sender: self)
+    }
+
+    @IBAction func anonymouseLoginTapped(_ sender: UIButton) {
+
+        Auth.auth().signInAnonymously { (user, error) in
+
+            guard let user = user else {
+                if let error = error {
+                    print(error)
+                    self.uIDLabel.text = "\(error)"
+                }
+                return
+            }
+
+            let isAnonymous = user.isAnonymous
+
+            self.ref = Database.database().reference()
+
+            let anonymousRef = self.ref.child("anonymousUsers/\(user.uid)")
+
+            let currentTime = Date().timeIntervalSince1970
+
+            anonymousRef.setValue(["uid": user.uid, "createdTime": currentTime, "isAnonymous": isAnonymous])
+
+        }
+
+        performSegue(withIdentifier: "anonymousLogin", sender: self)
     }
 
     override func viewDidLoad() {
@@ -72,15 +117,5 @@ class SignUpViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
