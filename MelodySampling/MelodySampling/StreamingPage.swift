@@ -16,18 +16,7 @@ class StreamingPage: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.ref = Database.database().reference()
-        self.ref.child("tokens").child("developerToken").child("token").observe(.value, with: { (snapshot) in
-
-            //回家後動這裡，把他寫成一個 func
-            let userDefault = UserDefaults.standard
-
-            userDefault.set(snapshot.value, forKey: "devToken")
-
-        }) { (error) in
-            print(error.localizedDescription)
-
-        }
+        getDeveloperToken()
 
     }
 
