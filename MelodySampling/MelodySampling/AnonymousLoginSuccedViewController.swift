@@ -19,6 +19,27 @@ class AnonymousLoginSuccedViewController: UIViewController {
 
     @IBAction func signUpTapped(_ sender: UIButton) {
 
+        guard let email = emailTextField.text, let password = passwordTextField.text, let user = Auth.auth().currentUser else {
+            let text = "E-mail 或密碼輸入錯誤"
+            print(text)
+            resultLabel.text = text
+            return
+        }
+
+        let credential = EmailAuthProvider.credential(withEmail: email, password: password)
+
+        user.link(with: credential) { (user, _) in
+            guard let user = user else {
+                print("Register got error")
+                return
+            }
+
+            print("Welcome to MelodySampling")
+            print(user.uid)
+            self.resultLabel.text = "\(user.uid) is your new ID"
+
+        }
+
     }
 
     override func viewDidLoad() {
