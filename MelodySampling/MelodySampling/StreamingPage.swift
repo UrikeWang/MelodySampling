@@ -8,15 +8,24 @@
 
 import UIKit
 import Firebase
+import AVFoundation
 
 class StreamingPage: UIViewController {
 
     var ref: DatabaseReference!
 
+    var player: AVPlayer?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         getDeveloperToken()
+        
+        print("開始下載了")
+        let url1 = URL(string: testSong1)
+        let playerItem: AVPlayerItem = AVPlayerItem(url: url1!)
+        player = AVPlayer(playerItem: playerItem)
+        player?.play()
 
     }
 
