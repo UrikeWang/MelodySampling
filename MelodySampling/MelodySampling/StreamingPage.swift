@@ -7,20 +7,35 @@
 //
 
 import UIKit
+import Firebase
 
 class StreamingPage: UIViewController {
+
+    var ref: DatabaseReference!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        self.ref = Database.database().reference()
+
+        print("Starting observe")
+
+        self.ref.child("tokens").child("developerToken").child("token").observe(.value, with: { (snapshot) in
+
+            print(snapshot.value)
+            print(type(of: snapshot.value!))
+
+        }) { (error) in
+            print(error.localizedDescription)
+
+        }
+
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
 
     /*
     // MARK: - Navigation
