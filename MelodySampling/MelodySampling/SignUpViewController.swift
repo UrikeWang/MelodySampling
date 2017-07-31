@@ -59,7 +59,6 @@ class SignUpViewController: UIViewController {
                     print(error)
                     self.uIDLabel.text = "\(error)"
                 }
-
                 return
             }
 
@@ -79,6 +78,34 @@ class SignUpViewController: UIViewController {
 
         }
 
+        performSegue(withIdentifier: "showLoginSuccess", sender: self)
+    }
+
+    @IBAction func anonymouseLoginTapped(_ sender: UIButton) {
+
+        Auth.auth().signInAnonymously { (user, error) in
+
+            guard let user = user else {
+                if let error = error {
+                    print(error)
+                    self.uIDLabel.text = "\(error)"
+                }
+                return
+            }
+
+            let isAnonymous = user.isAnonymous
+
+            self.ref = Database.database().reference()
+
+            let anonymousRef = self.ref.child("anonymousUsers/\(user.uid)")
+
+            let currentTime = Date().timeIntervalSince1970
+
+            anonymousRef.setValue(["uid": user.uid, "createdTime": currentTime, "isAnonymous": isAnonymous])
+
+        }
+
+        performSegue(withIdentifier: "anonymousLogin", sender: self)
     }
 
     override func viewDidLoad() {
@@ -90,15 +117,5 @@ class SignUpViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
