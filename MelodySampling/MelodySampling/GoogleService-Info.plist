@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>600202689143-9ode94li4deqsa1rge53268qdje4pvjc.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.600202689143-9ode94li4deqsa1rge53268qdje4pvjc</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAAWBf0AjHSl7MR8iBl_3K5BfMRl-F6erc</string>
+	<key>GCM_SENDER_ID</key>
+	<string>600202689143</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>io.marvinlin.MelodySampling</string>
+	<key>PROJECT_ID</key>
+	<string>melodysampling</string>
+	<key>STORAGE_BUCKET</key>
+	<string>melodysampling.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true/>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false/>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false/>
+	<key>IS_GCM_ENABLED</key>
+	<true/>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true/>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:600202689143:ios:648a6e5184d290ba</string>
+	<key>DATABASE_URL</key>
+	<string>https://melodysampling.firebaseio.com</string>
+</dict>
+</plist>

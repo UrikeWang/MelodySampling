@@ -13,6 +13,8 @@
 		73744D0C1F2ED94300C1FAEA /* MelodySampling.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 73744D0A1F2ED94300C1FAEA /* MelodySampling.xcdatamodeld */; };
 		73744D0E1F2ED94300C1FAEA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 73744D0D1F2ED94300C1FAEA /* Assets.xcassets */; };
 		73744D111F2ED94300C1FAEA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 73744D0F1F2ED94300C1FAEA /* LaunchScreen.storyboard */; };
+		73744D191F2EDEA400C1FAEA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 73744D181F2EDEA400C1FAEA /* GoogleService-Info.plist */; };
+		E9121496FD42D46E60BF274E /* Pods_MelodySampling.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCE8237F816AFC43B6CA66DF /* Pods_MelodySampling.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,10 @@
 		73744D0D1F2ED94300C1FAEA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		73744D101F2ED94300C1FAEA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		73744D121F2ED94300C1FAEA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		73744D181F2EDEA400C1FAEA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		744E2D9810A745B7407345E5 /* Pods-MelodySampling.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MelodySampling.release.xcconfig"; path = "Pods/Target Support Files/Pods-MelodySampling/Pods-MelodySampling.release.xcconfig"; sourceTree = "<group>"; };
+		7AEB0E68990119E1DCEEFF7C /* Pods-MelodySampling.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MelodySampling.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MelodySampling/Pods-MelodySampling.debug.xcconfig"; sourceTree = "<group>"; };
+		DCE8237F816AFC43B6CA66DF /* Pods_MelodySampling.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MelodySampling.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +37,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E9121496FD42D46E60BF274E /* Pods_MelodySampling.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0A18D233EA848DDC7DD770F7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DCE8237F816AFC43B6CA66DF /* Pods_MelodySampling.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		73744CF71F2ED94200C1FAEA = {
 			isa = PBXGroup;
 			children = (
 				73744D021F2ED94200C1FAEA /* MelodySampling */,
 				73744D011F2ED94200C1FAEA /* Products */,
+				D62B671CB22ADFC8F94CDB5D /* Pods */,
+				0A18D233EA848DDC7DD770F7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -63,8 +80,18 @@
 				73744D0F1F2ED94300C1FAEA /* LaunchScreen.storyboard */,
 				73744D121F2ED94300C1FAEA /* Info.plist */,
 				73744D0A1F2ED94300C1FAEA /* MelodySampling.xcdatamodeld */,
+				73744D181F2EDEA400C1FAEA /* GoogleService-Info.plist */,
 			);
 			path = MelodySampling;
+			sourceTree = "<group>";
+		};
+		D62B671CB22ADFC8F94CDB5D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7AEB0E68990119E1DCEEFF7C /* Pods-MelodySampling.debug.xcconfig */,
+				744E2D9810A745B7407345E5 /* Pods-MelodySampling.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +101,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 73744D151F2ED94300C1FAEA /* Build configuration list for PBXNativeTarget "MelodySampling" */;
 			buildPhases = (
+				C144A0710A68808904C41D15 /* [CP] Check Pods Manifest.lock */,
 				73744CFC1F2ED94200C1FAEA /* Sources */,
 				73744CFD1F2ED94200C1FAEA /* Frameworks */,
 				73744CFE1F2ED94200C1FAEA /* Resources */,
+				8B360FAF8EFBFF2290B7656E /* [CP] Embed Pods Frameworks */,
+				D35133110B842A2D09B8C25C /* [CP] Copy Pods Resources */,
+				73744D1A1F2EDF5B00C1FAEA /* Swiftlint */,
 			);
 			buildRules = (
 			);
@@ -128,12 +159,75 @@
 			buildActionMask = 2147483647;
 			files = (
 				73744D111F2ED94300C1FAEA /* LaunchScreen.storyboard in Resources */,
+				73744D191F2EDEA400C1FAEA /* GoogleService-Info.plist in Resources */,
 				73744D0E1F2ED94300C1FAEA /* Assets.xcassets in Resources */,
 				73744D091F2ED94300C1FAEA /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		73744D1A1F2EDF5B00C1FAEA /* Swiftlint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = Swiftlint;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+		};
+		8B360FAF8EFBFF2290B7656E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MelodySampling/Pods-MelodySampling-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C144A0710A68808904C41D15 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		D35133110B842A2D09B8C25C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MelodySampling/Pods-MelodySampling-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		73744CFC1F2ED94200C1FAEA /* Sources */ = {
@@ -263,6 +357,7 @@
 		};
 		73744D161F2ED94300C1FAEA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7AEB0E68990119E1DCEEFF7C /* Pods-MelodySampling.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = PJPD95M4QP;
@@ -276,6 +371,7 @@
 		};
 		73744D171F2ED94300C1FAEA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 744E2D9810A745B7407345E5 /* Pods-MelodySampling.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = PJPD95M4QP;
@@ -306,6 +402,7 @@
 				73744D171F2ED94300C1FAEA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
