@@ -8,25 +8,25 @@
 
 /* Begin PBXBuildFile section */
 		73744D041F2ED94200C1FAEA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73744D031F2ED94200C1FAEA /* AppDelegate.swift */; };
-		73744D061F2ED94200C1FAEA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73744D051F2ED94200C1FAEA /* ViewController.swift */; };
 		73744D091F2ED94300C1FAEA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 73744D071F2ED94300C1FAEA /* Main.storyboard */; };
 		73744D0C1F2ED94300C1FAEA /* MelodySampling.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 73744D0A1F2ED94300C1FAEA /* MelodySampling.xcdatamodeld */; };
 		73744D0E1F2ED94300C1FAEA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 73744D0D1F2ED94300C1FAEA /* Assets.xcassets */; };
 		73744D111F2ED94300C1FAEA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 73744D0F1F2ED94300C1FAEA /* LaunchScreen.storyboard */; };
 		73744D191F2EDEA400C1FAEA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 73744D181F2EDEA400C1FAEA /* GoogleService-Info.plist */; };
+		73744D1D1F2EFADC00C1FAEA /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73744D1C1F2EFADC00C1FAEA /* SignUpViewController.swift */; };
 		E9121496FD42D46E60BF274E /* Pods_MelodySampling.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCE8237F816AFC43B6CA66DF /* Pods_MelodySampling.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		73744D001F2ED94200C1FAEA /* MelodySampling.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MelodySampling.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		73744D031F2ED94200C1FAEA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		73744D051F2ED94200C1FAEA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		73744D081F2ED94300C1FAEA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		73744D0B1F2ED94300C1FAEA /* MelodySampling.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MelodySampling.xcdatamodel; sourceTree = "<group>"; };
 		73744D0D1F2ED94300C1FAEA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		73744D101F2ED94300C1FAEA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		73744D121F2ED94300C1FAEA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		73744D181F2EDEA400C1FAEA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		73744D1C1F2EFADC00C1FAEA /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		744E2D9810A745B7407345E5 /* Pods-MelodySampling.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MelodySampling.release.xcconfig"; path = "Pods/Target Support Files/Pods-MelodySampling/Pods-MelodySampling.release.xcconfig"; sourceTree = "<group>"; };
 		7AEB0E68990119E1DCEEFF7C /* Pods-MelodySampling.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MelodySampling.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MelodySampling/Pods-MelodySampling.debug.xcconfig"; sourceTree = "<group>"; };
 		DCE8237F816AFC43B6CA66DF /* Pods_MelodySampling.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MelodySampling.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -73,8 +73,8 @@
 		73744D021F2ED94200C1FAEA /* MelodySampling */ = {
 			isa = PBXGroup;
 			children = (
+				73744D1B1F2EFA9E00C1FAEA /* SignUpAndSignIn */,
 				73744D031F2ED94200C1FAEA /* AppDelegate.swift */,
-				73744D051F2ED94200C1FAEA /* ViewController.swift */,
 				73744D071F2ED94300C1FAEA /* Main.storyboard */,
 				73744D0D1F2ED94300C1FAEA /* Assets.xcassets */,
 				73744D0F1F2ED94300C1FAEA /* LaunchScreen.storyboard */,
@@ -83,6 +83,14 @@
 				73744D181F2EDEA400C1FAEA /* GoogleService-Info.plist */,
 			);
 			path = MelodySampling;
+			sourceTree = "<group>";
+		};
+		73744D1B1F2EFA9E00C1FAEA /* SignUpAndSignIn */ = {
+			isa = PBXGroup;
+			children = (
+				73744D1C1F2EFADC00C1FAEA /* SignUpViewController.swift */,
+			);
+			name = SignUpAndSignIn;
 			sourceTree = "<group>";
 		};
 		D62B671CB22ADFC8F94CDB5D /* Pods */ = {
@@ -234,8 +242,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				73744D1D1F2EFADC00C1FAEA /* SignUpViewController.swift in Sources */,
 				73744D0C1F2ED94300C1FAEA /* MelodySampling.xcdatamodeld in Sources */,
-				73744D061F2ED94200C1FAEA /* ViewController.swift in Sources */,
 				73744D041F2ED94200C1FAEA /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
