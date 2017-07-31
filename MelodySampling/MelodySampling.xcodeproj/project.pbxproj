@@ -16,6 +16,7 @@
 		73744D1D1F2EFADC00C1FAEA /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73744D1C1F2EFADC00C1FAEA /* SignUpViewController.swift */; };
 		73744D251F2F1A7600C1FAEA /* LoginSuccedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73744D241F2F1A7600C1FAEA /* LoginSuccedViewController.swift */; };
 		73744D271F2F203D00C1FAEA /* AnonymousLoginSuccedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73744D261F2F203D00C1FAEA /* AnonymousLoginSuccedViewController.swift */; };
+		73744D2C1F2F4CF800C1FAEA /* StreamingPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73744D2B1F2F4CF800C1FAEA /* StreamingPage.swift */; };
 		E9121496FD42D46E60BF274E /* Pods_MelodySampling.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCE8237F816AFC43B6CA66DF /* Pods_MelodySampling.framework */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +32,7 @@
 		73744D1C1F2EFADC00C1FAEA /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		73744D241F2F1A7600C1FAEA /* LoginSuccedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginSuccedViewController.swift; sourceTree = "<group>"; };
 		73744D261F2F203D00C1FAEA /* AnonymousLoginSuccedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnonymousLoginSuccedViewController.swift; sourceTree = "<group>"; };
+		73744D2B1F2F4CF800C1FAEA /* StreamingPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreamingPage.swift; sourceTree = "<group>"; };
 		744E2D9810A745B7407345E5 /* Pods-MelodySampling.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MelodySampling.release.xcconfig"; path = "Pods/Target Support Files/Pods-MelodySampling/Pods-MelodySampling.release.xcconfig"; sourceTree = "<group>"; };
 		7AEB0E68990119E1DCEEFF7C /* Pods-MelodySampling.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MelodySampling.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MelodySampling/Pods-MelodySampling.debug.xcconfig"; sourceTree = "<group>"; };
 		DCE8237F816AFC43B6CA66DF /* Pods_MelodySampling.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MelodySampling.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -77,6 +79,7 @@
 		73744D021F2ED94200C1FAEA /* MelodySampling */ = {
 			isa = PBXGroup;
 			children = (
+				73744D2A1F2F4C5B00C1FAEA /* StreamingPreviewSong */,
 				73744D1B1F2EFA9E00C1FAEA /* SignUpAndSignIn */,
 				73744D031F2ED94200C1FAEA /* AppDelegate.swift */,
 				73744D071F2ED94300C1FAEA /* Main.storyboard */,
@@ -97,6 +100,14 @@
 				73744D261F2F203D00C1FAEA /* AnonymousLoginSuccedViewController.swift */,
 			);
 			name = SignUpAndSignIn;
+			sourceTree = "<group>";
+		};
+		73744D2A1F2F4C5B00C1FAEA /* StreamingPreviewSong */ = {
+			isa = PBXGroup;
+			children = (
+				73744D2B1F2F4CF800C1FAEA /* StreamingPage.swift */,
+			);
+			name = StreamingPreviewSong;
 			sourceTree = "<group>";
 		};
 		D62B671CB22ADFC8F94CDB5D /* Pods */ = {
@@ -253,6 +264,7 @@
 				73744D251F2F1A7600C1FAEA /* LoginSuccedViewController.swift in Sources */,
 				73744D0C1F2ED94300C1FAEA /* MelodySampling.xcdatamodeld in Sources */,
 				73744D041F2ED94200C1FAEA /* AppDelegate.swift in Sources */,
+				73744D2C1F2F4CF800C1FAEA /* StreamingPage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
