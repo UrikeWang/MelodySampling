@@ -17,6 +17,14 @@ class AnonymousLoginSuccedViewController: UIViewController {
 
     @IBOutlet weak var passwordTextField: UITextField!
 
+    var ref: DatabaseReference!
+
+    let userAccount = ""
+
+    let userFullName = "Test User"
+
+    let profileImageURL = ""
+
     @IBAction func signUpTapped(_ sender: UIButton) {
 
         guard let email = emailTextField.text, let password = passwordTextField.text, let user = Auth.auth().currentUser else {
@@ -36,7 +44,20 @@ class AnonymousLoginSuccedViewController: UIViewController {
 
             print("Welcome to MelodySampling")
             print(user.uid)
-            self.resultLabel.text = "\(user.uid) is your new ID"
+            self.resultLabel.text = "Convert to pernament user \(user.uid) is your new ID"
+
+            self.ref = Database.database().reference()
+
+            let userRef = self.ref.child("users/\(user.uid)")
+
+            let currentTime = Date().timeIntervalSince1970
+
+            userRef.setValue(["fullName": self.userFullName, "createdTime": currentTime, "userAccount": self.userAccount, "profilePicURL": self.profileImageURL, "wasAnonymouse": true])
+            
+            let anonymousRef = self.ref.child("anonymousUsers/\(user.uid)")
+            
+            anonymousRef.updateChildValues(["isAnonymous": false])
+            
 
         }
 

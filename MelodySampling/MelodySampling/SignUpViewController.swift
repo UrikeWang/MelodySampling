@@ -74,7 +74,7 @@ class SignUpViewController: UIViewController {
 
             let currentTime = Date().timeIntervalSince1970
 
-            userRef.setValue(["uid": user.uid, "fullName": self.userFullName, "createdTime": currentTime, "userAccount": self.userAccount, "profilePicURL": self.profileImageURL])
+            userRef.setValue(["fullName": self.userFullName, "createdTime": currentTime, "userAccount": self.userAccount, "profilePicURL": self.profileImageURL, "wasAnonymouse": false])
 
         }
 
@@ -101,7 +101,7 @@ class SignUpViewController: UIViewController {
 
             let currentTime = Date().timeIntervalSince1970
 
-            anonymousRef.setValue(["uid": user.uid, "createdTime": currentTime, "isAnonymous": isAnonymous])
+            anonymousRef.setValue(["createdTime": currentTime, "isAnonymous": isAnonymous])
 
         }
 
