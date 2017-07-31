@@ -12,11 +12,15 @@ import Firebase
 class SignUpViewController: UIViewController {
 
     var ref: DatabaseReference!
-    
-    var userID = ""
-    
+
+    let userAccount = ""
+
+    let userFullName = "Test User"
+
+    let profileImageURL = ""
+
     @IBOutlet weak var uIDLabel: UILabel!
-    
+
     @IBOutlet weak var emailField: UITextField!
 
     @IBOutlet weak var passwordField: UITextField!
@@ -64,6 +68,15 @@ class SignUpViewController: UIViewController {
             print(user.uid)
 
             self.uIDLabel.text = "\(text)! 你的 uid 是 \(user.uid)"
+
+            self.ref = Database.database().reference()
+
+            let userRef = self.ref.child("users/\(user.uid)")
+
+            let currentTime = Date().timeIntervalSince1970
+
+            userRef.setValue(["uid": user.uid, "fullName": self.userFullName, "createdTime": currentTime, "userAccount": self.userAccount, "profilePicURL": self.profileImageURL])
+
         }
 
     }
