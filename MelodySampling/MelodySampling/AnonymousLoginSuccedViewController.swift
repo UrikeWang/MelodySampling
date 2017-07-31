@@ -53,11 +53,10 @@ class AnonymousLoginSuccedViewController: UIViewController {
             let currentTime = Date().timeIntervalSince1970
 
             userRef.setValue(["fullName": self.userFullName, "createdTime": currentTime, "userAccount": self.userAccount, "profilePicURL": self.profileImageURL, "wasAnonymouse": true])
-            
+
             let anonymousRef = self.ref.child("anonymousUsers/\(user.uid)")
-            
+
             anonymousRef.updateChildValues(["isAnonymous": false])
-            
 
         }
 
