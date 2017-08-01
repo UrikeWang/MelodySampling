@@ -9,38 +9,65 @@
 import UIKit
 import Firebase
 import AVFoundation
+import CoreMedia
 
 class StreamingPage: UIViewController {
 
-    @IBAction func button1Tapped(_ sender: UIButton) {
-    }
-    
-    @IBAction func button2Tapped(_ sender: UIButton) {
-    }
-    
-    @IBAction func button3Tapped(_ sender: UIButton) {
-    }
-    
-    @IBAction func button4Tapped(_ sender: UIButton) {
-    }
-    
-    @IBAction func button5Tapped(_ sender: UIButton) {
-    }
-    
     var ref: DatabaseReference!
 
-    var player: AVPlayer?
-    
+    var playerItems = [
+        AVPlayerItem(url: URL(string: testSong0)!),
+        AVPlayerItem(url: URL(string: testSong1)!),
+        AVPlayerItem(url: URL(string: testSong2)!),
+        AVPlayerItem(url: URL(string: testSong3)!),
+        AVPlayerItem(url: URL(string: testSong4)!)]
+
+    var currentTrack = 0
+
+//        [AVPlayerItem(url: url1), AVPlayerItem(url: url2), AVPlayerItem(url: url3), AVPlayerItem(url: url4), AVPlayerItem(url: url5)]
+
+    var player = AVPlayer()
+
+    @IBAction func button1Tapped(_ sender: UIButton) {
+        print("開始下載試聽曲1")
+        currentTrack = 0
+        player.replaceCurrentItem(with: playerItems[currentTrack])
+
+        player.play()
+    }
+
+    @IBAction func button2Tapped(_ sender: UIButton) {
+        currentTrack = 1
+
+        player.replaceCurrentItem(with: playerItems[currentTrack])
+        player.play()
+    }
+
+    @IBAction func button3Tapped(_ sender: UIButton) {
+        currentTrack = 2
+
+        player.replaceCurrentItem(with: playerItems[currentTrack])
+        player.play()
+    }
+
+    @IBAction func button4Tapped(_ sender: UIButton) {
+        currentTrack = 3
+
+        player.replaceCurrentItem(with: playerItems[currentTrack])
+        player.play()
+    }
+
+    @IBAction func button5Tapped(_ sender: UIButton) {
+        currentTrack = 4
+
+        player.replaceCurrentItem(with: playerItems[currentTrack])
+        player.play()
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         getDeveloperToken()
-        
-        print("開始下載了")
-        let url1 = URL(string: testSong1)
-        let playerItem: AVPlayerItem = AVPlayerItem(url: url1!)
-        player = AVPlayer(playerItem: playerItem)
-        player?.play()
 
     }
 
