@@ -12,6 +12,21 @@ import AVFoundation
 
 class StreamingPage: UIViewController {
 
+    @IBAction func button1Tapped(_ sender: UIButton) {
+    }
+    
+    @IBAction func button2Tapped(_ sender: UIButton) {
+    }
+    
+    @IBAction func button3Tapped(_ sender: UIButton) {
+    }
+    
+    @IBAction func button4Tapped(_ sender: UIButton) {
+    }
+    
+    @IBAction func button5Tapped(_ sender: UIButton) {
+    }
+    
     var ref: DatabaseReference!
 
     var player: AVPlayer?
