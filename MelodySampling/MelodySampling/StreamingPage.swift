@@ -26,7 +26,7 @@ class StreamingPage: UIViewController {
 
 //        [AVPlayerItem(url: url1), AVPlayerItem(url: url2), AVPlayerItem(url: url3), AVPlayerItem(url: url4), AVPlayerItem(url: url5)]
 
-    var player = AVPlayer()
+    var player = AVQueuePlayer()
 
     @IBAction func button1Tapped(_ sender: UIButton) {
         currentTrack = 0
