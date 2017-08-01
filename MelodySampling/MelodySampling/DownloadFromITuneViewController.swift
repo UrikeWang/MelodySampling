@@ -47,11 +47,11 @@ class DownloadFromITuneViewController: UIViewController, MPMediaPickerController
         let destination = DownloadRequest.suggestedDownloadDestination()
         
         Alamofire.download(testSong5, to: destination).response { response in // method defaults to `.get`
-            print(response.request)
-            print(response.response)
-            print(response.temporaryURL)
-            print(response.destinationURL)
-            print(response.error)
+//            print(response.request)
+//            print(response.response)
+//            print(response.temporaryURL)
+//            print(response.destinationURL)
+//            print(response.error)
             
             self.fileName = response.response?.suggestedFilename
             
