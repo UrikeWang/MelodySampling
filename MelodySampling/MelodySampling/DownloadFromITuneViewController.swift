@@ -9,9 +9,12 @@
 import UIKit
 import Alamofire
 import AVFoundation
+import MediaPlayer
 
-class DownloadFromITuneViewController: UIViewController {
+class DownloadFromITuneViewController: UIViewController, MPMediaPickerControllerDelegate {
 
+    var player: AVAudioPlayer?
+    
     var destinationTest: NSURL?
     
     var fileName: String?
@@ -43,7 +46,7 @@ class DownloadFromITuneViewController: UIViewController {
         
         let destination = DownloadRequest.suggestedDownloadDestination()
         
-        Alamofire.download(testSong0, to: destination).response { response in // method defaults to `.get`
+        Alamofire.download(testSong5, to: destination).response { response in // method defaults to `.get`
             print(response.request)
             print(response.response)
             print(response.temporaryURL)
@@ -70,6 +73,36 @@ class DownloadFromITuneViewController: UIViewController {
         
         print("Result \(existBool)")
         
+        
+        
+        let playerItems = AVPlayerItem(url: URL(string: fileName)!)
+        
+        print(playerItems)
+        print(type(of: playerItems))
+        
+
+//        player = AVPlayer(playerItem: playerItems)
+        
+//        player?.play()
+        
+        do {
+            
+            player = try AVAudioPlayer(contentsOf: URL(string: fileName)!)
+            
+            var audioSession = AVAudioSession.sharedInstance()
+            
+            do {
+                try audioSession.setCategory(AVAudioSessionCategoryPlayback)
+            } catch {
+                
+            }
+            
+            
+        } catch {
+            print(error)
+        }
+        
+        player?.play()
     }
 
     override func viewDidLoad() {
@@ -83,14 +116,17 @@ class DownloadFromITuneViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func mediaPickerDidCancel(_ mediaPicker: MPMediaPickerController) {
+        dismiss(animated: true, completion: nil)
+        
     }
-    */
-
+    
+    func mediaPicker(_ mediaPicker: MPMediaPickerController, didPickMediaItems mediaItemCollection: MPMediaItemCollection) {
+        let musicPlayer = MPMusicPlayerController.applicationMusicPlayer()
+        musicPlayer.play()
+        musicPlayer.setQueue(with: mediaItemCollection)
+        
+        dismiss(animated: true, completion: nil)
+    }
+    
 }
