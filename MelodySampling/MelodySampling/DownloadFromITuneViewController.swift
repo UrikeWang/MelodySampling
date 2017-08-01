@@ -14,13 +14,13 @@ import MediaPlayer
 class DownloadFromITuneViewController: UIViewController, MPMediaPickerControllerDelegate {
 
     var player: AVAudioPlayer?
-    
+
     var destinationTest: NSURL?
-    
+
     var fileName: String?
-    
+
     var finalPath: NSURL?
-    
+
     let fm: FileManager = FileManager()
 
     let path: String = NSHomeDirectory() + "/tmp/"
@@ -42,70 +42,62 @@ class DownloadFromITuneViewController: UIViewController, MPMediaPickerController
 
     @IBAction func startingDownloadTapped(_ sender: UIButton) {
 
-
-        
         let destination = DownloadRequest.suggestedDownloadDestination()
-        
+
 //        let destinationString: String = NSHomeDirectory() + "/Documents/song1.m4a"
-        
+
 //        let destination = URL(string: destinationString)
-        
+
         Alamofire.download(testSong5, to: destination).response { response in // method defaults to `.get`
 //            print(response.request)
 //            print(response.response)
 //            print(response.temporaryURL)
 //            print(response.destinationURL)
 //            print(response.error)
-            
+
             self.fileName = response.response?.suggestedFilename
-            
+
             self.finalPath = response.destinationURL as? NSURL
         }
     }
 
     @IBAction func checkFileExist(_ sender: UIButton) {
 
-
-        
         let path: String = NSHomeDirectory() + "/Documents/"
-        
+
         let fileName = path + self.fileName!
-        
+
 //        print(fm.fileExists(atPath: fileName))
-        
+
         let existBool = fm.fileExists(atPath: fileName)
-        
+
         print("Result \(existBool)")
-        
-        
-        
+
         let playerItems = AVPlayerItem(url: URL(string: fileName)!)
-        
+
         print(playerItems)
         print(type(of: playerItems))
-        
 
 //        player = AVPlayer(playerItem: playerItems)
-        
+
 //        player?.play()
-        
+
         do {
-            
+
             player = try AVAudioPlayer(contentsOf: URL(string: fileName)!)
-            
+
             var audioSession = AVAudioSession.sharedInstance()
-            
+
             do {
                 try audioSession.setCategory(AVAudioSessionCategoryPlayback)
             } catch {
-                
+
             }
-            
-            
+
         } catch {
             print(error)
         }
-        
+
         player?.play()
     }
 
@@ -122,15 +114,15 @@ class DownloadFromITuneViewController: UIViewController, MPMediaPickerController
 
     func mediaPickerDidCancel(_ mediaPicker: MPMediaPickerController) {
         dismiss(animated: true, completion: nil)
-        
+
     }
-    
+
     func mediaPicker(_ mediaPicker: MPMediaPickerController, didPickMediaItems mediaItemCollection: MPMediaItemCollection) {
         let musicPlayer = MPMusicPlayerController.applicationMusicPlayer()
         musicPlayer.play()
         musicPlayer.setQueue(with: mediaItemCollection)
-        
+
         dismiss(animated: true, completion: nil)
     }
-    
+
 }
