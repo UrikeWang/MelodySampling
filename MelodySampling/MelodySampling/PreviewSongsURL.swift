@@ -17,3 +17,5 @@ let testSong2 = "http://a350.phobos.apple.com/us/r30/Music6/v4/52/4d/50/524d5085
 let testSong3 = "http://a1393.phobos.apple.com/us/r30/Music/ef/12/c8/mzm.ewbvixkf.aac.p.m4a"
 
 let testSong4 = "http://audio.itunes.apple.com/apple-assets-us-std-000001/AudioPreview71/v4/fd/62/fb/fd62fb09-2b7f-4d50-5c61-b0a3c3ae5c6f/mzaf_6178574338652826254.plus.aac.p.m4a"
+
+let testSong5 = "http://audio.itunes.apple.com/apple-assets-us-std-000001/AudioPreview62/v4/1e/ab/17/1eab17eb-117f-dcf8-8398-97beb19e342f/mzaf_3514664465861247995.plus.aac.p.m4a"
