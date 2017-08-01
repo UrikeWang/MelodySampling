@@ -12,6 +12,8 @@ import AVFoundation
 
 class DownloadFromITuneViewController: UIViewController {
 
+    var destinationTest: NSURL?
+    
     let fm: FileManager = FileManager()
 
     let path: String = NSHomeDirectory() + "/tmp/"
@@ -35,7 +37,7 @@ class DownloadFromITuneViewController: UIViewController {
 
         print("I save a file in text1.txt")
 
-        let fileName = path + "text1.txt"
+        let fileName = path + "mzaf_8018084475304913012.m4a"
 
 //        fm.createFile(atPath: fileName, contents: nil, attributes: nil)
         let documentsURL: URL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first as URL!
@@ -56,17 +58,19 @@ class DownloadFromITuneViewController: UIViewController {
             debugPrint(response)
             print(response.temporaryURL)
             print(response.destinationURL)
+            
+            self.destinationTest = response.destinationURL as! NSURL
         }
 
     }
 
     @IBAction func checkFileExist(_ sender: UIButton) {
 
-        let fileName = path + "mzaf_8018084475304913012.m4a"
+        let fileName = self.destinationTest
 
 //        print(fm.fileExists(atPath: fileName))
         
-        let existBool = fm.fileExists(atPath: fileName)
+//        let existBool = fm.fileExists(atPath: fileName)
         
         print("Result \(existBool)")
         
