@@ -38,7 +38,9 @@ class AnonymousLoginSuccedViewController: UIViewController {
 
         user.link(with: credential) { (user, _) in
             guard let user = user else {
-                print("Register got error")
+                let text = "Register got error"
+                print(text)
+                self.resultLabel.text = "\(text)"
                 return
             }
 
