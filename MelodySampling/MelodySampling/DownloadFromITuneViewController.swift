@@ -8,40 +8,60 @@
 
 import UIKit
 
+
 class DownloadFromITuneViewController: UIViewController {
 
-    
-    
-    
-    
-    
-    
-    
+    let fm: FileManager = FileManager()
+
+    let path: String = NSHomeDirectory() + "/tmp/"
 
     @IBAction func button1Tapped(_ sender: UIButton) {
     }
-    
+
     @IBAction func button2Tapped(_ sender: UIButton) {
     }
-    
+
     @IBAction func button3Tapped(_ sender: UIButton) {
     }
-    
+
     @IBAction func button4Tapped(_ sender: UIButton) {
     }
-    
+
     @IBAction func button5Tapped(_ sender: UIButton) {
     }
-    
-    
+
     @IBAction func startingDownloadTapped(_ sender: UIButton) {
+
+        print("I save a file in text1.txt")
+
+        let fileName = path + "text1.txt"
+
+//        fm.createFile(atPath: fileName, contents: nil, attributes: nil)
+        let documentsURL: URL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first as URL!
+        let destinationFileURL = documentsURL.appendingPathComponent("song0.m4a")
+        
+        let fileURL = URL(string: testSong0)
+        
+        let sessionConfig = URLSessionConfiguration.default
+        
+        let session = URLSession(configuration: sessionConfig)
+        
+        let request = URLRequest(url: fileURL!)
+        
+        
+
     }
-    
+
+    @IBAction func checkFileExist(_ sender: UIButton) {
+
+        let fileName = path + "text1.txt"
+
+        print(fm.fileExists(atPath: fileName))
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
-        
         // Do any additional setup after loading the view.
     }
 
@@ -49,7 +69,6 @@ class DownloadFromITuneViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
 
     /*
     // MARK: - Navigation
