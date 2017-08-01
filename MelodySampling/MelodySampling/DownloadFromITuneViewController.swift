@@ -14,6 +14,10 @@ class DownloadFromITuneViewController: UIViewController {
 
     var destinationTest: NSURL?
     
+    var fileName: String?
+    
+    var finalPath: NSURL?
+    
     let fm: FileManager = FileManager()
 
     let path: String = NSHomeDirectory() + "/tmp/"
@@ -35,42 +39,34 @@ class DownloadFromITuneViewController: UIViewController {
 
     @IBAction func startingDownloadTapped(_ sender: UIButton) {
 
-        print("I save a file in text1.txt")
 
-        let fileName = path + "mzaf_8018084475304913012.m4a"
-
-//        fm.createFile(atPath: fileName, contents: nil, attributes: nil)
-        let documentsURL: URL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first as URL!
-        let destinationFileURL = documentsURL.appendingPathComponent("song0.m4a")
-
-        let fileURL = URL(string: testSong0)
-
-        let sessionConfig = URLSessionConfiguration.default
-
-        let session = URLSession(configuration: sessionConfig)
-
-        let request = URLRequest(url: fileURL!)
-        
-        var localPath: NSURL?
         
         let destination = DownloadRequest.suggestedDownloadDestination()
-        Alamofire.download(testSong0, to: destination).validate().responseData { (response) in
-            debugPrint(response)
+        
+        Alamofire.download(testSong0, to: destination).response { response in // method defaults to `.get`
+            print(response.request)
+            print(response.response)
             print(response.temporaryURL)
             print(response.destinationURL)
+            print(response.error)
             
-            self.destinationTest = response.destinationURL as! NSURL
+            self.fileName = response.response?.suggestedFilename
+            
+            self.finalPath = response.destinationURL as? NSURL
         }
-
     }
 
     @IBAction func checkFileExist(_ sender: UIButton) {
 
-        let fileName = self.destinationTest
 
+        
+        let path: String = NSHomeDirectory() + "/Documents/"
+        
+        let fileName = path + self.fileName!
+        
 //        print(fm.fileExists(atPath: fileName))
         
-//        let existBool = fm.fileExists(atPath: fileName)
+        let existBool = fm.fileExists(atPath: fileName)
         
         print("Result \(existBool)")
         
