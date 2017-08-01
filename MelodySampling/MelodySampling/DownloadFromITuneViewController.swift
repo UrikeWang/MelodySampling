@@ -7,7 +7,8 @@
 //
 
 import UIKit
-
+import Alamofire
+import AVFoundation
 
 class DownloadFromITuneViewController: UIViewController {
 
@@ -39,24 +40,36 @@ class DownloadFromITuneViewController: UIViewController {
 //        fm.createFile(atPath: fileName, contents: nil, attributes: nil)
         let documentsURL: URL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first as URL!
         let destinationFileURL = documentsURL.appendingPathComponent("song0.m4a")
-        
+
         let fileURL = URL(string: testSong0)
-        
+
         let sessionConfig = URLSessionConfiguration.default
-        
+
         let session = URLSession(configuration: sessionConfig)
-        
+
         let request = URLRequest(url: fileURL!)
         
+        var localPath: NSURL?
         
+        let destination = DownloadRequest.suggestedDownloadDestination()
+        Alamofire.download(testSong0, to: destination).validate().responseData { (response) in
+            debugPrint(response)
+            print(response.temporaryURL)
+            print(response.destinationURL)
+        }
 
     }
 
     @IBAction func checkFileExist(_ sender: UIButton) {
 
-        let fileName = path + "text1.txt"
+        let fileName = path + "mzaf_8018084475304913012.m4a"
 
-        print(fm.fileExists(atPath: fileName))
+//        print(fm.fileExists(atPath: fileName))
+        
+        let existBool = fm.fileExists(atPath: fileName)
+        
+        print("Result \(existBool)")
+        
     }
 
     override func viewDidLoad() {
