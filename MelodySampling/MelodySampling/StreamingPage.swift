@@ -29,7 +29,6 @@ class StreamingPage: UIViewController {
     var player = AVPlayer()
 
     @IBAction func button1Tapped(_ sender: UIButton) {
-        print("開始下載試聽曲1")
         currentTrack = 0
         player.replaceCurrentItem(with: playerItems[currentTrack])
 
