@@ -46,6 +46,10 @@ class DownloadFromITuneViewController: UIViewController, MPMediaPickerController
         
         let destination = DownloadRequest.suggestedDownloadDestination()
         
+//        let destinationString: String = NSHomeDirectory() + "/Documents/song1.m4a"
+        
+//        let destination = URL(string: destinationString)
+        
         Alamofire.download(testSong5, to: destination).response { response in // method defaults to `.get`
 //            print(response.request)
 //            print(response.response)
