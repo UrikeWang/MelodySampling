@@ -7,16 +7,39 @@
 //
 
 import UIKit
+import Firebase
 
 class RetrieveDataViewController: UIViewController {
 
+    var ref: DatabaseReference!
+
     @IBOutlet weak var resultLabel: UILabel!
-    
+
     @IBAction func startButtonTapped(_ sender: UIButton) {
-        
-        
+
+        self.ref = Database.database().reference()
+
+        //這一種方法太大，不可行
+        ref.child("songs").observeSingleEvent(of: .value, with: { (snapshot) in
+
+            print(snapshot)
+
+            self.resultLabel.text = "\(snapshot)"
+
+        })
+
     }
     
+    @IBAction func only5ItemsTapped(_ sender: UIButton) {
+        
+        self.ref = Database.database().reference()
+        
+        ref.child("songs").queryOrderedByKey().queryLimited(toFirst: 6).observeSingleEvent(of: .value, with: { (snapshot) in
+            print(snapshot)
+        })
+
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -27,16 +50,5 @@ class RetrieveDataViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
