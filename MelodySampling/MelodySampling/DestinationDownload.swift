@@ -18,11 +18,11 @@ class DestinationDownload: UIViewController {
 
     @IBAction func startButtonTapped(_ sender: UIButton) {
 
-        let destinationString = NSTemporaryDirectory() + "song1.m4a"
+        let destinationString = NSHomeDirectory() + "/Documents/" + "song1.m4a"
 //        let destination = URL(fileURLWithPath: destinationString)
 
         let destination: DownloadRequest.DownloadFileDestination = { _, _ in
-            let documentsURL = NSHomeDirectory() + "/tmp/"
+            let documentsURL = NSHomeDirectory() + "/Documents/"
             let fileURL = URL(fileURLWithPath: documentsURL.appending("song2.m4a"))
 
             return (fileURL, [.removePreviousFile, .createIntermediateDirectories])
@@ -40,7 +40,7 @@ class DestinationDownload: UIViewController {
         let fileManager = FileManager()
 
         do {
-            let fileList = try fileManager.contentsOfDirectory(atPath: NSTemporaryDirectory())
+            let fileList = try fileManager.contentsOfDirectory(atPath: NSHomeDirectory() + "/Documents/")
 
             containFielLabel.text = "\(fileList)"
 
@@ -58,11 +58,11 @@ class DestinationDownload: UIViewController {
         let fileManager = FileManager()
 
         do {
-            let fileList = try fileManager.contentsOfDirectory(atPath: NSTemporaryDirectory())
+            let fileList = try fileManager.contentsOfDirectory(atPath: NSHomeDirectory() + "/Documents/")
 
             for file in fileList {
                 do {
-                    try fileManager.removeItem(atPath: NSHomeDirectory() + "/tmp/" + file) } catch {
+                    try fileManager.removeItem(atPath: NSHomeDirectory() + "/Documents/" + file) } catch {
                     print("can't delete file")
                 }
             }
@@ -75,15 +75,15 @@ class DestinationDownload: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let tempDirectory = NSTemporaryDirectory()
-        resultLabel.text = "\(tempDirectory)"
+        let docDirectory = NSHomeDirectory() + "/Documents/"
+        resultLabel.text = "\(docDirectory)"
 
-        print(tempDirectory)
+        print(docDirectory)
 
         let fileManager = FileManager()
 
         do {
-            let fileList = try fileManager.contentsOfDirectory(atPath: NSTemporaryDirectory())
+            let fileList = try fileManager.contentsOfDirectory(atPath: NSHomeDirectory() + "/Documents/")
 
             containFielLabel.text = "\(fileList)"
 
