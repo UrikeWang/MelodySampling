@@ -36,8 +36,19 @@ class RetrieveDataViewController: UIViewController {
         
         ref.child("songs").queryOrderedByKey().queryLimited(toFirst: 6).observeSingleEvent(of: .value, with: { (snapshot) in
             print(snapshot)
+            
+            let postDict = snapshot.value as? [String: AnyObject] ?? [:]
+            
+//            print(postDict["151377160"])
+            
+            let insideDict = postDict["151377160"] as? [String: AnyObject] ?? [:]
+            print(insideDict["artistName"] as Any)
+            print(insideDict["primaryGenreName"] as Any)
+            print(insideDict["collectionName"] as Any)
+            print(type(of: insideDict))
         })
 
+        
     }
 
     override func viewDidLoad() {
