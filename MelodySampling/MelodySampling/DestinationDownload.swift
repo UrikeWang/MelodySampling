@@ -24,24 +24,22 @@ class DestinationDownload: UIViewController {
 //        let destinationString = NSHomeDirectory() + "/Documents/" + "song1.m4a"
 //        let destination = URL(fileURLWithPath: destinationString)
 
-        
-
         let songsList = [testSong0, testSong1, testSong2, testSong3, testSong4, testSong5]
-        
+
         for eachSong in songsList {
-            
+
             let index = String(describing: songsList.index(of: eachSong)!)
-            
+
             let destination: DownloadRequest.DownloadFileDestination = { _, _ in
                 let documentsURL = NSHomeDirectory() + "/Documents/"
                 let fileURL = URL(fileURLWithPath: documentsURL.appending("song" + index + ".m4a"))
                 print("song\(index).m4a is downloading")
-                
+
                 return (fileURL, [.removePreviousFile, .createIntermediateDirectories])
             }
-            
+
             Alamofire.download(eachSong, to: destination).response { response in
-                
+
                 print(response.response)
             }
 
