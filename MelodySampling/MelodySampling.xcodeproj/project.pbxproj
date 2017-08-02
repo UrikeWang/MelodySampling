@@ -22,6 +22,7 @@
 		73820C481F3056C900121A4D /* DownloadFromITuneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73820C471F3056C900121A4D /* DownloadFromITuneViewController.swift */; };
 		73820C901F30A20A00121A4D /* DestinationDownload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73820C8F1F30A20A00121A4D /* DestinationDownload.swift */; };
 		73EBA3031F31F63E0082C752 /* PlaySongsAftDownloadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73EBA3021F31F63E0082C752 /* PlaySongsAftDownloadViewController.swift */; };
+		73EBA3061F31FF210082C752 /* RetrieveDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73EBA3051F31FF210082C752 /* RetrieveDataViewController.swift */; };
 		E9121496FD42D46E60BF274E /* Pods_MelodySampling.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCE8237F816AFC43B6CA66DF /* Pods_MelodySampling.framework */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +44,7 @@
 		73820C471F3056C900121A4D /* DownloadFromITuneViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownloadFromITuneViewController.swift; sourceTree = "<group>"; };
 		73820C8F1F30A20A00121A4D /* DestinationDownload.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DestinationDownload.swift; sourceTree = "<group>"; };
 		73EBA3021F31F63E0082C752 /* PlaySongsAftDownloadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaySongsAftDownloadViewController.swift; sourceTree = "<group>"; };
+		73EBA3051F31FF210082C752 /* RetrieveDataViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RetrieveDataViewController.swift; sourceTree = "<group>"; };
 		744E2D9810A745B7407345E5 /* Pods-MelodySampling.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MelodySampling.release.xcconfig"; path = "Pods/Target Support Files/Pods-MelodySampling/Pods-MelodySampling.release.xcconfig"; sourceTree = "<group>"; };
 		7AEB0E68990119E1DCEEFF7C /* Pods-MelodySampling.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MelodySampling.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MelodySampling/Pods-MelodySampling.debug.xcconfig"; sourceTree = "<group>"; };
 		DCE8237F816AFC43B6CA66DF /* Pods_MelodySampling.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MelodySampling.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -89,6 +91,7 @@
 		73744D021F2ED94200C1FAEA /* MelodySampling */ = {
 			isa = PBXGroup;
 			children = (
+				73EBA3041F31FEE30082C752 /* RetrieveData */,
 				73820C461F30569E00121A4D /* DownloadFromITune */,
 				73744D2D1F2F788900C1FAEA /* function */,
 				73744D2A1F2F4C5B00C1FAEA /* StreamingPreviewSong */,
@@ -139,6 +142,14 @@
 				73EBA3021F31F63E0082C752 /* PlaySongsAftDownloadViewController.swift */,
 			);
 			name = DownloadFromITune;
+			sourceTree = "<group>";
+		};
+		73EBA3041F31FEE30082C752 /* RetrieveData */ = {
+			isa = PBXGroup;
+			children = (
+				73EBA3051F31FF210082C752 /* RetrieveDataViewController.swift */,
+			);
+			name = RetrieveData;
 			sourceTree = "<group>";
 		};
 		D62B671CB22ADFC8F94CDB5D /* Pods */ = {
@@ -290,6 +301,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				73EBA3061F31FF210082C752 /* RetrieveDataViewController.swift in Sources */,
 				73744D271F2F203D00C1FAEA /* AnonymousLoginSuccedViewController.swift in Sources */,
 				73744D1D1F2EFADC00C1FAEA /* SignUpViewController.swift in Sources */,
 				73744D251F2F1A7600C1FAEA /* LoginSuccedViewController.swift in Sources */,

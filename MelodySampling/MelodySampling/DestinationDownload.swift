@@ -40,7 +40,7 @@ class DestinationDownload: UIViewController {
 
             DispatchQueue.main.async {
                 Alamofire.download(eachSong, to: destination).response { response in
-                    
+
                     print(response.response)
                 }
 
