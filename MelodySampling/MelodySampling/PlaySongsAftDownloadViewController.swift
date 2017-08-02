@@ -10,62 +10,62 @@ import UIKit
 import AVFoundation
 
 class PlaySongsAftDownloadViewController: UIViewController {
-    
+
     var player: AVAudioPlayer?
-    
+
     let path: String = NSHomeDirectory() + "/Documents/"
 
     @IBAction func playSon0Tapped(_ sender: UIButton) {
-        
+
         let fileName = self.path + "song0.m4a"
-        
+
         player?.pause()
-        
+
         do {
             player = try AVAudioPlayer(contentsOf: URL(string: fileName)!)
         } catch {
             player = nil
         }
         player?.play()
-        
+
     }
 
     @IBAction func playSong1Tapped(_ sender: UIButton) {
-    
+
         let fileName = self.path + "song1.m4a"
-        
+
         player?.pause()
-        
+
         do {
             player = try AVAudioPlayer(contentsOf: URL(string: fileName)!)
         } catch {
             player = nil
         }
         player?.play()
-    
+
     }
 
     @IBAction func playSong2Tapped(_ sender: UIButton) {
-        
+
         let fileName = self.path + "song2.m4a"
-        
+
         player?.pause()
-        
+
         do {
             player = try AVAudioPlayer(contentsOf: URL(string: fileName)!)
         } catch {
             player = nil
         }
         player?.play()
-    
+
     }
 
     @IBAction func playSong3Tapped(_ sender: UIButton) {
-    
+
         let fileName = self.path + "song3.m4a"
-        
+
         player?.pause()
-        
+
         do {
             player = try AVAudioPlayer(contentsOf: URL(string: fileName)!)
         } catch {
@@ -75,26 +75,26 @@ class PlaySongsAftDownloadViewController: UIViewController {
     }
 
     @IBAction func playSong4Tapped(_ sender: UIButton) {
-    
+
         let fileName = self.path + "song4.m4a"
-        
+
         player?.pause()
-        
+
         do {
             player = try AVAudioPlayer(contentsOf: URL(string: fileName)!)
         } catch {
             player = nil
         }
         player?.play()
-    
+
     }
 
     @IBAction func playSong5Tapped(_ sender: UIButton) {
-    
+
         let fileName = self.path + "song5.m4a"
-        
+
         player?.pause()
-        
+
         do {
             player = try AVAudioPlayer(contentsOf: URL(string: fileName)!)
         } catch {
