@@ -8,9 +8,12 @@
 
 import UIKit
 import Alamofire
+import AVFoundation
 
 //開始改 fileURL
 class DestinationDownload: UIViewController {
+
+    var player: AVAudioPlayer?
 
     @IBOutlet weak var containFielLabel: UILabel!
 
@@ -70,6 +73,37 @@ class DestinationDownload: UIViewController {
             print("can't delete file")
         }
 
+    }
+
+    @IBAction func playButtonTapped(_ sender: UIButton) {
+        let path: String = NSHomeDirectory() + "/Documents/"
+
+        let fileName = path + "song2.m4a"
+
+        let playerItems = AVPlayerItem(url: URL(string: fileName)!)
+
+        do {
+            player = try AVAudioPlayer(contentsOf: URL(string: fileName)!)
+
+            var audioSession = AVAudioSession.sharedInstance()
+
+            do {
+                try audioSession.setCategory(AVAudioSessionCategoryPlayback)
+            } catch {
+
+            }
+
+        } catch {
+            print(error)
+        }
+
+        player?.play()
+
+    }
+
+    @IBAction func pauseButtonTapped(_ sender: UIButton) {
+
+        player?.pause()
     }
 
     override func viewDidLoad() {
