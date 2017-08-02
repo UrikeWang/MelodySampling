@@ -38,11 +38,13 @@ class DestinationDownload: UIViewController {
                 return (fileURL, [.removePreviousFile, .createIntermediateDirectories])
             }
 
-            Alamofire.download(eachSong, to: destination).response { response in
+            DispatchQueue.main.async {
+                Alamofire.download(eachSong, to: destination).response { response in
+                    
+                    print(response.response)
+                }
 
-                print(response.response)
             }
-
         }
     }
 
