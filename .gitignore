@@ -3,6 +3,6 @@
 *.xcuserstate
 UserInterfaceState.xcuserstate
 tokens.swift
-#*.plist
+*.plist
 
 
