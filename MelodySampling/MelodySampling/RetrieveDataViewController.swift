@@ -29,18 +29,18 @@ class RetrieveDataViewController: UIViewController {
         })
 
     }
-    
+
     @IBAction func only5ItemsTapped(_ sender: UIButton) {
-        
+
         self.ref = Database.database().reference()
-        
+
         ref.child("songs").queryOrderedByKey().queryLimited(toFirst: 6).observeSingleEvent(of: .value, with: { (snapshot) in
             print(snapshot)
-            
+
             let postDict = snapshot.value as? [String: AnyObject] ?? [:]
-            
+
 //            print(postDict["151377160"])
-            
+
             let insideDict = postDict["151377160"] as? [String: AnyObject] ?? [:]
             print(insideDict["artistName"] as Any)
             print(insideDict["primaryGenreName"] as Any)
@@ -48,7 +48,6 @@ class RetrieveDataViewController: UIViewController {
             print(type(of: insideDict))
         })
 
-        
     }
 
     override func viewDidLoad() {
