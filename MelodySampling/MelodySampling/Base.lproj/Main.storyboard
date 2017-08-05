@@ -149,6 +149,14 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NDD-Qh-AjX">
+                                <rect key="frame" x="314" y="476" width="44" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Segue"/>
+                                <connections>
+                                    <segue destination="s2d-ef-ar2" kind="show" id="HLH-U9-1QQ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -375,6 +383,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Contain files" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s2M-ZS-lbv">
                                 <rect key="frame" x="56" y="530" width="264" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -426,7 +435,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Vc-Wh-cD6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2938.4000000000001" y="1921.8890554722641"/>
+            <point key="canvasLocation" x="2894" y="1925"/>
         </scene>
         <!--Play Songs Aft Download View Controller-->
         <scene sceneID="0zF-s6-OhK">
@@ -626,13 +635,21 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yUX-y6-BYi">
+                                <rect key="frame" x="164" y="529" width="46" height="82"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Segue"/>
+                                <connections>
+                                    <segue destination="s2d-ef-ar2" kind="show" id="QqP-7r-hVZ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mMs-OD-O8g" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2106" y="-181"/>
+            <point key="canvasLocation" x="2104.8000000000002" y="-181.25937031484258"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="B9P-qI-V42">
@@ -668,7 +685,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Zq-QY-pQC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1999.2" y="1921.8890554722641"/>
+            <point key="canvasLocation" x="2974" y="443"/>
         </scene>
         <!--Retrieve Data View Controller-->
         <scene sceneID="Tcx-gh-9P6">
@@ -720,4 +737,7 @@
             <point key="canvasLocation" x="1999.2" y="2628.0359820089957"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="QqP-7r-hVZ"/>
+    </inferredMetricsTieBreakers>
 </document>
