@@ -1,5 +1,18 @@
 # Ignore xcuserstate
 
+
+## Build generated
+build/
+DerivedData/
+
+# Swift Package Manager
+#
+# Add this line if you want to avoid checking in source code from Swift Package Manager dependencies.
+# Packages/
+# Package.pins
+.build/
+
+xcuserdata/
 *.xcuserstate
 UserInterfaceState.xcuserstate
 tokens.swift
