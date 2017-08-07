@@ -816,36 +816,6 @@
                                             <constraint firstItem="VIX-oo-t59" firstAttribute="centerY" secondItem="vRG-Wl-ebV" secondAttribute="centerY" id="kbn-NW-CVb"/>
                                         </constraints>
                                     </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sign up" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EgF-uP-uhz" userLabel="Sign Up Label">
-                                        <rect key="frame" x="60" y="459" width="280" height="50"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" red="0.61960784313725492" green="0.93725490196078431" blue="0.88235294117647056" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
-                                        <color key="textColor" red="0.25882352941176467" green="0.13333333333333333" blue="0.99607843137254903" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Hx-aM-5VR" userLabel="Goto Login Label">
-                                        <rect key="frame" x="53" y="555" width="295" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <attributedString key="attributedText">
-                                            <fragment content="Already have an account? ">
-                                                <attributes>
-                                                    <color key="NSColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <font key="NSFont" size="17" name="HelveticaNeue"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content="Log in">
-                                                <attributes>
-                                                    <color key="NSColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <font key="NSFont" size="17" name="HelveticaNeue"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                    <integer key="NSUnderline" value="1"/>
-                                                </attributes>
-                                            </fragment>
-                                        </attributedString>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hbT-kz-Sgv" userLabel="Confirm Password Content View">
                                         <rect key="frame" x="47" y="373" width="280" height="40"/>
                                         <subviews>
@@ -865,9 +835,44 @@
                                             <constraint firstItem="pfT-LV-HHY" firstAttribute="top" secondItem="hbT-kz-Sgv" secondAttribute="top" constant="10" id="uTl-wR-C56"/>
                                         </constraints>
                                     </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Hx-aM-5VR" userLabel="Goto Login Label">
+                                        <rect key="frame" x="39.5" y="553" width="295" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="295" id="Idi-Zb-O6A"/>
+                                        </constraints>
+                                        <attributedString key="attributedText">
+                                            <fragment content="Already have an account? ">
+                                                <attributes>
+                                                    <color key="NSColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <font key="NSFont" size="17" name="HelveticaNeue"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content="Log in">
+                                                <attributes>
+                                                    <color key="NSColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <font key="NSFont" size="17" name="HelveticaNeue"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    <integer key="NSUnderline" value="1"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign up" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EgF-uP-uhz" userLabel="Sign Up Label">
+                                        <rect key="frame" x="47" y="473" width="280" height="50"/>
+                                        <color key="backgroundColor" red="0.61960784313725492" green="0.93725490196078431" blue="0.88235294117647056" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="lks-wN-baL"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                                        <color key="textColor" red="0.25882352941176467" green="0.13333333333333333" blue="0.99607843137254903" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.75470890410958902" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstItem="6Hx-aM-5VR" firstAttribute="centerX" secondItem="EgF-uP-uhz" secondAttribute="centerX" id="0Ec-lD-m9U"/>
                                     <constraint firstItem="em1-6Q-aom" firstAttribute="leading" secondItem="U1h-ID-cdY" secondAttribute="leading" constant="60" id="92w-bB-Gja"/>
                                     <constraint firstItem="b7u-pU-XkO" firstAttribute="leading" secondItem="U1h-ID-cdY" secondAttribute="leading" constant="47" id="LZw-dy-1Yt"/>
                                     <constraint firstItem="vRG-Wl-ebV" firstAttribute="top" secondItem="b7u-pU-XkO" secondAttribute="bottom" constant="20" id="QAG-lK-T9R"/>
@@ -879,7 +884,11 @@
                                     <constraint firstItem="b7u-pU-XkO" firstAttribute="centerX" secondItem="U1h-ID-cdY" secondAttribute="centerX" id="cKE-zF-nci"/>
                                     <constraint firstItem="hbT-kz-Sgv" firstAttribute="centerX" secondItem="vRG-Wl-ebV" secondAttribute="centerX" id="cbj-1y-Xv7"/>
                                     <constraint firstItem="b7u-pU-XkO" firstAttribute="top" secondItem="em1-6Q-aom" secondAttribute="bottom" constant="74" id="chR-lf-QYk"/>
+                                    <constraint firstItem="EgF-uP-uhz" firstAttribute="width" secondItem="hbT-kz-Sgv" secondAttribute="width" id="dhz-EJ-jd0"/>
+                                    <constraint firstItem="EgF-uP-uhz" firstAttribute="top" secondItem="hbT-kz-Sgv" secondAttribute="bottom" constant="60" id="hFd-2l-7A8"/>
                                     <constraint firstItem="vRG-Wl-ebV" firstAttribute="leading" secondItem="b7u-pU-XkO" secondAttribute="leading" id="m8Q-yJ-pmb"/>
+                                    <constraint firstItem="EgF-uP-uhz" firstAttribute="centerX" secondItem="hbT-kz-Sgv" secondAttribute="centerX" id="r3D-0z-qeS"/>
+                                    <constraint firstItem="6Hx-aM-5VR" firstAttribute="top" secondItem="EgF-uP-uhz" secondAttribute="bottom" constant="30" id="uDR-8S-fGb"/>
                                     <constraint firstItem="em1-6Q-aom" firstAttribute="centerX" secondItem="U1h-ID-cdY" secondAttribute="centerX" id="yN9-1T-jTF"/>
                                     <constraint firstItem="vRG-Wl-ebV" firstAttribute="width" secondItem="b7u-pU-XkO" secondAttribute="width" id="zKm-Wa-Qia"/>
                                 </constraints>
