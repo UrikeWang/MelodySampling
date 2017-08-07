@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="bgG-UJ-6ec">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Y5G-1b-riF">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -695,12 +695,18 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Just try" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dnJ-zN-H9u">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dnJ-zN-H9u">
                                 <rect key="frame" x="47" y="541" width="281" height="50"/>
                                 <color key="backgroundColor" red="1" green="0.40000000600000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="jkZ-j6-mao"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Just try" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EGQ-O1-Y0p" userLabel="Just Try Label">
+                                <rect key="frame" x="147" y="556" width="80" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -711,6 +717,7 @@
                             <constraint firstItem="O1P-lZ-xSE" firstAttribute="width" secondItem="ow1-Bl-mtg" secondAttribute="width" id="02w-s3-PEC"/>
                             <constraint firstItem="Q4z-3t-cIg" firstAttribute="top" secondItem="o7g-XZ-Nzz" secondAttribute="bottom" constant="18" id="1E4-2O-G8g"/>
                             <constraint firstItem="O1P-lZ-xSE" firstAttribute="top" secondItem="ow1-Bl-mtg" secondAttribute="topMargin" constant="153" id="44e-sc-eaf"/>
+                            <constraint firstItem="EGQ-O1-Y0p" firstAttribute="centerY" secondItem="dnJ-zN-H9u" secondAttribute="centerY" id="6Go-c7-a6e"/>
                             <constraint firstItem="O1P-lZ-xSE" firstAttribute="leading" secondItem="ow1-Bl-mtg" secondAttribute="leading" id="9ms-y4-TL4"/>
                             <constraint firstItem="dnJ-zN-H9u" firstAttribute="top" secondItem="C8j-OD-UCA" secondAttribute="bottom" constant="10" id="A2U-ZK-fzV"/>
                             <constraint firstItem="C8j-OD-UCA" firstAttribute="height" secondItem="dnJ-zN-H9u" secondAttribute="height" id="KO8-kt-0xb"/>
@@ -718,6 +725,7 @@
                             <constraint firstItem="O1P-lZ-xSE" firstAttribute="top" secondItem="Q4z-3t-cIg" secondAttribute="bottom" constant="6" id="NeJ-B0-XFh"/>
                             <constraint firstItem="nRs-tJ-aaB" firstAttribute="width" secondItem="C8j-OD-UCA" secondAttribute="width" id="REK-Pq-5gT"/>
                             <constraint firstItem="nRs-tJ-aaB" firstAttribute="centerX" secondItem="C8j-OD-UCA" secondAttribute="centerX" id="Twg-s8-Sit"/>
+                            <constraint firstItem="EGQ-O1-Y0p" firstAttribute="centerX" secondItem="dnJ-zN-H9u" secondAttribute="centerX" id="X7i-9a-de5"/>
                             <constraint firstItem="C8j-OD-UCA" firstAttribute="leading" secondItem="dnJ-zN-H9u" secondAttribute="leading" id="bZe-Ao-nHA"/>
                             <constraint firstItem="o7g-XZ-Nzz" firstAttribute="centerX" secondItem="ow1-Bl-mtg" secondAttribute="centerX" id="dgZ-74-fGM"/>
                             <constraint firstAttribute="bottomMargin" secondItem="dnJ-zN-H9u" secondAttribute="bottom" constant="76" id="hlh-qI-W7A"/>
@@ -737,6 +745,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G0U-7s-mVh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="324" y="-696.7016491754124"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="aAP-Md-uWi">
+            <objects>
+                <viewController id="Y5G-1b-riF" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="nKW-T5-MpE"/>
+                        <viewControllerLayoutGuide type="bottom" id="1O6-L0-CqL"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="H2Z-3R-i1H">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1Sr-Wb-5D4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="999" y="-697"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="B9P-qI-V42">

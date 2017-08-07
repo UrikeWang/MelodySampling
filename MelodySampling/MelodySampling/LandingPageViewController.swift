@@ -27,7 +27,7 @@ class LandingPageViewController: UIViewController {
 
         setCornerRadiustTo(anonymousLoginLabel)
         
-
+        createGradientOnLabel(target: anonymousLoginLabel)
     }
 
     override func didReceiveMemoryWarning() {
