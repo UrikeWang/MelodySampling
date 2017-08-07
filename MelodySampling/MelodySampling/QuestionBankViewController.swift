@@ -26,36 +26,36 @@ class QuestionBankViewController: UIViewController {
 
 //            print(snapshot)
             print("有印 snapshot")
-            
+
             let postDict = snapshot.value as? [String: AnyObject] ?? [:]
-            
+
             let dict0 = postDict["41641840"] as? [String: AnyObject] ?? [:]
 
             let artist0 = dict0["artistName"]! as Any
             let song0 = dict0["trackName"]! as Any
-            
+
             let dict1 = postDict["405896104"] as? [String: AnyObject] ?? [:]
-            
+
             let artist1 = dict1["artistName"]! as Any
             let song1 = dict1["trackName"]! as Any
 
             let dict2 = postDict["542922095"] as? [String: AnyObject] ?? [:]
-            
+
             let artist2 = dict2["artistName"]! as Any
             let song2 = dict2["trackName"]! as Any
-            
+
             let dict3 = postDict["910065949"] as? [String: AnyObject] ?? [:]
-            
+
             let artist3 = dict3["artistName"]! as Any
             let song3 = dict3["trackName"]! as Any
-            
+
             let dict4 = postDict["910065956"] as? [String: AnyObject] ?? [:]
-            
+
             let artist4 = dict4["artistName"]! as Any
             let song4 = dict4["trackName"]! as Any
-            
+
             let string = "第一個歌手: \(artist0) 第一首: \(song0) \n第二個歌手: \(artist1) 第二首: \(song1)\n第三個歌手:\(artist2) 第三首: \(song2)\n 第四個歌手: \(artist3) 第四首: \(song3)\n 第五個歌手: \(artist4) 第五首: \(song4)"
-            
+
             self.resultLabel.text = string
 
         }
