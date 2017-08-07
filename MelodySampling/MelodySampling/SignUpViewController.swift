@@ -12,11 +12,14 @@ class SignUpViewController: UIViewController {
 
     @IBOutlet weak var opacityView: UIView!
 
+    @IBOutlet weak var signUpLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         createSignUpPageGradient(target: opacityView)
-        // Do any additional setup after loading the view.
+        
+        setCornerRadiustTo(signUpLabel)
     }
 
     override func didReceiveMemoryWarning() {
