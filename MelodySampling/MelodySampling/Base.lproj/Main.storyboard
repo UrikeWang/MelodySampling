@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -678,6 +679,32 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Log in" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nRs-tJ-aaB">
+                                <rect key="frame" x="47" y="421" width="281" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="had-PP-tLd"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign up" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C8j-OD-UCA">
+                                <rect key="frame" x="47" y="481" width="281" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Just try" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dnJ-zN-H9u">
+                                <rect key="frame" x="47" y="541" width="281" height="50"/>
+                                <color key="backgroundColor" red="1" green="0.40000000600000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="jkZ-j6-mao"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.25882352941176467" green="0.13333333333333333" blue="0.99607843137254903" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -685,9 +712,20 @@
                             <constraint firstItem="Q4z-3t-cIg" firstAttribute="top" secondItem="o7g-XZ-Nzz" secondAttribute="bottom" constant="18" id="1E4-2O-G8g"/>
                             <constraint firstItem="O1P-lZ-xSE" firstAttribute="top" secondItem="ow1-Bl-mtg" secondAttribute="topMargin" constant="153" id="44e-sc-eaf"/>
                             <constraint firstItem="O1P-lZ-xSE" firstAttribute="leading" secondItem="ow1-Bl-mtg" secondAttribute="leading" id="9ms-y4-TL4"/>
+                            <constraint firstItem="dnJ-zN-H9u" firstAttribute="top" secondItem="C8j-OD-UCA" secondAttribute="bottom" constant="10" id="A2U-ZK-fzV"/>
+                            <constraint firstItem="C8j-OD-UCA" firstAttribute="height" secondItem="dnJ-zN-H9u" secondAttribute="height" id="KO8-kt-0xb"/>
+                            <constraint firstItem="C8j-OD-UCA" firstAttribute="width" secondItem="dnJ-zN-H9u" secondAttribute="width" id="MkP-YK-VRo"/>
                             <constraint firstItem="O1P-lZ-xSE" firstAttribute="top" secondItem="Q4z-3t-cIg" secondAttribute="bottom" constant="6" id="NeJ-B0-XFh"/>
+                            <constraint firstItem="nRs-tJ-aaB" firstAttribute="width" secondItem="C8j-OD-UCA" secondAttribute="width" id="REK-Pq-5gT"/>
+                            <constraint firstItem="nRs-tJ-aaB" firstAttribute="centerX" secondItem="C8j-OD-UCA" secondAttribute="centerX" id="Twg-s8-Sit"/>
+                            <constraint firstItem="C8j-OD-UCA" firstAttribute="leading" secondItem="dnJ-zN-H9u" secondAttribute="leading" id="bZe-Ao-nHA"/>
                             <constraint firstItem="o7g-XZ-Nzz" firstAttribute="centerX" secondItem="ow1-Bl-mtg" secondAttribute="centerX" id="dgZ-74-fGM"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="dnJ-zN-H9u" secondAttribute="bottom" constant="76" id="hlh-qI-W7A"/>
+                            <constraint firstItem="nRs-tJ-aaB" firstAttribute="leading" secondItem="C8j-OD-UCA" secondAttribute="leading" id="m5I-0e-nuG"/>
+                            <constraint firstItem="dnJ-zN-H9u" firstAttribute="centerX" secondItem="ow1-Bl-mtg" secondAttribute="centerXWithinMargins" id="miA-ge-yrq"/>
                             <constraint firstItem="Q4z-3t-cIg" firstAttribute="centerX" secondItem="ow1-Bl-mtg" secondAttribute="centerX" id="rsu-E4-AZK"/>
+                            <constraint firstItem="dnJ-zN-H9u" firstAttribute="leading" secondItem="ow1-Bl-mtg" secondAttribute="leading" constant="47" id="thb-gf-2YP"/>
+                            <constraint firstItem="C8j-OD-UCA" firstAttribute="top" secondItem="nRs-tJ-aaB" secondAttribute="bottom" constant="10" id="wmr-iR-E0y"/>
                         </constraints>
                     </view>
                 </viewController>
