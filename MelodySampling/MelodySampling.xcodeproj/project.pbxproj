@@ -21,6 +21,7 @@
 		73744D311F2F7CA900C1FAEA /* PreviewSongsURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73744D301F2F7CA900C1FAEA /* PreviewSongsURL.swift */; };
 		73820C481F3056C900121A4D /* DownloadFromITuneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73820C471F3056C900121A4D /* DownloadFromITuneViewController.swift */; };
 		73820C901F30A20A00121A4D /* DestinationDownload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73820C8F1F30A20A00121A4D /* DestinationDownload.swift */; };
+		73AF80231F384B7900CA31FB /* Styleguide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73AF80221F384B7900CA31FB /* Styleguide.swift */; };
 		73D6A56E1F33060F00928402 /* QuestionBankViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D6A56D1F33060F00928402 /* QuestionBankViewController.swift */; };
 		73EBA3031F31F63E0082C752 /* PlaySongsAftDownloadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73EBA3021F31F63E0082C752 /* PlaySongsAftDownloadViewController.swift */; };
 		73EBA3061F31FF210082C752 /* RetrieveDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73EBA3051F31FF210082C752 /* RetrieveDataViewController.swift */; };
@@ -44,6 +45,7 @@
 		73744D301F2F7CA900C1FAEA /* PreviewSongsURL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewSongsURL.swift; sourceTree = "<group>"; };
 		73820C471F3056C900121A4D /* DownloadFromITuneViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownloadFromITuneViewController.swift; sourceTree = "<group>"; };
 		73820C8F1F30A20A00121A4D /* DestinationDownload.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DestinationDownload.swift; sourceTree = "<group>"; };
+		73AF80221F384B7900CA31FB /* Styleguide.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Styleguide.swift; sourceTree = "<group>"; };
 		73D6A56D1F33060F00928402 /* QuestionBankViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionBankViewController.swift; sourceTree = "<group>"; };
 		73EBA3021F31F63E0082C752 /* PlaySongsAftDownloadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaySongsAftDownloadViewController.swift; sourceTree = "<group>"; };
 		73EBA3051F31FF210082C752 /* RetrieveDataViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RetrieveDataViewController.swift; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 		73744D021F2ED94200C1FAEA /* MelodySampling */ = {
 			isa = PBXGroup;
 			children = (
+				73AF80211F384B3400CA31FB /* StyleguideRelative */,
 				73EBA3041F31FEE30082C752 /* RetrieveData */,
 				73820C461F30569E00121A4D /* DownloadFromITune */,
 				73744D2D1F2F788900C1FAEA /* function */,
@@ -145,6 +148,14 @@
 				73EBA3021F31F63E0082C752 /* PlaySongsAftDownloadViewController.swift */,
 			);
 			name = DownloadFromITune;
+			sourceTree = "<group>";
+		};
+		73AF80211F384B3400CA31FB /* StyleguideRelative */ = {
+			isa = PBXGroup;
+			children = (
+				73AF80221F384B7900CA31FB /* Styleguide.swift */,
+			);
+			name = StyleguideRelative;
 			sourceTree = "<group>";
 		};
 		73D6A56C1F3305E400928402 /* QuestionBankDownload */ = {
@@ -324,6 +335,7 @@
 				73744D041F2ED94200C1FAEA /* AppDelegate.swift in Sources */,
 				73744D2C1F2F4CF800C1FAEA /* StreamingPage.swift in Sources */,
 				73820C901F30A20A00121A4D /* DestinationDownload.swift in Sources */,
+				73AF80231F384B7900CA31FB /* Styleguide.swift in Sources */,
 				73744D311F2F7CA900C1FAEA /* PreviewSongsURL.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -450,6 +462,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = PJPD95M4QP;
 				INFOPLIST_FILE = MelodySampling/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.marvinlin.MelodySampling;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -464,6 +477,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = PJPD95M4QP;
 				INFOPLIST_FILE = MelodySampling/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.marvinlin.MelodySampling;
 				PRODUCT_NAME = "$(TARGET_NAME)";
