@@ -717,7 +717,6 @@
                                 <state key="normal" title="Invisible Login Button"/>
                                 <connections>
                                     <action selector="loginButtonTapped:" destination="bgG-UJ-6ec" eventType="touchUpInside" id="Hev-2m-VjC"/>
-                                    <segue destination="Tjb-TR-M1w" kind="show" id="PLK-Sh-o7v"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eNZ-KW-APm" userLabel="Invisible SignUp Button">
@@ -725,7 +724,6 @@
                                 <state key="normal" title="Invisible SignUp Button"/>
                                 <connections>
                                     <action selector="signUpButtonTapped:" destination="bgG-UJ-6ec" eventType="touchUpInside" id="DKy-Fh-b19"/>
-                                    <segue destination="Y5G-1b-riF" kind="show" id="nTj-QA-rAF"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G2v-2P-JoN">
@@ -733,7 +731,6 @@
                                 <state key="normal" title="Invisible Anonymous Login Button"/>
                                 <connections>
                                     <action selector="anonymousLoginButtonTapped:" destination="bgG-UJ-6ec" eventType="touchUpInside" id="BKD-bO-AWR"/>
-                                    <segue destination="QDn-rL-xbF" kind="show" id="UAs-Xn-6Om"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -905,7 +902,6 @@
                                         <state key="normal" title="Invisible Sign Up Button"/>
                                         <connections>
                                             <action selector="signUpButtonTapped:" destination="Y5G-1b-riF" eventType="touchUpInside" id="pi2-8U-wNj"/>
-                                            <segue destination="QDn-rL-xbF" kind="show" id="9ol-Pc-Icb"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign up" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EgF-uP-uhz" userLabel="Sign Up Label">
@@ -991,9 +987,6 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="Back to Landing"/>
-                                <connections>
-                                    <segue destination="bgG-UJ-6ec" kind="show" id="6mH-HW-1tI"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1134,7 +1127,6 @@
                                         <state key="normal" title="Invisible Login Button"/>
                                         <connections>
                                             <action selector="loginButtonTapped:" destination="Tjb-TR-M1w" eventType="touchUpInside" id="pxK-Ls-hyJ"/>
-                                            <segue destination="QDn-rL-xbF" kind="show" id="mF5-iX-WTf"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -1278,7 +1270,4 @@
         <image name="logo" width="48" height="30"/>
         <image name="music" width="370" height="292"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="mF5-iX-WTf"/>
-    </inferredMetricsTieBreakers>
 </document>
