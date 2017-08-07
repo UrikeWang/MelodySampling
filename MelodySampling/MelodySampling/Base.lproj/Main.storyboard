@@ -928,21 +928,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="crowd" translatesAutoresizingMaskIntoConstraints="NO" id="uFm-6v-RYX">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="crowd" translatesAutoresizingMaskIntoConstraints="NO" id="uFm-6v-RYX" userLabel="Sign Up Main Image View">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KXI-mi-P6b">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KXI-mi-P6b" userLabel="Opacity View">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="pfo-lE-6Vq">
-                                        <rect key="frame" x="161" y="90" width="52" height="36"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="pfo-lE-6Vq" userLabel="Logo Image View">
+                                        <rect key="frame" x="161" y="89" width="52" height="36"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="36" id="1xb-g5-EJZ"/>
+                                            <constraint firstAttribute="width" constant="52" id="pkZ-g5-Tz5"/>
+                                        </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="MelodySampling" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VPg-UZ-Ctf">
-                                        <rect key="frame" x="60" y="145" width="255" height="34"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MelodySampling" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VPg-UZ-Ctf">
+                                        <rect key="frame" x="60" y="143" width="255" height="34"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="34" id="VOf-GY-Ocl"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -1024,9 +1027,26 @@
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="0.69945954623287676" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="VPg-UZ-Ctf" firstAttribute="leading" secondItem="KXI-mi-P6b" secondAttribute="leading" constant="60" id="COv-tW-jLe"/>
+                                    <constraint firstItem="pfo-lE-6Vq" firstAttribute="centerX" secondItem="VPg-UZ-Ctf" secondAttribute="centerX" id="TeC-AE-BOd"/>
+                                    <constraint firstItem="VPg-UZ-Ctf" firstAttribute="centerX" secondItem="KXI-mi-P6b" secondAttribute="centerX" id="YtC-Cc-lMb"/>
+                                    <constraint firstItem="VPg-UZ-Ctf" firstAttribute="top" secondItem="KXI-mi-P6b" secondAttribute="top" constant="143" id="nep-Cy-d9T"/>
+                                    <constraint firstItem="VPg-UZ-Ctf" firstAttribute="top" secondItem="pfo-lE-6Vq" secondAttribute="bottom" constant="18" id="qF7-T0-YmQ"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="uFm-6v-RYX" secondAttribute="trailing" id="ENp-OI-ysd"/>
+                            <constraint firstItem="uFm-6v-RYX" firstAttribute="leading" secondItem="uZa-I5-XJG" secondAttribute="leading" id="EhZ-S3-SJQ"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="uFm-6v-RYX" secondAttribute="bottom" id="GoM-q2-yUr"/>
+                            <constraint firstItem="KXI-mi-P6b" firstAttribute="leading" secondItem="uFm-6v-RYX" secondAttribute="leading" id="Yot-Jk-ZKp"/>
+                            <constraint firstItem="KXI-mi-P6b" firstAttribute="trailing" secondItem="uFm-6v-RYX" secondAttribute="trailing" id="aRJ-np-pqM"/>
+                            <constraint firstItem="KXI-mi-P6b" firstAttribute="top" secondItem="uFm-6v-RYX" secondAttribute="top" id="cuv-hP-tHh"/>
+                            <constraint firstItem="KXI-mi-P6b" firstAttribute="bottom" secondItem="uFm-6v-RYX" secondAttribute="bottom" id="hUa-sd-AHC"/>
+                            <constraint firstAttribute="topMargin" secondItem="uFm-6v-RYX" secondAttribute="top" id="nYm-ku-0Rp"/>
+                        </constraints>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
                 </viewController>
