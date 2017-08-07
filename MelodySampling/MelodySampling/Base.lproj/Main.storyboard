@@ -6,6 +6,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -656,12 +658,42 @@
                     <view key="view" contentMode="scaleToFill" id="ow1-Bl-mtg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="o7g-XZ-Nzz" userLabel="Logo Image View">
+                                <rect key="frame" x="161" y="57" width="52" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="52" id="16k-Kr-Vrt"/>
+                                    <constraint firstAttribute="height" constant="36" id="PZf-Ph-7cO"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="music" translatesAutoresizingMaskIntoConstraints="NO" id="O1P-lZ-xSE" userLabel="Landing Main Image View">
+                                <rect key="frame" x="0.0" y="153" width="375" height="294"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="O1P-lZ-xSE" secondAttribute="height" multiplier="370:290" id="H36-02-EIT"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MelodySampling" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q4z-3t-cIg">
+                                <rect key="frame" x="76.5" y="111" width="222.5" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="0.25882352941176467" green="0.13333333333333333" blue="0.99607843137254903" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="O1P-lZ-xSE" firstAttribute="width" secondItem="ow1-Bl-mtg" secondAttribute="width" id="02w-s3-PEC"/>
+                            <constraint firstItem="Q4z-3t-cIg" firstAttribute="top" secondItem="o7g-XZ-Nzz" secondAttribute="bottom" constant="18" id="1E4-2O-G8g"/>
+                            <constraint firstItem="O1P-lZ-xSE" firstAttribute="top" secondItem="ow1-Bl-mtg" secondAttribute="topMargin" constant="153" id="44e-sc-eaf"/>
+                            <constraint firstItem="O1P-lZ-xSE" firstAttribute="leading" secondItem="ow1-Bl-mtg" secondAttribute="leading" id="9ms-y4-TL4"/>
+                            <constraint firstItem="O1P-lZ-xSE" firstAttribute="top" secondItem="Q4z-3t-cIg" secondAttribute="bottom" constant="6" id="NeJ-B0-XFh"/>
+                            <constraint firstItem="o7g-XZ-Nzz" firstAttribute="centerX" secondItem="ow1-Bl-mtg" secondAttribute="centerX" id="dgZ-74-fGM"/>
+                            <constraint firstItem="Q4z-3t-cIg" firstAttribute="centerX" secondItem="ow1-Bl-mtg" secondAttribute="centerX" id="rsu-E4-AZK"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G0U-7s-mVh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="325" y="-696"/>
+            <point key="canvasLocation" x="324" y="-696.7016491754124"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="B9P-qI-V42">
@@ -749,4 +781,8 @@
             <point key="canvasLocation" x="1999.2" y="2628.0359820089957"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="logo" width="48" height="30"/>
+        <image name="music" width="370" height="292"/>
+    </resources>
 </document>
