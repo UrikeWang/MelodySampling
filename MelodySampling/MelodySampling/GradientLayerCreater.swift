@@ -25,3 +25,17 @@ func createGradientOnLabel(target uILabel: UILabel) {
 
     uILabel.layer.addSublayer(gradientLayer)
 }
+
+func createSignUpPageGradient(target uIView: UIView) {
+
+    gradientLayer = CAGradientLayer()
+
+    gradientLayer.frame = uIView.bounds
+
+    gradientLayer.colors = [UIColor.mldLightRoyalBlue.cgColor, UIColor.mldLightRoyalBlue.cgColor, UIColor.mldPurplePink.cgColor]
+
+    gradientLayer.opacity = 0.5
+
+    uIView.layer.insertSublayer(gradientLayer, at: 0)
+
+}
