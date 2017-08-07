@@ -717,6 +717,7 @@
                                 <state key="normal" title="Invisible Login Button"/>
                                 <connections>
                                     <action selector="loginButtonTapped:" destination="bgG-UJ-6ec" eventType="touchUpInside" id="Hev-2m-VjC"/>
+                                    <segue destination="Tjb-TR-M1w" kind="show" id="PLK-Sh-o7v"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eNZ-KW-APm" userLabel="Invisible SignUp Button">
@@ -724,6 +725,7 @@
                                 <state key="normal" title="Invisible SignUp Button"/>
                                 <connections>
                                     <action selector="signUpButtonTapped:" destination="bgG-UJ-6ec" eventType="touchUpInside" id="DKy-Fh-b19"/>
+                                    <segue destination="Y5G-1b-riF" kind="show" id="nTj-QA-rAF"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G2v-2P-JoN">
@@ -731,6 +733,7 @@
                                 <state key="normal" title="Invisible Anonymous Login Button"/>
                                 <connections>
                                     <action selector="anonymousLoginButtonTapped:" destination="bgG-UJ-6ec" eventType="touchUpInside" id="BKD-bO-AWR"/>
+                                    <segue destination="QDn-rL-xbF" kind="show" id="UAs-Xn-6Om"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -896,6 +899,15 @@
                                         </attributedString>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KBV-Wk-wQJ">
+                                        <rect key="frame" x="47" y="469" width="280" height="54"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Invisible Sign Up Button"/>
+                                        <connections>
+                                            <action selector="signUpButtonTapped:" destination="Y5G-1b-riF" eventType="touchUpInside" id="pi2-8U-wNj"/>
+                                            <segue destination="QDn-rL-xbF" kind="show" id="9ol-Pc-Icb"/>
+                                        </connections>
+                                    </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign up" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EgF-uP-uhz" userLabel="Sign Up Label">
                                         <rect key="frame" x="47" y="473" width="280" height="50"/>
                                         <color key="backgroundColor" red="0.61960784313725492" green="0.93725490196078431" blue="0.88235294117647056" alpha="1" colorSpace="calibratedRGB"/>
@@ -946,12 +958,13 @@
                     <nil key="simulatedStatusBarMetrics"/>
                     <connections>
                         <outlet property="opacityView" destination="U1h-ID-cdY" id="Vig-Tv-KNJ"/>
+                        <outlet property="signUpButtonOutlet" destination="KBV-Wk-wQJ" id="pmn-WE-vD6"/>
                         <outlet property="signUpLabel" destination="EgF-uP-uhz" id="FUS-Q2-1Pn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Sr-Wb-5D4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="953" y="-1318"/>
+            <point key="canvasLocation" x="885.60000000000002" y="-510.49475262368821"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="ycO-Oa-d5U">
@@ -974,9 +987,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NOC-hh-Hek">
-                                <rect key="frame" x="126" y="578" width="46" height="30"/>
+                                <rect key="frame" x="82" y="581" width="167" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Back to Landing"/>
+                                <connections>
+                                    <segue destination="bgG-UJ-6ec" kind="show" id="6mH-HW-1tI"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1111,6 +1128,15 @@
                                         </attributedString>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zn7-Zg-UeU">
+                                        <rect key="frame" x="47" y="425" width="280" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Invisible Login Button"/>
+                                        <connections>
+                                            <action selector="loginButtonTapped:" destination="Tjb-TR-M1w" eventType="touchUpInside" id="pxK-Ls-hyJ"/>
+                                            <segue destination="QDn-rL-xbF" kind="show" id="mF5-iX-WTf"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="0.69945954623287676" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -1152,13 +1178,14 @@
                     <connections>
                         <outlet property="forgetPasswordLabel" destination="9tS-ZU-rY7" id="1ch-Aa-hVU"/>
                         <outlet property="gotoSignUpLabel" destination="KN3-9H-4bf" id="oMZ-Wh-Wow"/>
+                        <outlet property="loginButtonOutlet" destination="Zn7-Zg-UeU" id="KxR-YM-vxI"/>
                         <outlet property="loginLabel" destination="cq8-dZ-1az" id="KwX-co-Tof"/>
                         <outlet property="opacityView" destination="KXI-mi-P6b" id="I2d-HS-2zs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TPi-fz-Gh8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="953" y="-602"/>
+            <point key="canvasLocation" x="885.60000000000002" y="-1292.2038980509747"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="B9P-qI-V42">
@@ -1251,4 +1278,7 @@
         <image name="logo" width="48" height="30"/>
         <image name="music" width="370" height="292"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="mF5-iX-WTf"/>
+    </inferredMetricsTieBreakers>
 </document>

@@ -17,6 +17,12 @@ class LogInViewController: UIViewController {
     @IBOutlet weak var loginLabel: UILabel!
 
     @IBOutlet weak var gotoSignUpLabel: UILabel!
+    
+    @IBOutlet weak var loginButtonOutlet: UIButton!
+    
+    @IBAction func loginButtonTapped(_ sender: UIButton) {
+        print("Login button tapped")
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +34,8 @@ class LogInViewController: UIViewController {
         setCornerRadiustTo(loginLabel)
 
         gotoSignUpLabel.backgroundColor = UIColor.clear
+        
+        loginButtonOutlet.setTitleColor(UIColor.clear, for: .normal)
     }
 
     override func didReceiveMemoryWarning() {

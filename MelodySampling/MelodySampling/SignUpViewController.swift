@@ -14,12 +14,21 @@ class SignUpViewController: UIViewController {
 
     @IBOutlet weak var signUpLabel: UILabel!
 
+    @IBOutlet weak var signUpButtonOutlet: UIButton!
+    
+    @IBAction func signUpButtonTapped(_ sender: UIButton) {
+        print("Sign up button tapped")
+    }
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         createSignUpPageGradient(target: opacityView)
 
         setCornerRadiustTo(signUpLabel)
+        
+        signUpButtonOutlet.setTitleColor(UIColor.clear, for: .normal)
     }
 
     override func didReceiveMemoryWarning() {
