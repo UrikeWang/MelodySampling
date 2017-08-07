@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 func setCornerRadiustTo(_ uILabel: UILabel) {
-    
+
     uILabel.layer.cornerRadius = 25
     uILabel.layer.masksToBounds = true
 }

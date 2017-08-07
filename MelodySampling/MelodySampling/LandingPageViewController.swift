@@ -26,7 +26,7 @@ class LandingPageViewController: UIViewController {
         setCornerRadiustTo(signupLabel)
 
         setCornerRadiustTo(anonymousLoginLabel)
-        
+
         createGradientOnLabel(target: anonymousLoginLabel)
     }
 
