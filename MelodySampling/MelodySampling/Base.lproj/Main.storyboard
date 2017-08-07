@@ -12,10 +12,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Sign Up View Controller-->
+        <!--Sign Up View Controller Old-->
         <scene sceneID="HEM-31-NNv">
             <objects>
-                <viewController id="B8m-dw-xLn" customClass="SignUpViewController" customModule="MelodySampling" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="B8m-dw-xLn" customClass="SignUpViewControllerOld" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="pob-fc-iMD"/>
                         <viewControllerLayoutGuide type="bottom" id="j2f-4k-tXQ"/>
@@ -747,10 +747,10 @@
             </objects>
             <point key="canvasLocation" x="324" y="-696.7016491754124"/>
         </scene>
-        <!--View Controller-->
+        <!--Sign Up View Controller-->
         <scene sceneID="aAP-Md-uWi">
             <objects>
-                <viewController id="Y5G-1b-riF" sceneMemberID="viewController">
+                <viewController id="Y5G-1b-riF" customClass="SignUpViewController" customModule="MelodySampling" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="nKW-T5-MpE"/>
                         <viewControllerLayoutGuide type="bottom" id="1O6-L0-CqL"/>

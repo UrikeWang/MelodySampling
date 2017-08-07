@@ -13,7 +13,7 @@
 		73744D0E1F2ED94300C1FAEA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 73744D0D1F2ED94300C1FAEA /* Assets.xcassets */; };
 		73744D111F2ED94300C1FAEA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 73744D0F1F2ED94300C1FAEA /* LaunchScreen.storyboard */; };
 		73744D191F2EDEA400C1FAEA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 73744D181F2EDEA400C1FAEA /* GoogleService-Info.plist */; };
-		73744D1D1F2EFADC00C1FAEA /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73744D1C1F2EFADC00C1FAEA /* SignUpViewController.swift */; };
+		73744D1D1F2EFADC00C1FAEA /* SignUpViewControllerOld.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73744D1C1F2EFADC00C1FAEA /* SignUpViewControllerOld.swift */; };
 		73744D251F2F1A7600C1FAEA /* LoginSuccedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73744D241F2F1A7600C1FAEA /* LoginSuccedViewController.swift */; };
 		73744D271F2F203D00C1FAEA /* AnonymousLoginSuccedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73744D261F2F203D00C1FAEA /* AnonymousLoginSuccedViewController.swift */; };
 		73744D2C1F2F4CF800C1FAEA /* StreamingPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73744D2B1F2F4CF800C1FAEA /* StreamingPage.swift */; };
@@ -25,6 +25,7 @@
 		73AF80261F384E3B00CA31FB /* LandingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73AF80251F384E3B00CA31FB /* LandingPageViewController.swift */; };
 		73AF80281F385A7000CA31FB /* OutletFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73AF80271F385A7000CA31FB /* OutletFunction.swift */; };
 		73AF802A1F385EAE00CA31FB /* GradientLayerCreater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73AF80291F385EAE00CA31FB /* GradientLayerCreater.swift */; };
+		73AF802C1F386D4400CA31FB /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73AF802B1F386D4400CA31FB /* SignUpViewController.swift */; };
 		73D6A56E1F33060F00928402 /* QuestionBankViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D6A56D1F33060F00928402 /* QuestionBankViewController.swift */; };
 		73EBA3031F31F63E0082C752 /* PlaySongsAftDownloadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73EBA3021F31F63E0082C752 /* PlaySongsAftDownloadViewController.swift */; };
 		73EBA3061F31FF210082C752 /* RetrieveDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73EBA3051F31FF210082C752 /* RetrieveDataViewController.swift */; };
@@ -40,7 +41,7 @@
 		73744D101F2ED94300C1FAEA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		73744D121F2ED94300C1FAEA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		73744D181F2EDEA400C1FAEA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		73744D1C1F2EFADC00C1FAEA /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		73744D1C1F2EFADC00C1FAEA /* SignUpViewControllerOld.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewControllerOld.swift; sourceTree = "<group>"; };
 		73744D241F2F1A7600C1FAEA /* LoginSuccedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginSuccedViewController.swift; sourceTree = "<group>"; };
 		73744D261F2F203D00C1FAEA /* AnonymousLoginSuccedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnonymousLoginSuccedViewController.swift; sourceTree = "<group>"; };
 		73744D2B1F2F4CF800C1FAEA /* StreamingPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreamingPage.swift; sourceTree = "<group>"; };
@@ -52,6 +53,7 @@
 		73AF80251F384E3B00CA31FB /* LandingPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandingPageViewController.swift; sourceTree = "<group>"; };
 		73AF80271F385A7000CA31FB /* OutletFunction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OutletFunction.swift; sourceTree = "<group>"; };
 		73AF80291F385EAE00CA31FB /* GradientLayerCreater.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientLayerCreater.swift; sourceTree = "<group>"; };
+		73AF802B1F386D4400CA31FB /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		73D6A56D1F33060F00928402 /* QuestionBankViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionBankViewController.swift; sourceTree = "<group>"; };
 		73EBA3021F31F63E0082C752 /* PlaySongsAftDownloadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaySongsAftDownloadViewController.swift; sourceTree = "<group>"; };
 		73EBA3051F31FF210082C752 /* RetrieveDataViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RetrieveDataViewController.swift; sourceTree = "<group>"; };
@@ -101,7 +103,7 @@
 		73744D021F2ED94200C1FAEA /* MelodySampling */ = {
 			isa = PBXGroup;
 			children = (
-				73AF80241F384E1E00CA31FB /* LandingPage */,
+				73AF80241F384E1E00CA31FB /* LandingToSignIn */,
 				73AF80211F384B3400CA31FB /* StyleguideRelative */,
 				73EBA3041F31FEE30082C752 /* RetrieveData */,
 				73820C461F30569E00121A4D /* DownloadFromITune */,
@@ -123,7 +125,7 @@
 		73744D1B1F2EFA9E00C1FAEA /* SignUpAndSignIn */ = {
 			isa = PBXGroup;
 			children = (
-				73744D1C1F2EFADC00C1FAEA /* SignUpViewController.swift */,
+				73744D1C1F2EFADC00C1FAEA /* SignUpViewControllerOld.swift */,
 				73744D241F2F1A7600C1FAEA /* LoginSuccedViewController.swift */,
 				73744D261F2F203D00C1FAEA /* AnonymousLoginSuccedViewController.swift */,
 			);
@@ -167,12 +169,13 @@
 			name = StyleguideRelative;
 			sourceTree = "<group>";
 		};
-		73AF80241F384E1E00CA31FB /* LandingPage */ = {
+		73AF80241F384E1E00CA31FB /* LandingToSignIn */ = {
 			isa = PBXGroup;
 			children = (
 				73AF80251F384E3B00CA31FB /* LandingPageViewController.swift */,
+				73AF802B1F386D4400CA31FB /* SignUpViewController.swift */,
 			);
-			name = LandingPage;
+			name = LandingToSignIn;
 			sourceTree = "<group>";
 		};
 		73D6A56C1F3305E400928402 /* QuestionBankDownload */ = {
@@ -343,9 +346,10 @@
 				73EBA3061F31FF210082C752 /* RetrieveDataViewController.swift in Sources */,
 				73744D271F2F203D00C1FAEA /* AnonymousLoginSuccedViewController.swift in Sources */,
 				73AF80281F385A7000CA31FB /* OutletFunction.swift in Sources */,
-				73744D1D1F2EFADC00C1FAEA /* SignUpViewController.swift in Sources */,
+				73744D1D1F2EFADC00C1FAEA /* SignUpViewControllerOld.swift in Sources */,
 				73D6A56E1F33060F00928402 /* QuestionBankViewController.swift in Sources */,
 				73744D251F2F1A7600C1FAEA /* LoginSuccedViewController.swift in Sources */,
+				73AF802C1F386D4400CA31FB /* SignUpViewController.swift in Sources */,
 				73AF802A1F385EAE00CA31FB /* GradientLayerCreater.swift in Sources */,
 				73820C481F3056C900121A4D /* DownloadFromITuneViewController.swift in Sources */,
 				73EBA3031F31F63E0082C752 /* PlaySongsAftDownloadViewController.swift in Sources */,
