@@ -728,6 +728,11 @@
                             <constraint firstItem="C8j-OD-UCA" firstAttribute="top" secondItem="nRs-tJ-aaB" secondAttribute="bottom" constant="10" id="wmr-iR-E0y"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="anonymousLoginLabel" destination="dnJ-zN-H9u" id="ygb-c9-ApS"/>
+                        <outlet property="loginLabel" destination="nRs-tJ-aaB" id="M5B-xK-6yV"/>
+                        <outlet property="signupLabel" destination="C8j-OD-UCA" id="vgU-rC-PCT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G0U-7s-mVh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
