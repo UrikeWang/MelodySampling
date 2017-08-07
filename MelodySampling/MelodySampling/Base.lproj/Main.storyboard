@@ -916,10 +916,10 @@
             </objects>
             <point key="canvasLocation" x="999.20000000000005" y="-696.7016491754124"/>
         </scene>
-        <!--View Controller-->
+        <!--Log In View Controller-->
         <scene sceneID="Ya5-e6-AmV">
             <objects>
-                <viewController id="Tjb-TR-M1w" sceneMemberID="viewController">
+                <viewController id="Tjb-TR-M1w" customClass="LogInViewController" customModule="MelodySampling" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="p1u-Qx-lcN"/>
                         <viewControllerLayoutGuide type="bottom" id="kyw-IN-eGu"/>
