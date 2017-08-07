@@ -13,12 +13,12 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var opacityView: UIView!
 
     @IBOutlet weak var signUpLabel: UILabel!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         createSignUpPageGradient(target: opacityView)
-        
+
         setCornerRadiustTo(signUpLabel)
     }
 
