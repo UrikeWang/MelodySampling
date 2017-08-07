@@ -32,7 +32,7 @@
                                 <rect key="frame" x="70" y="202" width="234" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="q1I-hA-Vkb" userLabel="Password Text Field">
@@ -153,9 +153,6 @@
                                 <rect key="frame" x="314" y="476" width="44" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Segue"/>
-                                <connections>
-                                    <segue destination="s2d-ef-ar2" kind="show" id="HLH-U9-1QQ"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -639,9 +636,6 @@
                                 <rect key="frame" x="164" y="529" width="46" height="82"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Segue"/>
-                                <connections>
-                                    <segue destination="s2d-ef-ar2" kind="show" id="QqP-7r-hVZ"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -685,7 +679,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Zq-QY-pQC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2974" y="443"/>
+            <point key="canvasLocation" x="2180" y="1922"/>
         </scene>
         <!--Retrieve Data View Controller-->
         <scene sceneID="Tcx-gh-9P6">
@@ -737,7 +731,4 @@
             <point key="canvasLocation" x="1999.2" y="2628.0359820089957"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="QqP-7r-hVZ"/>
-    </inferredMetricsTieBreakers>
 </document>
