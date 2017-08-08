@@ -9,9 +9,12 @@
 import UIKit
 import Alamofire
 import AVFoundation
+import Firebase
 
 //開始改 fileURL
 class DestinationDownload: UIViewController {
+
+    var ref: DatabaseReference!
 
     var player: AVAudioPlayer?
 
@@ -21,14 +24,36 @@ class DestinationDownload: UIViewController {
 
     @IBAction func startButtonTapped(_ sender: UIButton) {
 
-//        let destinationString = NSHomeDirectory() + "/Documents/" + "song1.m4a"
-//        let destination = URL(fileURLWithPath: destinationString)
+        print("開始抓題庫了!")
 
-        let songsList = [testSong0, testSong1, testSong2, testSong3, testSong4, testSong5]
+        self.ref = Database.database().reference()
 
+        ref.child("questionBanks").child("mandarin").child("genreCod1").child("question1").queryOrderedByKey().queryLimited(toFirst: 5).observeSingleEvent(of: .value, with: {
+
+            (snapshot) in
+
+            guard let postDict = snapshot.value as? [String: AnyObject] else { return }
+
+            print("===== 我在看這行 =====")
+
+            //這裡面應該還有一個 option 沒拆掉
+            
+            let indexArray = Array(postDict.keys)
+
+        print(indexArray[0])
+            print("===== 這一行拆字典 ====")
+            print(postDict[indexArray[0]]!["previewUrl"]!)
+            
+        
+        
+
+            guard let songsList = [postDict[indexArray[0]]!["previewUrl"]!, postDict[indexArray[1]]!["previewUrl"]!, postDict[indexArray[2]]!["previewUrl"]!, postDict[indexArray[3]]!["previewUrl"]!, postDict[indexArray[4]]!["previewUrl"]!] as? [String] else { return }
+        
         for eachSong in songsList {
 
-            let index = String(describing: songsList.index(of: eachSong)!)
+            let index = String(describing: songsList.index(of: eachSong))
+            
+//            let index = String(describing: songsList.index(of: eachSong)!)
 
             let destination: DownloadRequest.DownloadFileDestination = { _, _ in
                 let documentsURL = NSHomeDirectory() + "/Documents/"
@@ -39,13 +64,15 @@ class DestinationDownload: UIViewController {
             }
 
             DispatchQueue.main.async {
-                Alamofire.download(eachSong, to: destination).response { response in
+                Alamofire.download(eachSong, to: destination).response { _ in
 
-                    print(response.response)
+//                    print(response.response)
                 }
 
             }
         }
+        })
+        
     }
 
     @IBAction func checkButtonTapped(_ sender: UIButton) {
