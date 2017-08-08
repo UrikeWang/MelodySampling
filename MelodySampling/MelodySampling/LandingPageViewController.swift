@@ -53,6 +53,7 @@ class LandingPageViewController: UIViewController {
         signUpButtonOutlet.setTitleColor(UIColor.clear, for: .normal)
 
         anonymousLoginButtonOutlet.setTitleColor(UIColor.clear, for: .normal)
+
     }
 
     override func didReceiveMemoryWarning() {

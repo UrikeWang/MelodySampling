@@ -661,7 +661,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="o7g-XZ-Nzz" userLabel="Logo Image View">
-                                <rect key="frame" x="161" y="57" width="52" height="36"/>
+                                <rect key="frame" x="161" y="73" width="52" height="36"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="52" id="16k-Kr-Vrt"/>
                                     <constraint firstAttribute="height" constant="36" id="PZf-Ph-7cO"/>
@@ -674,8 +674,8 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MelodySampling" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q4z-3t-cIg" userLabel="Title Label">
-                                <rect key="frame" x="76.5" y="111" width="222.5" height="36"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <rect key="frame" x="124" y="127" width="128" height="20"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -717,6 +717,7 @@
                                 <state key="normal" title="Invisible Login Button"/>
                                 <connections>
                                     <action selector="loginButtonTapped:" destination="bgG-UJ-6ec" eventType="touchUpInside" id="Hev-2m-VjC"/>
+                                    <segue destination="Tjb-TR-M1w" kind="show" id="axF-g3-tlA"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eNZ-KW-APm" userLabel="Invisible SignUp Button">
@@ -724,6 +725,7 @@
                                 <state key="normal" title="Invisible SignUp Button"/>
                                 <connections>
                                     <action selector="signUpButtonTapped:" destination="bgG-UJ-6ec" eventType="touchUpInside" id="DKy-Fh-b19"/>
+                                    <segue destination="Y5G-1b-riF" kind="show" id="ATo-pa-vre"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G2v-2P-JoN">
@@ -1184,7 +1186,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="rUw-xL-NY2" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Eho-1Q-6Eh">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Eho-1Q-6Eh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1202,7 +1204,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="s2d-ef-ar2" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="6dS-gn-RhU">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="6dS-gn-RhU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
