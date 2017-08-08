@@ -43,21 +43,24 @@ class DestinationDownload: UIViewController {
         print(indexArray[0])
             print("===== 這一行拆字典 ====")
             print(postDict[indexArray[0]]!["previewUrl"]!)
-            
-        
-        
 
             guard let songsList = [postDict[indexArray[0]]!["previewUrl"]!, postDict[indexArray[1]]!["previewUrl"]!, postDict[indexArray[2]]!["previewUrl"]!, postDict[indexArray[3]]!["previewUrl"]!, postDict[indexArray[4]]!["previewUrl"]!] as? [String] else { return }
         
-        for eachSong in songsList {
+        for index in 0..<songsList.count {
 
-            let index = String(describing: songsList.index(of: eachSong))
+            let eachSong = songsList[index]
+            
+            //let index = songsList.index(of: eachSong)
+            
+            print(index)
+            
+            print(type(of: index))
             
 //            let index = String(describing: songsList.index(of: eachSong)!)
 
             let destination: DownloadRequest.DownloadFileDestination = { _, _ in
                 let documentsURL = NSHomeDirectory() + "/Documents/"
-                let fileURL = URL(fileURLWithPath: documentsURL.appending("song" + index + ".m4a"))
+                let fileURL = URL(fileURLWithPath: documentsURL.appending("song\(index).m4a"))
                 print("song\(index).m4a is downloading")
 
                 return (fileURL, [.removePreviousFile, .createIntermediateDirectories])
