@@ -9,15 +9,15 @@
 import Foundation
 
 func scoreAfterOneSong(time usedTime: Double) -> Int {
-    
+
     let score: Double?
-    
+
     if usedTime > 30.0 {
         score = 600.0
     } else {
         score = 3600.0 - 100.0 * usedTime
     }
-    
+
     return Int(score!)
-    
+
 }
