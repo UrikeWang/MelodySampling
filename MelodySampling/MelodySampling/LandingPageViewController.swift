@@ -53,15 +53,7 @@ class LandingPageViewController: UIViewController {
         signUpButtonOutlet.setTitleColor(UIColor.clear, for: .normal)
 
         anonymousLoginButtonOutlet.setTitleColor(UIColor.clear, for: .normal)
-        
-        for family: String in UIFont.familyNames
-        {
-            print("\(family)")
-            for names: String in UIFont.fontNames(forFamilyName: family)
-            {
-                print("== \(names)")
-            }
-        }
+
     }
 
     override func didReceiveMemoryWarning() {
