@@ -1243,18 +1243,37 @@
                                     <action selector="rightBUttonTapped:" destination="N3o-DV-7K2" eventType="touchUpInside" id="8xF-Uu-HNJ"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eR7-b3-R7R">
+                                <rect key="frame" x="57" y="220" width="308" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hh4-8y-SrV">
+                                <rect key="frame" x="110" y="280" width="173" height="69"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.61960784310000006" green="0.93725490199999995" blue="0.88235294119999996" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="currentScoreLabel" destination="hh4-8y-SrV" id="bTg-Pu-5cO"/>
                         <outlet property="label1" destination="sWA-sE-9iP" id="LYM-In-Wnh"/>
                         <outlet property="label2" destination="GcH-uK-RTr" id="Qej-uQ-Pxd"/>
                         <outlet property="label3" destination="MZp-q8-s9d" id="d34-Xm-sNQ"/>
+                        <outlet property="label4" destination="vLO-un-XVN" id="pbJ-Nf-q1M"/>
+                        <outlet property="label5" destination="eR7-b3-R7R" id="z8f-f4-ivE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="alV-th-RkY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2894" y="2613"/>
+            <point key="canvasLocation" x="2893.5999999999999" y="2612.7436281859073"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="B9P-qI-V42">

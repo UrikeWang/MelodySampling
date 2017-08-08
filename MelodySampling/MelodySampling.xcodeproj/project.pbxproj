@@ -26,6 +26,7 @@
 		732AE4831F39817A009746CA /* Montserrat-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 732AE4711F39817A009746CA /* Montserrat-Thin.ttf */; };
 		732AE4841F39817A009746CA /* Montserrat-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 732AE4721F39817A009746CA /* Montserrat-ThinItalic.ttf */; };
 		732AE4871F398831009746CA /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732AE4861F398831009746CA /* TimerViewController.swift */; };
+		732AE4891F399258009746CA /* ScoresFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732AE4881F399258009746CA /* ScoresFunc.swift */; };
 		73744D041F2ED94200C1FAEA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73744D031F2ED94200C1FAEA /* AppDelegate.swift */; };
 		73744D091F2ED94300C1FAEA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 73744D071F2ED94300C1FAEA /* Main.storyboard */; };
 		73744D0C1F2ED94300C1FAEA /* MelodySampling.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 73744D0A1F2ED94300C1FAEA /* MelodySampling.xcdatamodeld */; };
@@ -72,6 +73,7 @@
 		732AE4711F39817A009746CA /* Montserrat-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Thin.ttf"; sourceTree = "<group>"; };
 		732AE4721F39817A009746CA /* Montserrat-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ThinItalic.ttf"; sourceTree = "<group>"; };
 		732AE4861F398831009746CA /* TimerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
+		732AE4881F399258009746CA /* ScoresFunc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoresFunc.swift; sourceTree = "<group>"; };
 		73744D001F2ED94200C1FAEA /* MelodySampling.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MelodySampling.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		73744D031F2ED94200C1FAEA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		73744D081F2ED94300C1FAEA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 			isa = PBXGroup;
 			children = (
 				732AE4861F398831009746CA /* TimerViewController.swift */,
+				732AE4881F399258009746CA /* ScoresFunc.swift */,
 			);
 			name = Timer;
 			sourceTree = "<group>";
@@ -440,6 +443,7 @@
 				732AE4871F398831009746CA /* TimerViewController.swift in Sources */,
 				73EBA3061F31FF210082C752 /* RetrieveDataViewController.swift in Sources */,
 				73744D271F2F203D00C1FAEA /* AnonymousLoginSuccedViewController.swift in Sources */,
+				732AE4891F399258009746CA /* ScoresFunc.swift in Sources */,
 				73AF80281F385A7000CA31FB /* OutletFunction.swift in Sources */,
 				73744D1D1F2EFADC00C1FAEA /* SignUpViewControllerOld.swift in Sources */,
 				73D6A56E1F33060F00928402 /* QuestionBankViewController.swift in Sources */,
