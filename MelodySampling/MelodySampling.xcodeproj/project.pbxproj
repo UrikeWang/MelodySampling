@@ -27,6 +27,7 @@
 		732AE4841F39817A009746CA /* Montserrat-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 732AE4721F39817A009746CA /* Montserrat-ThinItalic.ttf */; };
 		732AE4871F398831009746CA /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732AE4861F398831009746CA /* TimerViewController.swift */; };
 		732AE4891F399258009746CA /* ScoresFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732AE4881F399258009746CA /* ScoresFunc.swift */; };
+		732AE48C1F39E0F0009746CA /* PlayPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732AE48B1F39E0F0009746CA /* PlayPageViewController.swift */; };
 		73744D041F2ED94200C1FAEA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73744D031F2ED94200C1FAEA /* AppDelegate.swift */; };
 		73744D091F2ED94300C1FAEA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 73744D071F2ED94300C1FAEA /* Main.storyboard */; };
 		73744D0C1F2ED94300C1FAEA /* MelodySampling.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 73744D0A1F2ED94300C1FAEA /* MelodySampling.xcdatamodeld */; };
@@ -74,6 +75,7 @@
 		732AE4721F39817A009746CA /* Montserrat-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ThinItalic.ttf"; sourceTree = "<group>"; };
 		732AE4861F398831009746CA /* TimerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
 		732AE4881F399258009746CA /* ScoresFunc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoresFunc.swift; sourceTree = "<group>"; };
+		732AE48B1F39E0F0009746CA /* PlayPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayPageViewController.swift; sourceTree = "<group>"; };
 		73744D001F2ED94200C1FAEA /* MelodySampling.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MelodySampling.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		73744D031F2ED94200C1FAEA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		73744D081F2ED94300C1FAEA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -158,6 +160,14 @@
 			name = Timer;
 			sourceTree = "<group>";
 		};
+		732AE48A1F39E09A009746CA /* PlayPage */ = {
+			isa = PBXGroup;
+			children = (
+				732AE48B1F39E0F0009746CA /* PlayPageViewController.swift */,
+			);
+			name = PlayPage;
+			sourceTree = "<group>";
+		};
 		73744CF71F2ED94200C1FAEA = {
 			isa = PBXGroup;
 			children = (
@@ -179,6 +189,7 @@
 		73744D021F2ED94200C1FAEA /* MelodySampling */ = {
 			isa = PBXGroup;
 			children = (
+				732AE48A1F39E09A009746CA /* PlayPage */,
 				732AE4851F398816009746CA /* Timer */,
 				732AE4601F398137009746CA /* FontResource */,
 				73AF80241F384E1E00CA31FB /* LandingToSignIn */,
@@ -461,6 +472,7 @@
 				73AF80231F384B7900CA31FB /* Styleguide.swift in Sources */,
 				73AF802E1F38764300CA31FB /* LogInViewController.swift in Sources */,
 				73744D311F2F7CA900C1FAEA /* PreviewSongsURL.swift in Sources */,
+				732AE48C1F39E0F0009746CA /* PlayPageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

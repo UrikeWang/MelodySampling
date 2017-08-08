@@ -37,7 +37,7 @@ class DestinationDownload: UIViewController {
             print("===== 我在看這行 =====")
 
             //這裡面應該還有一個 option 沒拆掉
-            
+
             let indexArray = Array(postDict.keys)
 
         print(indexArray[0])
@@ -45,17 +45,17 @@ class DestinationDownload: UIViewController {
             print(postDict[indexArray[0]]!["previewUrl"]!)
 
             guard let songsList = [postDict[indexArray[0]]!["previewUrl"]!, postDict[indexArray[1]]!["previewUrl"]!, postDict[indexArray[2]]!["previewUrl"]!, postDict[indexArray[3]]!["previewUrl"]!, postDict[indexArray[4]]!["previewUrl"]!] as? [String] else { return }
-        
+
         for index in 0..<songsList.count {
 
             let eachSong = songsList[index]
-            
+
             //let index = songsList.index(of: eachSong)
-            
+
             print(index)
-            
+
             print(type(of: index))
-            
+
 //            let index = String(describing: songsList.index(of: eachSong)!)
 
             let destination: DownloadRequest.DownloadFileDestination = { _, _ in
@@ -75,7 +75,7 @@ class DestinationDownload: UIViewController {
             }
         }
         })
-        
+
     }
 
     @IBAction func checkButtonTapped(_ sender: UIButton) {
@@ -175,14 +175,4 @@ class DestinationDownload: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
