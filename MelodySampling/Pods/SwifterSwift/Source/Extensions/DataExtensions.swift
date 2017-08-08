@@ -12,18 +12,17 @@ import Cocoa
 import UIKit
 #endif
 
-
 // MARK: - Properties
 public extension Data {
-	
+
 	/// SwifterSwift: NSAttributedString from Data (if applicable).
 	public var attributedString: NSAttributedString? {
 		// http://stackoverflow.com/questions/39248092/nsattributedstring-extension-in-swift-3
 		return try? NSAttributedString(data: self, options: [
-			NSDocumentTypeDocumentAttribute : NSHTMLTextDocumentType,
+			NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType,
 			NSCharacterEncodingDocumentAttribute: String.Encoding.utf8.rawValue], documentAttributes: nil)
 	}
-	
+
 	/// SwifterSwift: String by encoding Data using the given encoding (if applicable).
 	///
 	/// - Parameter encoding: encoding.
@@ -31,6 +30,5 @@ public extension Data {
 	public func string(encoding: String.Encoding) -> String? {
 		return String(data: self, encoding: encoding)
 	}
-	
-}
 
+}

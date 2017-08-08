@@ -9,9 +9,8 @@
 #if os(macOS)
 import Cocoa
 
-
 public extension NSColor {
-	
+
 	/// SwifterSwift: Create NSColor from hexadecimal value with optional transparency.
 	///
 	/// - Parameters:
@@ -29,7 +28,7 @@ public extension NSColor {
 		}
 		self.init(red:(hex >> 16) & 0xff, green:(hex >> 8) & 0xff, blue:hex & 0xff, transparency: trans)
 	}
-	
+
 	/// SwifterSwift: Create NSColor from hexadecimal string with optional transparency (if applicable).
 	///
 	/// - Parameters:
@@ -44,20 +43,20 @@ public extension NSColor {
 		} else {
 			string = hexString
 		}
-		
+
 		if string.characters.count == 3 { // convert hex to 6 digit format if in short format
 			var str = ""
 			string.characters.forEach({ str.append($0 * 2) })
 			string = str
 		}
-		
+
 		guard let hexValue = Int(string, radix: 16) else {
 			return nil
 		}
-		
+
 		self.init(hex: Int(hexValue), transparency: transparency)
 	}
-	
+
 	/// SwifterSwift: Create NSColor from RGB values with optional transparency.
 	///
 	/// - Parameters:
@@ -80,107 +79,104 @@ public extension NSColor {
 		}
 		self.init(red: CGFloat(red) / 255.0, green: CGFloat(green) / 255.0, blue: CGFloat(blue) / 255.0, alpha: trans)
 	}
-	
+
 }
 
-
-
-//MARK: - Social Colors
+// MARK: - Social Colors
 public extension NSColor {
-	
+
 	/// SwifterSwift: Brand identity color of popular social media platform.
 	public struct social {
 		// https://www.lockedowndesign.com/social-media-colors/
-		
+
 		/// red: 59, green: 89, blue: 152
 		public static let facebook = NSColor(red: 59, green: 89, blue: 152)
-		
+
 		/// red: 0, green: 182, blue: 241
 		public static let twitter = NSColor(red: 0, green: 182, blue: 241)
-		
+
 		/// red: 223, green: 74, blue: 50
 		public static let googlePlus = NSColor(red: 223, green: 74, blue: 50)
-		
+
 		/// red: 0, green: 123, blue: 182
 		public static let linkedIn = NSColor(red: 0, green: 123, blue: 182)
-		
+
 		/// red: 69, green: 187, blue: 255
 		public static let vimeo = NSColor(red: 69, green: 187, blue: 255)
-		
+
 		/// red: 179, green: 18, blue: 23
 		public static let youtube = NSColor(red: 179, green: 18, blue: 23)
-		
+
 		/// red: 195, green: 42, blue: 163
 		public static let instagram = NSColor(red: 195, green: 42, blue: 163)
-		
+
 		/// red: 203, green: 32, blue: 39
 		public static let pinterest = NSColor(red: 203, green: 32, blue: 39)
-		
+
 		/// red: 244, green: 0, blue: 131
 		public static let flickr = NSColor(red: 244, green: 0, blue: 131)
-		
+
 		/// red: 67, green: 2, blue: 151
 		public static let yahoo = NSColor(red: 67, green: 2, blue: 151)
-		
+
 		/// red: 67, green: 2, blue: 151
 		public static let soundCloud = NSColor(red: 67, green: 2, blue: 151)
-		
+
 		/// red: 44, green: 71, blue: 98
 		public static let tumblr = NSColor(red: 44, green: 71, blue: 98)
-		
+
 		/// red: 252, green: 69, blue: 117
 		public static let foursquare = NSColor(red: 252, green: 69, blue: 117)
-		
+
 		/// red: 255, green: 176, blue: 0
 		public static let swarm = NSColor(red: 255, green: 176, blue: 0)
-		
+
 		/// red: 234, green: 76, blue: 137
 		public static let dribbble = NSColor(red: 234, green: 76, blue: 137)
-		
+
 		/// red: 255, green: 87, blue: 0
 		public static let reddit = NSColor(red: 255, green: 87, blue: 0)
-		
+
 		/// red: 74, green: 93, blue: 78
 		public static let devianArt = NSColor(red: 74, green: 93, blue: 78)
-		
+
 		/// red: 238, green: 64, blue: 86
 		public static let pocket = NSColor(red: 238, green: 64, blue: 86)
-		
+
 		/// red: 170, green: 34, blue: 182
 		public static let quora = NSColor(red: 170, green: 34, blue: 182)
-		
+
 		/// red: 247, green: 146, blue: 30
 		public static let slideShare = NSColor(red: 247, green: 146, blue: 30)
-		
+
 		/// red: 0, green: 153, blue: 229
 		public static let px500 = NSColor(red: 0, green: 153, blue: 229)
-		
+
 		/// red: 223, green: 109, blue: 70
 		public static let listly = NSColor(red: 223, green: 109, blue: 70)
-		
+
 		/// red: 0, green: 180, blue: 137
 		public static let vine = NSColor(red: 0, green: 180, blue: 137)
-		
+
 		/// red: 0, green: 175, blue: 240
 		public static let skype = NSColor(red: 0, green: 175, blue: 240)
-		
+
 		/// red: 235, green: 73, blue: 36
 		public static let stumbleUpon = NSColor(red: 235, green: 73, blue: 36)
-		
+
 		/// red: 255, green: 252, blue: 0
 		public static let snapchat = NSColor(red: 255, green: 252, blue: 0)
-		
+
 	}
 }
 
-
-//MARK: - Material colors
+// MARK: - Material colors
 public extension NSColor {
-	
+
 	/// SwifterSwift: Google Material design colors palette.
 	public struct material {
 		// https://material.google.com/style/color.html
-		
+
 		public static let red					= red500
 		public static let red50					= NSColor(hex: 0xFFEBEE)
 		public static let red100				= NSColor(hex: 0xFFCDD2)
@@ -196,7 +192,7 @@ public extension NSColor {
 		public static let redA200				= NSColor(hex: 0xFF5252)
 		public static let redA400				= NSColor(hex: 0xFF1744)
 		public static let redA700				= NSColor(hex: 0xD50000)
-		
+
 		public static let pink					= pink500
 		public static let pink50				= NSColor(hex: 0xFCE4EC)
 		public static let pink100				= NSColor(hex: 0xF8BBD0)
@@ -212,7 +208,7 @@ public extension NSColor {
 		public static let pinkA200				= NSColor(hex: 0xFF4081)
 		public static let pinkA400				= NSColor(hex: 0xF50057)
 		public static let pinkA700				= NSColor(hex: 0xC51162)
-		
+
 		public static let purple				= purple500
 		public static let purple50				= NSColor(hex: 0xF3E5F5)
 		public static let purple100				= NSColor(hex: 0xE1BEE7)
@@ -228,7 +224,7 @@ public extension NSColor {
 		public static let purpleA200			= NSColor(hex: 0xE040FB)
 		public static let purpleA400			= NSColor(hex: 0xD500F9)
 		public static let purpleA700			= NSColor(hex: 0xAA00FF)
-		
+
 		public static let deepPurple			= deepPurple500
 		public static let deepPurple50			= NSColor(hex: 0xEDE7F6)
 		public static let deepPurple100			= NSColor(hex: 0xD1C4E9)
@@ -244,7 +240,7 @@ public extension NSColor {
 		public static let deepPurpleA200		= NSColor(hex: 0x7C4DFF)
 		public static let deepPurpleA400		= NSColor(hex: 0x651FFF)
 		public static let deepPurpleA700		= NSColor(hex: 0x6200EA)
-		
+
 		public static let indigo				= indigo500
 		public static let indigo50				= NSColor(hex: 0xE8EAF6)
 		public static let indigo100				= NSColor(hex: 0xC5CAE9)
@@ -260,7 +256,7 @@ public extension NSColor {
 		public static let indigoA200			= NSColor(hex: 0x536DFE)
 		public static let indigoA400			= NSColor(hex: 0x3D5AFE)
 		public static let indigoA700			= NSColor(hex: 0x304FFE)
-		
+
 		public static let blue					= blue500
 		public static let blue50				= NSColor(hex: 0xE3F2FD)
 		public static let blue100				= NSColor(hex: 0xBBDEFB)
@@ -276,7 +272,7 @@ public extension NSColor {
 		public static let blueA200				= NSColor(hex: 0x448AFF)
 		public static let blueA400				= NSColor(hex: 0x2979FF)
 		public static let blueA700				= NSColor(hex: 0x2962FF)
-		
+
 		public static let lightBlue				= lightBlue500
 		public static let lightBlue50			= NSColor(hex: 0xE1F5FE)
 		public static let lightBlue100			= NSColor(hex: 0xB3E5FC)
@@ -292,7 +288,7 @@ public extension NSColor {
 		public static let lightBlueA200			= NSColor(hex: 0x40C4FF)
 		public static let lightBlueA400			= NSColor(hex: 0x00B0FF)
 		public static let lightBlueA700			= NSColor(hex: 0x0091EA)
-		
+
 		public static let cyan					= cyan500
 		public static let cyan50				= NSColor(hex: 0xE0F7FA)
 		public static let cyan100				= NSColor(hex: 0xB2EBF2)
@@ -308,7 +304,7 @@ public extension NSColor {
 		public static let cyanA200				= NSColor(hex: 0x18FFFF)
 		public static let cyanA400				= NSColor(hex: 0x00E5FF)
 		public static let cyanA700				= NSColor(hex: 0x00B8D4)
-		
+
 		public static let teal					= teal500
 		public static let teal50				= NSColor(hex: 0xE0F2F1)
 		public static let teal100				= NSColor(hex: 0xB2DFDB)
@@ -324,7 +320,7 @@ public extension NSColor {
 		public static let tealA200				= NSColor(hex: 0x64FFDA)
 		public static let tealA400				= NSColor(hex: 0x1DE9B6)
 		public static let tealA700				= NSColor(hex: 0x00BFA5)
-		
+
 		public static let green					= green500
 		public static let green50				= NSColor(hex: 0xE8F5E9)
 		public static let green100				= NSColor(hex: 0xC8E6C9)
@@ -340,7 +336,7 @@ public extension NSColor {
 		public static let greenA200				= NSColor(hex: 0x69F0AE)
 		public static let greenA400				= NSColor(hex: 0x00E676)
 		public static let greenA700				= NSColor(hex: 0x00C853)
-		
+
 		public static let lightGreen			= lightGreen500
 		public static let lightGreen50			= NSColor(hex: 0xF1F8E9)
 		public static let lightGreen100			= NSColor(hex: 0xDCEDC8)
@@ -356,7 +352,7 @@ public extension NSColor {
 		public static let lightGreenA200		= NSColor(hex: 0xB2FF59)
 		public static let lightGreenA400		= NSColor(hex: 0x76FF03)
 		public static let lightGreenA700		= NSColor(hex: 0x64DD17)
-		
+
 		public static let lime					= lime500
 		public static let lime50				= NSColor(hex: 0xF9FBE7)
 		public static let lime100				= NSColor(hex: 0xF0F4C3)
@@ -372,7 +368,7 @@ public extension NSColor {
 		public static let limeA200				= NSColor(hex: 0xEEFF41)
 		public static let limeA400				= NSColor(hex: 0xC6FF00)
 		public static let limeA700				= NSColor(hex: 0xAEEA00)
-		
+
 		public static let yellow				= yellow500
 		public static let yellow50				= NSColor(hex: 0xFFFDE7)
 		public static let yellow100				= NSColor(hex: 0xFFF9C4)
@@ -388,7 +384,7 @@ public extension NSColor {
 		public static let yellowA200			= NSColor(hex: 0xFFFF00)
 		public static let yellowA400			= NSColor(hex: 0xFFEA00)
 		public static let yellowA700			= NSColor(hex: 0xFFD600)
-		
+
 		public static let amber					= amber500
 		public static let amber50				= NSColor(hex: 0xFFF8E1)
 		public static let amber100				= NSColor(hex: 0xFFECB3)
@@ -404,7 +400,7 @@ public extension NSColor {
 		public static let amberA200				= NSColor(hex: 0xFFD740)
 		public static let amberA400				= NSColor(hex: 0xFFC400)
 		public static let amberA700				= NSColor(hex: 0xFFAB00)
-		
+
 		public static let orange				= orange500
 		public static let orange50				= NSColor(hex: 0xFFF3E0)
 		public static let orange100				= NSColor(hex: 0xFFE0B2)
@@ -420,7 +416,7 @@ public extension NSColor {
 		public static let orangeA200			= NSColor(hex: 0xFFAB40)
 		public static let orangeA400			= NSColor(hex: 0xFF9100)
 		public static let orangeA700			= NSColor(hex: 0xFF6D00)
-		
+
 		public static let deepOrange			= deepOrange500
 		public static let deepOrange50			= NSColor(hex: 0xFBE9E7)
 		public static let deepOrange100			= NSColor(hex: 0xFFCCBC)
@@ -436,7 +432,7 @@ public extension NSColor {
 		public static let deepOrangeA200		= NSColor(hex: 0xFF6E40)
 		public static let deepOrangeA400		= NSColor(hex: 0xFF3D00)
 		public static let deepOrangeA700		= NSColor(hex: 0xDD2C00)
-		
+
 		public static let brown					= brown500
 		public static let brown50				= NSColor(hex: 0xEFEBE9)
 		public static let brown100				= NSColor(hex: 0xD7CCC8)
@@ -448,7 +444,7 @@ public extension NSColor {
 		public static let brown700				= NSColor(hex: 0x5D4037)
 		public static let brown800				= NSColor(hex: 0x4E342E)
 		public static let brown900				= NSColor(hex: 0x3E2723)
-		
+
 		public static let grey					= grey500
 		public static let grey50				= NSColor(hex: 0xFAFAFA)
 		public static let grey100				= NSColor(hex: 0xF5F5F5)
@@ -460,7 +456,7 @@ public extension NSColor {
 		public static let grey700				= NSColor(hex: 0x616161)
 		public static let grey800				= NSColor(hex: 0x424242)
 		public static let grey900				= NSColor(hex: 0x212121)
-		
+
 		public static let blueGrey				= blueGrey500
 		public static let blueGrey50			= NSColor(hex: 0xECEFF1)
 		public static let blueGrey100			= NSColor(hex: 0xCFD8DC)
@@ -472,16 +468,15 @@ public extension NSColor {
 		public static let blueGrey700			= NSColor(hex: 0x455A64)
 		public static let blueGrey800			= NSColor(hex: 0x37474F)
 		public static let blueGrey900			= NSColor(hex: 0x263238)
-		
+
 		public static let black					= NSColor(hex: 0x000000)
 		public static let white					= NSColor(hex: 0xFFFFFF)
 	}
-	
+
 }
 
-
 public extension NSColor {
-	
+
 	/// SwifterSwift: CSS colors.
 	public struct css {
 		// http://www.w3schools.com/colors/colors_names.asp
@@ -633,8 +628,8 @@ public extension NSColor {
 		public static let whiteSmoke			= NSColor(hex: 0xF5F5F5)
 		public static let yellow				= NSColor(hex: 0xFFFF00)
 		public static let yellowGreen			= NSColor(hex: 0x9ACD32)
-		
+
 	}
-	
+
 }
 #endif

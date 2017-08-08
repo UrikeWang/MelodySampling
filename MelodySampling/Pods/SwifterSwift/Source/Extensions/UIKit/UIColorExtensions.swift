@@ -9,50 +9,49 @@
 #if !os(macOS)
 import UIKit
 
-
 // MARK: - Properties
 public extension UIColor {
-	
+
 	/// SwifterSwift: Red component of UIColor (read-only).
 	public var redComponent: Int {
 		var red: CGFloat = 0.0
 		getRed(&red, green: nil, blue: nil, alpha: nil)
 		return Int(red * 255)
 	}
-	
+
 	/// SwifterSwift: Green component of UIColor (read-only).
 	public var greenComponent: Int {
 		var green: CGFloat = 0.0
 		getRed(nil, green: &green, blue: nil, alpha: nil)
 		return Int(green * 255)
 	}
-	
+
 	/// SwifterSwift: blue component of UIColor (read-only).
 	public var blueComponent: Int {
 		var blue: CGFloat = 0.0
 		getRed(nil, green: nil, blue: &blue, alpha: nil)
 		return Int(blue * 255)
 	}
-	
+
 	/// SwifterSwift: Alpha of UIColor (read-only).
 	public var alpha: CGFloat {
 		var a: CGFloat = 0.0
 		getRed(nil, green: nil, blue: nil, alpha: &a)
 		return a
 	}
-	
+
 	/// SwifterSwift: Hexadecimal value string (read-only).
 	public var hexString: String {
 		var red:	CGFloat = 0
 		var green:	CGFloat = 0
 		var blue:	CGFloat = 0
 		var alpha:	CGFloat = 0
-		
+
 		getRed(&red, green: &green, blue: &blue, alpha: &alpha)
 		let rgb: Int = (Int)(red*255)<<16 | (Int)(green*255)<<8 | (Int)(blue*255)<<0
 		return NSString(format:"#%06x", rgb).uppercased as String
 	}
-	
+
 	/// SwifterSwift: Short hexadecimal value string (read-only, if applicable).
 	public var shortHexString: String? {
 		let string = hexString.replacing("#", with: "")
@@ -63,32 +62,31 @@ public extension UIColor {
 		}
 		return  "#" + first + second + third
 	}
-	
+
 	/// SwifterSwift: Short hexadecimal value string, or full hexadecimal string if not possible (read-only).
 	public var shortHexOrHexString: String {
 		return shortHexString ?? hexString
 	}
-	
+
 	/// SwifterSwift: Get color complementary (read-only, if applicable).
 	public var complementary: UIColor? {
 		return UIColor.init(complementaryFor: self)
 	}
-	
+
 	/// SwifterSwift: Random color.
 	public static var random: UIColor {
 		let r = Int(arc4random_uniform(255))
 		let g = Int(arc4random_uniform(255))
 		let b = Int(arc4random_uniform(255))
 		return UIColor(red: r, green: g, blue: b)
-		
-	}
-	
-}
 
+	}
+
+}
 
 // MARK: - Methods
 public extension UIColor {
-	
+
 	/// SwifterSwift: Blend two UIColors
 	///
 	/// - Parameters:
@@ -110,13 +108,12 @@ public extension UIColor {
 		color2.getRed(&r2, green: &g2, blue: &b2, alpha: &a2)
 		return UIColor(red: l1*r1 + l2*r2, green: l1*g1 + l2*g2, blue: l1*b1 + l2*b2, alpha: l1*a1 + l2*a2)
 	}
-	
-}
 
+}
 
 // MARK: - Initializers
 public extension UIColor {
-	
+
 	/// SwifterSwift: Create UIColor from hexadecimal value with optional transparency.
 	///
 	/// - Parameters:
@@ -134,7 +131,7 @@ public extension UIColor {
 		}
 		self.init(red:(hex >> 16) & 0xff, green:(hex >> 8) & 0xff, blue:hex & 0xff, transparency: trans)
 	}
-	
+
 	/// SwifterSwift: Create UIColor from hexadecimal string with optional transparency (if applicable).
 	///
 	/// - Parameters:
@@ -149,20 +146,20 @@ public extension UIColor {
 		} else {
 			string = hexString
 		}
-		
+
 		if string.characters.count == 3 { // convert hex to 6 digit format if in short format
 			var str = ""
 			string.characters.forEach({ str.append($0 * 2) })
 			string = str
 		}
-		
+
 		guard let hexValue = Int(string, radix: 16) else {
 			return nil
 		}
-		
+
 		self.init(hex: Int(hexValue), transparency: transparency)
 	}
-	
+
 	/// SwifterSwift: Create UIColor from RGB values with optional transparency.
 	///
 	/// - Parameters:
@@ -185,135 +182,132 @@ public extension UIColor {
 		}
 		self.init(red: CGFloat(red) / 255.0, green: CGFloat(green) / 255.0, blue: CGFloat(blue) / 255.0, alpha: trans)
 	}
-	
+
 	/// SwifterSwift: Create UIColor from a complementary of a UIColor (if applicable).
 	///
 	/// - Parameter color: color of which opposite color is desired.
 	public convenience init?(complementaryFor color: UIColor) {
 		let colorSpaceRGB = CGColorSpaceCreateDeviceRGB()
-		let convertColorToRGBSpace : ((_ color : UIColor) -> UIColor?) = { (color) -> UIColor? in
+		let convertColorToRGBSpace : ((_ color: UIColor) -> UIColor?) = { (color) -> UIColor? in
 			if color.cgColor.colorSpace!.model == CGColorSpaceModel.monochrome {
 				let oldComponents = color.cgColor.components
-				let components : [CGFloat] = [ oldComponents![0], oldComponents![0], oldComponents![0], oldComponents![1] ]
+				let components: [CGFloat] = [ oldComponents![0], oldComponents![0], oldComponents![0], oldComponents![1] ]
 				let colorRef = CGColor(colorSpace: colorSpaceRGB, components: components)
 				let colorOut = UIColor(cgColor: colorRef!)
 				return colorOut
-			}
-			else {
+			} else {
 				return color
 			}
 		}
-		
+
 		let c = convertColorToRGBSpace(color)
 		guard let componentColors = c?.cgColor.components else {
 			return nil
 		}
-		
+
 		let r: CGFloat = sqrt(pow(255.0, 2.0) - pow((componentColors[0]*255), 2.0))/255
 		let g: CGFloat = sqrt(pow(255.0, 2.0) - pow((componentColors[1]*255), 2.0))/255
 		let b: CGFloat = sqrt(pow(255.0, 2.0) - pow((componentColors[2]*255), 2.0))/255
 		self.init(red: r, green: g, blue: b, alpha: 1.0)
 	}
-	
+
 }
 
-
-//MARK: - Social Colors
+// MARK: - Social Colors
 public extension UIColor {
-	
+
 	/// SwifterSwift: Brand identity color of popular social media platform.
 	public struct social {
 		// https://www.lockedowndesign.com/social-media-colors/
-		
+
 		/// red: 59, green: 89, blue: 152
 		public static let facebook = UIColor(red: 59, green: 89, blue: 152)
-		
+
 		/// red: 0, green: 182, blue: 241
 		public static let twitter = UIColor(red: 0, green: 182, blue: 241)
-		
+
 		/// red: 223, green: 74, blue: 50
 		public static let googlePlus = UIColor(red: 223, green: 74, blue: 50)
-		
+
 		/// red: 0, green: 123, blue: 182
 		public static let linkedIn = UIColor(red: 0, green: 123, blue: 182)
-		
+
 		/// red: 69, green: 187, blue: 255
 		public static let vimeo = UIColor(red: 69, green: 187, blue: 255)
-		
+
 		/// red: 179, green: 18, blue: 23
 		public static let youtube = UIColor(red: 179, green: 18, blue: 23)
-		
+
 		/// red: 195, green: 42, blue: 163
 		public static let instagram = UIColor(red: 195, green: 42, blue: 163)
-		
+
 		/// red: 203, green: 32, blue: 39
 		public static let pinterest = UIColor(red: 203, green: 32, blue: 39)
-		
+
 		/// red: 244, green: 0, blue: 131
 		public static let flickr = UIColor(red: 244, green: 0, blue: 131)
-		
+
 		/// red: 67, green: 2, blue: 151
 		public static let yahoo = UIColor(red: 67, green: 2, blue: 151)
-		
+
 		/// red: 67, green: 2, blue: 151
 		public static let soundCloud = UIColor(red: 67, green: 2, blue: 151)
-		
+
 		/// red: 44, green: 71, blue: 98
 		public static let tumblr = UIColor(red: 44, green: 71, blue: 98)
-		
+
 		/// red: 252, green: 69, blue: 117
 		public static let foursquare = UIColor(red: 252, green: 69, blue: 117)
-		
+
 		/// red: 255, green: 176, blue: 0
 		public static let swarm = UIColor(red: 255, green: 176, blue: 0)
-		
+
 		/// red: 234, green: 76, blue: 137
 		public static let dribbble = UIColor(red: 234, green: 76, blue: 137)
-		
+
 		/// red: 255, green: 87, blue: 0
 		public static let reddit = UIColor(red: 255, green: 87, blue: 0)
-		
+
 		/// red: 74, green: 93, blue: 78
 		public static let devianArt = UIColor(red: 74, green: 93, blue: 78)
-		
+
 		/// red: 238, green: 64, blue: 86
 		public static let pocket = UIColor(red: 238, green: 64, blue: 86)
-		
+
 		/// red: 170, green: 34, blue: 182
 		public static let quora = UIColor(red: 170, green: 34, blue: 182)
-		
+
 		/// red: 247, green: 146, blue: 30
 		public static let slideShare = UIColor(red: 247, green: 146, blue: 30)
-		
+
 		/// red: 0, green: 153, blue: 229
 		public static let px500 = UIColor(red: 0, green: 153, blue: 229)
-		
+
 		/// red: 223, green: 109, blue: 70
 		public static let listly = UIColor(red: 223, green: 109, blue: 70)
-		
+
 		/// red: 0, green: 180, blue: 137
 		public static let vine = UIColor(red: 0, green: 180, blue: 137)
-		
+
 		/// red: 0, green: 175, blue: 240
 		public static let skype = UIColor(red: 0, green: 175, blue: 240)
-		
+
 		/// red: 235, green: 73, blue: 36
 		public static let stumbleUpon = UIColor(red: 235, green: 73, blue: 36)
-		
+
 		/// red: 255, green: 252, blue: 0
 		public static let snapchat = UIColor(red: 255, green: 252, blue: 0)
-		
+
 	}
 }
 
-
-//MARK: - Material colors
+// MARK: - Material colors
 public extension UIColor {
-	
+
 	/// SwifterSwift: Google Material design colors palette.
 	public struct material {
 		// https://material.google.com/style/color.html
-		
+
 		public static let red					= red500
 		public static let red50					= UIColor(hex: 0xFFEBEE)
 		public static let red100				= UIColor(hex: 0xFFCDD2)
@@ -329,7 +323,7 @@ public extension UIColor {
 		public static let redA200				= UIColor(hex: 0xFF5252)
 		public static let redA400				= UIColor(hex: 0xFF1744)
 		public static let redA700				= UIColor(hex: 0xD50000)
-		
+
 		public static let pink					= pink500
 		public static let pink50				= UIColor(hex: 0xFCE4EC)
 		public static let pink100				= UIColor(hex: 0xF8BBD0)
@@ -345,7 +339,7 @@ public extension UIColor {
 		public static let pinkA200				= UIColor(hex: 0xFF4081)
 		public static let pinkA400				= UIColor(hex: 0xF50057)
 		public static let pinkA700				= UIColor(hex: 0xC51162)
-		
+
 		public static let purple				= purple500
 		public static let purple50				= UIColor(hex: 0xF3E5F5)
 		public static let purple100				= UIColor(hex: 0xE1BEE7)
@@ -361,7 +355,7 @@ public extension UIColor {
 		public static let purpleA200			= UIColor(hex: 0xE040FB)
 		public static let purpleA400			= UIColor(hex: 0xD500F9)
 		public static let purpleA700			= UIColor(hex: 0xAA00FF)
-		
+
 		public static let deepPurple			= deepPurple500
 		public static let deepPurple50			= UIColor(hex: 0xEDE7F6)
 		public static let deepPurple100			= UIColor(hex: 0xD1C4E9)
@@ -377,7 +371,7 @@ public extension UIColor {
 		public static let deepPurpleA200		= UIColor(hex: 0x7C4DFF)
 		public static let deepPurpleA400		= UIColor(hex: 0x651FFF)
 		public static let deepPurpleA700		= UIColor(hex: 0x6200EA)
-		
+
 		public static let indigo				= indigo500
 		public static let indigo50				= UIColor(hex: 0xE8EAF6)
 		public static let indigo100				= UIColor(hex: 0xC5CAE9)
@@ -393,7 +387,7 @@ public extension UIColor {
 		public static let indigoA200			= UIColor(hex: 0x536DFE)
 		public static let indigoA400			= UIColor(hex: 0x3D5AFE)
 		public static let indigoA700			= UIColor(hex: 0x304FFE)
-		
+
 		public static let blue					= blue500
 		public static let blue50				= UIColor(hex: 0xE3F2FD)
 		public static let blue100				= UIColor(hex: 0xBBDEFB)
@@ -409,7 +403,7 @@ public extension UIColor {
 		public static let blueA200				= UIColor(hex: 0x448AFF)
 		public static let blueA400				= UIColor(hex: 0x2979FF)
 		public static let blueA700				= UIColor(hex: 0x2962FF)
-		
+
 		public static let lightBlue				= lightBlue500
 		public static let lightBlue50			= UIColor(hex: 0xE1F5FE)
 		public static let lightBlue100			= UIColor(hex: 0xB3E5FC)
@@ -425,7 +419,7 @@ public extension UIColor {
 		public static let lightBlueA200			= UIColor(hex: 0x40C4FF)
 		public static let lightBlueA400			= UIColor(hex: 0x00B0FF)
 		public static let lightBlueA700			= UIColor(hex: 0x0091EA)
-		
+
 		public static let cyan					= cyan500
 		public static let cyan50				= UIColor(hex: 0xE0F7FA)
 		public static let cyan100				= UIColor(hex: 0xB2EBF2)
@@ -441,7 +435,7 @@ public extension UIColor {
 		public static let cyanA200				= UIColor(hex: 0x18FFFF)
 		public static let cyanA400				= UIColor(hex: 0x00E5FF)
 		public static let cyanA700				= UIColor(hex: 0x00B8D4)
-		
+
 		public static let teal					= teal500
 		public static let teal50				= UIColor(hex: 0xE0F2F1)
 		public static let teal100				= UIColor(hex: 0xB2DFDB)
@@ -457,7 +451,7 @@ public extension UIColor {
 		public static let tealA200				= UIColor(hex: 0x64FFDA)
 		public static let tealA400				= UIColor(hex: 0x1DE9B6)
 		public static let tealA700				= UIColor(hex: 0x00BFA5)
-		
+
 		public static let green					= green500
 		public static let green50				= UIColor(hex: 0xE8F5E9)
 		public static let green100				= UIColor(hex: 0xC8E6C9)
@@ -473,7 +467,7 @@ public extension UIColor {
 		public static let greenA200				= UIColor(hex: 0x69F0AE)
 		public static let greenA400				= UIColor(hex: 0x00E676)
 		public static let greenA700				= UIColor(hex: 0x00C853)
-		
+
 		public static let lightGreen			= lightGreen500
 		public static let lightGreen50			= UIColor(hex: 0xF1F8E9)
 		public static let lightGreen100			= UIColor(hex: 0xDCEDC8)
@@ -489,7 +483,7 @@ public extension UIColor {
 		public static let lightGreenA200		= UIColor(hex: 0xB2FF59)
 		public static let lightGreenA400		= UIColor(hex: 0x76FF03)
 		public static let lightGreenA700		= UIColor(hex: 0x64DD17)
-		
+
 		public static let lime					= lime500
 		public static let lime50				= UIColor(hex: 0xF9FBE7)
 		public static let lime100				= UIColor(hex: 0xF0F4C3)
@@ -505,7 +499,7 @@ public extension UIColor {
 		public static let limeA200				= UIColor(hex: 0xEEFF41)
 		public static let limeA400				= UIColor(hex: 0xC6FF00)
 		public static let limeA700				= UIColor(hex: 0xAEEA00)
-		
+
 		public static let yellow				= yellow500
 		public static let yellow50				= UIColor(hex: 0xFFFDE7)
 		public static let yellow100				= UIColor(hex: 0xFFF9C4)
@@ -521,7 +515,7 @@ public extension UIColor {
 		public static let yellowA200			= UIColor(hex: 0xFFFF00)
 		public static let yellowA400			= UIColor(hex: 0xFFEA00)
 		public static let yellowA700			= UIColor(hex: 0xFFD600)
-		
+
 		public static let amber					= amber500
 		public static let amber50				= UIColor(hex: 0xFFF8E1)
 		public static let amber100				= UIColor(hex: 0xFFECB3)
@@ -537,7 +531,7 @@ public extension UIColor {
 		public static let amberA200				= UIColor(hex: 0xFFD740)
 		public static let amberA400				= UIColor(hex: 0xFFC400)
 		public static let amberA700				= UIColor(hex: 0xFFAB00)
-		
+
 		public static let orange				= orange500
 		public static let orange50				= UIColor(hex: 0xFFF3E0)
 		public static let orange100				= UIColor(hex: 0xFFE0B2)
@@ -553,7 +547,7 @@ public extension UIColor {
 		public static let orangeA200			= UIColor(hex: 0xFFAB40)
 		public static let orangeA400			= UIColor(hex: 0xFF9100)
 		public static let orangeA700			= UIColor(hex: 0xFF6D00)
-		
+
 		public static let deepOrange			= deepOrange500
 		public static let deepOrange50			= UIColor(hex: 0xFBE9E7)
 		public static let deepOrange100			= UIColor(hex: 0xFFCCBC)
@@ -569,7 +563,7 @@ public extension UIColor {
 		public static let deepOrangeA200		= UIColor(hex: 0xFF6E40)
 		public static let deepOrangeA400		= UIColor(hex: 0xFF3D00)
 		public static let deepOrangeA700		= UIColor(hex: 0xDD2C00)
-		
+
 		public static let brown					= brown500
 		public static let brown50				= UIColor(hex: 0xEFEBE9)
 		public static let brown100				= UIColor(hex: 0xD7CCC8)
@@ -581,7 +575,7 @@ public extension UIColor {
 		public static let brown700				= UIColor(hex: 0x5D4037)
 		public static let brown800				= UIColor(hex: 0x4E342E)
 		public static let brown900				= UIColor(hex: 0x3E2723)
-		
+
 		public static let grey					= grey500
 		public static let grey50				= UIColor(hex: 0xFAFAFA)
 		public static let grey100				= UIColor(hex: 0xF5F5F5)
@@ -593,7 +587,7 @@ public extension UIColor {
 		public static let grey700				= UIColor(hex: 0x616161)
 		public static let grey800				= UIColor(hex: 0x424242)
 		public static let grey900				= UIColor(hex: 0x212121)
-		
+
 		public static let blueGrey				= blueGrey500
 		public static let blueGrey50			= UIColor(hex: 0xECEFF1)
 		public static let blueGrey100			= UIColor(hex: 0xCFD8DC)
@@ -605,16 +599,15 @@ public extension UIColor {
 		public static let blueGrey700			= UIColor(hex: 0x455A64)
 		public static let blueGrey800			= UIColor(hex: 0x37474F)
 		public static let blueGrey900			= UIColor(hex: 0x263238)
-		
+
 		public static let black					= UIColor(hex: 0x000000)
 		public static let white					= UIColor(hex: 0xFFFFFF)
 	}
-	
+
 }
 
-
 public extension UIColor {
-	
+
 	/// SwifterSwift: CSS colors.
 	public struct css {
 		// http://www.w3schools.com/colors/colors_names.asp
@@ -766,8 +759,8 @@ public extension UIColor {
 		public static let whiteSmoke			= UIColor(hex: 0xF5F5F5)
 		public static let yellow				= UIColor(hex: 0xFFFF00)
 		public static let yellowGreen			= UIColor(hex: 0x9ACD32)
-		
+
 	}
-	
+
 }
 #endif
