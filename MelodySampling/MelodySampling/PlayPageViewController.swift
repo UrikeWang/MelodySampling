@@ -29,6 +29,8 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
     var shuffledList = [String]()
 
     var artistList = [String]()
+    
+    var correctAnswer = ""
 
     @IBOutlet weak var tableView: UITableView!
 
@@ -130,6 +132,8 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
             }
 
             self.player?.play()
+            
+            self.correctAnswer = self.artistList[self.currentTrack]
 
             self.currentTrack += 1
 
@@ -171,8 +175,16 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
 
         //先做答對與答錯的功能
         
+        
         if artistList.count == 5 {
-
+            
+            //做答對答錯判斷
+//            if shuffledList[indexPath.section] == correctAnswer {
+//                print("你答對了")
+//            } else {
+//                print("你答錯了，答案是 \(correctAnswer)")
+//            }
+//
             switch currentTrack {
 
             case 5:
@@ -191,6 +203,16 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
 
                 shuffledList = questionList.shuffled()
 
+                correctAnswer = artistList[currentTrack]
+                
+                if shuffledList[indexPath.section] == correctAnswer {
+                    print("你答對了")
+                } else {
+                    print("你答錯了")
+                }
+                    
+                
+                
                 tableView.reloadData()
 
                 let fileName = self.path + songFileNameList[currentTrack]
