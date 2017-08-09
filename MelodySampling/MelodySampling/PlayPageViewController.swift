@@ -12,6 +12,7 @@ import Firebase
 
 class PlayPageViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+    //開始加入 timer
     var ref: DatabaseReference!
 
     var player: AVAudioPlayer?
