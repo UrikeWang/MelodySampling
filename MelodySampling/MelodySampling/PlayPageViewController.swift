@@ -15,7 +15,9 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
     
     let path: String = NSHomeDirectory() + "/Documents/"
     
-    let fakeArtistList = ["Fake 1", "Fake 2", "Fake 3"]
+    let fakeArtistList = ["Fake 1", "Fake 2", "Fake 3", "Coorect Artist"]
+    
+    var questionList: [String]?
     
     @IBOutlet weak var tableView: UITableView!
 
@@ -28,8 +30,14 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
         tableView.delegate = self
 
         tableView.dataSource = self
-
-        // Do any additional setup after loading the view.
+        
+        questionList = fakeArtistList.shuffled()
+        
+        print(questionList)
+        
+        tableView.reloadData()
+        
+        
     }
 
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -37,7 +45,7 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return questionList!.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -45,6 +53,8 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
         let cellIdentifier = "Cell"
 
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as UITableViewCell
+        
+        cell.textLabel?.text = questionList?[indexPath.row]
 
         return cell
 
