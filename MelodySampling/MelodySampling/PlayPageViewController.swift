@@ -24,7 +24,7 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
 
     var currentTrack: Int = 0
 
-    var prepareTrack: Int = 0
+    var prepareTrack: Int = 1
 
     let songFileNameList = ["song0.m4a", "song1.m4a", "song2.m4a", "song3.m4a", "song4.m4a"]
 
@@ -70,9 +70,8 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
             }
 
             print("Artlist downloading done")
-            
+
             self.startGuessing()
-            
 
         })
     }
@@ -111,6 +110,7 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
         let answer = artistList[currentTrack]
 
         print("你選了 \(selectedAnswer) 個選項")
+        print("你在 \(currentTrack) 首")
 
         if judgeAnswer(input: selectedAnswer, compare: answer) {
 
@@ -164,27 +164,30 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
 
     func startGuessing() {
         //進行第0首歌的猜謎
+
+        print("現在在第 \(currentTrack) 首")
+        print("接下來是第 \(prepareTrack) 首")
         self.questionList = self.fakeArtistList
-        
+
         self.questionList.append(self.artistList[self.currentTrack])
-        
+
         self.shuffledList = self.questionList.shuffled()
-        
+
         self.tableView.reloadData()
-        
+
         let fileName = self.path + self.songFileNameList[self.currentTrack]
-        
+
         do {
-            
+
             self.player = try AVAudioPlayer(contentsOf: URL(string: fileName)!)
-            
+
         } catch {
             self.player = nil
         }
-        
+
         self.player?.play()
     }
-    
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
     }
