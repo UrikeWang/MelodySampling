@@ -30,7 +30,7 @@ class TimerViewController: UIViewController {
 
     var songTrackFlag: Int = 0
 
-    var score = 0
+    var score: Double = 0
 
     @IBAction func leftButtonTapped(_ sender: UIButton) {
 
@@ -57,7 +57,7 @@ class TimerViewController: UIViewController {
 
         currentScoreLabel.text = "當次得分為 \(currentScore)"
 
-        score += currentScore
+//        score = score + currentScore
 
         label5.text = "累積得分: \(score)"
 
