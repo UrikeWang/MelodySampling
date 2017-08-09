@@ -18,13 +18,15 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
 
     let path: String = NSHomeDirectory() + "/Documents/"
 
-    let fakeArtistList = ["Fake 1", "Fake 2", "Fake 3", "Coorect Artist"]
+    var fakeArtistList = ["Fake 1", "Fake 2", "Fake 3"]
 
     var questionList = [String]()
 
     var currentTrack: Int = 0
 
     let songFileNameList = ["song0.m4a", "song1.m4a", "song2.m4a", "song3.m4a", "song4.m4a"]
+    
+    var shuffledList = [String]()
 
     var artistList = [String]()
 
@@ -38,34 +40,45 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
 
     @IBAction func playButtonTapped(_ sender: UIButton) {
 
-        switch currentTrack {
-
-        case 5:
-
-            performSegue(withIdentifier: "goToResult", sender: self)
-
-            player?.pause()
-
-            player = nil
-
-        default:
-
-            let fileName = self.path + songFileNameList[currentTrack]
-
-            player?.pause()
-
-            do {
-
-                player = try AVAudioPlayer(contentsOf: URL(string: fileName)!)
-
-            } catch {
+        if artistList.count == 5 {
+        
+            switch currentTrack {
+                
+            case 5:
+                
+                performSegue(withIdentifier: "goToResult", sender: self)
+                
+                player?.pause()
+                
                 player = nil
+                
+            default:
+                
+                questionList = fakeArtistList
+                
+                questionList.append(artistList[currentTrack])
+                
+                shuffledList = questionList.shuffled()
+                
+                tableView.reloadData()
+                
+                let fileName = self.path + songFileNameList[currentTrack]
+                
+                player?.pause()
+                
+                do {
+                    
+                    player = try AVAudioPlayer(contentsOf: URL(string: fileName)!)
+                    
+                } catch {
+                    player = nil
+                }
+                
+                currentTrack += 1
+                
+                player?.play()
+                
             }
-
-            currentTrack += 1
-
-            player?.play()
-
         }
 
     }
@@ -77,8 +90,6 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
 
         tableView.dataSource = self
 
-        questionList = fakeArtistList.shuffled()
-
         tableView.reloadData()
 
         self.ref = Database.database().reference()
@@ -87,11 +98,9 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
 
             let postDict = snapshot.value as? [String: AnyObject] ?? [:]
 
-            var keyList = [String]()
-
             for eachTrackID in postDict {
 
-                let temp = eachTrackID.value as? [String: Any]
+                let temp = eachTrackID.value as? [String: AnyObject]
 //                print(temp)
 
                 guard let artist = temp?["artistName"] else { return }
@@ -100,11 +109,12 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
 
             }
 
+            print("Artlist downloading done")
         })
     }
 
     func numberOfSections(in tableView: UITableView) -> Int {
-        return (questionList.count)
+        return (shuffledList.count)
     }
 
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -125,7 +135,7 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
 
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as UITableViewCell
 
-        cell.textLabel?.text = questionList[indexPath.section]
+        cell.textLabel?.text = shuffledList[indexPath.section]
 
         return cell
     }
