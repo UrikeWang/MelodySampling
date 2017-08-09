@@ -17,14 +17,12 @@ enum QuestionType {
 }
 
 class QuestionFactory {
-    
+
     static let shared = QuestionFactory()
     private init() {}
-    
-    
 
 }
 
 class Question {
-    
+
 }

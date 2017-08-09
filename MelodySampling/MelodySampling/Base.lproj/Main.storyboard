@@ -674,11 +674,40 @@
                     </view>
                     <connections>
                         <outlet property="tableView" destination="b4N-od-qBg" id="9t9-Zf-W0s"/>
+                        <segue destination="QfV-ZY-QEc" kind="show" identifier="goToResult" id="bf1-YU-JYO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rSd-RP-xMY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5282" y="1922"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="9Id-dE-qUV">
+            <objects>
+                <viewController id="QfV-ZY-QEc" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="QR0-rK-Frg"/>
+                        <viewControllerLayoutGuide type="bottom" id="8PF-lH-z4A"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="GFw-81-4Fk">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="結算頁" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="adI-0p-V2h">
+                                <rect key="frame" x="71" y="113" width="232" height="51"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="O2C-0X-XBk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6000.8000000000002" y="1921.8890554722641"/>
         </scene>
         <!--Login Succed View Controller-->
         <scene sceneID="I8s-xa-qc2">
