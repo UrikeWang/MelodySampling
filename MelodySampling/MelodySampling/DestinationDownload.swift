@@ -34,29 +34,13 @@ class DestinationDownload: UIViewController {
 
             guard let postDict = snapshot.value as? [String: AnyObject] else { return }
 
-            print("===== 我在看這行 =====")
-
-            //這裡面應該還有一個 option 沒拆掉
-
             let indexArray = Array(postDict.keys)
-
-        print(indexArray[0])
-            print("===== 這一行拆字典 ====")
-            print(postDict[indexArray[0]]!["previewUrl"]!)
 
             guard let songsList = [postDict[indexArray[0]]!["previewUrl"]!, postDict[indexArray[1]]!["previewUrl"]!, postDict[indexArray[2]]!["previewUrl"]!, postDict[indexArray[3]]!["previewUrl"]!, postDict[indexArray[4]]!["previewUrl"]!] as? [String] else { return }
 
         for index in 0..<songsList.count {
 
             let eachSong = songsList[index]
-
-            //let index = songsList.index(of: eachSong)
-
-            print(index)
-
-            print(type(of: index))
-
-//            let index = String(describing: songsList.index(of: eachSong)!)
 
             let destination: DownloadRequest.DownloadFileDestination = { _, _ in
                 let documentsURL = NSHomeDirectory() + "/Documents/"
