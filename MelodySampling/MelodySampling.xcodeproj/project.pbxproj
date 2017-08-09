@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		730D0E5A1F3AEBFD0099DA0F /* addSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 730D0E591F3AEBFD0099DA0F /* addSpace.swift */; };
+		730D0E5C1F3AFEA20099DA0F /* JudgeAnswer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 730D0E5B1F3AFEA20099DA0F /* JudgeAnswer.swift */; };
 		732AE4731F39817A009746CA /* Montserrat-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 732AE4611F39817A009746CA /* Montserrat-Black.ttf */; };
 		732AE4741F39817A009746CA /* Montserrat-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 732AE4621F39817A009746CA /* Montserrat-BlackItalic.ttf */; };
 		732AE4751F39817A009746CA /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 732AE4631F39817A009746CA /* Montserrat-Bold.ttf */; };
@@ -59,6 +60,7 @@
 
 /* Begin PBXFileReference section */
 		730D0E591F3AEBFD0099DA0F /* addSpace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = addSpace.swift; sourceTree = "<group>"; };
+		730D0E5B1F3AFEA20099DA0F /* JudgeAnswer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JudgeAnswer.swift; sourceTree = "<group>"; };
 		732AE4611F39817A009746CA /* Montserrat-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Black.ttf"; sourceTree = "<group>"; };
 		732AE4621F39817A009746CA /* Montserrat-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-BlackItalic.ttf"; sourceTree = "<group>"; };
 		732AE4631F39817A009746CA /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
@@ -251,6 +253,7 @@
 				73744D301F2F7CA900C1FAEA /* PreviewSongsURL.swift */,
 				736271031F3AAB210002206B /* ArrayShuffle.swift */,
 				730D0E591F3AEBFD0099DA0F /* addSpace.swift */,
+				730D0E5B1F3AFEA20099DA0F /* JudgeAnswer.swift */,
 			);
 			name = function;
 			sourceTree = "<group>";
@@ -489,6 +492,7 @@
 				73AF80261F384E3B00CA31FB /* LandingPageViewController.swift in Sources */,
 				73744D2C1F2F4CF800C1FAEA /* StreamingPage.swift in Sources */,
 				73820C901F30A20A00121A4D /* DestinationDownload.swift in Sources */,
+				730D0E5C1F3AFEA20099DA0F /* JudgeAnswer.swift in Sources */,
 				73AF80231F384B7900CA31FB /* Styleguide.swift in Sources */,
 				73AF802E1F38764300CA31FB /* LogInViewController.swift in Sources */,
 				73744D311F2F7CA900C1FAEA /* PreviewSongsURL.swift in Sources */,

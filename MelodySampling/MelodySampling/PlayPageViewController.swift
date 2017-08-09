@@ -23,6 +23,8 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
     var questionList = [String]()
 
     var currentTrack: Int = 0
+    
+    var prepareTrack: Int = 0
 
     let songFileNameList = ["song0.m4a", "song1.m4a", "song2.m4a", "song3.m4a", "song4.m4a"]
 
@@ -43,48 +45,6 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
     }
 
     @IBAction func playButtonTapped(_ sender: UIButton) {
-
-        if artistList.count == 5 {
-
-            switch currentTrack {
-
-            case 5:
-
-                performSegue(withIdentifier: "goToResult", sender: self)
-
-                player?.pause()
-
-                player = nil
-
-            default:
-
-                questionList = fakeArtistList
-
-                questionList.append(artistList[currentTrack])
-
-                shuffledList = questionList.shuffled()
-
-                tableView.reloadData()
-
-                let fileName = self.path + songFileNameList[currentTrack]
-
-                player?.pause()
-
-                do {
-
-                    player = try AVAudioPlayer(contentsOf: URL(string: fileName)!)
-
-                } catch {
-                    player = nil
-                }
-
-                currentTrack += 1
-
-                player?.play()
-
-            }
-        }
-
     }
 
     override func viewDidLoad() {
@@ -117,13 +77,13 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
 
             self.questionList = self.fakeArtistList
 
-            self.questionList.append(self.artistList[self.currentTrack])
+            self.questionList.append(self.artistList[self.prepareTrack])
 
             self.shuffledList = self.questionList.shuffled()
 
             self.tableView.reloadData()
 
-            let fileName = self.path + self.songFileNameList[self.currentTrack]
+            let fileName = self.path + self.songFileNameList[self.prepareTrack]
 
             do {
 
@@ -135,9 +95,9 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
 
             self.player?.play()
             
-            self.correctAnswer = self.artistList[self.currentTrack]
+            self.correctAnswer = self.artistList[self.prepareTrack]
 
-            self.currentTrack += 1
+            self.prepareTrack += 1
 
         })
     }
@@ -187,7 +147,7 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
 //                print("你答錯了，答案是 \(correctAnswer)")
 //            }
 //
-            switch currentTrack {
+            switch prepareTrack {
 
             case 5:
 
@@ -201,11 +161,11 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
 
                 questionList = fakeArtistList
 
-                questionList.append(artistList[currentTrack])
+                questionList.append(artistList[prepareTrack])
 
                 shuffledList = questionList.shuffled()
 
-                correctAnswer = artistList[currentTrack]
+                correctAnswer = artistList[prepareTrack]
                 
                 if shuffledList[indexPath.section] == correctAnswer {
                     print("你答對了")
@@ -221,7 +181,7 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
                 
                 tableView.reloadData()
 
-                let fileName = self.path + songFileNameList[currentTrack]
+                let fileName = self.path + songFileNameList[prepareTrack]
 
                 player?.pause()
 
@@ -235,7 +195,7 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
 
                 player?.play()
 
-                currentTrack += 1
+                prepareTrack += 1
             }
         }
 
