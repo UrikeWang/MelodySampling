@@ -110,30 +110,29 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
             }
 
             print("Artlist downloading done")
-            
+
             self.questionList = self.fakeArtistList
-            
+
             self.questionList.append(self.artistList[self.currentTrack])
-            
+
             self.shuffledList = self.questionList.shuffled()
-            
+
             self.tableView.reloadData()
-            
+
             let fileName = self.path + self.songFileNameList[self.currentTrack]
-    
-            
+
             do {
-                
+
                 self.player = try AVAudioPlayer(contentsOf: URL(string: fileName)!)
-                
+
             } catch {
                 self.player = nil
             }
-            
+
             self.player?.play()
-            
+
             self.currentTrack += 1
-            
+
         })
     }
 
@@ -179,7 +178,7 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
                 player?.pause()
 
                 player = nil
-                
+
                 performSegue(withIdentifier: "goToResult", sender: self)
 
             default:
