@@ -24,9 +24,6 @@ class QuestionBankViewController: UIViewController {
         ref.child("questionBanks").child("mandarin").child("genreCod1").child("question1").queryOrderedByKey().queryLimited(toFirst: 5).observeSingleEvent( of: .value, with: {
             (snapshot) in
 
-//            print(snapshot)
-            print("有印 snapshot")
-
             let postDict = snapshot.value as? [String: AnyObject] ?? [:]
 
             let dict0 = postDict["41641840"] as? [String: AnyObject] ?? [:]
