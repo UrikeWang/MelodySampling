@@ -9,13 +9,13 @@
 import Foundation
 
 func judgeAnswer(input selection: String, compare answer: String) -> Bool {
-    
+
     if selection == answer {
-        
+
         return true
-        
+
     } else {
-        
+
         return false
     }
 }

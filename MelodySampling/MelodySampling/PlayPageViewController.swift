@@ -23,7 +23,7 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
     var questionList = [String]()
 
     var currentTrack: Int = 0
-    
+
     var prepareTrack: Int = 0
 
     let songFileNameList = ["song0.m4a", "song1.m4a", "song2.m4a", "song3.m4a", "song4.m4a"]
@@ -31,11 +31,9 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
     var shuffledList = [String]()
 
     var artistList = [String]()
-    
-    var correctAnswer = ""
 
     var resultList = [Bool]()
-    
+
     @IBOutlet weak var tableView: UITableView!
 
     @IBAction func checkButtonTapped(_ sender: UIButton) {
@@ -53,8 +51,6 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
         tableView.delegate = self
 
         tableView.dataSource = self
-
-        tableView.reloadData()
 
         self.ref = Database.database().reference()
 
@@ -74,30 +70,9 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
             }
 
             print("Artlist downloading done")
-
-            self.questionList = self.fakeArtistList
-
-            self.questionList.append(self.artistList[self.prepareTrack])
-
-            self.shuffledList = self.questionList.shuffled()
-
-            self.tableView.reloadData()
-
-            let fileName = self.path + self.songFileNameList[self.prepareTrack]
-
-            do {
-
-                self.player = try AVAudioPlayer(contentsOf: URL(string: fileName)!)
-
-            } catch {
-                self.player = nil
-            }
-
-            self.player?.play()
             
-            self.correctAnswer = self.artistList[self.prepareTrack]
-
-            self.prepareTrack += 1
+            self.startGuessing()
+            
 
         })
     }
@@ -131,79 +106,87 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
-        let selectedSection = indexPath.section
+        let selectedAnswer = shuffledList[indexPath.section]
 
-        print("你選了第 \(selectedSection) 個選項")
+        let answer = artistList[currentTrack]
 
-        //先做答對與答錯的功能
-        
-        
-        if artistList.count == 5 {
-            
-            //做答對答錯判斷
-//            if shuffledList[indexPath.section] == correctAnswer {
-//                print("你答對了")
-//            } else {
-//                print("你答錯了，答案是 \(correctAnswer)")
-//            }
-//
-            switch prepareTrack {
+        print("你選了 \(selectedAnswer) 個選項")
 
-            case 5:
+        if judgeAnswer(input: selectedAnswer, compare: answer) {
 
-                player?.pause()
+            resultList.append(true)
+            print("答對了")
+        } else {
 
+            resultList.append(false)
+            print("答錯了，正解是 \(answer)")
+        }
+
+        if prepareTrack == 5 {
+
+            player?.pause()
+
+            player = nil
+
+            performSegue(withIdentifier: "goToResult", sender: self)
+
+        } else {
+
+            questionList = fakeArtistList
+
+            questionList.append(artistList[prepareTrack])
+
+            shuffledList = questionList.shuffled()
+
+            tableView.reloadData()
+
+            player?.pause()
+
+            let fileName = self.path + songFileNameList[prepareTrack]
+
+            do {
+
+                player = try AVAudioPlayer(contentsOf: URL(string: fileName)!)
+
+            } catch {
                 player = nil
-
-                performSegue(withIdentifier: "goToResult", sender: self)
-
-            default:
-
-                questionList = fakeArtistList
-
-                questionList.append(artistList[prepareTrack])
-
-                shuffledList = questionList.shuffled()
-
-                correctAnswer = artistList[prepareTrack]
-                
-                if shuffledList[indexPath.section] == correctAnswer {
-                    print("你答對了")
-                    
-                    resultList.append(true)
-                    
-                } else {
-                    print("你答錯了 正確選項是 \(correctAnswer)")
-                    resultList.append(false)
-                }
-                    
-                
-                
-                tableView.reloadData()
-
-                let fileName = self.path + songFileNameList[prepareTrack]
-
-                player?.pause()
-
-                do {
-
-                    player = try AVAudioPlayer(contentsOf: URL(string: fileName)!)
-
-                } catch {
-                    player = nil
-                }
-
-                player?.play()
-
-                prepareTrack += 1
             }
+
+            player?.play()
+
+            currentTrack = prepareTrack
+
+            prepareTrack += 1
+
         }
 
     }
 
+    func startGuessing() {
+        //進行第0首歌的猜謎
+        self.questionList = self.fakeArtistList
+        
+        self.questionList.append(self.artistList[self.currentTrack])
+        
+        self.shuffledList = self.questionList.shuffled()
+        
+        self.tableView.reloadData()
+        
+        let fileName = self.path + self.songFileNameList[self.currentTrack]
+        
+        do {
+            
+            self.player = try AVAudioPlayer(contentsOf: URL(string: fileName)!)
+            
+        } catch {
+            self.player = nil
+        }
+        
+        self.player?.play()
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-
     }
 
     override func didReceiveMemoryWarning() {
