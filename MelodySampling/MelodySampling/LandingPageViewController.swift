@@ -7,8 +7,11 @@
 //
 
 import UIKit
+import Firebase
 
 class LandingPageViewController: UIViewController {
+    
+    var ref: DatabaseReference!
 
     @IBOutlet weak var loginLabel: UILabel!
 
