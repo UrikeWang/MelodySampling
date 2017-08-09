@@ -163,7 +163,6 @@
 			isa = PBXGroup;
 			children = (
 				732AE4861F398831009746CA /* TimerViewController.swift */,
-				732AE4881F399258009746CA /* ScoresFunc.swift */,
 			);
 			name = Timer;
 			sourceTree = "<group>";
@@ -249,6 +248,7 @@
 		73744D2D1F2F788900C1FAEA /* function */ = {
 			isa = PBXGroup;
 			children = (
+				732AE4881F399258009746CA /* ScoresFunc.swift */,
 				73744D2E1F2F78C000C1FAEA /* GetDeveloperToken.swift */,
 				73744D301F2F7CA900C1FAEA /* PreviewSongsURL.swift */,
 				736271031F3AAB210002206B /* ArrayShuffle.swift */,

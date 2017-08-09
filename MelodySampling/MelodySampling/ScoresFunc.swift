@@ -8,7 +8,7 @@
 
 import Foundation
 
-func scoreAfterOneSong(time usedTime: Double) -> Int {
+func scoreAfterOneSong(time usedTime: Double) -> Double {
 
     let score: Double?
 
@@ -18,6 +18,6 @@ func scoreAfterOneSong(time usedTime: Double) -> Int {
         score = 3600.0 - 100.0 * usedTime
     }
 
-    return Int(score!)
+    return Double(score!)
 
 }
