@@ -169,6 +169,8 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
 
         print("你選了第 \(selectedSection) 個選項")
 
+        //先做答對與答錯的功能
+        
         if artistList.count == 5 {
 
             switch currentTrack {
