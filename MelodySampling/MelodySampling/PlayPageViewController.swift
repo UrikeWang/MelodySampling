@@ -25,59 +25,59 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
     var currentTrack: Int = 0
 
     let songFileNameList = ["song0.m4a", "song1.m4a", "song2.m4a", "song3.m4a", "song4.m4a"]
-    
+
     var shuffledList = [String]()
 
     var artistList = [String]()
 
     @IBOutlet weak var tableView: UITableView!
-    
+
     @IBAction func checkButtonTapped(_ sender: UIButton) {
-        
+
         print(self.artistList)
-        
+
     }
 
     @IBAction func playButtonTapped(_ sender: UIButton) {
 
         if artistList.count == 5 {
-        
+
             switch currentTrack {
-                
+
             case 5:
-                
+
                 performSegue(withIdentifier: "goToResult", sender: self)
-                
+
                 player?.pause()
-                
+
                 player = nil
-                
+
             default:
-                
+
                 questionList = fakeArtistList
-                
+
                 questionList.append(artistList[currentTrack])
-                
+
                 shuffledList = questionList.shuffled()
-                
+
                 tableView.reloadData()
-                
+
                 let fileName = self.path + songFileNameList[currentTrack]
-                
+
                 player?.pause()
-                
+
                 do {
-                    
+
                     player = try AVAudioPlayer(contentsOf: URL(string: fileName)!)
-                    
+
                 } catch {
                     player = nil
                 }
-                
+
                 currentTrack += 1
-                
+
                 player?.play()
-                
+
             }
         }
 
@@ -110,6 +110,30 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
             }
 
             print("Artlist downloading done")
+            
+            self.questionList = self.fakeArtistList
+            
+            self.questionList.append(self.artistList[self.currentTrack])
+            
+            self.shuffledList = self.questionList.shuffled()
+            
+            self.tableView.reloadData()
+            
+            let fileName = self.path + self.songFileNameList[self.currentTrack]
+    
+            
+            do {
+                
+                self.player = try AVAudioPlayer(contentsOf: URL(string: fileName)!)
+                
+            } catch {
+                self.player = nil
+            }
+            
+            self.player?.play()
+            
+            self.currentTrack += 1
+            
         })
     }
 
@@ -138,6 +162,54 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
         cell.textLabel?.text = shuffledList[indexPath.section]
 
         return cell
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+
+        let selectedSection = indexPath.section
+
+        print("你選了第 \(selectedSection) 個選項")
+
+        if artistList.count == 5 {
+
+            switch currentTrack {
+
+            case 5:
+
+                player?.pause()
+
+                player = nil
+                
+                performSegue(withIdentifier: "goToResult", sender: self)
+
+            default:
+
+                questionList = fakeArtistList
+
+                questionList.append(artistList[currentTrack])
+
+                shuffledList = questionList.shuffled()
+
+                tableView.reloadData()
+
+                let fileName = self.path + songFileNameList[currentTrack]
+
+                player?.pause()
+
+                do {
+
+                    player = try AVAudioPlayer(contentsOf: URL(string: fileName)!)
+
+                } catch {
+                    player = nil
+                }
+
+                player?.play()
+
+                currentTrack += 1
+            }
+        }
+
     }
 
     override func viewWillAppear(_ animated: Bool) {
