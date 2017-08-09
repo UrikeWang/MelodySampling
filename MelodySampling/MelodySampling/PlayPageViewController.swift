@@ -32,11 +32,13 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
     
     var correctAnswer = ""
 
+    var resultList = [Bool]()
+    
     @IBOutlet weak var tableView: UITableView!
 
     @IBAction func checkButtonTapped(_ sender: UIButton) {
 
-        print(self.artistList)
+        print(resultList)
 
     }
 
@@ -207,8 +209,12 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
                 
                 if shuffledList[indexPath.section] == correctAnswer {
                     print("你答對了")
+                    
+                    resultList.append(true)
+                    
                 } else {
-                    print("你答錯了")
+                    print("你答錯了 正確選項是 \(correctAnswer)")
+                    resultList.append(false)
                 }
                     
                 
