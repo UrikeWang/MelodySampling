@@ -34,15 +34,15 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
     var artistList = [String]()
 
     var resultList = [Bool]()
-    
+
     var timeStart: Double?
-    
+
     var timeEnd: Double?
-    
+
     var timePassed: Double?
 
     var score: Double = 0
-    
+
     @IBOutlet weak var scoreLabel: UILabel!
 
     @IBOutlet weak var tableView: UITableView!
@@ -83,7 +83,7 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
             print("Artlist downloading done")
 
             self.timeStart = Date().timeIntervalSince1970
-            
+
             self.startGuessing()
 
         })
@@ -126,21 +126,23 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
         print("你在 \(currentTrack) 首")
 
         if judgeAnswer(input: selectedAnswer, compare: answer) {
-            
+
             let currentTime = Date().timeIntervalSince1970
-            
+
             timePassed = currentTime - timeStart!
             
+            timeStart = currentTime
+            
             let currentScoreString = scoreLabel.text
-            
+
             let currentScore = Double(currentScoreString!) ?? 0.0
-            
+
             let scoreYouGot = scoreAfterOneSong(time: timePassed!)
-            
+
             score = Double(currentScore + scoreYouGot)
-            
+
             let formatPrice = String(format:"%.0f", score)
-            
+
             scoreLabel.text = "\(formatPrice)"
 
             resultList.append(true)
