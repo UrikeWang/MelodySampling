@@ -59,12 +59,10 @@ class LandingPageViewController: UIViewController {
 
             print("\(user.uid) was registered")
 
+            // MARK: 這個 segue 是暫時的，之後用 RootViewController 的方式過場
+            self.performSegue(withIdentifier: "goToProfileFromAnonymous", sender: self)
         }
 
-        //MARK: 這個 segue 是暫時的，之後用 RootViewController 的方式過場
-        performSegue(withIdentifier: "goToProfileFromAnonymous", sender: nil)
-        
-        
     }
 
     override func viewDidLoad() {

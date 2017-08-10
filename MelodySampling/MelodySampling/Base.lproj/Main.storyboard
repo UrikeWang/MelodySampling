@@ -1088,7 +1088,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Sr-Wb-5D4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1052" y="-593"/>
+            <point key="canvasLocation" x="1052" y="-539"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="ycO-Oa-d5U">
@@ -1305,11 +1305,13 @@
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
                     <connections>
+                        <outlet property="emailTextField" destination="SX9-8t-gFK" id="txk-jC-hD1"/>
                         <outlet property="forgetPasswordLabel" destination="9tS-ZU-rY7" id="1ch-Aa-hVU"/>
                         <outlet property="gotoSignUpLabel" destination="KN3-9H-4bf" id="oMZ-Wh-Wow"/>
                         <outlet property="loginButtonOutlet" destination="Zn7-Zg-UeU" id="KxR-YM-vxI"/>
                         <outlet property="loginLabel" destination="cq8-dZ-1az" id="KwX-co-Tof"/>
                         <outlet property="opacityView" destination="KXI-mi-P6b" id="I2d-HS-2zs"/>
+                        <outlet property="passwordTextField" destination="4JM-xJ-G7m" id="08b-Sh-AzK"/>
                         <segue destination="QDn-rL-xbF" kind="show" identifier="goToProfileFromLogin" id="rOl-yo-aGW"/>
                     </connections>
                 </viewController>
@@ -1503,7 +1505,7 @@
         <image name="music" width="370" height="292"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="nvy-29-8r3"/>
+        <segue reference="V5Z-26-1B0"/>
         <segue reference="Xvj-Te-b72"/>
     </inferredMetricsTieBreakers>
 </document>
