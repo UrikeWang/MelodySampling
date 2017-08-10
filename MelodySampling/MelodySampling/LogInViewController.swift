@@ -46,7 +46,6 @@ class LogInViewController: UIViewController {
 
                 guard let user = user else {
 
-                    
                     //這裡的 error 之後要重新設計，原始 message 太長
                     if let error = error {
 
