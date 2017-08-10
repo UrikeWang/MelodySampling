@@ -130,9 +130,9 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
             let currentTime = Date().timeIntervalSince1970
 
             timePassed = currentTime - timeStart!
-            
+
             timeStart = currentTime
-            
+
             let currentScoreString = scoreLabel.text
 
             let currentScore = Double(currentScoreString!) ?? 0.0
