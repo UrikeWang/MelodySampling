@@ -50,7 +50,7 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
 
     @IBOutlet weak var leftUserScoreLabel: UILabel! {
         didSet {
-            rightUserScoreLabel.text = "0000"
+            leftUserScoreLabel.text = "0000"
         }
     }
     

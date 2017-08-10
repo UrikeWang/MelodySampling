@@ -1206,19 +1206,19 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1234" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="45D-kh-MVL" userLabel="Left Points Label">
-                                        <rect key="frame" x="52" y="135" width="82" height="37"/>
+                                        <rect key="frame" x="69" y="135" width="65" height="37"/>
                                         <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="30"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5678" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="owN-SQ-VoR" userLabel="Right Points Label">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5678" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="owN-SQ-VoR" userLabel="Right Points Label">
                                         <rect key="frame" x="242" y="135" width="74" height="37"/>
                                         <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="30"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Betty W." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D8m-Q9-iDm" userLabel="Left User Name Label">
-                                        <rect key="frame" x="59.5" y="121" width="67.5" height="20"/>
+                                        <rect key="frame" x="68" y="121" width="67.5" height="20"/>
                                         <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="16"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -1230,7 +1230,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="3WZ-YD-gEw" userLabel="Left Stars Stack View">
-                                        <rect key="frame" x="42.5" y="178" width="101" height="17"/>
+                                        <rect key="frame" x="51" y="178" width="101" height="17"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Star" translatesAutoresizingMaskIntoConstraints="NO" id="800-Fo-0cP">
                                                 <rect key="frame" x="0.0" y="0.0" width="17" height="17"/>
@@ -1274,7 +1274,6 @@
                                 <constraints>
                                     <constraint firstItem="owN-SQ-VoR" firstAttribute="centerY" secondItem="45D-kh-MVL" secondAttribute="centerY" id="4pe-pZ-y45"/>
                                     <constraint firstItem="8Ee-vt-Ipm" firstAttribute="centerX" secondItem="owN-SQ-VoR" secondAttribute="centerX" id="Dek-1g-eJw"/>
-                                    <constraint firstItem="45D-kh-MVL" firstAttribute="leading" secondItem="NYn-fY-lCm" secondAttribute="leading" constant="52" id="H1e-N3-Za5"/>
                                     <constraint firstItem="i1f-nt-LNi" firstAttribute="top" secondItem="WXg-dK-XIq" secondAttribute="top" constant="49" id="KqE-93-DDO"/>
                                     <constraint firstAttribute="height" constant="215" id="Lpa-8v-KXK"/>
                                     <constraint firstItem="45D-kh-MVL" firstAttribute="top" secondItem="i1f-nt-LNi" secondAttribute="bottom" constant="49" id="OkD-5H-K11"/>
