@@ -899,6 +899,7 @@
                         <outlet property="loginLabel" destination="nRs-tJ-aaB" id="M5B-xK-6yV"/>
                         <outlet property="signUpButtonOutlet" destination="eNZ-KW-APm" id="uzh-Ip-pqx"/>
                         <outlet property="signupLabel" destination="C8j-OD-UCA" id="vgU-rC-PCT"/>
+                        <segue destination="QDn-rL-xbF" kind="show" identifier="goToProfileFromAnonymous" id="nvy-29-8r3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G0U-7s-mVh" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1502,7 +1503,7 @@
         <image name="music" width="370" height="292"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="V5Z-26-1B0"/>
+        <segue reference="nvy-29-8r3"/>
         <segue reference="Xvj-Te-b72"/>
     </inferredMetricsTieBreakers>
 </document>
