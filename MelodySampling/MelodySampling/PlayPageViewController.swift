@@ -153,13 +153,13 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
         }
 
         if prepareTrack == 5 {
-
+/*
             player?.pause()
 
             player = nil
 
             performSegue(withIdentifier: "goToResultPage", sender: self)
-
+*/
         } else {
 
             questionList = fakeArtistList
