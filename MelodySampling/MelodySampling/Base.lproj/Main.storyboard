@@ -1324,7 +1324,7 @@
                                     </imageView>
                                 </subviews>
                             </stackView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="79" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="Su0-ql-6ml">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="79" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="Su0-ql-6ml">
                                 <rect key="frame" x="12" y="269" width="350" height="316"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -1393,12 +1393,51 @@
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
                     <connections>
+                        <outlet property="leftUserScoreLabel" destination="45D-kh-MVL" id="top-oo-nWb"/>
+                        <outlet property="rightUserScoreLabel" destination="owN-SQ-VoR" id="48p-SX-EHm"/>
                         <outlet property="tableView" destination="Su0-ql-6ml" id="IFS-1z-nX0"/>
+                        <segue destination="sgS-eJ-ZD6" kind="show" identifier="goToResultPage" id="tOJ-lc-rsS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mq3-Cr-bb0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2684" y="-953.07346326836591"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="EM0-rn-YA1">
+            <objects>
+                <viewController id="sgS-eJ-ZD6" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0nc-Tv-cGR"/>
+                        <viewControllerLayoutGuide type="bottom" id="M1q-uf-LuF"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="yIg-qe-7hw">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="結算頁" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Fs-IE-4GZ">
+                                <rect key="frame" x="83" y="69" width="208" height="49"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E6m-G9-k2g">
+                                <rect key="frame" x="83" y="354" width="208" height="158"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="0yZ-uh-ktt" kind="show" id="A0J-IA-tWl"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ehh-k0-jgy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3448.8000000000002" y="-953.07346326836591"/>
         </scene>
         <!--Log In View Controller-->
         <scene sceneID="Ya5-e6-AmV">
@@ -1781,6 +1820,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="nvy-29-8r3"/>
+        <segue reference="A0J-IA-tWl"/>
         <segue reference="Xvj-Te-b72"/>
     </inferredMetricsTieBreakers>
 </document>
