@@ -1120,6 +1120,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="Back to Landing"/>
+                                <connections>
+                                    <segue destination="bgG-UJ-6ec" kind="show" id="HnL-VX-57Z"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -1127,7 +1130,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DhC-Fq-Cj1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2637.5999999999999" y="-953.07346326836591"/>
+            <point key="canvasLocation" x="2180" y="-953"/>
         </scene>
         <!--Log In View Controller-->
         <scene sceneID="Ya5-e6-AmV">
