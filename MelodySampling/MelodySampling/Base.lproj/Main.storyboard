@@ -962,7 +962,7 @@
                                                 <rect key="frame" x="13" y="10" width="254" height="20"/>
                                                 <color key="textColor" red="0.25882352939999997" green="0.1333333333" blue="0.99607843139999996" alpha="0.90402932359999999" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES"/>
                                             </textField>
                                         </subviews>
                                         <color key="backgroundColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="0.90402932359999999" colorSpace="calibratedRGB"/>
@@ -981,7 +981,7 @@
                                                 <rect key="frame" x="13" y="10" width="254" height="20"/>
                                                 <color key="textColor" red="0.25882352939999997" green="0.1333333333" blue="0.99607843139999996" alpha="0.90402932359999999" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES"/>
                                             </textField>
                                         </subviews>
                                         <color key="backgroundColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="0.90402932359999999" colorSpace="calibratedRGB"/>
@@ -1082,6 +1082,7 @@
                         <outlet property="passwordTextField" destination="VIX-oo-t59" id="g0C-Ub-YgG"/>
                         <outlet property="signUpButtonOutlet" destination="KBV-Wk-wQJ" id="pmn-WE-vD6"/>
                         <outlet property="signUpLabel" destination="EgF-uP-uhz" id="FUS-Q2-1Pn"/>
+                        <segue destination="QDn-rL-xbF" kind="show" identifier="goToProfileFromSignUp" id="V5Z-26-1B0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Sr-Wb-5D4" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1305,6 +1306,7 @@
                         <outlet property="loginButtonOutlet" destination="Zn7-Zg-UeU" id="KxR-YM-vxI"/>
                         <outlet property="loginLabel" destination="cq8-dZ-1az" id="KwX-co-Tof"/>
                         <outlet property="opacityView" destination="KXI-mi-P6b" id="I2d-HS-2zs"/>
+                        <segue destination="QDn-rL-xbF" kind="show" identifier="goToProfileFromLogin" id="rOl-yo-aGW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TPi-fz-Gh8" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1497,6 +1499,7 @@
         <image name="music" width="370" height="292"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="V5Z-26-1B0"/>
         <segue reference="Xvj-Te-b72"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -30,11 +30,13 @@ class SignUpViewController: UIViewController {
     @IBAction func signUpButtonTapped(_ sender: UIButton) {
         print("Sign up button tapped")
 
-        if emailTextField.text == "" || passwordTextField.text == "" || confirmPasswordTextField.text == "" {
+        guard let email = emailTextField.text, let password = passwordTextField.text, let confirmPassword = confirmPasswordTextField.text else { return }
+
+        if email == "" || password == "" || confirmPassword == "" {
 
             let emptyInputAlert = UIAlertController(title: "Empty field found!", message: "Please input all text field", preferredStyle: .alert)
 
-            let okAction = UIAlertAction(title: "Got it", style: .default) {_ in
+            let okAction = UIAlertAction(title: "OK", style: .default) {_ in
             }
 
             emptyInputAlert.addAction(okAction)
@@ -43,7 +45,22 @@ class SignUpViewController: UIViewController {
 
         } else {
 
-           print("start judge")
+            if password == confirmPassword {
+
+                //成功才換頁
+                performSegue(withIdentifier: "goToProfileFromSignUp", sender: nil)
+
+            } else {
+
+                //不成功就跳 UIAlert
+                let passwordInputAlert = UIAlertController(title: "Password Input Alert", message: "Please confirm your password again", preferredStyle: .alert)
+
+                let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+
+                passwordInputAlert.addAction(okAction)
+
+                self.present(passwordInputAlert, animated: true, completion: nil)
+            }
 
         }
     }
