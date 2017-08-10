@@ -26,7 +26,7 @@ class AnswerTableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
         
-        self.contentView.backgroundColor = UIColor.clear
+        self.contentView.backgroundColor = UIColor.playPageBackground
         
     }
 

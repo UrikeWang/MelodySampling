@@ -21,7 +21,7 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
 
         tableView.dataSource = self
         
-        self.tableView.backgroundColor = UIColor.clear
+//        self.tableView.backgroundColor = UIColor.clear
     }
 
     override func didReceiveMemoryWarning() {
