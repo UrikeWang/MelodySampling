@@ -1111,8 +1111,8 @@
                                     <segue destination="0yZ-uh-ktt" kind="show" id="Wow-d5-dm9"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Profile Page" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r4Q-Nm-V6x">
-                                <rect key="frame" x="106" y="110" width="163" height="59"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="This is Profile Page" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r4Q-Nm-V6x">
+                                <rect key="frame" x="106" y="110" width="163" height="74"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -1134,7 +1134,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DhC-Fq-Cj1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1884" y="-953"/>
+            <point key="canvasLocation" x="1884" y="-953.07346326836591"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="BZk-Uo-QSu">
@@ -1147,12 +1147,35 @@
                     <view key="view" contentMode="scaleToFill" id="E2X-WD-2Wc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WXg-dK-XIq" userLabel="Profile Background Content View">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="215"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BG" translatesAutoresizingMaskIntoConstraints="NO" id="NYn-fY-lCm">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="215"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="215" id="Lpa-8v-KXK"/>
+                                    <constraint firstAttribute="bottom" secondItem="NYn-fY-lCm" secondAttribute="bottom" id="Pgd-Fy-MPf"/>
+                                    <constraint firstItem="NYn-fY-lCm" firstAttribute="top" secondItem="WXg-dK-XIq" secondAttribute="top" id="YwE-OH-Lb4"/>
+                                    <constraint firstAttribute="trailing" secondItem="NYn-fY-lCm" secondAttribute="trailing" id="dPS-GX-Ilf"/>
+                                    <constraint firstItem="NYn-fY-lCm" firstAttribute="leading" secondItem="WXg-dK-XIq" secondAttribute="leading" id="jbO-0v-ySS"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.25882352941176467" green="0.13333333333333333" blue="0.99607843137254903" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="WXg-dK-XIq" secondAttribute="trailing" id="5GA-S1-YCc"/>
+                            <constraint firstItem="WXg-dK-XIq" firstAttribute="leading" secondItem="E2X-WD-2Wc" secondAttribute="leading" id="Nad-nJ-zXh"/>
+                            <constraint firstItem="WXg-dK-XIq" firstAttribute="top" secondItem="yzg-T8-E23" secondAttribute="bottom" id="TeX-Ch-ed2"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mq3-Cr-bb0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2684" y="-953"/>
+            <point key="canvasLocation" x="2684" y="-953.07346326836591"/>
         </scene>
         <!--Log In View Controller-->
         <scene sceneID="Ya5-e6-AmV">
@@ -1521,6 +1544,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="BG" width="391" height="215"/>
         <image name="crowd" width="375" height="667"/>
         <image name="logo" width="48" height="30"/>
         <image name="music" width="370" height="292"/>
