@@ -33,10 +33,11 @@ class DestinationDownload: UIViewController {
             (snapshot) in
 
             guard let postDict = snapshot.value as? [String: AnyObject] else { return }
-
+            
             let indexArray = Array(postDict.keys)
 
             guard let songsList = [postDict[indexArray[0]]!["previewUrl"]!, postDict[indexArray[1]]!["previewUrl"]!, postDict[indexArray[2]]!["previewUrl"]!, postDict[indexArray[3]]!["previewUrl"]!, postDict[indexArray[4]]!["previewUrl"]!] as? [String] else { return }
+            
 
         for index in 0..<songsList.count {
 
