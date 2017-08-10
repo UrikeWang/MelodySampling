@@ -33,7 +33,7 @@ extension UIColor {
     class var mldWhite: UIColor {
         return UIColor(white: 238.0 / 255.0, alpha: 1.0)
     }
-    
+
     class var playPageBackground: UIColor {
         return UIColor(red: 66.0 / 255.0, green: 34.0 / 255.0, blue: 254.0 / 255.0, alpha: 1.0)
     }

@@ -1321,36 +1321,57 @@
                                     </imageView>
                                 </subviews>
                             </stackView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="65" sectionHeaderHeight="7" sectionFooterHeight="7" translatesAutoresizingMaskIntoConstraints="NO" id="Su0-ql-6ml">
-                                <rect key="frame" x="12" y="263" width="350" height="316"/>
-                                <color key="backgroundColor" red="0.25882352939999997" green="0.1333333333" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="79" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="Su0-ql-6ml">
+                                <rect key="frame" x="12" y="269" width="350" height="316"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="316" id="cKN-mg-r2f"/>
                                 </constraints>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="AnswerCell" textLabel="5sV-fK-e6v" rowHeight="65" style="IBUITableViewCellStyleDefault" id="Q35-Pz-Djb">
-                                        <rect key="frame" x="0.0" y="7" width="350" height="65"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="AnswerCell" rowHeight="79" id="Q35-Pz-Djb" customClass="AnswerTableViewCell" customModule="MelodySampling" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="1" width="350" height="79"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Q35-Pz-Djb" id="QfC-c9-lpe">
-                                            <rect key="frame" x="0.0" y="0.0" width="350" height="65"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="350" height="79"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="5sV-fK-e6v">
-                                                    <rect key="frame" x="15" y="0.0" width="320" height="65"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q2e-P0-GVP" userLabel="Answer View">
+                                                    <rect key="frame" x="0.0" y="7" width="350" height="65"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Artist Name" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iJw-td-DcI" userLabel="Answer Label">
+                                                            <rect key="frame" x="0.0" y="0.0" width="350" height="65"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstItem="iJw-td-DcI" firstAttribute="width" secondItem="Q2e-P0-GVP" secondAttribute="width" id="AOx-ba-8ta"/>
+                                                        <constraint firstItem="iJw-td-DcI" firstAttribute="height" secondItem="Q2e-P0-GVP" secondAttribute="height" id="eew-hs-Vw7"/>
+                                                        <constraint firstItem="iJw-td-DcI" firstAttribute="centerY" secondItem="Q2e-P0-GVP" secondAttribute="centerY" id="mBP-a5-Dfv"/>
+                                                        <constraint firstItem="iJw-td-DcI" firstAttribute="centerX" secondItem="Q2e-P0-GVP" secondAttribute="centerX" id="wbB-bS-oS6"/>
+                                                    </constraints>
+                                                </view>
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.25882352939999997" green="0.1333333333" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="Q2e-P0-GVP" firstAttribute="centerX" secondItem="Q35-Pz-Djb" secondAttribute="centerX" id="DG1-Np-Dot"/>
+                                            <constraint firstItem="Q2e-P0-GVP" firstAttribute="centerY" secondItem="Q35-Pz-Djb" secondAttribute="centerY" id="W4L-r3-y5p"/>
+                                            <constraint firstItem="Q2e-P0-GVP" firstAttribute="height" secondItem="Q35-Pz-Djb" secondAttribute="height" constant="-14" id="hpd-3Z-4fN"/>
+                                            <constraint firstItem="Q2e-P0-GVP" firstAttribute="width" secondItem="Q35-Pz-Djb" secondAttribute="width" id="mTh-Lj-FUg"/>
+                                        </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="10"/>
+                                                <real key="value" value="0.0"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <outlet property="answerLabel" destination="iJw-td-DcI" id="wOT-WD-4yt"/>
+                                            <outlet property="answerView" destination="Q2e-P0-GVP" id="1cv-na-Ha7"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -1359,7 +1380,7 @@
                         <constraints>
                             <constraint firstItem="Su0-ql-6ml" firstAttribute="centerX" secondItem="E2X-WD-2Wc" secondAttribute="centerX" id="2v7-hH-tlM"/>
                             <constraint firstAttribute="trailing" secondItem="WXg-dK-XIq" secondAttribute="trailing" id="5GA-S1-YCc"/>
-                            <constraint firstItem="Su0-ql-6ml" firstAttribute="top" secondItem="txB-Mt-xPL" secondAttribute="bottom" constant="10" id="FZJ-cf-hrR"/>
+                            <constraint firstItem="Su0-ql-6ml" firstAttribute="top" secondItem="txB-Mt-xPL" secondAttribute="bottom" constant="16" id="FZJ-cf-hrR"/>
                             <constraint firstItem="txB-Mt-xPL" firstAttribute="top" secondItem="WXg-dK-XIq" secondAttribute="bottom" constant="16" id="LnJ-mM-fhv"/>
                             <constraint firstItem="WXg-dK-XIq" firstAttribute="leading" secondItem="E2X-WD-2Wc" secondAttribute="leading" id="Nad-nJ-zXh"/>
                             <constraint firstItem="WXg-dK-XIq" firstAttribute="top" secondItem="yzg-T8-E23" secondAttribute="bottom" id="TeX-Ch-ed2"/>
