@@ -635,10 +635,10 @@
             </objects>
             <point key="canvasLocation" x="4332" y="1921.8890554722641"/>
         </scene>
-        <!--Play Page View Controller-->
+        <!--Play Page View Controller Old-->
         <scene sceneID="EVv-IJ-6rw">
             <objects>
-                <viewController id="gFM-ag-eYh" customClass="PlayPageViewController" customModule="MelodySampling" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="gFM-ag-eYh" customClass="PlayPageViewControllerOld" customModule="MelodySampling" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="nzL-3K-yaT"/>
                         <viewControllerLayoutGuide type="bottom" id="xBU-AY-uDj"/>
@@ -1147,10 +1147,10 @@
             </objects>
             <point key="canvasLocation" x="1884" y="-953.07346326836591"/>
         </scene>
-        <!--View Controller-->
+        <!--Play Page View Controller-->
         <scene sceneID="BZk-Uo-QSu">
             <objects>
-                <viewController id="0yZ-uh-ktt" sceneMemberID="viewController">
+                <viewController id="0yZ-uh-ktt" customClass="PlayPageViewController" customModule="MelodySampling" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="yzg-T8-E23"/>
                         <viewControllerLayoutGuide type="bottom" id="mRu-LV-13g"/>
@@ -1321,9 +1321,9 @@
                                     </imageView>
                                 </subviews>
                             </stackView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="65" sectionHeaderHeight="7" sectionFooterHeight="7" translatesAutoresizingMaskIntoConstraints="NO" id="Su0-ql-6ml">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="65" sectionHeaderHeight="7" sectionFooterHeight="7" translatesAutoresizingMaskIntoConstraints="NO" id="Su0-ql-6ml">
                                 <rect key="frame" x="12" y="263" width="350" height="316"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.25882352939999997" green="0.1333333333" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="316" id="cKN-mg-r2f"/>
                                 </constraints>
@@ -1343,8 +1343,9 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
-                                            <color key="backgroundColor" red="0.61960784310000006" green="0.93725490199999995" blue="0.88235294119999996" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.25882352939999997" green="0.1333333333" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                 <real key="value" value="10"/>
@@ -1367,6 +1368,9 @@
                         </constraints>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
+                    <connections>
+                        <outlet property="tableView" destination="Su0-ql-6ml" id="IFS-1z-nX0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mq3-Cr-bb0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
