@@ -153,13 +153,13 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
         }
 
         if prepareTrack == 5 {
-/*
+
             player?.pause()
 
             player = nil
 
             performSegue(withIdentifier: "goToResultPage", sender: self)
-*/
+
         } else {
 
             questionList = fakeArtistList
@@ -185,9 +185,22 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
             player?.play()
 
             currentTrack = prepareTrack
+            
+            print("現在是 \(currentTrack) 首")
 
-            prepareTrack += 1
+            if currentTrack == 5 {
+                
+                performSegue(withIdentifier: "goToResultPage", sender: self)
+                
+                player?.pause()
+                
+                player = nil
 
+            } else {
+            
+                prepareTrack += 1
+
+            }
         }
     }
 
