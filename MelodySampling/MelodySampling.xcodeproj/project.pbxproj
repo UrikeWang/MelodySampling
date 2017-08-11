@@ -49,6 +49,7 @@
 		73865FB81F3C4D32004E3594 /* PlayPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73865FB71F3C4D32004E3594 /* PlayPageViewController.swift */; };
 		73865FBA1F3C547F004E3594 /* AnswerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73865FB91F3C547F004E3594 /* AnswerTableViewCell.swift */; };
 		73865FBC1F3C7F5A004E3594 /* ResultStructure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73865FBB1F3C7F5A004E3594 /* ResultStructure.swift */; };
+		7399DB881F3D835900E2A4B2 /* ResultPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7399DB871F3D835900E2A4B2 /* ResultPageViewController.swift */; };
 		73AF80231F384B7900CA31FB /* Styleguide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73AF80221F384B7900CA31FB /* Styleguide.swift */; };
 		73AF80261F384E3B00CA31FB /* LandingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73AF80251F384E3B00CA31FB /* LandingPageViewController.swift */; };
 		73AF80281F385A7000CA31FB /* OutletFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73AF80271F385A7000CA31FB /* OutletFunction.swift */; };
@@ -106,6 +107,7 @@
 		73865FB71F3C4D32004E3594 /* PlayPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayPageViewController.swift; sourceTree = "<group>"; };
 		73865FB91F3C547F004E3594 /* AnswerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnswerTableViewCell.swift; sourceTree = "<group>"; };
 		73865FBB1F3C7F5A004E3594 /* ResultStructure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultStructure.swift; sourceTree = "<group>"; };
+		7399DB871F3D835900E2A4B2 /* ResultPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultPageViewController.swift; sourceTree = "<group>"; };
 		73AF80221F384B7900CA31FB /* Styleguide.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Styleguide.swift; sourceTree = "<group>"; };
 		73AF80251F384E3B00CA31FB /* LandingPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandingPageViewController.swift; sourceTree = "<group>"; };
 		73AF80271F385A7000CA31FB /* OutletFunction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OutletFunction.swift; sourceTree = "<group>"; };
@@ -213,6 +215,7 @@
 				736271001F3A9CC60002206B /* Factory */,
 				73865FB61F3C4D13004E3594 /* PlayPage */,
 				732AE48A1F39E09A009746CA /* PlayPageOld */,
+				7399DB861F3D82ED00E2A4B2 /* ResultPage */,
 				732AE4851F398816009746CA /* Timer */,
 				732AE4601F398137009746CA /* FontResource */,
 				73AF80241F384E1E00CA31FB /* LandingToSignIn */,
@@ -283,6 +286,14 @@
 				73865FB91F3C547F004E3594 /* AnswerTableViewCell.swift */,
 			);
 			name = PlayPage;
+			sourceTree = "<group>";
+		};
+		7399DB861F3D82ED00E2A4B2 /* ResultPage */ = {
+			isa = PBXGroup;
+			children = (
+				7399DB871F3D835900E2A4B2 /* ResultPageViewController.swift */,
+			);
+			name = ResultPage;
 			sourceTree = "<group>";
 		};
 		73AF80211F384B3400CA31FB /* StyleguideRelative */ = {
@@ -514,6 +525,7 @@
 				73AF80231F384B7900CA31FB /* Styleguide.swift in Sources */,
 				73865FBA1F3C547F004E3594 /* AnswerTableViewCell.swift in Sources */,
 				73AF802E1F38764300CA31FB /* LogInViewController.swift in Sources */,
+				7399DB881F3D835900E2A4B2 /* ResultPageViewController.swift in Sources */,
 				73865FB81F3C4D32004E3594 /* PlayPageViewController.swift in Sources */,
 				73744D311F2F7CA900C1FAEA /* PreviewSongsURL.swift in Sources */,
 				732AE48C1F39E0F0009746CA /* PlayPageViewControllerOld.swift in Sources */,

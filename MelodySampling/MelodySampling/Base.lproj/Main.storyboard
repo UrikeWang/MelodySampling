@@ -1402,10 +1402,10 @@
             </objects>
             <point key="canvasLocation" x="2684" y="-953.07346326836591"/>
         </scene>
-        <!--View Controller-->
+        <!--Result Page View Controller-->
         <scene sceneID="EM0-rn-YA1">
             <objects>
-                <viewController id="sgS-eJ-ZD6" sceneMemberID="viewController">
+                <viewController id="sgS-eJ-ZD6" customClass="ResultPageViewController" customModule="MelodySampling" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="0nc-Tv-cGR"/>
                         <viewControllerLayoutGuide type="bottom" id="M1q-uf-LuF"/>
@@ -1490,7 +1490,7 @@
                                 <rect key="frame" x="0.0" y="180" width="375" height="400"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="ygb-vP-tHp">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ResultCell" id="ygb-vP-tHp">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ygb-vP-tHp" id="xXb-VQ-vLC">
@@ -1537,6 +1537,9 @@
                             <constraint firstAttribute="trailing" secondItem="tAC-Hl-2rc" secondAttribute="trailing" id="zGr-Ke-qYZ"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="ON0-XX-kiJ" id="Mfs-pn-nbo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ehh-k0-jgy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
