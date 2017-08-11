@@ -40,7 +40,7 @@ class ResultPageViewController: UIViewController, UITableViewDelegate, UITableVi
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! ResultTableViewCell
         //swiftlint:enable
 
-        cell.textLabel?.text = songList[indexPath.row]
+        
 
         return cell
     }
