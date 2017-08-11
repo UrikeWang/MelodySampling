@@ -37,6 +37,14 @@ extension UIColor {
     class var playPageBackground: UIColor {
         return UIColor(red: 66.0 / 255.0, green: 34.0 / 255.0, blue: 254.0 / 255.0, alpha: 1.0)
     }
+    
+    class var mldBarney80: UIColor {
+        return UIColor(red: 193.0 / 255.0, green: 31.0 / 255.0, blue: 180.0 / 255.0, alpha: 0.8)
+    }
+    
+    class var mldUltramarineBlue: UIColor {
+        return UIColor(red: 34.0 / 255.0, green: 0.0, blue: 231.0 / 255.0, alpha: 1.0)
+    }
 }
 
 // Text styles
