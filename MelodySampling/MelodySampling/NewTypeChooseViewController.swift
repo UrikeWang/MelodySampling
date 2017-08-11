@@ -8,11 +8,25 @@
 
 import UIKit
 
-class NewTypeChooseViewController: UIViewController {
+class NewTypeChooseViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
+    var typeList = ["男歌手", "女歌手", "團體歌手", "單人歌手"]
+    
+    @IBOutlet weak var tableView: UITableView!
+    
+    @IBAction func playButtonTapped(_ sender: UIButton) {
+    }
+    
+    @IBAction func checkButtonTapped(_ sender: UIButton) {
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        tableView.delegate = self
+        
+        tableView.dataSource = self
+        
         // Do any additional setup after loading the view.
     }
 
@@ -21,15 +35,24 @@ class NewTypeChooseViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return typeList.count
     }
-    */
-
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cellIdentifier = "TypeCell"
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
+        
+        cell.textLabel?.text = typeList[indexPath.row]
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        return self.tableView.frame.height / CGFloat(typeList.count)
+        
+    }
 }
