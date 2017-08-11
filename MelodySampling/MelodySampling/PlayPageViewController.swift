@@ -53,8 +53,7 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
             leftUserScoreLabel.text = "0000"
         }
     }
-    
-    
+
     @IBOutlet weak var tableView: UITableView!
 
     override func viewDidLoad() {
@@ -110,13 +109,13 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
         cell.backgroundColor = UIColor.clear
 
         cell.selectionStyle = .none
-        
+
         return cell
 
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+
         let selectedAnswer = shuffledList[indexPath.section]
 
         let answer = artistList[currentTrack]
@@ -186,8 +185,21 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
 
             currentTrack = prepareTrack
 
-            prepareTrack += 1
+            print("現在是 \(currentTrack) 首")
 
+            if currentTrack == 5 {
+
+                performSegue(withIdentifier: "goToResultPage", sender: self)
+
+                player?.pause()
+
+                player = nil
+
+            } else {
+
+                prepareTrack += 1
+
+            }
         }
     }
 

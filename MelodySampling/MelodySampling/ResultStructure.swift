@@ -15,16 +15,16 @@ struct EachSongResult {
     let artworkUrl30: UIImage
     let result: Bool
     let usedTime: Double
-    
+
 }
 
 struct DictionaryToResult {
-    
+
     let score: Double
     let song0: EachSongResult
     let song1: EachSongResult
     let song2: EachSongResult
     let song3: EachSongResult
     let song4: EachSongResult
-    
+
 }
