@@ -9,7 +9,11 @@
 import UIKit
 
 class ResultPageViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
+    
+    @IBOutlet weak var invisibleNextGameButtonOutlet: UIButton!
+    
+    @IBOutlet weak var invisibleGoHomeButtonOutlet: UIButton!
+    
     @IBOutlet weak var tableView: UITableView!
 
     @IBOutlet weak var profilePageView: UIView!
@@ -30,8 +34,10 @@ class ResultPageViewController: UIViewController, UITableViewDelegate, UITableVi
         createProfileViewOfResult(target: self.profilePageView)
 
         createNextBattleOfResult(target: nextBattleLabel)
+        
+        invisibleNextGameButtonOutlet.setTitleColor(UIColor.clear, for: .normal)
 
-        // Do any additional setup after loading the view.
+        invisibleGoHomeButtonOutlet.setTitleColor(UIColor.clear, for: .normal)
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
