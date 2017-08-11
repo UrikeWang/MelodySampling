@@ -31,6 +31,7 @@
 		732AE4891F399258009746CA /* ScoresFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732AE4881F399258009746CA /* ScoresFunc.swift */; };
 		732AE48C1F39E0F0009746CA /* PlayPageViewControllerOld.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732AE48B1F39E0F0009746CA /* PlayPageViewControllerOld.swift */; };
 		735575991F3D87AC00A0E271 /* ResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735575981F3D87AC00A0E271 /* ResultTableViewCell.swift */; };
+		7355759C1F3DAE3C00A0E271 /* TypeChoosePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7355759B1F3DAE3C00A0E271 /* TypeChoosePageViewController.swift */; };
 		736271021F3A9CF00002206B /* QuestionFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 736271011F3A9CF00002206B /* QuestionFactory.swift */; };
 		736271041F3AAB210002206B /* ArrayShuffle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 736271031F3AAB210002206B /* ArrayShuffle.swift */; };
 		73744D041F2ED94200C1FAEA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73744D031F2ED94200C1FAEA /* AppDelegate.swift */; };
@@ -88,6 +89,7 @@
 		732AE4881F399258009746CA /* ScoresFunc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoresFunc.swift; sourceTree = "<group>"; };
 		732AE48B1F39E0F0009746CA /* PlayPageViewControllerOld.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayPageViewControllerOld.swift; sourceTree = "<group>"; };
 		735575981F3D87AC00A0E271 /* ResultTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultTableViewCell.swift; sourceTree = "<group>"; };
+		7355759B1F3DAE3C00A0E271 /* TypeChoosePageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeChoosePageViewController.swift; sourceTree = "<group>"; };
 		736271011F3A9CF00002206B /* QuestionFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionFactory.swift; sourceTree = "<group>"; };
 		736271031F3AAB210002206B /* ArrayShuffle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayShuffle.swift; sourceTree = "<group>"; };
 		73744D001F2ED94200C1FAEA /* MelodySampling.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MelodySampling.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -185,6 +187,14 @@
 			name = PlayPageOld;
 			sourceTree = "<group>";
 		};
+		7355759A1F3DADFC00A0E271 /* TypeChoosePage */ = {
+			isa = PBXGroup;
+			children = (
+				7355759B1F3DAE3C00A0E271 /* TypeChoosePageViewController.swift */,
+			);
+			name = TypeChoosePage;
+			sourceTree = "<group>";
+		};
 		736271001F3A9CC60002206B /* Factory */ = {
 			isa = PBXGroup;
 			children = (
@@ -215,6 +225,7 @@
 			isa = PBXGroup;
 			children = (
 				736271001F3A9CC60002206B /* Factory */,
+				7355759A1F3DADFC00A0E271 /* TypeChoosePage */,
 				73865FB61F3C4D13004E3594 /* PlayPage */,
 				732AE48A1F39E09A009746CA /* PlayPageOld */,
 				7399DB861F3D82ED00E2A4B2 /* ResultPage */,
@@ -514,6 +525,7 @@
 				73744D251F2F1A7600C1FAEA /* LoginSuccedViewController.swift in Sources */,
 				736271041F3AAB210002206B /* ArrayShuffle.swift in Sources */,
 				73AF802C1F386D4400CA31FB /* SignUpViewController.swift in Sources */,
+				7355759C1F3DAE3C00A0E271 /* TypeChoosePageViewController.swift in Sources */,
 				73AF802A1F385EAE00CA31FB /* GradientLayerCreater.swift in Sources */,
 				73820C481F3056C900121A4D /* DownloadFromITuneViewController.swift in Sources */,
 				73EBA3031F31F63E0082C752 /* PlaySongsAftDownloadViewController.swift in Sources */,
