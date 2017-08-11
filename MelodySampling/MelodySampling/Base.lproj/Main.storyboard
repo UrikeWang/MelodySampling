@@ -1192,7 +1192,6 @@
                                 <state key="normal" title="Play"/>
                                 <connections>
                                     <action selector="playButtonTapped:" destination="QDn-rL-xbF" eventType="touchUpInside" id="eaR-YJ-Rui"/>
-                                    <segue destination="DwJ-ua-HvI" kind="show" id="oqB-8A-geQ"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1203,10 +1202,10 @@
             </objects>
             <point key="canvasLocation" x="1884" y="-953.07346326836591"/>
         </scene>
-        <!--View Controller-->
+        <!--New Type Choose View Controller-->
         <scene sceneID="CBg-b8-mju">
             <objects>
-                <viewController id="DwJ-ua-HvI" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NewTypeChoose" id="DwJ-ua-HvI" customClass="NewTypeChooseViewController" customModule="MelodySampling" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="wem-S8-hd3"/>
                         <viewControllerLayoutGuide type="bottom" id="PXk-IO-FRh"/>
@@ -1224,12 +1223,12 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="meu-zt-sSq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2574" y="-1506"/>
+            <point key="canvasLocation" x="2662" y="-1617"/>
         </scene>
         <!--Type Choose Page View Controller-->
         <scene sceneID="vP0-Wf-Cye">

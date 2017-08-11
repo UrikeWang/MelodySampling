@@ -1,5 +1,5 @@
 //
-//  ProfilePageViewController.swift
+//  NewTypeChooseViewController.swift
 //  MelodySampling
 //
 //  Created by moon on 2017/8/11.
@@ -8,21 +8,8 @@
 
 import UIKit
 
-class ProfilePageViewController: UIViewController {
-    
-    @IBAction func playButtonTapped(_ sender: Any) {
-        print("This button tapped")
-        
-//        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        
-        //swiftlint:disable force_cast
-        let registerVC = self.storyboard?.instantiateViewController(withIdentifier: "NewTypeChoose")
-        
-        self.present(registerVC!, animated: true, completion: nil)
-        //swiftlint:enable
-    }
-    
-    
+class NewTypeChooseViewController: UIViewController {
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
