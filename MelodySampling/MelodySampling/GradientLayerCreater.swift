@@ -39,3 +39,31 @@ func createSignUpPageGradient(target uIView: UIView) {
     uIView.layer.insertSublayer(gradientLayer, at: 0)
 
 }
+
+func createProfileViewOfResult(target uIView: UIView) {
+
+    gradientLayer = CAGradientLayer()
+
+    gradientLayer.frame = uIView.bounds
+
+    gradientLayer.colors = [UIColor.mldBarney80.cgColor, UIColor.mldUltramarineBlue.cgColor]
+
+    uIView.layer.insertSublayer(gradientLayer, at: 0)
+
+}
+
+func createNextBattleOfResult(target uILabel: UILabel) {
+
+    gradientLayer = CAGradientLayer()
+
+    gradientLayer.frame = uILabel.bounds
+
+    gradientLayer.colors = [UIColor.mldDuckEggBlue.cgColor, UIColor.mldTiffanyBlue.cgColor]
+
+    uILabel.layer.insertSublayer(gradientLayer, at: 0)
+
+    uILabel.layer.cornerRadius = 25
+
+    uILabel.layer.masksToBounds = true
+
+}

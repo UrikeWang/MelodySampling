@@ -18,12 +18,18 @@ class ResultPageViewController: UIViewController, UITableViewDelegate, UITableVi
 
     var songList = ["a", "b", "c", "d", "e"]
 
+    @IBOutlet weak var nextBattleLabel: UILabel!
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         tableView.delegate = self
 
         tableView.dataSource = self
+
+        createProfileViewOfResult(target: self.profilePageView)
+
+        createNextBattleOfResult(target: nextBattleLabel)
 
         // Do any additional setup after loading the view.
     }
@@ -39,8 +45,6 @@ class ResultPageViewController: UIViewController, UITableViewDelegate, UITableVi
         //swiftlint:disable force_cast
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! ResultTableViewCell
         //swiftlint:enable
-
-        
 
         return cell
     }

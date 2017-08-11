@@ -22,6 +22,10 @@ extension UIColor {
         return UIColor(red: 66.0 / 255.0, green: 34.0 / 255.0, blue: 254.0 / 255.0, alpha: 1.0)
     }
 
+    class var mldDuckEggBlue: UIColor {
+        return UIColor(red: 205.0 / 255.0, green: 248.0 / 255.0, blue: 242.0 / 255.0, alpha: 1.0)
+    }
+
     class var mldTiffanyBlue: UIColor {
         return UIColor(red: 158.0 / 255.0, green: 239.0 / 255.0, blue: 225.0 / 255.0, alpha: 1.0)
     }
