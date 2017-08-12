@@ -12,7 +12,7 @@ import Firebase
 
 var ref: DatabaseReference!
 
-func downloadQuestion(genre code: Int) {
+func downloadQuestion(genre code: Int, viewController vC: UIViewController) {
 
     let genreCode = "genreCode\(code)"
 
@@ -30,6 +30,7 @@ func downloadQuestion(genre code: Int) {
 
         guard let songsList = [postDict[indexArray[0]]!["previewUrl"]!, postDict[indexArray[1]]!["previewUrl"]!, postDict[indexArray[2]]!["previewUrl"]!, postDict[indexArray[3]]!["previewUrl"]!, postDict[indexArray[4]]!["previewUrl"]!] as? [String] else { return }
 
+        var downloadCount = 0
         
         for index in 0..<songsList.count {
 
@@ -46,6 +47,15 @@ func downloadQuestion(genre code: Int) {
             DispatchQueue.main.async {
                 Alamofire.download(eachSong, to: destination).response { _ in
 
+                    downloadCount += 1
+                    print("第 \(downloadCount) 首下載完成")
+                    
+                    if downloadCount == songsList.count {
+                        let registerVC = vC.storyboard?.instantiateViewController(withIdentifier: "PlayPage")
+                        
+                        vC.present(registerVC!, animated: true, completion: nil)
+                        
+                    }
                     //                    print(response.response)
                 }
 
