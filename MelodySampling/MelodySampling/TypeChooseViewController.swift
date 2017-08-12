@@ -83,5 +83,12 @@ class TypeChooseViewController: UIViewController, UITableViewDataSource, UITable
         return self.tableView.frame.height / CGFloat(typeList.count)
 
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        //MARK: 之後把過場和選提寫在這
+        print("你選了 \(typeList[index.rw])")
+        
+    }
 
 }
