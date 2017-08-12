@@ -31,6 +31,7 @@
 		732AE4891F399258009746CA /* ScoresFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732AE4881F399258009746CA /* ScoresFunc.swift */; };
 		732AE48C1F39E0F0009746CA /* PlayPageViewControllerOld.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732AE48B1F39E0F0009746CA /* PlayPageViewControllerOld.swift */; };
 		735575991F3D87AC00A0E271 /* ResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735575981F3D87AC00A0E271 /* ResultTableViewCell.swift */; };
+		7355759F1F3DB8FF00A0E271 /* ProfilePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7355759E1F3DB8FF00A0E271 /* ProfilePageViewController.swift */; };
 		736271021F3A9CF00002206B /* QuestionFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 736271011F3A9CF00002206B /* QuestionFactory.swift */; };
 		736271041F3AAB210002206B /* ArrayShuffle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 736271031F3AAB210002206B /* ArrayShuffle.swift */; };
 		73744D041F2ED94200C1FAEA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73744D031F2ED94200C1FAEA /* AppDelegate.swift */; };
@@ -47,6 +48,7 @@
 		73744D311F2F7CA900C1FAEA /* PreviewSongsURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73744D301F2F7CA900C1FAEA /* PreviewSongsURL.swift */; };
 		73820C481F3056C900121A4D /* DownloadFromITuneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73820C471F3056C900121A4D /* DownloadFromITuneViewController.swift */; };
 		73820C901F30A20A00121A4D /* DestinationDownload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73820C8F1F30A20A00121A4D /* DestinationDownload.swift */; };
+		7382740C1F3EAF8D00CD718E /* DownloadFromQuestionBank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7382740B1F3EAF8D00CD718E /* DownloadFromQuestionBank.swift */; };
 		73865FB81F3C4D32004E3594 /* PlayPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73865FB71F3C4D32004E3594 /* PlayPageViewController.swift */; };
 		73865FBA1F3C547F004E3594 /* AnswerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73865FB91F3C547F004E3594 /* AnswerTableViewCell.swift */; };
 		73865FBC1F3C7F5A004E3594 /* ResultStructure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73865FBB1F3C7F5A004E3594 /* ResultStructure.swift */; };
@@ -60,6 +62,7 @@
 		73D6A56E1F33060F00928402 /* QuestionBankViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D6A56D1F33060F00928402 /* QuestionBankViewController.swift */; };
 		73EBA3031F31F63E0082C752 /* PlaySongsAftDownloadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73EBA3021F31F63E0082C752 /* PlaySongsAftDownloadViewController.swift */; };
 		73EBA3061F31FF210082C752 /* RetrieveDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73EBA3051F31FF210082C752 /* RetrieveDataViewController.swift */; };
+		73FDE6681F3DC35400D9A3FC /* TypeChooseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73FDE6671F3DC35400D9A3FC /* TypeChooseViewController.swift */; };
 		E9121496FD42D46E60BF274E /* Pods_MelodySampling.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCE8237F816AFC43B6CA66DF /* Pods_MelodySampling.framework */; };
 /* End PBXBuildFile section */
 
@@ -88,6 +91,7 @@
 		732AE4881F399258009746CA /* ScoresFunc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoresFunc.swift; sourceTree = "<group>"; };
 		732AE48B1F39E0F0009746CA /* PlayPageViewControllerOld.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayPageViewControllerOld.swift; sourceTree = "<group>"; };
 		735575981F3D87AC00A0E271 /* ResultTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultTableViewCell.swift; sourceTree = "<group>"; };
+		7355759E1F3DB8FF00A0E271 /* ProfilePageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfilePageViewController.swift; sourceTree = "<group>"; };
 		736271011F3A9CF00002206B /* QuestionFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionFactory.swift; sourceTree = "<group>"; };
 		736271031F3AAB210002206B /* ArrayShuffle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayShuffle.swift; sourceTree = "<group>"; };
 		73744D001F2ED94200C1FAEA /* MelodySampling.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MelodySampling.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -106,6 +110,7 @@
 		73744D301F2F7CA900C1FAEA /* PreviewSongsURL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewSongsURL.swift; sourceTree = "<group>"; };
 		73820C471F3056C900121A4D /* DownloadFromITuneViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownloadFromITuneViewController.swift; sourceTree = "<group>"; };
 		73820C8F1F30A20A00121A4D /* DestinationDownload.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DestinationDownload.swift; sourceTree = "<group>"; };
+		7382740B1F3EAF8D00CD718E /* DownloadFromQuestionBank.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownloadFromQuestionBank.swift; sourceTree = "<group>"; };
 		73865FB71F3C4D32004E3594 /* PlayPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayPageViewController.swift; sourceTree = "<group>"; };
 		73865FB91F3C547F004E3594 /* AnswerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnswerTableViewCell.swift; sourceTree = "<group>"; };
 		73865FBB1F3C7F5A004E3594 /* ResultStructure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultStructure.swift; sourceTree = "<group>"; };
@@ -119,6 +124,7 @@
 		73D6A56D1F33060F00928402 /* QuestionBankViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionBankViewController.swift; sourceTree = "<group>"; };
 		73EBA3021F31F63E0082C752 /* PlaySongsAftDownloadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaySongsAftDownloadViewController.swift; sourceTree = "<group>"; };
 		73EBA3051F31FF210082C752 /* RetrieveDataViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RetrieveDataViewController.swift; sourceTree = "<group>"; };
+		73FDE6671F3DC35400D9A3FC /* TypeChooseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeChooseViewController.swift; sourceTree = "<group>"; };
 		744E2D9810A745B7407345E5 /* Pods-MelodySampling.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MelodySampling.release.xcconfig"; path = "Pods/Target Support Files/Pods-MelodySampling/Pods-MelodySampling.release.xcconfig"; sourceTree = "<group>"; };
 		7AEB0E68990119E1DCEEFF7C /* Pods-MelodySampling.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MelodySampling.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MelodySampling/Pods-MelodySampling.debug.xcconfig"; sourceTree = "<group>"; };
 		DCE8237F816AFC43B6CA66DF /* Pods_MelodySampling.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MelodySampling.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -185,6 +191,22 @@
 			name = PlayPageOld;
 			sourceTree = "<group>";
 		};
+		7355759A1F3DADFC00A0E271 /* TypeChoosePage */ = {
+			isa = PBXGroup;
+			children = (
+				73FDE6671F3DC35400D9A3FC /* TypeChooseViewController.swift */,
+			);
+			name = TypeChoosePage;
+			sourceTree = "<group>";
+		};
+		7355759D1F3DB8D400A0E271 /* ProfilePage */ = {
+			isa = PBXGroup;
+			children = (
+				7355759E1F3DB8FF00A0E271 /* ProfilePageViewController.swift */,
+			);
+			name = ProfilePage;
+			sourceTree = "<group>";
+		};
 		736271001F3A9CC60002206B /* Factory */ = {
 			isa = PBXGroup;
 			children = (
@@ -215,6 +237,8 @@
 			isa = PBXGroup;
 			children = (
 				736271001F3A9CC60002206B /* Factory */,
+				7355759D1F3DB8D400A0E271 /* ProfilePage */,
+				7355759A1F3DADFC00A0E271 /* TypeChoosePage */,
 				73865FB61F3C4D13004E3594 /* PlayPage */,
 				732AE48A1F39E09A009746CA /* PlayPageOld */,
 				7399DB861F3D82ED00E2A4B2 /* ResultPage */,
@@ -267,6 +291,7 @@
 				730D0E591F3AEBFD0099DA0F /* AddSpace.swift */,
 				730D0E5B1F3AFEA20099DA0F /* JudgeAnswer.swift */,
 				73865FBB1F3C7F5A004E3594 /* ResultStructure.swift */,
+				7382740B1F3EAF8D00CD718E /* DownloadFromQuestionBank.swift */,
 			);
 			name = FunctionAndStruct;
 			sourceTree = "<group>";
@@ -505,10 +530,13 @@
 				732AE4871F398831009746CA /* TimerViewController.swift in Sources */,
 				736271021F3A9CF00002206B /* QuestionFactory.swift in Sources */,
 				730D0E5A1F3AEBFD0099DA0F /* AddSpace.swift in Sources */,
+				7382740C1F3EAF8D00CD718E /* DownloadFromQuestionBank.swift in Sources */,
 				73EBA3061F31FF210082C752 /* RetrieveDataViewController.swift in Sources */,
+				7355759F1F3DB8FF00A0E271 /* ProfilePageViewController.swift in Sources */,
 				73744D271F2F203D00C1FAEA /* AnonymousLoginSuccedViewController.swift in Sources */,
 				732AE4891F399258009746CA /* ScoresFunc.swift in Sources */,
 				73AF80281F385A7000CA31FB /* OutletFunction.swift in Sources */,
+				73FDE6681F3DC35400D9A3FC /* TypeChooseViewController.swift in Sources */,
 				73744D1D1F2EFADC00C1FAEA /* SignUpViewControllerOld.swift in Sources */,
 				73D6A56E1F33060F00928402 /* QuestionBankViewController.swift in Sources */,
 				73744D251F2F1A7600C1FAEA /* LoginSuccedViewController.swift in Sources */,

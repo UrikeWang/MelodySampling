@@ -9,11 +9,11 @@
 import UIKit
 
 class ResultPageViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    
+
     @IBOutlet weak var invisibleNextGameButtonOutlet: UIButton!
-    
+
     @IBOutlet weak var invisibleGoHomeButtonOutlet: UIButton!
-    
+
     @IBOutlet weak var tableView: UITableView!
 
     @IBOutlet weak var profilePageView: UIView!
@@ -34,7 +34,7 @@ class ResultPageViewController: UIViewController, UITableViewDelegate, UITableVi
         createProfileViewOfResult(target: self.profilePageView)
 
         createNextBattleOfResult(target: nextBattleLabel)
-        
+
         invisibleNextGameButtonOutlet.setTitleColor(UIColor.clear, for: .normal)
 
         invisibleGoHomeButtonOutlet.setTitleColor(UIColor.clear, for: .normal)
