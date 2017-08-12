@@ -1202,10 +1202,10 @@
             </objects>
             <point key="canvasLocation" x="1884" y="-953.07346326836591"/>
         </scene>
-        <!--New Type Choose View Controller-->
+        <!--Type Choose View Controller-->
         <scene sceneID="CBg-b8-mju">
             <objects>
-                <viewController storyboardIdentifier="NewTypeChoosePage" useStoryboardIdentifierAsRestorationIdentifier="YES" id="DwJ-ua-HvI" customClass="NewTypeChooseViewController" customModule="MelodySampling" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NewTypeChoosePage" useStoryboardIdentifierAsRestorationIdentifier="YES" id="DwJ-ua-HvI" customClass="TypeChooseViewController" customModule="MelodySampling" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="wem-S8-hd3"/>
                         <viewControllerLayoutGuide type="bottom" id="PXk-IO-FRh"/>

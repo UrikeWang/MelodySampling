@@ -10,7 +10,7 @@ import UIKit
 import Alamofire
 import Firebase
 
-class NewTypeChooseViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class TypeChooseViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     var ref: DatabaseReference!
     
