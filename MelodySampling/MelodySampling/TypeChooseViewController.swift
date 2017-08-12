@@ -27,6 +27,8 @@ class TypeChooseViewController: UIViewController, UITableViewDataSource, UITable
             downloadQuestion(genre: 1)
 
         }
+        
+        performSegue(withIdentifier: "nextpage", sender: self)
 
         let registerVC = self.storyboard?.instantiateViewController(withIdentifier: "PlayPage")
         
@@ -87,7 +89,7 @@ class TypeChooseViewController: UIViewController, UITableViewDataSource, UITable
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         //MARK: 之後把過場和選提寫在這
-        print("你選了 \(typeList[index.rw])")
+        print("你選了 \(typeList[indexPath.row])")
         
     }
 
