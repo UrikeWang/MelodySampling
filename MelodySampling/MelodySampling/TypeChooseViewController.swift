@@ -24,13 +24,18 @@ class TypeChooseViewController: UIViewController, UITableViewDataSource, UITable
 
         DispatchQueue.main.async {
 
-            downloadQuestion(genre: 1)
-
+            downloadQuestion(genre: 1, viewController: self)
+            /*
+          
+            DispatchQueue.main.async {
+            let registerVC = self.storyboard?.instantiateViewController(withIdentifier: "PlayPage")
+            
+            self.present(registerVC!, animated: true, completion: nil)
+            }
+ */
         }
-
-        let registerVC = self.storyboard?.instantiateViewController(withIdentifier: "PlayPage")
         
-        self.present(registerVC!, animated: true, completion: nil)
+        
     }
 
     @IBAction func checkButtonTapped(_ sender: UIButton) {
@@ -82,6 +87,13 @@ class TypeChooseViewController: UIViewController, UITableViewDataSource, UITable
 
         return self.tableView.frame.height / CGFloat(typeList.count)
 
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        //MARK: 之後把過場和選提寫在這
+        print("你選了 \(typeList[indexPath.row])")
+        
     }
 
 }
