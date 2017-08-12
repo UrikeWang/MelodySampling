@@ -13,13 +13,9 @@ class ProfilePageViewController: UIViewController {
     @IBAction func playButtonTapped(_ sender: Any) {
         print("This button tapped")
 
-//        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-
-        //swiftlint:disable force_cast
         let registerVC = self.storyboard?.instantiateViewController(withIdentifier: "NewTypeChoosePage")
 
         self.present(registerVC!, animated: true, completion: nil)
-        //swiftlint:enable
     }
 
     override func viewDidLoad() {

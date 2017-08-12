@@ -65,7 +65,7 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
 
         self.ref = Database.database().reference()
 
-        ref.child("questionBanks").child("mandarin").child("genreCod1").child("question1").queryOrderedByKey().observeSingleEvent(of: .value, with: { (snapshot) in
+        ref.child("questionBanks").child("mandarin").child("genreCode1").child("question1").queryOrderedByKey().observeSingleEvent(of: .value, with: { (snapshot) in
 
             let postDict = snapshot.value as? [String: AnyObject] ?? [:]
 
@@ -77,7 +77,7 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
                 guard let artist = temp?["artistName"] else { return }
 
                 self.artistList.append((artist as? String)!)
-
+                
             }
 
             print("Artlist downloading done")

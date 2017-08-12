@@ -23,10 +23,14 @@ class TypeChooseViewController: UIViewController, UITableViewDataSource, UITable
         print("開始抓題庫了")
 
         DispatchQueue.main.async {
-        
+
             downloadQuestion(genre: 1)
-        
+
         }
+
+        let registerVC = self.storyboard?.instantiateViewController(withIdentifier: "PlayPage")
+        
+        self.present(registerVC!, animated: true, completion: nil)
     }
 
     @IBAction func checkButtonTapped(_ sender: UIButton) {
@@ -79,4 +83,5 @@ class TypeChooseViewController: UIViewController, UITableViewDataSource, UITable
         return self.tableView.frame.height / CGFloat(typeList.count)
 
     }
+
 }
