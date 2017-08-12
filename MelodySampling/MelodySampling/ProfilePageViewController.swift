@@ -16,7 +16,7 @@ class ProfilePageViewController: UIViewController {
 //        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         
         //swiftlint:disable force_cast
-        let registerVC = self.storyboard?.instantiateViewController(withIdentifier: "NewTypeChoose")
+        let registerVC = self.storyboard?.instantiateViewController(withIdentifier: "NewTypeChoosePage")
         
         self.present(registerVC!, animated: true, completion: nil)
         //swiftlint:enable
