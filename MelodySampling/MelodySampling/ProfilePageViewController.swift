@@ -9,20 +9,19 @@
 import UIKit
 
 class ProfilePageViewController: UIViewController {
-    
+
     @IBAction func playButtonTapped(_ sender: Any) {
         print("This button tapped")
-        
+
 //        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        
+
         //swiftlint:disable force_cast
         let registerVC = self.storyboard?.instantiateViewController(withIdentifier: "NewTypeChoosePage")
-        
+
         self.present(registerVC!, animated: true, completion: nil)
         //swiftlint:enable
     }
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -33,7 +32,6 @@ class ProfilePageViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
 
     /*
     // MARK: - Navigation
