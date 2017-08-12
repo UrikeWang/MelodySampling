@@ -1107,10 +1107,10 @@
             </objects>
             <point key="canvasLocation" x="1052" y="-539"/>
         </scene>
-        <!--View Controller-->
+        <!--Profile Page View Controller-->
         <scene sceneID="ycO-Oa-d5U">
             <objects>
-                <viewController id="QDn-rL-xbF" sceneMemberID="viewController">
+                <viewController id="QDn-rL-xbF" customClass="ProfilePageViewController" customModule="MelodySampling" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="JtC-HI-0ca"/>
                         <viewControllerLayoutGuide type="bottom" id="jEY-qv-fzz"/>
@@ -1119,15 +1119,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NOC-hh-Hek" userLabel="Play Button">
-                                <rect key="frame" x="99" y="218" width="163" height="86"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <state key="normal" title="Play"/>
-                                <connections>
-                                    <segue destination="0yZ-uh-ktt" kind="show" id="Wow-d5-dm9"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="This is Profile Page" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r4Q-Nm-V6x">
                                 <rect key="frame" x="106" y="20" width="163" height="74"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1194,6 +1185,15 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cl4-Gv-Xij">
+                                <rect key="frame" x="79" y="210" width="204" height="96"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Play"/>
+                                <connections>
+                                    <action selector="playButtonTapped:" destination="QDn-rL-xbF" eventType="touchUpInside" id="eaR-YJ-Rui"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -1202,10 +1202,73 @@
             </objects>
             <point key="canvasLocation" x="1884" y="-953.07346326836591"/>
         </scene>
+        <!--Type Choose View Controller-->
+        <scene sceneID="CBg-b8-mju">
+            <objects>
+                <viewController storyboardIdentifier="NewTypeChoosePage" useStoryboardIdentifierAsRestorationIdentifier="YES" id="DwJ-ua-HvI" customClass="TypeChooseViewController" customModule="MelodySampling" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="wem-S8-hd3"/>
+                        <viewControllerLayoutGuide type="bottom" id="PXk-IO-FRh"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="PXI-UN-PbM">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="題庫選擇" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2yg-j3-xfR">
+                                <rect key="frame" x="114" y="28" width="146" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsMultipleSelection="YES" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="JmA-u8-RS4">
+                                <rect key="frame" x="37" y="98" width="300" height="400"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TypeCell" id="9jp-uK-r69">
+                                        <rect key="frame" x="0.0" y="28" width="300" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9jp-uK-r69" id="nsF-VU-6g2">
+                                            <rect key="frame" x="0.0" y="0.0" width="300" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fzw-ML-ZGr">
+                                <rect key="frame" x="92" y="506" width="190" height="56"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Play"/>
+                                <connections>
+                                    <action selector="playButtonTapped:" destination="DwJ-ua-HvI" eventType="touchUpInside" id="uMC-tD-qwe"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RcN-iv-bsV">
+                                <rect key="frame" x="134" y="585" width="106" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Check"/>
+                                <connections>
+                                    <action selector="checkButtonTapped:" destination="DwJ-ua-HvI" eventType="touchUpInside" id="EGj-BD-WEd"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="JmA-u8-RS4" id="Mt7-I1-H2Q"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="meu-zt-sSq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2661.5999999999999" y="-1617.8410794602701"/>
+        </scene>
         <!--Play Page View Controller-->
         <scene sceneID="BZk-Uo-QSu">
             <objects>
-                <viewController id="0yZ-uh-ktt" customClass="PlayPageViewController" customModule="MelodySampling" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PlayPage" id="0yZ-uh-ktt" customClass="PlayPageViewController" customModule="MelodySampling" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="yzg-T8-E23"/>
                         <viewControllerLayoutGuide type="bottom" id="mRu-LV-13g"/>
@@ -1452,7 +1515,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mq3-Cr-bb0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2684" y="-953.07346326836591"/>
+            <point key="canvasLocation" x="3388" y="-953"/>
         </scene>
         <!--Result Page View Controller-->
         <scene sceneID="EM0-rn-YA1">
@@ -1713,7 +1776,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ehh-k0-jgy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3448.8000000000002" y="-953.07346326836591"/>
+            <point key="canvasLocation" x="4135" y="-953"/>
         </scene>
         <!--Log In View Controller-->
         <scene sceneID="Ya5-e6-AmV">
@@ -2000,7 +2063,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="rUw-xL-NY2" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Eho-1Q-6Eh">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Eho-1Q-6Eh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -2018,7 +2081,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="s2d-ef-ar2" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="6dS-gn-RhU">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="6dS-gn-RhU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -2098,7 +2161,7 @@
         <image name="right" width="22" height="22"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="sp4-eN-HGB"/>
+        <segue reference="nvy-29-8r3"/>
         <segue reference="Xvj-Te-b72"/>
     </inferredMetricsTieBreakers>
 </document>
