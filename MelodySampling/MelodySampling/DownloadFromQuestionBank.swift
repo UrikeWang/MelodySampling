@@ -45,8 +45,6 @@ func downloadQuestion(genre code: Int, viewController vC: UIViewController) {
 
         let indexArray = Array(postDict.keys) //每一個裡面都是 trackID
 
-        guard let songsList = [postDict[indexArray[0]]!["previewUrl"]!, postDict[indexArray[1]]!["previewUrl"]!, postDict[indexArray[2]]!["previewUrl"]!, postDict[indexArray[3]]!["previewUrl"]!, postDict[indexArray[4]]!["previewUrl"]!] as? [String] else { return }
-
         //從這一段開始改寫接把每一個東西倒進 EachQuestion
         
         var questionArray = [EachQuestion]()
@@ -62,9 +60,9 @@ func downloadQuestion(genre code: Int, viewController vC: UIViewController) {
         }
 
 
-        for index in 0..<songsList.count {
+        for index in 0..<questionArray.count {
 
-            let eachSong = songsList[index]
+            let eachSong = questionArray[index].previewUrl
 
             let destination: DownloadRequest.DownloadFileDestination = { _, _ in
                 let documentsURL = NSHomeDirectory() + "/Documents/"
@@ -80,7 +78,7 @@ func downloadQuestion(genre code: Int, viewController vC: UIViewController) {
                     downloadCount += 1
                     print("第 \(downloadCount) 首下載完成")
 
-                    if downloadCount == songsList.count {
+                    if downloadCount == questionArray.count {
 
                         progressRing.setProgress(value: CGFloat(downloadCount * 20), animationDuration: 0.01) {
 
