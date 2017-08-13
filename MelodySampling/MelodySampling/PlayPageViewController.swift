@@ -77,7 +77,7 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
                 guard let artist = temp?["artistName"] else { return }
 
                 self.artistList.append((artist as? String)!)
-                
+
             }
 
             print("Artlist downloading done")
