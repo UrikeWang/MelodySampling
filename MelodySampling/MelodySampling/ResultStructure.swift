@@ -9,6 +9,18 @@
 import Foundation
 import UIKit
 
+struct EachQuestion {
+    let artistID: Int
+    let artistName: String
+    let trackID: Int
+    let trackName: String
+    let artworkUrl30: String //只存網址
+    let previewUrl: String
+    let collectionID: Int
+    let collectionName: String
+    let primaryGenreName: String
+}
+
 struct EachSongResult {
     let artistName: String
     let trackName: String

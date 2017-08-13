@@ -25,17 +25,7 @@ class TypeChooseViewController: UIViewController, UITableViewDataSource, UITable
         DispatchQueue.main.async {
 
             downloadQuestion(genre: 1, viewController: self)
-            /*
-          
-            DispatchQueue.main.async {
-            let registerVC = self.storyboard?.instantiateViewController(withIdentifier: "PlayPage")
-            
-            self.present(registerVC!, animated: true, completion: nil)
-            }
- */
         }
-        
-        
     }
 
     @IBAction func checkButtonTapped(_ sender: UIButton) {
