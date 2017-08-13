@@ -59,6 +59,9 @@ func downloadQuestion(genre code: Int, viewController vC: UIViewController) {
             
         }
 
+        let userDefault = UserDefaults.standard
+        
+        userDefault.set(questionArray, forKey: "questionArray")
 
         for index in 0..<questionArray.count {
 
