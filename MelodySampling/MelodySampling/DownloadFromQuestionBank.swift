@@ -9,7 +9,6 @@
 import Foundation
 import Alamofire
 import Firebase
-import SwiftyJSON
 import UICircularProgressRing
 
 var ref: DatabaseReference!
@@ -44,11 +43,24 @@ func downloadQuestion(genre code: Int, viewController vC: UIViewController) {
 
         guard let postDict = snapshot.value as? [String: AnyObject] else { return }
 
-        print(snapshot)
-
-        let indexArray = Array(postDict.keys)
+        let indexArray = Array(postDict.keys) //每一個裡面都是 trackID
 
         guard let songsList = [postDict[indexArray[0]]!["previewUrl"]!, postDict[indexArray[1]]!["previewUrl"]!, postDict[indexArray[2]]!["previewUrl"]!, postDict[indexArray[3]]!["previewUrl"]!, postDict[indexArray[4]]!["previewUrl"]!] as? [String] else { return }
+
+        //從這一段開始改寫接把每一個東西倒進 EachQuestion
+        
+        var questionArray = [EachQuestion]()
+        
+        for eachTrackID in indexArray {
+            
+            let eachQuestion = EachQuestion(artistID: (postDict[eachTrackID]?["artistId"] as? Int)!, artistName: (postDict[eachTrackID]?["artistName"] as? String)!, trackID: (postDict[eachTrackID]?["trackId"] as? Int)!, trackName: (postDict[eachTrackID]?["trackName"] as? String)!, artworkUrl30: (postDict[eachTrackID]?["artworkUrl30"] as? String)!, previewUrl: (postDict[eachTrackID]?["previewUrl"] as? String)!, collectionID: (postDict[eachTrackID]?["collectionId"] as? Int)!, collectionName: (postDict[eachTrackID]?["collectionName"] as? String)!, primaryGenreName: (postDict[eachTrackID]?["primaryGenreName"] as? String)!)
+            
+            
+            questionArray.append(eachQuestion)
+            print("\(eachQuestion.artistName) is appended")
+            
+        }
+
 
         for index in 0..<songsList.count {
 
