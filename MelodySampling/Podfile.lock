@@ -36,6 +36,7 @@ PODS:
   - GTMSessionFetcher/Core (1.1.10)
   - IQKeyboardManagerSwift (4.0.10)
   - SwifterSwift (1.6.4)
+  - UICircularProgressRing (1.6.1)
 
 DEPENDENCIES:
   - Alamofire (~> 4.4)
@@ -44,6 +45,7 @@ DEPENDENCIES:
   - Firebase/Database
   - IQKeyboardManagerSwift (= 4.0.10)
   - SwifterSwift
+  - UICircularProgressRing
 
 SPEC CHECKSUMS:
   Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
@@ -57,7 +59,8 @@ SPEC CHECKSUMS:
   GTMSessionFetcher: 30d874b96d0d76028f61fbd122801e3f030d47db
   IQKeyboardManagerSwift: 75ba21a23794a1e6b6fe6d9a267ea17f80e06771
   SwifterSwift: 92c73c47c3cbf7d5f788adf6459bf07b5d23d3fb
+  UICircularProgressRing: 99419d03525be7b4ad29c0021e0fbb7d913b0030
 
-PODFILE CHECKSUM: 0568dcd4d82256f430582659c46a5a385f2fc842
+PODFILE CHECKSUM: 4ce5a2690a22328016a2eb815e44e76f9f1e5110
 
 COCOAPODS: 1.2.1
