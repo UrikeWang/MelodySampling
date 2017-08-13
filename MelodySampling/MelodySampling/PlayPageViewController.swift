@@ -42,7 +42,7 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
 
     var score: Double = 0
     
-    var questionArray = [EachQuestion]()
+    var questionArrayPlay = [EachQuestion]()
 
     @IBOutlet weak var rightUserScoreLabel: UILabel! {
         didSet {
@@ -58,20 +58,24 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
 
     @IBOutlet weak var tableView: UITableView!
 
+    func passToQuestionArray(_ notification: Notification) {
+        questionArrayPlay = (notification.userInfo?["sender"] as? [EachQuestion])!
+        
+        print(questionArrayPlay)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.tableView.delegate = self
 
         self.tableView.dataSource = self
-
-        let userDefault = UserDefaults.standard
-
-        questionArray = ((userDefault.object(forKey: "questionArray") as? NSArray)! as? [EachQuestion])!
         
-        print(questionArray)
+        let notificationName = Notification.Name("NotificationIdentifier")
         
-        /*
+    NotificationCenter.default.addObserver(self, selector: #selector(self.passToQuestionArray(_:)), name: notificationName, object: nil)
+        
+        
         self.ref = Database.database().reference()
 
         ref.child("questionBanks").child("mandarin").child("genreCode1").child("question1").queryOrderedByKey().observeSingleEvent(of: .value, with: { (snapshot) in
@@ -96,7 +100,7 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
             self.startGuessing()
 
         })
-        */
+        
 
     }
 

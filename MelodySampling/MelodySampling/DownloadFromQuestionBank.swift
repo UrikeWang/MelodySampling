@@ -58,10 +58,12 @@ func downloadQuestion(genre code: Int, viewController vC: UIViewController) {
             print("\(eachQuestion.artistName) is appended")
             
         }
-
-        let userDefault = UserDefaults.standard
         
-        userDefault.set(questionArray, forKey: "questionArray")
+        let notificationName = Notification.Name("NotificationIdentifier")
+        
+        let preparedDict: [String: [EachQuestion]] = ["sender": questionArray]
+        
+        NotificationCenter.default.post(name: notificationName, object: nil, userInfo: preparedDict)
 
         for index in 0..<questionArray.count {
 
