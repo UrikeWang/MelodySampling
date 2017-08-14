@@ -14,7 +14,7 @@ struct EachQuestion {
     let artistName: String
     let trackID: Int
     let trackName: String
-    let artworkUrl30: String //只存網址
+    let artworkUrl: String //只存網址
     let previewUrl: String
     let collectionID: Int
     let collectionName: String

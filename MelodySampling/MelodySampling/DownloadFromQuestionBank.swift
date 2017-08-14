@@ -64,7 +64,7 @@ class DownloadManager {
                     artistName: (postDict[eachTrackID]?["artistName"] as? String)!,
                     trackID: (postDict[eachTrackID]?["trackId"] as? Int)!,
                     trackName: (postDict[eachTrackID]?["trackName"] as? String)!,
-                    artworkUrl30: (postDict[eachTrackID]?["artworkUrl30"] as? String)!,
+                    artworkUrl: (postDict[eachTrackID]?["artworkUrl100"] as? String)!,
                     previewUrl: (postDict[eachTrackID]?["previewUrl"] as? String)!,
                     collectionID: (postDict[eachTrackID]?["collectionId"] as? Int)!,
                     collectionName: (postDict[eachTrackID]?["collectionName"] as? String)!,
@@ -80,7 +80,7 @@ class DownloadManager {
                     self.questionMO.artistName = eachQuestion.artistName
                     self.questionMO.trackID = String(eachQuestion.trackID)
                     self.questionMO.trackName = eachQuestion.trackName
-                    self.questionMO.artworkUrl30 = eachQuestion.artworkUrl30
+                    self.questionMO.artworkUrl = eachQuestion.artworkUrl
                     self.questionMO.previewUrl = eachQuestion.previewUrl
                     self.questionMO.collectionID = String(eachQuestion.collectionID)
                     self.questionMO.collectionName = eachQuestion.artistName
@@ -112,7 +112,7 @@ class DownloadManager {
                         print("第 \(downloadCount) 首下載完成")
 
                         if downloadCount == self.questionArray.count {
-                            
+
                             progressRing.setProgress(value: CGFloat(downloadCount * 20), animationDuration: 0.01) {
 
                                 let registerVC = thisView.storyboard?.instantiateViewController(withIdentifier: "PlayPage")

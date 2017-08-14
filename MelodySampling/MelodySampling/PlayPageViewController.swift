@@ -47,7 +47,7 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
     var score: Double = 0
 
     var trackNameArray = [String]()
-    
+
     var artistNameArray = [String]()
 
     @IBOutlet weak var rightUserScoreLabel: UILabel! {
@@ -102,29 +102,21 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
         print("現在 CoreData 中有 \(questions.count) 筆資料")
 
         for question in questions {
-            if let trackName = question.trackName, let artistName = question.artistName, let artworkUrl = question.artworkUrl30, let index = questions.index(of: question) {
+            if let trackName = question.trackName, let artistName = question.artistName, let artworkUrl = question.artworkUrl, let index = questions.index(of: question) {
                 trackNameArray.append(trackName)
                 artistNameArray.append(artistName)
-                
-                
-                
+
                 let destinnation: DownloadRequest.DownloadFileDestination = { _, _ in
-                    
+
                     let documentsURL = NSHomeDirectory() + "/Documents/"
                     let fileURL = URL(fileURLWithPath: documentsURL.appending("artworkImage\(index).jpg"))
-                    
+
                     return (fileURL, [.removePreviousFile, .createIntermediateDirectories])
                 }
-                
-                Alamofire.download(artworkUrl, to: destinnation).response { res in
-                    
-                    print("===== =====")
-                    print(res.destinationURL)
-                    
+
+                Alamofire.download(artworkUrl, to: destinnation).response { _ in
                 }
-                
-                
-                
+
                 print(trackName, artistName)
                 print(artworkUrl)
             }
@@ -202,13 +194,13 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
             player?.pause()
 
             player = nil
-            
+
             let userDefault = UserDefaults.standard
-            
+
             userDefault.set(score, forKey: "Score")
 
             let registerVC = self.storyboard?.instantiateViewController(withIdentifier: "ResultPage")
-            
+
             self.present(registerVC!, animated: true, completion: nil)
 
         } else {

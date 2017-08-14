@@ -3,7 +3,7 @@
     <entity name="QuestionMO" representedClassName="QuestionMO" syncable="YES" codeGenerationType="class">
         <attribute name="artistID" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="artistName" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="artworkUrl30" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="artworkUrl" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="collectionID" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="collectionName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="previewUrl" optional="YES" attributeType="String" syncable="YES"/>
