@@ -48,6 +48,8 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
     var score: Double = 0
 
     var trackNameArray = [String]()
+    
+    var artistNameArray = [String]()
 
     @IBOutlet weak var rightUserScoreLabel: UILabel! {
         didSet {
@@ -100,14 +102,13 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
                 print(error)
             }
         }
-
-        print("===== =====")
         print("現在 CoreData 中有 \(questions.count) 筆資料")
 
         for question in questions {
-            if let trackName = question.trackName {
+            if let trackName = question.trackName, let artistName = question.artistName {
                 trackNameArray.append(trackName)
-                print(trackName)
+                artistNameArray.append(artistName)
+                print(trackName, artistName)
             }
         }
 
@@ -184,7 +185,11 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
 
             player = nil
 
-            performSegue(withIdentifier: "goToResultPage", sender: self)
+            let registerVC = self.storyboard?.instantiateViewController(withIdentifier: "ResultPage")
+            
+            self.present(registerVC!, animated: true, completion: nil)
+            
+//            performSegue(withIdentifier: "goToResultPage", sender: self)
 
         } else {
 

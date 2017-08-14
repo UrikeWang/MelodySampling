@@ -1520,7 +1520,7 @@
         <!--Result Page View Controller-->
         <scene sceneID="EM0-rn-YA1">
             <objects>
-                <viewController id="sgS-eJ-ZD6" customClass="ResultPageViewController" customModule="MelodySampling" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ResultPage" useStoryboardIdentifierAsRestorationIdentifier="YES" id="sgS-eJ-ZD6" customClass="ResultPageViewController" customModule="MelodySampling" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="0nc-Tv-cGR"/>
                         <viewControllerLayoutGuide type="bottom" id="M1q-uf-LuF"/>
@@ -1566,7 +1566,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="P3p-ob-hIJ">
-                                        <rect key="frame" x="211" y="144" width="101" height="17"/>
+                                        <rect key="frame" x="210" y="144" width="101" height="17"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Star" translatesAutoresizingMaskIntoConstraints="NO" id="cJS-dk-1MD">
                                                 <rect key="frame" x="0.0" y="0.0" width="17" height="17"/>
@@ -2161,7 +2161,7 @@
         <image name="right" width="22" height="22"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="nvy-29-8r3"/>
+        <segue reference="sp4-eN-HGB"/>
         <segue reference="Xvj-Te-b72"/>
     </inferredMetricsTieBreakers>
 </document>
