@@ -11,7 +11,7 @@ import Firebase
 import SwiftyJSON
 
 extension DataSnapshot {
-    var json : JSON {
+    var json: JSON {
         return JSON(self.value)
     }
 }

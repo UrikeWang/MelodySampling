@@ -41,7 +41,7 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
     var timePassed: Double?
 
     var score: Double = 0
-    
+
     var questionArrayPlay = [EachQuestion]()
 
     @IBOutlet weak var rightUserScoreLabel: UILabel! {
@@ -60,17 +60,17 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
 
     func passToQuestionArray(_ notification: Notification) {
         questionArrayPlay = (notification.userInfo?["sender"] as? [EachQuestion])!
-        
+
         print(questionArrayPlay)
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.tableView.delegate = self
 
         self.tableView.dataSource = self
-        
+
         self.ref = Database.database().reference()
 
         ref.child("questionBanks").child("mandarin").child("genreCode1").child("question1").queryOrderedByKey().observeSingleEvent(of: .value, with: { (snapshot) in
@@ -95,7 +95,6 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
             self.startGuessing()
 
         })
-        
 
     }
 
