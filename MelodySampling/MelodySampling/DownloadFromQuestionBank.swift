@@ -6,6 +6,7 @@
 //  Copyright © 2017年 Marvin Lin. All rights reserved.
 //
 
+import UIKit
 import Foundation
 import Alamofire
 import Firebase
@@ -14,9 +15,13 @@ import CoreData
 
 //把這一段使用 delegate 傳出去
 
-class DownloadManager {
+class DownloadManager: UIViewController {
 
     var ref: DatabaseReference!
+    
+    var questionMO: QuestionMO!
+    
+    var questionArray = [EachQuestion]()
 
     func downloadQuestion(genre code: Int, viewController thisView: UIViewController) {
 
@@ -52,26 +57,38 @@ class DownloadManager {
 
             //從這一段開始改寫接把每一個東西倒進 EachQuestion
 
-            var questionArray = [EachQuestion]()
-
             for eachTrackID in indexArray {
 
-                let eachQuestion = EachQuestion(artistID: (postDict[eachTrackID]?["artistId"] as? Int)!, artistName: (postDict[eachTrackID]?["artistName"] as? String)!, trackID: (postDict[eachTrackID]?["trackId"] as? Int)!, trackName: (postDict[eachTrackID]?["trackName"] as? String)!, artworkUrl30: (postDict[eachTrackID]?["artworkUrl30"] as? String)!, previewUrl: (postDict[eachTrackID]?["previewUrl"] as? String)!, collectionID: (postDict[eachTrackID]?["collectionId"] as? Int)!, collectionName: (postDict[eachTrackID]?["collectionName"] as? String)!, primaryGenreName: (postDict[eachTrackID]?["primaryGenreName"] as? String)!)
+                let eachQuestion = EachQuestion(
+                    artistID: (postDict[eachTrackID]?["artistId"] as? Int)!,
+                    artistName: (postDict[eachTrackID]?["artistName"] as? String)!,
+                    trackID: (postDict[eachTrackID]?["trackId"] as? Int)!,
+                    trackName: (postDict[eachTrackID]?["trackName"] as? String)!,
+                    artworkUrl30: (postDict[eachTrackID]?["artworkUrl30"] as? String)!,
+                    previewUrl: (postDict[eachTrackID]?["previewUrl"] as? String)!,
+                    collectionID: (postDict[eachTrackID]?["collectionId"] as? Int)!,
+                    collectionName: (postDict[eachTrackID]?["collectionName"] as? String)!,
+                    primaryGenreName: (postDict[eachTrackID]?["primaryGenreName"] as? String)!)
 
-                questionArray.append(eachQuestion)
+                self.questionArray.append(eachQuestion)
+                
+                if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
+                    
+                    self.questionMO = QuestionMO(context: appDelegate.persistentContainer.viewContext)
+                    
+                    self.questionMO.artistID = String(eachQuestion.artistID)
+                    self.questionMO.artistName = eachQuestion.artistName
+                }
+                
+                
+                
                 print("\(eachQuestion.artistName) is appended")
 
             }
+            
+            for index in 0..<self.questionArray.count {
 
-            let notificationName = Notification.Name("NotificationIdentifier")
-
-            let preparedDict: [String: [EachQuestion]] = ["sender": questionArray]
-
-            NotificationCenter.default.post(name: notificationName, object: nil, userInfo: preparedDict)
-
-            for index in 0..<questionArray.count {
-
-                let eachSong = questionArray[index].previewUrl
+                let eachSong = self.questionArray[index].previewUrl
 
                 let destination: DownloadRequest.DownloadFileDestination = { _, _ in
                     let documentsURL = NSHomeDirectory() + "/Documents/"
@@ -87,7 +104,7 @@ class DownloadManager {
                         downloadCount += 1
                         print("第 \(downloadCount) 首下載完成")
 
-                        if downloadCount == questionArray.count {
+                        if downloadCount == self.questionArray.count {
 
                             progressRing.setProgress(value: CGFloat(downloadCount * 20), animationDuration: 0.01) {
 
