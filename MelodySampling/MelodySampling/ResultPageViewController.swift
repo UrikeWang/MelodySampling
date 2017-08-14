@@ -7,9 +7,18 @@
 //
 
 import UIKit
+import CoreData
 
-class ResultPageViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ResultPageViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate {
 
+    var fetchResultController: NSFetchedResultsController<QuestionMO>!
+    
+    var questions: [QuestionMO] = []
+    
+    var trackNameArray = [String]()
+    
+    var artistNameArray = [String]()
+    
     @IBOutlet weak var invisibleNextGameButtonOutlet: UIButton!
 
     @IBOutlet weak var invisibleGoHomeButtonOutlet: UIButton!
@@ -23,7 +32,13 @@ class ResultPageViewController: UIViewController, UITableViewDelegate, UITableVi
     var songList = ["a", "b", "c", "d", "e"]
 
     @IBOutlet weak var nextBattleLabel: UILabel!
+    
+    let userDefault = UserDefaults.standard
+    
+    var score: Double = 0
 
+    @IBOutlet weak var scoreLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -38,6 +53,46 @@ class ResultPageViewController: UIViewController, UITableViewDelegate, UITableVi
         invisibleNextGameButtonOutlet.setTitleColor(UIColor.clear, for: .normal)
 
         invisibleGoHomeButtonOutlet.setTitleColor(UIColor.clear, for: .normal)
+        
+        score = (userDefault.object(forKey: "Score") as? Double)!
+        
+        scoreLabel.text = "\(String(format: "%.0f", score))"
+        
+        let fetchRequest: NSFetchRequest<QuestionMO> = QuestionMO.fetchRequest()
+        
+        let sortDescriptor = NSSortDescriptor(key: "artistID", ascending: true)
+        
+        fetchRequest.sortDescriptors = [sortDescriptor]
+        
+        if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
+            
+            let context = appDelegate.persistentContainer.viewContext
+            
+            fetchResultController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
+            
+            fetchResultController.delegate = self
+            
+            do {
+                
+                try fetchResultController.performFetch()
+                
+                if let fetchedObjects = fetchResultController.fetchedObjects {
+                    
+                    questions = fetchedObjects
+                }
+            } catch {
+                
+                print(error)
+            }
+        }
+        
+        for question in questions {
+            if let trackName = question.trackName, let artistName = question.artistName {
+                trackNameArray.append(trackName)
+                artistNameArray.append(artistName)
+                print(trackName, artistName)
+            }
+        }
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -51,7 +106,10 @@ class ResultPageViewController: UIViewController, UITableViewDelegate, UITableVi
         //swiftlint:disable force_cast
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! ResultTableViewCell
         //swiftlint:enable
-
+        
+        cell.trackNameLabel.text = "\(trackNameArray[indexPath.row])"
+        cell.artistNameLabel.text = "\(artistNameArray[indexPath.row])"
+        
         return cell
     }
 

@@ -112,7 +112,7 @@ class DownloadManager {
                         print("第 \(downloadCount) 首下載完成")
 
                         if downloadCount == self.questionArray.count {
-
+                            
                             progressRing.setProgress(value: CGFloat(downloadCount * 20), animationDuration: 0.01) {
 
                                 let registerVC = thisView.storyboard?.instantiateViewController(withIdentifier: "PlayPage")

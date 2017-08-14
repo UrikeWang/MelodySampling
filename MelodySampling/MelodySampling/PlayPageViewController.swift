@@ -10,14 +10,13 @@ import UIKit
 import AVFoundation
 import Firebase
 import CoreData
+import Alamofire
 
 class PlayPageViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate {
 
     var fetchResultController: NSFetchedResultsController<QuestionMO>!
 
     var questions: [QuestionMO] = []
-
-    var ref: DatabaseReference!
 
     var player: AVAudioPlayer?
 
@@ -72,8 +71,6 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
 
         self.tableView.dataSource = self
 
-        self.ref = Database.database().reference()
-
         let fetchRequest: NSFetchRequest<QuestionMO> = QuestionMO.fetchRequest()
 
         let sortDescriptor = NSSortDescriptor(key: "artistID", ascending: true)
@@ -105,10 +102,31 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
         print("現在 CoreData 中有 \(questions.count) 筆資料")
 
         for question in questions {
-            if let trackName = question.trackName, let artistName = question.artistName {
+            if let trackName = question.trackName, let artistName = question.artistName, let artworkUrl = question.artworkUrl30, let index = questions.index(of: question) {
                 trackNameArray.append(trackName)
                 artistNameArray.append(artistName)
+                
+                
+                
+                let destinnation: DownloadRequest.DownloadFileDestination = { _, _ in
+                    
+                    let documentsURL = NSHomeDirectory() + "/Documents/"
+                    let fileURL = URL(fileURLWithPath: documentsURL.appending("artworkImage\(index).jpg"))
+                    
+                    return (fileURL, [.removePreviousFile, .createIntermediateDirectories])
+                }
+                
+                Alamofire.download(artworkUrl, to: destinnation).response { res in
+                    
+                    print("===== =====")
+                    print(res.destinationURL)
+                    
+                }
+                
+                
+                
                 print(trackName, artistName)
+                print(artworkUrl)
             }
         }
 
@@ -184,12 +202,14 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
             player?.pause()
 
             player = nil
+            
+            let userDefault = UserDefaults.standard
+            
+            userDefault.set(score, forKey: "Score")
 
             let registerVC = self.storyboard?.instantiateViewController(withIdentifier: "ResultPage")
             
             self.present(registerVC!, animated: true, completion: nil)
-            
-//            performSegue(withIdentifier: "goToResultPage", sender: self)
 
         } else {
 
