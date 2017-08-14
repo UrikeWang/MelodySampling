@@ -13,8 +13,6 @@ import Firebase
 import UICircularProgressRing
 import CoreData
 
-//把這一段使用 delegate 傳出去
-
 class DownloadManager {
 
     var ref: DatabaseReference!
@@ -25,7 +23,7 @@ class DownloadManager {
 
     func downloadQuestion(genre code: Int, viewController thisView: UIViewController) {
 
-        let genreCode = "genreCode\(code)"
+        let genreCode = "genreCode" + String(code)
 
         var downloadCount = 0
 
@@ -49,7 +47,7 @@ class DownloadManager {
 
         ref = Database.database().reference()
 
-        ref.child("questionBanks").child("mandarin").child("\(genreCode)").child("question1").queryOrderedByKey().observeSingleEvent(of: .value, with: { (snapshot) in
+        ref.child("questionBanks").child("mandarin").child(genreCode).child("question1").queryOrderedByKey().observeSingleEvent(of: .value, with: { (snapshot) in
 
             guard let postDict = snapshot.value as? [String: AnyObject] else { return }
 
@@ -122,13 +120,10 @@ class DownloadManager {
 
                         } else {
                             progressRing.setProgress(value: CGFloat(downloadCount * 20 ), animationDuration: 0.01) {}
-
                         }
                     }
-
                 }
             }
         })
-
     }
 }
