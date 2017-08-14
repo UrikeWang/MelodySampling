@@ -1149,38 +1149,29 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cl4-Gv-Xij">
-                                        <rect key="frame" x="27" y="140" width="320" height="90"/>
+                                    <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cl4-Gv-Xij">
+                                        <rect key="frame" x="27" y="140" width="320" height="80"/>
                                         <state key="normal" title="Invisible Button"/>
                                         <connections>
-                                            <action selector="playButtonTapped:" destination="QDn-rL-xbF" eventType="touchUpInside" id="eaR-YJ-Rui"/>
+                                            <action selector="invisibleButtonTapped:" destination="QDn-rL-xbF" eventType="touchUpInside" id="Poi-Qz-MGD"/>
                                         </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.25882352939999997" green="0.1333333333" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstItem="cl4-Gv-Xij" firstAttribute="width" secondItem="IOU-Oy-gG4" secondAttribute="width" constant="40" id="0Qs-XA-r8o"/>
                                     <constraint firstItem="IOU-Oy-gG4" firstAttribute="centerX" secondItem="Ivk-cb-90t" secondAttribute="centerX" id="9vZ-9u-Qng"/>
-                                    <constraint firstItem="cl4-Gv-Xij" firstAttribute="centerY" secondItem="IOU-Oy-gG4" secondAttribute="centerY" id="DQH-Tz-bpu"/>
                                     <constraint firstItem="o2i-xB-Gof" firstAttribute="centerX" secondItem="Ivk-cb-90t" secondAttribute="centerX" id="H97-mU-Wdf"/>
+                                    <constraint firstItem="cl4-Gv-Xij" firstAttribute="width" secondItem="IOU-Oy-gG4" secondAttribute="width" constant="40" id="IvH-el-gzr"/>
+                                    <constraint firstItem="cl4-Gv-Xij" firstAttribute="bottom" secondItem="IOU-Oy-gG4" secondAttribute="bottom" constant="10" id="ObB-TQ-oJW"/>
                                     <constraint firstAttribute="height" constant="230" id="SIF-aV-Z6B"/>
-                                    <constraint firstItem="cl4-Gv-Xij" firstAttribute="centerX" secondItem="IOU-Oy-gG4" secondAttribute="centerX" id="WTx-R1-zVN"/>
-                                    <constraint firstItem="cl4-Gv-Xij" firstAttribute="height" secondItem="IOU-Oy-gG4" secondAttribute="height" constant="40" id="aLt-jF-jwq"/>
                                     <constraint firstAttribute="bottom" secondItem="IOU-Oy-gG4" secondAttribute="bottom" constant="20" id="hoT-yb-1eH"/>
+                                    <constraint firstItem="cl4-Gv-Xij" firstAttribute="centerX" secondItem="IOU-Oy-gG4" secondAttribute="centerX" id="qQ5-N3-HG6"/>
                                     <constraint firstItem="u4p-KT-t8T" firstAttribute="top" secondItem="o2i-xB-Gof" secondAttribute="bottom" constant="4" id="qyg-hM-MPY"/>
                                     <constraint firstItem="u4p-KT-t8T" firstAttribute="centerX" secondItem="o2i-xB-Gof" secondAttribute="centerX" id="vuF-VH-1hs"/>
                                     <constraint firstItem="o2i-xB-Gof" firstAttribute="top" secondItem="Ivk-cb-90t" secondAttribute="top" constant="30" id="yFw-0h-393"/>
+                                    <constraint firstItem="cl4-Gv-Xij" firstAttribute="top" secondItem="IOU-Oy-gG4" secondAttribute="top" constant="-20" id="ytC-20-SRQ"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ay8-8Z-gsN">
-                                <rect key="frame" x="16" y="595" width="88" height="52"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <state key="normal" title="Back to Landing"/>
-                                <connections>
-                                    <segue destination="bgG-UJ-6ec" kind="show" id="HnL-VX-57Z"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="歷史紀錄" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y0Z-wn-xFT">
                                 <rect key="frame" x="46" y="329" width="184" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1220,6 +1211,10 @@
                             <constraint firstItem="Ivk-cb-90t" firstAttribute="leading" secondItem="4a3-MA-wp4" secondAttribute="leading" id="gW3-gF-acP"/>
                         </constraints>
                     </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <connections>
+                        <outlet property="invisibleButton" destination="cl4-Gv-Xij" id="siV-L5-7fB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DhC-Fq-Cj1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -10,16 +10,20 @@ import UIKit
 
 class ProfilePageViewController: UIViewController {
 
-    @IBAction func playButtonTapped(_ sender: Any) {
+    @IBOutlet weak var invisibleButton: UIButton!
+    
+    @IBAction func invisibleButtonTapped(_ sender: UIButton) {
         print("This button tapped")
-
+        
         let registerVC = self.storyboard?.instantiateViewController(withIdentifier: "NewTypeChoosePage")
-
+        
         self.present(registerVC!, animated: true, completion: nil)
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        invisibleButton.setTitleColor(UIColor.clear, for: .normal)
 
         // Do any additional setup after loading the view.
     }
