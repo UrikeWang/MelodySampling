@@ -47,7 +47,7 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
 
     var score: Double = 0
 
-    let downloadManager = DownloadManager()
+    var trackNameArray = [String]()
 
     @IBOutlet weak var rightUserScoreLabel: UILabel! {
         didSet {
@@ -105,31 +105,15 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
         print("現在 CoreData 中有 \(questions.count) 筆資料")
 
         for question in questions {
-            print(question.artistID)
-            print(question.artistName)
-        }
-        ref.child("questionBanks").child("mandarin").child("genreCode1").child("question1").queryOrderedByKey().observeSingleEvent(of: .value, with: { (snapshot) in
-
-            let postDict = snapshot.value as? [String: AnyObject] ?? [:]
-
-            for eachTrackID in postDict {
-
-                let temp = eachTrackID.value as? [String: AnyObject]
-                //                print(temp)
-
-                guard let artist = temp?["artistName"] else { return }
-
-                self.artistList.append((artist as? String)!)
-
+            if let trackName = question.trackName {
+                trackNameArray.append(trackName)
+                print(trackName)
             }
+        }
 
-            print("Artlist downloading done")
+        self.timeStart = Date().timeIntervalSince1970
 
-            self.timeStart = Date().timeIntervalSince1970
-
-            self.startGuessing()
-
-        })
+        self.startGuessing()
 
     }
 
@@ -138,7 +122,7 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
     }
 
     func numberOfSections(in tableView: UITableView) -> Int {
-        return shuffledList.count
+        return trackNameArray.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -161,7 +145,7 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
 
         let selectedAnswer = shuffledList[indexPath.section]
 
-        let answer = artistList[currentTrack]
+        let answer = trackNameArray[currentTrack]
 
         print("你選了 \(selectedAnswer) 個選項")
         print("你在 \(currentTrack) 首")
@@ -206,7 +190,7 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
 
             questionList = fakeArtistList
 
-            questionList.append(artistList[prepareTrack])
+            questionList.append(trackNameArray[prepareTrack])
 
             shuffledList = questionList.shuffled()
 
@@ -253,7 +237,7 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
         print("接下來是第 \(prepareTrack) 首")
         self.questionList = self.fakeArtistList
 
-        self.questionList.append(self.artistList[self.currentTrack])
+        self.questionList.append(self.trackNameArray[self.currentTrack])
 
         self.shuffledList = self.questionList.shuffled()
 
