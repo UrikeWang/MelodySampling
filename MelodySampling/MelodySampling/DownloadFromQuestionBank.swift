@@ -6,95 +6,129 @@
 //  Copyright © 2017年 Marvin Lin. All rights reserved.
 //
 
+import UIKit
 import Foundation
 import Alamofire
 import Firebase
 import UICircularProgressRing
+import CoreData
 
-var ref: DatabaseReference!
+//把這一段使用 delegate 傳出去
 
-func downloadQuestion(genre code: Int, viewController vC: UIViewController) {
+class DownloadManager {
 
-    let genreCode = "genreCode\(code)"
+    var ref: DatabaseReference!
 
-    var downloadCount = 0
+    var questionMO: QuestionMO!
 
-    print("目標題庫是 \(genreCode)")
+    var questionArray = [EachQuestion]()
 
-    let progressContentView = UIView(frame: CGRect(x: 0, y: 0, width: vC.view.frame.width, height: vC.view.frame.height))
+    func downloadQuestion(genre code: Int, viewController thisView: UIViewController) {
 
-    let progressRing = UICircularProgressRingView(frame: CGRect(x: vC.view.frame.width / 2 - 120, y: vC.view.frame.height / 2 - 120, width: 240, height: 240))
+        let genreCode = "genreCode\(code)"
 
-    progressRing.maxValue = 100
+        var downloadCount = 0
 
-    progressRing.outerRingColor = UIColor.green
+        print("目標題庫是 \(genreCode)")
 
-    progressRing.innerRingColor = UIColor.blue
+        let progressContentView = UIView(frame: CGRect(x: 0, y: 0, width: thisView.view.frame.width, height: thisView.view.frame.height))
 
-    progressContentView.backgroundColor = UIColor.white
+        let progressRing = UICircularProgressRingView(frame: CGRect(x: thisView.view.frame.width / 2 - 120, y: thisView.view.frame.height / 2 - 120, width: 240, height: 240))
 
-    progressContentView.addSubview(progressRing)
+        progressRing.maxValue = 100
 
-    vC.view.addSubview(progressContentView)
+        progressRing.outerRingColor = UIColor.green
 
-    ref = Database.database().reference()
+        progressRing.innerRingColor = UIColor.blue
 
-    ref.child("questionBanks").child("mandarin").child("\(genreCode)").child("question1").queryOrderedByKey().observeSingleEvent(of: .value, with: { (snapshot) in
+        progressContentView.backgroundColor = UIColor.white
 
-        guard let postDict = snapshot.value as? [String: AnyObject] else { return }
+        progressContentView.addSubview(progressRing)
 
-        let indexArray = Array(postDict.keys) //每一個裡面都是 trackID
+        thisView.view.addSubview(progressContentView)
 
-        //從這一段開始改寫接把每一個東西倒進 EachQuestion
-        
-        var questionArray = [EachQuestion]()
-        
-        for eachTrackID in indexArray {
-            
-            let eachQuestion = EachQuestion(artistID: (postDict[eachTrackID]?["artistId"] as? Int)!, artistName: (postDict[eachTrackID]?["artistName"] as? String)!, trackID: (postDict[eachTrackID]?["trackId"] as? Int)!, trackName: (postDict[eachTrackID]?["trackName"] as? String)!, artworkUrl30: (postDict[eachTrackID]?["artworkUrl30"] as? String)!, previewUrl: (postDict[eachTrackID]?["previewUrl"] as? String)!, collectionID: (postDict[eachTrackID]?["collectionId"] as? Int)!, collectionName: (postDict[eachTrackID]?["collectionName"] as? String)!, primaryGenreName: (postDict[eachTrackID]?["primaryGenreName"] as? String)!)
-            
-            
-            questionArray.append(eachQuestion)
-            print("\(eachQuestion.artistName) is appended")
-            
-        }
+        ref = Database.database().reference()
 
+        ref.child("questionBanks").child("mandarin").child("\(genreCode)").child("question1").queryOrderedByKey().observeSingleEvent(of: .value, with: { (snapshot) in
 
-        for index in 0..<questionArray.count {
+            guard let postDict = snapshot.value as? [String: AnyObject] else { return }
 
-            let eachSong = questionArray[index].previewUrl
+            let indexArray = Array(postDict.keys) //每一個裡面都是 trackID
 
-            let destination: DownloadRequest.DownloadFileDestination = { _, _ in
-                let documentsURL = NSHomeDirectory() + "/Documents/"
-                let fileURL = URL(fileURLWithPath: documentsURL.appending("song\(index).m4a"))
-                print("song\(index).m4a is downloading")
+            //從這一段開始改寫接把每一個東西倒進 EachQuestion
 
-                return (fileURL, [.removePreviousFile, .createIntermediateDirectories])
-            }
+            for eachTrackID in indexArray {
 
-            DispatchQueue.main.async {
-                Alamofire.download(eachSong, to: destination).response { _ in
+                let eachQuestion = EachQuestion(
+                    artistID: (postDict[eachTrackID]?["artistId"] as? Int)!,
+                    artistName: (postDict[eachTrackID]?["artistName"] as? String)!,
+                    trackID: (postDict[eachTrackID]?["trackId"] as? Int)!,
+                    trackName: (postDict[eachTrackID]?["trackName"] as? String)!,
+                    artworkUrl30: (postDict[eachTrackID]?["artworkUrl30"] as? String)!,
+                    previewUrl: (postDict[eachTrackID]?["previewUrl"] as? String)!,
+                    collectionID: (postDict[eachTrackID]?["collectionId"] as? Int)!,
+                    collectionName: (postDict[eachTrackID]?["collectionName"] as? String)!,
+                    primaryGenreName: (postDict[eachTrackID]?["primaryGenreName"] as? String)!)
 
-                    downloadCount += 1
-                    print("第 \(downloadCount) 首下載完成")
+                self.questionArray.append(eachQuestion)
 
-                    if downloadCount == questionArray.count {
+                if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
 
-                        progressRing.setProgress(value: CGFloat(downloadCount * 20), animationDuration: 0.01) {
+                    self.questionMO = QuestionMO(context: appDelegate.persistentContainer.viewContext)
 
-                            let registerVC = vC.storyboard?.instantiateViewController(withIdentifier: "PlayPage")
+                    self.questionMO.artistID = String(eachQuestion.artistID)
+                    self.questionMO.artistName = eachQuestion.artistName
+                    self.questionMO.trackID = String(eachQuestion.trackID)
+                    self.questionMO.trackName = eachQuestion.trackName
+                    self.questionMO.artworkUrl30 = eachQuestion.artworkUrl30
+                    self.questionMO.previewUrl = eachQuestion.previewUrl
+                    self.questionMO.collectionID = String(eachQuestion.collectionID)
+                    self.questionMO.collectionName = eachQuestion.artistName
+                    self.questionMO.primaryGenreName = eachQuestion.primaryGenreName
 
-                            vC.present(registerVC!, animated: true, completion: nil)
-                        }
-
-                    } else {
-                        progressRing.setProgress(value: CGFloat(downloadCount * 20 ), animationDuration: 0.01) {}
-
-                    }
+                    appDelegate.saveContext()
                 }
 
-            }
-        }
-    })
+                print("\(eachQuestion.artistName) is appended")
 
+            }
+
+            for index in 0..<self.questionArray.count {
+
+                let eachSong = self.questionArray[index].previewUrl
+
+                let destination: DownloadRequest.DownloadFileDestination = { _, _ in
+                    let documentsURL = NSHomeDirectory() + "/Documents/"
+                    let fileURL = URL(fileURLWithPath: documentsURL.appending("song\(index).m4a"))
+                    print("song\(index).m4a is downloading")
+
+                    return (fileURL, [.removePreviousFile, .createIntermediateDirectories])
+                }
+
+                DispatchQueue.main.async {
+                    Alamofire.download(eachSong, to: destination).response { _ in
+
+                        downloadCount += 1
+                        print("第 \(downloadCount) 首下載完成")
+
+                        if downloadCount == self.questionArray.count {
+
+                            progressRing.setProgress(value: CGFloat(downloadCount * 20), animationDuration: 0.01) {
+
+                                let registerVC = thisView.storyboard?.instantiateViewController(withIdentifier: "PlayPage")
+
+                                thisView.present(registerVC!, animated: true, completion: nil)
+                            }
+
+                        } else {
+                            progressRing.setProgress(value: CGFloat(downloadCount * 20 ), animationDuration: 0.01) {}
+
+                        }
+                    }
+
+                }
+            }
+        })
+
+    }
 }

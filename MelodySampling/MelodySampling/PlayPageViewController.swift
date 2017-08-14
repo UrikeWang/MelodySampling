@@ -9,8 +9,13 @@
 import UIKit
 import AVFoundation
 import Firebase
+import CoreData
 
-class PlayPageViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class PlayPageViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate {
+
+    var fetchResultController: NSFetchedResultsController<QuestionMO>!
+
+    var questions: [QuestionMO] = []
 
     var ref: DatabaseReference!
 
@@ -42,6 +47,8 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
 
     var score: Double = 0
 
+    let downloadManager = DownloadManager()
+
     @IBOutlet weak var rightUserScoreLabel: UILabel! {
         didSet {
             rightUserScoreLabel.text = "0000"
@@ -65,6 +72,42 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
 
         self.ref = Database.database().reference()
 
+        let fetchRequest: NSFetchRequest<QuestionMO> = QuestionMO.fetchRequest()
+
+        let sortDescriptor = NSSortDescriptor(key: "artistID", ascending: true)
+
+        fetchRequest.sortDescriptors = [sortDescriptor]
+
+        if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
+
+            let context = appDelegate.persistentContainer.viewContext
+
+            fetchResultController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
+
+            fetchResultController.delegate = self
+
+            do {
+
+                try fetchResultController.performFetch()
+
+                if let fetchedObjects = fetchResultController.fetchedObjects {
+
+                    questions = fetchedObjects
+
+                }
+
+            } catch {
+                print(error)
+            }
+        }
+
+        print("===== =====")
+        print("現在 CoreData 中有 \(questions.count) 筆資料")
+
+        for question in questions {
+            print(question.artistID)
+            print(question.artistName)
+        }
         ref.child("questionBanks").child("mandarin").child("genreCode1").child("question1").queryOrderedByKey().observeSingleEvent(of: .value, with: { (snapshot) in
 
             let postDict = snapshot.value as? [String: AnyObject] ?? [:]

@@ -24,7 +24,13 @@ class TypeChooseViewController: UIViewController, UITableViewDataSource, UITable
 
         DispatchQueue.main.async {
 
-            downloadQuestion(genre: 1, viewController: self)
+            let checkQuestion = CheckQuestionInCoreData()
+
+            checkQuestion.clear()
+
+            let downloadManager = DownloadManager()
+            downloadManager.downloadQuestion(genre: 1, viewController: self)
+
         }
     }
 

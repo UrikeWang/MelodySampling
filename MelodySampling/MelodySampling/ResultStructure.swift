@@ -25,7 +25,7 @@ struct EachSongResult {
     let result: Bool
     let usedTime: Double
     let questionDetail: EachQuestion
-    
+
 }
 
 struct DictionaryToResult {
