@@ -22,6 +22,7 @@ struct EachQuestion {
 }
 
 struct EachSongResult {
+    let index: Int16
     let result: Bool
     let usedTime: Double
 }

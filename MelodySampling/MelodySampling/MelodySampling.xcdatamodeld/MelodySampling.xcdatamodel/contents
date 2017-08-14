@@ -11,7 +11,13 @@
         <attribute name="trackID" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="trackName" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
+    <entity name="ResultMO" representedClassName="ResultMO" syncable="YES" codeGenerationType="class">
+        <attribute name="index" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="result" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="usedTime" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+    </entity>
     <elements>
         <element name="QuestionMO" positionX="-45" positionY="0" width="128" height="180"/>
+        <element name="ResultMO" positionX="-18" positionY="99" width="128" height="90"/>
     </elements>
 </model>

@@ -26,7 +26,9 @@ class TypeChooseViewController: UIViewController, UITableViewDataSource, UITable
 
             let checkQuestion = CheckQuestionInCoreData()
 
-            checkQuestion.clear()
+            checkQuestion.clearQuestionMO()
+
+            checkQuestion.clearResultMO()
 
             let downloadManager = DownloadManager()
             downloadManager.downloadQuestion(genre: 1, viewController: self)

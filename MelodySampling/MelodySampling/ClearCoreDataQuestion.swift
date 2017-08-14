@@ -12,11 +12,15 @@ import UIKit
 
 class CheckQuestionInCoreData: UIViewController, NSFetchedResultsControllerDelegate {
 
-    var fetchResultController: NSFetchedResultsController<QuestionMO>!
+    var fetchQuestionResultController: NSFetchedResultsController<QuestionMO>!
+
+    var fetchResultsResultController: NSFetchedResultsController<ResultMO>!
 
     var questions: [QuestionMO] = []
 
-    func clear() {
+    var results: [ResultMO] = []
+
+    func clearQuestionMO() {
 
         let fetchRequest: NSFetchRequest<QuestionMO> = QuestionMO.fetchRequest()
 
@@ -28,15 +32,15 @@ class CheckQuestionInCoreData: UIViewController, NSFetchedResultsControllerDeleg
 
             let context = appDelegate.persistentContainer.viewContext
 
-            fetchResultController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
+            fetchQuestionResultController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
 
-            fetchResultController.delegate = self
+            fetchQuestionResultController.delegate = self
 
             do {
 
-                try fetchResultController.performFetch()
+                try fetchQuestionResultController.performFetch()
 
-                if let fetchedObjects = fetchResultController.fetchedObjects {
+                if let fetchedObjects = fetchQuestionResultController.fetchedObjects {
 
                     questions = fetchedObjects
 
@@ -49,7 +53,52 @@ class CheckQuestionInCoreData: UIViewController, NSFetchedResultsControllerDeleg
                             appDelegate.saveContext()
 
                         }
-                        print("Clean exist question in CoreData")
+                        print("Clean exist questions in CoreData")
+                    }
+
+                }
+
+            } catch {
+                print(error)
+            }
+        }
+
+    }
+
+    func clearResultMO() {
+
+        let fetchRequest: NSFetchRequest<ResultMO> = ResultMO.fetchRequest()
+
+        let sortDescriptor = NSSortDescriptor(key: "index", ascending: true)
+
+        fetchRequest.sortDescriptors = [sortDescriptor]
+
+        if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
+
+            let context = appDelegate.persistentContainer.viewContext
+
+            fetchResultsResultController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
+
+            fetchResultsResultController.delegate = self
+
+            do {
+
+                try fetchResultsResultController.performFetch()
+
+                if let fetchedObjects = fetchResultsResultController.fetchedObjects {
+
+                    results = fetchedObjects
+
+                    if results.count > 0 {
+
+                        for result in results {
+
+                            context.delete(result)
+
+                            appDelegate.saveContext()
+
+                        }
+                        print("Clean exist results in CoreData")
                     }
 
                 }

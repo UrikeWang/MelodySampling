@@ -16,6 +16,8 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
 
     var fetchResultController: NSFetchedResultsController<QuestionMO>!
 
+    var resultMO: ResultMO!
+
     var questions: [QuestionMO] = []
 
     var player: AVAudioPlayer?
@@ -63,7 +65,7 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
     }
 
     @IBOutlet weak var tableView: UITableView!
-    
+
     @IBOutlet weak var playingSongLabel: UILabel!
 
     override func viewDidLoad() {
@@ -120,12 +122,11 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
                 }
 
                 print(trackName, artistName)
-                print(artworkUrl)
             }
         }
 
         playingSongLabel.text = "\(prepareTrack)"
-        
+
         self.timeStart = Date().timeIntervalSince1970
 
         self.startGuessing()
@@ -166,14 +167,13 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
         print("你在 \(currentTrack) 首")
 
         let currentTime = Date().timeIntervalSince1970
-        
+
         timePassed = currentTime - timeStart
-        
+
         timeStart = currentTime
-        
+
         if judgeAnswer(input: selectedAnswer, compare: answer) {
 
-            
             let currentScoreString = rightUserScoreLabel.text
 
             let currentScore = Double(currentScoreString!) ?? 0.0
@@ -186,15 +186,15 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
 
             rightUserScoreLabel.text = "\(formatPrice)"
 
-            let currentResult = EachSongResult(result: true, usedTime: timePassed)
-            
+            let currentResult = EachSongResult(index: Int16(currentTrack), result: true, usedTime: timePassed)
+
             self.resultList.append(currentResult)
 
             print("答對了")
         } else {
-            
-            let currentResult = EachSongResult(result: false, usedTime: timePassed)
-            
+
+            let currentResult = EachSongResult(index: Int16(currentTrack), result: false, usedTime: timePassed)
+
             self.resultList.append(currentResult)
 
             print("答錯了，正解是 \(answer)")
@@ -210,8 +210,23 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
 
             userDefault.set(score, forKey: "Score")
 
+            for eachResult in resultList {
+
+                if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
+
+                    self.resultMO = ResultMO(context: appDelegate.persistentContainer.viewContext)
+
+                    self.resultMO.index = eachResult.index
+                    self.resultMO.result = eachResult.result
+                    self.resultMO.usedTime = eachResult.usedTime
+
+                    appDelegate.saveContext()
+
+                }
+            }
+
             print(resultList)
-            
+
             let registerVC = self.storyboard?.instantiateViewController(withIdentifier: "ResultPage")
 
             self.present(registerVC!, animated: true, completion: nil)
@@ -255,7 +270,7 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
             } else {
 
                 prepareTrack += 1
-                
+
                 playingSongLabel.text = "\(prepareTrack)"
 
             }

@@ -11,9 +11,13 @@ import CoreData
 
 class ResultPageViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate {
 
-    var fetchResultController: NSFetchedResultsController<QuestionMO>!
+    var fetchQuestionController: NSFetchedResultsController<QuestionMO>!
 
+    var fetchResultsController: NSFetchedResultsController<ResultMO>!
+    
     var questions: [QuestionMO] = []
+    
+    var results: [ResultMO] = []
 
     var trackNameArray = [String]()
 
@@ -28,8 +32,6 @@ class ResultPageViewController: UIViewController, UITableViewDelegate, UITableVi
     @IBOutlet weak var profilePageView: UIView!
 
     @IBOutlet weak var lowerView: UIView!
-
-    var songList = ["a", "b", "c", "d", "e"]
 
     @IBOutlet weak var nextBattleLabel: UILabel!
 
@@ -58,25 +60,36 @@ class ResultPageViewController: UIViewController, UITableViewDelegate, UITableVi
 
         scoreLabel.text = "\(String(format: "%.0f", score))"
 
-        let fetchRequest: NSFetchRequest<QuestionMO> = QuestionMO.fetchRequest()
+        let fetchQuestionRequest: NSFetchRequest<QuestionMO> = QuestionMO.fetchRequest()
+        
+        let fetchResultsRequest: NSFetchRequest<ResultMO> = ResultMO.fetchRequest()
 
         let sortDescriptor = NSSortDescriptor(key: "artistID", ascending: true)
 
-        fetchRequest.sortDescriptors = [sortDescriptor]
+        let resultSortDescriptor = NSSortDescriptor(key: "index", ascending: true)
+        
+        fetchQuestionRequest.sortDescriptors = [sortDescriptor]
+        
+        fetchResultsRequest.sortDescriptors = [resultSortDescriptor]
 
         if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
 
             let context = appDelegate.persistentContainer.viewContext
 
-            fetchResultController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
+            fetchQuestionController = NSFetchedResultsController(fetchRequest: fetchQuestionRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
 
-            fetchResultController.delegate = self
-
+            fetchResultsController = NSFetchedResultsController(fetchRequest: fetchResultsRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
+            
+            
+            fetchQuestionController.delegate = self
+            fetchResultsController.delegate = self
+            
             do {
 
-                try fetchResultController.performFetch()
+                try fetchQuestionController.performFetch()
 
-                if let fetchedObjects = fetchResultController.fetchedObjects {
+
+                if let fetchedObjects = fetchQuestionController.fetchedObjects {
 
                     questions = fetchedObjects
                 }
@@ -96,7 +109,7 @@ class ResultPageViewController: UIViewController, UITableViewDelegate, UITableVi
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return songList.count
+        return questions.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -133,6 +146,6 @@ class ResultPageViewController: UIViewController, UITableViewDelegate, UITableVi
 
         let tableHeight = screenHeight - profilePageView.frame.height - lowerView.frame.height
 
-        return tableHeight / CGFloat(songList.count)
+        return tableHeight / CGFloat(questions.count)
     }
 }
