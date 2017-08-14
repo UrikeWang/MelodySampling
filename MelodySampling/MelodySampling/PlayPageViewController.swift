@@ -72,8 +72,6 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
 
         self.ref = Database.database().reference()
 
-        var questionArray = downloadManager.questionArray
-
         let fetchRequest: NSFetchRequest<QuestionMO> = QuestionMO.fetchRequest()
 
         let sortDescriptor = NSSortDescriptor(key: "artistID", ascending: true)
