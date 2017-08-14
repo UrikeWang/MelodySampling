@@ -15,12 +15,12 @@ import CoreData
 
 //把這一段使用 delegate 傳出去
 
-class DownloadManager: UIViewController {
+class DownloadManager {
 
     var ref: DatabaseReference!
-    
+
     var questionMO: QuestionMO!
-    
+
     var questionArray = [EachQuestion]()
 
     func downloadQuestion(genre code: Int, viewController thisView: UIViewController) {
@@ -71,21 +71,28 @@ class DownloadManager: UIViewController {
                     primaryGenreName: (postDict[eachTrackID]?["primaryGenreName"] as? String)!)
 
                 self.questionArray.append(eachQuestion)
-                
+
                 if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
-                    
+
                     self.questionMO = QuestionMO(context: appDelegate.persistentContainer.viewContext)
-                    
+
                     self.questionMO.artistID = String(eachQuestion.artistID)
                     self.questionMO.artistName = eachQuestion.artistName
+                    self.questionMO.trackID = String(eachQuestion.trackID)
+                    self.questionMO.trackName = eachQuestion.trackName
+                    self.questionMO.artworkUrl30 = eachQuestion.artworkUrl30
+                    self.questionMO.previewUrl = eachQuestion.previewUrl
+                    self.questionMO.collectionID = String(eachQuestion.collectionID)
+                    self.questionMO.collectionName = eachQuestion.artistName
+                    self.questionMO.primaryGenreName = eachQuestion.primaryGenreName
+
+                    appDelegate.saveContext()
                 }
-                
-                
-                
+
                 print("\(eachQuestion.artistName) is appended")
 
             }
-            
+
             for index in 0..<self.questionArray.count {
 
                 let eachSong = self.questionArray[index].previewUrl

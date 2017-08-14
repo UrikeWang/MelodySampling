@@ -3,8 +3,15 @@
     <entity name="QuestionMO" representedClassName="QuestionMO" syncable="YES" codeGenerationType="class">
         <attribute name="artistID" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="artistName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="artworkUrl30" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="collectionID" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="collectionName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="previewUrl" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="primaryGenreName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="trackID" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="trackName" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="QuestionMO" positionX="-45" positionY="0" width="128" height="75"/>
+        <element name="QuestionMO" positionX="-45" positionY="0" width="128" height="180"/>
     </elements>
 </model>
