@@ -143,7 +143,10 @@ class ResultPageViewController: UIViewController, UITableViewDelegate, UITableVi
 
         cell.trackNameLabel.text = "\(trackNameArray[indexPath.row])"
         cell.artistNameLabel.text = "\(artistNameArray[indexPath.row])"
-        cell.usedTimeLabel.text = "\(resultsArray[indexPath.row].usedTime)"
+        
+        let usedTime = String(format:"%.1f", resultsArray[indexPath.row].usedTime)
+        
+        cell.usedTimeLabel.text = "\(usedTime)"
 
         if resultsArray[indexPath.row].result {
             cell.judgementImageView.image = UIImage(named: "right")
