@@ -389,6 +389,7 @@
 				8B360FAF8EFBFF2290B7656E /* [CP] Embed Pods Frameworks */,
 				D35133110B842A2D09B8C25C /* [CP] Copy Pods Resources */,
 				73744D1A1F2EDF5B00C1FAEA /* Swiftlint */,
+				7378AF031F41C23300D54292 /* Crash Reporting */,
 			);
 			buildRules = (
 			);
@@ -480,6 +481,20 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+		};
+		7378AF031F41C23300D54292 /* Crash Reporting */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Crash Reporting";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Replace this with the GOOGLE_APP_ID from your GoogleService-Info.plist file\nGOOGLE_APP_ID=1:600202689143:ios:648a6e5184d290ba\n\n# Replace the /Path/To/ServiceAccount.json with the path to the key you just downloaded\n\"${PODS_ROOT}\"/FirebaseCrash/upload-sym \"${PROJECT_DIR}/Keys/melodysampling-firebase-crashreporting-rbdp7-7368cf9a6a.json\"";
 		};
 		8B360FAF8EFBFF2290B7656E /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;

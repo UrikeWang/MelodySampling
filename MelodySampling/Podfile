@@ -10,6 +10,7 @@ target 'MelodySampling' do
 pod 'Firebase/Auth'
 pod 'Firebase/Core'
 pod 'Firebase/Database'
+pod 'Firebase/Crash'
 pod 'Alamofire', '~> 4.4'
 pod 'SwifterSwift'
 pod 'IQKeyboardManagerSwift', '4.0.10'

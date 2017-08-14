@@ -304,7 +304,7 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 79
+        return self.tableView.frame.height / 4
     }
 
 }
