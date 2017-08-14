@@ -36,13 +36,13 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
 
     var artistList = [String]()
 
-    var resultList = [Bool]()
+    var resultList = [EachSongResult]()
 
-    var timeStart: Double?
+    var timeStart: Double = 0
 
-    var timeEnd: Double?
+    var timeEnd: Double = 0
 
-    var timePassed: Double?
+    var timePassed: Double = 0
 
     var score: Double = 0
 
@@ -161,19 +161,20 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
         print("你選了 \(selectedAnswer) 個選項")
         print("你在 \(currentTrack) 首")
 
+        let currentTime = Date().timeIntervalSince1970
+        
+        timePassed = currentTime - timeStart
+        
+        timeStart = currentTime
+        
         if judgeAnswer(input: selectedAnswer, compare: answer) {
 
-            let currentTime = Date().timeIntervalSince1970
-
-            timePassed = currentTime - timeStart!
-
-            timeStart = currentTime
-
+            
             let currentScoreString = rightUserScoreLabel.text
 
             let currentScore = Double(currentScoreString!) ?? 0.0
 
-            let scoreYouGot = scoreAfterOneSong(time: timePassed!)
+            let scoreYouGot = scoreAfterOneSong(time: timePassed)
 
             score = Double(currentScore + scoreYouGot)
 
@@ -181,11 +182,17 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
 
             rightUserScoreLabel.text = "\(formatPrice)"
 
-            resultList.append(true)
+            let currentResult = EachSongResult(result: true, usedTime: timePassed)
+            
+            self.resultList.append(currentResult)
+
             print("答對了")
         } else {
+            
+            let currentResult = EachSongResult(result: false, usedTime: timePassed)
+            
+            self.resultList.append(currentResult)
 
-            resultList.append(false)
             print("答錯了，正解是 \(answer)")
         }
 
@@ -199,6 +206,8 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
 
             userDefault.set(score, forKey: "Score")
 
+            print(resultList)
+            
             let registerVC = self.storyboard?.instantiateViewController(withIdentifier: "ResultPage")
 
             self.present(registerVC!, animated: true, completion: nil)

@@ -109,21 +109,18 @@ class ResultPageViewController: UIViewController, UITableViewDelegate, UITableVi
 
         cell.trackNameLabel.text = "\(trackNameArray[indexPath.row])"
         cell.artistNameLabel.text = "\(artistNameArray[indexPath.row])"
-        
+
         let documentsURL = NSHomeDirectory() + "/Documents/"
         let fileURL = URL(fileURLWithPath: documentsURL.appending("artworkImage\(indexPath.row).jpg"))
-        
+
         do {
             let data = try Data(contentsOf: fileURL)
-            
+
             cell.artworkImageView.image = UIImage(data: data)
-        
+
         } catch {
             print("Using place holder image")
         }
-        
-//        cell.artworkImageView.image = UIImage(data: Data(contentsOf: fileURL))
-        
 
         return cell
     }

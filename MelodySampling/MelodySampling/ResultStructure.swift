@@ -24,16 +24,4 @@ struct EachQuestion {
 struct EachSongResult {
     let result: Bool
     let usedTime: Double
-    let questionDetail: EachQuestion
-
-}
-
-struct DictionaryToResult {
-    let score: Double
-    let song0: EachSongResult
-    let song1: EachSongResult
-    let song2: EachSongResult
-    let song3: EachSongResult
-    let song4: EachSongResult
-
 }
