@@ -11,6 +11,8 @@ import Alamofire
 import Firebase
 import UICircularProgressRing
 
+//把這一段使用 delegate 傳出去
+
 var ref: DatabaseReference!
 
 func downloadQuestion(genre code: Int, viewController vC: UIViewController) {

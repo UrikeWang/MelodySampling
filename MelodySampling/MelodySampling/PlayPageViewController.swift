@@ -71,11 +71,6 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
 
         self.tableView.dataSource = self
         
-        let notificationName = Notification.Name("NotificationIdentifier")
-        
-    NotificationCenter.default.addObserver(self, selector: #selector(self.passToQuestionArray(_:)), name: notificationName, object: nil)
-        
-        
         self.ref = Database.database().reference()
 
         ref.child("questionBanks").child("mandarin").child("genreCode1").child("question1").queryOrderedByKey().observeSingleEvent(of: .value, with: { (snapshot) in
