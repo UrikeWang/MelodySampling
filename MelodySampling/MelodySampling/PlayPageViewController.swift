@@ -63,6 +63,8 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
     }
 
     @IBOutlet weak var tableView: UITableView!
+    
+    @IBOutlet weak var playingSongLabel: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -122,6 +124,8 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
             }
         }
 
+        playingSongLabel.text = "\(prepareTrack)"
+        
         self.timeStart = Date().timeIntervalSince1970
 
         self.startGuessing()
@@ -251,6 +255,8 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
             } else {
 
                 prepareTrack += 1
+                
+                playingSongLabel.text = "\(prepareTrack)"
 
             }
         }
