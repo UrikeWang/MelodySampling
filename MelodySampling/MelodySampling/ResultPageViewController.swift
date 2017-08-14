@@ -22,6 +22,8 @@ class ResultPageViewController: UIViewController, UITableViewDelegate, UITableVi
     var trackNameArray = [String]()
 
     var artistNameArray = [String]()
+    
+    var resultsArray = [EachSongResult]()
 
     @IBOutlet weak var invisibleNextGameButtonOutlet: UIButton!
 
@@ -97,6 +99,21 @@ class ResultPageViewController: UIViewController, UITableViewDelegate, UITableVi
 
                 print(error)
             }
+            
+            do {
+                
+                try fetchResultsController.performFetch()
+                
+                if let fetchedObjects = fetchResultsController.fetchedObjects {
+                    
+                    results = fetchedObjects
+                }
+                
+            } catch {
+                
+                print(error)
+            }
+            
         }
 
         for question in questions {
@@ -105,6 +122,12 @@ class ResultPageViewController: UIViewController, UITableViewDelegate, UITableVi
                 artistNameArray.append(artistName)
                 print(trackName, artistName)
             }
+        }
+        
+        for result in results {
+            let temp = EachSongResult(index: result.index, result: result.result, usedTime: result.usedTime)
+            resultsArray.append(temp)
+            
         }
     }
 
@@ -122,6 +145,13 @@ class ResultPageViewController: UIViewController, UITableViewDelegate, UITableVi
 
         cell.trackNameLabel.text = "\(trackNameArray[indexPath.row])"
         cell.artistNameLabel.text = "\(artistNameArray[indexPath.row])"
+        cell.usedTimeLabel.text = "\(resultsArray[indexPath.row].usedTime)"
+        
+        if resultsArray[indexPath.row].result {
+            cell.judgementImageView.image = UIImage(named: "right")
+        } else {
+            cell.judgementImageView.image = UIImage(named: "wrong")
+        }
 
         let documentsURL = NSHomeDirectory() + "/Documents/"
         let fileURL = URL(fileURLWithPath: documentsURL.appending("artworkImage\(indexPath.row).jpg"))
