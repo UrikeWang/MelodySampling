@@ -14,15 +14,15 @@ class ResultPageViewController: UIViewController, UITableViewDelegate, UITableVi
     var fetchQuestionController: NSFetchedResultsController<QuestionMO>!
 
     var fetchResultsController: NSFetchedResultsController<ResultMO>!
-    
+
     var questions: [QuestionMO] = []
-    
+
     var results: [ResultMO] = []
 
     var trackNameArray = [String]()
 
     var artistNameArray = [String]()
-    
+
     var resultsArray = [EachSongResult]()
 
     @IBOutlet weak var invisibleNextGameButtonOutlet: UIButton!
@@ -63,15 +63,15 @@ class ResultPageViewController: UIViewController, UITableViewDelegate, UITableVi
         scoreLabel.text = "\(String(format: "%.0f", score))"
 
         let fetchQuestionRequest: NSFetchRequest<QuestionMO> = QuestionMO.fetchRequest()
-        
+
         let fetchResultsRequest: NSFetchRequest<ResultMO> = ResultMO.fetchRequest()
 
         let sortDescriptor = NSSortDescriptor(key: "artistID", ascending: true)
 
         let resultSortDescriptor = NSSortDescriptor(key: "index", ascending: true)
-        
+
         fetchQuestionRequest.sortDescriptors = [sortDescriptor]
-        
+
         fetchResultsRequest.sortDescriptors = [resultSortDescriptor]
 
         if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
@@ -81,15 +81,13 @@ class ResultPageViewController: UIViewController, UITableViewDelegate, UITableVi
             fetchQuestionController = NSFetchedResultsController(fetchRequest: fetchQuestionRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
 
             fetchResultsController = NSFetchedResultsController(fetchRequest: fetchResultsRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
-            
-            
+
             fetchQuestionController.delegate = self
             fetchResultsController.delegate = self
-            
+
             do {
 
                 try fetchQuestionController.performFetch()
-
 
                 if let fetchedObjects = fetchQuestionController.fetchedObjects {
 
@@ -99,21 +97,21 @@ class ResultPageViewController: UIViewController, UITableViewDelegate, UITableVi
 
                 print(error)
             }
-            
+
             do {
-                
+
                 try fetchResultsController.performFetch()
-                
+
                 if let fetchedObjects = fetchResultsController.fetchedObjects {
-                    
+
                     results = fetchedObjects
                 }
-                
+
             } catch {
-                
+
                 print(error)
             }
-            
+
         }
 
         for question in questions {
@@ -123,11 +121,11 @@ class ResultPageViewController: UIViewController, UITableViewDelegate, UITableVi
                 print(trackName, artistName)
             }
         }
-        
+
         for result in results {
             let temp = EachSongResult(index: result.index, result: result.result, usedTime: result.usedTime)
             resultsArray.append(temp)
-            
+
         }
     }
 
@@ -146,7 +144,7 @@ class ResultPageViewController: UIViewController, UITableViewDelegate, UITableVi
         cell.trackNameLabel.text = "\(trackNameArray[indexPath.row])"
         cell.artistNameLabel.text = "\(artistNameArray[indexPath.row])"
         cell.usedTimeLabel.text = "\(resultsArray[indexPath.row].usedTime)"
-        
+
         if resultsArray[indexPath.row].result {
             cell.judgementImageView.image = UIImage(named: "right")
         } else {
