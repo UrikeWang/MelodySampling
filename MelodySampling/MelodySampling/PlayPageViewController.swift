@@ -10,14 +10,15 @@ import UIKit
 import AVFoundation
 import Firebase
 import CoreData
+import Alamofire
 
 class PlayPageViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate {
 
     var fetchResultController: NSFetchedResultsController<QuestionMO>!
 
-    var questions: [QuestionMO] = []
+    var resultMO: ResultMO!
 
-    var ref: DatabaseReference!
+    var questions: [QuestionMO] = []
 
     var player: AVAudioPlayer?
 
@@ -37,17 +38,19 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
 
     var artistList = [String]()
 
-    var resultList = [Bool]()
+    var resultList = [EachSongResult]()
 
-    var timeStart: Double?
+    var timeStart: Double = 0
 
-    var timeEnd: Double?
+    var timeEnd: Double = 0
 
-    var timePassed: Double?
+    var timePassed: Double = 0
 
     var score: Double = 0
 
-    let downloadManager = DownloadManager()
+    var trackNameArray = [String]()
+
+    var artistNameArray = [String]()
 
     @IBOutlet weak var rightUserScoreLabel: UILabel! {
         didSet {
@@ -63,14 +66,14 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
 
     @IBOutlet weak var tableView: UITableView!
 
+    @IBOutlet weak var playingSongLabel: UILabel!
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.tableView.delegate = self
 
         self.tableView.dataSource = self
-
-        self.ref = Database.database().reference()
 
         let fetchRequest: NSFetchRequest<QuestionMO> = QuestionMO.fetchRequest()
 
@@ -100,36 +103,33 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
                 print(error)
             }
         }
-
-        print("===== =====")
         print("現在 CoreData 中有 \(questions.count) 筆資料")
 
         for question in questions {
-            print(question.artistID)
-            print(question.artistName)
-        }
-        ref.child("questionBanks").child("mandarin").child("genreCode1").child("question1").queryOrderedByKey().observeSingleEvent(of: .value, with: { (snapshot) in
+            if let trackName = question.trackName, let artistName = question.artistName, let artworkUrl = question.artworkUrl, let index = questions.index(of: question) {
+                trackNameArray.append(trackName)
+                artistNameArray.append(artistName)
 
-            let postDict = snapshot.value as? [String: AnyObject] ?? [:]
+                let destinnation: DownloadRequest.DownloadFileDestination = { _, _ in
 
-            for eachTrackID in postDict {
+                    let documentsURL = NSHomeDirectory() + "/Documents/"
+                    let fileURL = URL(fileURLWithPath: documentsURL.appending("artworkImage\(index).jpg"))
 
-                let temp = eachTrackID.value as? [String: AnyObject]
-                //                print(temp)
+                    return (fileURL, [.removePreviousFile, .createIntermediateDirectories])
+                }
 
-                guard let artist = temp?["artistName"] else { return }
+                Alamofire.download(artworkUrl, to: destinnation).response { _ in
+                }
 
-                self.artistList.append((artist as? String)!)
-
+                print(trackName, artistName)
             }
+        }
 
-            print("Artlist downloading done")
+        playingSongLabel.text = "\(prepareTrack)"
 
-            self.timeStart = Date().timeIntervalSince1970
+        self.timeStart = Date().timeIntervalSince1970
 
-            self.startGuessing()
-
-        })
+        self.startGuessing()
 
     }
 
@@ -138,7 +138,7 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
     }
 
     func numberOfSections(in tableView: UITableView) -> Int {
-        return shuffledList.count
+        return trackNameArray.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -161,24 +161,24 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
 
         let selectedAnswer = shuffledList[indexPath.section]
 
-        let answer = artistList[currentTrack]
+        let answer = trackNameArray[currentTrack]
 
         print("你選了 \(selectedAnswer) 個選項")
         print("你在 \(currentTrack) 首")
 
+        let currentTime = Date().timeIntervalSince1970
+
+        timePassed = currentTime - timeStart
+
+        timeStart = currentTime
+
         if judgeAnswer(input: selectedAnswer, compare: answer) {
-
-            let currentTime = Date().timeIntervalSince1970
-
-            timePassed = currentTime - timeStart!
-
-            timeStart = currentTime
 
             let currentScoreString = rightUserScoreLabel.text
 
             let currentScore = Double(currentScoreString!) ?? 0.0
 
-            let scoreYouGot = scoreAfterOneSong(time: timePassed!)
+            let scoreYouGot = scoreAfterOneSong(time: timePassed)
 
             score = Double(currentScore + scoreYouGot)
 
@@ -186,11 +186,17 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
 
             rightUserScoreLabel.text = "\(formatPrice)"
 
-            resultList.append(true)
+            let currentResult = EachSongResult(index: Int16(currentTrack), result: true, usedTime: timePassed)
+
+            self.resultList.append(currentResult)
+
             print("答對了")
         } else {
 
-            resultList.append(false)
+            let currentResult = EachSongResult(index: Int16(currentTrack), result: false, usedTime: timePassed)
+
+            self.resultList.append(currentResult)
+
             print("答錯了，正解是 \(answer)")
         }
 
@@ -200,13 +206,36 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
 
             player = nil
 
-            performSegue(withIdentifier: "goToResultPage", sender: self)
+            let userDefault = UserDefaults.standard
+
+            userDefault.set(score, forKey: "Score")
+
+            for eachResult in resultList {
+
+                if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
+
+                    self.resultMO = ResultMO(context: appDelegate.persistentContainer.viewContext)
+
+                    self.resultMO.index = eachResult.index
+                    self.resultMO.result = eachResult.result
+                    self.resultMO.usedTime = eachResult.usedTime
+
+                    appDelegate.saveContext()
+
+                }
+            }
+
+            print(resultList)
+
+            let registerVC = self.storyboard?.instantiateViewController(withIdentifier: "ResultPage")
+
+            self.present(registerVC!, animated: true, completion: nil)
 
         } else {
 
             questionList = fakeArtistList
 
-            questionList.append(artistList[prepareTrack])
+            questionList.append(trackNameArray[prepareTrack])
 
             shuffledList = questionList.shuffled()
 
@@ -242,6 +271,8 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
 
                 prepareTrack += 1
 
+                playingSongLabel.text = "\(prepareTrack)"
+
             }
         }
     }
@@ -253,7 +284,7 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
         print("接下來是第 \(prepareTrack) 首")
         self.questionList = self.fakeArtistList
 
-        self.questionList.append(self.artistList[self.currentTrack])
+        self.questionList.append(self.trackNameArray[self.currentTrack])
 
         self.shuffledList = self.questionList.shuffled()
 
