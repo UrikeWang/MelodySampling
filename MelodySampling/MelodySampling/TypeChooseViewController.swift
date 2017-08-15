@@ -61,25 +61,25 @@ class TypeChooseViewController: UIViewController, UITableViewDataSource, UITable
 
         case .mandarinPop:
 
-            cell.backgroundColor = UIColor(patternImage: UIImage(named: "pic_Cpop_cover")!)
+            cell.backgroundImageView.image = UIImage(named: "pic_Cpop_cover")
             
             cell.genreTypeLabel.text = "華語流行"
 
         case .taiwanesePop:
 
-            cell.backgroundColor = UIColor(patternImage: UIImage(named: "pic_Tpop_cover")!)
+            cell.backgroundImageView.image = UIImage(named: "pic_Tpop_cover")
             
             cell.genreTypeLabel.text = "台語流行"
 
         case .cantoPop:
 
-            cell.backgroundColor = UIColor(patternImage: UIImage(named: "pic_Can_cover")!)
+            cell.backgroundImageView.image = UIImage(named: "pic_Can_cover")
             
             cell.genreTypeLabel.text = "粵語流行"
 
         case .billboard:
 
-            cell.backgroundColor = UIColor(patternImage: UIImage(named: "pic_Wpop_cover")!)
+            cell.backgroundImageView.image = UIImage(named: "pic_Wpop_cover")
             
             cell.genreTypeLabel.text = "世界流行"
 

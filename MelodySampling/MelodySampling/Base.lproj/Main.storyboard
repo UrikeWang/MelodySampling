@@ -1323,33 +1323,29 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="166"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TCZ-9h-YoX">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="166"/>
+                                                </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Genre Label Pop" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Law-og-2Je">
                                                     <rect key="frame" x="124" y="43" width="126.5" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap it!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w8b-FG-B5T">
-                                                    <rect key="frame" x="163.5" y="83.5" width="47" height="21"/>
-                                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.29658069349315069" colorSpace="calibratedRGB"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.25882352939999997" green="0.1333333333" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                             </subviews>
-                                            <constraints>
-                                                <constraint firstItem="w8b-FG-B5T" firstAttribute="top" secondItem="Law-og-2Je" secondAttribute="bottom" constant="20" id="riP-qc-K8A"/>
-                                            </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.72549019609999998" green="0.72549019609999998" blue="0.72549019609999998" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
+                                            <constraint firstItem="TCZ-9h-YoX" firstAttribute="top" secondItem="9jp-uK-r69" secondAttribute="top" id="3bV-j4-az0"/>
                                             <constraint firstItem="Law-og-2Je" firstAttribute="centerY" secondItem="9jp-uK-r69" secondAttribute="centerY" constant="-30" id="GMc-J8-JOO"/>
-                                            <constraint firstItem="w8b-FG-B5T" firstAttribute="centerX" secondItem="9jp-uK-r69" secondAttribute="centerX" id="Qhy-ic-tw2"/>
+                                            <constraint firstItem="TCZ-9h-YoX" firstAttribute="leading" secondItem="9jp-uK-r69" secondAttribute="leading" id="IxK-Kh-ROY"/>
+                                            <constraint firstAttribute="bottom" secondItem="TCZ-9h-YoX" secondAttribute="bottom" id="JK1-ew-l3d"/>
+                                            <constraint firstAttribute="trailing" secondItem="TCZ-9h-YoX" secondAttribute="trailing" id="amW-0u-8bp"/>
                                             <constraint firstItem="Law-og-2Je" firstAttribute="centerX" secondItem="9jp-uK-r69" secondAttribute="centerX" id="udS-O6-iuF"/>
                                         </constraints>
                                         <connections>
+                                            <outlet property="backgroundImageView" destination="TCZ-9h-YoX" id="9TH-O8-CKe"/>
                                             <outlet property="genreTypeLabel" destination="Law-og-2Je" id="nU8-cD-UbT"/>
-                                            <outlet property="userHintLabel" destination="w8b-FG-B5T" id="6xw-J2-YjD"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

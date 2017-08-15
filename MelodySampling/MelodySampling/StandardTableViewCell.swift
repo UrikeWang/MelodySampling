@@ -12,7 +12,7 @@ class StandardTableViewCell: UITableViewCell {
     
     @IBOutlet weak var genreTypeLabel: UILabel!
     
-    @IBOutlet weak var userHintLabel: UILabel!
+    @IBOutlet weak var backgroundImageView: UIImageView!
 
     override func awakeFromNib() {
         super.awakeFromNib()
