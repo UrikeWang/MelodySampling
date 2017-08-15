@@ -59,12 +59,33 @@ class TypeChooseViewController: UIViewController, UITableViewDataSource, UITable
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
-        let cellIdentifier = "TypeCell"
+        let cellIdentifier = "GenreCell"
 
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
 
-//        cell.textLabel?.text = typeList[indexPath.row]
         cell.selectionStyle = .none
+
+        let genre = typeList[indexPath.row]
+
+        switch genre {
+
+        case .mandarinPop:
+
+            cell.backgroundColor = UIColor(patternImage: UIImage(named: "pic_Cpop_cover")!)
+
+        case .taiwanesePop:
+
+            cell.backgroundColor = UIColor(patternImage: UIImage(named: "pic_Tpop_cover")!)
+
+        case .cantoPop:
+
+            cell.backgroundColor = UIColor(patternImage: UIImage(named: "pic_Can_cover")!)
+
+        case .billboard:
+
+            cell.backgroundColor = UIColor(patternImage: UIImage(named: "pic_Wpop_cover")!)
+
+        }
 
         return cell
     }
