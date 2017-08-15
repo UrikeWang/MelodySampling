@@ -49,15 +49,15 @@ extension UIColor {
     class var mldUltramarineBlue: UIColor {
         return UIColor(red: 34.0 / 255.0, green: 0.0, blue: 231.0 / 255.0, alpha: 1.0)
     }
-    
+
     class var mldBlack50: UIColor {
         return UIColor(white: 0.0, alpha: 0.5)
     }
-    
+
     class var mldUltramarineBlueTwo: UIColor {
         return UIColor(red: 52.0 / 255.0, green: 0.0, blue: 208.0 / 255.0, alpha: 1.0)
     }
-    
+
     class var mldUltramarine: UIColor {
         return UIColor(red: 24.0 / 255.0, green: 0.0, blue: 163.0 / 255.0, alpha: 1.0)
     }

@@ -9,7 +9,7 @@
 import UIKit
 
 class HistoryTableViewCell: UITableViewCell {
-    
+
     @IBOutlet weak var collectionImageView: UIImageView! {
         didSet {
             collectionImageView.layer.shadowColor = UIColor.mldBlack50.cgColor
@@ -17,25 +17,25 @@ class HistoryTableViewCell: UITableViewCell {
             collectionImageView.layer.shadowRadius = 4
         }
     }
-    
+
     @IBOutlet weak var trackNameLabel: UILabel! {
         didSet {
             trackNameLabel.addTextSpacing(to: -0.4)
         }
     }
-    
+
     @IBOutlet weak var artistNameLabel: UILabel! {
         didSet {
             artistNameLabel.addTextSpacing(to: -0.4)
         }
     }
-    
+
     @IBOutlet weak var cellBackgroundView: UIView! {
         didSet {
             createProfilePageHistoryCellBackground(target: cellBackgroundView)
         }
     }
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

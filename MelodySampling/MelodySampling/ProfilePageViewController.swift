@@ -12,6 +12,12 @@ class ProfilePageViewController: UIViewController, UITableViewDelegate, UITableV
 
     @IBOutlet weak var achievementTableView: UITableView!
 
+    @IBOutlet weak var userProfileImageView: UIImageView!
+
+    @IBOutlet weak var playButtonLabel: UILabel!
+
+    @IBOutlet weak var playTextLabel: UILabel!
+
     @IBOutlet weak var invisibleButton: UIButton!
 
     @IBAction func invisibleButtonTapped(_ sender: UIButton) {
@@ -28,8 +34,13 @@ class ProfilePageViewController: UIViewController, UITableViewDelegate, UITableV
         invisibleButton.setTitleColor(UIColor.clear, for: .normal)
 
         achievementTableView.delegate = self
+
         achievementTableView.dataSource = self
-        // Do any additional setup after loading the view.
+
+        createNextBattleOfResult(target: playButtonLabel)
+
+        createUserProfileImage(targe: userProfileImageView)
+
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -42,8 +53,6 @@ class ProfilePageViewController: UIViewController, UITableViewDelegate, UITableV
 
         let cell = achievementTableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? UITableViewCell
 
-        
-        
         return cell!
 
     }

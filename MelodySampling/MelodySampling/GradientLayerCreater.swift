@@ -69,13 +69,20 @@ func createNextBattleOfResult(target uILabel: UILabel) {
 }
 
 func createProfilePageHistoryCellBackground(target uIView: UIView) {
-    
+
     gradientLayer = CAGradientLayer()
-    
+
     gradientLayer.frame = uIView.bounds
-    
+
     gradientLayer.colors = [UIColor.mldUltramarineBlueTwo.cgColor, UIColor.mldUltramarine.cgColor]
-    
+
     uIView.layer.insertSublayer(gradientLayer, at: 0)
-    
+
+}
+
+func createUserProfileImage(targe uIImageView: UIImageView) {
+
+    uIImageView.layer.shadowColor = UIColor.mldBlack50.cgColor
+    uIImageView.layer.shadowOffset = CGSize(width: 2, height: 2)
+    uIImageView.layer.shadowRadius = 4
 }
