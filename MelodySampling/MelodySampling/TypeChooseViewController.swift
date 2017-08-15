@@ -14,9 +14,15 @@ class TypeChooseViewController: UIViewController, UITableViewDataSource, UITable
 
     var ref: DatabaseReference!
 
-    var typeList = ["國語歌曲", "台語歌曲", "男女對唱", "熱門排行"]
+//    var typeList = ["國語歌曲", "台語歌曲", "男女對唱", "熱門排行"]
 
     @IBOutlet weak var tableView: UITableView!
+
+    enum TypeList {
+        case mandarinPop, taiwanesePop, cantoPop, billboard
+    }
+
+    var typeList: [TypeList] = [.mandarinPop, .taiwanesePop, .cantoPop, .billboard]
 
     @IBAction func playButtonTapped(_ sender: UIButton) {
 
@@ -76,7 +82,7 @@ class TypeChooseViewController: UIViewController, UITableViewDataSource, UITable
 
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
 
-        cell.textLabel?.text = typeList[indexPath.row]
+//        cell.textLabel?.text = typeList[indexPath.row]
 
         return cell
     }
@@ -91,6 +97,26 @@ class TypeChooseViewController: UIViewController, UITableViewDataSource, UITable
 
         // MARK: 之後把過場和選提寫在這
         print("你選了 \(typeList[indexPath.row])")
+
+        triggerToStart()
+
+    }
+
+    func triggerToStart() {
+
+        DispatchQueue.main.async {
+
+            let checkQuestion = CheckQuestionInCoreData()
+
+            checkQuestion.clearQuestionMO()
+
+            checkQuestion.clearResultMO()
+
+            let downloadManager = DownloadManager()
+
+            downloadManager.downloadQuestion(genre: 1, viewController: self)
+
+        }
 
     }
 
