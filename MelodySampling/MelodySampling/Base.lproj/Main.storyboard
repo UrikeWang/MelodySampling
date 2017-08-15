@@ -919,7 +919,6 @@
                         <outlet property="loginLabel" destination="nRs-tJ-aaB" id="M5B-xK-6yV"/>
                         <outlet property="signUpButtonOutlet" destination="eNZ-KW-APm" id="uzh-Ip-pqx"/>
                         <outlet property="signupLabel" destination="C8j-OD-UCA" id="vgU-rC-PCT"/>
-                        <segue destination="QDn-rL-xbF" kind="show" identifier="goToProfileFromAnonymous" id="nvy-29-8r3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G0U-7s-mVh" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1103,7 +1102,6 @@
                         <outlet property="passwordTextField" destination="VIX-oo-t59" id="g0C-Ub-YgG"/>
                         <outlet property="signUpButtonOutlet" destination="KBV-Wk-wQJ" id="pmn-WE-vD6"/>
                         <outlet property="signUpLabel" destination="EgF-uP-uhz" id="FUS-Q2-1Pn"/>
-                        <segue destination="QDn-rL-xbF" kind="show" identifier="goToProfileFromSignUp" id="V5Z-26-1B0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Sr-Wb-5D4" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2300,7 +2298,7 @@
         <image name="usericon" width="67" height="60"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="sp4-eN-HGB"/>
+        <segue reference="kLS-fL-JEV"/>
         <segue reference="Xvj-Te-b72"/>
     </inferredMetricsTieBreakers>
 </document>

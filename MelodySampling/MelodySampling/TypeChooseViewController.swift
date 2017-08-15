@@ -28,10 +28,12 @@ class TypeChooseViewController: UIViewController, UITableViewDataSource, UITable
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        checkUID()
+        
         tableView.delegate = self
 
         tableView.dataSource = self
-        
+
         invisibleButton.setTitleColor(UIColor.clear, for: .normal)
 
     }
@@ -52,7 +54,7 @@ class TypeChooseViewController: UIViewController, UITableViewDataSource, UITable
         //swiftlint:disable force_cast
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! StandardTableViewCell
         //swiftlint:enable
-        
+
         cell.selectionStyle = .none
 
         let genre = typeList[indexPath.row]
@@ -62,25 +64,25 @@ class TypeChooseViewController: UIViewController, UITableViewDataSource, UITable
         case .mandarinPop:
 
             cell.backgroundImageView.image = UIImage(named: "pic_Cpop_cover")
-            
+
             cell.genreTypeLabel.text = "華語流行"
 
         case .taiwanesePop:
 
             cell.backgroundImageView.image = UIImage(named: "pic_Tpop_cover")
-            
+
             cell.genreTypeLabel.text = "台語流行"
 
         case .cantoPop:
 
             cell.backgroundImageView.image = UIImage(named: "pic_Can_cover")
-            
+
             cell.genreTypeLabel.text = "粵語流行"
 
         case .billboard:
 
             cell.backgroundImageView.image = UIImage(named: "pic_Wpop_cover")
-            
+
             cell.genreTypeLabel.text = "世界流行"
 
         }

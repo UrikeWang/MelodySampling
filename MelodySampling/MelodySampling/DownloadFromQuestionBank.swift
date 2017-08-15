@@ -52,14 +52,13 @@ class DownloadManager {
             guard let postDict = snapshot.value as? [String: AnyObject] else { return }
 
             let indexArray = Array(postDict.keys) //每一個裡面都是 trackID
-            
+
             //從這一段開始改寫接把每一個東西倒進 EachQuestion
 
             var counter = 0
-            
+
             for eachTrackID in indexArray {
 
-                
                 let eachQuestion = EachQuestion(
                     artistID: (postDict[eachTrackID]?["artistId"] as? Int)!,
                     artistName: (postDict[eachTrackID]?["artistName"] as? String)!,
@@ -70,7 +69,6 @@ class DownloadManager {
                     collectionID: (postDict[eachTrackID]?["collectionId"] as? Int)!,
                     collectionName: (postDict[eachTrackID]?["collectionName"] as? String)!,
                     primaryGenreName: (postDict[eachTrackID]?["primaryGenreName"] as? String)!)
-                
 
                 self.questionArray.append(eachQuestion)
 
