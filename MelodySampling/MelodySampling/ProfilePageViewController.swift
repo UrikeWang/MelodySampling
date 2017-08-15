@@ -14,12 +14,8 @@ class ProfilePageViewController: UIViewController, UITableViewDelegate, UITableV
 
     @IBOutlet weak var invisibleButton: UIButton!
 
-    @IBOutlet weak var middleRightUpperContentView: UIView!
-
-    @IBOutlet weak var middleLeftUpperContentView: UIView!
-
     @IBAction func invisibleButtonTapped(_ sender: UIButton) {
-        print("This button tapped")
+        print("Play button tapped")
 
         let registerVC = self.storyboard?.instantiateViewController(withIdentifier: "NewTypeChoosePage")
 
@@ -33,8 +29,6 @@ class ProfilePageViewController: UIViewController, UITableViewDelegate, UITableV
 
         achievementTableView.delegate = self
         achievementTableView.dataSource = self
-
-        middleLeftUpperContentView.isHidden = true
         // Do any additional setup after loading the view.
     }
 
@@ -44,7 +38,7 @@ class ProfilePageViewController: UIViewController, UITableViewDelegate, UITableV
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
-        let cellIdentifier = "AchievementCell"
+        let cellIdentifier = "HistoryCell"
 
         let cell = achievementTableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? UITableViewCell
 
