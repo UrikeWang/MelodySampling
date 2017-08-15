@@ -31,6 +31,8 @@ class ProfilePageViewController: UIViewController, UITableViewDelegate, UITableV
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        checkUID()
+
         invisibleButton.setTitleColor(UIColor.clear, for: .normal)
 
         achievementTableView.delegate = self

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="QDn-rL-xbF">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="bgG-UJ-6ec">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -790,7 +790,7 @@
         <!--Landing Page View Controller-->
         <scene sceneID="vYB-Hh-43r">
             <objects>
-                <viewController id="bgG-UJ-6ec" customClass="LandingPageViewController" customModule="MelodySampling" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LandingPage" useStoryboardIdentifierAsRestorationIdentifier="YES" id="bgG-UJ-6ec" customClass="LandingPageViewController" customModule="MelodySampling" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="MwV-VO-dhb"/>
                         <viewControllerLayoutGuide type="bottom" id="EZh-xy-gZm"/>
@@ -919,7 +919,6 @@
                         <outlet property="loginLabel" destination="nRs-tJ-aaB" id="M5B-xK-6yV"/>
                         <outlet property="signUpButtonOutlet" destination="eNZ-KW-APm" id="uzh-Ip-pqx"/>
                         <outlet property="signupLabel" destination="C8j-OD-UCA" id="vgU-rC-PCT"/>
-                        <segue destination="QDn-rL-xbF" kind="show" identifier="goToProfileFromAnonymous" id="nvy-29-8r3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G0U-7s-mVh" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -929,7 +928,7 @@
         <!--Sign Up View Controller-->
         <scene sceneID="aAP-Md-uWi">
             <objects>
-                <viewController id="Y5G-1b-riF" customClass="SignUpViewController" customModule="MelodySampling" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignupPage" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y5G-1b-riF" customClass="SignUpViewController" customModule="MelodySampling" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="nKW-T5-MpE"/>
                         <viewControllerLayoutGuide type="bottom" id="1O6-L0-CqL"/>
@@ -1057,10 +1056,22 @@
                                         <color key="textColor" red="0.25882352941176467" green="0.13333333333333333" blue="0.99607843137254903" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7bs-t6-MOK">
+                                        <rect key="frame" x="174.5" y="543" width="180" height="70"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="70" id="wX3-bB-CfM"/>
+                                            <constraint firstAttribute="width" constant="180" id="xKe-pf-EW4"/>
+                                        </constraints>
+                                        <state key="normal" title="Invisible Button"/>
+                                        <connections>
+                                            <action selector="gotoLoginButonTapped:" destination="Y5G-1b-riF" eventType="touchUpInside" id="eCf-bO-1wm"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.75470890410958902" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="6Hx-aM-5VR" firstAttribute="centerX" secondItem="EgF-uP-uhz" secondAttribute="centerX" id="0Ec-lD-m9U"/>
+                                    <constraint firstItem="7bs-t6-MOK" firstAttribute="trailing" secondItem="6Hx-aM-5VR" secondAttribute="trailing" constant="20" id="7mu-Zx-TGc"/>
                                     <constraint firstItem="em1-6Q-aom" firstAttribute="leading" secondItem="U1h-ID-cdY" secondAttribute="leading" constant="60" id="92w-bB-Gja"/>
                                     <constraint firstItem="b7u-pU-XkO" firstAttribute="leading" secondItem="U1h-ID-cdY" secondAttribute="leading" constant="47" id="LZw-dy-1Yt"/>
                                     <constraint firstItem="vRG-Wl-ebV" firstAttribute="top" secondItem="b7u-pU-XkO" secondAttribute="bottom" constant="20" id="QAG-lK-T9R"/>
@@ -1074,6 +1085,7 @@
                                     <constraint firstItem="b7u-pU-XkO" firstAttribute="top" secondItem="em1-6Q-aom" secondAttribute="bottom" constant="74" id="chR-lf-QYk"/>
                                     <constraint firstItem="EgF-uP-uhz" firstAttribute="width" secondItem="hbT-kz-Sgv" secondAttribute="width" id="dhz-EJ-jd0"/>
                                     <constraint firstItem="EgF-uP-uhz" firstAttribute="top" secondItem="hbT-kz-Sgv" secondAttribute="bottom" constant="60" id="hFd-2l-7A8"/>
+                                    <constraint firstItem="7bs-t6-MOK" firstAttribute="top" secondItem="6Hx-aM-5VR" secondAttribute="top" constant="-10" id="lRm-1K-oPQ"/>
                                     <constraint firstItem="vRG-Wl-ebV" firstAttribute="leading" secondItem="b7u-pU-XkO" secondAttribute="leading" id="m8Q-yJ-pmb"/>
                                     <constraint firstItem="EgF-uP-uhz" firstAttribute="centerX" secondItem="hbT-kz-Sgv" secondAttribute="centerX" id="r3D-0z-qeS"/>
                                     <constraint firstItem="6Hx-aM-5VR" firstAttribute="top" secondItem="EgF-uP-uhz" secondAttribute="bottom" constant="30" id="uDR-8S-fGb"/>
@@ -1099,21 +1111,21 @@
                         <outlet property="confirmPasswordTextField" destination="pfT-LV-HHY" id="BJH-cB-qIp"/>
                         <outlet property="emailTextField" destination="zpD-dh-a8g" id="cHe-HC-Yy3"/>
                         <outlet property="goToLoginLabel" destination="6Hx-aM-5VR" id="8Dd-fp-vZj"/>
+                        <outlet property="gotoLoginButonOutlet" destination="7bs-t6-MOK" id="qha-L0-Ofv"/>
                         <outlet property="opacityView" destination="U1h-ID-cdY" id="Vig-Tv-KNJ"/>
                         <outlet property="passwordTextField" destination="VIX-oo-t59" id="g0C-Ub-YgG"/>
                         <outlet property="signUpButtonOutlet" destination="KBV-Wk-wQJ" id="pmn-WE-vD6"/>
                         <outlet property="signUpLabel" destination="EgF-uP-uhz" id="FUS-Q2-1Pn"/>
-                        <segue destination="QDn-rL-xbF" kind="show" identifier="goToProfileFromSignUp" id="V5Z-26-1B0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Sr-Wb-5D4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1052" y="-539"/>
+            <point key="canvasLocation" x="1052" y="-539.28035982008998"/>
         </scene>
         <!--Profile Page View Controller-->
         <scene sceneID="ycO-Oa-d5U">
             <objects>
-                <viewController id="QDn-rL-xbF" customClass="ProfilePageViewController" customModule="MelodySampling" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProfilePage" useStoryboardIdentifierAsRestorationIdentifier="YES" id="QDn-rL-xbF" customClass="ProfilePageViewController" customModule="MelodySampling" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="JtC-HI-0ca"/>
                         <viewControllerLayoutGuide type="bottom" id="jEY-qv-fzz"/>
@@ -1683,7 +1695,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="P3p-ob-hIJ">
-                                        <rect key="frame" x="211" y="144" width="101" height="17"/>
+                                        <rect key="frame" x="210" y="144" width="101" height="17"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Star" translatesAutoresizingMaskIntoConstraints="NO" id="cJS-dk-1MD">
                                                 <rect key="frame" x="0.0" y="0.0" width="17" height="17"/>
@@ -1917,7 +1929,7 @@
         <!--Log In View Controller-->
         <scene sceneID="Ya5-e6-AmV">
             <objects>
-                <viewController id="Tjb-TR-M1w" customClass="LogInViewController" customModule="MelodySampling" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginPage" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Tjb-TR-M1w" customClass="LogInViewController" customModule="MelodySampling" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="p1u-Qx-lcN"/>
                         <viewControllerLayoutGuide type="bottom" id="kyw-IN-eGu"/>
@@ -1974,7 +1986,7 @@
                                                 <rect key="frame" x="13" y="10" width="254" height="20"/>
                                                 <color key="textColor" red="0.25882352939999997" green="0.1333333333" blue="0.99607843139999996" alpha="0.90402932359999999" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES"/>
                                             </textField>
                                         </subviews>
                                         <color key="backgroundColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -2047,11 +2059,22 @@
                                             <action selector="loginButtonTapped:" destination="Tjb-TR-M1w" eventType="touchUpInside" id="pxK-Ls-hyJ"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="paE-ln-Lmo">
+                                        <rect key="frame" x="187.5" y="496" width="159.5" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="2pq-n4-oFe"/>
+                                        </constraints>
+                                        <state key="normal" title="Invisible Button"/>
+                                        <connections>
+                                            <action selector="signUpInvisibleButtonTapped:" destination="Tjb-TR-M1w" eventType="touchUpInside" id="or3-jg-HPM"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="0.69945954623287676" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="CLK-nL-DhG" firstAttribute="top" secondItem="ufH-qg-LiI" secondAttribute="bottom" constant="30" id="15a-dB-4D6"/>
                                     <constraint firstItem="cq8-dZ-1az" firstAttribute="centerX" secondItem="CLK-nL-DhG" secondAttribute="centerX" id="50B-gc-jVE"/>
+                                    <constraint firstItem="paE-ln-Lmo" firstAttribute="trailing" secondItem="9tS-ZU-rY7" secondAttribute="trailing" constant="20" id="8Dd-Hk-GTF"/>
                                     <constraint firstItem="VPg-UZ-Ctf" firstAttribute="leading" secondItem="KXI-mi-P6b" secondAttribute="leading" constant="60" id="COv-tW-jLe"/>
                                     <constraint firstItem="cq8-dZ-1az" firstAttribute="top" secondItem="CLK-nL-DhG" secondAttribute="bottom" constant="90" id="FNZ-OE-Pgd"/>
                                     <constraint firstItem="ufH-qg-LiI" firstAttribute="leading" secondItem="KXI-mi-P6b" secondAttribute="leading" constant="47" id="HAf-OR-PeG"/>
@@ -2062,10 +2085,12 @@
                                     <constraint firstItem="KN3-9H-4bf" firstAttribute="top" secondItem="cq8-dZ-1az" secondAttribute="bottom" constant="31" id="Xt6-j9-Pki"/>
                                     <constraint firstItem="cq8-dZ-1az" firstAttribute="width" secondItem="CLK-nL-DhG" secondAttribute="width" id="YYj-mT-28O"/>
                                     <constraint firstItem="VPg-UZ-Ctf" firstAttribute="centerX" secondItem="KXI-mi-P6b" secondAttribute="centerX" id="YtC-Cc-lMb"/>
+                                    <constraint firstItem="paE-ln-Lmo" firstAttribute="width" secondItem="9tS-ZU-rY7" secondAttribute="width" constant="30" id="hGe-Cr-zyi"/>
                                     <constraint firstItem="KN3-9H-4bf" firstAttribute="centerX" secondItem="cq8-dZ-1az" secondAttribute="centerX" id="luj-wb-GAA"/>
                                     <constraint firstItem="VPg-UZ-Ctf" firstAttribute="top" secondItem="KXI-mi-P6b" secondAttribute="top" constant="143" id="nep-Cy-d9T"/>
                                     <constraint firstItem="CLK-nL-DhG" firstAttribute="centerX" secondItem="ufH-qg-LiI" secondAttribute="centerX" id="oqN-f5-r0U"/>
                                     <constraint firstItem="VPg-UZ-Ctf" firstAttribute="top" secondItem="pfo-lE-6Vq" secondAttribute="bottom" constant="18" id="qF7-T0-YmQ"/>
+                                    <constraint firstItem="paE-ln-Lmo" firstAttribute="top" secondItem="KN3-9H-4bf" secondAttribute="top" constant="-10" id="tGo-MS-BTL"/>
                                     <constraint firstItem="ufH-qg-LiI" firstAttribute="centerX" secondItem="KXI-mi-P6b" secondAttribute="centerX" id="tf1-lg-8G8"/>
                                     <constraint firstItem="9tS-ZU-rY7" firstAttribute="trailing" secondItem="CLK-nL-DhG" secondAttribute="trailing" id="vAs-fj-iM6"/>
                                     <constraint firstItem="ufH-qg-LiI" firstAttribute="top" secondItem="VPg-UZ-Ctf" secondAttribute="bottom" constant="48" id="xKy-yh-y5Z"/>
@@ -2093,12 +2118,12 @@
                         <outlet property="loginLabel" destination="cq8-dZ-1az" id="KwX-co-Tof"/>
                         <outlet property="opacityView" destination="KXI-mi-P6b" id="I2d-HS-2zs"/>
                         <outlet property="passwordTextField" destination="4JM-xJ-G7m" id="08b-Sh-AzK"/>
-                        <segue destination="QDn-rL-xbF" kind="show" identifier="goToProfileFromLogin" id="rOl-yo-aGW"/>
+                        <outlet property="signUpInvisibleButtonOutlet" destination="paE-ln-Lmo" id="asA-We-wbS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TPi-fz-Gh8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1052" y="-1278"/>
+            <point key="canvasLocation" x="1052" y="-1278.7106446776613"/>
         </scene>
         <!--Timer View Controller-->
         <scene sceneID="1Pw-mA-bNW">

@@ -23,6 +23,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         IQKeyboardManager.sharedManager().enable = true
 
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+
+        if UserDefaults.standard.value(forKey: "uid") != nil {
+
+            let registerVC = storyboard.instantiateViewController(withIdentifier: "ProfilePage")
+
+            self.window?.rootViewController = registerVC
+
+        } else {
+
+            let registerVC = storyboard.instantiateViewController(withIdentifier: "LandingPage")
+
+            self.window?.rootViewController = registerVC
+        }
+
         return true
     }
 

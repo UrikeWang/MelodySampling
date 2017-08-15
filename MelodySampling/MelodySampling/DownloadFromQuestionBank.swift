@@ -55,6 +55,8 @@ class DownloadManager {
 
             //從這一段開始改寫接把每一個東西倒進 EachQuestion
 
+            var counter = 0
+
             for eachTrackID in indexArray {
 
                 let eachQuestion = EachQuestion(
@@ -74,6 +76,7 @@ class DownloadManager {
 
                     self.questionMO = QuestionMO(context: appDelegate.persistentContainer.viewContext)
 
+                    self.questionMO.indexNo = Int16(counter)
                     self.questionMO.artistID = String(eachQuestion.artistID)
                     self.questionMO.artistName = eachQuestion.artistName
                     self.questionMO.trackID = String(eachQuestion.trackID)
@@ -87,7 +90,10 @@ class DownloadManager {
                     appDelegate.saveContext()
                 }
 
-                print("\(eachQuestion.artistName) is appended")
+//                print("\(eachQuestion.artistName) is appended")
+                print("==== Type Genre Page =====")
+                print("第 \(counter) 個是 \(eachQuestion.artistName), trackID: \(eachQuestion.trackID), artistID: \(eachQuestion.artistID)")
+                counter += 1
 
             }
 
@@ -99,6 +105,7 @@ class DownloadManager {
                     let documentsURL = NSHomeDirectory() + "/Documents/"
                     let fileURL = URL(fileURLWithPath: documentsURL.appending("song\(index).m4a"))
                     print("song\(index).m4a is downloading")
+                    print("ArtistName: \(self.questionArray[index].artistName), trackName: \(self.questionArray[index].trackName), trackID: \(self.questionArray[index].trackID)")
 
                     return (fileURL, [.removePreviousFile, .createIntermediateDirectories])
                 }

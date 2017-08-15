@@ -9,9 +9,9 @@
 import UIKit
 
 class StandardTableViewCell: UITableViewCell {
-    
+
     @IBOutlet weak var genreTypeLabel: UILabel!
-    
+
     @IBOutlet weak var backgroundImageView: UIImageView!
 
     override func awakeFromNib() {
