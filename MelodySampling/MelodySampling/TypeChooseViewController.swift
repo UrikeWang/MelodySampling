@@ -24,21 +24,6 @@ class TypeChooseViewController: UIViewController, UITableViewDataSource, UITable
 
     var typeList: [TypeList] = [.mandarinPop, .taiwanesePop, .cantoPop, .billboard]
 
-    @IBAction func checkButtonTapped(_ sender: UIButton) {
-
-        let fileManager = FileManager()
-
-        do {
-            let fileList = try fileManager.contentsOfDirectory(atPath: NSHomeDirectory() + "/Documents/")
-
-            for file in fileList {
-                print(file)
-            }
-        } catch {
-            print("Something wrong during loading")
-        }
-    }
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
