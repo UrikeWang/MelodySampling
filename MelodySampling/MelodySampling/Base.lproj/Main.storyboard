@@ -790,7 +790,7 @@
         <!--Landing Page View Controller-->
         <scene sceneID="vYB-Hh-43r">
             <objects>
-                <viewController id="bgG-UJ-6ec" customClass="LandingPageViewController" customModule="MelodySampling" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LandingPage" useStoryboardIdentifierAsRestorationIdentifier="YES" id="bgG-UJ-6ec" customClass="LandingPageViewController" customModule="MelodySampling" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="MwV-VO-dhb"/>
                         <viewControllerLayoutGuide type="bottom" id="EZh-xy-gZm"/>
@@ -2091,7 +2091,6 @@
                         <outlet property="loginLabel" destination="cq8-dZ-1az" id="KwX-co-Tof"/>
                         <outlet property="opacityView" destination="KXI-mi-P6b" id="I2d-HS-2zs"/>
                         <outlet property="passwordTextField" destination="4JM-xJ-G7m" id="08b-Sh-AzK"/>
-                        <segue destination="QDn-rL-xbF" kind="show" identifier="goToProfileFromLogin" id="rOl-yo-aGW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TPi-fz-Gh8" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2298,7 +2297,7 @@
         <image name="usericon" width="67" height="60"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="rOl-yo-aGW"/>
+        <segue reference="sp4-eN-HGB"/>
         <segue reference="Xvj-Te-b72"/>
     </inferredMetricsTieBreakers>
 </document>
