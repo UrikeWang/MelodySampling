@@ -8,9 +8,15 @@
 
 import UIKit
 
-class ProfilePageViewController: UIViewController {
+class ProfilePageViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+    @IBOutlet weak var achievementTableView: UITableView!
+    
     @IBOutlet weak var invisibleButton: UIButton!
+    
+    @IBOutlet weak var middleRightUpperContentView: UIView!
+    
+    @IBOutlet weak var middleLeftUpperContentView: UIView!
     
     @IBAction func invisibleButtonTapped(_ sender: UIButton) {
         print("This button tapped")
@@ -24,13 +30,28 @@ class ProfilePageViewController: UIViewController {
         super.viewDidLoad()
         
         invisibleButton.setTitleColor(UIColor.clear, for: .normal)
+        
+        achievementTableView.delegate = self
+        achievementTableView.dataSource = self
 
+        middleLeftUpperContentView.isHidden = true
         // Do any additional setup after loading the view.
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cellIdentifier = "AchievementCell"
+        
+        let cell = achievementTableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? UITableViewCell
+        
+        return cell!
+        
     }
 
+    
+    
 }
