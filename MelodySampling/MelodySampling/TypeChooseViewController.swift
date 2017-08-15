@@ -24,24 +24,6 @@ class TypeChooseViewController: UIViewController, UITableViewDataSource, UITable
 
     var typeList: [TypeList] = [.mandarinPop, .taiwanesePop, .cantoPop, .billboard]
 
-    @IBAction func playButtonTapped(_ sender: UIButton) {
-
-        print("開始抓題庫了")
-
-        DispatchQueue.main.async {
-
-            let checkQuestion = CheckQuestionInCoreData()
-
-            checkQuestion.clearQuestionMO()
-
-            checkQuestion.clearResultMO()
-
-            let downloadManager = DownloadManager()
-            downloadManager.downloadQuestion(genre: 1, viewController: self)
-
-        }
-    }
-
     @IBAction func checkButtonTapped(_ sender: UIButton) {
 
         let fileManager = FileManager()
@@ -64,7 +46,6 @@ class TypeChooseViewController: UIViewController, UITableViewDataSource, UITable
 
         tableView.dataSource = self
 
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
@@ -83,6 +64,7 @@ class TypeChooseViewController: UIViewController, UITableViewDataSource, UITable
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
 
 //        cell.textLabel?.text = typeList[indexPath.row]
+        cell.selectionStyle = .none
 
         return cell
     }
