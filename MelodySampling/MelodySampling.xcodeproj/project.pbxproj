@@ -27,9 +27,7 @@
 		732AE4821F39817A009746CA /* Montserrat-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 732AE4701F39817A009746CA /* Montserrat-SemiBoldItalic.ttf */; };
 		732AE4831F39817A009746CA /* Montserrat-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 732AE4711F39817A009746CA /* Montserrat-Thin.ttf */; };
 		732AE4841F39817A009746CA /* Montserrat-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 732AE4721F39817A009746CA /* Montserrat-ThinItalic.ttf */; };
-		732AE4871F398831009746CA /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732AE4861F398831009746CA /* TimerViewController.swift */; };
 		732AE4891F399258009746CA /* ScoresFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732AE4881F399258009746CA /* ScoresFunc.swift */; };
-		732AE48C1F39E0F0009746CA /* PlayPageViewControllerOld.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732AE48B1F39E0F0009746CA /* PlayPageViewControllerOld.swift */; };
 		735575991F3D87AC00A0E271 /* ResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735575981F3D87AC00A0E271 /* ResultTableViewCell.swift */; };
 		7355759F1F3DB8FF00A0E271 /* ProfilePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7355759E1F3DB8FF00A0E271 /* ProfilePageViewController.swift */; };
 		736271021F3A9CF00002206B /* QuestionFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 736271011F3A9CF00002206B /* QuestionFactory.swift */; };
@@ -42,10 +40,6 @@
 		73744D0E1F2ED94300C1FAEA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 73744D0D1F2ED94300C1FAEA /* Assets.xcassets */; };
 		73744D111F2ED94300C1FAEA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 73744D0F1F2ED94300C1FAEA /* LaunchScreen.storyboard */; };
 		73744D191F2EDEA400C1FAEA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 73744D181F2EDEA400C1FAEA /* GoogleService-Info.plist */; };
-		73744D1D1F2EFADC00C1FAEA /* SignUpViewControllerOld.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73744D1C1F2EFADC00C1FAEA /* SignUpViewControllerOld.swift */; };
-		73744D251F2F1A7600C1FAEA /* LoginSuccedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73744D241F2F1A7600C1FAEA /* LoginSuccedViewController.swift */; };
-		73744D271F2F203D00C1FAEA /* AnonymousLoginSuccedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73744D261F2F203D00C1FAEA /* AnonymousLoginSuccedViewController.swift */; };
-		73744D2C1F2F4CF800C1FAEA /* StreamingPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73744D2B1F2F4CF800C1FAEA /* StreamingPage.swift */; };
 		73744D2F1F2F78C000C1FAEA /* GetDeveloperToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73744D2E1F2F78C000C1FAEA /* GetDeveloperToken.swift */; };
 		73744D311F2F7CA900C1FAEA /* PreviewSongsURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73744D301F2F7CA900C1FAEA /* PreviewSongsURL.swift */; };
 		737783851F42A2E100B9EEBF /* MandarinPopTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737783841F42A2E100B9EEBF /* MandarinPopTableViewCell.swift */; };
@@ -53,8 +47,6 @@
 		737783891F42A32000B9EEBF /* CantoPopTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737783881F42A32000B9EEBF /* CantoPopTableViewCell.swift */; };
 		7377838B1F42A33300B9EEBF /* BillboardTopTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7377838A1F42A33300B9EEBF /* BillboardTopTableViewCell.swift */; };
 		7377838D1F42C34F00B9EEBF /* StandardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7377838C1F42C34F00B9EEBF /* StandardTableViewCell.swift */; };
-		73820C481F3056C900121A4D /* DownloadFromITuneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73820C471F3056C900121A4D /* DownloadFromITuneViewController.swift */; };
-		73820C901F30A20A00121A4D /* DestinationDownload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73820C8F1F30A20A00121A4D /* DestinationDownload.swift */; };
 		7382740C1F3EAF8D00CD718E /* DownloadFromQuestionBank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7382740B1F3EAF8D00CD718E /* DownloadFromQuestionBank.swift */; };
 		7382742C1F40992E00CD718E /* FirebaseExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7382742B1F40992E00CD718E /* FirebaseExtension.swift */; };
 		73865FB81F3C4D32004E3594 /* PlayPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73865FB71F3C4D32004E3594 /* PlayPageViewController.swift */; };
@@ -69,9 +61,6 @@
 		73AF802E1F38764300CA31FB /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73AF802D1F38764300CA31FB /* LogInViewController.swift */; };
 		73B122F51F42FD3E006DE065 /* GotoFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73B122F41F42FD3E006DE065 /* GotoFunc.swift */; };
 		73B122F71F431536006DE065 /* PrintUID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73B122F61F431536006DE065 /* PrintUID.swift */; };
-		73D6A56E1F33060F00928402 /* QuestionBankViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D6A56D1F33060F00928402 /* QuestionBankViewController.swift */; };
-		73EBA3031F31F63E0082C752 /* PlaySongsAftDownloadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73EBA3021F31F63E0082C752 /* PlaySongsAftDownloadViewController.swift */; };
-		73EBA3061F31FF210082C752 /* RetrieveDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73EBA3051F31FF210082C752 /* RetrieveDataViewController.swift */; };
 		73FDE6681F3DC35400D9A3FC /* TypeChooseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73FDE6671F3DC35400D9A3FC /* TypeChooseViewController.swift */; };
 		E9121496FD42D46E60BF274E /* Pods_MelodySampling.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCE8237F816AFC43B6CA66DF /* Pods_MelodySampling.framework */; };
 /* End PBXBuildFile section */
@@ -97,9 +86,7 @@
 		732AE4701F39817A009746CA /* Montserrat-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
 		732AE4711F39817A009746CA /* Montserrat-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Thin.ttf"; sourceTree = "<group>"; };
 		732AE4721F39817A009746CA /* Montserrat-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ThinItalic.ttf"; sourceTree = "<group>"; };
-		732AE4861F398831009746CA /* TimerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
 		732AE4881F399258009746CA /* ScoresFunc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoresFunc.swift; sourceTree = "<group>"; };
-		732AE48B1F39E0F0009746CA /* PlayPageViewControllerOld.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayPageViewControllerOld.swift; sourceTree = "<group>"; };
 		735575981F3D87AC00A0E271 /* ResultTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultTableViewCell.swift; sourceTree = "<group>"; };
 		7355759E1F3DB8FF00A0E271 /* ProfilePageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfilePageViewController.swift; sourceTree = "<group>"; };
 		736271011F3A9CF00002206B /* QuestionFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionFactory.swift; sourceTree = "<group>"; };
@@ -114,10 +101,6 @@
 		73744D101F2ED94300C1FAEA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		73744D121F2ED94300C1FAEA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		73744D181F2EDEA400C1FAEA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		73744D1C1F2EFADC00C1FAEA /* SignUpViewControllerOld.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewControllerOld.swift; sourceTree = "<group>"; };
-		73744D241F2F1A7600C1FAEA /* LoginSuccedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginSuccedViewController.swift; sourceTree = "<group>"; };
-		73744D261F2F203D00C1FAEA /* AnonymousLoginSuccedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnonymousLoginSuccedViewController.swift; sourceTree = "<group>"; };
-		73744D2B1F2F4CF800C1FAEA /* StreamingPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreamingPage.swift; sourceTree = "<group>"; };
 		73744D2E1F2F78C000C1FAEA /* GetDeveloperToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetDeveloperToken.swift; sourceTree = "<group>"; };
 		73744D301F2F7CA900C1FAEA /* PreviewSongsURL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewSongsURL.swift; sourceTree = "<group>"; };
 		737783841F42A2E100B9EEBF /* MandarinPopTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MandarinPopTableViewCell.swift; sourceTree = "<group>"; };
@@ -125,8 +108,6 @@
 		737783881F42A32000B9EEBF /* CantoPopTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CantoPopTableViewCell.swift; sourceTree = "<group>"; };
 		7377838A1F42A33300B9EEBF /* BillboardTopTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BillboardTopTableViewCell.swift; sourceTree = "<group>"; };
 		7377838C1F42C34F00B9EEBF /* StandardTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StandardTableViewCell.swift; sourceTree = "<group>"; };
-		73820C471F3056C900121A4D /* DownloadFromITuneViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownloadFromITuneViewController.swift; sourceTree = "<group>"; };
-		73820C8F1F30A20A00121A4D /* DestinationDownload.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DestinationDownload.swift; sourceTree = "<group>"; };
 		7382740B1F3EAF8D00CD718E /* DownloadFromQuestionBank.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownloadFromQuestionBank.swift; sourceTree = "<group>"; };
 		7382742B1F40992E00CD718E /* FirebaseExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseExtension.swift; sourceTree = "<group>"; };
 		73865FB71F3C4D32004E3594 /* PlayPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayPageViewController.swift; sourceTree = "<group>"; };
@@ -141,9 +122,6 @@
 		73AF802D1F38764300CA31FB /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		73B122F41F42FD3E006DE065 /* GotoFunc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GotoFunc.swift; sourceTree = "<group>"; };
 		73B122F61F431536006DE065 /* PrintUID.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrintUID.swift; sourceTree = "<group>"; };
-		73D6A56D1F33060F00928402 /* QuestionBankViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionBankViewController.swift; sourceTree = "<group>"; };
-		73EBA3021F31F63E0082C752 /* PlaySongsAftDownloadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaySongsAftDownloadViewController.swift; sourceTree = "<group>"; };
-		73EBA3051F31FF210082C752 /* RetrieveDataViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RetrieveDataViewController.swift; sourceTree = "<group>"; };
 		73FDE6671F3DC35400D9A3FC /* TypeChooseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeChooseViewController.swift; sourceTree = "<group>"; };
 		744E2D9810A745B7407345E5 /* Pods-MelodySampling.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MelodySampling.release.xcconfig"; path = "Pods/Target Support Files/Pods-MelodySampling/Pods-MelodySampling.release.xcconfig"; sourceTree = "<group>"; };
 		7AEB0E68990119E1DCEEFF7C /* Pods-MelodySampling.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MelodySampling.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MelodySampling/Pods-MelodySampling.debug.xcconfig"; sourceTree = "<group>"; };
@@ -193,22 +171,6 @@
 				732AE4721F39817A009746CA /* Montserrat-ThinItalic.ttf */,
 			);
 			name = FontResource;
-			sourceTree = "<group>";
-		};
-		732AE4851F398816009746CA /* Timer */ = {
-			isa = PBXGroup;
-			children = (
-				732AE4861F398831009746CA /* TimerViewController.swift */,
-			);
-			name = Timer;
-			sourceTree = "<group>";
-		};
-		732AE48A1F39E09A009746CA /* PlayPageOld */ = {
-			isa = PBXGroup;
-			children = (
-				732AE48B1F39E0F0009746CA /* PlayPageViewControllerOld.swift */,
-			);
-			name = PlayPageOld;
 			sourceTree = "<group>";
 		};
 		7355759A1F3DADFC00A0E271 /* GenreChoosePage */ = {
@@ -267,19 +229,12 @@
 				7355759D1F3DB8D400A0E271 /* ProfilePage */,
 				7355759A1F3DADFC00A0E271 /* GenreChoosePage */,
 				73865FB61F3C4D13004E3594 /* PlayPage */,
-				732AE48A1F39E09A009746CA /* PlayPageOld */,
 				7399DB861F3D82ED00E2A4B2 /* ResultPage */,
-				732AE4851F398816009746CA /* Timer */,
 				732AE4601F398137009746CA /* FontResource */,
 				73AF80211F384B3400CA31FB /* StyleguideRelative */,
-				73EBA3041F31FEE30082C752 /* RetrieveData */,
-				73820C461F30569E00121A4D /* DownloadFromITune */,
 				73744D2D1F2F788900C1FAEA /* FunctionAndStruct */,
-				73744D2A1F2F4C5B00C1FAEA /* StreamingPreviewSong */,
-				73744D1B1F2EFA9E00C1FAEA /* SignUpAndSignIn */,
-				73D6A56C1F3305E400928402 /* QuestionBankDownload */,
-				73744D031F2ED94200C1FAEA /* AppDelegate.swift */,
 				73744D071F2ED94300C1FAEA /* Main.storyboard */,
+				73744D031F2ED94200C1FAEA /* AppDelegate.swift */,
 				73744D0D1F2ED94300C1FAEA /* Assets.xcassets */,
 				73744D0F1F2ED94300C1FAEA /* LaunchScreen.storyboard */,
 				73744D121F2ED94300C1FAEA /* Info.plist */,
@@ -287,24 +242,6 @@
 				73744D181F2EDEA400C1FAEA /* GoogleService-Info.plist */,
 			);
 			path = MelodySampling;
-			sourceTree = "<group>";
-		};
-		73744D1B1F2EFA9E00C1FAEA /* SignUpAndSignIn */ = {
-			isa = PBXGroup;
-			children = (
-				73744D1C1F2EFADC00C1FAEA /* SignUpViewControllerOld.swift */,
-				73744D241F2F1A7600C1FAEA /* LoginSuccedViewController.swift */,
-				73744D261F2F203D00C1FAEA /* AnonymousLoginSuccedViewController.swift */,
-			);
-			name = SignUpAndSignIn;
-			sourceTree = "<group>";
-		};
-		73744D2A1F2F4C5B00C1FAEA /* StreamingPreviewSong */ = {
-			isa = PBXGroup;
-			children = (
-				73744D2B1F2F4CF800C1FAEA /* StreamingPage.swift */,
-			);
-			name = StreamingPreviewSong;
 			sourceTree = "<group>";
 		};
 		73744D2D1F2F788900C1FAEA /* FunctionAndStruct */ = {
@@ -324,16 +261,6 @@
 				73B122F61F431536006DE065 /* PrintUID.swift */,
 			);
 			name = FunctionAndStruct;
-			sourceTree = "<group>";
-		};
-		73820C461F30569E00121A4D /* DownloadFromITune */ = {
-			isa = PBXGroup;
-			children = (
-				73820C471F3056C900121A4D /* DownloadFromITuneViewController.swift */,
-				73820C8F1F30A20A00121A4D /* DestinationDownload.swift */,
-				73EBA3021F31F63E0082C752 /* PlaySongsAftDownloadViewController.swift */,
-			);
-			name = DownloadFromITune;
 			sourceTree = "<group>";
 		};
 		73865FB61F3C4D13004E3594 /* PlayPage */ = {
@@ -372,22 +299,6 @@
 				73AF802D1F38764300CA31FB /* LogInViewController.swift */,
 			);
 			name = LandingToSignIn;
-			sourceTree = "<group>";
-		};
-		73D6A56C1F3305E400928402 /* QuestionBankDownload */ = {
-			isa = PBXGroup;
-			children = (
-				73D6A56D1F33060F00928402 /* QuestionBankViewController.swift */,
-			);
-			name = QuestionBankDownload;
-			sourceTree = "<group>";
-		};
-		73EBA3041F31FEE30082C752 /* RetrieveData */ = {
-			isa = PBXGroup;
-			children = (
-				73EBA3051F31FF210082C752 /* RetrieveDataViewController.swift */,
-			);
-			name = RetrieveData;
 			sourceTree = "<group>";
 		};
 		D62B671CB22ADFC8F94CDB5D /* Pods */ = {
@@ -557,29 +468,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				732AE4871F398831009746CA /* TimerViewController.swift in Sources */,
 				736271021F3A9CF00002206B /* QuestionFactory.swift in Sources */,
 				730D0E5A1F3AEBFD0099DA0F /* AddSpace.swift in Sources */,
 				7377838B1F42A33300B9EEBF /* BillboardTopTableViewCell.swift in Sources */,
 				7382740C1F3EAF8D00CD718E /* DownloadFromQuestionBank.swift in Sources */,
-				73EBA3061F31FF210082C752 /* RetrieveDataViewController.swift in Sources */,
 				73B122F51F42FD3E006DE065 /* GotoFunc.swift in Sources */,
 				7355759F1F3DB8FF00A0E271 /* ProfilePageViewController.swift in Sources */,
-				73744D271F2F203D00C1FAEA /* AnonymousLoginSuccedViewController.swift in Sources */,
 				7377838D1F42C34F00B9EEBF /* StandardTableViewCell.swift in Sources */,
 				737783851F42A2E100B9EEBF /* MandarinPopTableViewCell.swift in Sources */,
 				732AE4891F399258009746CA /* ScoresFunc.swift in Sources */,
 				73FDE6681F3DC35400D9A3FC /* TypeChooseViewController.swift in Sources */,
-				73744D1D1F2EFADC00C1FAEA /* SignUpViewControllerOld.swift in Sources */,
-				73D6A56E1F33060F00928402 /* QuestionBankViewController.swift in Sources */,
 				739019DF1F41463F006DEFFD /* ClearCoreDataQuestion.swift in Sources */,
 				737783891F42A32000B9EEBF /* CantoPopTableViewCell.swift in Sources */,
-				73744D251F2F1A7600C1FAEA /* LoginSuccedViewController.swift in Sources */,
 				736271041F3AAB210002206B /* ArrayShuffle.swift in Sources */,
 				73AF802C1F386D4400CA31FB /* SignUpViewController.swift in Sources */,
 				73AF802A1F385EAE00CA31FB /* GradientLayerCreater.swift in Sources */,
-				73820C481F3056C900121A4D /* DownloadFromITuneViewController.swift in Sources */,
-				73EBA3031F31F63E0082C752 /* PlaySongsAftDownloadViewController.swift in Sources */,
 				737783871F42A31200B9EEBF /* TaiwanesePopTableViewCell.swift in Sources */,
 				735575991F3D87AC00A0E271 /* ResultTableViewCell.swift in Sources */,
 				73744D2F1F2F78C000C1FAEA /* GetDeveloperToken.swift in Sources */,
@@ -590,8 +493,6 @@
 				7364EF9E1F4286B200D65D64 /* HistoryTableViewCell.swift in Sources */,
 				73AF80261F384E3B00CA31FB /* LandingPageViewController.swift in Sources */,
 				73B122F71F431536006DE065 /* PrintUID.swift in Sources */,
-				73744D2C1F2F4CF800C1FAEA /* StreamingPage.swift in Sources */,
-				73820C901F30A20A00121A4D /* DestinationDownload.swift in Sources */,
 				730D0E5C1F3AFEA20099DA0F /* JudgeAnswer.swift in Sources */,
 				73AF80231F384B7900CA31FB /* Styleguide.swift in Sources */,
 				7382742C1F40992E00CD718E /* FirebaseExtension.swift in Sources */,
@@ -600,7 +501,6 @@
 				7399DB881F3D835900E2A4B2 /* ResultPageViewController.swift in Sources */,
 				73865FB81F3C4D32004E3594 /* PlayPageViewController.swift in Sources */,
 				73744D311F2F7CA900C1FAEA /* PreviewSongsURL.swift in Sources */,
-				732AE48C1F39E0F0009746CA /* PlayPageViewControllerOld.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
