@@ -1868,7 +1868,7 @@
                                         <rect key="frame" x="27.5" y="3" width="320" height="80"/>
                                         <state key="normal" title="Button"/>
                                         <connections>
-                                            <segue destination="QDn-rL-xbF" kind="show" id="p81-nW-S4z"/>
+                                            <segue destination="DwJ-ua-HvI" kind="show" id="KgY-7t-dg5"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -2300,7 +2300,7 @@
         <image name="usericon" width="67" height="60"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="kLS-fL-JEV"/>
+        <segue reference="sp4-eN-HGB"/>
         <segue reference="Xvj-Te-b72"/>
     </inferredMetricsTieBreakers>
 </document>
