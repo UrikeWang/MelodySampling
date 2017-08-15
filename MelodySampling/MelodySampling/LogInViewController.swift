@@ -62,8 +62,9 @@ class LogInViewController: UIViewController {
                     return
                 }
 
-                // MARK: 這個 segue 是暫時的，之後用 RootViewController 的方式過場
-                self.performSegue(withIdentifier: "goToProfileFromLogin", sender: self)
+                UserDefaults.standard.set(user.uid, forKey: "uid")
+                
+                gotoProfilePage(from: self)
             }
         }
 

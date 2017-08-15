@@ -18,4 +18,11 @@ func gotoTypeChoosePage(from viewController: UIViewController) {
     viewController.present(registerVC, animated: true, completion: nil)
 }
 
+func gotoProfilePage(from viewController: UIViewController) {
+    let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+    
+    let registerVC = storyBoard.instantiateViewController(withIdentifier: "ProfilePage")
+    
+    viewController.present(registerVC, animated: true, completion: nil)
+}
 
