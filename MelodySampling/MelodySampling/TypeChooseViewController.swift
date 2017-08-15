@@ -15,6 +15,7 @@ class TypeChooseViewController: UIViewController, UITableViewDataSource, UITable
     var ref: DatabaseReference!
 
 //    var typeList = ["國語歌曲", "台語歌曲", "男女對唱", "熱門排行"]
+    @IBOutlet weak var invisibleButton: UIButton!
 
     @IBOutlet weak var tableView: UITableView!
 
@@ -30,6 +31,8 @@ class TypeChooseViewController: UIViewController, UITableViewDataSource, UITable
         tableView.delegate = self
 
         tableView.dataSource = self
+        
+        invisibleButton.setTitleColor(UIColor.clear, for: .normal)
 
     }
 
@@ -46,8 +49,10 @@ class TypeChooseViewController: UIViewController, UITableViewDataSource, UITable
 
         let cellIdentifier = "GenreCell"
 
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
-
+        //swiftlint:disable force_cast
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! StandardTableViewCell
+        //swiftlint:enable
+        
         cell.selectionStyle = .none
 
         let genre = typeList[indexPath.row]
@@ -57,18 +62,26 @@ class TypeChooseViewController: UIViewController, UITableViewDataSource, UITable
         case .mandarinPop:
 
             cell.backgroundColor = UIColor(patternImage: UIImage(named: "pic_Cpop_cover")!)
+            
+            cell.genreTypeLabel.text = "華語流行"
 
         case .taiwanesePop:
 
             cell.backgroundColor = UIColor(patternImage: UIImage(named: "pic_Tpop_cover")!)
+            
+            cell.genreTypeLabel.text = "台語流行"
 
         case .cantoPop:
 
             cell.backgroundColor = UIColor(patternImage: UIImage(named: "pic_Can_cover")!)
+            
+            cell.genreTypeLabel.text = "粵語流行"
 
         case .billboard:
 
             cell.backgroundColor = UIColor(patternImage: UIImage(named: "pic_Wpop_cover")!)
+            
+            cell.genreTypeLabel.text = "世界流行"
 
         }
 

@@ -1316,26 +1316,69 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="GenreCell" id="9jp-uK-r69">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="GenreCell" id="9jp-uK-r69" customClass="StandardTableViewCell" customModule="MelodySampling" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="166"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9jp-uK-r69" id="nsF-VU-6g2">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="165.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="166"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Genre Label Pop" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Law-og-2Je">
+                                                    <rect key="frame" x="124" y="43" width="126.5" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap it!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w8b-FG-B5T">
+                                                    <rect key="frame" x="163.5" y="83.5" width="47" height="21"/>
+                                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.29658069349315069" colorSpace="calibratedRGB"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.25882352939999997" green="0.1333333333" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="w8b-FG-B5T" firstAttribute="top" secondItem="Law-og-2Je" secondAttribute="bottom" constant="20" id="riP-qc-K8A"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.72549019609999998" green="0.72549019609999998" blue="0.72549019609999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="Law-og-2Je" firstAttribute="centerY" secondItem="9jp-uK-r69" secondAttribute="centerY" constant="-30" id="GMc-J8-JOO"/>
+                                            <constraint firstItem="w8b-FG-B5T" firstAttribute="centerX" secondItem="9jp-uK-r69" secondAttribute="centerX" id="Qhy-ic-tw2"/>
+                                            <constraint firstItem="Law-og-2Je" firstAttribute="centerX" secondItem="9jp-uK-r69" secondAttribute="centerX" id="udS-O6-iuF"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="genreTypeLabel" destination="Law-og-2Je" id="nU8-cD-UbT"/>
+                                            <outlet property="userHintLabel" destination="w8b-FG-B5T" id="6xw-J2-YjD"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RcN-iv-bsV">
-                                <rect key="frame" x="134" y="585" width="106" height="35"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oXp-Z9-xfB" userLabel="User Icon View">
+                                <rect key="frame" x="275" y="29" width="100" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Check"/>
-                            </button>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="usericon" translatesAutoresizingMaskIntoConstraints="NO" id="Lcs-zG-Fo8" userLabel="User Icon Image View">
+                                        <rect key="frame" x="8" y="7" width="46" height="46"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wIo-6v-FjZ" userLabel="Invisible Button">
+                                        <rect key="frame" x="0.0" y="0.0" width="100" height="60"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Invisible"/>
+                                        <connections>
+                                            <segue destination="QDn-rL-xbF" kind="show" id="kLS-fL-JEV"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
                     <connections>
+                        <outlet property="invisibleButton" destination="wIo-6v-FjZ" id="11b-YT-7iF"/>
                         <outlet property="tableView" destination="JmA-u8-RS4" id="Mt7-I1-H2Q"/>
                     </connections>
                 </viewController>
@@ -2258,9 +2301,10 @@
         <image name="music" width="370" height="292"/>
         <image name="play" width="22" height="22"/>
         <image name="right" width="22" height="22"/>
+        <image name="usericon" width="67" height="60"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="sp4-eN-HGB"/>
+        <segue reference="kLS-fL-JEV"/>
         <segue reference="Xvj-Te-b72"/>
     </inferredMetricsTieBreakers>
 </document>
