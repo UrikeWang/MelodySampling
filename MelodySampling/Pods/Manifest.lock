@@ -1,5 +1,8 @@
 PODS:
   - Alamofire (4.5.0)
+  - Crashlytics (3.8.5):
+    - Fabric (~> 1.6.3)
+  - Fabric (1.6.12)
   - Firebase/Auth (4.0.2):
     - Firebase/Core
     - FirebaseAuth (= 4.0.0)
@@ -53,6 +56,8 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (~> 4.4)
+  - Crashlytics
+  - Fabric
   - Firebase/Auth
   - Firebase/Core
   - Firebase/Crash
@@ -64,6 +69,8 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
+  Crashlytics: dfbae35ef22ca189240d230ad501feea4ee85d2d
+  Fabric: f050464eac45a2ce5a8e6e6a07e977c0df32fe28
   Firebase: c7ad0731eab26d18a3fc547dd048b0f7cd9c63ae
   FirebaseAnalytics: 4d7040fefc3cd8b291cde35f12cf063d7963f15d
   FirebaseAuth: ebb6abcbabae00fc47446d690c19ce68d8484fde
@@ -79,6 +86,6 @@ SPEC CHECKSUMS:
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
   UICircularProgressRing: 99419d03525be7b4ad29c0021e0fbb7d913b0030
 
-PODFILE CHECKSUM: 2156cd8b0eeeaf02f7d9958dd3338735b77fdcbd
+PODFILE CHECKSUM: 84849361e27842ea67d5ec733cac9cb6ec6c2fdb
 
 COCOAPODS: 1.2.1

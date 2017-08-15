@@ -10,6 +10,9 @@ import UIKit
 import Firebase
 import IQKeyboardManagerSwift
 import CoreData
+import Fabric
+import Crashlytics
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -21,6 +24,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         FirebaseApp.configure()
 
+        Fabric.with([Crashlytics.self])
+        
         IQKeyboardManager.sharedManager().enable = true
 
         self.window = UIWindow(frame: UIScreen.main.bounds)
