@@ -9,10 +9,12 @@
 import Foundation
 import UIKit
 
-func setProfilePageSongLabel(_ uILabel: UILabel) {
+func setCornerRadiustTo(_ uILabel: UILabel) {
     
+    uILabel.layer.cornerRadius = 25
+    uILabel.layer.masksToBounds = true
 }
 
-func setProfilePageSingerLabel(_ uILabel: UILabel) {
-    
+func setInvisibleTo(_ uIButton: UIButton) {
+    uIButton.setTitleColor(UIColor.clear, for: .normal)
 }

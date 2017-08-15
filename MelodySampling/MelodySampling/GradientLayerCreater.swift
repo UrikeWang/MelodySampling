@@ -67,3 +67,15 @@ func createNextBattleOfResult(target uILabel: UILabel) {
     uILabel.layer.masksToBounds = true
 
 }
+
+func createProfilePageHistoryCellBackground(target uIView: UIView) {
+    
+    gradientLayer = CAGradientLayer()
+    
+    gradientLayer.frame = uIView.bounds
+    
+    gradientLayer.colors = [UIColor.mldUltramarineBlueTwo.cgColor, UIColor.mldUltramarine.cgColor]
+    
+    uIView.layer.insertSublayer(gradientLayer, at: 0)
+    
+}

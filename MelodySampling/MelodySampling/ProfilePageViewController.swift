@@ -42,6 +42,8 @@ class ProfilePageViewController: UIViewController, UITableViewDelegate, UITableV
 
         let cell = achievementTableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? UITableViewCell
 
+        
+        
         return cell!
 
     }

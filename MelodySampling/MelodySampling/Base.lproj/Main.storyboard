@@ -1198,7 +1198,7 @@
                                     <constraint firstItem="PMV-h8-dSS" firstAttribute="top" secondItem="oEq-u2-WkF" secondAttribute="bottom" constant="4" id="uvh-hQ-f3X"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="L6t-KH-VJ3">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="L6t-KH-VJ3">
                                 <rect key="frame" x="0.0" y="300" width="375" height="367"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -1209,7 +1209,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="59.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wJN-js-IpA" userLabel="Background View">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wJN-js-IpA" userLabel="Cell Background View">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="collectionPlaceHolder" translatesAutoresizingMaskIntoConstraints="NO" id="y20-cB-bA9">
@@ -1254,6 +1254,12 @@
                                             <constraint firstAttribute="trailing" secondItem="wJN-js-IpA" secondAttribute="trailing" id="MCN-pq-Yjl"/>
                                             <constraint firstItem="wJN-js-IpA" firstAttribute="leading" secondItem="hbi-cD-5x0" secondAttribute="leading" id="sTg-ec-VL7"/>
                                         </constraints>
+                                        <connections>
+                                            <outlet property="artistNameLabel" destination="6Yd-bq-46u" id="c87-p4-0MA"/>
+                                            <outlet property="cellBackgroundView" destination="wJN-js-IpA" id="w9d-fK-hgi"/>
+                                            <outlet property="collectionImageView" destination="y20-cB-bA9" id="c0n-La-aQl"/>
+                                            <outlet property="trackNameLabel" destination="zoX-V0-eI6" id="s9I-mP-xx9"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -1646,7 +1652,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="P3p-ob-hIJ">
-                                        <rect key="frame" x="211" y="144" width="101" height="17"/>
+                                        <rect key="frame" x="210" y="144" width="101" height="17"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Star" translatesAutoresizingMaskIntoConstraints="NO" id="cJS-dk-1MD">
                                                 <rect key="frame" x="0.0" y="0.0" width="17" height="17"/>
