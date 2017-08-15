@@ -8,10 +8,14 @@
 
 import UIKit
 
-class ProfilePageViewController: UIViewController {
+class ProfilePageViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-    @IBAction func playButtonTapped(_ sender: Any) {
-        print("This button tapped")
+    @IBOutlet weak var achievementTableView: UITableView!
+
+    @IBOutlet weak var invisibleButton: UIButton!
+
+    @IBAction func invisibleButtonTapped(_ sender: UIButton) {
+        print("Play button tapped")
 
         let registerVC = self.storyboard?.instantiateViewController(withIdentifier: "NewTypeChoosePage")
 
@@ -21,22 +25,27 @@ class ProfilePageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        invisibleButton.setTitleColor(UIColor.clear, for: .normal)
+
+        achievementTableView.delegate = self
+        achievementTableView.dataSource = self
         // Do any additional setup after loading the view.
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
     }
 
-    /*
-    // MARK: - Navigation
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        let cellIdentifier = "HistoryCell"
+
+        let cell = achievementTableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? UITableViewCell
+
+        
+        
+        return cell!
+
     }
-    */
 
 }
