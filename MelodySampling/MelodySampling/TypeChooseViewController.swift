@@ -29,7 +29,7 @@ class TypeChooseViewController: UIViewController, UITableViewDataSource, UITable
         super.viewDidLoad()
 
         checkUID()
-        
+
         tableView.delegate = self
 
         tableView.dataSource = self

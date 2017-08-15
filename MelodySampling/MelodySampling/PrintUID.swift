@@ -9,13 +9,13 @@
 import Foundation
 
 func checkUID() -> String {
-    
+
     let userDefault = UserDefaults.standard
-    
+
     let uid = userDefault.object(forKey: "uid")
-    
+
     print(uid)
-    
+
     return String(describing: uid)
-    
+
 }

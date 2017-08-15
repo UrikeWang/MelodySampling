@@ -13,11 +13,11 @@ import SwiftyJSON
 class LandingPageViewController: UIViewController {
 
     var ref: DatabaseReference!
-    
+
     var seedNumber: Int?
-    
+
     var addNumber: Int?
-    
+
     var userFullName = ""
 
     @IBOutlet weak var loginLabel: UILabel!
@@ -63,15 +63,15 @@ class LandingPageViewController: UIViewController {
             let currentTime = Date().timeIntervalSince1970
 
             self.userFullName = "User" + String(self.seedNumber! + self.addNumber! + 1)
-            
+
             anonymousRef.setValue(["createdTime": currentTime, "isAnonymous": isAnonymous, "fullName": self.userFullName])
-            
+
             print("\(user.uid) was registered")
-            
+
             let defaultSetting = self.ref.child("anonymousUsers/defaultSetting")
-            
+
             defaultSetting.updateChildValues(["anonymousUserCount": self.addNumber! + 1])
-            
+
             UserDefaults.standard.set(user.uid, forKey: "uid")
 
             gotoTypeChoosePage(from: self)
@@ -98,22 +98,21 @@ class LandingPageViewController: UIViewController {
         signUpButtonOutlet.setTitleColor(UIColor.clear, for: .normal)
 
         anonymousLoginButtonOutlet.setTitleColor(UIColor.clear, for: .normal)
-        
+
         self.ref = Database.database().reference()
 
         let userRef = self.ref.child("anonymousUsers/defaultSetting")
-        
+
         userRef.observeSingleEvent(of: .value, with: {
             (snapshot) in
-            
+
             let json = JSON(snapshot.value)
-            
+
             self.seedNumber = json["seedNumber"].intValue
-            
+
             self.addNumber = json["signedUserCount"].intValue
-            
+
         })
-        
 
     }
 

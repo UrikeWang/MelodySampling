@@ -25,6 +25,13 @@ class LogInViewController: UIViewController {
 
     @IBOutlet weak var passwordTextField: UITextField!
 
+    @IBOutlet weak var signUpInvisibleButtonOutlet: UIButton!
+
+    @IBAction func signUpInvisibleButtonTapped(_ sender: UIButton) {
+
+        gotoSignupPage(from: self)
+    }
+
     @IBAction func loginButtonTapped(_ sender: UIButton) {
         print("Login button tapped")
 
@@ -63,7 +70,7 @@ class LogInViewController: UIViewController {
                 }
 
                 UserDefaults.standard.set(user.uid, forKey: "uid")
-                
+
                 gotoProfilePage(from: self)
             }
         }
@@ -82,6 +89,8 @@ class LogInViewController: UIViewController {
         gotoSignUpLabel.backgroundColor = UIColor.clear
 
         loginButtonOutlet.setTitleColor(UIColor.clear, for: .normal)
+
+        signUpInvisibleButtonOutlet.setTitleColor(UIColor.clear, for: .normal)
     }
 
     override func didReceiveMemoryWarning() {

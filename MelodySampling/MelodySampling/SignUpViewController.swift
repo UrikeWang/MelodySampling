@@ -39,6 +39,13 @@ class SignUpViewController: UIViewController {
 
     @IBOutlet weak var goToLoginLabel: UILabel!
 
+    @IBOutlet weak var gotoLoginButonOutlet: UIButton!
+
+    @IBAction func gotoLoginButonTapped(_ sender: UIButton) {
+
+        gotoLoginPage(from: self)
+    }
+
     @IBAction func signUpButtonTapped(_ sender: UIButton) {
         print("Sign up button tapped")
 
@@ -113,6 +120,8 @@ class SignUpViewController: UIViewController {
         goToLoginLabel.backgroundColor = UIColor.clear
 
         signUpButtonOutlet.setTitleColor(UIColor.clear, for: .normal)
+
+        gotoLoginButonOutlet.setTitleColor(UIColor.clear, for: .normal)
 
         self.ref = Database.database().reference()
 
