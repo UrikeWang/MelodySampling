@@ -259,6 +259,7 @@
 			isa = PBXGroup;
 			children = (
 				736271001F3A9CC60002206B /* Factory */,
+				73AF80241F384E1E00CA31FB /* LandingToSignIn */,
 				7355759D1F3DB8D400A0E271 /* ProfilePage */,
 				7355759A1F3DADFC00A0E271 /* GenreChoosePage */,
 				73865FB61F3C4D13004E3594 /* PlayPage */,
@@ -266,7 +267,6 @@
 				7399DB861F3D82ED00E2A4B2 /* ResultPage */,
 				732AE4851F398816009746CA /* Timer */,
 				732AE4601F398137009746CA /* FontResource */,
-				73AF80241F384E1E00CA31FB /* LandingToSignIn */,
 				73AF80211F384B3400CA31FB /* StyleguideRelative */,
 				73EBA3041F31FEE30082C752 /* RetrieveData */,
 				73820C461F30569E00121A4D /* DownloadFromITune */,

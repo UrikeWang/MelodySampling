@@ -66,7 +66,7 @@ class ResultPageViewController: UIViewController, UITableViewDelegate, UITableVi
 
         let fetchResultsRequest: NSFetchRequest<ResultMO> = ResultMO.fetchRequest()
 
-        let sortDescriptor = NSSortDescriptor(key: "artistID", ascending: true)
+        let sortDescriptor = NSSortDescriptor(key: "indexNo", ascending: true)
 
         let resultSortDescriptor = NSSortDescriptor(key: "index", ascending: true)
 

@@ -8,17 +8,22 @@
 
 import UIKit
 import Firebase
+import SwiftyJSON
 
 class SignUpViewController: UIViewController {
 
     var ref: DatabaseReference!
 
-    let userAccount = ""
+    var userAccount = ""
 
     // MARK: Test 以後要改，目前選擇 User + Random No.
-    let userFullName = "Test User"
+    var userFullName = "Test User"
 
-    let profileImageURL = ""
+    var profileImageURL = ""
+    
+    var seedNumber: Int?
+    
+    var addNumber: Int?
 
     @IBOutlet weak var opacityView: UIView!
 
@@ -52,8 +57,8 @@ class SignUpViewController: UIViewController {
         } else {
 
             if password == confirmPassword {
-
-                //成功才換頁
+                
+                self.ref = Database.database().reference()
 
                 Auth.auth().createUser(withEmail: email, password: password) { (user, error) in
                     guard let user = user else {
@@ -67,20 +72,27 @@ class SignUpViewController: UIViewController {
                         return
                     }
 
-                    self.ref = Database.database().reference()
+                    
 
                     let userRef = self.ref.child("users/\(user.uid)")
 
                     let currentTime = Date().timeIntervalSince1970
 
+                    print(self.seedNumber, self.addNumber)
+                    
+                    self.userFullName = "User" + String(self.seedNumber! + self.addNumber! + 1)
+                    
                     userRef.setValue(["fullName": self.userFullName, "createdTime": currentTime, "userAccount": self.userAccount, "profilePicURL": self.profileImageURL, "wasAnonymouse": false])
+                    
+                    let defaultSetting = self.ref.child("users/defaultSetting")
+                    
+                    defaultSetting.updateChildValues(["signedUserCount" : self.addNumber! + 1])
                 }
 
                 performSegue(withIdentifier: "goToProfileFromSignUp", sender: nil)
 
             } else {
 
-                //不成功就跳 UIAlert
                 let passwordInputAlert = UIAlertController(title: "Password Input Alert", message: "Please confirm your password again", preferredStyle: .alert)
 
                 let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
@@ -104,6 +116,23 @@ class SignUpViewController: UIViewController {
         goToLoginLabel.backgroundColor = UIColor.clear
 
         signUpButtonOutlet.setTitleColor(UIColor.clear, for: .normal)
+        
+        self.ref = Database.database().reference()
+        
+        let userRef = self.ref.child("users/defaultSetting")
+        
+        userRef.observeSingleEvent(of: .value, with: {
+            (snapshot) in
+            
+            let json = JSON(snapshot.value)
+            
+            self.seedNumber = json["seedNumber"].intValue
+            
+            self.addNumber = json["signedUserCount"].intValue
+
+            
+        })
+        
     }
 
     override func didReceiveMemoryWarning() {
