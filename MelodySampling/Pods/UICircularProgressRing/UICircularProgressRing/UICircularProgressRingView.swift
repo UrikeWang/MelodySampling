@@ -46,7 +46,7 @@ import UIKit
  
  */
 @IBDesignable open class UICircularProgressRingView: UIView {
-    
+
     // MARK: Delegate
     /**
      The delegate for the UICircularProgressRingView
@@ -62,9 +62,9 @@ import UIKit
      Luis Padron
      */
     open weak var delegate: UICircularProgressRingDelegate?
-    
+
     // MARK: Circle Properties
-    
+
     /**
      Whether or not the progress ring should be a full circle.
      
@@ -85,9 +85,9 @@ import UIKit
             self.ringLayer.fullCircle = self.fullCircle
         }
     }
-    
+
     // MARK: Value Properties
-    
+
     /**
      The value property for the progress ring. ex: (23)/100
      
@@ -108,7 +108,7 @@ import UIKit
             self.ringLayer.value = self.value
         }
     }
-    
+
     /**
      The current value of the progress ring
      
@@ -129,7 +129,7 @@ import UIKit
             }
         }
     }
-    
+
     /**
      The max value for the progress ring. ex: 23/(100)
      Used to calculate amount of progress depending on self.value and self.maxValue
@@ -146,9 +146,9 @@ import UIKit
             self.ringLayer.maxValue = self.maxValue
         }
     }
-    
+
     // MARK: View Style
-    
+
     /**
      Variable for the style of the progress ring.
      
@@ -179,7 +179,7 @@ import UIKit
             self.ringStyle = style ?? .inside
         }
     }
-    
+
     /**
      The style of the progress ring.
      
@@ -198,8 +198,7 @@ import UIKit
             self.ringLayer.ringStyle = self.ringStyle
         }
     }
-    
-    
+
     /**
      An array of CGFloats, used to calculate the dash length for viewStyle = 3
      
@@ -214,7 +213,7 @@ import UIKit
             self.ringLayer.patternForDashes = self.patternForDashes
         }
     }
-    
+
     /**
      The start angle for the entire progress ring view.
      
@@ -234,7 +233,7 @@ import UIKit
             self.ringLayer.startAngle = self.startAngle
         }
     }
-    
+
     /**
      The end angle for the entire progress ring
      
@@ -254,7 +253,7 @@ import UIKit
             self.ringLayer.endAngle = self.endAngle
         }
     }
-    
+
     /**
      The colors which will be used to create the gradient.
      
@@ -275,7 +274,7 @@ import UIKit
             self.ringLayer.gradientColors = self.gradientColors
         }
     }
-    
+
     /**
      The location for each color provided in `gradientColors`; each location must be
      a CGFloat value in the range of 0 to 1, inclusive. If 0 and 1 are not in the
@@ -300,7 +299,7 @@ import UIKit
             self.ringLayer.gradientColorLocations = self.gradientColorLocations
         }
     }
-    
+
     /**
      The start location for the gradient.
      This property determines where the gradient will begin to draw,
@@ -317,7 +316,7 @@ import UIKit
             self.ringLayer.gradientStartPosition = self.gradientStartPosition
         }
     }
-    
+
     /**
      The end location for the gradient.
      This property determines where the gradient will end drawing,
@@ -334,10 +333,9 @@ import UIKit
             self.ringLayer.gradientEndPosition = self.gradientEndPosition
         }
     }
-    
-    
+
     // MARK: Outer Ring properties
-    
+
     /**
      The width of the outer ring for the progres bar
      
@@ -352,7 +350,7 @@ import UIKit
             self.ringLayer.outerRingWidth = self.outerRingWidth
         }
     }
-    
+
     /**
      The color for the outer ring
      
@@ -367,7 +365,7 @@ import UIKit
             self.ringLayer.outerRingColor = self.outerRingColor
         }
     }
-    
+
     /**
      The style for the outer ring end cap (how it is drawn on screen)
      Range [1,3]
@@ -400,7 +398,7 @@ import UIKit
             }
         }
     }
-    
+
     /**
      The style for the tip/cap of the outer ring
      
@@ -419,9 +417,9 @@ import UIKit
             self.ringLayer.outerCapStyle = self.outerCapStyle
         }
     }
-    
+
     // MARK: Inner Ring properties
-    
+
     /**
      The width of the inner ring for the progres bar
      
@@ -436,7 +434,7 @@ import UIKit
             self.ringLayer.innerRingWidth = self.innerRingWidth
         }
     }
-    
+
     /**
      The color of the inner ring for the progres bar
      
@@ -451,7 +449,7 @@ import UIKit
             self.ringLayer.innerRingColor = self.innerRingColor
         }
     }
-    
+
     /**
      The spacing between the outer ring and inner ring
      
@@ -468,7 +466,7 @@ import UIKit
             self.ringLayer.innerRingSpacing = self.innerRingSpacing
         }
     }
-    
+
     /**
      The style for the inner ring end cap (how it is drawn on screen)
      
@@ -503,8 +501,7 @@ import UIKit
             }
         }
     }
-    
-    
+
     /**
      The style for the tip/cap of the inner ring
      
@@ -521,9 +518,9 @@ import UIKit
             self.ringLayer.innerCapStyle = self.innerCapStyle
         }
     }
-    
+
     // MARK: Label
-    
+
     /**
      A toggle for showing or hiding the value label.
      If false the current value will not be shown.
@@ -539,7 +536,7 @@ import UIKit
             self.ringLayer.shouldShowValueText = self.shouldShowValueText
         }
     }
-    
+
     /**
      The text color for the value label field
      
@@ -555,7 +552,7 @@ import UIKit
             self.ringLayer.fontColor = self.fontColor
         }
     }
-    
+
     /**
      The font to be used for the progress indicator.
      All font attributes are specified here except for font color, which is done 
@@ -574,7 +571,7 @@ import UIKit
             self.ringLayer.font = self.font
         }
     }
-    
+
     /**
      The name of the value indicator the value label will
      appened to the value
@@ -591,7 +588,7 @@ import UIKit
             self.ringLayer.valueIndicator = self.valueIndicator
         }
     }
-    
+
     /**
      A toggle for showing or hiding floating points from
      the value in the value label
@@ -609,7 +606,7 @@ import UIKit
             self.ringLayer.showFloatingPoint = self.showFloatingPoint
         }
     }
-    
+
     /**
      The amount of decimal places to show in the value label
      
@@ -626,9 +623,9 @@ import UIKit
             self.ringLayer.decimalPlaces = self.decimalPlaces
         }
     }
-    
+
     // MARK: Animation properties
-    
+
     /**
      The type of animation function the ring view will use
      
@@ -647,7 +644,7 @@ import UIKit
             self.ringLayer.animationStyle = self.animationStyle
         }
     }
-    
+
     /**
      This returns whether or not the ring is currently animating
      
@@ -660,16 +657,16 @@ import UIKit
     open var isAnimating: Bool {
         get { return (self.layer.animation(forKey: "value") != nil) ? true : false }
     }
-    
+
     // MARK: Layer
-    
+
     /**
      Set the ring layer to the default layer, cated as custom layer
      */
     internal var ringLayer: UICircularProgressRingLayer {
         return self.layer as! UICircularProgressRingLayer
     }
-    
+
     /**
      Overrides the default layer with the custom UICircularProgressRingLayer class
      */
@@ -678,9 +675,9 @@ import UIKit
             return UICircularProgressRingLayer.self
         }
     }
-    
+
     // MARK: Methods
-    
+
     /**
      Overriden public init to initialize the layer and view
      */
@@ -689,7 +686,7 @@ import UIKit
         // Call the internal initializer
         initialize()
     }
-    
+
     /**
      Overriden public init to initialize the layer and view
      */
@@ -698,7 +695,7 @@ import UIKit
         // Call the internal initializer
         initialize()
     }
-    
+
     /**
      This method initializes the custom CALayer to the default values
      */
@@ -708,57 +705,56 @@ import UIKit
         self.layer.shouldRasterize = true
         self.layer.rasterizationScale = UIScreen.main.scale * 2
         self.layer.masksToBounds = false
-        
+
         self.ringLayer.fullCircle = fullCircle
-        
+
         self.ringLayer.value = value
         self.ringLayer.maxValue = maxValue
-        
+
         self.ringLayer.ringStyle = ringStyle
         self.ringLayer.patternForDashes = patternForDashes
         self.ringLayer.gradientColors = gradientColors
         self.ringLayer.gradientColorLocations = gradientColorLocations
         self.ringLayer.gradientStartPosition = gradientStartPosition
         self.ringLayer.gradientEndPosition = gradientEndPosition
-        
+
         self.ringLayer.startAngle = startAngle
         self.ringLayer.endAngle = endAngle
-        
+
         self.ringLayer.outerRingWidth = outerRingWidth
         self.ringLayer.outerRingColor = outerRingColor
         self.ringLayer.outerCapStyle = outerCapStyle
-        
+
         self.ringLayer.innerRingWidth = innerRingWidth
         self.ringLayer.innerRingColor = innerRingColor
         self.ringLayer.innerCapStyle = innerCapStyle
         self.ringLayer.innerRingSpacing = innerRingSpacing
-        
+
         self.ringLayer.shouldShowValueText = shouldShowValueText
         self.ringLayer.valueIndicator = valueIndicator
         self.ringLayer.fontColor = fontColor
         self.ringLayer.font = font
         self.ringLayer.showFloatingPoint = showFloatingPoint
         self.ringLayer.decimalPlaces = decimalPlaces
-        
+
         // Sets background color to clear, this fixes a bug when placing view in
         // tableview cells
         self.backgroundColor = UIColor.clear
         self.ringLayer.backgroundColor = UIColor.clear.cgColor
     }
-    
+
     /**
      Overriden because of custom layer drawing in UICircularProgressRingLayer
      */
     open override func draw(_ rect: CGRect) {
         super.draw(rect)
     }
-    
-    
+
     /**
      Typealias for the setProgress(:) method closure
     */
     public typealias ProgressCompletion = (() -> Void)
-    
+
     /**
      Sets the current value for the progress ring, calling this method while ring is 
      animating will cancel the previously set animation and start a new one.
