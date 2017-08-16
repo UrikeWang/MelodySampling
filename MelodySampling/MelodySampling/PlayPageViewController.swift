@@ -60,6 +60,14 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
 
     var artistNameArray = [String]()
 
+    @IBOutlet weak var trackIndicator0: UIImageView!
+    
+    
+    
+    
+    
+    
+    
     @IBOutlet weak var rightUserScoreLabel: UILabel! {
         didSet {
             rightUserScoreLabel.text = "0000"
@@ -82,6 +90,8 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
         self.tableView.delegate = self
 
         self.tableView.dataSource = self
+        
+        trackIndicator0.tag = 0
 
         let fetchRequest: NSFetchRequest<QuestionMO> = QuestionMO.fetchRequest()
 
@@ -215,8 +225,6 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
         if prepareTrack == 5 {
 
             player?.pause()
-
-            player = nil
 
             let userDefault = UserDefaults.standard
 
