@@ -19,6 +19,10 @@ class ProfilePageViewController: UIViewController, UITableViewDelegate, UITableV
     @IBOutlet weak var playTextLabel: UILabel!
 
     @IBOutlet weak var invisibleButton: UIButton!
+    
+    @IBOutlet weak var logOutView: UIView!
+    
+    @IBOutlet weak var logOutContentView: UIView!
 
     @IBAction func invisibleButtonTapped(_ sender: UIButton) {
         print("Play button tapped")
@@ -42,6 +46,10 @@ class ProfilePageViewController: UIViewController, UITableViewDelegate, UITableV
         createNextBattleOfResult(target: playButtonLabel)
 
         createUserProfileImage(targe: userProfileImageView)
+        
+        createUserProfilePageLogoutBackground(target: logOutView)
+        
+        logOutContentView.backgroundColor = UIColor.clear
 
     }
 

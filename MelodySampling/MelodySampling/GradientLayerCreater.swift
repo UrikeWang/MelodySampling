@@ -86,3 +86,15 @@ func createUserProfileImage(targe uIImageView: UIImageView) {
     uIImageView.layer.shadowOffset = CGSize(width: 2, height: 2)
     uIImageView.layer.shadowRadius = 4
 }
+
+func createUserProfilePageLogoutBackground(target uIView: UIView) {
+    
+    gradientLayer = CAGradientLayer()
+    
+    gradientLayer.frame = uIView.bounds
+    
+    gradientLayer.colors = [UIColor.mldLightPurple.cgColor, UIColor.mldLighterPurple.cgColor, UIColor.mldLighterPurpleTwo.cgColor]
+    
+    uIView.layer.insertSublayer(gradientLayer, at: 0)
+    
+}

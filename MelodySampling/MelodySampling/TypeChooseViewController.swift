@@ -73,7 +73,7 @@ class TypeChooseViewController: UIViewController, UITableViewDataSource, UITable
         cell.genreButtonOutlet.titleLabel?.font = UIFont.mldTextStyle10Font()
         cell.genreButtonOutlet.setTitleShadowColor(UIColor.mldSapphire, for: .normal)
         cell.genreButtonOutlet.titleLabel?.layer.shadowRadius = 4
-        cell.genreButtonOutlet.titleLabel?.layer.shadowOffset = CGSize(width: 0, height: 10)
+        cell.genreButtonOutlet.titleLabel?.layer.shadowOffset = CGSize(width: 0, height: 4)
         cell.genreButtonOutlet.titleLabel?.layer.shadowOpacity = 1
 
         switch genre {
