@@ -92,6 +92,7 @@ class SignUpViewController: UIViewController {
                     defaultSetting.updateChildValues(["signedUserCount": self.addNumber! + 1])
 
                     UserDefaults.standard.set(user.uid, forKey: "uid")
+                    UserDefaults.standard.set(self.userFullName, forKey:"userName")
 
                     gotoTypeChoosePage(from: self)
 

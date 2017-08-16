@@ -24,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FirebaseApp.configure()
 
         Fabric.with([Crashlytics.self])
-        
+
         IQKeyboardManager.sharedManager().enable = true
 
         self.window = UIWindow(frame: UIScreen.main.bounds)

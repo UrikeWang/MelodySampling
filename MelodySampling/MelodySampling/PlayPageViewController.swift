@@ -59,17 +59,19 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
     var trackNameArray = [String]()
 
     var artistNameArray = [String]()
+    
+    @IBOutlet weak var userNameLabel: UILabel!
 
     @IBOutlet weak var trackIndicator0: UIImageView!
-    
+
     @IBOutlet weak var trackIndicator1: UIImageView!
-    
+
     @IBOutlet weak var trackIndicator2: UIImageView!
-    
+
     @IBOutlet weak var trackIndicator3: UIImageView!
-    
+
     @IBOutlet weak var trackIndicator4: UIImageView!
-    
+
     @IBOutlet weak var rightUserScoreLabel: UILabel! {
         didSet {
             rightUserScoreLabel.text = "0000"
@@ -92,12 +94,18 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
         self.tableView.delegate = self
 
         self.tableView.dataSource = self
-        
+
         trackIndicator0.tag = 0
         trackIndicator1.tag = 1
         trackIndicator2.tag = 2
         trackIndicator3.tag = 3
         trackIndicator4.tag = 4
+        
+        if let userName = UserDefaults.standard.object(forKey: "userName") as? String {
+            userNameLabel.text = userName
+        } else {
+            userNameLabel.text = "This is you"
+        }
 
         let fetchRequest: NSFetchRequest<QuestionMO> = QuestionMO.fetchRequest()
 
@@ -199,7 +207,7 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
         timePassed = currentTime - timeStart
 
         timeStart = currentTime
-        
+
         switch currentTrack {
         case trackIndicator0.tag:
             trackIndicator0.image = UIImage(named: "OvalSmallFilled")
@@ -212,7 +220,7 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
         default:
             trackIndicator4.image = UIImage(named: "OvalSmallFilled")
         }
-        
+
         if trackIndicator0.tag == currentTrack {
             trackIndicator0.image = UIImage(named: "OvalSmallFilled")
         }

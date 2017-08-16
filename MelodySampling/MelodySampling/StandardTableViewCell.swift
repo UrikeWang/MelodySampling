@@ -14,6 +14,8 @@ class StandardTableViewCell: UITableViewCell {
 
     @IBOutlet weak var backgroundImageView: UIImageView!
 
+    @IBOutlet weak var genreButtonOutlet: UIButton!
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

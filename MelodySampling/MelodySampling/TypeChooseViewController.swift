@@ -16,12 +16,10 @@ class TypeChooseViewController: UIViewController, UITableViewDataSource, UITable
     var ref: DatabaseReference!
 
     @IBOutlet weak var userIconBackgroundView: UIView!
-//    var typeList = ["國語歌曲", "台語歌曲", "男女對唱", "熱門排行"]
+
     @IBOutlet weak var invisibleButton: UIButton!
 
     @IBOutlet weak var tableView: UITableView!
-    
-    
 
     enum TypeList {
         case mandarinPop, taiwanesePop, cantoPop, billboard
@@ -39,11 +37,11 @@ class TypeChooseViewController: UIViewController, UITableViewDataSource, UITable
         tableView.dataSource = self
 
         userIconBackgroundView.layer.cornerRadius = 30
-        
+
         userIconBackgroundView.layer.masksToBounds = true
-        
+
         invisibleButton.setTitleColor(UIColor.clear, for: .normal)
-        
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -67,31 +65,40 @@ class TypeChooseViewController: UIViewController, UITableViewDataSource, UITable
 
         let genre = typeList[indexPath.row]
 
+        cell.genreTypeLabel.text = ""
+
+        cell.genreButtonOutlet.setTitleColor(UIColor.white, for: .normal)
+        cell.genreButtonOutlet.titleLabel?.font = UIFont.mldTextStyle10Font()
+        cell.genreButtonOutlet.setTitleShadowColor(UIColor.mldSapphire, for: .normal)
+        cell.genreButtonOutlet.titleLabel?.layer.shadowRadius = 4
+        cell.genreButtonOutlet.titleLabel?.layer.shadowOffset = CGSize(width: 0, height: 4)
+        cell.genreButtonOutlet.titleLabel?.layer.shadowOpacity = 1
+
         switch genre {
 
         case .mandarinPop:
 
-            cell.backgroundImageView.image = UIImage(named: "pic_Cpop_cover")
+            cell.backgroundImageView.image = UIImage(named: "pic_Cpop_new")
 
-            cell.genreTypeLabel.text = "華語流行"
+            cell.genreButtonOutlet.setTitle("華語流行", for: .normal)
 
         case .taiwanesePop:
 
-            cell.backgroundImageView.image = UIImage(named: "pic_Tpop_cover")
+            cell.backgroundImageView.image = UIImage(named: "pic_Tpop_new")
 
-            cell.genreTypeLabel.text = "台語流行"
+            cell.genreButtonOutlet.setTitle("台語流行", for: .normal)
 
         case .cantoPop:
 
-            cell.backgroundImageView.image = UIImage(named: "pic_Can_cover")
+            cell.backgroundImageView.image = UIImage(named: "pic_Can_new")
 
-            cell.genreTypeLabel.text = "粵語流行"
+            cell.genreButtonOutlet.setTitle("粵語流行", for: .normal)
 
         case .billboard:
 
-            cell.backgroundImageView.image = UIImage(named: "pic_Wpop_cover")
+            cell.backgroundImageView.image = UIImage(named: "pic_Wpop_new")
 
-            cell.genreTypeLabel.text = "世界流行"
+            cell.genreButtonOutlet.setTitle("世界流行", for: .normal)
 
         }
 
@@ -101,7 +108,6 @@ class TypeChooseViewController: UIViewController, UITableViewDataSource, UITable
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
 
         return self.tableView.frame.height / CGFloat(typeList.count)
-
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
