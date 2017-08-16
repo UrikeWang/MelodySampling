@@ -609,7 +609,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oXp-Z9-xfB" userLabel="User Icon View">
                                 <rect key="frame" x="308" y="11" width="107" height="60"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="usericon" translatesAutoresizingMaskIntoConstraints="NO" id="Lcs-zG-Fo8" userLabel="User Icon Image View">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="usericon_new" translatesAutoresizingMaskIntoConstraints="NO" id="Lcs-zG-Fo8" userLabel="User Icon Image View">
                                         <rect key="frame" x="5" y="5" width="50" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="8an-yB-Y2d"/>
@@ -1411,9 +1411,9 @@
         <image name="music" width="370" height="292"/>
         <image name="play" width="22" height="22"/>
         <image name="right" width="22" height="22"/>
-        <image name="usericon" width="67" height="60"/>
+        <image name="usericon_new" width="50" height="50"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="sp4-eN-HGB"/>
+        <segue reference="kLS-fL-JEV"/>
     </inferredMetricsTieBreakers>
 </document>
