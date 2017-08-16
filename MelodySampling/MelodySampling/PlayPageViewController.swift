@@ -62,11 +62,13 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
 
     @IBOutlet weak var trackIndicator0: UIImageView!
     
+    @IBOutlet weak var trackIndicator1: UIImageView!
     
+    @IBOutlet weak var trackIndicator2: UIImageView!
     
+    @IBOutlet weak var trackIndicator3: UIImageView!
     
-    
-    
+    @IBOutlet weak var trackIndicator4: UIImageView!
     
     @IBOutlet weak var rightUserScoreLabel: UILabel! {
         didSet {
@@ -193,6 +195,10 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
         timePassed = currentTime - timeStart
 
         timeStart = currentTime
+        
+        if trackIndicator0.tag == currentTrack {
+            trackIndicator0.image = UIImage(named: "OvalSmallFilled")
+        }
 
         if judgeAnswer(input: selectedAnswer, compare: answer) {
 
