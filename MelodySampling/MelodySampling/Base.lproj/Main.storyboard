@@ -407,7 +407,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Play" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6CE-oi-zf6" userLabel="Play Text Label">
-                                        <rect key="frame" x="168.5" y="174.5" width="37" height="22"/>
+                                        <rect key="frame" x="169" y="174.5" width="37" height="22"/>
                                         <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="18"/>
                                         <color key="textColor" red="0.25882352941176467" green="0.13333333333333333" blue="0.99607843137254903" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -441,7 +441,7 @@
                                 <rect key="frame" x="0.0" y="230" width="375" height="70"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="History" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PMV-h8-dSS">
-                                        <rect key="frame" x="159.5" y="44" width="55.5" height="20"/>
+                                        <rect key="frame" x="160" y="44" width="55.5" height="20"/>
                                         <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="16"/>
                                         <color key="textColor" red="0.34509803919999998" green="0.34509803919999998" blue="0.34509803919999998" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -708,7 +708,7 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hd5-Aa-tvV" userLabel="Current Song Label">
-                                        <rect key="frame" x="179.5" y="127" width="15.5" height="29.5"/>
+                                        <rect key="frame" x="179.5" y="126.5" width="15.5" height="29.5"/>
                                         <fontDescription key="fontDescription" name="Montserrat-MediumItalic" family="Montserrat" pointSize="24"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -732,7 +732,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Justin B." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Yb-tz-7Q9" userLabel="Right User Name Label">
-                                        <rect key="frame" x="245.5" y="120" width="67.5" height="20"/>
+                                        <rect key="frame" x="246" y="120" width="67.5" height="20"/>
                                         <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="16"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -814,19 +814,19 @@
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="txB-Mt-xPL" userLabel="Sons Indicator Stack View">
                                 <rect key="frame" x="88" y="231" width="198" height="22"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="OvalSmallFilled" translatesAutoresizingMaskIntoConstraints="NO" id="MjT-b6-ncn">
+                                    <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="OvalSmallEmpty" translatesAutoresizingMaskIntoConstraints="NO" id="MjT-b6-ncn" userLabel="Track Indicator 0">
                                         <rect key="frame" x="0.0" y="0.0" width="22" height="22"/>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="OvalSmallFilled" translatesAutoresizingMaskIntoConstraints="NO" id="kmj-bw-TGG">
+                                    <imageView userInteractionEnabled="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="OvalSmallEmpty" translatesAutoresizingMaskIntoConstraints="NO" id="kmj-bw-TGG" userLabel="Track Indicator 1">
                                         <rect key="frame" x="44" y="0.0" width="22" height="22"/>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="OvalSmallEmpty" translatesAutoresizingMaskIntoConstraints="NO" id="vNF-Hk-3rn">
+                                    <imageView userInteractionEnabled="NO" tag="3" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="OvalSmallEmpty" translatesAutoresizingMaskIntoConstraints="NO" id="vNF-Hk-3rn" userLabel="Track Indicator 2">
                                         <rect key="frame" x="88" y="0.0" width="22" height="22"/>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="OvalSmallEmpty" translatesAutoresizingMaskIntoConstraints="NO" id="tBQ-S4-oNd">
+                                    <imageView userInteractionEnabled="NO" tag="4" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="OvalSmallEmpty" translatesAutoresizingMaskIntoConstraints="NO" id="tBQ-S4-oNd" userLabel="Track Indicator 3">
                                         <rect key="frame" x="132" y="0.0" width="22" height="22"/>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="OvalSmallEmpty" translatesAutoresizingMaskIntoConstraints="NO" id="fFM-0o-nXU">
+                                    <imageView userInteractionEnabled="NO" tag="5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="OvalSmallEmpty" translatesAutoresizingMaskIntoConstraints="NO" id="fFM-0o-nXU" userLabel="Track Indicator 4">
                                         <rect key="frame" x="176" y="0.0" width="22" height="22"/>
                                     </imageView>
                                 </subviews>
@@ -904,6 +904,11 @@
                         <outlet property="playingSongLabel" destination="hd5-Aa-tvV" id="Xh2-46-lNq"/>
                         <outlet property="rightUserScoreLabel" destination="owN-SQ-VoR" id="48p-SX-EHm"/>
                         <outlet property="tableView" destination="Su0-ql-6ml" id="IFS-1z-nX0"/>
+                        <outlet property="trackIndicator0" destination="MjT-b6-ncn" id="3IP-e6-I1r"/>
+                        <outlet property="trackIndicator1" destination="kmj-bw-TGG" id="tpc-nB-78u"/>
+                        <outlet property="trackIndicator2" destination="vNF-Hk-3rn" id="WD4-xs-A6p"/>
+                        <outlet property="trackIndicator3" destination="tBQ-S4-oNd" id="osZ-u7-Kfe"/>
+                        <outlet property="trackIndicator4" destination="fFM-0o-nXU" id="vzt-eM-taf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mq3-Cr-bb0" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -953,13 +958,13 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Betty W." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SC7-Qh-2YV">
-                                        <rect key="frame" x="227.5" y="81" width="67.5" height="20"/>
+                                        <rect key="frame" x="227" y="81" width="67.5" height="20"/>
                                         <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="16"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="P3p-ob-hIJ">
-                                        <rect key="frame" x="210.5" y="144" width="101" height="17"/>
+                                        <rect key="frame" x="210" y="144" width="101" height="17"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Star" translatesAutoresizingMaskIntoConstraints="NO" id="cJS-dk-1MD">
                                                 <rect key="frame" x="0.0" y="0.0" width="17" height="17"/>
@@ -1396,7 +1401,6 @@
         <image name="LeftBitmap" width="128" height="90"/>
         <image name="Oval" width="64" height="64"/>
         <image name="OvalSmallEmpty" width="22" height="22"/>
-        <image name="OvalSmallFilled" width="22" height="22"/>
         <image name="RightBitmap" width="90" height="133"/>
         <image name="Star" width="17" height="17"/>
         <image name="StarEmpty" width="18" height="17"/>
@@ -1410,6 +1414,6 @@
         <image name="usericon" width="67" height="60"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="kLS-fL-JEV"/>
+        <segue reference="sp4-eN-HGB"/>
     </inferredMetricsTieBreakers>
 </document>

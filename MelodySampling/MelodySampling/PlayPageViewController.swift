@@ -60,6 +60,16 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
 
     var artistNameArray = [String]()
 
+    @IBOutlet weak var trackIndicator0: UIImageView!
+    
+    @IBOutlet weak var trackIndicator1: UIImageView!
+    
+    @IBOutlet weak var trackIndicator2: UIImageView!
+    
+    @IBOutlet weak var trackIndicator3: UIImageView!
+    
+    @IBOutlet weak var trackIndicator4: UIImageView!
+    
     @IBOutlet weak var rightUserScoreLabel: UILabel! {
         didSet {
             rightUserScoreLabel.text = "0000"
@@ -82,6 +92,12 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
         self.tableView.delegate = self
 
         self.tableView.dataSource = self
+        
+        trackIndicator0.tag = 0
+        trackIndicator1.tag = 1
+        trackIndicator2.tag = 2
+        trackIndicator3.tag = 3
+        trackIndicator4.tag = 4
 
         let fetchRequest: NSFetchRequest<QuestionMO> = QuestionMO.fetchRequest()
 
@@ -183,6 +199,23 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
         timePassed = currentTime - timeStart
 
         timeStart = currentTime
+        
+        switch currentTrack {
+        case trackIndicator0.tag:
+            trackIndicator0.image = UIImage(named: "OvalSmallFilled")
+        case trackIndicator1.tag:
+            trackIndicator1.image = UIImage(named: "OvalSmallFilled")
+        case trackIndicator2.tag:
+            trackIndicator2.image = UIImage(named: "OvalSmallFilled")
+        case trackIndicator3.tag:
+            trackIndicator3.image = UIImage(named: "OvalSmallFilled")
+        default:
+            trackIndicator4.image = UIImage(named: "OvalSmallFilled")
+        }
+        
+        if trackIndicator0.tag == currentTrack {
+            trackIndicator0.image = UIImage(named: "OvalSmallFilled")
+        }
 
         if judgeAnswer(input: selectedAnswer, compare: answer) {
 
@@ -215,8 +248,6 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
         if prepareTrack == 5 {
 
             player?.pause()
-
-            player = nil
 
             let userDefault = UserDefaults.standard
 
