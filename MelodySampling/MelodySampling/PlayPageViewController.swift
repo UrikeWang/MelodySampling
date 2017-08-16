@@ -94,6 +94,10 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
         self.tableView.dataSource = self
         
         trackIndicator0.tag = 0
+        trackIndicator1.tag = 1
+        trackIndicator2.tag = 2
+        trackIndicator3.tag = 3
+        trackIndicator4.tag = 4
 
         let fetchRequest: NSFetchRequest<QuestionMO> = QuestionMO.fetchRequest()
 
@@ -195,6 +199,19 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
         timePassed = currentTime - timeStart
 
         timeStart = currentTime
+        
+        switch currentTrack {
+        case trackIndicator0.tag:
+            trackIndicator0.image = UIImage(named: "OvalSmallFilled")
+        case trackIndicator1.tag:
+            trackIndicator1.image = UIImage(named: "OvalSmallFilled")
+        case trackIndicator2.tag:
+            trackIndicator2.image = UIImage(named: "OvalSmallFilled")
+        case trackIndicator3.tag:
+            trackIndicator3.image = UIImage(named: "OvalSmallFilled")
+        default:
+            trackIndicator4.image = UIImage(named: "OvalSmallFilled")
+        }
         
         if trackIndicator0.tag == currentTrack {
             trackIndicator0.image = UIImage(named: "OvalSmallFilled")
