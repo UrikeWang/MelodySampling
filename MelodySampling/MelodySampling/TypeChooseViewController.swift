@@ -36,7 +36,7 @@ class TypeChooseViewController: UIViewController, UITableViewDataSource, UITable
         tableView.dataSource = self
 
         invisibleButton.setTitleColor(UIColor.clear, for: .normal)
-
+        
     }
 
     override func didReceiveMemoryWarning() {
