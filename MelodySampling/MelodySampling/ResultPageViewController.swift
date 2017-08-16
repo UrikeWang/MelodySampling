@@ -44,6 +44,8 @@ class ResultPageViewController: UIViewController, UITableViewDelegate, UITableVi
     var score: Double = 0
 
     @IBOutlet weak var scoreLabel: UILabel!
+    
+    @IBOutlet weak var userProfileImageView: UIImageView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,6 +59,12 @@ class ResultPageViewController: UIViewController, UITableViewDelegate, UITableVi
         createNextBattleOfResult(target: nextBattleLabel)
 
         invisibleNextGameButtonOutlet.setTitleColor(UIColor.clear, for: .normal)
+        
+        userProfileImageView.layer.shadowColor = UIColor.mldBlack50.cgColor
+        
+        userProfileImageView.layer.shadowOffset = CGSize(width: 2, height: 2)
+        
+        userProfileImageView.layer.shadowRadius = 4
 
         if let userName = userDefault.object(forKey: "userName") as? String {
             userNameLabel.text = userName
