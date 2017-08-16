@@ -411,6 +411,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tmL-Wu-OHy" userLabel="Invisible Logout Button">
                                         <rect key="frame" x="107" y="10" width="160" height="40"/>
                                         <state key="normal" title="Invisible Button"/>
+                                        <connections>
+                                            <action selector="logOutButtonTapped:" destination="QDn-rL-xbF" eventType="touchUpInside" id="V18-Nr-FB4"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.6588235294117647" green="0.37254901960784315" blue="0.95686274509803915" alpha="1" colorSpace="calibratedRGB"/>
@@ -598,10 +601,12 @@
                     <connections>
                         <outlet property="achievementTableView" destination="L6t-KH-VJ3" id="hrC-Wh-wMi"/>
                         <outlet property="invisibleButton" destination="cl4-Gv-Xij" id="siV-L5-7fB"/>
+                        <outlet property="logOutButtonOutlet" destination="tmL-Wu-OHy" id="2QG-jd-Hnh"/>
                         <outlet property="logOutContentView" destination="tIr-sg-bbH" id="AAp-1Q-OFv"/>
                         <outlet property="logOutView" destination="jwy-5s-qhz" id="4gM-ca-39F"/>
                         <outlet property="playButtonLabel" destination="IOU-Oy-gG4" id="wDg-th-Hy1"/>
                         <outlet property="playTextLabel" destination="6CE-oi-zf6" id="u1A-z5-6bk"/>
+                        <outlet property="userNameLabel" destination="u4p-KT-t8T" id="0gF-q5-87H"/>
                         <outlet property="userProfileImageView" destination="o2i-xB-Gof" id="k7s-gp-mCp"/>
                     </connections>
                 </viewController>
@@ -971,6 +976,7 @@
                         <outlet property="trackIndicator2" destination="vNF-Hk-3rn" id="WD4-xs-A6p"/>
                         <outlet property="trackIndicator3" destination="tBQ-S4-oNd" id="osZ-u7-Kfe"/>
                         <outlet property="trackIndicator4" destination="fFM-0o-nXU" id="vzt-eM-taf"/>
+                        <outlet property="userNameLabel" destination="3Yb-tz-7Q9" id="EIj-pV-ipA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mq3-Cr-bb0" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1019,7 +1025,7 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is you" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SC7-Qh-2YV">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is you" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SC7-Qh-2YV" userLabel="User Name Label">
                                         <rect key="frame" x="220.5" y="81" width="81" height="20"/>
                                         <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="16"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1251,6 +1257,7 @@
                         <outlet property="profilePageView" destination="Yur-Rj-fPA" id="r6A-8I-g45"/>
                         <outlet property="scoreLabel" destination="Ky9-KW-jMO" id="v0x-t9-yAQ"/>
                         <outlet property="tableView" destination="ON0-XX-kiJ" id="Mfs-pn-nbo"/>
+                        <outlet property="userNameLabel" destination="SC7-Qh-2YV" id="ZhR-Uk-FUk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ehh-k0-jgy" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -63,8 +63,10 @@ class LandingPageViewController: UIViewController {
             let currentTime = Date().timeIntervalSince1970
 
             if let seedNumber = self.seedNumber, let addNumber = self.addNumber {
-            
-            self.userFullName = "User" + String(seedNumber + addNumber + 1)
+
+                self.userFullName = "User" + String(seedNumber + addNumber + 1)
+            } else {
+                self.userFullName = "Anonymous"
             }
 
             anonymousRef.setValue(["createdTime": currentTime, "isAnonymous": isAnonymous, "fullName": self.userFullName])
@@ -72,11 +74,12 @@ class LandingPageViewController: UIViewController {
             print("\(user.uid) was registered")
 
             let defaultSetting = self.ref.child("anonymousUsers/defaultSetting")
-
             defaultSetting.updateChildValues(["anonymousUserCount": self.addNumber! + 1])
 
             UserDefaults.standard.set(user.uid, forKey: "uid")
+            UserDefaults.standard.set(self.userFullName, forKey: "userName")
 
+            
             gotoTypeChoosePage(from: self)
         }
 

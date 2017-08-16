@@ -61,19 +61,19 @@ extension UIColor {
     class var mldUltramarine: UIColor {
         return UIColor(red: 24.0 / 255.0, green: 0.0, blue: 163.0 / 255.0, alpha: 1.0)
     }
-    
+
     class var mldSapphire: UIColor {
         return UIColor(red: 56.0 / 255.0, green: 34.0 / 255.0, blue: 151.0 / 255.0, alpha: 1.0)
     }
-    
+
     class var mldLightPurple: UIColor {
         return UIColor(red: 194.0 / 255.0, green: 123.0 / 255.0, blue: 249.0 / 255.0, alpha: 1.0)
     }
-    
+
     class var mldLighterPurple: UIColor {
         return UIColor(red: 168.0 / 255.0, green: 95.0 / 255.0, blue: 244.0 / 255.0, alpha: 1.0)
     }
-    
+
     class var mldLighterPurpleTwo: UIColor {
         return UIColor(red: 143.0 / 255.0, green: 69.0 / 255.0, blue: 240.0 / 255.0, alpha: 1.0)
     }

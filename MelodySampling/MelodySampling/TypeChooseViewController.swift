@@ -20,8 +20,6 @@ class TypeChooseViewController: UIViewController, UITableViewDataSource, UITable
     @IBOutlet weak var invisibleButton: UIButton!
 
     @IBOutlet weak var tableView: UITableView!
-    
-    
 
     enum TypeList {
         case mandarinPop, taiwanesePop, cantoPop, billboard
@@ -39,11 +37,11 @@ class TypeChooseViewController: UIViewController, UITableViewDataSource, UITable
         tableView.dataSource = self
 
         userIconBackgroundView.layer.cornerRadius = 30
-        
+
         userIconBackgroundView.layer.masksToBounds = true
-        
+
         invisibleButton.setTitleColor(UIColor.clear, for: .normal)
-        
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -66,9 +64,9 @@ class TypeChooseViewController: UIViewController, UITableViewDataSource, UITable
         cell.selectionStyle = .none
 
         let genre = typeList[indexPath.row]
-        
+
         cell.genreTypeLabel.text = ""
-        
+
         cell.genreButtonOutlet.setTitleColor(UIColor.white, for: .normal)
         cell.genreButtonOutlet.titleLabel?.font = UIFont.mldTextStyle10Font()
         cell.genreButtonOutlet.setTitleShadowColor(UIColor.mldSapphire, for: .normal)

@@ -38,6 +38,8 @@ class ResultPageViewController: UIViewController, UITableViewDelegate, UITableVi
     @IBOutlet weak var nextBattleLabel: UILabel!
 
     let userDefault = UserDefaults.standard
+    
+    @IBOutlet weak var userNameLabel: UILabel!
 
     var score: Double = 0
 
@@ -56,6 +58,11 @@ class ResultPageViewController: UIViewController, UITableViewDelegate, UITableVi
 
         invisibleNextGameButtonOutlet.setTitleColor(UIColor.clear, for: .normal)
 
+        if let userName = userDefault.object(forKey: "userName") as? String {
+            userNameLabel.text = userName
+        } else {
+            userNameLabel.text = "This is you"
+        }
         invisibleGoHomeButtonOutlet.setTitleColor(UIColor.clear, for: .normal)
 
         score = (userDefault.object(forKey: "Score") as? Double)!
