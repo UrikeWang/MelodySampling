@@ -379,6 +379,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jwy-5s-qhz">
+                                <rect key="frame" x="0.0" y="607" width="375" height="60"/>
+                                <color key="backgroundColor" red="0.6588235294117647" green="0.37254901960784315" blue="0.95686274509803915" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="GwX-Sh-EZb"/>
+                                </constraints>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ivk-cb-90t" userLabel="Profile Content View">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="230"/>
                                 <subviews>
@@ -464,7 +471,7 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="L6t-KH-VJ3">
-                                <rect key="frame" x="0.0" y="300" width="375" height="367"/>
+                                <rect key="frame" x="0.0" y="300" width="375" height="307"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HistoryCell" id="hbi-cD-5x0" customClass="HistoryTableViewCell" customModule="MelodySampling" customModuleProvider="target">
@@ -531,15 +538,18 @@
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="jEY-qv-fzz" firstAttribute="top" secondItem="L6t-KH-VJ3" secondAttribute="bottom" id="5HN-oP-wvw"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="jwy-5s-qhz" secondAttribute="trailing" constant="-16" id="6YT-cn-jqI"/>
                             <constraint firstItem="Ivk-cb-90t" firstAttribute="top" secondItem="4a3-MA-wp4" secondAttribute="top" id="Hx5-0t-ndP"/>
                             <constraint firstItem="L6t-KH-VJ3" firstAttribute="top" secondItem="Bev-ab-JWp" secondAttribute="bottom" id="JLd-Um-Rka"/>
+                            <constraint firstItem="jEY-qv-fzz" firstAttribute="top" secondItem="jwy-5s-qhz" secondAttribute="bottom" id="LZN-kd-JXt"/>
                             <constraint firstItem="Bev-ab-JWp" firstAttribute="leading" secondItem="4a3-MA-wp4" secondAttribute="leading" id="SCv-w8-3VY"/>
                             <constraint firstItem="L6t-KH-VJ3" firstAttribute="leading" secondItem="4a3-MA-wp4" secondAttribute="leading" id="SUD-iC-wNQ"/>
+                            <constraint firstItem="jwy-5s-qhz" firstAttribute="top" secondItem="L6t-KH-VJ3" secondAttribute="bottom" id="UuY-Ie-X4w"/>
                             <constraint firstAttribute="trailing" secondItem="Bev-ab-JWp" secondAttribute="trailing" id="VbZ-qv-XIp"/>
                             <constraint firstAttribute="trailing" secondItem="L6t-KH-VJ3" secondAttribute="trailing" id="aZJ-4h-cZT"/>
                             <constraint firstAttribute="trailing" secondItem="Ivk-cb-90t" secondAttribute="trailing" id="aqe-52-P0J"/>
                             <constraint firstItem="Ivk-cb-90t" firstAttribute="leading" secondItem="4a3-MA-wp4" secondAttribute="leading" id="gW3-gF-acP"/>
+                            <constraint firstItem="jwy-5s-qhz" firstAttribute="leading" secondItem="4a3-MA-wp4" secondAttribute="leadingMargin" constant="-16" id="lGY-in-Ue7"/>
                             <constraint firstItem="Bev-ab-JWp" firstAttribute="top" secondItem="Ivk-cb-90t" secondAttribute="bottom" id="lgS-WU-JqZ"/>
                         </constraints>
                     </view>
@@ -588,7 +598,15 @@
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CdL-T6-5JE">
+                                                    <rect key="frame" x="161" y="61" width="55" height="30"/>
+                                                    <state key="normal" title="Shadow"/>
+                                                </button>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="CdL-T6-5JE" firstAttribute="centerX" secondItem="Law-og-2Je" secondAttribute="centerX" id="Le3-4I-B3y"/>
+                                                <constraint firstItem="CdL-T6-5JE" firstAttribute="top" secondItem="Law-og-2Je" secondAttribute="top" id="Mha-uj-3Ib"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.72549019609999998" green="0.72549019609999998" blue="0.72549019609999998" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
@@ -601,6 +619,7 @@
                                         </constraints>
                                         <connections>
                                             <outlet property="backgroundImageView" destination="TCZ-9h-YoX" id="9TH-O8-CKe"/>
+                                            <outlet property="genreButtonOutlet" destination="CdL-T6-5JE" id="21p-Hl-BmR"/>
                                             <outlet property="genreTypeLabel" destination="Law-og-2Je" id="nU8-cD-UbT"/>
                                         </connections>
                                     </tableViewCell>
