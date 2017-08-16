@@ -15,10 +15,13 @@ class TypeChooseViewController: UIViewController, UITableViewDataSource, UITable
 
     var ref: DatabaseReference!
 
+    @IBOutlet weak var userIconBackgroundView: UIView!
 //    var typeList = ["國語歌曲", "台語歌曲", "男女對唱", "熱門排行"]
     @IBOutlet weak var invisibleButton: UIButton!
 
     @IBOutlet weak var tableView: UITableView!
+    
+    
 
     enum TypeList {
         case mandarinPop, taiwanesePop, cantoPop, billboard
@@ -35,6 +38,10 @@ class TypeChooseViewController: UIViewController, UITableViewDataSource, UITable
 
         tableView.dataSource = self
 
+        userIconBackgroundView.layer.cornerRadius = 30
+        
+        userIconBackgroundView.layer.masksToBounds = true
+        
         invisibleButton.setTitleColor(UIColor.clear, for: .normal)
         
     }
