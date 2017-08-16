@@ -16,4 +16,7 @@ pod 'SwifterSwift'
 pod 'IQKeyboardManagerSwift', '4.0.10'
 pod 'UICircularProgressRing'
 pod 'SwiftyJSON'
+pod 'Fabric'
+pod 'Crashlytics'
+
 end

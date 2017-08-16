@@ -324,6 +324,7 @@
 				8B360FAF8EFBFF2290B7656E /* [CP] Embed Pods Frameworks */,
 				D35133110B842A2D09B8C25C /* [CP] Copy Pods Resources */,
 				73744D1A1F2EDF5B00C1FAEA /* Swiftlint */,
+				7367E8911F433F6E008EE42C /* Crashlytics */,
 			);
 			buildRules = (
 			);
@@ -402,6 +403,20 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		7367E8911F433F6E008EE42C /* Crashlytics */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = Crashlytics;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" 4665f899e7afa66b043975ff76d7fc0267d35f46 1765ecb0ab722a8985304405d4f88657c14a66484332c2fa73c7e1ee90cefc99";
+		};
 		73744D1A1F2EDF5B00C1FAEA /* Swiftlint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -624,9 +639,10 @@
 			baseConfigurationReference = 7AEB0E68990119E1DCEEFF7C /* Pods-MelodySampling.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = PJPD95M4QP;
 				INFOPLIST_FILE = MelodySampling/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.marvinlin.MelodySampling;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -641,7 +657,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = PJPD95M4QP;
 				INFOPLIST_FILE = MelodySampling/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.marvinlin.MelodySampling;
 				PRODUCT_NAME = "$(TARGET_NAME)";

@@ -62,7 +62,10 @@ class LandingPageViewController: UIViewController {
 
             let currentTime = Date().timeIntervalSince1970
 
-            self.userFullName = "User" + String(self.seedNumber! + self.addNumber! + 1)
+            if let seedNumber = self.seedNumber, let addNumber = self.addNumber {
+            
+            self.userFullName = "User" + String(seedNumber + addNumber + 1)
+            }
 
             anonymousRef.setValue(["createdTime": currentTime, "isAnonymous": isAnonymous, "fullName": self.userFullName])
 
