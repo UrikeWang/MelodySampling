@@ -93,7 +93,7 @@ class ProfilePageViewController: UIViewController, UITableViewDelegate, UITableV
 
         let fetchRequest: NSFetchRequest<HistoryMO> = HistoryMO.fetchRequest()
 
-        let sortDescriptor = NSSortDescriptor(key: "timeIndex", ascending: true)
+        let sortDescriptor = NSSortDescriptor(key: "timeIndex", ascending: false)
 
         fetchRequest.sortDescriptors = [sortDescriptor]
 
