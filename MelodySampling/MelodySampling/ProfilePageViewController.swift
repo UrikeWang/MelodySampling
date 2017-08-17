@@ -8,14 +8,14 @@
 
 import UIKit
 import Firebase
+import CoreData
 
-class ProfilePageViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ProfilePageViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate {
 
-    @IBOutlet weak var achievementTableView: UITableView!
+    @IBOutlet weak var historyTableView: UITableView!
 
     @IBOutlet weak var userProfileImageView: UIImageView!
-
-    var historyMO: HistoryMO?
+    var fetchResultController: NSFetchedResultsController<HistoryMO>!
 
     var historyList: [HistoryMO] = []
 
@@ -69,9 +69,9 @@ class ProfilePageViewController: UIViewController, UITableViewDelegate, UITableV
 
         invisibleButton.setTitleColor(UIColor.clear, for: .normal)
 
-        achievementTableView.delegate = self
+        historyTableView.delegate = self
 
-        achievementTableView.dataSource = self
+        historyTableView.dataSource = self
 
         createNextBattleOfResult(target: playButtonLabel)
 
@@ -86,10 +86,42 @@ class ProfilePageViewController: UIViewController, UITableViewDelegate, UITableV
         } else {
             userNameLabel.text = "This is you"
         }
+        
+        let fetchRequest: NSFetchRequest<HistoryMO> = HistoryMO.fetchRequest()
+        
+        let sortDescriptor = NSSortDescriptor(key: "time", ascending: false)
+        
+        fetchRequest.sortDescriptors = [sortDescriptor]
 
-        if historyMO == nil || historyList.count == 0 {
+        if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
+          
+            let context = appDelegate.persistentContainer.viewContext
+            
+            fetchResultController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
+            
+            fetchResultController.delegate = self
+            
+            do {
+                
+                try fetchResultController.performFetch()
+                
+                if let fetchedObjects = fetchResultController.fetchedObjects {
+                    
+                    historyList = fetchedObjects
+                    
+                    historyTableView.reloadData()
+                    
+                }
+                
+            } catch {
+                print(error)
+            }
+            
+        }
+        
+        if historyList.count == 0 {
 
-            let framOfTableView = self.achievementTableView.frame
+            let framOfTableView = self.historyTableView.frame
 
             let emptyView = UIView(frame: framOfTableView)
 
@@ -106,14 +138,14 @@ class ProfilePageViewController: UIViewController, UITableViewDelegate, UITableV
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return historyList.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
         let cellIdentifier = "HistoryCell"
 
-        let cell = achievementTableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? UITableViewCell
+        let cell = historyTableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? UITableViewCell
 
         return cell!
 

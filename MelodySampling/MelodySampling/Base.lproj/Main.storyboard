@@ -599,7 +599,7 @@
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
                     <connections>
-                        <outlet property="achievementTableView" destination="L6t-KH-VJ3" id="hrC-Wh-wMi"/>
+                        <outlet property="historyTableView" destination="L6t-KH-VJ3" id="JCm-B6-FfF"/>
                         <outlet property="invisibleButton" destination="cl4-Gv-Xij" id="siV-L5-7fB"/>
                         <outlet property="logOutButtonOutlet" destination="tmL-Wu-OHy" id="2QG-jd-Hnh"/>
                         <outlet property="logOutContentView" destination="tIr-sg-bbH" id="AAp-1Q-OFv"/>
