@@ -210,20 +210,20 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
 
         switch currentTrack {
         case trackIndicator0.tag:
-            trackIndicator0.image = UIImage(named: "OvalSmallFilled")
+            trackIndicator0.image = UIImage(named: "icon_CD_white_new")
         case trackIndicator1.tag:
-            trackIndicator1.image = UIImage(named: "OvalSmallFilled")
+            trackIndicator1.image = UIImage(named: "icon_CD_white_new")
         case trackIndicator2.tag:
-            trackIndicator2.image = UIImage(named: "OvalSmallFilled")
+            trackIndicator2.image = UIImage(named: "icon_CD_white_new")
         case trackIndicator3.tag:
-            trackIndicator3.image = UIImage(named: "OvalSmallFilled")
+            trackIndicator3.image = UIImage(named: "icon_CD_white_new")
         default:
-            trackIndicator4.image = UIImage(named: "OvalSmallFilled")
+            trackIndicator4.image = UIImage(named: "icon_CD_white_new")
         }
 
-        if trackIndicator0.tag == currentTrack {
-            trackIndicator0.image = UIImage(named: "OvalSmallFilled")
-        }
+//        if trackIndicator0.tag == currentTrack {
+//            trackIndicator0.image = UIImage(named: "OvalSmallFilled")
+//        }
 
         if judgeAnswer(input: selectedAnswer, compare: answer) {
 
