@@ -81,7 +81,7 @@ class LandingPageViewController: UIViewController {
             UserDefaults.standard.set(user.uid, forKey: "uid")
             UserDefaults.standard.set("暱名玩家", forKey: "userName")
 
-            gotoTypeChoosePage(from: self)
+            gotoProfilePage(from: self)
         }
 
     }

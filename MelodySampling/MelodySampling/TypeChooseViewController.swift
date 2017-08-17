@@ -121,8 +121,6 @@ class TypeChooseViewController: UIViewController, UITableViewDataSource, UITable
 
     func triggerToStart() {
 
-        DispatchQueue.main.async {
-
             let checkQuestion = CheckQuestionInCoreData()
 
             checkQuestion.clearQuestionMO()
@@ -133,7 +131,6 @@ class TypeChooseViewController: UIViewController, UITableViewDataSource, UITable
 
             downloadManager.downloadQuestion(genre: 1, viewController: self)
 
-        }
 
     }
 
