@@ -74,12 +74,13 @@ class LandingPageViewController: UIViewController {
             print("\(user.uid) was registered")
 
             let defaultSetting = self.ref.child("anonymousUsers/defaultSetting")
-            defaultSetting.updateChildValues(["anonymousUserCount": self.addNumber! + 1])
+
+            // MARK: 暱名玩家 counter 這一部分之後再處理
+//           defaultSetting.updateChildValues(["anonymousUserCount": (self.addNumber?+ 1])
 
             UserDefaults.standard.set(user.uid, forKey: "uid")
-            UserDefaults.standard.set(self.userFullName, forKey: "userName")
+            UserDefaults.standard.set("暱名玩家", forKey: "userName")
 
-            
             gotoTypeChoosePage(from: self)
         }
 

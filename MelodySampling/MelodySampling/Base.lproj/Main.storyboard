@@ -458,7 +458,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Play" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6CE-oi-zf6" userLabel="Play Text Label">
-                                        <rect key="frame" x="169.5" y="174.5" width="37" height="22"/>
+                                        <rect key="frame" x="168.5" y="174.5" width="37" height="22"/>
                                         <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="18"/>
                                         <color key="textColor" red="0.25882352941176467" green="0.13333333333333333" blue="0.99607843137254903" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -743,7 +743,7 @@
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BG" translatesAutoresizingMaskIntoConstraints="NO" id="NYn-fY-lCm" userLabel="Background Image View">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="215"/>
                                     </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="userfigure" translatesAutoresizingMaskIntoConstraints="NO" id="smp-c4-Ud6" userLabel="Left User Image View">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fire_yellow" translatesAutoresizingMaskIntoConstraints="NO" id="smp-c4-Ud6" userLabel="Left User Image View">
                                         <rect key="frame" x="48" y="22" width="90" height="90"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="smp-c4-Ud6" secondAttribute="height" multiplier="1:1" id="2c6-G1-csU"/>
@@ -792,8 +792,8 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is AI" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D8m-Q9-iDm" userLabel="Left User Name Label">
-                                        <rect key="frame" x="67.5" y="121" width="69" height="20"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AI" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D8m-Q9-iDm" userLabel="Left User Name Label">
+                                        <rect key="frame" x="93.5" y="121" width="17" height="20"/>
                                         <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="16"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -879,27 +879,27 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="txB-Mt-xPL" userLabel="Sons Indicator Stack View">
-                                <rect key="frame" x="88" y="231" width="198" height="22"/>
+                                <rect key="frame" x="65.5" y="231" width="243" height="31"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="OvalSmallEmpty" translatesAutoresizingMaskIntoConstraints="NO" id="MjT-b6-ncn" userLabel="Track Indicator 0">
-                                        <rect key="frame" x="0.0" y="0.0" width="22" height="22"/>
+                                    <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_CD_line_new" translatesAutoresizingMaskIntoConstraints="NO" id="MjT-b6-ncn" userLabel="Track Indicator 0">
+                                        <rect key="frame" x="0.0" y="0.0" width="31" height="31"/>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="OvalSmallEmpty" translatesAutoresizingMaskIntoConstraints="NO" id="kmj-bw-TGG" userLabel="Track Indicator 1">
-                                        <rect key="frame" x="44" y="0.0" width="22" height="22"/>
+                                    <imageView userInteractionEnabled="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_CD_line_new" translatesAutoresizingMaskIntoConstraints="NO" id="kmj-bw-TGG" userLabel="Track Indicator 1">
+                                        <rect key="frame" x="53" y="0.0" width="31" height="31"/>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" tag="3" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="OvalSmallEmpty" translatesAutoresizingMaskIntoConstraints="NO" id="vNF-Hk-3rn" userLabel="Track Indicator 2">
-                                        <rect key="frame" x="88" y="0.0" width="22" height="22"/>
+                                    <imageView userInteractionEnabled="NO" tag="3" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_CD_line_new" translatesAutoresizingMaskIntoConstraints="NO" id="vNF-Hk-3rn" userLabel="Track Indicator 2">
+                                        <rect key="frame" x="106" y="0.0" width="31" height="31"/>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" tag="4" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="OvalSmallEmpty" translatesAutoresizingMaskIntoConstraints="NO" id="tBQ-S4-oNd" userLabel="Track Indicator 3">
-                                        <rect key="frame" x="132" y="0.0" width="22" height="22"/>
+                                    <imageView userInteractionEnabled="NO" tag="4" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_CD_line_new" translatesAutoresizingMaskIntoConstraints="NO" id="tBQ-S4-oNd" userLabel="Track Indicator 3">
+                                        <rect key="frame" x="159" y="0.0" width="31" height="31"/>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" tag="5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="OvalSmallEmpty" translatesAutoresizingMaskIntoConstraints="NO" id="fFM-0o-nXU" userLabel="Track Indicator 4">
-                                        <rect key="frame" x="176" y="0.0" width="22" height="22"/>
+                                    <imageView userInteractionEnabled="NO" tag="5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_CD_line_new" translatesAutoresizingMaskIntoConstraints="NO" id="fFM-0o-nXU" userLabel="Track Indicator 4">
+                                        <rect key="frame" x="212" y="0.0" width="31" height="31"/>
                                     </imageView>
                                 </subviews>
                             </stackView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="79" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="Su0-ql-6ml">
-                                <rect key="frame" x="12" y="269" width="350" height="316"/>
+                                <rect key="frame" x="12" y="278" width="350" height="316"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="316" id="cKN-mg-r2f"/>
@@ -1258,6 +1258,7 @@
                         <outlet property="scoreLabel" destination="Ky9-KW-jMO" id="v0x-t9-yAQ"/>
                         <outlet property="tableView" destination="ON0-XX-kiJ" id="Mfs-pn-nbo"/>
                         <outlet property="userNameLabel" destination="SC7-Qh-2YV" id="ZhR-Uk-FUk"/>
+                        <outlet property="userProfileImageView" destination="b5y-y9-ROk" id="B8I-tD-MH6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ehh-k0-jgy" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1468,12 +1469,13 @@
         <image name="BG" width="391" height="215"/>
         <image name="Back Chevron" width="13" height="21"/>
         <image name="Oval" width="64" height="64"/>
-        <image name="OvalSmallEmpty" width="22" height="22"/>
         <image name="Star" width="17" height="17"/>
         <image name="StarEmpty" width="18" height="17"/>
         <image name="collectionPlaceHolder" width="128" height="128"/>
         <image name="crowd" width="375" height="667"/>
+        <image name="fire_yellow" width="98" height="98"/>
         <image name="icon_CD-pink" width="30" height="30"/>
+        <image name="icon_CD_line_new" width="31" height="31"/>
         <image name="logo" width="48" height="30"/>
         <image name="logouticon" width="58" height="60"/>
         <image name="music" width="370" height="292"/>

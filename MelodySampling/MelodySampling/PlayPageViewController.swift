@@ -59,7 +59,7 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
     var trackNameArray = [String]()
 
     var artistNameArray = [String]()
-    
+
     @IBOutlet weak var userNameLabel: UILabel!
 
     @IBOutlet weak var trackIndicator0: UIImageView!
@@ -100,7 +100,7 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
         trackIndicator2.tag = 2
         trackIndicator3.tag = 3
         trackIndicator4.tag = 4
-        
+
         if let userName = UserDefaults.standard.object(forKey: "userName") as? String {
             userNameLabel.text = userName
         } else {
@@ -210,20 +210,20 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
 
         switch currentTrack {
         case trackIndicator0.tag:
-            trackIndicator0.image = UIImage(named: "OvalSmallFilled")
+            trackIndicator0.image = UIImage(named: "icon_CD_white_new")
         case trackIndicator1.tag:
-            trackIndicator1.image = UIImage(named: "OvalSmallFilled")
+            trackIndicator1.image = UIImage(named: "icon_CD_white_new")
         case trackIndicator2.tag:
-            trackIndicator2.image = UIImage(named: "OvalSmallFilled")
+            trackIndicator2.image = UIImage(named: "icon_CD_white_new")
         case trackIndicator3.tag:
-            trackIndicator3.image = UIImage(named: "OvalSmallFilled")
+            trackIndicator3.image = UIImage(named: "icon_CD_white_new")
         default:
-            trackIndicator4.image = UIImage(named: "OvalSmallFilled")
+            trackIndicator4.image = UIImage(named: "icon_CD_white_new")
         }
 
-        if trackIndicator0.tag == currentTrack {
-            trackIndicator0.image = UIImage(named: "OvalSmallFilled")
-        }
+//        if trackIndicator0.tag == currentTrack {
+//            trackIndicator0.image = UIImage(named: "OvalSmallFilled")
+//        }
 
         if judgeAnswer(input: selectedAnswer, compare: answer) {
 
