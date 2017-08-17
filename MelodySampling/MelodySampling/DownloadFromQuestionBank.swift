@@ -21,12 +21,12 @@ class DownloadManager {
 
     var questionArray = [EachQuestion]()
 
-    func downloadQuestion(genre code: Int, viewController thisView: UIViewController) {
+    func downloadQuestion(selected language: String,genre code: Int, viewController thisView: UIViewController) {
 
         let genreCode = "genreCode" + String(code)
 
         var downloadCount = 0
-
+        
         print("目標題庫是 \(genreCode)")
 
         let progressContentView = UIView(frame: CGRect(x: 0, y: 0, width: thisView.view.frame.width, height: thisView.view.frame.height))
@@ -47,7 +47,7 @@ class DownloadManager {
 
         ref = Database.database().reference()
 
-        ref.child("questionBanks").child("mandarin").child(genreCode).child("question1").queryOrderedByKey().observeSingleEvent(of: .value, with: { (snapshot) in
+        ref.child("questionBanks").child(language).child(genreCode).child("question1").queryOrderedByKey().observeSingleEvent(of: .value, with: { (snapshot) in
 
             guard let postDict = snapshot.value as? [String: AnyObject] else { return }
 

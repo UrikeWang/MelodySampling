@@ -21,7 +21,7 @@ class TypeChooseViewController: UIViewController, UITableViewDataSource, UITable
 
     @IBOutlet weak var tableView: UITableView!
 
-    enum TypeList {
+    enum TypeList:String {
         case mandarinPop, taiwanesePop, cantoPop, billboardPop
     }
 
@@ -114,11 +114,14 @@ class TypeChooseViewController: UIViewController, UITableViewDataSource, UITable
 
         // MARK: 之後把過場和選提寫在這
 
-        triggerToStart()
+        let languageSelected = typeList[indexPath.row].rawValue
+        
+        
+        triggerToStart(selected: languageSelected)
 
     }
 
-    func triggerToStart() {
+    func triggerToStart(selected language: String) {
 
             let checkQuestion = CheckQuestionInCoreData()
 
@@ -128,7 +131,7 @@ class TypeChooseViewController: UIViewController, UITableViewDataSource, UITable
 
             let downloadManager = DownloadManager()
 
-            downloadManager.downloadQuestion(genre: 1, viewController: self)
+        downloadManager.downloadQuestion(selected: language, genre: 1, viewController: self)
 
     }
 
