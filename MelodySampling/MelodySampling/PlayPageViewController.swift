@@ -59,7 +59,7 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
     var trackNameArray = [String]()
 
     var artistNameArray = [String]()
-    
+
     @IBOutlet weak var userNameLabel: UILabel!
 
     @IBOutlet weak var trackIndicator0: UIImageView!
@@ -100,7 +100,7 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
         trackIndicator2.tag = 2
         trackIndicator3.tag = 3
         trackIndicator4.tag = 4
-        
+
         if let userName = UserDefaults.standard.object(forKey: "userName") as? String {
             userNameLabel.text = userName
         } else {

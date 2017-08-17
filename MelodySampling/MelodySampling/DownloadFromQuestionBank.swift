@@ -84,7 +84,7 @@ class DownloadManager {
                     self.questionMO.artworkUrl = eachQuestion.artworkUrl
                     self.questionMO.previewUrl = eachQuestion.previewUrl
                     self.questionMO.collectionID = String(eachQuestion.collectionID)
-                    self.questionMO.collectionName = eachQuestion.artistName
+                    self.questionMO.collectionName = eachQuestion.collectionName
                     self.questionMO.primaryGenreName = eachQuestion.primaryGenreName
 
                     appDelegate.saveContext()

@@ -15,6 +15,10 @@ class ProfilePageViewController: UIViewController, UITableViewDelegate, UITableV
 
     @IBOutlet weak var userProfileImageView: UIImageView!
 
+    var historyMO: HistoryMO?
+
+    var historyList: [HistoryMO] = []
+
     @IBOutlet weak var playButtonLabel: UILabel!
 
     @IBOutlet weak var playTextLabel: UILabel!
@@ -26,7 +30,7 @@ class ProfilePageViewController: UIViewController, UITableViewDelegate, UITableV
     @IBOutlet weak var logOutContentView: UIView!
 
     @IBOutlet weak var logOutButtonOutlet: UIButton!
-    
+
     @IBOutlet weak var userNameLabel: UILabel!
 
     @IBAction func logOutButtonTapped(_ sender: UIButton) {
@@ -37,7 +41,7 @@ class ProfilePageViewController: UIViewController, UITableViewDelegate, UITableV
         } catch let signOutError as NSError {
             print ("Error signing out: %@", signOutError)
         }
-        
+
         let userDefault = UserDefaults.standard
 
         let keysInArray = Array(userDefault.dictionaryRepresentation().keys)
@@ -62,7 +66,7 @@ class ProfilePageViewController: UIViewController, UITableViewDelegate, UITableV
         checkUID()
 
         logOutButtonOutlet.setTitleColor(UIColor.clear, for: .normal)
-        
+
         invisibleButton.setTitleColor(UIColor.clear, for: .normal)
 
         achievementTableView.delegate = self
@@ -82,7 +86,23 @@ class ProfilePageViewController: UIViewController, UITableViewDelegate, UITableV
         } else {
             userNameLabel.text = "This is you"
         }
-        
+
+        if historyMO == nil || historyList.count == 0 {
+
+            let framOfTableView = self.achievementTableView.frame
+
+            let emptyView = UIView(frame: framOfTableView)
+
+            createProfilePageHistoryCellBackground(target: emptyView)
+
+            let emptyLabel = createLabel(at: emptyView, content: "尚無對戰紀錄", color: UIColor.white, font: UIFont.mldTextStyleEmptyFont()!)
+
+            self.view.addSubview(emptyView)
+
+            self.view.addSubview(emptyLabel)
+
+        }
+
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
