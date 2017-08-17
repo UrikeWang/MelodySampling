@@ -96,6 +96,8 @@ class DownloadManager {
                 counter += 1
 
             }
+            
+            var downloadPercentage: Double = 0
 
             for index in 0..<self.questionArray.count {
 
@@ -110,7 +112,17 @@ class DownloadManager {
                     return (fileURL, [.removePreviousFile, .createIntermediateDirectories])
                 }
 
-                Alamofire.download(eachSong, to: destination).response { _ in
+                Alamofire.download(eachSong, to: destination).downloadProgress { progress in
+                    
+                    if downloadPercentage < 80 {
+                        downloadPercentage += progress.fractionCompleted * 2
+                    } else {
+                        downloadPercentage += 1
+                    }
+                    
+                    progressRing.setProgress(value: CGFloat(downloadPercentage), animationDuration: 0.01) {}
+                    
+                    }.response { _ in
 
                     downloadCount += 1
                     print("第 \(downloadCount) 首下載完成")
@@ -125,7 +137,10 @@ class DownloadManager {
                         }
 
                     } else {
+                        
+                        /*
                         progressRing.setProgress(value: CGFloat(downloadCount * 20 ), animationDuration: 0.01) {}
+ */
                     }
                 }
             }
