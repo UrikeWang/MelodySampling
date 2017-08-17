@@ -8,14 +8,14 @@
 
 import UIKit
 import Firebase
+import CoreData
 
-class ProfilePageViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ProfilePageViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate {
 
-    @IBOutlet weak var achievementTableView: UITableView!
+    @IBOutlet weak var historyTableView: UITableView!
 
     @IBOutlet weak var userProfileImageView: UIImageView!
-
-    var historyMO: HistoryMO?
+    var fetchResultController: NSFetchedResultsController<HistoryMO>!
 
     var historyList: [HistoryMO] = []
 
@@ -50,6 +50,10 @@ class ProfilePageViewController: UIViewController, UITableViewDelegate, UITableV
             userDefault.removeObject(forKey: "\(each)")
         }
 
+        let checkCoredata = CheckQuestionInCoreData()
+
+        checkCoredata.clearHistoryMO()
+
         gotoLandingPage(from: self)
 
     }
@@ -69,9 +73,9 @@ class ProfilePageViewController: UIViewController, UITableViewDelegate, UITableV
 
         invisibleButton.setTitleColor(UIColor.clear, for: .normal)
 
-        achievementTableView.delegate = self
+        historyTableView.delegate = self
 
-        achievementTableView.dataSource = self
+        historyTableView.dataSource = self
 
         createNextBattleOfResult(target: playButtonLabel)
 
@@ -87,9 +91,42 @@ class ProfilePageViewController: UIViewController, UITableViewDelegate, UITableV
             userNameLabel.text = "This is you"
         }
 
-        if historyMO == nil || historyList.count == 0 {
+        let fetchRequest: NSFetchRequest<HistoryMO> = HistoryMO.fetchRequest()
 
-            let framOfTableView = self.achievementTableView.frame
+        let sortDescriptor = NSSortDescriptor(key: "timeIndex", ascending: true)
+
+        fetchRequest.sortDescriptors = [sortDescriptor]
+
+        if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
+
+            let context = appDelegate.persistentContainer.viewContext
+
+            fetchResultController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
+
+            fetchResultController.delegate = self
+
+            do {
+
+                try fetchResultController.performFetch()
+
+                if let fetchedObjects = fetchResultController.fetchedObjects {
+
+                    historyList = fetchedObjects
+
+                    historyTableView.reloadData()
+
+                }
+
+            } catch {
+                historyList = []
+                print(error)
+            }
+
+        }
+
+        if historyList.count == 0 {
+
+            let framOfTableView = self.historyTableView.frame
 
             let emptyView = UIView(frame: framOfTableView)
 
@@ -106,16 +143,24 @@ class ProfilePageViewController: UIViewController, UITableViewDelegate, UITableV
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return historyList.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
         let cellIdentifier = "HistoryCell"
 
-        let cell = achievementTableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? UITableViewCell
+        //swiftlint:disable force_cast
+        let cell = historyTableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! HistoryTableViewCell
+        //swiftlint:enable
 
-        return cell!
+        cell.artistNameLabel.text = historyList[indexPath.row].artistName
+        cell.trackNameLabel.text = historyList[indexPath.row].trackName
+        //swiftlint:disable force_cast
+        cell.artworkImageView.image = UIImage(data: historyList[indexPath.row].artworkImage as! Data)
+        //swiftlint:enable
+
+        return cell
 
     }
 

@@ -572,6 +572,7 @@
                                         </constraints>
                                         <connections>
                                             <outlet property="artistNameLabel" destination="6Yd-bq-46u" id="c87-p4-0MA"/>
+                                            <outlet property="artworkImageView" destination="y20-cB-bA9" id="TaA-h7-lve"/>
                                             <outlet property="cellBackgroundView" destination="wJN-js-IpA" id="w9d-fK-hgi"/>
                                             <outlet property="collectionImageView" destination="y20-cB-bA9" id="c0n-La-aQl"/>
                                             <outlet property="trackNameLabel" destination="zoX-V0-eI6" id="s9I-mP-xx9"/>
@@ -599,7 +600,7 @@
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
                     <connections>
-                        <outlet property="achievementTableView" destination="L6t-KH-VJ3" id="hrC-Wh-wMi"/>
+                        <outlet property="historyTableView" destination="L6t-KH-VJ3" id="JCm-B6-FfF"/>
                         <outlet property="invisibleButton" destination="cl4-Gv-Xij" id="siV-L5-7fB"/>
                         <outlet property="logOutButtonOutlet" destination="tmL-Wu-OHy" id="2QG-jd-Hnh"/>
                         <outlet property="logOutContentView" destination="tIr-sg-bbH" id="AAp-1Q-OFv"/>
@@ -646,7 +647,7 @@
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CdL-T6-5JE">
+                                                <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CdL-T6-5JE">
                                                     <rect key="frame" x="160" y="61" width="55" height="30"/>
                                                     <state key="normal" title="Shadow"/>
                                                 </button>
@@ -1055,7 +1056,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="101" height="56"/>
                                         <state key="normal" title="Button"/>
                                         <connections>
-                                            <segue destination="QDn-rL-xbF" kind="show" id="sp4-eN-HGB"/>
+                                            <action selector="invisibleGoHomeButtonTapped:" destination="sgS-eJ-ZD6" eventType="touchUpInside" id="weo-pf-Ghx"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -1217,7 +1218,7 @@
                                         <rect key="frame" x="27.5" y="3" width="320" height="80"/>
                                         <state key="normal" title="Button"/>
                                         <connections>
-                                            <segue destination="DwJ-ua-HvI" kind="show" id="KgY-7t-dg5"/>
+                                            <action selector="invisibleNextGameButtonTapped:" destination="sgS-eJ-ZD6" eventType="touchUpInside" id="KWf-FW-OuR"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -1484,7 +1485,4 @@
         <image name="userfigure" width="98" height="98"/>
         <image name="usericon_new" width="50" height="50"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="sp4-eN-HGB"/>
-    </inferredMetricsTieBreakers>
 </document>

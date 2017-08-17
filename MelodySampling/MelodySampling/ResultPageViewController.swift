@@ -15,7 +15,11 @@ class ResultPageViewController: UIViewController, UITableViewDelegate, UITableVi
 
     var fetchResultsController: NSFetchedResultsController<ResultMO>!
 
+    var historyMO: HistoryMO!
+
     var questions: [QuestionMO] = []
+
+    var resultMO: ResultMO!
 
     var results: [ResultMO] = []
 
@@ -24,10 +28,19 @@ class ResultPageViewController: UIViewController, UITableViewDelegate, UITableVi
     var artistNameArray = [String]()
 
     var resultsArray = [EachSongResult]()
+    
+    let documentsURL = NSHomeDirectory() + "/Documents/"
 
     @IBOutlet weak var invisibleNextGameButtonOutlet: UIButton!
+    @IBAction func invisibleNextGameButtonTapped(_ sender: UIButton) {
+        gotoTypeChoosePage(from: self)
+    }
 
     @IBOutlet weak var invisibleGoHomeButtonOutlet: UIButton!
+
+    @IBAction func invisibleGoHomeButtonTapped(_ sender: UIButton) {
+        gotoProfilePage(from: self)
+    }
 
     @IBOutlet weak var tableView: UITableView!
 
@@ -81,7 +94,7 @@ class ResultPageViewController: UIViewController, UITableViewDelegate, UITableVi
 
         let fetchResultsRequest: NSFetchRequest<ResultMO> = ResultMO.fetchRequest()
 
-        let sortDescriptor = NSSortDescriptor(key: "indexNo", ascending: true)
+        let sortDescriptor = NSSortDescriptor(key: "trackID", ascending: true)
 
         let resultSortDescriptor = NSSortDescriptor(key: "index", ascending: true)
 
@@ -121,19 +134,19 @@ class ResultPageViewController: UIViewController, UITableViewDelegate, UITableVi
 
                     results = fetchedObjects
                 }
-
             } catch {
 
                 print(error)
             }
-
         }
 
         for question in questions {
-            if let trackName = question.trackName, let artistName = question.artistName {
+
+            if let artistName = question.artistName, let trackName = question.trackName {
+
                 trackNameArray.append(trackName)
                 artistNameArray.append(artistName)
-                print(trackName, artistName)
+
             }
         }
 
@@ -142,6 +155,8 @@ class ResultPageViewController: UIViewController, UITableViewDelegate, UITableVi
             resultsArray.append(temp)
 
         }
+        
+        saveResultToHistory()
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -169,8 +184,7 @@ class ResultPageViewController: UIViewController, UITableViewDelegate, UITableVi
             cell.judgementImageView.image = UIImage(named: "wrong")
         }
 
-        let documentsURL = NSHomeDirectory() + "/Documents/"
-        let fileURL = URL(fileURLWithPath: documentsURL.appending("artworkImage\(indexPath.row).jpg"))
+        let fileURL = URL(fileURLWithPath: self.documentsURL.appending("artworkImage\(indexPath.row).jpg"))
 
         do {
             let data = try Data(contentsOf: fileURL)
@@ -193,5 +207,60 @@ class ResultPageViewController: UIViewController, UITableViewDelegate, UITableVi
         let tableHeight = screenHeight - profilePageView.frame.height - lowerView.frame.height
 
         return tableHeight / CGFloat(questions.count)
+    }
+
+    func saveResultToHistory() {
+
+        var picIndex: Int = 0
+        var counter: Double = 1.0
+        var imageData: NSData?
+        
+        for question in self.questions {
+            
+            var image = UIImage(named: "collectionPlaceHolder")
+            
+            let fileURL = URL(fileURLWithPath: self.documentsURL.appending("artworkImage\(picIndex).jpg"))
+            
+            do {
+                
+                imageData = try NSData(contentsOf: fileURL)
+                
+//                image = UIImage(data: imageData)
+                
+            } catch {
+                print("image didn't download yet")
+            }
+
+            if let artistID = question.artistID, let artistName = question.artistName, let trackID = question.trackID, let trackName = question.trackName, let artworkUrl = question.artworkUrl, let previewUrl = question.previewUrl, let collectionID = question.collectionID, let collectionName = question.collectionName, let primaryGenreName = question.primaryGenreName {
+
+                if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
+
+                    self.historyMO = HistoryMO(context: appDelegate.persistentContainer.viewContext)
+
+                    self.historyMO.artworkImage = imageData
+                    
+                    picIndex += 1
+                    
+                    self.historyMO.timeIndex = Double(Date().timeIntervalSince1970) + counter
+                    
+                    counter += 1.0
+
+                    
+                    self.historyMO.artistID = artistID
+                    self.historyMO.artistName = artistName
+                    self.historyMO.trackID = trackID
+                    self.historyMO.trackName = trackName
+                    self.historyMO.artworkUrl = artworkUrl
+                    self.historyMO.previewUrl = previewUrl
+                    self.historyMO.collectionID = collectionID
+                    self.historyMO.collectionName = collectionName
+                    self.historyMO.primaryGenreName = primaryGenreName
+
+                    appDelegate.saveContext()
+                }
+            }
+
+        }
+
     }
 }

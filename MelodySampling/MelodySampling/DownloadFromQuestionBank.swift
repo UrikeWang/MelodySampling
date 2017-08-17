@@ -110,24 +110,22 @@ class DownloadManager {
                     return (fileURL, [.removePreviousFile, .createIntermediateDirectories])
                 }
 
-                DispatchQueue.main.async {
-                    Alamofire.download(eachSong, to: destination).response { _ in
+                Alamofire.download(eachSong, to: destination).response { _ in
 
-                        downloadCount += 1
-                        print("第 \(downloadCount) 首下載完成")
+                    downloadCount += 1
+                    print("第 \(downloadCount) 首下載完成")
 
-                        if downloadCount == self.questionArray.count {
+                    if downloadCount == self.questionArray.count {
 
-                            progressRing.setProgress(value: CGFloat(downloadCount * 20), animationDuration: 0.01) {
+                        progressRing.setProgress(value: CGFloat(downloadCount * 20), animationDuration: 0.01) {
 
-                                let registerVC = thisView.storyboard?.instantiateViewController(withIdentifier: "PlayPage")
+                            let registerVC = thisView.storyboard?.instantiateViewController(withIdentifier: "PlayPage")
 
-                                thisView.present(registerVC!, animated: true, completion: nil)
-                            }
-
-                        } else {
-                            progressRing.setProgress(value: CGFloat(downloadCount * 20 ), animationDuration: 0.01) {}
+                            thisView.present(registerVC!, animated: true, completion: nil)
                         }
+
+                    } else {
+                        progressRing.setProgress(value: CGFloat(downloadCount * 20 ), animationDuration: 0.01) {}
                     }
                 }
             }
