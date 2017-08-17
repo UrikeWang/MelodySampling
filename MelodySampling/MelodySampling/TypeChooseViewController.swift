@@ -112,8 +112,6 @@ class TypeChooseViewController: UIViewController, UITableViewDataSource, UITable
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
-        // MARK: 之後把過場和選提寫在這
-
         let languageSelected = typeList[indexPath.row].rawValue
         
         
