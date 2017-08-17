@@ -20,6 +20,8 @@ class DownloadManager {
     var questionMO: QuestionMO!
 
     var questionArray = [EachQuestion]()
+    
+    let userDefault = UserDefaults.standard
 
     func downloadQuestion(selected language: String,genre code: Int, viewController thisView: UIViewController) {
 
@@ -136,14 +138,17 @@ class DownloadManager {
                             thisView.present(registerVC!, animated: true, completion: nil)
                         }
 
-                    } else {
-                        
-                        /*
-                        progressRing.setProgress(value: CGFloat(downloadCount * 20 ), animationDuration: 0.01) {}
- */
                     }
                 }
             }
         })
+    }
+    
+    func getCounter() {
+        ref = Database.database().reference()
+        
+        ref.child("distractorBanks")
+        
+        
     }
 }
