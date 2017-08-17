@@ -22,10 +22,10 @@ class TypeChooseViewController: UIViewController, UITableViewDataSource, UITable
     @IBOutlet weak var tableView: UITableView!
 
     enum TypeList {
-        case mandarinPop, taiwanesePop, cantoPop, billboard
+        case mandarinPop, taiwanesePop, cantoPop, billboardPop
     }
 
-    var typeList: [TypeList] = [.mandarinPop, .taiwanesePop, .cantoPop, .billboard]
+    var typeList: [TypeList] = [.mandarinPop, .taiwanesePop, .cantoPop, .billboardPop]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -94,7 +94,7 @@ class TypeChooseViewController: UIViewController, UITableViewDataSource, UITable
 
             cell.genreButtonOutlet.setTitle("粵語流行", for: .normal)
 
-        case .billboard:
+        case .billboardPop:
 
             cell.backgroundImageView.image = UIImage(named: "pic_Wpop_new")
 
