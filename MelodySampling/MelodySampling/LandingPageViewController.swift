@@ -17,6 +17,8 @@ class LandingPageViewController: UIViewController {
     var seedNumber: Int?
 
     var addNumber: Int?
+    
+    var startTime: Double?
 
     var userFullName = ""
 
@@ -29,13 +31,24 @@ class LandingPageViewController: UIViewController {
     @IBOutlet weak var loginButtonOutlet: UIButton!
 
     @IBAction func loginButtonTapped(_ sender: UIButton) {
-        print("Login button tapped")
+        
+        let currentTime = Date().timeIntervalSince1970
+        
+        guard let startTime = self.startTime else { return }
+        
+        Analytics.logEvent("UserGotoLoginPage", parameters: ["timePassed" : currentTime - startTime])
+
     }
 
     @IBOutlet weak var signUpButtonOutlet: UIButton!
 
     @IBAction func signUpButtonTapped(_ sender: UIButton) {
-        print("SignUp button tapped")
+        
+        let currentTime = Date().timeIntervalSince1970
+        
+        guard let startTime = self.startTime else { return }
+        
+        Analytics.logEvent("UserGotoLoginPage", parameters: ["timePassed" : currentTime - startTime])
     }
 
     @IBOutlet weak var anonymousLoginButtonOutlet: UIButton!
@@ -75,12 +88,16 @@ class LandingPageViewController: UIViewController {
 
             let defaultSetting = self.ref.child("anonymousUsers/defaultSetting")
 
-            // MARK: 暱名玩家 counter 這一部分之後再處理
-//           defaultSetting.updateChildValues(["anonymousUserCount": (self.addNumber?+ 1])
-
             UserDefaults.standard.set(user.uid, forKey: "uid")
             UserDefaults.standard.set("暱名玩家", forKey: "userName")
-
+            
+            guard let startTime = self.startTime else { return }
+            
+            Analytics.logEvent("AnonymousUserSignUp", parameters: [
+                "time": currentTime as NSObject,
+                "timePassed": currentTime - startTime as NSObject
+                ])
+            
             gotoProfilePage(from: self)
         }
 
@@ -94,6 +111,8 @@ class LandingPageViewController: UIViewController {
         loginLabel.layer.borderWidth = 2
         loginLabel.backgroundColor = UIColor.clear
 
+        self.startTime = Date().timeIntervalSince1970
+        
         setCornerRadiustTo(signupLabel)
 
         setCornerRadiustTo(anonymousLoginLabel)
