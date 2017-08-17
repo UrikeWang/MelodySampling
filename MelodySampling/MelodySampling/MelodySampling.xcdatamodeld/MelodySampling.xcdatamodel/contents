@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="12141" systemVersion="16E195" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="HistoryMO" representedClassName="HistoryMO" syncable="YES" codeGenerationType="class">
+        <attribute name="artistID" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="artistName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="artworkUrl" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="previewUrl" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="trackID" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="trackName" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <entity name="QuestionMO" representedClassName="QuestionMO" syncable="YES" codeGenerationType="class">
         <attribute name="artistID" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="artistName" optional="YES" attributeType="String" syncable="YES"/>
@@ -20,5 +28,6 @@
     <elements>
         <element name="QuestionMO" positionX="-45" positionY="0" width="128" height="195"/>
         <element name="ResultMO" positionX="-18" positionY="99" width="128" height="90"/>
+        <element name="HistoryMO" positionX="-27" positionY="72" width="128" height="135"/>
     </elements>
 </model>
