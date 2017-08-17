@@ -50,6 +50,10 @@ class ProfilePageViewController: UIViewController, UITableViewDelegate, UITableV
             userDefault.removeObject(forKey: "\(each)")
         }
 
+        let checkCoredata = CheckQuestionInCoreData()
+        
+        checkCoredata.clearHistoryMO()
+        
         gotoLandingPage(from: self)
 
     }

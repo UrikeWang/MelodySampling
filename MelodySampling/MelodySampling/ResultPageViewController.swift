@@ -30,8 +30,17 @@ class ResultPageViewController: UIViewController, UITableViewDelegate, UITableVi
     var resultsArray = [EachSongResult]()
 
     @IBOutlet weak var invisibleNextGameButtonOutlet: UIButton!
+    @IBAction func invisibleNextGameButtonTapped(_ sender: UIButton) {
+        saveResultToHistory()
+        gotoTypeChoosePage(from: self)
+    }
 
     @IBOutlet weak var invisibleGoHomeButtonOutlet: UIButton!
+    
+    @IBAction func invisibleGoHomeButtonTapped(_ sender: UIButton) {
+        saveResultToHistory()
+        gotoProfilePage(from: self)
+    }
 
     @IBOutlet weak var tableView: UITableView!
 
@@ -198,5 +207,38 @@ class ResultPageViewController: UIViewController, UITableViewDelegate, UITableVi
         let tableHeight = screenHeight - profilePageView.frame.height - lowerView.frame.height
 
         return tableHeight / CGFloat(questions.count)
+    }
+    
+    func saveResultToHistory() {
+        
+        for question in self.questions {
+            
+            if let artistID = question.artistID, let artistName = question.artistName, let trackID = question.trackID, let trackName = question.trackName, let artworkUrl = question.artworkUrl, let previewUrl = question.previewUrl, let collectionID = question.collectionID, let collectionName = question.collectionName, let primaryGenreName = question.primaryGenreName {
+                
+                trackNameArray.append(trackName)
+                artistNameArray.append(artistName)
+                
+                if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
+                    
+                    self.historyMO = HistoryMO(context: appDelegate.persistentContainer.viewContext)
+                    
+                    self.historyMO.timeIndex = Double(Date().timeIntervalSince1970)
+                    self.historyMO.artistID = artistID
+                    self.historyMO.artistName = artistName
+                    self.historyMO.trackID = trackID
+                    self.historyMO.trackName = trackName
+                    self.historyMO.artworkUrl = artworkUrl
+                    self.historyMO.previewUrl = previewUrl
+                    self.historyMO.collectionID = collectionID
+                    self.historyMO.collectionName = collectionName
+                    self.historyMO.primaryGenreName = primaryGenreName
+                    
+                    appDelegate.saveContext()
+                }
+            }
+
+            
+        }
+        
     }
 }

@@ -1055,7 +1055,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="101" height="56"/>
                                         <state key="normal" title="Button"/>
                                         <connections>
-                                            <segue destination="QDn-rL-xbF" kind="show" id="sp4-eN-HGB"/>
+                                            <action selector="invisibleGoHomeButtonTapped:" destination="sgS-eJ-ZD6" eventType="touchUpInside" id="weo-pf-Ghx"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -1217,7 +1217,7 @@
                                         <rect key="frame" x="27.5" y="3" width="320" height="80"/>
                                         <state key="normal" title="Button"/>
                                         <connections>
-                                            <segue destination="DwJ-ua-HvI" kind="show" id="KgY-7t-dg5"/>
+                                            <action selector="invisibleNextGameButtonTapped:" destination="sgS-eJ-ZD6" eventType="touchUpInside" id="KWf-FW-OuR"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -1484,7 +1484,4 @@
         <image name="userfigure" width="98" height="98"/>
         <image name="usericon_new" width="50" height="50"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="kLS-fL-JEV"/>
-    </inferredMetricsTieBreakers>
 </document>
