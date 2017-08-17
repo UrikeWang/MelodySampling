@@ -156,6 +156,9 @@ class ProfilePageViewController: UIViewController, UITableViewDelegate, UITableV
 
         cell.artistNameLabel.text = historyList[indexPath.row].artistName
         cell.trackNameLabel.text = historyList[indexPath.row].trackName
+        //swiftlint:disable force_cast
+        cell.artworkImageView.image = UIImage(data: historyList[indexPath.row].artworkImage as! Data)
+        //swiftlint:enable
 
         return cell
 

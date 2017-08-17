@@ -3,7 +3,7 @@
     <entity name="HistoryMO" representedClassName="HistoryMO" syncable="YES" codeGenerationType="class">
         <attribute name="artistID" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="artistName" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="artworkImage" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="artworkImage" optional="YES" attributeType="Binary" syncable="YES"/>
         <attribute name="artworkUrl" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="collectionID" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="collectionName" optional="YES" attributeType="String" syncable="YES"/>

@@ -28,6 +28,8 @@ class ResultPageViewController: UIViewController, UITableViewDelegate, UITableVi
     var artistNameArray = [String]()
 
     var resultsArray = [EachSongResult]()
+    
+    let documentsURL = NSHomeDirectory() + "/Documents/"
 
     @IBOutlet weak var invisibleNextGameButtonOutlet: UIButton!
     @IBAction func invisibleNextGameButtonTapped(_ sender: UIButton) {
@@ -140,7 +142,7 @@ class ResultPageViewController: UIViewController, UITableViewDelegate, UITableVi
 
         for question in questions {
 
-            if let artistID = question.artistID, let artistName = question.artistName, let trackID = question.trackID, let trackName = question.trackName, let artworkUrl = question.artworkUrl, let previewUrl = question.previewUrl, let collectionID = question.collectionID, let collectionName = question.collectionName, let primaryGenreName = question.primaryGenreName {
+            if let artistName = question.artistName, let trackName = question.trackName {
 
                 trackNameArray.append(trackName)
                 artistNameArray.append(artistName)
@@ -182,8 +184,7 @@ class ResultPageViewController: UIViewController, UITableViewDelegate, UITableVi
             cell.judgementImageView.image = UIImage(named: "wrong")
         }
 
-        let documentsURL = NSHomeDirectory() + "/Documents/"
-        let fileURL = URL(fileURLWithPath: documentsURL.appending("artworkImage\(indexPath.row).jpg"))
+        let fileURL = URL(fileURLWithPath: self.documentsURL.appending("artworkImage\(indexPath.row).jpg"))
 
         do {
             let data = try Data(contentsOf: fileURL)
@@ -210,22 +211,40 @@ class ResultPageViewController: UIViewController, UITableViewDelegate, UITableVi
 
     func saveResultToHistory() {
 
+        var picIndex: Int = 0
         var counter: Double = 1.0
+        var imageData: NSData?
         
         for question in self.questions {
+            
+            var image = UIImage(named: "collectionPlaceHolder")
+            
+            let fileURL = URL(fileURLWithPath: self.documentsURL.appending("artworkImage\(picIndex).jpg"))
+            
+            do {
+                
+                imageData = try NSData(contentsOf: fileURL)
+                
+//                image = UIImage(data: imageData)
+                
+            } catch {
+                print("image didn't download yet")
+            }
 
             if let artistID = question.artistID, let artistName = question.artistName, let trackID = question.trackID, let trackName = question.trackName, let artworkUrl = question.artworkUrl, let previewUrl = question.previewUrl, let collectionID = question.collectionID, let collectionName = question.collectionName, let primaryGenreName = question.primaryGenreName {
-
-                trackNameArray.append(trackName)
-                artistNameArray.append(artistName)
 
                 if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
 
                     self.historyMO = HistoryMO(context: appDelegate.persistentContainer.viewContext)
 
+                    self.historyMO.artworkImage = imageData
+                    
+                    picIndex += 1
+                    
                     self.historyMO.timeIndex = Double(Date().timeIntervalSince1970) + counter
                     
                     counter += 1.0
+
                     
                     self.historyMO.artistID = artistID
                     self.historyMO.artistName = artistName

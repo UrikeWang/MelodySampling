@@ -572,6 +572,7 @@
                                         </constraints>
                                         <connections>
                                             <outlet property="artistNameLabel" destination="6Yd-bq-46u" id="c87-p4-0MA"/>
+                                            <outlet property="artworkImageView" destination="y20-cB-bA9" id="TaA-h7-lve"/>
                                             <outlet property="cellBackgroundView" destination="wJN-js-IpA" id="w9d-fK-hgi"/>
                                             <outlet property="collectionImageView" destination="y20-cB-bA9" id="c0n-La-aQl"/>
                                             <outlet property="trackNameLabel" destination="zoX-V0-eI6" id="s9I-mP-xx9"/>
