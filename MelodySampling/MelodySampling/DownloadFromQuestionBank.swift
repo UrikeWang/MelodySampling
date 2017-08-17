@@ -111,19 +111,19 @@ class DownloadManager {
                 }
 
                 Alamofire.download(eachSong, to: destination).response { _ in
-                    
+
                     downloadCount += 1
                     print("第 \(downloadCount) 首下載完成")
-                    
+
                     if downloadCount == self.questionArray.count {
-                        
+
                         progressRing.setProgress(value: CGFloat(downloadCount * 20), animationDuration: 0.01) {
-                            
+
                             let registerVC = thisView.storyboard?.instantiateViewController(withIdentifier: "PlayPage")
-                            
+
                             thisView.present(registerVC!, animated: true, completion: nil)
                         }
-                        
+
                     } else {
                         progressRing.setProgress(value: CGFloat(downloadCount * 20 ), animationDuration: 0.01) {}
                     }

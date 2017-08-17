@@ -15,53 +15,53 @@ class CheckQuestionInCoreData: UIViewController, NSFetchedResultsControllerDeleg
     var fetchQuestionResultController: NSFetchedResultsController<QuestionMO>!
 
     var fetchResultsResultController: NSFetchedResultsController<ResultMO>!
-    
+
     var fetchHistoryResultController: NSFetchedResultsController<HistoryMO>!
 
     var questions: [QuestionMO] = []
 
     var results: [ResultMO] = []
-    
+
     var history: [HistoryMO] = []
-    
+
     func clearHistoryMO() {
-        
+
         let fetchRequest: NSFetchRequest<HistoryMO> = HistoryMO.fetchRequest()
-        
+
         let sortDescriptor = NSSortDescriptor(key: "timeIndex", ascending: true)
-        
+
         fetchRequest.sortDescriptors = [sortDescriptor]
-        
+
         if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
-            
+
             let context = appDelegate.persistentContainer.viewContext
-            
+
             fetchHistoryResultController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
-            
+
             fetchHistoryResultController.delegate = self
-            
+
             do {
-                
+
                 try fetchHistoryResultController.performFetch()
-                
+
                 if let fetchedObjects = fetchHistoryResultController.fetchedObjects {
-                    
+
                     history = fetchedObjects
-                    
+
                     if history.count > 0 {
-                        
+
                         for eachHistory in history {
-                            
+
                             context.delete(eachHistory)
-                            
+
                             appDelegate.saveContext()
-                            
+
                         }
                         print("Clean exist questions in CoreData")
                     }
-                    
+
                 }
-                
+
             } catch {
                 print(error)
             }

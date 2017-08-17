@@ -16,9 +16,9 @@ class ResultPageViewController: UIViewController, UITableViewDelegate, UITableVi
     var fetchResultsController: NSFetchedResultsController<ResultMO>!
 
     var historyMO: HistoryMO!
-    
+
     var questions: [QuestionMO] = []
-    
+
     var resultMO: ResultMO!
 
     var results: [ResultMO] = []
@@ -31,14 +31,12 @@ class ResultPageViewController: UIViewController, UITableViewDelegate, UITableVi
 
     @IBOutlet weak var invisibleNextGameButtonOutlet: UIButton!
     @IBAction func invisibleNextGameButtonTapped(_ sender: UIButton) {
-        saveResultToHistory()
         gotoTypeChoosePage(from: self)
     }
 
     @IBOutlet weak var invisibleGoHomeButtonOutlet: UIButton!
-    
+
     @IBAction func invisibleGoHomeButtonTapped(_ sender: UIButton) {
-        saveResultToHistory()
         gotoProfilePage(from: self)
     }
 
@@ -141,12 +139,12 @@ class ResultPageViewController: UIViewController, UITableViewDelegate, UITableVi
         }
 
         for question in questions {
-            
+
             if let artistID = question.artistID, let artistName = question.artistName, let trackID = question.trackID, let trackName = question.trackName, let artworkUrl = question.artworkUrl, let previewUrl = question.previewUrl, let collectionID = question.collectionID, let collectionName = question.collectionName, let primaryGenreName = question.primaryGenreName {
-                
+
                 trackNameArray.append(trackName)
                 artistNameArray.append(artistName)
-                
+
             }
         }
 
@@ -156,6 +154,7 @@ class ResultPageViewController: UIViewController, UITableViewDelegate, UITableVi
 
         }
         
+        saveResultToHistory()
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -208,21 +207,26 @@ class ResultPageViewController: UIViewController, UITableViewDelegate, UITableVi
 
         return tableHeight / CGFloat(questions.count)
     }
-    
+
     func saveResultToHistory() {
+
+        var counter: Double = 1.0
         
         for question in self.questions {
-            
+
             if let artistID = question.artistID, let artistName = question.artistName, let trackID = question.trackID, let trackName = question.trackName, let artworkUrl = question.artworkUrl, let previewUrl = question.previewUrl, let collectionID = question.collectionID, let collectionName = question.collectionName, let primaryGenreName = question.primaryGenreName {
-                
+
                 trackNameArray.append(trackName)
                 artistNameArray.append(artistName)
-                
+
                 if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
-                    
+
                     self.historyMO = HistoryMO(context: appDelegate.persistentContainer.viewContext)
+
+                    self.historyMO.timeIndex = Double(Date().timeIntervalSince1970) + counter
                     
-                    self.historyMO.timeIndex = Double(Date().timeIntervalSince1970)
+                    counter += 1.0
+                    
                     self.historyMO.artistID = artistID
                     self.historyMO.artistName = artistName
                     self.historyMO.trackID = trackID
@@ -232,13 +236,12 @@ class ResultPageViewController: UIViewController, UITableViewDelegate, UITableVi
                     self.historyMO.collectionID = collectionID
                     self.historyMO.collectionName = collectionName
                     self.historyMO.primaryGenreName = primaryGenreName
-                    
+
                     appDelegate.saveContext()
                 }
             }
 
-            
         }
-        
+
     }
 }

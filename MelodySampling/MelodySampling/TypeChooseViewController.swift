@@ -113,11 +113,11 @@ class TypeChooseViewController: UIViewController, UITableViewDataSource, UITable
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
         // MARK: 之後把過場和選提寫在這
-        
+
         triggerToStart()
 
     }
-    
+
     func triggerToStart() {
 
             let checkQuestion = CheckQuestionInCoreData()
@@ -129,7 +129,6 @@ class TypeChooseViewController: UIViewController, UITableViewDataSource, UITable
             let downloadManager = DownloadManager()
 
             downloadManager.downloadQuestion(genre: 1, viewController: self)
-
 
     }
 

@@ -51,9 +51,9 @@ class ProfilePageViewController: UIViewController, UITableViewDelegate, UITableV
         }
 
         let checkCoredata = CheckQuestionInCoreData()
-        
+
         checkCoredata.clearHistoryMO()
-        
+
         gotoLandingPage(from: self)
 
     }
@@ -90,40 +90,40 @@ class ProfilePageViewController: UIViewController, UITableViewDelegate, UITableV
         } else {
             userNameLabel.text = "This is you"
         }
-        
+
         let fetchRequest: NSFetchRequest<HistoryMO> = HistoryMO.fetchRequest()
-        
-        let sortDescriptor = NSSortDescriptor(key: "timeIndex", ascending: false)
-        
+
+        let sortDescriptor = NSSortDescriptor(key: "timeIndex", ascending: true)
+
         fetchRequest.sortDescriptors = [sortDescriptor]
 
         if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
-          
+
             let context = appDelegate.persistentContainer.viewContext
-            
+
             fetchResultController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
-            
+
             fetchResultController.delegate = self
-            
+
             do {
-                
+
                 try fetchResultController.performFetch()
-                
+
                 if let fetchedObjects = fetchResultController.fetchedObjects {
-                    
+
                     historyList = fetchedObjects
-                    
+
                     historyTableView.reloadData()
-                    
+
                 }
-                
+
             } catch {
                 historyList = []
                 print(error)
             }
-            
+
         }
-        
+
         if historyList.count == 0 {
 
             let framOfTableView = self.historyTableView.frame
@@ -150,11 +150,14 @@ class ProfilePageViewController: UIViewController, UITableViewDelegate, UITableV
 
         let cellIdentifier = "HistoryCell"
 
-        let cell = historyTableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? UITableViewCell
-        
-        cell?.textLabel?.text = historyList[indexPath.row].trackName
+        //swiftlint:disable force_cast
+        let cell = historyTableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! HistoryTableViewCell
+        //swiftlint:enable
 
-        return cell!
+        cell.artistNameLabel.text = historyList[indexPath.row].artistName
+        cell.trackNameLabel.text = historyList[indexPath.row].trackName
+
+        return cell
 
     }
 
