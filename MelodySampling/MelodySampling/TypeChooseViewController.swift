@@ -113,12 +113,11 @@ class TypeChooseViewController: UIViewController, UITableViewDataSource, UITable
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
         // MARK: 之後把過場和選提寫在這
-        print("你選了 \(typeList[indexPath.row])")
-
+        
         triggerToStart()
 
     }
-
+    
     func triggerToStart() {
 
             let checkQuestion = CheckQuestionInCoreData()

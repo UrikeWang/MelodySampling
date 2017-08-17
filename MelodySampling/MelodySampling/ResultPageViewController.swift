@@ -15,7 +15,11 @@ class ResultPageViewController: UIViewController, UITableViewDelegate, UITableVi
 
     var fetchResultsController: NSFetchedResultsController<ResultMO>!
 
+    var historyMO: HistoryMO!
+    
     var questions: [QuestionMO] = []
+    
+    var resultMO: ResultMO!
 
     var results: [ResultMO] = []
 
@@ -81,7 +85,7 @@ class ResultPageViewController: UIViewController, UITableViewDelegate, UITableVi
 
         let fetchResultsRequest: NSFetchRequest<ResultMO> = ResultMO.fetchRequest()
 
-        let sortDescriptor = NSSortDescriptor(key: "indexNo", ascending: true)
+        let sortDescriptor = NSSortDescriptor(key: "trackID", ascending: true)
 
         let resultSortDescriptor = NSSortDescriptor(key: "index", ascending: true)
 
@@ -121,19 +125,19 @@ class ResultPageViewController: UIViewController, UITableViewDelegate, UITableVi
 
                     results = fetchedObjects
                 }
-
             } catch {
 
                 print(error)
             }
-
         }
 
         for question in questions {
-            if let trackName = question.trackName, let artistName = question.artistName {
+            
+            if let artistID = question.artistID, let artistName = question.artistName, let trackID = question.trackID, let trackName = question.trackName, let artworkUrl = question.artworkUrl, let previewUrl = question.previewUrl, let collectionID = question.collectionID, let collectionName = question.collectionName, let primaryGenreName = question.primaryGenreName {
+                
                 trackNameArray.append(trackName)
                 artistNameArray.append(artistName)
-                print(trackName, artistName)
+                
             }
         }
 
@@ -142,6 +146,7 @@ class ResultPageViewController: UIViewController, UITableViewDelegate, UITableVi
             resultsArray.append(temp)
 
         }
+        
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

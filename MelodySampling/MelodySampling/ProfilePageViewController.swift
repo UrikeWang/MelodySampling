@@ -89,7 +89,7 @@ class ProfilePageViewController: UIViewController, UITableViewDelegate, UITableV
         
         let fetchRequest: NSFetchRequest<HistoryMO> = HistoryMO.fetchRequest()
         
-        let sortDescriptor = NSSortDescriptor(key: "time", ascending: false)
+        let sortDescriptor = NSSortDescriptor(key: "timeIndex", ascending: false)
         
         fetchRequest.sortDescriptors = [sortDescriptor]
 
@@ -114,6 +114,7 @@ class ProfilePageViewController: UIViewController, UITableViewDelegate, UITableV
                 }
                 
             } catch {
+                historyList = []
                 print(error)
             }
             
@@ -146,6 +147,8 @@ class ProfilePageViewController: UIViewController, UITableViewDelegate, UITableV
         let cellIdentifier = "HistoryCell"
 
         let cell = historyTableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? UITableViewCell
+        
+        cell?.textLabel?.text = historyList[indexPath.row].trackName
 
         return cell!
 
