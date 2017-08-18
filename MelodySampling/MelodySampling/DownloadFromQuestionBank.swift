@@ -12,6 +12,7 @@ import Alamofire
 import Firebase
 import UICircularProgressRing
 import CoreData
+import SwiftyJSON
 
 class DownloadManager {
 
@@ -21,12 +22,14 @@ class DownloadManager {
 
     var questionArray = [EachQuestion]()
 
-    func downloadQuestion(selected language: String,genre code: Int, viewController thisView: UIViewController) {
+    let userDefault = UserDefaults.standard
+
+    func downloadQuestion(selected language: String, genre code: Int, viewController thisView: UIViewController) {
 
         let genreCode = "genreCode" + String(code)
 
         var downloadCount = 0
-        
+
         print("目標題庫是 \(genreCode)")
 
         let progressContentView = UIView(frame: CGRect(x: 0, y: 0, width: thisView.view.frame.width, height: thisView.view.frame.height))
@@ -52,8 +55,6 @@ class DownloadManager {
             guard let postDict = snapshot.value as? [String: AnyObject] else { return }
 
             let indexArray = Array(postDict.keys) //每一個裡面都是 trackID
-
-            //從這一段開始改寫接把每一個東西倒進 EachQuestion
 
             var counter = 0
 
@@ -96,7 +97,7 @@ class DownloadManager {
                 counter += 1
 
             }
-            
+
             var downloadPercentage: Double = 0
 
             for index in 0..<self.questionArray.count {
@@ -113,15 +114,15 @@ class DownloadManager {
                 }
 
                 Alamofire.download(eachSong, to: destination).downloadProgress { progress in
-                    
+
                     if downloadPercentage < 80 {
                         downloadPercentage += progress.fractionCompleted * 2
                     } else {
                         downloadPercentage += 1
                     }
-                    
+
                     progressRing.setProgress(value: CGFloat(downloadPercentage), animationDuration: 0.01) {}
-                    
+
                     }.response { _ in
 
                     downloadCount += 1
@@ -136,14 +137,29 @@ class DownloadManager {
                             thisView.present(registerVC!, animated: true, completion: nil)
                         }
 
-                    } else {
-                        
-                        /*
-                        progressRing.setProgress(value: CGFloat(downloadCount * 20 ), animationDuration: 0.01) {}
- */
                     }
                 }
             }
+        })
+    }
+
+    func getCounter() {
+        ref = Database.database().reference()
+
+        ref.child("questionCounter").observeSingleEvent(of: .value, with: { (snapshot) in
+
+            print(snapshot)
+
+            let json = JSON(snapshot.value)
+
+            print("JSON raw value: \(json)")
+
+            let questionCounter = json.intValue
+
+            print("目前歌曲數為 : \(questionCounter)")
+
+            self.userDefault.set(questionCounter, forKey: "questionCounter")
+
         })
     }
 }

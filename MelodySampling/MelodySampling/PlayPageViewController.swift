@@ -24,7 +24,7 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
 
     let path: String = NSHomeDirectory() + "/Documents/"
 
-    var fakeArtistList = ["被愛是幸福", "相思無用", "你的眼睛是星星"]
+    var fake0 = ["被愛是幸福", "相思無用", "你的眼睛是星星"]
 
     var fake3 = ["苦瓜", "葡萄成熟時", "浮誇"]
 
@@ -221,10 +221,6 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
             trackIndicator4.image = UIImage(named: "icon_CD_white_new")
         }
 
-//        if trackIndicator0.tag == currentTrack {
-//            trackIndicator0.image = UIImage(named: "OvalSmallFilled")
-//        }
-
         if judgeAnswer(input: selectedAnswer, compare: answer) {
 
             let currentScoreString = rightUserScoreLabel.text
@@ -284,7 +280,7 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
 
         } else {
 
-            var fakeList = [fakeArtistList, fake1, fake2, fake3, fake4]
+            var fakeList = [fake0, fake1, fake2, fake3, fake4]
 
             questionList = fakeList[prepareTrack]
 
@@ -335,7 +331,7 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
 
         print("現在在第 \(currentTrack) 首")
         print("接下來是第 \(prepareTrack) 首")
-        self.questionList = self.fakeArtistList
+        self.questionList = self.fake0
 
         self.questionList.append(self.trackNameArray[self.currentTrack])
 

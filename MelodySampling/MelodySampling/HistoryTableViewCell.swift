@@ -17,7 +17,7 @@ class HistoryTableViewCell: UITableViewCell {
             collectionImageView.layer.shadowRadius = 4
         }
     }
-    
+
     @IBOutlet weak var artworkImageView: UIImageView!
 
     @IBOutlet weak var trackNameLabel: UILabel! {

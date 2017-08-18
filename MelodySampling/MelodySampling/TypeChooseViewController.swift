@@ -21,7 +21,9 @@ class TypeChooseViewController: UIViewController, UITableViewDataSource, UITable
 
     @IBOutlet weak var tableView: UITableView!
 
-    enum TypeList:String {
+    var questionCounter: Int?
+
+    enum TypeList: String {
         case mandarinPop, taiwanesePop, cantoPop, billboardPop
     }
 
@@ -31,6 +33,10 @@ class TypeChooseViewController: UIViewController, UITableViewDataSource, UITable
         super.viewDidLoad()
 
         checkUID()
+
+        print("===== =====")
+
+        self.questionCounter = UserDefaults.standard.object(forKey: "questionCounter") as? Int ?? 1
 
         tableView.delegate = self
 
@@ -113,8 +119,7 @@ class TypeChooseViewController: UIViewController, UITableViewDataSource, UITable
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
         let languageSelected = typeList[indexPath.row].rawValue
-        
-        
+
         triggerToStart(selected: languageSelected)
 
     }

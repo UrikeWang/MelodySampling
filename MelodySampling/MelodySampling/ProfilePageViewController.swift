@@ -67,6 +67,22 @@ class ProfilePageViewController: UIViewController, UITableViewDelegate, UITableV
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        print("===== =====")
+
+        let distractorManager = DistractorManager()
+
+        distractorManager.getDistractorListArray(input: 0)
+
+        distractorManager.getDistractorListArray(input: 1)
+
+        distractorManager.getDistractorListArray(input: 2)
+        distractorManager.getDistractorListArray(input: 3)
+        distractorManager.getDistractorListArray(input: 4)
+        distractorManager.getDistractorListArray(input: 5)
+
+        if let questionCounter = UserDefaults.standard.object(forKey: "questionCounter") {
+        }
+
         checkUID()
 
         logOutButtonOutlet.setTitleColor(UIColor.clear, for: .normal)
