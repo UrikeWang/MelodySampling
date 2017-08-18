@@ -13,24 +13,23 @@ import CoreData
 import SwiftyJSON
 
 class DistractorManager {
-    
+
     var ref: DatabaseReference!
-    
-    func getDistractorListArray(input random: String) {
-        
+
+    func getDistractorListArray(input random: Int) {
+
         ref = Database.database().reference()
-        
-        
-        let randomStr = String(random)
-        ref.child("distractorBanks").child("mandarinPop").child("allList").queryOrderedByKey().queryEqual(toValue: randomStr).observeSingleEvent(of: .value, with: { (snapshot) in
-            
+
+        let randomStr = "distractor" + String(random)
+        ref.child("distractorBanks").child("taiwanesePop").child("allList").queryOrderedByKey().queryEqual(toValue: randomStr).observeSingleEvent(of: .value, with: { (snapshot) in
+
             let json = JSON(snapshot.value)
-            
+
             print(json)
             print(type(of: json))
-            
-            print("歌名: \(json[randomStr!].stringValue)")
-            
+
+            print("歌名: \(json[randomStr].stringValue)")
+
         })
     }
 

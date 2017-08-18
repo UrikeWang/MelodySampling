@@ -35,7 +35,7 @@ class TypeChooseViewController: UIViewController, UITableViewDataSource, UITable
         checkUID()
 
         print("===== =====")
-        
+
         self.questionCounter = UserDefaults.standard.object(forKey: "questionCounter") as? Int ?? 1
 
         tableView.delegate = self
