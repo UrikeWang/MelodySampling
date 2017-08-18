@@ -34,7 +34,7 @@ class ProfilePageViewController: UIViewController, UITableViewDelegate, UITableV
     @IBOutlet weak var userNameLabel: UILabel!
 
     @IBAction func logOutButtonTapped(_ sender: UIButton) {
-
+        
         let firebaseAuth = Auth.auth()
         do {
             try firebaseAuth.signOut()
@@ -66,7 +66,20 @@ class ProfilePageViewController: UIViewController, UITableViewDelegate, UITableV
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let downloadManager = DownloadManager()
+        
+        downloadManager.getCounter()
 
+        print("===== =====")
+        
+        if let questionCounter = UserDefaults.standard.object(forKey: "questionCounter") {
+            print("Profile page counter: \(questionCounter)")
+        }
+        
+        
+        
+        
         checkUID()
 
         logOutButtonOutlet.setTitleColor(UIColor.clear, for: .normal)

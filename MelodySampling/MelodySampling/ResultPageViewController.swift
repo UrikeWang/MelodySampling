@@ -28,7 +28,7 @@ class ResultPageViewController: UIViewController, UITableViewDelegate, UITableVi
     var artistNameArray = [String]()
 
     var resultsArray = [EachSongResult]()
-    
+
     let documentsURL = NSHomeDirectory() + "/Documents/"
 
     @IBOutlet weak var invisibleNextGameButtonOutlet: UIButton!
@@ -155,7 +155,7 @@ class ResultPageViewController: UIViewController, UITableViewDelegate, UITableVi
             resultsArray.append(temp)
 
         }
-        
+
         saveResultToHistory()
     }
 
@@ -214,19 +214,19 @@ class ResultPageViewController: UIViewController, UITableViewDelegate, UITableVi
         var picIndex: Int = 0
         var counter: Double = 1.0
         var imageData: NSData?
-        
+
         for question in self.questions {
-            
+
             var image = UIImage(named: "collectionPlaceHolder")
-            
+
             let fileURL = URL(fileURLWithPath: self.documentsURL.appending("artworkImage\(picIndex).jpg"))
-            
+
             do {
-                
+
                 imageData = try NSData(contentsOf: fileURL)
-                
+
 //                image = UIImage(data: imageData)
-                
+
             } catch {
                 print("image didn't download yet")
             }
@@ -238,14 +238,13 @@ class ResultPageViewController: UIViewController, UITableViewDelegate, UITableVi
                     self.historyMO = HistoryMO(context: appDelegate.persistentContainer.viewContext)
 
                     self.historyMO.artworkImage = imageData
-                    
+
                     picIndex += 1
-                    
+
                     self.historyMO.timeIndex = Double(Date().timeIntervalSince1970) + counter
-                    
+
                     counter += 1.0
 
-                    
                     self.historyMO.artistID = artistID
                     self.historyMO.artistName = artistName
                     self.historyMO.trackID = trackID

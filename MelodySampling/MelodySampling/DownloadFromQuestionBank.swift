@@ -12,6 +12,7 @@ import Alamofire
 import Firebase
 import UICircularProgressRing
 import CoreData
+import SwiftyJSON
 
 class DownloadManager {
 
@@ -20,15 +21,15 @@ class DownloadManager {
     var questionMO: QuestionMO!
 
     var questionArray = [EachQuestion]()
-    
+
     let userDefault = UserDefaults.standard
 
-    func downloadQuestion(selected language: String,genre code: Int, viewController thisView: UIViewController) {
+    func downloadQuestion(selected language: String, genre code: Int, viewController thisView: UIViewController) {
 
         let genreCode = "genreCode" + String(code)
 
         var downloadCount = 0
-        
+
         print("目標題庫是 \(genreCode)")
 
         let progressContentView = UIView(frame: CGRect(x: 0, y: 0, width: thisView.view.frame.width, height: thisView.view.frame.height))
@@ -98,7 +99,7 @@ class DownloadManager {
                 counter += 1
 
             }
-            
+
             var downloadPercentage: Double = 0
 
             for index in 0..<self.questionArray.count {
@@ -115,15 +116,15 @@ class DownloadManager {
                 }
 
                 Alamofire.download(eachSong, to: destination).downloadProgress { progress in
-                    
+
                     if downloadPercentage < 80 {
                         downloadPercentage += progress.fractionCompleted * 2
                     } else {
                         downloadPercentage += 1
                     }
-                    
+
                     progressRing.setProgress(value: CGFloat(downloadPercentage), animationDuration: 0.01) {}
-                    
+
                     }.response { _ in
 
                     downloadCount += 1
@@ -143,12 +144,26 @@ class DownloadManager {
             }
         })
     }
-    
+
     func getCounter() {
         ref = Database.database().reference()
-        
-        ref.child("distractorBanks")
-        
+
+        ref.child("questionCounter").observeSingleEvent(of: .value, with: { (snapshot) in
+            
+            print(snapshot)
+            
+            let json = JSON(snapshot.value)
+            
+            print("JSON raw value: \(json)")
+            
+            let questionCounter = json["questionCounter"].intValue
+            
+            print("目前歌曲數為 : \(questionCounter)")
+            
+            self.userDefault.set(questionCounter, forKey: "questionCounter")
+            
+        })
+
         
     }
 }
