@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 import CoreData
 
-class ProfilePageViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate {
+class ProfilePageViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate, DistractorManagerDelegate {
 
     @IBOutlet weak var historyTableView: UITableView!
 
@@ -18,6 +18,8 @@ class ProfilePageViewController: UIViewController, UITableViewDelegate, UITableV
     var fetchResultController: NSFetchedResultsController<HistoryMO>!
 
     var historyList: [HistoryMO] = []
+    
+    var distracorList = [String]()
 
     @IBOutlet weak var playButtonLabel: UILabel!
 
@@ -70,16 +72,10 @@ class ProfilePageViewController: UIViewController, UITableViewDelegate, UITableV
         print("===== =====")
 
         let distractorManager = DistractorManager()
-
-        distractorManager.getDistractorListArray(input: 0)
-
-        distractorManager.getDistractorListArray(input: 1)
-
-        distractorManager.getDistractorListArray(input: 2)
-        distractorManager.getDistractorListArray(input: 3)
-        distractorManager.getDistractorListArray(input: 4)
-        distractorManager.getDistractorListArray(input: 5)
-
+        distractorManager.delegate = self
+        distractorManager.getDistracorsList()
+        
+        
         if let questionCounter = UserDefaults.standard.object(forKey: "questionCounter") {
         }
 
@@ -177,7 +173,14 @@ class ProfilePageViewController: UIViewController, UITableViewDelegate, UITableV
         //swiftlint:enable
 
         return cell
-
+    }
+    
+    func manager(_ manager: DistractorManager, didFailWith error: Error) {
+        print(Error.self)
+    }
+    
+    func manager(_ manager: DistractorManager, didGet distractors: [String]) {
+        self.distracorList = distractors
     }
 
 }
