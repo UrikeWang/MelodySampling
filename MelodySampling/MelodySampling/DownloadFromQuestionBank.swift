@@ -161,6 +161,5 @@ class DownloadManager {
             self.userDefault.set(questionCounter, forKey: "questionCounter")
 
         })
-
     }
 }
