@@ -29,6 +29,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         self.window = UIWindow(frame: UIScreen.main.bounds)
 
+        let downloadManager = DownloadManager()
+
+        downloadManager.getCounter()
+
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
 
         if UserDefaults.standard.value(forKey: "uid") != nil {

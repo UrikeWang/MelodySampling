@@ -56,8 +56,6 @@ class DownloadManager {
 
             let indexArray = Array(postDict.keys) //每一個裡面都是 trackID
 
-            //從這一段開始改寫接把每一個東西倒進 EachQuestion
-
             var counter = 0
 
             for eachTrackID in indexArray {
@@ -149,21 +147,20 @@ class DownloadManager {
         ref = Database.database().reference()
 
         ref.child("questionCounter").observeSingleEvent(of: .value, with: { (snapshot) in
-            
+
             print(snapshot)
-            
+
             let json = JSON(snapshot.value)
-            
+
             print("JSON raw value: \(json)")
-            
-            let questionCounter = json["questionCounter"].intValue
-            
+
+            let questionCounter = json.intValue
+
             print("目前歌曲數為 : \(questionCounter)")
-            
+
             self.userDefault.set(questionCounter, forKey: "questionCounter")
-            
+
         })
 
-        
     }
 }
