@@ -30,19 +30,6 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
 
     let path: String = NSHomeDirectory() + "/Documents/"
 
-    
-    /*
-    var fake0 = ["被愛是幸福", "相思無用", "你的眼睛是星星"]
-
-    var fake3 = ["苦瓜", "葡萄成熟時", "浮誇"]
-
-    var fake2 = ["冬季來的女人", "海闊天空", "破曉"]
-
-    var fake1 = ["美人駕到", "水溫", "愛與被愛"]
-
-    var fake4 = ["但願人長久", "旗子", "天空"]
-
- */
     var questionList = [String]()
 
     var currentTrack: Int = 0
@@ -250,6 +237,22 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
             trackIndicator3.image = UIImage(named: "icon_CD_white_new")
         default:
             trackIndicator4.image = UIImage(named: "icon_CD_white_new")
+        }
+        
+        let aiResult = random(4)
+        
+        if aiResult > 0 {
+            
+            guard var aiScoreStr = leftUserScoreLabel.text else { return }
+            
+            guard var aiScore = Int(aiScoreStr) else { return }
+            
+            let aiGet = 600 + random(3000)
+            
+            aiScore += aiGet
+            
+            leftUserScoreLabel.text = "\(aiScore)"
+            
         }
 
         if judgeAnswer(input: selectedAnswer, compare: answer) {
