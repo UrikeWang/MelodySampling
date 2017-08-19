@@ -16,7 +16,7 @@ class ProfilePageViewController: UIViewController, UITableViewDelegate, UITableV
 
     @IBOutlet weak var userProfileImageView: UIImageView!
     var fetchResultController: NSFetchedResultsController<HistoryMO>!
-
+    
     var historyList: [HistoryMO] = []
     
     var distracorList = [String]()
@@ -26,7 +26,7 @@ class ProfilePageViewController: UIViewController, UITableViewDelegate, UITableV
     @IBOutlet weak var playTextLabel: UILabel!
 
     @IBOutlet weak var invisibleButton: UIButton!
-
+    
     @IBOutlet weak var logOutView: UIView!
 
     @IBOutlet weak var logOutContentView: UIView!

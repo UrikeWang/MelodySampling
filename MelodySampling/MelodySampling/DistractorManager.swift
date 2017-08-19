@@ -54,7 +54,8 @@ class DistractorManager {
         })
     }
     
-    func getDistracorsList() {
+    //MARK: This func need to be revised.
+    func getDistractorsList() {
         
         var counter = 15
         
