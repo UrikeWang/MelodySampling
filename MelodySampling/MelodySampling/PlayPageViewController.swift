@@ -15,8 +15,14 @@ import Alamofire
 class PlayPageViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate {
 
     var fetchResultController: NSFetchedResultsController<QuestionMO>!
+    
+    var fetchDistractorController: NSFetchedResultsController<DistractorMO>!
 
     var resultMO: ResultMO!
+    
+    var distractorMO: DistractorMO!
+    
+    var distractors: [DistractorMO] = []
 
     var questions: [QuestionMO] = []
 
@@ -119,6 +125,8 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
         let sortDescriptor = NSSortDescriptor(key: "indexNo", ascending: true)
 
         fetchRequest.sortDescriptors = [sortDescriptor]
+        
+        let fetchDistractorRequest: NSFetchRequest<DistractorMO> = DistractorMO.fetchRequest()
 
         if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
 
@@ -141,6 +149,29 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
             } catch {
                 print(error)
             }
+            
+            let distractorRequest: NSFetchRequest<DistractorMO> = DistractorMO.fetchRequest()
+            
+            
+            
+            /*
+            
+            fetchDistractorController = NSFetchedResultsController(fetchRequest: fetchDistractorRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
+            
+            fetchDistractorController.delegate = self
+            */
+            do {
+                
+                distractors = try context.fetch(distractorRequest)
+                
+                for each in distractors {
+                    print(each.distractorStr)
+                }
+                
+            } catch {
+                print(error)
+            }
+ 
         }
         print("現在 CoreData 中有 \(questions.count) 筆資料")
 
@@ -169,7 +200,10 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
         }
 
         playingSongLabel.text = "\(prepareTrack)"
+    
 
+
+        
         self.timeStart = Date().timeIntervalSince1970
 
         self.startGuessing()
