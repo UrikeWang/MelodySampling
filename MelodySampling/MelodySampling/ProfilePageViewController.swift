@@ -73,7 +73,14 @@ class ProfilePageViewController: UIViewController, UITableViewDelegate, UITableV
 
         let distractorManager = DistractorManager()
         distractorManager.delegate = self
-        distractorManager.getDistracorsList()
+        
+        let randomSeed = random(50)
+        
+        print(randomSeed)
+        
+        distractorManager.getOneDistractor(input: randomSeed) { (result) in
+            print(result)
+        }
         
         
         if let questionCounter = UserDefaults.standard.object(forKey: "questionCounter") {
