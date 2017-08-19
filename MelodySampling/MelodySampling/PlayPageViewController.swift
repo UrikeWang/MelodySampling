@@ -16,7 +16,13 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
 
     var fetchResultController: NSFetchedResultsController<QuestionMO>!
 
+    var fetchDistractorController: NSFetchedResultsController<DistractorMO>!
+
     var resultMO: ResultMO!
+
+    var distractorMO: DistractorMO!
+
+    var distractors: [DistractorMO] = []
 
     var questions: [QuestionMO] = []
 
@@ -120,6 +126,8 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
 
         fetchRequest.sortDescriptors = [sortDescriptor]
 
+        let fetchDistractorRequest: NSFetchRequest<DistractorMO> = DistractorMO.fetchRequest()
+
         if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
 
             let context = appDelegate.persistentContainer.viewContext
@@ -141,6 +149,17 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
             } catch {
                 print(error)
             }
+
+            let distractorRequest: NSFetchRequest<DistractorMO> = DistractorMO.fetchRequest()
+
+            do {
+
+                distractors = try context.fetch(distractorRequest)
+
+            } catch {
+                print(error)
+            }
+
         }
         print("現在 CoreData 中有 \(questions.count) 筆資料")
 
@@ -287,8 +306,30 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
 
         } else {
 
-            var fakeList = [fake0, fake1, fake2, fake3, fake4]
+//            var fakeList = [fake0, fake1, fake2, fake3, fake4]
 
+            var fakeList: [[String]] = []
+            
+            while fakeList.count != 5 {
+                
+                var eachFakeList: [String] = []
+                
+                while eachFakeList.count != 3 {
+                    
+                    let firstItem = distractors.first
+                    
+                    guard let distractor = firstItem?.distractorStr else { return }
+                    eachFakeList.append(distractor)
+                    
+                    distractors.remove(at: 0)
+                    
+                }
+                
+                fakeList.append(eachFakeList)
+                
+                print(eachFakeList)
+            }
+            
             questionList = fakeList[prepareTrack]
 
             questionList.append(trackNameArray[prepareTrack])
@@ -337,7 +378,19 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
 
         print("現在在第 \(currentTrack) 首")
         print("接下來是第 \(prepareTrack) 首")
-        self.questionList = self.fake0
+        
+        for index in 0..<3 {
+            print(index)
+            let distractorItem = distractors[index]
+            
+            guard let distractor = distractorItem.distractorStr else { return }
+            
+            if self.questionList.contains(distractor) == false {
+                self.questionList.append(distractor)
+            }
+        }
+//        
+//        self.questionList = self.fake0
 
         self.questionList.append(self.trackNameArray[self.currentTrack])
 
@@ -360,6 +413,13 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return self.tableView.frame.height / 4
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        let clearDistractorData = CheckQuestionInCoreData()
+        clearDistractorData.clearDistractorMO()
     }
 
 }

@@ -6,6 +6,9 @@
     <entity name="CantoPopDistractorMO" representedClassName="CantoPopDistractorMO" syncable="YES" codeGenerationType="class">
         <attribute name="distractorStr" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
+    <entity name="DistractorMO" representedClassName="DistractorMO" syncable="YES" codeGenerationType="class">
+        <attribute name="distractorStr" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <entity name="HistoryMO" representedClassName="HistoryMO" syncable="YES" codeGenerationType="class">
         <attribute name="artistID" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="artistName" optional="YES" attributeType="String" syncable="YES"/>
@@ -51,5 +54,6 @@
         <element name="TaiwanesePopDistractorMO" positionX="-99" positionY="-135" width="128" height="60"/>
         <element name="BillboardPopDistractorMO" positionX="-90" positionY="-126" width="128" height="60"/>
         <element name="CantoPopDistractorMO" positionX="-81" positionY="-117" width="128" height="60"/>
+        <element name="DistractorMO" positionX="-72" positionY="-108" width="128" height="60"/>
     </elements>
 </model>
