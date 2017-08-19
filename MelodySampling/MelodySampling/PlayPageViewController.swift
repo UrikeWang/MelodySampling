@@ -334,7 +334,6 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
     }
 
     func startGuessing() {
-        //進行第0首歌的猜謎
 
         print("現在在第 \(currentTrack) 首")
         print("接下來是第 \(prepareTrack) 首")

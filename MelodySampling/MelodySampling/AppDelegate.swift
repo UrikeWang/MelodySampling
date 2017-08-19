@@ -51,12 +51,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let distractorManager = DistractorManager()
 
         var randomList = distractorManager.getDistractorIDArray(arrayCount: 25, distractorBankCount: 400)
-        
-        
+
         print(randomList)
-        
+
         distractorManager.getOneDistractor(input: 20)
-        
 
         return true
     }
