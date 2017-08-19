@@ -55,10 +55,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         print(randomList)
         
-        distractorManager.getOneDistractor(input: 20) { (string) in
-            print(" 這一段是 manager 裡面做的事 \(string)")
-        }
-
+        distractorManager.getOneDistractor(input: 20)
         
 
         return true

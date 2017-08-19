@@ -36,7 +36,7 @@ class DistractorManager {
         case invalidResponse
     }
 
-    func getOneDistractor(input random: Int, completion: @escaping ( _ distracor: String) -> Void) {
+    func getOneDistractor(input random: Int) {
 
         ref = Database.database().reference()
 
@@ -49,8 +49,6 @@ class DistractorManager {
             print(type(of: json))
 
             print("歌名: \(json[randomStr].stringValue)")
-
-            completion(json[randomStr].stringValue)
             
             self.distractors.append(json[randomStr].stringValue)
             
@@ -81,36 +79,6 @@ class DistractorManager {
         
         
         
-    }
-
-    // MARK: This func need to be revised.
-    func getDistractorsList() {
-
-        var counter = 15
-
-        ref = Database.database().reference()
-
-        counter = 0
-
-        while distractors.count != 15 {
-
-            let input = random(400)
-
-            getOneDistractor(input: input, completion: { download in
-                self.distractors.append(download)
-
-                if self.distractors.count == 15 {
-
-                    print(self.distractors)
-
-                    self.delegate?.manager(self, didGet: self.distractors)
-
-                }
-
-            })
-
-        }
-
     }
 
 }
