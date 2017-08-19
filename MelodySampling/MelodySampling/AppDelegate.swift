@@ -54,8 +54,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         print(randomList)
 
-        distractorManager.getOneDistractor(input: 20)
-
         return true
     }
 
