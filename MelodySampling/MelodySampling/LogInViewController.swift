@@ -27,6 +27,42 @@ class LogInViewController: UIViewController {
 
     @IBOutlet weak var signUpInvisibleButtonOutlet: UIButton!
 
+    @IBOutlet weak var emailResetButtonOutlet: UIButton!
+
+    @IBAction func emailResetButtonTapped(_ sender: UIButton) {
+
+        if emailTextField.text != "" && emailTextField.text != nil {
+
+            guard let email = emailTextField.text else {
+                return
+            }
+
+            Auth.auth().sendPasswordReset(withEmail: email, completion: { (_) in
+
+                let errorAlert = UIAlertController(title: "Error", message: "Something Wrong, please check your input again", preferredStyle: .alert)
+
+                let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+
+                errorAlert.addAction(okAction)
+
+                self.present(errorAlert, animated: true, completion: nil)
+
+            })
+
+        } else {
+
+            let errorAlert = UIAlertController(title: "Email is empty!", message: "Please input your email.", preferredStyle: .alert)
+
+            let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+
+            errorAlert.addAction(okAction)
+
+            self.present(errorAlert, animated: true, completion: nil)
+
+        }
+
+    }
+
     @IBAction func signUpInvisibleButtonTapped(_ sender: UIButton) {
 
         gotoSignupPage(from: self)
@@ -79,6 +115,8 @@ class LogInViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        emailResetButtonOutlet.setTitleColor(UIColor.clear, for: .normal)
 
         createSignUpPageGradient(target: opacityView)
 

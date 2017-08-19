@@ -113,6 +113,10 @@ class DownloadManager {
                     return (fileURL, [.removePreviousFile, .createIntermediateDirectories])
                 }
 
+                let distractorManager = DistractorManager()
+
+                _ = distractorManager.getDistractorIDArray(distractorArrayCount: 40, distractorBankCount: 400, genre: language)
+
                 Alamofire.download(eachSong, to: destination).downloadProgress { progress in
 
                     if downloadPercentage < 80 {

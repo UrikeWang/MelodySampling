@@ -1342,7 +1342,7 @@
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Forget password?" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9tS-ZU-rY7" userLabel="ForgetPwLabel">
-                                        <rect key="frame" x="197.5" y="353" width="129.5" height="19.5"/>
+                                        <rect key="frame" x="197.5" y="360" width="129.5" height="19.5"/>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1412,6 +1412,13 @@
                                             <action selector="signUpInvisibleButtonTapped:" destination="Tjb-TR-M1w" eventType="touchUpInside" id="or3-jg-HPM"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bmC-gg-dzb" userLabel="Reset Email Password Button">
+                                        <rect key="frame" x="177.5" y="360" width="149.5" height="39.5"/>
+                                        <state key="normal" title="Invisible Button"/>
+                                        <connections>
+                                            <action selector="emailResetButtonTapped:" destination="Tjb-TR-M1w" eventType="touchUpInside" id="9gl-z4-eq0"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="0.69945954623287676" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -1420,14 +1427,18 @@
                                     <constraint firstItem="paE-ln-Lmo" firstAttribute="trailing" secondItem="9tS-ZU-rY7" secondAttribute="trailing" constant="20" id="8Dd-Hk-GTF"/>
                                     <constraint firstItem="VPg-UZ-Ctf" firstAttribute="leading" secondItem="KXI-mi-P6b" secondAttribute="leading" constant="60" id="COv-tW-jLe"/>
                                     <constraint firstItem="cq8-dZ-1az" firstAttribute="top" secondItem="CLK-nL-DhG" secondAttribute="bottom" constant="90" id="FNZ-OE-Pgd"/>
+                                    <constraint firstItem="bmC-gg-dzb" firstAttribute="trailing" secondItem="9tS-ZU-rY7" secondAttribute="trailing" id="Gob-rJ-uMe"/>
                                     <constraint firstItem="ufH-qg-LiI" firstAttribute="leading" secondItem="KXI-mi-P6b" secondAttribute="leading" constant="47" id="HAf-OR-PeG"/>
                                     <constraint firstItem="KN3-9H-4bf" firstAttribute="width" secondItem="cq8-dZ-1az" secondAttribute="width" id="InV-KB-WB4"/>
                                     <constraint firstItem="CLK-nL-DhG" firstAttribute="width" secondItem="ufH-qg-LiI" secondAttribute="width" id="Iqe-7o-YN5"/>
-                                    <constraint firstItem="9tS-ZU-rY7" firstAttribute="top" secondItem="CLK-nL-DhG" secondAttribute="bottom" constant="18" id="OOx-Mt-2Q9"/>
+                                    <constraint firstItem="bmC-gg-dzb" firstAttribute="bottom" secondItem="9tS-ZU-rY7" secondAttribute="bottom" constant="20" id="JLf-MD-qKE"/>
+                                    <constraint firstItem="bmC-gg-dzb" firstAttribute="leading" secondItem="9tS-ZU-rY7" secondAttribute="leading" constant="-20" id="NUz-XZ-mvn"/>
+                                    <constraint firstItem="9tS-ZU-rY7" firstAttribute="top" secondItem="CLK-nL-DhG" secondAttribute="bottom" constant="25" id="OOx-Mt-2Q9"/>
                                     <constraint firstItem="pfo-lE-6Vq" firstAttribute="centerX" secondItem="VPg-UZ-Ctf" secondAttribute="centerX" id="TeC-AE-BOd"/>
                                     <constraint firstItem="KN3-9H-4bf" firstAttribute="top" secondItem="cq8-dZ-1az" secondAttribute="bottom" constant="31" id="Xt6-j9-Pki"/>
                                     <constraint firstItem="cq8-dZ-1az" firstAttribute="width" secondItem="CLK-nL-DhG" secondAttribute="width" id="YYj-mT-28O"/>
                                     <constraint firstItem="VPg-UZ-Ctf" firstAttribute="centerX" secondItem="KXI-mi-P6b" secondAttribute="centerX" id="YtC-Cc-lMb"/>
+                                    <constraint firstItem="bmC-gg-dzb" firstAttribute="top" secondItem="9tS-ZU-rY7" secondAttribute="top" id="hF3-rj-zUr"/>
                                     <constraint firstItem="paE-ln-Lmo" firstAttribute="width" secondItem="9tS-ZU-rY7" secondAttribute="width" constant="30" id="hGe-Cr-zyi"/>
                                     <constraint firstItem="KN3-9H-4bf" firstAttribute="centerX" secondItem="cq8-dZ-1az" secondAttribute="centerX" id="luj-wb-GAA"/>
                                     <constraint firstItem="VPg-UZ-Ctf" firstAttribute="top" secondItem="KXI-mi-P6b" secondAttribute="top" constant="143" id="nep-Cy-d9T"/>
@@ -1454,6 +1465,7 @@
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
                     <connections>
+                        <outlet property="emailResetButtonOutlet" destination="bmC-gg-dzb" id="b2D-Vg-fbj"/>
                         <outlet property="emailTextField" destination="SX9-8t-gFK" id="txk-jC-hD1"/>
                         <outlet property="forgetPasswordLabel" destination="9tS-ZU-rY7" id="1ch-Aa-hVU"/>
                         <outlet property="gotoSignUpLabel" destination="KN3-9H-4bf" id="oMZ-Wh-Wow"/>
