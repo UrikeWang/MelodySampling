@@ -101,7 +101,7 @@ class DownloadManager {
             var downloadPercentage: Double = 0
 
             for index in 0..<self.questionArray.count {
-
+                
                 let eachSong = self.questionArray[index].previewUrl
 
                 let destination: DownloadRequest.DownloadFileDestination = { _, _ in
@@ -142,6 +142,21 @@ class DownloadManager {
                         }
 
                     }
+                }
+                
+                let artworkDestination: DownloadRequest.DownloadFileDestination = { _, _ in
+                    
+                    let documentsURL = NSHomeDirectory() + "/Documents/"
+                    let artworkFileURL = URL(fileURLWithPath: documentsURL.appending("artworkImage\(index).jpg"))
+                    
+                    return (artworkFileURL, [.removePreviousFile, .createIntermediateDirectories])
+                    
+                }
+                
+                let artworkUrl = self.questionArray[index].artworkUrl
+                
+                Alamofire.download(artworkUrl, to: artworkDestination).response { _ in
+                    
                 }
             }
         })
