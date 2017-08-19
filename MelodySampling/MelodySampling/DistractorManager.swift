@@ -115,12 +115,9 @@ class DistractorManager {
 
         distractorIDArray = returnArray
 
-        for eachGenre in typeList {
-            for eachDistractorID in returnArray {
+        for eachDistractorID in returnArray {
 
-                getOneDistractor(input: eachDistractorID, genre: eachGenre.rawValue)
-
-            }
+            getOneDistractor(input: eachDistractorID, genre: genreInput)
         }
     }
 

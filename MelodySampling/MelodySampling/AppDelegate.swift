@@ -54,7 +54,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             self.window?.rootViewController = registerVC
         }
 
-        
         /*
         let distractorManager = DistractorManager()
 
@@ -96,7 +95,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         operationQ.addOperation(operation3)
  
  */
-        
+
         return true
     }
 
