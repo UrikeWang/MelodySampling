@@ -18,6 +18,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
+    var questionCounter: Int?
+
+    enum TypeList: String {
+        case mandarinPop, taiwanesePop, cantoPop, billboardPop
+    }
+
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
 
@@ -48,12 +54,49 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             self.window?.rootViewController = registerVC
         }
 
+        
+        /*
         let distractorManager = DistractorManager()
 
-        var randomList = distractorManager.getDistractorIDArray(arrayCount: 25, distractorBankCount: 400)
+        let genreTypeList: [String] = [ TypeList.mandarinPop.rawValue, TypeList.taiwanesePop.rawValue, TypeList.cantoPop.rawValue, TypeList.billboardPop.rawValue]
 
-        print(randomList)
+        let distractorCountSetting = 40
 
+        let distractorBankCountSetting = 400
+
+        let operationQ = OperationQueue()
+
+        let task0 = { distractorManager.getDistractorIDArray(distractorArrayCount: distractorCountSetting, distractorBankCount: distractorBankCountSetting, genre: TypeList.billboardPop.rawValue) }
+
+        let task1 = { distractorManager.getDistractorIDArray(distractorArrayCount: distractorCountSetting, distractorBankCount: distractorBankCountSetting, genre: TypeList.taiwanesePop.rawValue) }
+
+        let task2 = { distractorManager.getDistractorIDArray(distractorArrayCount: distractorCountSetting, distractorBankCount: distractorBankCountSetting, genre: TypeList.mandarinPop.rawValue) }
+
+        let task3 = { distractorManager.getDistractorIDArray(distractorArrayCount: distractorCountSetting, distractorBankCount: distractorBankCountSetting, genre: TypeList.cantoPop.rawValue) }
+        
+        let createQueue = DispatchQueue(label: "DownloadDistractor")
+        createQueue.sync(execute: task0)
+        createQueue.sync(execute: task1)
+        createQueue.sync(execute: task2)
+        createQueue.sync(execute: task3)
+        
+        
+        let operation0 = BlockOperation(block: task0)
+        let operation1 = BlockOperation(block: task1)
+        let operation2 = BlockOperation(block: task2)
+        let operation3 = BlockOperation(block: task3)
+        
+        operation1.addDependency(operation0)
+        operation2.addDependency(operation1)
+        operation3.addDependency(operation2)
+        
+        operationQ.addOperation(operation0)
+        operationQ.addOperation(operation1)
+        operationQ.addOperation(operation2)
+        operationQ.addOperation(operation3)
+ 
+ */
+        
         return true
     }
 

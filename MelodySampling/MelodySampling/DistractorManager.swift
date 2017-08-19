@@ -25,7 +25,11 @@ class DistractorManager {
 
     var mandarinPopDistractorMO: MandarinPopDistractorMO!
 
-    var mandarinPopDistractorArray = [MandarinPopDistractorMO]()
+    var billboardPopDistractorMO: BillboardPopDistractorMO!
+
+    var taiwanesePopDistractorMO: TaiwanesePopDistractorMO!
+
+    var cantoPopDistractorMO: CantoPopDistractorMO!
 
     var ref: DatabaseReference!
 
@@ -37,37 +41,64 @@ class DistractorManager {
 
     var saveContextTrigger: Int = 0
 
+    enum TypeList: String {
+        case mandarinPop, taiwanesePop, cantoPop, billboardPop
+    }
+
+    var typeList: [TypeList] = [.mandarinPop, .taiwanesePop, .cantoPop, .billboardPop]
+
     enum RequestDistractorsError: Error {
 
         case invalidResponse
     }
 
-    func getOneDistractor(input random: Int) {
+    func getOneDistractor(input random: Int, genre genreInput: String) {
 
         ref = Database.database().reference()
 
         let randomStr = "distractor" + String(random)
 
-        ref.child("distractorBanks").child("taiwanesePop").child("allList").queryOrderedByKey().queryEqual(toValue: randomStr).observeSingleEvent(of: .value, with: { (snapshot) in
+        ref.child("distractorBanks").child(genreInput).child("allList").queryOrderedByKey().queryEqual(toValue: randomStr).observeSingleEvent(of: .value, with: { (snapshot) in
 
             let json = JSON(snapshot.value)
 
-            print(json)
-            print(type(of: json))
-
-            print("歌名: \(json[randomStr].stringValue)")
+//            print("歌名: \(json[randomStr].stringValue)")
 
             self.distractors.append(json[randomStr].stringValue)
 
             if self.distractors.count == self.saveContextTrigger {
 
-                self.saveDistractorArrayToCoreData(input: self.distractors)
+                switch (genreInput) {
+
+                case TypeList.mandarinPop.rawValue:
+                    print("Trigger Mandarin")
+                    self.saveMandarinDistractors(input: self.distractors)
+
+                case TypeList.taiwanesePop.rawValue:
+                    print("Trigger Taiwanese")
+                    self.saveTaiwaneseDistractors(input: self.distractors)
+
+                case TypeList.cantoPop.rawValue:
+                    print("Trigger cantoPop")
+                    self.saveCantoDistractors(input: self.distractors)
+
+                case TypeList.billboardPop.rawValue:
+                    print("Trigger billboard")
+                    self.saveBillboardDistractors(input: self.distractors)
+
+                default:
+                    print("Trigger Mandarin(default)")
+                    self.saveMandarinDistractors(input: self.distractors)
+
+                }
             }
 
         })
     }
 
-    func getDistractorIDArray(arrayCount count: Int, distractorBankCount bankMax: Int) -> [Int] {
+    func getDistractorIDArray(distractorArrayCount count: Int, distractorBankCount bankMax: Int, genre genreInput: String) {
+
+        self.distractors = []
 
         self.saveContextTrigger = count
 
@@ -84,16 +115,16 @@ class DistractorManager {
 
         distractorIDArray = returnArray
 
-        for eachDistractorID in distractorIDArray {
+        for eachGenre in typeList {
+            for eachDistractorID in returnArray {
 
-            getOneDistractor(input: eachDistractorID)
+                getOneDistractor(input: eachDistractorID, genre: eachGenre.rawValue)
 
+            }
         }
-
-        return distractorIDArray
     }
 
-    func saveDistractorArrayToCoreData(input distractorArray: [String]) {
+    func saveMandarinDistractors(input distractorArray: [String]) {
 
         for eachDistractor in distractorArray {
 
@@ -103,7 +134,7 @@ class DistractorManager {
 
                 self.mandarinPopDistractorMO.distractorStr = eachDistractor
 
-                print("你存入了 \(eachDistractor) 在 Distractor CoreData 中")
+                print("你存入了 \(eachDistractor) 在 Mandarin Distractor CoreData 中")
 
                 appDelegate.saveContext()
 
@@ -111,4 +142,60 @@ class DistractorManager {
 
         }
     }
+
+    func saveBillboardDistractors(input distractorArray: [String]) {
+
+        for eachDistractor in distractorArray {
+
+            if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
+
+                self.billboardPopDistractorMO = BillboardPopDistractorMO(context: appDelegate.persistentContainer.viewContext)
+
+                self.billboardPopDistractorMO.distractorStr = eachDistractor
+
+                print("你存入了 \(eachDistractor) 在 Billboard Distractor CoreData 中")
+
+                appDelegate.saveContext()
+            }
+
+        }
+    }
+
+    func saveTaiwaneseDistractors(input distractorArray: [String]) {
+
+        for eachDistractor in distractorArray {
+
+            if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
+
+                self.taiwanesePopDistractorMO = TaiwanesePopDistractorMO(context: appDelegate.persistentContainer.viewContext)
+
+                self.taiwanesePopDistractorMO.distractorStr = eachDistractor
+
+                print("你存入了 \(eachDistractor) 在 Taiwanese Distractor CoreData 中")
+
+                appDelegate.saveContext()
+            }
+
+        }
+
+    }
+
+    func saveCantoDistractors(input distractorArray: [String]) {
+
+        for eachDistractor in distractorArray {
+
+            if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
+
+                self.cantoPopDistractorMO = CantoPopDistractorMO(context: appDelegate.persistentContainer.viewContext)
+
+                self.cantoPopDistractorMO.distractorStr = eachDistractor
+
+                print("你存入了 \(eachDistractor) 在 Cantonese Distractor CoreData 中")
+
+                appDelegate.saveContext()
+            }
+        }
+
+    }
+
 }
