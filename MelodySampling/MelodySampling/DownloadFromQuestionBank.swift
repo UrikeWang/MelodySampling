@@ -120,7 +120,7 @@ class DownloadManager {
                 Alamofire.download(eachSong, to: destination).downloadProgress { progress in
 
                     if downloadPercentage < 80 {
-                        downloadPercentage += progress.fractionCompleted * 2
+                        downloadPercentage += progress.fractionCompleted
                     } else {
                         downloadPercentage += 1
                     }
