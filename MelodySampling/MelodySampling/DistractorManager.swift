@@ -30,9 +30,9 @@ class DistractorManager {
     var taiwanesePopDistractorMO: TaiwanesePopDistractorMO!
 
     var cantoPopDistractorMO: CantoPopDistractorMO!
-    
+
     var distractorMO: DistractorMO!
-    
+
     var ref: DatabaseReference!
 
     var distractors = [String]()
@@ -71,7 +71,7 @@ class DistractorManager {
             if self.distractors.count == self.saveContextTrigger {
 
                 self.saveDistractors(input: self.distractors)
-                
+
                 /*
                 switch (genreInput) {
 
@@ -200,19 +200,19 @@ class DistractorManager {
         }
 
     }
-    
+
     func saveDistractors(input distractorArray: [String]) {
-        
+
         for eachDistractor in distractorArray {
-            
+
             if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
-                
+
                 self.distractorMO = DistractorMO(context: appDelegate.persistentContainer.viewContext)
-                
+
                 self.distractorMO.distractorStr = eachDistractor
-                
+
                 print("你存入了 \(eachDistractor) 在 Distractor CoreData 中")
-                
+
                 appDelegate.saveContext()
             }
         }
