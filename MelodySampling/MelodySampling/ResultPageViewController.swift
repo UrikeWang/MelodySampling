@@ -188,6 +188,21 @@ class ResultPageViewController: UIViewController, UITableViewDelegate, UITableVi
             cell.judgementImageView.image = UIImage(named: "wrong")
         }
 
+        let artworkUrl = questions[indexPath.row].artworkUrl
+        
+        DispatchQueue.global().async {
+            
+            if let data = try? Data(contentsOf: URL(string: artworkUrl!)!) {
+            
+                DispatchQueue.main.async {
+                    
+                    cell.artworkImageView.image = UIImage(data: data)
+                    
+                }
+            }
+        }
+        
+        /*
         let fileURL = URL(fileURLWithPath: self.documentsURL.appending("artworkImage\(indexPath.row).jpg"))
 
         do {
@@ -198,6 +213,7 @@ class ResultPageViewController: UIViewController, UITableViewDelegate, UITableVi
         } catch {
             print("Using place holder image")
         }
+ */
 
         return cell
     }
