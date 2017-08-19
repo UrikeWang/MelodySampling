@@ -30,16 +30,6 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
 
     let path: String = NSHomeDirectory() + "/Documents/"
 
-    var fake0 = ["被愛是幸福", "相思無用", "你的眼睛是星星"]
-
-    var fake3 = ["苦瓜", "葡萄成熟時", "浮誇"]
-
-    var fake2 = ["冬季來的女人", "海闊天空", "破曉"]
-
-    var fake1 = ["美人駕到", "水溫", "愛與被愛"]
-
-    var fake4 = ["但願人長久", "旗子", "天空"]
-
     var questionList = [String]()
 
     var currentTrack: Int = 0
@@ -414,12 +404,11 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return self.tableView.frame.height / 4
     }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        
+
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
         let clearDistractorData = CheckQuestionInCoreData()
         clearDistractorData.clearDistractorMO()
     }
-
+    
 }
