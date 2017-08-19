@@ -61,12 +61,12 @@ class ResultPageViewController: UIViewController, UITableViewDelegate, UITableVi
     @IBOutlet weak var userProfileImageView: UIImageView!
 
     @IBOutlet weak var userStarsStackView: UIStackView!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         userStarsStackView.isHidden = true
-        
+
         tableView.delegate = self
 
         tableView.dataSource = self

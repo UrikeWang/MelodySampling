@@ -16,7 +16,7 @@ import SwiftyJSON
 //如果我只要15個，那就直接使用 random，範圍就在 firebase 上的題庫最大值，然後塞入 seedArray, while seedArray.count <15, 就不斷的取值，每一次取值都要比對 seedArray 裡面的值，沒出現過的才塞入。
 
 protocol DistractorManagerDelegate: class {
-    
+
     func manager(_ manager: DistractorManager, didGet distractors: [String])
     func manager(_ manager: DistractorManager, didFailWith error: Error)
 }
@@ -24,13 +24,13 @@ protocol DistractorManagerDelegate: class {
 class DistractorManager {
 
     var ref: DatabaseReference!
-    
+
     var distractors = [String]()
-    
+
     weak var delegate: DistractorManagerDelegate?
-    
+
     enum RequestDistractorsError: Error {
-        
+
         case invalidResponse
     }
 
@@ -47,44 +47,40 @@ class DistractorManager {
             print(type(of: json))
 
             print("歌名: \(json[randomStr].stringValue)")
-        
-        
+
             completion(json[randomStr].stringValue)
 
         })
     }
-    
-    //MARK: This func need to be revised.
+
+    // MARK: This func need to be revised.
     func getDistractorsList() {
-        
+
         var counter = 15
-        
+
         ref = Database.database().reference()
-        
+
         counter = 0
-        
+
         while distractors.count != 15 {
-            
+
             let input = random(400)
-            
+
             getOneDistractor(input: input, completion: { download in
                 self.distractors.append(download)
-                
+
                 if self.distractors.count == 15 {
-                    
+
                     print(self.distractors)
-                    
+
                     self.delegate?.manager(self, didGet: self.distractors)
-                    
+
                 }
-                
+
             })
-            
-            
-            
+
         }
-        
+
     }
-    
 
 }

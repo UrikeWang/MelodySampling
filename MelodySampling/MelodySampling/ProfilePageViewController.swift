@@ -16,9 +16,9 @@ class ProfilePageViewController: UIViewController, UITableViewDelegate, UITableV
 
     @IBOutlet weak var userProfileImageView: UIImageView!
     var fetchResultController: NSFetchedResultsController<HistoryMO>!
-    
+
     var historyList: [HistoryMO] = []
-    
+
     var distracorList = [String]()
 
     @IBOutlet weak var playButtonLabel: UILabel!
@@ -26,7 +26,7 @@ class ProfilePageViewController: UIViewController, UITableViewDelegate, UITableV
     @IBOutlet weak var playTextLabel: UILabel!
 
     @IBOutlet weak var invisibleButton: UIButton!
-    
+
     @IBOutlet weak var logOutView: UIView!
 
     @IBOutlet weak var logOutContentView: UIView!
@@ -73,16 +73,15 @@ class ProfilePageViewController: UIViewController, UITableViewDelegate, UITableV
 
         let distractorManager = DistractorManager()
         distractorManager.delegate = self
-        
+
         let randomSeed = random(50)
-        
+
         print(randomSeed)
-        
-        distractorManager.getOneDistractor(input: randomSeed) { (result) in
-            print(result)
+
+        distractorManager.getOneDistractor(input: randomSeed) { (_) in
+
         }
-        
-        
+
         if let questionCounter = UserDefaults.standard.object(forKey: "questionCounter") {
         }
 
@@ -181,11 +180,11 @@ class ProfilePageViewController: UIViewController, UITableViewDelegate, UITableV
 
         return cell
     }
-    
+
     func manager(_ manager: DistractorManager, didFailWith error: Error) {
         print(Error.self)
     }
-    
+
     func manager(_ manager: DistractorManager, didGet distractors: [String]) {
         self.distracorList = distractors
     }

@@ -87,14 +87,14 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
     @IBOutlet weak var tableView: UITableView!
 
     @IBOutlet weak var playingSongLabel: UILabel!
-    
+
     @IBOutlet weak var leftStarsStackView: UIStackView!
-    
+
     @IBOutlet weak var rightStarsStackView: UIStackView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         leftStarsStackView.isHidden = true
         rightStarsStackView.isHidden = true
 
