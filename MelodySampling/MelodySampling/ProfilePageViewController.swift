@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 import CoreData
 
-class ProfilePageViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate, DistractorManagerDelegate {
+class ProfilePageViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate {
 
     @IBOutlet weak var historyTableView: UITableView!
 
@@ -69,18 +69,7 @@ class ProfilePageViewController: UIViewController, UITableViewDelegate, UITableV
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        print("===== =====")
-
-        let distractorManager = DistractorManager()
-        distractorManager.delegate = self
-
-        let randomSeed = random(50)
-
-        print(randomSeed)
-
-        distractorManager.getOneDistractor(input: randomSeed) { (_) in
-
-        }
+        print("===== Profile Page =====")
 
         if let questionCounter = UserDefaults.standard.object(forKey: "questionCounter") {
         }
@@ -179,14 +168,6 @@ class ProfilePageViewController: UIViewController, UITableViewDelegate, UITableV
         //swiftlint:enable
 
         return cell
-    }
-
-    func manager(_ manager: DistractorManager, didFailWith error: Error) {
-        print(Error.self)
-    }
-
-    func manager(_ manager: DistractorManager, didGet distractors: [String]) {
-        self.distracorList = distractors
     }
 
 }

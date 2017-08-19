@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="12141" systemVersion="16E195" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="BillboardPopDistractorMO" representedClassName="BillboardPopDistractorMO" syncable="YES" codeGenerationType="class">
+        <attribute name="distractorStr" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="CantoPopDistractorMO" representedClassName="CantoPopDistractorMO" syncable="YES" codeGenerationType="class">
+        <attribute name="distractorStr" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <entity name="HistoryMO" representedClassName="HistoryMO" syncable="YES" codeGenerationType="class">
         <attribute name="artistID" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="artistName" optional="YES" attributeType="String" syncable="YES"/>
@@ -13,6 +19,9 @@
         <attribute name="timeIndex" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="trackID" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="trackName" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="MandarinPopDistractorMO" representedClassName="MandarinPopDistractorMO" syncable="YES" codeGenerationType="class">
+        <attribute name="distractorStr" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="QuestionMO" representedClassName="QuestionMO" syncable="YES" codeGenerationType="class">
         <attribute name="artistID" optional="YES" attributeType="String" syncable="YES"/>
@@ -31,9 +40,16 @@
         <attribute name="result" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="usedTime" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
     </entity>
+    <entity name="TaiwanesePopDistractorMO" representedClassName="TaiwanesePopDistractorMO" syncable="YES" codeGenerationType="class">
+        <attribute name="distractorStr" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <elements>
-        <element name="HistoryMO" positionX="-27" positionY="72" width="128" height="225"/>
-        <element name="QuestionMO" positionX="-45" positionY="0" width="128" height="195"/>
-        <element name="ResultMO" positionX="-18" positionY="99" width="128" height="90"/>
+        <element name="HistoryMO" positionX="-29" positionY="-198" width="128" height="225"/>
+        <element name="QuestionMO" positionX="-189" positionY="-168" width="128" height="195"/>
+        <element name="ResultMO" positionX="-189" positionY="-270" width="128" height="90"/>
+        <element name="MandarinPopDistractorMO" positionX="-108" positionY="-144" width="128" height="60"/>
+        <element name="TaiwanesePopDistractorMO" positionX="-99" positionY="-135" width="128" height="60"/>
+        <element name="BillboardPopDistractorMO" positionX="-90" positionY="-126" width="128" height="60"/>
+        <element name="CantoPopDistractorMO" positionX="-81" positionY="-117" width="128" height="60"/>
     </elements>
 </model>

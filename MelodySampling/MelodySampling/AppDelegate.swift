@@ -48,6 +48,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             self.window?.rootViewController = registerVC
         }
 
+        let distractorManager = DistractorManager()
+
+        var randomList = distractorManager.getDistractorIDArray(arrayCount: 25, distractorBankCount: 400)
+        
+        
+        print(randomList)
+        
+        distractorManager.getOneDistractor(input: 20) { (string) in
+            print(" 這一段是 manager 裡面做的事 \(string)")
+        }
+
+        
+
         return true
     }
 

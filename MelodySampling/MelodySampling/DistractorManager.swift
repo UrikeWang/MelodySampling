@@ -29,6 +29,8 @@ class DistractorManager {
 
     weak var delegate: DistractorManagerDelegate?
 
+    var distractorIDArray = [Int]()
+    
     enum RequestDistractorsError: Error {
 
         case invalidResponse
@@ -49,8 +51,36 @@ class DistractorManager {
             print("歌名: \(json[randomStr].stringValue)")
 
             completion(json[randomStr].stringValue)
+            
+            self.distractors.append(json[randomStr].stringValue)
+            
+            print("這是 distractors \(self.distractors)")
 
         })
+    }
+
+    func getDistractorIDArray(arrayCount count: Int, distractorBankCount bankMax: Int) -> [Int] {
+
+        var returnArray = [Int]()
+
+        while returnArray.count != count {
+
+            let distractorID = random(bankMax)
+
+            if returnArray.contains(distractorID) == false {
+                returnArray.append(distractorID)
+            }
+        }
+        
+        distractorIDArray = returnArray
+
+        return distractorIDArray
+    }
+    
+    func getDistractorArray() {
+        
+        
+        
     }
 
     // MARK: This func need to be revised.
