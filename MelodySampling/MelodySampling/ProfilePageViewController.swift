@@ -239,7 +239,6 @@ class ProfilePageViewController: UIViewController, UITableViewDelegate, UITableV
 
         createNextBattleOfResult(target: playButtonLabel)
 
-        
         if historyList.count == 0 {
 
             let framOfTableView = self.historyTableView.frame

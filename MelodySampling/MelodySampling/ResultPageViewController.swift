@@ -68,12 +68,12 @@ class ResultPageViewController: UIViewController, UITableViewDelegate, UITableVi
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-     
+
         createProfileViewOfResult(target: self.profilePageView)
-        
+
         createNextBattleOfResult(target: nextBattleLabel)
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -174,9 +174,9 @@ class ResultPageViewController: UIViewController, UITableViewDelegate, UITableVi
 
         }
     }
-    
+
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        
+
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
