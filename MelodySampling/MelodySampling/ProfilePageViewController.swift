@@ -14,7 +14,11 @@ class ProfilePageViewController: UIViewController, UITableViewDelegate, UITableV
 
     var imageCache = NSCache<NSString, UIImage>()
 
-    @IBOutlet weak var historyTableView: UITableView!
+    @IBOutlet weak var historyTableView: UITableView! {
+        didSet {
+            historyTableView.backgroundColor = UIColor.mldUltramarine
+        }
+    }
 
     @IBOutlet weak var userProfileImageView: UIImageView!
 
@@ -124,11 +128,7 @@ class ProfilePageViewController: UIViewController, UITableViewDelegate, UITableV
 
         historyTableView.dataSource = self
 
-        createNextBattleOfResult(target: playButtonLabel)
-
         createUserProfileImage(targe: userProfileImageView)
-
-        createUserProfilePageLogoutBackground(target: logOutView)
 
         logOutContentView.backgroundColor = UIColor.clear
 
@@ -176,27 +176,23 @@ class ProfilePageViewController: UIViewController, UITableViewDelegate, UITableV
             }
 
         }
-
-        if historyList.count == 0 {
-
-            let framOfTableView = self.historyTableView.frame
-
-            let emptyView = UIView(frame: framOfTableView)
-
-            createProfilePageHistoryCellBackground(target: emptyView)
-
-            let emptyLabel = createLabel(at: emptyView, content: "尚無對戰紀錄", color: UIColor.white, font: UIFont.mldTextStyleEmptyFont()!)
-
-            self.view.addSubview(emptyView)
-
-            self.view.addSubview(emptyLabel)
-
-        }
-
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return historyList.count
+    }
+
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+
+        gradientLayer = CAGradientLayer()
+
+        gradientLayer.frame = cell.bounds
+
+        gradientLayer.colors = [UIColor.mldUltramarineBlueTwo.cgColor, UIColor.mldUltramarine.cgColor]
+
+        cell.layer.insertSublayer(gradientLayer, at: 0)
+        cell.backgroundColor = UIColor.clear
+
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -216,32 +212,49 @@ class ProfilePageViewController: UIViewController, UITableViewDelegate, UITableV
 
         } else {
 
-        DispatchQueue.global().async {
+            DispatchQueue.global().async {
 
-            guard let artworkUrl = self.historyList[indexPath.row].artworkUrl, let url = URL(string: artworkUrl) else { return }
+                guard let artworkUrl = self.historyList[indexPath.row].artworkUrl, let url = URL(string: artworkUrl) else { return }
 
-            if let data = try? Data(contentsOf: url) {
+                if let data = try? Data(contentsOf: url) {
 
-                DispatchQueue.main.async {
+                    DispatchQueue.main.async {
 
-                    guard let imageToCache = UIImage(data: data) else {return}
+                        guard let imageToCache = UIImage(data: data) else {return}
 
-                    self.imageCache.setObject(imageToCache, forKey: artworkUrl as NSString)
+                        self.imageCache.setObject(imageToCache, forKey: artworkUrl as NSString)
 
-                    cell.artworkImageView.image = imageToCache
-
+                        cell.artworkImageView.image = imageToCache
+                    }
                 }
-
-            }
-
             }
         }
-
-        //swiftlint:disable force_cast
-//        cell.artworkImageView.image = UIImage(data: historyList[indexPath.row].artworkImage as! Data)
-        //swiftlint:enable
-
         return cell
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        createUserProfilePageLogoutBackground(target: logOutView)
+
+        createNextBattleOfResult(target: playButtonLabel)
+
+        if historyList.count == 0 {
+
+            let framOfTableView = self.historyTableView.frame
+
+            let emptyView = UIView(frame: framOfTableView)
+
+            createProfilePageHistoryCellBackground(target: emptyView)
+
+            let emptyLabel = createLabel(at: emptyView, content: "尚無對戰紀錄", color: UIColor.white, font: UIFont.mldTextStyleEmptyFont()!)
+
+            self.view.addSubview(emptyView)
+
+            self.view.addSubview(emptyLabel)
+
+        }
+
     }
 
 }

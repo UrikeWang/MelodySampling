@@ -117,8 +117,6 @@ class LandingPageViewController: UIViewController {
 
         setCornerRadiustTo(anonymousLoginLabel)
 
-        createGradientOnLabel(target: anonymousLoginLabel)
-
         loginButtonOutlet.setTitleColor(UIColor.clear, for: .normal)
 
         signUpButtonOutlet.setTitleColor(UIColor.clear, for: .normal)
@@ -140,6 +138,12 @@ class LandingPageViewController: UIViewController {
 
         })
 
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        createGradientOnLabel(target: anonymousLoginLabel)
     }
 
     override func didReceiveMemoryWarning() {

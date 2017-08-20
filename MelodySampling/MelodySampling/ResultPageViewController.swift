@@ -66,6 +66,14 @@ class ResultPageViewController: UIViewController, UITableViewDelegate, UITableVi
 
     @IBOutlet weak var userStarsStackView: UIStackView!
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        createProfileViewOfResult(target: self.profilePageView)
+
+        createNextBattleOfResult(target: nextBattleLabel)
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -80,10 +88,6 @@ class ResultPageViewController: UIViewController, UITableViewDelegate, UITableVi
         tableView.delegate = self
 
         tableView.dataSource = self
-
-        createProfileViewOfResult(target: self.profilePageView)
-
-        createNextBattleOfResult(target: nextBattleLabel)
 
         invisibleNextGameButtonOutlet.setTitleColor(UIColor.clear, for: .normal)
 
@@ -169,6 +173,10 @@ class ResultPageViewController: UIViewController, UITableViewDelegate, UITableVi
             resultsArray.append(temp)
 
         }
+    }
+
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
