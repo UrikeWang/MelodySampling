@@ -52,6 +52,8 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
 
     var score: Double = 0
 
+    let userDefault = UserDefaults.standard
+
     var trackNameArray = [String]()
 
     var artistNameArray = [String]()
@@ -88,8 +90,18 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
 
     @IBOutlet weak var rightStarsStackView: UIStackView!
 
+    @IBOutlet weak var rightUserImageView: UIImageView!
+
+    @IBOutlet weak var leftUserImageView: UIImageView!
+
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        if let userProfileImageData = userDefault.object(forKey: "UserProfileImage") as? Data {
+
+            rightUserImageView.image = UIImage(data: userProfileImageData)
+
+        }
 
         leftStarsStackView.isHidden = true
         rightStarsStackView.isHidden = true
@@ -104,7 +116,7 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
         trackIndicator3.tag = 3
         trackIndicator4.tag = 4
 
-        if let userName = UserDefaults.standard.object(forKey: "userName") as? String {
+        if let userName = userDefault.object(forKey: "userName") as? String {
             userNameLabel.text = userName
         } else {
             userNameLabel.text = "This is you"
@@ -167,11 +179,6 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
 
                     return (fileURL, [.removePreviousFile, .createIntermediateDirectories])
                 }
-
-                /*
-                Alamofire.download(artworkUrl, to: destinnation).response { _ in
-                }
- */
 
                 print("===== Play Page =====")
                 print("第 \(counter) 首, artistName: \(question.artistName), trackName: \(question.trackName)")
@@ -286,8 +293,6 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
         if prepareTrack == 5 {
 
             player?.pause()
-
-            let userDefault = UserDefaults.standard
 
             userDefault.set(score, forKey: "Score")
 
