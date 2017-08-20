@@ -104,7 +104,7 @@ class TypeChooseViewController: UIViewController, UITableViewDataSource, UITable
 
             cell.backgroundImageView.image = UIImage(named: "pic_Wpop_new")
 
-            cell.genreButtonOutlet.setTitle("世界流行", for: .normal)
+            cell.genreButtonOutlet.setTitle("全球流行", for: .normal)
 
         }
 
