@@ -33,12 +33,14 @@ class ResultPageViewController: UIViewController, UITableViewDelegate, UITableVi
 
     @IBOutlet weak var invisibleNextGameButtonOutlet: UIButton!
     @IBAction func invisibleNextGameButtonTapped(_ sender: UIButton) {
+        saveResultToHistory()
         gotoTypeChoosePage(from: self)
     }
 
     @IBOutlet weak var invisibleGoHomeButtonOutlet: UIButton!
 
     @IBAction func invisibleGoHomeButtonTapped(_ sender: UIButton) {
+        saveResultToHistory()
         gotoProfilePage(from: self)
     }
 
@@ -159,8 +161,8 @@ class ResultPageViewController: UIViewController, UITableViewDelegate, UITableVi
             resultsArray.append(temp)
 
         }
-
-        saveResultToHistory()
+// MARK: 把這個指令放到按下 button
+//        saveResultToHistory()
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -188,15 +190,18 @@ class ResultPageViewController: UIViewController, UITableViewDelegate, UITableVi
             cell.judgementImageView.image = UIImage(named: "wrong")
         }
 
-        let fileURL = URL(fileURLWithPath: self.documentsURL.appending("artworkImage\(indexPath.row).jpg"))
+        let artworkUrl = questions[indexPath.row].artworkUrl
 
-        do {
-            let data = try Data(contentsOf: fileURL)
+        DispatchQueue.global().async {
 
-            cell.artworkImageView.image = UIImage(data: data)
+            if let data = try? Data(contentsOf: URL(string: artworkUrl!)!) {
 
-        } catch {
-            print("Using place holder image")
+                DispatchQueue.main.async {
+
+                    cell.artworkImageView.image = UIImage(data: data)
+
+                }
+            }
         }
 
         return cell
@@ -223,6 +228,7 @@ class ResultPageViewController: UIViewController, UITableViewDelegate, UITableVi
 
             var image = UIImage(named: "collectionPlaceHolder")
 
+            /*
             let fileURL = URL(fileURLWithPath: self.documentsURL.appending("artworkImage\(picIndex).jpg"))
 
             do {
@@ -234,6 +240,7 @@ class ResultPageViewController: UIViewController, UITableViewDelegate, UITableVi
             } catch {
                 print("image didn't download yet")
             }
+ */
 
             if let artistID = question.artistID, let artistName = question.artistName, let trackID = question.trackID, let trackName = question.trackName, let artworkUrl = question.artworkUrl, let previewUrl = question.previewUrl, let collectionID = question.collectionID, let collectionName = question.collectionName, let primaryGenreName = question.primaryGenreName {
 
@@ -241,7 +248,7 @@ class ResultPageViewController: UIViewController, UITableViewDelegate, UITableVi
 
                     self.historyMO = HistoryMO(context: appDelegate.persistentContainer.viewContext)
 
-                    self.historyMO.artworkImage = imageData
+                    self.historyMO.artworkImage = UIImagePNGRepresentation(UIImage(named: "collectionPlaceHolder")!) as! NSData
 
                     picIndex += 1
 

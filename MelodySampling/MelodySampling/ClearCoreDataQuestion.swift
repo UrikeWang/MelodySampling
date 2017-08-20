@@ -19,7 +19,7 @@ class CheckQuestionInCoreData: UIViewController, NSFetchedResultsControllerDeleg
     var fetchHistoryResultController: NSFetchedResultsController<HistoryMO>!
 
     var distractors: [DistractorMO] = []
-    
+
     var questions: [QuestionMO] = []
 
     var results: [ResultMO] = []
@@ -70,30 +70,30 @@ class CheckQuestionInCoreData: UIViewController, NSFetchedResultsControllerDeleg
         }
 
     }
-    
+
     func clearDistractorMO() {
-        
+
         if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
-            
+
             let fetchDistractorRequest: NSFetchRequest<DistractorMO> = DistractorMO.fetchRequest()
-            
+
             let context = appDelegate.persistentContainer.viewContext
-            
+
             do {
-                
+
                 distractors = try context.fetch(fetchDistractorRequest)
-                
+
                 for eachDistractor in distractors {
                     context.delete(eachDistractor)
                     appDelegate.saveContext()
                 }
                 print("distractorMO were deleted")
-                
+
             } catch {
                 print(error)
             }
         }
-        
+
     }
 
     func clearQuestionMO() {

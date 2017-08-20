@@ -238,21 +238,21 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
         default:
             trackIndicator4.image = UIImage(named: "icon_CD_white_new")
         }
-        
+
         let aiResult = random(4)
-        
+
         if aiResult > 0 {
-            
-            guard var aiScoreStr = leftUserScoreLabel.text else { return }
-            
+
+            guard let aiScoreStr = leftUserScoreLabel.text else { return }
+
             guard var aiScore = Int(aiScoreStr) else { return }
-            
+
             let aiGet = 600 + random(3000)
-            
+
             aiScore += aiGet
-            
+
             leftUserScoreLabel.text = "\(aiScore)"
-            
+
         }
 
         if judgeAnswer(input: selectedAnswer, compare: answer) {
@@ -317,27 +317,27 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
 //            var fakeList = [fake0, fake1, fake2, fake3, fake4]
 
             var fakeList: [[String]] = []
-            
+
             while fakeList.count != 5 {
-                
+
                 var eachFakeList: [String] = []
-                
+
                 while eachFakeList.count != 3 {
-                    
+
                     let firstItem = distractors.first
-                    
+
                     guard let distractor = firstItem?.distractorStr else { return }
                     eachFakeList.append(distractor)
-                    
+
                     distractors.remove(at: 0)
-                    
+
                 }
-                
+
                 fakeList.append(eachFakeList)
-                
+
                 print(eachFakeList)
             }
-            
+
             questionList = fakeList[prepareTrack]
 
             questionList.append(trackNameArray[prepareTrack])
@@ -386,13 +386,13 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
 
         print("現在在第 \(currentTrack) 首")
         print("接下來是第 \(prepareTrack) 首")
-        
+
         for index in 0..<3 {
             print(index)
             let distractorItem = distractors[index]
-            
+
             guard let distractor = distractorItem.distractorStr else { return }
-            
+
             if self.questionList.contains(distractor) == false {
                 self.questionList.append(distractor)
             }
@@ -428,5 +428,5 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
         let clearDistractorData = CheckQuestionInCoreData()
         clearDistractorData.clearDistractorMO()
     }
-    
+
 }

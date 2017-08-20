@@ -12,6 +12,8 @@ import CoreData
 
 class ProfilePageViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate {
 
+    var imageCache = NSCache<NSString, UIImage>()
+
     @IBOutlet weak var historyTableView: UITableView!
 
     @IBOutlet weak var userProfileImageView: UIImageView!
@@ -163,8 +165,36 @@ class ProfilePageViewController: UIViewController, UITableViewDelegate, UITableV
 
         cell.artistNameLabel.text = historyList[indexPath.row].artistName
         cell.trackNameLabel.text = historyList[indexPath.row].trackName
+
+        if let imageFromCache = imageCache.object(forKey: historyList[indexPath.row].artworkUrl! as NSString) {
+
+            cell.artworkImageView.image = imageFromCache
+
+        } else {
+
+        DispatchQueue.global().async {
+
+            guard let artworkUrl = self.historyList[indexPath.row].artworkUrl, let url = URL(string: artworkUrl) else { return }
+
+            if let data = try? Data(contentsOf: url) {
+
+                DispatchQueue.main.async {
+
+                    guard let imageToCache = UIImage(data: data) else {return}
+
+                    self.imageCache.setObject(imageToCache, forKey: artworkUrl as NSString)
+
+                    cell.artworkImageView.image = imageToCache
+
+                }
+
+            }
+
+            }
+        }
+
         //swiftlint:disable force_cast
-        cell.artworkImageView.image = UIImage(data: historyList[indexPath.row].artworkImage as! Data)
+//        cell.artworkImageView.image = UIImage(data: historyList[indexPath.row].artworkImage as! Data)
         //swiftlint:enable
 
         return cell
