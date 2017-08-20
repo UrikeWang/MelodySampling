@@ -24,6 +24,117 @@ class DownloadManager {
 
     let userDefault = UserDefaults.standard
 
+    func downloadRandomQuestion(selected language: String, max bankMaxNumber: Int, viewController thisView: UIViewController) {
+
+        var downloadCount = 0
+        
+        var downloadPercentage: Double = 0
+
+        print("目標題庫是 \(language)")
+
+        let progressContentView = UIView(frame: CGRect(x: 0, y: 0, width: thisView.view.frame.width, height: thisView.view.frame.height))
+
+        let progressRing = UICircularProgressRingView(frame: CGRect(x: thisView.view.frame.width / 2 - 120, y: thisView.view.frame.height / 2 - 120, width: 240, height: 240))
+
+        progressRing.maxValue = 100
+
+        progressRing.outerRingColor = UIColor.green
+
+        progressRing.innerRingColor = UIColor.blue
+
+        progressContentView.backgroundColor = UIColor.white
+
+        progressContentView.addSubview(progressRing)
+
+        thisView.view.addSubview(progressContentView)
+
+        var questionList: [EachQuestion] = []
+
+        var segueCounter = 0
+        
+        for counter in 0..<5 {
+            let trackIndex = random(bankMaxNumber)
+            
+            let finder = "track" + String(trackIndex)
+            
+            ref = Database.database().reference()
+            
+            ref.child("questionBanks").child(language).child("allList").child(finder).queryOrderedByKey().observeSingleEvent(of: .value, with: { (snapshot) in
+                
+                let json = JSON(snapshot.value)
+                
+                print("======")
+                print(json["artistId"].intValue)
+                print(json["artistName"].stringValue)
+                print(json["trackId"].intValue)
+                print(json["trackName"].stringValue)
+                print(json["artworkUrl100"].stringValue)
+                print(json["previewUrl"].stringValue)
+                print(json["collectionId"].intValue)
+                print(json["collectionName"].stringValue)
+                print(json["primaryGenreName"].stringValue)
+                print(counter)
+                
+                let eachQuestion = EachQuestion(artistID: json["artistId"].intValue, artistName: json["artistName"].stringValue, trackID: json["trackId"].intValue, trackName: json["trackName"].stringValue, artworkUrl: json["artworkUrl100"].stringValue, previewUrl: json["previewUrl"].stringValue, collectionID: json["collectionId"].intValue, collectionName: json["collectionName"].stringValue, primaryGenreName: json["primaryGenreName"].stringValue)
+                
+                if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
+                    
+                    self.questionMO = QuestionMO(context: appDelegate.persistentContainer.viewContext)
+                    
+                    self.questionMO.indexNo = Int16(counter)
+                    self.questionMO.artistID = String(eachQuestion.artistID)
+                    self.questionMO.artistName = eachQuestion.artistName
+                    self.questionMO.trackID = String(eachQuestion.trackID)
+                    self.questionMO.trackName = eachQuestion.trackName
+                    self.questionMO.artworkUrl = eachQuestion.artworkUrl
+                    self.questionMO.previewUrl = eachQuestion.previewUrl
+                    self.questionMO.collectionID = String(eachQuestion.collectionID)
+                    self.questionMO.collectionName = eachQuestion.collectionName
+                    self.questionMO.primaryGenreName = eachQuestion.primaryGenreName
+                    
+                    appDelegate.saveContext()
+                }
+                
+                let destination: DownloadRequest.DownloadFileDestination = { _, _ in
+                    let documentsURL = NSHomeDirectory() + "/Documents/"
+                    let fileURL = URL(fileURLWithPath: documentsURL.appending("song\(counter).m4a"))
+                    print("song\(counter).m4a is downloading")
+                    
+                    return (fileURL, [.removePreviousFile, .createIntermediateDirectories])
+                }
+                
+                let distractorManager = DistractorManager()
+                
+                _ = distractorManager.getDistractorIDArray(distractorArrayCount: 40, distractorBankCount: 400, genre: language)
+                
+                Alamofire.download(eachQuestion.previewUrl, to: destination).downloadProgress { progress in
+                    
+                    if downloadPercentage < 80 {
+                        downloadPercentage += progress.fractionCompleted
+                    } else {
+                        downloadPercentage += 1
+                    }
+                    
+                    progressRing.setProgress(value: CGFloat(downloadPercentage), animationDuration: 0.01) {}
+                    
+                    }.response { _ in
+                        
+                        downloadCount += 1
+                        
+                        if downloadCount == 5 {
+                            
+                            progressRing.setProgress(value: CGFloat(downloadCount * 20), animationDuration: 0.01) {
+                                
+                                let registerVC = thisView.storyboard?.instantiateViewController(withIdentifier: "PlayPage")
+                                
+                                thisView.present(registerVC!, animated: true, completion: nil)
+                            }
+                        }
+                }
+            })
+        }
+    }
+
     func downloadQuestion(selected language: String, genre code: Int, viewController thisView: UIViewController) {
 
         let genreCode = "genreCode" + String(code)

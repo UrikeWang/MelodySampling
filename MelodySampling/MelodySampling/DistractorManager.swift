@@ -103,8 +103,6 @@ class DistractorManager {
 
                 self.distractorMO.distractorStr = eachDistractor
 
-                print("你存入了 \(eachDistractor) 在 Distractor CoreData 中")
-
                 appDelegate.saveContext()
             }
         }

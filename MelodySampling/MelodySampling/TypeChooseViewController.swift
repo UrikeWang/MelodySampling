@@ -134,7 +134,8 @@ class TypeChooseViewController: UIViewController, UITableViewDataSource, UITable
 
             let downloadManager = DownloadManager()
 
-        downloadManager.downloadQuestion(selected: language, genre: 1, viewController: self)
+//        downloadManager.downloadQuestion(selected: language, genre: 1, viewController: self)
+        downloadManager.downloadRandomQuestion(selected: language, max: 1000, viewController: self)
 
     }
 
