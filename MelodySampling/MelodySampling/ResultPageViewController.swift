@@ -201,19 +201,6 @@ class ResultPageViewController: UIViewController, UITableViewDelegate, UITableVi
                 }
             }
         }
-        
-        /*
-        let fileURL = URL(fileURLWithPath: self.documentsURL.appending("artworkImage\(indexPath.row).jpg"))
-
-        do {
-            let data = try Data(contentsOf: fileURL)
-
-            cell.artworkImageView.image = UIImage(data: data)
-
-        } catch {
-            print("Using place holder image")
-        }
- */
 
         return cell
     }
