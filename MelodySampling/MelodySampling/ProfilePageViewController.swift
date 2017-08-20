@@ -10,18 +10,21 @@ import UIKit
 import Firebase
 import CoreData
 
-class ProfilePageViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate {
+class ProfilePageViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     var imageCache = NSCache<NSString, UIImage>()
 
     @IBOutlet weak var historyTableView: UITableView!
 
     @IBOutlet weak var userProfileImageView: UIImageView!
+
     var fetchResultController: NSFetchedResultsController<HistoryMO>!
 
     var historyList: [HistoryMO] = []
 
     var distracorList = [String]()
+
+    let userDefault = UserDefaults.standard
 
     @IBOutlet weak var playButtonLabel: UILabel!
 
@@ -36,6 +39,39 @@ class ProfilePageViewController: UIViewController, UITableViewDelegate, UITableV
     @IBOutlet weak var logOutButtonOutlet: UIButton!
 
     @IBOutlet weak var userNameLabel: UILabel!
+
+    @IBOutlet weak var invisiblePhotoUsageButtonOutlet: UIButton!
+
+    @IBAction func invisiblePhotoUsageButtonTapped(_ sender: UIButton) {
+
+        let imagePicker = UIImagePickerController()
+
+        imagePicker.delegate = self
+
+        imagePicker.sourceType = UIImagePickerControllerSourceType.savedPhotosAlbum
+
+        present(imagePicker, animated: true, completion: nil)
+    }
+
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        print("使用者選完照片了")
+
+        let image = info[UIImagePickerControllerOriginalImage] as? UIImage
+
+        self.userProfileImageView.image = image
+
+        let imageData = UIImagePNGRepresentation(image!)
+
+        userDefault.set(imageData, forKey: "UserProfileImage")
+
+        dismiss(animated: true, completion: nil)
+    }
+
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        print("使用者取消選取")
+
+        dismiss(animated: true, completion: nil)
+    }
 
     @IBAction func logOutButtonTapped(_ sender: UIButton) {
 
@@ -78,6 +114,8 @@ class ProfilePageViewController: UIViewController, UITableViewDelegate, UITableV
 
         checkUID()
 
+        invisiblePhotoUsageButtonOutlet.setTitleColor(UIColor.clear, for: .normal)
+
         logOutButtonOutlet.setTitleColor(UIColor.clear, for: .normal)
 
         invisibleButton.setTitleColor(UIColor.clear, for: .normal)
@@ -94,7 +132,13 @@ class ProfilePageViewController: UIViewController, UITableViewDelegate, UITableV
 
         logOutContentView.backgroundColor = UIColor.clear
 
-        if let userName = UserDefaults.standard.object(forKey: "userName") as? String {
+        if let userProfileImageData = userDefault.object(forKey: "UserProfileImage") as? Data {
+
+            userProfileImageView.image = UIImage(data: userProfileImageData)
+
+        }
+
+        if let userName = userDefault.object(forKey: "userName") as? String {
             userNameLabel.text = userName
         } else {
             userNameLabel.text = "This is you"

@@ -126,16 +126,15 @@ class TypeChooseViewController: UIViewController, UITableViewDataSource, UITable
 
     func triggerToStart(selected language: String) {
 
-            let checkQuestion = CheckQuestionInCoreData()
+        let checkQuestion = CheckQuestionInCoreData()
 
-            checkQuestion.clearQuestionMO()
+        checkQuestion.clearQuestionMO()
 
-            checkQuestion.clearResultMO()
+        checkQuestion.clearResultMO()
 
-            let downloadManager = DownloadManager()
+        let downloadManager = DownloadManager()
 
-//        downloadManager.downloadQuestion(selected: language, genre: 1, viewController: self)
-        downloadManager.downloadRandomQuestion(selected: language, max: 1000, viewController: self)
+        downloadManager.downloadRandomQuestion(selected: language, max: 1500, viewController: self)
 
     }
 

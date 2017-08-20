@@ -31,6 +31,8 @@ class ResultPageViewController: UIViewController, UITableViewDelegate, UITableVi
 
     let documentsURL = NSHomeDirectory() + "/Documents/"
 
+    @IBOutlet weak var userImageView: UIImageView!
+
     @IBOutlet weak var invisibleNextGameButtonOutlet: UIButton!
     @IBAction func invisibleNextGameButtonTapped(_ sender: UIButton) {
         saveResultToHistory()
@@ -66,6 +68,12 @@ class ResultPageViewController: UIViewController, UITableViewDelegate, UITableVi
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        if let userProfileImageData = userDefault.object(forKey: "UserProfileImage") as? Data {
+
+            userProfileImageView.image = UIImage(data: userProfileImageData)
+
+        }
 
         userStarsStackView.isHidden = true
 
@@ -161,8 +169,6 @@ class ResultPageViewController: UIViewController, UITableViewDelegate, UITableVi
             resultsArray.append(temp)
 
         }
-// MARK: 把這個指令放到按下 button
-//        saveResultToHistory()
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -222,25 +228,8 @@ class ResultPageViewController: UIViewController, UITableViewDelegate, UITableVi
 
         var picIndex: Int = 0
         var counter: Double = 1.0
-        var imageData: NSData?
 
         for question in self.questions {
-
-            var image = UIImage(named: "collectionPlaceHolder")
-
-            /*
-            let fileURL = URL(fileURLWithPath: self.documentsURL.appending("artworkImage\(picIndex).jpg"))
-
-            do {
-
-                imageData = try NSData(contentsOf: fileURL)
-
-//                image = UIImage(data: imageData)
-
-            } catch {
-                print("image didn't download yet")
-            }
- */
 
             if let artistID = question.artistID, let artistName = question.artistName, let trackID = question.trackID, let trackName = question.trackName, let artworkUrl = question.artworkUrl, let previewUrl = question.previewUrl, let collectionID = question.collectionID, let collectionName = question.collectionName, let primaryGenreName = question.primaryGenreName {
 
@@ -248,7 +237,7 @@ class ResultPageViewController: UIViewController, UITableViewDelegate, UITableVi
 
                     self.historyMO = HistoryMO(context: appDelegate.persistentContainer.viewContext)
 
-                    self.historyMO.artworkImage = UIImagePNGRepresentation(UIImage(named: "collectionPlaceHolder")!) as! NSData
+                    self.historyMO.artworkImage = UIImagePNGRepresentation(UIImage(named: "collectionPlaceHolder")!)! as NSData
 
                     picIndex += 1
 
