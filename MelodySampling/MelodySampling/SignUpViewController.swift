@@ -114,8 +114,6 @@ class SignUpViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        createSignUpPageGradient(target: opacityView)
-
         setCornerRadiustTo(signUpLabel)
 
         goToLoginLabel.backgroundColor = UIColor.clear
@@ -138,6 +136,12 @@ class SignUpViewController: UIViewController {
             self.addNumber = json["signedUserCount"].intValue
 
         })
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        createSignUpPageGradient(target: opacityView)
     }
 
     override func didReceiveMemoryWarning() {

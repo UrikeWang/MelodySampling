@@ -118,8 +118,6 @@ class LogInViewController: UIViewController {
 
         emailResetButtonOutlet.setTitleColor(UIColor.clear, for: .normal)
 
-        createSignUpPageGradient(target: opacityView)
-
         forgetPasswordLabel.backgroundColor = UIColor.clear
 
         setCornerRadiustTo(loginLabel)
@@ -127,8 +125,14 @@ class LogInViewController: UIViewController {
         gotoSignUpLabel.backgroundColor = UIColor.clear
 
         loginButtonOutlet.setTitleColor(UIColor.clear, for: .normal)
-
         signUpInvisibleButtonOutlet.setTitleColor(UIColor.clear, for: .normal)
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        createSignUpPageGradient(target: opacityView)
+
     }
 
     override func didReceiveMemoryWarning() {

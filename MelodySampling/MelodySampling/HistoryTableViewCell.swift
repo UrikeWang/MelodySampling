@@ -34,7 +34,7 @@ class HistoryTableViewCell: UITableViewCell {
 
     @IBOutlet weak var cellBackgroundView: UIView! {
         didSet {
-            createProfilePageHistoryCellBackground(target: cellBackgroundView)
+            cellBackgroundView.backgroundColor = UIColor.clear
         }
     }
 
