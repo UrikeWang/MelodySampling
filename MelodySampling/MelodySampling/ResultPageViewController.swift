@@ -161,7 +161,7 @@ class ResultPageViewController: UIViewController, UITableViewDelegate, UITableVi
             resultsArray.append(temp)
 
         }
-//MARK: 把這個指令放到按下 button
+// MARK: 把這個指令放到按下 button
 //        saveResultToHistory()
     }
 
@@ -191,15 +191,15 @@ class ResultPageViewController: UIViewController, UITableViewDelegate, UITableVi
         }
 
         let artworkUrl = questions[indexPath.row].artworkUrl
-        
+
         DispatchQueue.global().async {
-            
+
             if let data = try? Data(contentsOf: URL(string: artworkUrl!)!) {
-            
+
                 DispatchQueue.main.async {
-                    
+
                     cell.artworkImageView.image = UIImage(data: data)
-                    
+
                 }
             }
         }
