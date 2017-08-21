@@ -86,6 +86,8 @@
 		732AE4711F39817A009746CA /* Montserrat-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Thin.ttf"; sourceTree = "<group>"; };
 		732AE4721F39817A009746CA /* Montserrat-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ThinItalic.ttf"; sourceTree = "<group>"; };
 		732AE4881F399258009746CA /* ScoresFunc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoresFunc.swift; sourceTree = "<group>"; };
+		732FC4641F4A84B000427B3A /* NotoSansMonoCJKtc-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansMonoCJKtc-Bold.otf"; sourceTree = "<group>"; };
+		732FC4651F4A84B000427B3A /* NotoSansMonoCJKtc-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansMonoCJKtc-Regular.otf"; sourceTree = "<group>"; };
 		735575981F3D87AC00A0E271 /* ResultTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultTableViewCell.swift; sourceTree = "<group>"; };
 		7355759E1F3DB8FF00A0E271 /* ProfilePageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfilePageViewController.swift; sourceTree = "<group>"; };
 		736271011F3A9CF00002206B /* QuestionFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionFactory.swift; sourceTree = "<group>"; };
@@ -147,6 +149,8 @@
 		732AE4601F398137009746CA /* FontResource */ = {
 			isa = PBXGroup;
 			children = (
+				732FC4641F4A84B000427B3A /* NotoSansMonoCJKtc-Bold.otf */,
+				732FC4651F4A84B000427B3A /* NotoSansMonoCJKtc-Regular.otf */,
 				732AE4611F39817A009746CA /* Montserrat-Black.ttf */,
 				732AE4621F39817A009746CA /* Montserrat-BlackItalic.ttf */,
 				732AE4631F39817A009746CA /* Montserrat-Bold.ttf */,
