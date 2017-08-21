@@ -83,7 +83,7 @@ class SignUpViewController: UIViewController {
 
                     let currentTime = Date().timeIntervalSince1970
 
-                    self.userFullName = "User" + String(self.seedNumber! + self.addNumber! + 1)
+                    self.userFullName = "User" + String(2017)
 
                     userRef.setValue(["fullName": self.userFullName, "createdTime": currentTime, "userAccount": self.userAccount, "profilePicURL": self.profileImageURL, "wasAnonymouse": false])
 
@@ -126,10 +126,9 @@ class SignUpViewController: UIViewController {
 
         let userRef = self.ref.child("users/defaultSetting")
 
-        userRef.observeSingleEvent(of: .value, with: {
-            (snapshot) in
+        userRef.observeSingleEvent(of: .value, with: { (snapshot) in
 
-            let json = JSON(snapshot.value)
+            let json = JSON(snapshot.value as Any)
 
             self.seedNumber = json["seedNumber"].intValue
 

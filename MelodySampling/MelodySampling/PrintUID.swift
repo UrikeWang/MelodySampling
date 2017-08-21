@@ -12,9 +12,7 @@ func checkUID() -> String {
 
     let userDefault = UserDefaults.standard
 
-    let uid = userDefault.object(forKey: "uid")
-
-    print(uid)
+    guard let uid = userDefault.object(forKey: "uid") else { return "No uid"}
 
     return String(describing: uid)
 

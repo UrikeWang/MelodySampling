@@ -86,8 +86,6 @@ class LandingPageViewController: UIViewController {
 
             print("\(user.uid) was registered")
 
-            let defaultSetting = self.ref.child("anonymousUsers/defaultSetting")
-
             UserDefaults.standard.set(user.uid, forKey: "uid")
             UserDefaults.standard.set("暱名玩家", forKey: "userName")
 
@@ -127,10 +125,9 @@ class LandingPageViewController: UIViewController {
 
         let userRef = self.ref.child("anonymousUsers/defaultSetting")
 
-        userRef.observeSingleEvent(of: .value, with: {
-            (snapshot) in
+        userRef.observeSingleEvent(of: .value, with: { (snapshot) in
 
-            let json = JSON(snapshot.value)
+            let json = JSON(snapshot.value as Any)
 
             self.seedNumber = json["seedNumber"].intValue
 

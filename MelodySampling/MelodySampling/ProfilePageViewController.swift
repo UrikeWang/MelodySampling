@@ -113,11 +113,6 @@ class ProfilePageViewController: UIViewController, UITableViewDelegate, UITableV
 
         print("===== Profile Page =====")
 
-        if let questionCounter = UserDefaults.standard.object(forKey: "questionCounter") {
-        }
-
-        checkUID()
-
         invisiblePhotoUsageButtonOutlet.setTitleColor(UIColor.clear, for: .normal)
 
         logOutButtonOutlet.setTitleColor(UIColor.clear, for: .normal)

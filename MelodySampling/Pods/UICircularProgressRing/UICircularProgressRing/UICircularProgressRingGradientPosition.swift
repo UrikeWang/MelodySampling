@@ -23,6 +23,7 @@
 //  CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
 
+
 /**
  
  # UICircularProgressRingGradientPosition
@@ -52,7 +53,7 @@
     case bottomLeft = 7
     /// Gradient positioned in the bottom right corner
     case bottomRight = 8
-
+    
     /**
     
      Returns a `CGPoint` in the coordinates space of the passed in `CGRect`
