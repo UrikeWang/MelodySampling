@@ -54,7 +54,7 @@ class DistractorManager {
 
         ref.child("distractorBanks").child(genreInput).child("allList").queryOrderedByKey().queryEqual(toValue: randomStr).observeSingleEvent(of: .value, with: { (snapshot) in
 
-            let json = JSON(snapshot.value)
+            let json = JSON(snapshot.value as Any)
 
 //            print("歌名: \(json[randomStr].stringValue)")
 

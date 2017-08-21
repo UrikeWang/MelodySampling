@@ -128,8 +128,6 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
 
         fetchRequest.sortDescriptors = [sortDescriptor]
 
-        let fetchDistractorRequest: NSFetchRequest<DistractorMO> = DistractorMO.fetchRequest()
-
         if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
 
             let context = appDelegate.persistentContainer.viewContext
@@ -168,20 +166,12 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
         var counter = 0
 
         for question in questions {
-            if let trackName = question.trackName, let artistName = question.artistName, let artworkUrl = question.artworkUrl, let index = questions.index(of: question) {
+            if let trackName = question.trackName, let artistName = question.artistName, let _ = questions.index(of: question) {
                 trackNameArray.append(trackName)
                 artistNameArray.append(artistName)
 
-                let destinnation: DownloadRequest.DownloadFileDestination = { _, _ in
-
-                    let documentsURL = NSHomeDirectory() + "/Documents/"
-                    let fileURL = URL(fileURLWithPath: documentsURL.appending("artworkImage\(index).jpg"))
-
-                    return (fileURL, [.removePreviousFile, .createIntermediateDirectories])
-                }
-
                 print("===== Play Page =====")
-                print("第 \(counter) 首, artistName: \(question.artistName), trackName: \(question.trackName)")
+                print("第 \(counter) 首, artistName: \(String(describing: question.artistName)), trackName: \(String(describing: question.trackName))")
                 counter += 1
             }
         }

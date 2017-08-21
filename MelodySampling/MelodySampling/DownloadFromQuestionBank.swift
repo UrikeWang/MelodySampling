@@ -48,10 +48,6 @@ class DownloadManager {
 
         thisView.view.addSubview(progressContentView)
 
-        var questionList: [EachQuestion] = []
-
-        var segueCounter = 0
-
         for counter in 0..<5 {
             let trackIndex = random(bankMaxNumber)
 
@@ -61,7 +57,7 @@ class DownloadManager {
 
             ref.child("questionBanks").child(language).child("allList").child(finder).queryOrderedByKey().observeSingleEvent(of: .value, with: { (snapshot) in
 
-                let json = JSON(snapshot.value)
+                let json = JSON(snapshot.value as Any)
 
                 print("======")
                 print(json["artistId"].intValue)
@@ -280,7 +276,7 @@ class DownloadManager {
 
             print(snapshot)
 
-            let json = JSON(snapshot.value)
+            let json = JSON(snapshot.value as Any)
 
             print("JSON raw value: \(json)")
 

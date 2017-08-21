@@ -12,6 +12,6 @@ import SwiftyJSON
 
 extension DataSnapshot {
     var json: JSON {
-        return JSON(self.value)
+        return JSON(self.value as Any)
     }
 }
