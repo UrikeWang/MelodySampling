@@ -1302,14 +1302,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KXI-mi-P6b" userLabel="Opacity View">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="pfo-lE-6Vq" userLabel="Logo Image View">
-                                        <rect key="frame" x="161.5" y="89" width="52" height="36"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="36" id="1xb-g5-EJZ"/>
-                                            <constraint firstAttribute="width" constant="52" id="pkZ-g5-Tz5"/>
-                                        </constraints>
-                                    </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MelodySampling" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VPg-UZ-Ctf">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="King of Song Quiz" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VPg-UZ-Ctf">
                                         <rect key="frame" x="60" y="143" width="255" height="34"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="34" id="VOf-GY-Ocl"/>
@@ -1434,10 +1427,17 @@
                                             <action selector="emailResetButtonTapped:" destination="Tjb-TR-M1w" eventType="touchUpInside" id="9gl-z4-eq0"/>
                                         </connections>
                                     </button>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="K_logo" translatesAutoresizingMaskIntoConstraints="NO" id="pfo-lE-6Vq" userLabel="Logo Image View">
+                                        <rect key="frame" x="129.5" y="30" width="115" height="115"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="pfo-lE-6Vq" secondAttribute="height" multiplier="1:1" id="d7I-p9-qTe"/>
+                                        </constraints>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="0.69945954623287676" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="CLK-nL-DhG" firstAttribute="top" secondItem="ufH-qg-LiI" secondAttribute="bottom" constant="30" id="15a-dB-4D6"/>
+                                    <constraint firstItem="pfo-lE-6Vq" firstAttribute="leading" secondItem="KXI-mi-P6b" secondAttribute="leading" constant="129.5" id="4Eq-7B-w5a"/>
                                     <constraint firstItem="cq8-dZ-1az" firstAttribute="centerX" secondItem="CLK-nL-DhG" secondAttribute="centerX" id="50B-gc-jVE"/>
                                     <constraint firstItem="paE-ln-Lmo" firstAttribute="trailing" secondItem="9tS-ZU-rY7" secondAttribute="trailing" constant="20" id="8Dd-Hk-GTF"/>
                                     <constraint firstItem="VPg-UZ-Ctf" firstAttribute="leading" secondItem="KXI-mi-P6b" secondAttribute="leading" constant="60" id="COv-tW-jLe"/>
@@ -1449,20 +1449,20 @@
                                     <constraint firstItem="bmC-gg-dzb" firstAttribute="bottom" secondItem="9tS-ZU-rY7" secondAttribute="bottom" constant="20" id="JLf-MD-qKE"/>
                                     <constraint firstItem="bmC-gg-dzb" firstAttribute="leading" secondItem="9tS-ZU-rY7" secondAttribute="leading" constant="-20" id="NUz-XZ-mvn"/>
                                     <constraint firstItem="9tS-ZU-rY7" firstAttribute="top" secondItem="CLK-nL-DhG" secondAttribute="bottom" constant="25" id="OOx-Mt-2Q9"/>
-                                    <constraint firstItem="pfo-lE-6Vq" firstAttribute="centerX" secondItem="VPg-UZ-Ctf" secondAttribute="centerX" id="TeC-AE-BOd"/>
                                     <constraint firstItem="KN3-9H-4bf" firstAttribute="top" secondItem="cq8-dZ-1az" secondAttribute="bottom" constant="31" id="Xt6-j9-Pki"/>
                                     <constraint firstItem="cq8-dZ-1az" firstAttribute="width" secondItem="CLK-nL-DhG" secondAttribute="width" id="YYj-mT-28O"/>
                                     <constraint firstItem="VPg-UZ-Ctf" firstAttribute="centerX" secondItem="KXI-mi-P6b" secondAttribute="centerX" id="YtC-Cc-lMb"/>
                                     <constraint firstItem="bmC-gg-dzb" firstAttribute="top" secondItem="9tS-ZU-rY7" secondAttribute="top" id="hF3-rj-zUr"/>
                                     <constraint firstItem="paE-ln-Lmo" firstAttribute="width" secondItem="9tS-ZU-rY7" secondAttribute="width" constant="30" id="hGe-Cr-zyi"/>
+                                    <constraint firstItem="pfo-lE-6Vq" firstAttribute="top" secondItem="KXI-mi-P6b" secondAttribute="top" constant="30" id="iZO-CE-jUh"/>
                                     <constraint firstItem="KN3-9H-4bf" firstAttribute="centerX" secondItem="cq8-dZ-1az" secondAttribute="centerX" id="luj-wb-GAA"/>
                                     <constraint firstItem="VPg-UZ-Ctf" firstAttribute="top" secondItem="KXI-mi-P6b" secondAttribute="top" constant="143" id="nep-Cy-d9T"/>
                                     <constraint firstItem="CLK-nL-DhG" firstAttribute="centerX" secondItem="ufH-qg-LiI" secondAttribute="centerX" id="oqN-f5-r0U"/>
-                                    <constraint firstItem="VPg-UZ-Ctf" firstAttribute="top" secondItem="pfo-lE-6Vq" secondAttribute="bottom" constant="18" id="qF7-T0-YmQ"/>
                                     <constraint firstItem="paE-ln-Lmo" firstAttribute="top" secondItem="KN3-9H-4bf" secondAttribute="top" constant="-10" id="tGo-MS-BTL"/>
                                     <constraint firstItem="ufH-qg-LiI" firstAttribute="centerX" secondItem="KXI-mi-P6b" secondAttribute="centerX" id="tf1-lg-8G8"/>
                                     <constraint firstItem="9tS-ZU-rY7" firstAttribute="trailing" secondItem="CLK-nL-DhG" secondAttribute="trailing" id="vAs-fj-iM6"/>
                                     <constraint firstItem="ufH-qg-LiI" firstAttribute="top" secondItem="VPg-UZ-Ctf" secondAttribute="bottom" constant="48" id="xKy-yh-y5Z"/>
+                                    <constraint firstItem="pfo-lE-6Vq" firstAttribute="centerX" secondItem="KXI-mi-P6b" secondAttribute="centerX" id="yQb-7Y-RBl"/>
                                 </constraints>
                             </view>
                         </subviews>
