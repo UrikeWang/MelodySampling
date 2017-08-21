@@ -189,21 +189,22 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U1h-ID-cdY" userLabel="Opacity View">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="msz-AP-Yda" userLabel="Logo Image View">
-                                        <rect key="frame" x="161.5" y="89" width="52" height="36"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="K_logo" translatesAutoresizingMaskIntoConstraints="NO" id="msz-AP-Yda" userLabel="Logo Image View">
+                                        <rect key="frame" x="130" y="30" width="115" height="115"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="36" id="1cI-fx-m5Y"/>
-                                            <constraint firstAttribute="width" constant="52" id="oSt-3d-ueC"/>
+                                            <constraint firstAttribute="width" secondItem="msz-AP-Yda" secondAttribute="height" multiplier="1:1" id="D0J-b4-ksO"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MelodySampling" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="em1-6Q-aom" userLabel="Title Label">
-                                        <rect key="frame" x="60" y="143" width="255" height="36"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="King of Song Quiz" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="em1-6Q-aom" userLabel="Title Label">
+                                        <rect key="frame" x="47" y="145" width="283" height="41.5"/>
+                                        <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="32"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
+                                        <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
+                                        <size key="shadowOffset" width="0.0" height="2"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b7u-pU-XkO" userLabel="Email Content View">
-                                        <rect key="frame" x="47" y="253" width="280" height="40"/>
+                                        <rect key="frame" x="47" y="260.5" width="280" height="40"/>
                                         <subviews>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zpD-dh-a8g" userLabel="Email Text Field">
                                                 <rect key="frame" x="13" y="12" width="254" height="16"/>
@@ -222,7 +223,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vRG-Wl-ebV" userLabel="Password Content View">
-                                        <rect key="frame" x="47" y="313" width="280" height="40"/>
+                                        <rect key="frame" x="47" y="320.5" width="280" height="40"/>
                                         <subviews>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VIX-oo-t59" userLabel="Password Text Field">
                                                 <rect key="frame" x="13" y="10" width="254" height="20"/>
@@ -241,7 +242,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hbT-kz-Sgv" userLabel="Confirm Password Content View">
-                                        <rect key="frame" x="47" y="373" width="280" height="40"/>
+                                        <rect key="frame" x="47" y="380.5" width="280" height="40"/>
                                         <subviews>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Confirm Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pfT-LV-HHY" userLabel="Confirm Password Text Field">
                                                 <rect key="frame" x="13" y="10" width="254" height="20"/>
@@ -260,7 +261,7 @@
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Hx-aM-5VR" userLabel="Goto Login Label">
-                                        <rect key="frame" x="39.5" y="553" width="295" height="20"/>
+                                        <rect key="frame" x="39.5" y="560.5" width="295" height="20"/>
                                         <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="295" id="Idi-Zb-O6A"/>
@@ -293,7 +294,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign up" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EgF-uP-uhz" userLabel="Sign Up Label">
-                                        <rect key="frame" x="47" y="473" width="280" height="50"/>
+                                        <rect key="frame" x="47" y="480.5" width="280" height="50"/>
                                         <color key="backgroundColor" red="0.61960784313725492" green="0.93725490196078431" blue="0.88235294117647056" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="lks-wN-baL"/>
@@ -303,7 +304,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7bs-t6-MOK">
-                                        <rect key="frame" x="174.5" y="543" width="180" height="70"/>
+                                        <rect key="frame" x="174.5" y="550.5" width="180" height="70"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="70" id="wX3-bB-CfM"/>
                                             <constraint firstAttribute="width" constant="180" id="xKe-pf-EW4"/>
@@ -318,14 +319,14 @@
                                 <constraints>
                                     <constraint firstItem="6Hx-aM-5VR" firstAttribute="centerX" secondItem="EgF-uP-uhz" secondAttribute="centerX" id="0Ec-lD-m9U"/>
                                     <constraint firstItem="7bs-t6-MOK" firstAttribute="trailing" secondItem="6Hx-aM-5VR" secondAttribute="trailing" constant="20" id="7mu-Zx-TGc"/>
-                                    <constraint firstItem="em1-6Q-aom" firstAttribute="leading" secondItem="U1h-ID-cdY" secondAttribute="leading" constant="60" id="92w-bB-Gja"/>
                                     <constraint firstItem="b7u-pU-XkO" firstAttribute="leading" secondItem="U1h-ID-cdY" secondAttribute="leading" constant="47" id="LZw-dy-1Yt"/>
+                                    <constraint firstItem="msz-AP-Yda" firstAttribute="top" secondItem="U1h-ID-cdY" secondAttribute="top" constant="30" id="ME4-0K-DgY"/>
+                                    <constraint firstItem="msz-AP-Yda" firstAttribute="leading" secondItem="U1h-ID-cdY" secondAttribute="leading" constant="129.5" id="NlS-4B-KV4"/>
                                     <constraint firstItem="vRG-Wl-ebV" firstAttribute="top" secondItem="b7u-pU-XkO" secondAttribute="bottom" constant="20" id="QAG-lK-T9R"/>
-                                    <constraint firstItem="em1-6Q-aom" firstAttribute="top" secondItem="msz-AP-Yda" secondAttribute="bottom" constant="18" id="Syb-9v-kxf"/>
                                     <constraint firstItem="hbT-kz-Sgv" firstAttribute="width" secondItem="vRG-Wl-ebV" secondAttribute="width" id="X5p-jA-ykg"/>
-                                    <constraint firstItem="em1-6Q-aom" firstAttribute="top" secondItem="U1h-ID-cdY" secondAttribute="top" constant="143" id="Xhy-qW-xWq"/>
                                     <constraint firstItem="hbT-kz-Sgv" firstAttribute="top" secondItem="vRG-Wl-ebV" secondAttribute="bottom" constant="20" id="bEN-KK-SQg"/>
                                     <constraint firstItem="msz-AP-Yda" firstAttribute="centerX" secondItem="U1h-ID-cdY" secondAttribute="centerX" id="bLK-Jp-dsu"/>
+                                    <constraint firstItem="em1-6Q-aom" firstAttribute="top" secondItem="msz-AP-Yda" secondAttribute="bottom" id="bwc-0g-cud"/>
                                     <constraint firstItem="b7u-pU-XkO" firstAttribute="centerX" secondItem="U1h-ID-cdY" secondAttribute="centerX" id="cKE-zF-nci"/>
                                     <constraint firstItem="hbT-kz-Sgv" firstAttribute="centerX" secondItem="vRG-Wl-ebV" secondAttribute="centerX" id="cbj-1y-Xv7"/>
                                     <constraint firstItem="b7u-pU-XkO" firstAttribute="top" secondItem="em1-6Q-aom" secondAttribute="bottom" constant="74" id="chR-lf-QYk"/>
@@ -1505,7 +1506,6 @@
         <image name="fire_yellow" width="98" height="98"/>
         <image name="icon_CD-pink" width="30" height="30"/>
         <image name="icon_CD_line_new" width="31" height="31"/>
-        <image name="logo" width="48" height="30"/>
         <image name="logouticon" width="58" height="60"/>
         <image name="music" width="370" height="292"/>
         <image name="play" width="22" height="22"/>

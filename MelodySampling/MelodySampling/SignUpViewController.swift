@@ -116,6 +116,10 @@ class SignUpViewController: UIViewController {
 
         setCornerRadiustTo(signUpLabel)
 
+        opacityView.frame = UIScreen.main.bounds
+        
+        createSignUpPageGradient(target: opacityView)
+        
         goToLoginLabel.backgroundColor = UIColor.clear
 
         signUpButtonOutlet.setTitleColor(UIColor.clear, for: .normal)
@@ -139,8 +143,6 @@ class SignUpViewController: UIViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-
-        createSignUpPageGradient(target: opacityView)
     }
 
     override func didReceiveMemoryWarning() {
