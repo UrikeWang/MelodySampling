@@ -21,12 +21,16 @@ class LandingPageViewController: UIViewController {
     var startTime: Double?
 
     var userFullName = ""
+    
+    @IBOutlet weak var titleLabel: UILabel!
 
     @IBOutlet weak var loginLabel: UILabel!
 
     @IBOutlet weak var signupLabel: UILabel!
 
     @IBOutlet weak var anonymousLoginLabel: UILabel!
+    
+    @IBOutlet weak var anonymousLoginTextLabel: UILabel!
 
     @IBOutlet weak var loginButtonOutlet: UIButton!
 
@@ -103,7 +107,7 @@ class LandingPageViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         setCornerRadiustTo(loginLabel)
         loginLabel.layer.borderColor = UIColor.white.cgColor
         loginLabel.layer.borderWidth = 2

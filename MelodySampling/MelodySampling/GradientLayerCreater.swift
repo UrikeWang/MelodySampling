@@ -23,7 +23,7 @@ func createGradientOnLabel(target uILabel: UILabel) {
 
     gradientLayer.endPoint = CGPoint(x:1.0, y:0.5)
 
-    uILabel.layer.addSublayer(gradientLayer)
+    uILabel.layer.insertSublayer(gradientLayer, at: 0)
 }
 
 func createSignUpPageGradient(target uIView: UIView) {
