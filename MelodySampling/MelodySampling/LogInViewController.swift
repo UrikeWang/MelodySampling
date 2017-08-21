@@ -13,6 +13,8 @@ class LogInViewController: UIViewController {
 
     @IBOutlet weak var opacityView: UIView!
 
+    @IBOutlet weak var titleLabel: UILabel!
+    
     @IBOutlet weak var forgetPasswordLabel: UILabel!
 
     @IBOutlet weak var loginLabel: UILabel!
@@ -60,7 +62,6 @@ class LogInViewController: UIViewController {
             self.present(errorAlert, animated: true, completion: nil)
 
         }
-
     }
 
     @IBAction func signUpInvisibleButtonTapped(_ sender: UIButton) {
@@ -115,7 +116,13 @@ class LogInViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        opacityView.frame = UIScreen.main.bounds
 
+        createTitleLabelShadow(target: titleLabel)
+        
+        createSignUpPageGradient(target: opacityView)
+        
         emailResetButtonOutlet.setTitleColor(UIColor.clear, for: .normal)
 
         forgetPasswordLabel.backgroundColor = UIColor.clear
@@ -130,8 +137,6 @@ class LogInViewController: UIViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-
-        createSignUpPageGradient(target: opacityView)
 
     }
 

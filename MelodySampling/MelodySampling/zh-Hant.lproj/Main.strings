@@ -81,7 +81,7 @@
 "VIX-oo-t59.placeholder" = "Password";
 
 /* Class = "UILabel"; text = "MelodySampling"; ObjectID = "VPg-UZ-Ctf"; */
-"VPg-UZ-Ctf.text" = "MelodySampling";
+"VPg-UZ-Ctf.text" = "猜歌之王";
 
 /* Class = "UILabel"; text = "Track Name Label Mig"; ObjectID = "XP6-0W-sTJ"; */
 "XP6-0W-sTJ.text" = "Track Name Label Mig";
@@ -108,7 +108,7 @@
 "eNZ-KW-APm.normalTitle" = "Invisible SignUp Button";
 
 /* Class = "UILabel"; text = "MelodySampling"; ObjectID = "em1-6Q-aom"; */
-"em1-6Q-aom.text" = "MelodySampling";
+"em1-6Q-aom.text" = "猜歌之王";
 
 /* Class = "UIButton"; normalTitle = "Invisible Login Button"; ObjectID = "fFo-OY-1Rb"; */
 "fFo-OY-1Rb.normalTitle" = "Invisible Login Button";

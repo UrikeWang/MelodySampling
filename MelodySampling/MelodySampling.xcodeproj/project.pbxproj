@@ -30,6 +30,7 @@
 		732AE4841F39817A009746CA /* Montserrat-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 732AE4721F39817A009746CA /* Montserrat-ThinItalic.ttf */; };
 		732AE4891F399258009746CA /* ScoresFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732AE4881F399258009746CA /* ScoresFunc.swift */; };
 		732FC47B1F4ACEF100427B3A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 732FC47D1F4ACEF100427B3A /* Localizable.strings */; };
+		732FC4801F4ADE2500427B3A /* UIShadowCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732FC47F1F4ADE2500427B3A /* UIShadowCreator.swift */; };
 		735575991F3D87AC00A0E271 /* ResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735575981F3D87AC00A0E271 /* ResultTableViewCell.swift */; };
 		7355759F1F3DB8FF00A0E271 /* ProfilePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7355759E1F3DB8FF00A0E271 /* ProfilePageViewController.swift */; };
 		736271021F3A9CF00002206B /* QuestionFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 736271011F3A9CF00002206B /* QuestionFactory.swift */; };
@@ -94,6 +95,7 @@
 		732FC4761F4AC5CB00427B3A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		732FC47C1F4ACEF100427B3A /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		732FC47E1F4ACEF900427B3A /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		732FC47F1F4ADE2500427B3A /* UIShadowCreator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIShadowCreator.swift; sourceTree = "<group>"; };
 		735575981F3D87AC00A0E271 /* ResultTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultTableViewCell.swift; sourceTree = "<group>"; };
 		7355759E1F3DB8FF00A0E271 /* ProfilePageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfilePageViewController.swift; sourceTree = "<group>"; };
 		736271011F3A9CF00002206B /* QuestionFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionFactory.swift; sourceTree = "<group>"; };
@@ -300,6 +302,7 @@
 				73AF80221F384B7900CA31FB /* Styleguide.swift */,
 				73AF80291F385EAE00CA31FB /* GradientLayerCreater.swift */,
 				7364EF9F1F428B3C00D65D64 /* IBOutletFunction.swift */,
+				732FC47F1F4ADE2500427B3A /* UIShadowCreator.swift */,
 			);
 			name = StyleguideRelative;
 			sourceTree = "<group>";
@@ -502,6 +505,7 @@
 				730D0E5A1F3AEBFD0099DA0F /* AddSpace.swift in Sources */,
 				7382740C1F3EAF8D00CD718E /* DownloadFromQuestionBank.swift in Sources */,
 				73B122F51F42FD3E006DE065 /* GotoFunc.swift in Sources */,
+				732FC4801F4ADE2500427B3A /* UIShadowCreator.swift in Sources */,
 				7355759F1F3DB8FF00A0E271 /* ProfilePageViewController.swift in Sources */,
 				7377838D1F42C34F00B9EEBF /* StandardTableViewCell.swift in Sources */,
 				731F2ADF1F4537BF00690316 /* LabelCreator.swift in Sources */,

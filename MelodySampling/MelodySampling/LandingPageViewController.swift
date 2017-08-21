@@ -108,6 +108,8 @@ class LandingPageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        createTitleLabelShadow(target: titleLabel)
+        
         setCornerRadiustTo(loginLabel)
         loginLabel.layer.borderColor = UIColor.white.cgColor
         loginLabel.layer.borderWidth = 2
