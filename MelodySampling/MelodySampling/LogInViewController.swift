@@ -66,7 +66,8 @@ class LogInViewController: UIViewController {
 
     @IBAction func signUpInvisibleButtonTapped(_ sender: UIButton) {
 
-        gotoSignupPage(from: self)
+        guard let loginController = self.storyboard?.instantiateViewController(withIdentifier: "SignupPage") else { return }
+        self.navigationController?.pushViewController(loginController, animated: true)
     }
 
     @IBAction func loginButtonTapped(_ sender: UIButton) {
@@ -119,6 +120,14 @@ class LogInViewController: UIViewController {
         
         opacityView.frame = UIScreen.main.bounds
 
+        self.navigationController?.isNavigationBarHidden = false
+        
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        
+        self.navigationController?.navigationBar.isTranslucent = true
+        
         createTitleLabelShadow(target: titleLabel)
         
         createSignUpPageGradient(target: opacityView)
