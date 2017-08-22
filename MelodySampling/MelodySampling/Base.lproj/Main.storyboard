@@ -916,11 +916,8 @@
                                 </subviews>
                             </stackView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="79" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="Su0-ql-6ml">
-                                <rect key="frame" x="12" y="278" width="351" height="316"/>
+                                <rect key="frame" x="12" y="278" width="351" height="339"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="316" id="cKN-mg-r2f"/>
-                                </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="AnswerCell" rowHeight="79" id="Q35-Pz-Djb" customClass="AnswerTableViewCell" customModule="MelodySampling" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="1" width="351" height="79"/>
@@ -975,6 +972,7 @@
                             <constraint firstItem="Su0-ql-6ml" firstAttribute="centerX" secondItem="E2X-WD-2Wc" secondAttribute="centerX" id="2v7-hH-tlM"/>
                             <constraint firstAttribute="trailing" secondItem="WXg-dK-XIq" secondAttribute="trailing" id="5GA-S1-YCc"/>
                             <constraint firstItem="Su0-ql-6ml" firstAttribute="top" secondItem="txB-Mt-xPL" secondAttribute="bottom" constant="16" id="FZJ-cf-hrR"/>
+                            <constraint firstItem="mRu-LV-13g" firstAttribute="top" secondItem="Su0-ql-6ml" secondAttribute="bottom" constant="50" id="JE0-xq-LxD"/>
                             <constraint firstItem="txB-Mt-xPL" firstAttribute="top" secondItem="WXg-dK-XIq" secondAttribute="bottom" constant="16" id="LnJ-mM-fhv"/>
                             <constraint firstItem="WXg-dK-XIq" firstAttribute="leading" secondItem="E2X-WD-2Wc" secondAttribute="leading" id="Nad-nJ-zXh"/>
                             <constraint firstItem="WXg-dK-XIq" firstAttribute="top" secondItem="yzg-T8-E23" secondAttribute="bottom" id="TeX-Ch-ed2"/>
