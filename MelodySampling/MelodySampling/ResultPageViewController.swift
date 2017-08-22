@@ -34,21 +34,14 @@ class ResultPageViewController: UIViewController, UITableViewDelegate, UITableVi
     @IBOutlet weak var userImageView: UIImageView!
 
     @IBOutlet weak var invisibleNextGameButtonOutlet: UIButton!
+
     @IBAction func invisibleNextGameButtonTapped(_ sender: UIButton) {
         saveResultToHistory()
-        gotoTypeChoosePage(from: self)
-    }
 
-    @IBOutlet weak var invisibleGoHomeButtonOutlet: UIButton!
-
-    @IBAction func invisibleGoHomeButtonTapped(_ sender: UIButton) {
-        saveResultToHistory()
-        gotoProfilePage(from: self)
+        self.gotoPlayPageByNavigation()
     }
 
     @IBOutlet weak var tableView: UITableView!
-    
-    
 
     @IBOutlet weak var profilePageView: UIView!
 
@@ -67,6 +60,61 @@ class ResultPageViewController: UIViewController, UITableViewDelegate, UITableVi
     @IBOutlet weak var userProfileImageView: UIImageView!
 
     @IBOutlet weak var userStarsStackView: UIStackView!
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        let fetchQuestionRequest: NSFetchRequest<QuestionMO> = QuestionMO.fetchRequest()
+
+        let fetchResultsRequest: NSFetchRequest<ResultMO> = ResultMO.fetchRequest()
+
+        let sortDescriptor = NSSortDescriptor(key: "trackID", ascending: true)
+
+        let resultSortDescriptor = NSSortDescriptor(key: "index", ascending: true)
+
+        fetchQuestionRequest.sortDescriptors = [sortDescriptor]
+
+        fetchResultsRequest.sortDescriptors = [resultSortDescriptor]
+
+        if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
+
+            let context = appDelegate.persistentContainer.viewContext
+
+            fetchQuestionController = NSFetchedResultsController(fetchRequest: fetchQuestionRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
+
+            fetchResultsController = NSFetchedResultsController(fetchRequest: fetchResultsRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
+
+            fetchQuestionController.delegate = self
+            fetchResultsController.delegate = self
+
+            do {
+
+                try fetchQuestionController.performFetch()
+
+                if let fetchedObjects = fetchQuestionController.fetchedObjects {
+
+                    questions = fetchedObjects
+                }
+            } catch {
+
+                print(error)
+            }
+
+            do {
+
+                try fetchResultsController.performFetch()
+
+                if let fetchedObjects = fetchResultsController.fetchedObjects {
+
+                    results = fetchedObjects
+                }
+            } catch {
+
+                print(error)
+            }
+        }
+
+    }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -104,7 +152,6 @@ class ResultPageViewController: UIViewController, UITableViewDelegate, UITableVi
         } else {
             userNameLabel.text = "This is you"
         }
-        invisibleGoHomeButtonOutlet.setTitleColor(UIColor.clear, for: .normal)
 
         score = (userDefault.object(forKey: "Score") as? Double)!
 
@@ -226,7 +273,7 @@ class ResultPageViewController: UIViewController, UITableViewDelegate, UITableVi
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
 
         if Double(UIScreen.main.bounds.height) > 665 {
-        
+
         let screenSize = UIScreen.main.bounds
 
         let screenHeight = screenSize.height
@@ -235,7 +282,7 @@ class ResultPageViewController: UIViewController, UITableViewDelegate, UITableVi
 
         return tableHeight / CGFloat(questions.count)
         }
-        
+
         return 80
     }
 
@@ -275,6 +322,16 @@ class ResultPageViewController: UIViewController, UITableViewDelegate, UITableVi
             }
 
         }
+
+    }
+
+    func gotoPlayPageByNavigation() {
+
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+
+        let playPageViewController = storyBoard.instantiateViewController(withIdentifier: "RootNavigation")
+
+        self.present(playPageViewController, animated: true, completion: nil)
 
     }
 }

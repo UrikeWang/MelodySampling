@@ -104,8 +104,11 @@ class ProfilePageViewController: UIViewController, UITableViewDelegate, UITableV
 
     @IBAction func invisibleButtonTapped(_ sender: UIButton) {
         print("Play button tapped")
+        let mainStoryboard = UIStoryboard(name: "Main", bundle:nil)
 
-        gotoTypeChoosePage(from: self)
+        let signUpController = mainStoryboard.instantiateViewController(withIdentifier: "NewTypeChoosePage")
+
+        self.navigationController?.pushViewController(signUpController, animated: true)
     }
 
     override func viewDidLoad() {
@@ -225,6 +228,12 @@ class ProfilePageViewController: UIViewController, UITableViewDelegate, UITableV
             }
         }
         return cell
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        self.navigationController?.isNavigationBarHidden = true
     }
 
     override func viewDidAppear(_ animated: Bool) {

@@ -21,7 +21,7 @@ class LandingPageViewController: UIViewController {
     var startTime: Double?
 
     var userFullName = ""
-    
+
     @IBOutlet weak var titleLabel: UILabel!
 
     @IBOutlet weak var loginLabel: UILabel!
@@ -29,26 +29,25 @@ class LandingPageViewController: UIViewController {
     @IBOutlet weak var signupLabel: UILabel!
 
     @IBOutlet weak var anonymousLoginLabel: UILabel!
-    
+
     @IBOutlet weak var anonymousLoginTextLabel: UILabel!
 
     @IBOutlet weak var loginButtonOutlet: UIButton!
 
     @IBAction func loginButtonTapped(_ sender: UIButton) {
-        
+
         print("Login button tapped")
-        
+
         let currentTime = Date().timeIntervalSince1970
-        
+
         guard let startTime = self.startTime else { return }
 
         let mainStoryboard = UIStoryboard(name: "Main", bundle:nil)
-        
+
         let loginController = mainStoryboard.instantiateViewController(withIdentifier: "LoginPage")
-        
+
         self.navigationController?.pushViewController(loginController, animated: true)
 
-        
         Analytics.logEvent("UserGotoLoginPage", parameters: ["timePassed": currentTime - startTime])
 
     }
@@ -58,13 +57,13 @@ class LandingPageViewController: UIViewController {
     @IBAction func signUpButtonTapped(_ sender: UIButton) {
 
         print("Sign up button tapped")
-        
+
         let currentTime = Date().timeIntervalSince1970
 
         guard let startTime = self.startTime else { return }
-        
+
          let mainStoryboard = UIStoryboard(name: "Main", bundle:nil)
-        
+
         let signUpController = mainStoryboard.instantiateViewController(withIdentifier: "SignupPage")
         self.navigationController?.pushViewController(signUpController, animated: true)
 
@@ -123,11 +122,11 @@ class LandingPageViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         self.navigationController?.isNavigationBarHidden = true
-        
+
         createTitleLabelShadow(target: titleLabel)
-        
+
         setCornerRadiustTo(loginLabel)
         loginLabel.layer.borderColor = UIColor.white.cgColor
         loginLabel.layer.borderWidth = 2
@@ -158,12 +157,12 @@ class LandingPageViewController: UIViewController {
         })
 
     }
-    
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+
         self.navigationController?.isNavigationBarHidden = true
-        
+
         self.startTime = Date().timeIntervalSince1970
     }
 

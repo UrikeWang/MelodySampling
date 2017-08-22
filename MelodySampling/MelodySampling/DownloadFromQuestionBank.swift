@@ -121,7 +121,7 @@ class DownloadManager {
 
                             progressRing.setProgress(value: CGFloat(downloadCount * 20), animationDuration: 0.01) {
 
-                                let registerVC = thisView.storyboard?.instantiateViewController(withIdentifier: "PlayPage")
+                                let registerVC = thisView.storyboard?.instantiateViewController(withIdentifier: "PlayNavigation")
 
                                 thisView.present(registerVC!, animated: true, completion: nil)
                             }

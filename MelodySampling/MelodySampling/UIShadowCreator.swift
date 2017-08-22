@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 func createTitleLabelShadow(target uILabel: UILabel) {
-    
+
     uILabel.layer.shadowColor = UIColor.mldBlack50.cgColor
     uILabel.layer.shadowOffset = CGSize(width: 0, height: 10)
     uILabel.layer.shadowRadius = 10
