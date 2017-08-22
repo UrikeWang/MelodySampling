@@ -88,9 +88,9 @@ func createUserProfileImage(targe uIImageView: UIImageView) {
 }
 
 func createUserProfilePageLogoutBackground(target uIView: UIView) {
-
+    
     gradientLayer = CAGradientLayer()
-
+    
     gradientLayer.frame = uIView.bounds
 
     gradientLayer.colors = [UIColor.mldLightPurple.cgColor, UIColor.mldLighterPurple.cgColor, UIColor.mldLighterPurpleTwo.cgColor]

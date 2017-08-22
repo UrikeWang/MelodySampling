@@ -112,7 +112,7 @@ class ProfilePageViewController: UIViewController, UITableViewDelegate, UITableV
         super.viewDidLoad()
 
         print("===== Profile Page =====")
-
+        
         invisiblePhotoUsageButtonOutlet.setTitleColor(UIColor.clear, for: .normal)
 
         logOutButtonOutlet.setTitleColor(UIColor.clear, for: .normal)
@@ -226,30 +226,39 @@ class ProfilePageViewController: UIViewController, UITableViewDelegate, UITableV
         }
         return cell
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        let radius = self.userProfileImageView.frame.width
+        
+        userProfileImageView.layer.cornerRadius = radius / 2
+        
+        createUserProfilePageLogoutBackground(target: logOutView)
+        
+        createNextBattleOfResult(target: playButtonLabel)
+        
+        if historyList.count == 0 {
+            
+            let framOfTableView = self.historyTableView.frame
+            
+            let emptyView = UIView(frame: framOfTableView)
+            
+            let emptyLabel = createLabel(at: emptyView, content: "尚無對戰紀錄", color: UIColor.white, font: UIFont.mldTextStyleEmptyFont()!)
+            
+            createProfilePageHistoryCellBackground(target: emptyView)
+            
+            self.view.addSubview(emptyView)
+            
+            self.view.addSubview(emptyLabel)
+            
+        }
+
+    }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-
-        createUserProfilePageLogoutBackground(target: logOutView)
-
-        createNextBattleOfResult(target: playButtonLabel)
-
-        if historyList.count == 0 {
-
-            let framOfTableView = self.historyTableView.frame
-
-            let emptyView = UIView(frame: framOfTableView)
-
-            createProfilePageHistoryCellBackground(target: emptyView)
-
-            let emptyLabel = createLabel(at: emptyView, content: "尚無對戰紀錄", color: UIColor.white, font: UIFont.mldTextStyleEmptyFont()!)
-
-            self.view.addSubview(emptyView)
-
-            self.view.addSubview(emptyLabel)
-
-        }
-
+        
     }
 
 }
