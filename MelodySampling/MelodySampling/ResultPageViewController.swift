@@ -47,6 +47,8 @@ class ResultPageViewController: UIViewController, UITableViewDelegate, UITableVi
     }
 
     @IBOutlet weak var tableView: UITableView!
+    
+    
 
     @IBOutlet weak var profilePageView: UIView!
 

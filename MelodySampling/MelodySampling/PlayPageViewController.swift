@@ -57,6 +57,8 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
     var trackNameArray = [String]()
 
     var artistNameArray = [String]()
+    
+    @IBOutlet weak var profileBackgroundContentView: UIView!
 
     @IBOutlet weak var userNameLabel: UILabel!
 
@@ -83,6 +85,8 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
     }
 
     @IBOutlet weak var tableView: UITableView!
+    
+    @IBOutlet weak var tableViewHeightConstrains: NSLayoutConstraint!
 
     @IBOutlet weak var playingSongLabel: UILabel!
 
@@ -412,6 +416,18 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
         }
 
         self.player?.play()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        let tableViewHeight = Double(UIScreen.main.bounds.height) - Double(profileBackgroundContentView.frame.height) - 31 - 32
+        
+        if tableViewHeight < 310.0 {
+            
+            self.tableViewHeightConstrains.constant = CGFloat(tableViewHeight)
+            self.view.layoutIfNeeded()
+        }
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

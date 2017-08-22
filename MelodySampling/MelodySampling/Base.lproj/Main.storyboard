@@ -110,7 +110,7 @@
                                 <size key="shadowOffset" width="0.0" height="2"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Log in Anonymously" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LX4-z7-ioz">
-                                <rect key="frame" x="98.5" y="554.5" width="180" height="22"/>
+                                <rect key="frame" x="97.5" y="554.5" width="180" height="22"/>
                                 <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="18"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -445,7 +445,7 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is you" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u4p-KT-t8T" userLabel="User Name Label">
-                                        <rect key="frame" x="148" y="124" width="81" height="20"/>
+                                        <rect key="frame" x="147" y="124" width="81" height="20"/>
                                         <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="16"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -462,7 +462,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Play" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6CE-oi-zf6" userLabel="Play Text Label">
-                                        <rect key="frame" x="170" y="174" width="37" height="22"/>
+                                        <rect key="frame" x="169" y="174" width="37" height="22"/>
                                         <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="18"/>
                                         <color key="textColor" red="0.25882352941176467" green="0.13333333333333333" blue="0.99607843137254903" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -761,21 +761,21 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="215"/>
                                     </imageView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fire_yellow" translatesAutoresizingMaskIntoConstraints="NO" id="smp-c4-Ud6" userLabel="Left User Image View">
-                                        <rect key="frame" x="48.5" y="22" width="90" height="90"/>
+                                        <rect key="frame" x="48" y="22" width="90" height="90"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="smp-c4-Ud6" secondAttribute="height" multiplier="1:1" id="2c6-G1-csU"/>
                                             <constraint firstAttribute="width" constant="90" id="gyl-Wv-jPZ"/>
                                         </constraints>
                                     </imageView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="userfigure" translatesAutoresizingMaskIntoConstraints="NO" id="rGL-HO-tDk" userLabel="Right User Image View">
-                                        <rect key="frame" x="238.5" y="22" width="90" height="90"/>
+                                        <rect key="frame" x="238" y="22" width="90" height="90"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="90" id="RSA-6q-VvR"/>
                                             <constraint firstAttribute="width" secondItem="rGL-HO-tDk" secondAttribute="height" multiplier="1:1" id="TYQ-pt-CGB"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="vs" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i1f-nt-LNi" userLabel="VS Label">
-                                        <rect key="frame" x="167.5" y="49" width="41" height="37"/>
+                                        <rect key="frame" x="167" y="49" width="41" height="37"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="41" id="dXG-8a-ppe"/>
                                             <constraint firstAttribute="height" constant="37" id="eIZ-Zd-Dxc"/>
@@ -785,44 +785,44 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Oval" translatesAutoresizingMaskIntoConstraints="NO" id="tz2-Dr-SDE">
-                                        <rect key="frame" x="157.5" y="111" width="60" height="60"/>
+                                        <rect key="frame" x="158" y="111" width="60" height="60"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="7Ck-DX-CZ1"/>
                                             <constraint firstAttribute="width" constant="60" id="QOK-Lj-Zrv"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hd5-Aa-tvV" userLabel="Current Song Label">
-                                        <rect key="frame" x="180" y="127" width="15.5" height="29.5"/>
+                                        <rect key="frame" x="180.5" y="126.5" width="15.5" height="29.5"/>
                                         <fontDescription key="fontDescription" name="Montserrat-MediumItalic" family="Montserrat" pointSize="24"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1234" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="45D-kh-MVL" userLabel="Left Points Label">
-                                        <rect key="frame" x="69.5" y="135" width="65" height="37"/>
+                                        <rect key="frame" x="69" y="135" width="65" height="37"/>
                                         <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="30"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5678" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="owN-SQ-VoR" userLabel="Right Points Label">
-                                        <rect key="frame" x="242.5" y="135" width="74" height="37"/>
+                                        <rect key="frame" x="242" y="135" width="74" height="37"/>
                                         <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="30"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AI" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D8m-Q9-iDm" userLabel="Left User Name Label">
-                                        <rect key="frame" x="93.5" y="121" width="17" height="20"/>
+                                        <rect key="frame" x="93" y="121" width="17" height="20"/>
                                         <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="16"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is you" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Yb-tz-7Q9" userLabel="Right User Name Label">
-                                        <rect key="frame" x="239" y="120" width="81" height="20"/>
+                                        <rect key="frame" x="238" y="120" width="81" height="20"/>
                                         <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="16"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="3WZ-YD-gEw" userLabel="Left Stars Stack View">
-                                        <rect key="frame" x="51.5" y="178" width="101" height="17"/>
+                                        <rect key="frame" x="51" y="178" width="101" height="17"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Star" translatesAutoresizingMaskIntoConstraints="NO" id="800-Fo-0cP">
                                                 <rect key="frame" x="0.0" y="0.0" width="17" height="17"/>
@@ -842,7 +842,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="8Ee-vt-Ipm" userLabel="Right Stars Stack View">
-                                        <rect key="frame" x="228.5" y="178" width="101" height="17"/>
+                                        <rect key="frame" x="228" y="178" width="101" height="17"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Star" translatesAutoresizingMaskIntoConstraints="NO" id="2cj-HZ-BHN">
                                                 <rect key="frame" x="0.0" y="0.0" width="17" height="17"/>
@@ -896,7 +896,7 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="txB-Mt-xPL" userLabel="Sons Indicator Stack View">
-                                <rect key="frame" x="65.5" y="231" width="243" height="31"/>
+                                <rect key="frame" x="66" y="231" width="243" height="31"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_CD_line_new" translatesAutoresizingMaskIntoConstraints="NO" id="MjT-b6-ncn" userLabel="Track Indicator 0">
                                         <rect key="frame" x="0.0" y="0.0" width="31" height="31"/>
@@ -918,6 +918,9 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="79" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="Su0-ql-6ml">
                                 <rect key="frame" x="12" y="278" width="351" height="339"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="339" id="ULy-2y-1Up"/>
+                                </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="AnswerCell" rowHeight="79" id="Q35-Pz-Djb" customClass="AnswerTableViewCell" customModule="MelodySampling" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="1" width="351" height="79"/>
@@ -972,7 +975,6 @@
                             <constraint firstItem="Su0-ql-6ml" firstAttribute="centerX" secondItem="E2X-WD-2Wc" secondAttribute="centerX" id="2v7-hH-tlM"/>
                             <constraint firstAttribute="trailing" secondItem="WXg-dK-XIq" secondAttribute="trailing" id="5GA-S1-YCc"/>
                             <constraint firstItem="Su0-ql-6ml" firstAttribute="top" secondItem="txB-Mt-xPL" secondAttribute="bottom" constant="16" id="FZJ-cf-hrR"/>
-                            <constraint firstItem="mRu-LV-13g" firstAttribute="top" secondItem="Su0-ql-6ml" secondAttribute="bottom" constant="50" id="JE0-xq-LxD"/>
                             <constraint firstItem="txB-Mt-xPL" firstAttribute="top" secondItem="WXg-dK-XIq" secondAttribute="bottom" constant="16" id="LnJ-mM-fhv"/>
                             <constraint firstItem="WXg-dK-XIq" firstAttribute="leading" secondItem="E2X-WD-2Wc" secondAttribute="leading" id="Nad-nJ-zXh"/>
                             <constraint firstItem="WXg-dK-XIq" firstAttribute="top" secondItem="yzg-T8-E23" secondAttribute="bottom" id="TeX-Ch-ed2"/>
@@ -986,10 +988,12 @@
                         <outlet property="leftUserImageView" destination="smp-c4-Ud6" id="YHU-0E-he2"/>
                         <outlet property="leftUserScoreLabel" destination="45D-kh-MVL" id="top-oo-nWb"/>
                         <outlet property="playingSongLabel" destination="hd5-Aa-tvV" id="Xh2-46-lNq"/>
+                        <outlet property="profileBackgroundContentView" destination="WXg-dK-XIq" id="zMl-3C-xdZ"/>
                         <outlet property="rightStarsStackView" destination="8Ee-vt-Ipm" id="Lvg-8O-ATL"/>
                         <outlet property="rightUserImageView" destination="rGL-HO-tDk" id="bU0-nr-hEJ"/>
                         <outlet property="rightUserScoreLabel" destination="owN-SQ-VoR" id="48p-SX-EHm"/>
                         <outlet property="tableView" destination="Su0-ql-6ml" id="IFS-1z-nX0"/>
+                        <outlet property="tableViewHeightConstrains" destination="ULy-2y-1Up" id="ASg-Us-bgg"/>
                         <outlet property="trackIndicator0" destination="MjT-b6-ncn" id="3IP-e6-I1r"/>
                         <outlet property="trackIndicator1" destination="kmj-bw-TGG" id="tpc-nB-78u"/>
                         <outlet property="trackIndicator2" destination="vNF-Hk-3rn" id="WD4-xs-A6p"/>
@@ -1500,7 +1504,7 @@
                     <toolbarItems/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="667"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="pXk-p9-tfJ">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="pXk-p9-tfJ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
