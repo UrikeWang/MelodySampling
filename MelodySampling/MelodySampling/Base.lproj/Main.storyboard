@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="bgG-UJ-6ec">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BvU-xg-gOp">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -45,7 +45,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="music" translatesAutoresizingMaskIntoConstraints="NO" id="O1P-lZ-xSE" userLabel="Landing Main Image View">
-                                <rect key="frame" x="0.0" y="160" width="375" height="292"/>
+                                <rect key="frame" x="0.0" y="204" width="375" height="292"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Log in" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nRs-tJ-aaB">
                                 <rect key="frame" x="47" y="421" width="281" height="50"/>
@@ -79,7 +79,6 @@
                                 <state key="normal" title="Invisible Login Button"/>
                                 <connections>
                                     <action selector="loginButtonTapped:" destination="bgG-UJ-6ec" eventType="touchUpInside" id="Hev-2m-VjC"/>
-                                    <segue destination="Tjb-TR-M1w" kind="show" id="axF-g3-tlA"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eNZ-KW-APm" userLabel="Invisible SignUp Button">
@@ -87,7 +86,6 @@
                                 <state key="normal" title="Invisible SignUp Button"/>
                                 <connections>
                                     <action selector="signUpButtonTapped:" destination="bgG-UJ-6ec" eventType="touchUpInside" id="DKy-Fh-b19"/>
-                                    <segue destination="Y5G-1b-riF" kind="show" id="ATo-pa-vre"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G2v-2P-JoN">
@@ -98,13 +96,13 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="K_logo" translatesAutoresizingMaskIntoConstraints="NO" id="o7g-XZ-Nzz" userLabel="Logo Image View">
-                                <rect key="frame" x="132.5" y="50" width="110" height="110"/>
+                                <rect key="frame" x="132.5" y="94" width="110" height="110"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="o7g-XZ-Nzz" secondAttribute="height" multiplier="1:1" id="PfZ-eB-FR7"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="King of Song Quiz" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q4z-3t-cIg" userLabel="Title Label">
-                                <rect key="frame" x="46" y="190" width="283" height="41.5"/>
+                                <rect key="frame" x="46" y="234" width="283" height="41.5"/>
                                 <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="32"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -155,6 +153,7 @@
                             <constraint firstItem="C8j-OD-UCA" firstAttribute="top" secondItem="nRs-tJ-aaB" secondAttribute="bottom" constant="10" id="wmr-iR-E0y"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="zX6-Hm-per"/>
                     <nil key="simulatedStatusBarMetrics"/>
                     <connections>
                         <outlet property="anonymousLoginButtonOutlet" destination="G2v-2P-JoN" id="pzj-2d-lNQ"/>
@@ -165,11 +164,13 @@
                         <outlet property="signUpButtonOutlet" destination="eNZ-KW-APm" id="uzh-Ip-pqx"/>
                         <outlet property="signupLabel" destination="C8j-OD-UCA" id="vgU-rC-PCT"/>
                         <outlet property="titleLabel" destination="Q4z-3t-cIg" id="ydl-gF-3p3"/>
+                        <segue destination="Tjb-TR-M1w" kind="show" id="eAu-vk-Y3L"/>
+                        <segue destination="Y5G-1b-riF" kind="show" id="E8x-3I-44O"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G0U-7s-mVh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="213.59999999999999" y="-953.07346326836591"/>
+            <point key="canvasLocation" x="1152.8" y="-953.07346326836591"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="aAP-Md-uWi">
@@ -184,10 +185,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="crowd" translatesAutoresizingMaskIntoConstraints="NO" id="uRX-Ec-B1g" userLabel="Sign Up Main Image View">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U1h-ID-cdY" userLabel="Opacity View">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="K_logo" translatesAutoresizingMaskIntoConstraints="NO" id="msz-AP-Yda" userLabel="Logo Image View">
                                         <rect key="frame" x="130" y="30" width="115" height="115"/>
@@ -196,7 +197,7 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="King of Song Quiz" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="em1-6Q-aom" userLabel="Title Label">
-                                        <rect key="frame" x="47" y="145" width="283" height="41.5"/>
+                                        <rect key="frame" x="46" y="145" width="283" height="41.5"/>
                                         <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="32"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -367,7 +368,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Sr-Wb-5D4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1052" y="-539.28035982008998"/>
+            <point key="canvasLocation" x="1991.2" y="-539.28035982008998"/>
         </scene>
         <!--Profile Page View Controller-->
         <scene sceneID="ycO-Oa-d5U">
@@ -628,7 +629,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DhC-Fq-Cj1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1884" y="-953.07346326836591"/>
+            <point key="canvasLocation" x="2823.1999999999998" y="-953.07346326836591"/>
         </scene>
         <!--Type Choose View Controller-->
         <scene sceneID="CBg-b8-mju">
@@ -739,7 +740,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="meu-zt-sSq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2629.5999999999999" y="-953.07346326836591"/>
+            <point key="canvasLocation" x="3568.8000000000002" y="-953.07346326836591"/>
         </scene>
         <!--Play Page View Controller-->
         <scene sceneID="BZk-Uo-QSu">
@@ -1001,7 +1002,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mq3-Cr-bb0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3388" y="-953"/>
+            <point key="canvasLocation" x="4327.1999999999998" y="-953.07346326836591"/>
         </scene>
         <!--Result Page View Controller-->
         <scene sceneID="EM0-rn-YA1">
@@ -1285,7 +1286,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ehh-k0-jgy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4133.6000000000004" y="-953.07346326836591"/>
+            <point key="canvasLocation" x="5072.8000000000002" y="-953.07346326836591"/>
         </scene>
         <!--Log In View Controller-->
         <scene sceneID="Ya5-e6-AmV">
@@ -1475,6 +1476,7 @@
                             <constraint firstAttribute="topMargin" secondItem="uFm-6v-RYX" secondAttribute="top" id="nYm-ku-0Rp"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="EFe-Yl-HoX"/>
                     <nil key="simulatedStatusBarMetrics"/>
                     <connections>
                         <outlet property="emailResetButtonOutlet" destination="bmC-gg-dzb" id="b2D-Vg-fbj"/>
@@ -1491,7 +1493,27 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TPi-fz-Gh8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1052" y="-1278.7106446776613"/>
+            <point key="canvasLocation" x="1991.2" y="-1278.7106446776613"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="X7f-Bp-jpm">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="BvU-xg-gOp" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="667"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="pXk-p9-tfJ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="bgG-UJ-6ec" kind="relationship" relationship="rootViewController" id="GcB-vd-h6P"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="paR-zV-J1g" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="213.59999999999999" y="-953.07346326836591"/>
         </scene>
     </scenes>
     <resources>
