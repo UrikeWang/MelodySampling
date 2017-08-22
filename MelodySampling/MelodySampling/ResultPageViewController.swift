@@ -68,17 +68,15 @@ class ResultPageViewController: UIViewController, UITableViewDelegate, UITableVi
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        createProfileViewOfResult(target: self.profilePageView)
-        
+
         createNextBattleOfResult(target: nextBattleLabel)
-        
+
         let imageDiameter = self.userProfileImageView.frame.width
-        
+
         userProfileImageView.layer.cornerRadius = imageDiameter / 2
 
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -93,6 +91,12 @@ class ResultPageViewController: UIViewController, UITableViewDelegate, UITableVi
         tableView.delegate = self
 
         tableView.dataSource = self
+
+        if UIScreen.main.bounds.height > 700 {
+            createResultBackground(target: self.view, height: 750)
+        } else {
+            createResultBackground(target: self.view, height: 680)
+        }
 
         invisibleNextGameButtonOutlet.setTitleColor(UIColor.clear, for: .normal)
 

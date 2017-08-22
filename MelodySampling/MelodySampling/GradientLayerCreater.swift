@@ -26,11 +26,11 @@ func createGradientOnLabel(target uILabel: UILabel) {
     uILabel.layer.insertSublayer(gradientLayer, at: 0)
 }
 
-func createSignUpPageGradient(target uIView: UIView) {
+func createSignUpPageGradient(target uIView: UIView, height screenH: Int) {
 
     gradientLayer = CAGradientLayer()
 
-    gradientLayer.frame = uIView.bounds
+    gradientLayer.frame = CGRect(x: 0, y: 0, width: 600, height: screenH)
 
     gradientLayer.colors = [UIColor.mldLightRoyalBlue.cgColor, UIColor.mldLightRoyalBlue.cgColor, UIColor.mldPurplePink.cgColor]
 
@@ -88,12 +88,23 @@ func createUserProfileImage(targe uIImageView: UIImageView) {
 }
 
 func createUserProfilePageLogoutBackground(target uIView: UIView) {
-    
+
     gradientLayer = CAGradientLayer()
-    
+
     gradientLayer.frame = uIView.bounds
 
     gradientLayer.colors = [UIColor.mldLightPurple.cgColor, UIColor.mldLighterPurple.cgColor, UIColor.mldLighterPurpleTwo.cgColor]
+
+    uIView.layer.insertSublayer(gradientLayer, at: 0)
+
+}
+
+func createResultBackground(target uIView: UIView, height screenH: Int) {
+    gradientLayer = CAGradientLayer()
+
+    gradientLayer.frame = CGRect(origin: CGPoint.init(x: 0, y: 0), size: CGSize(width: 500, height: screenH))
+
+        gradientLayer.colors = [UIColor.mldLightRoyalBlue.cgColor, UIColor.mldLightRose.cgColor]
 
     uIView.layer.insertSublayer(gradientLayer, at: 0)
 

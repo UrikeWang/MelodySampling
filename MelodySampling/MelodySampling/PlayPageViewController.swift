@@ -420,12 +420,12 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+
         let leftUserDiameter = self.leftUserImageView.frame.width
         let rightUserDiameter = self.rightUserImageView.frame.width
-        
+
         leftUserImageView.layer.cornerRadius = leftUserDiameter / 2
-        
+
         rightUserImageView.layer.cornerRadius = rightUserDiameter / 2
 
         let tableViewHeight = Double(UIScreen.main.bounds.height) - Double(profileBackgroundContentView.frame.height) - 31 - 32

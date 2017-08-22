@@ -130,8 +130,6 @@ class LogInViewController: UIViewController {
 
         createTitleLabelShadow(target: titleLabel)
 
-        createSignUpPageGradient(target: opacityView)
-
         emailResetButtonOutlet.setTitleColor(UIColor.clear, for: .normal)
 
         forgetPasswordLabel.backgroundColor = UIColor.clear
@@ -142,6 +140,16 @@ class LogInViewController: UIViewController {
 
         loginButtonOutlet.setTitleColor(UIColor.clear, for: .normal)
         signUpInvisibleButtonOutlet.setTitleColor(UIColor.clear, for: .normal)
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        if UIScreen.main.bounds.height > 700 {
+            createSignUpPageGradient(target: opacityView, height: 750)
+        } else {
+            createSignUpPageGradient(target: opacityView, height: 680)
+        }
     }
 
     override func viewDidAppear(_ animated: Bool) {

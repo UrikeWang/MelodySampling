@@ -128,8 +128,6 @@ class SignUpViewController: UIViewController {
 
         setCornerRadiustTo(signUpLabel)
 
-        createSignUpPageGradient(target: opacityView)
-
         goToLoginLabel.backgroundColor = UIColor.clear
 
         signUpButtonOutlet.setTitleColor(UIColor.clear, for: .normal)
@@ -149,6 +147,16 @@ class SignUpViewController: UIViewController {
             self.addNumber = json["signedUserCount"].intValue
 
         })
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        if UIScreen.main.bounds.height > 700 {
+           createSignUpPageGradient(target: opacityView, height: 750)
+         } else {
+            createSignUpPageGradient(target: opacityView, height: 700)
+        }
     }
 
     override func viewDidAppear(_ animated: Bool) {

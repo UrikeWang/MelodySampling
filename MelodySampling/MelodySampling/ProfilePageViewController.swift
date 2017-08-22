@@ -112,7 +112,7 @@ class ProfilePageViewController: UIViewController, UITableViewDelegate, UITableV
         super.viewDidLoad()
 
         print("===== Profile Page =====")
-        
+
         invisiblePhotoUsageButtonOutlet.setTitleColor(UIColor.clear, for: .normal)
 
         logOutButtonOutlet.setTitleColor(UIColor.clear, for: .normal)
@@ -226,39 +226,41 @@ class ProfilePageViewController: UIViewController, UITableViewDelegate, UITableV
         }
         return cell
     }
-    
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+
         let radius = self.userProfileImageView.frame.width
-        
+
         userProfileImageView.layer.cornerRadius = radius / 2
-        
+
         createUserProfilePageLogoutBackground(target: logOutView)
-        
+
         createNextBattleOfResult(target: playButtonLabel)
-        
+
         if historyList.count == 0 {
-            
-            let framOfTableView = self.historyTableView.frame
-            
+
+            let positionY = self.historyTableView.frame.origin.y
+
+            let framOfTableView = CGRect(origin: CGPoint.init(x: 0, y: positionY), size: CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height - positionY - 40))
+
             let emptyView = UIView(frame: framOfTableView)
-            
+
             let emptyLabel = createLabel(at: emptyView, content: "尚無對戰紀錄", color: UIColor.white, font: UIFont.mldTextStyleEmptyFont()!)
-            
+
             createProfilePageHistoryCellBackground(target: emptyView)
-            
+
             self.view.addSubview(emptyView)
-            
+
             self.view.addSubview(emptyLabel)
-            
+
         }
 
     }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
+
     }
 
 }
