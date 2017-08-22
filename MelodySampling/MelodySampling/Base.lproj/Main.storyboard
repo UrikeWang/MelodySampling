@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BvU-xg-gOp">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="0jJ-PK-wW3">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -35,7 +35,7 @@
         <!--Landing Page View Controller-->
         <scene sceneID="vYB-Hh-43r">
             <objects>
-                <viewController storyboardIdentifier="LandingPage" useStoryboardIdentifierAsRestorationIdentifier="YES" id="bgG-UJ-6ec" customClass="LandingPageViewController" customModule="MelodySampling" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LandingPage" modalTransitionStyle="flipHorizontal" useStoryboardIdentifierAsRestorationIdentifier="YES" id="bgG-UJ-6ec" customClass="LandingPageViewController" customModule="MelodySampling" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="MwV-VO-dhb"/>
                         <viewControllerLayoutGuide type="bottom" id="EZh-xy-gZm"/>
@@ -155,6 +155,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="zX6-Hm-per"/>
                     <nil key="simulatedStatusBarMetrics"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="667"/>
                     <connections>
                         <outlet property="anonymousLoginButtonOutlet" destination="G2v-2P-JoN" id="pzj-2d-lNQ"/>
                         <outlet property="anonymousLoginLabel" destination="dnJ-zN-H9u" id="ygb-c9-ApS"/>
@@ -164,13 +166,13 @@
                         <outlet property="signUpButtonOutlet" destination="eNZ-KW-APm" id="uzh-Ip-pqx"/>
                         <outlet property="signupLabel" destination="C8j-OD-UCA" id="vgU-rC-PCT"/>
                         <outlet property="titleLabel" destination="Q4z-3t-cIg" id="ydl-gF-3p3"/>
-                        <segue destination="Tjb-TR-M1w" kind="show" id="eAu-vk-Y3L"/>
-                        <segue destination="Y5G-1b-riF" kind="show" id="E8x-3I-44O"/>
+                        <segue destination="Tjb-TR-M1w" kind="show" id="Wzl-2d-e45"/>
+                        <segue destination="Y5G-1b-riF" kind="show" id="MOp-ME-eyS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G0U-7s-mVh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1152.8" y="-953.07346326836591"/>
+            <point key="canvasLocation" x="3031.1999999999998" y="-953.07346326836591"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="aAP-Md-uWi">
@@ -185,10 +187,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="crowd" translatesAutoresizingMaskIntoConstraints="NO" id="uRX-Ec-B1g" userLabel="Sign Up Main Image View">
-                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U1h-ID-cdY" userLabel="Opacity View">
-                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="K_logo" translatesAutoresizingMaskIntoConstraints="NO" id="msz-AP-Yda" userLabel="Logo Image View">
                                         <rect key="frame" x="130" y="30" width="115" height="115"/>
@@ -344,17 +346,19 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="uRX-Ec-B1g" firstAttribute="top" secondItem="nKW-T5-MpE" secondAttribute="bottom" id="16I-pK-Czt"/>
                             <constraint firstItem="uRX-Ec-B1g" firstAttribute="leading" secondItem="H2Z-3R-i1H" secondAttribute="leading" id="3Wd-Up-OjS"/>
-                            <constraint firstItem="1O6-L0-CqL" firstAttribute="top" secondItem="U1h-ID-cdY" secondAttribute="bottom" id="48v-Ld-cQZ"/>
                             <constraint firstAttribute="trailing" secondItem="uRX-Ec-B1g" secondAttribute="trailing" id="BCN-68-IqQ"/>
-                            <constraint firstAttribute="trailing" secondItem="U1h-ID-cdY" secondAttribute="trailing" id="QpD-cN-S08"/>
-                            <constraint firstItem="U1h-ID-cdY" firstAttribute="leading" secondItem="H2Z-3R-i1H" secondAttribute="leading" id="TRI-fV-DYR"/>
-                            <constraint firstItem="1O6-L0-CqL" firstAttribute="top" secondItem="uRX-Ec-B1g" secondAttribute="bottom" id="if1-Ti-Mu8"/>
-                            <constraint firstItem="U1h-ID-cdY" firstAttribute="top" secondItem="nKW-T5-MpE" secondAttribute="bottom" id="vuz-KK-ifD"/>
+                            <constraint firstItem="1O6-L0-CqL" firstAttribute="top" secondItem="uRX-Ec-B1g" secondAttribute="bottom" id="GFX-Av-7Ke"/>
+                            <constraint firstItem="uRX-Ec-B1g" firstAttribute="top" secondItem="nKW-T5-MpE" secondAttribute="bottom" constant="-64" id="KvV-Vl-Gh3"/>
+                            <constraint firstItem="U1h-ID-cdY" firstAttribute="top" secondItem="uRX-Ec-B1g" secondAttribute="top" id="QLc-p4-Oha"/>
+                            <constraint firstItem="U1h-ID-cdY" firstAttribute="trailing" secondItem="uRX-Ec-B1g" secondAttribute="trailing" id="b94-be-Qkd"/>
+                            <constraint firstItem="U1h-ID-cdY" firstAttribute="leading" secondItem="uRX-Ec-B1g" secondAttribute="leading" id="grl-qi-eq2"/>
+                            <constraint firstItem="U1h-ID-cdY" firstAttribute="bottom" secondItem="uRX-Ec-B1g" secondAttribute="bottom" id="iSu-Et-eg8"/>
                         </constraints>
                     </view>
-                    <nil key="simulatedStatusBarMetrics"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="667"/>
                     <connections>
                         <outlet property="confirmPasswordTextField" destination="pfT-LV-HHY" id="BJH-cB-qIp"/>
                         <outlet property="emailTextField" destination="zpD-dh-a8g" id="cHe-HC-Yy3"/>
@@ -368,7 +372,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Sr-Wb-5D4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1991.2" y="-539.28035982008998"/>
+            <point key="canvasLocation" x="3869.5999999999999" y="-539.28035982008998"/>
         </scene>
         <!--Profile Page View Controller-->
         <scene sceneID="ycO-Oa-d5U">
@@ -629,7 +633,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DhC-Fq-Cj1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2823.1999999999998" y="-953.07346326836591"/>
+            <point key="canvasLocation" x="4701.6000000000004" y="-953.07346326836591"/>
         </scene>
         <!--Type Choose View Controller-->
         <scene sceneID="CBg-b8-mju">
@@ -740,7 +744,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="meu-zt-sSq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3568.8000000000002" y="-953.07346326836591"/>
+            <point key="canvasLocation" x="5447.1999999999998" y="-953.07346326836591"/>
         </scene>
         <!--Play Page View Controller-->
         <scene sceneID="BZk-Uo-QSu">
@@ -1004,7 +1008,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mq3-Cr-bb0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4327.1999999999998" y="-953.07346326836591"/>
+            <point key="canvasLocation" x="6205.6000000000004" y="-953.07346326836591"/>
         </scene>
         <!--Result Page View Controller-->
         <scene sceneID="EM0-rn-YA1">
@@ -1288,7 +1292,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ehh-k0-jgy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5072.8000000000002" y="-953.07346326836591"/>
+            <point key="canvasLocation" x="6951.1999999999998" y="-953.07346326836591"/>
         </scene>
         <!--Log In View Controller-->
         <scene sceneID="Ya5-e6-AmV">
@@ -1479,7 +1483,8 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="EFe-Yl-HoX"/>
-                    <nil key="simulatedStatusBarMetrics"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="667"/>
                     <connections>
                         <outlet property="emailResetButtonOutlet" destination="bmC-gg-dzb" id="b2D-Vg-fbj"/>
                         <outlet property="emailTextField" destination="SX9-8t-gFK" id="txk-jC-hD1"/>
@@ -1495,27 +1500,27 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TPi-fz-Gh8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1991.2" y="-1278.7106446776613"/>
+            <point key="canvasLocation" x="3869.5999999999999" y="-1278.7106446776613"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="X7f-Bp-jpm">
+        <scene sceneID="pRe-Fe-7Nm">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="BvU-xg-gOp" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="LandingNavigation" automaticallyAdjustsScrollViewInsets="NO" id="0jJ-PK-wW3" sceneMemberID="viewController">
                     <toolbarItems/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="667"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="pXk-p9-tfJ">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="59b-Li-pjM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="bgG-UJ-6ec" kind="relationship" relationship="rootViewController" id="GcB-vd-h6P"/>
+                        <segue destination="bgG-UJ-6ec" kind="relationship" relationship="rootViewController" id="QIg-OJ-gBQ"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="paR-zV-J1g" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5kK-QP-zCT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="213.59999999999999" y="-953.07346326836591"/>
+            <point key="canvasLocation" x="2092" y="-953.07346326836591"/>
         </scene>
     </scenes>
     <resources>
