@@ -47,6 +47,8 @@ class ResultPageViewController: UIViewController, UITableViewDelegate, UITableVi
     }
 
     @IBOutlet weak var tableView: UITableView!
+    
+    
 
     @IBOutlet weak var profilePageView: UIView!
 
@@ -223,6 +225,8 @@ class ResultPageViewController: UIViewController, UITableViewDelegate, UITableVi
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
 
+        if Double(UIScreen.main.bounds.height) > 665 {
+        
         let screenSize = UIScreen.main.bounds
 
         let screenHeight = screenSize.height
@@ -230,6 +234,9 @@ class ResultPageViewController: UIViewController, UITableViewDelegate, UITableVi
         let tableHeight = screenHeight - profilePageView.frame.height - lowerView.frame.height
 
         return tableHeight / CGFloat(questions.count)
+        }
+        
+        return 80
     }
 
     func saveResultToHistory() {

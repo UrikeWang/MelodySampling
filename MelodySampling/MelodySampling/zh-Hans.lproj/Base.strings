@@ -1,0 +1,12 @@
+/* 
+  Base.strings
+  MelodySampling
+
+  Created by moon on 2017/8/21.
+  Copyright © 2017年 Marvin Lin. All rights reserved.
+*/
+
+"TitleLabelText" = "King of Song Quiz";
+"LoginLabelText" = "Log in";
+"SignupLabelText" = "Sign up";
+"AnonymousLabelText" = "Log in Anonymously";
