@@ -382,6 +382,7 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
         print("現在在第 \(currentTrack) 首")
         print("接下來是第 \(prepareTrack) 首")
 
+        //MARK: distractors 只有3個
         for index in 0..<3 {
             print(index)
             let distractorItem = distractors[index]
@@ -392,8 +393,6 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
                 self.questionList.append(distractor)
             }
         }
-//        
-//        self.questionList = self.fake0
 
         self.questionList.append(self.trackNameArray[self.currentTrack])
 
