@@ -66,14 +66,19 @@ class ResultPageViewController: UIViewController, UITableViewDelegate, UITableVi
 
     @IBOutlet weak var userStarsStackView: UIStackView!
 
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
         createProfileViewOfResult(target: self.profilePageView)
-
+        
         createNextBattleOfResult(target: nextBattleLabel)
-    }
+        
+        let imageDiameter = self.userProfileImageView.frame.width
+        
+        userProfileImageView.layer.cornerRadius = imageDiameter / 2
 
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -102,7 +107,6 @@ class ResultPageViewController: UIViewController, UITableViewDelegate, UITableVi
         } else {
             userNameLabel.text = "This is you"
         }
-        invisibleGoHomeButtonOutlet.setTitleColor(UIColor.clear, for: .normal)
 
         score = (userDefault.object(forKey: "Score") as? Double)!
 
