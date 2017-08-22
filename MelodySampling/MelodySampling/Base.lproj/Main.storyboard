@@ -387,10 +387,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jwy-5s-qhz">
-                                <rect key="frame" x="0.0" y="607" width="375" height="60"/>
+                                <rect key="frame" x="0.0" y="627" width="375" height="40"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tIr-sg-bbH" userLabel="Log Out Item Content View">
-                                        <rect key="frame" x="117.5" y="15" width="140" height="30"/>
+                                        <rect key="frame" x="117.5" y="5" width="140" height="30"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logouticon" translatesAutoresizingMaskIntoConstraints="NO" id="dty-HO-Ta8" userLabel="Log Out Image VIew">
                                                 <rect key="frame" x="111" y="0.0" width="29" height="30"/>
@@ -410,13 +410,13 @@
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Log out" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c6g-G5-ckw" userLabel="Log Out Label">
-                                        <rect key="frame" x="134" y="15" width="89.5" height="30"/>
+                                        <rect key="frame" x="134" y="5" width="89.5" height="30"/>
                                         <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="24"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tmL-Wu-OHy" userLabel="Invisible Logout Button">
-                                        <rect key="frame" x="107.5" y="10" width="160" height="40"/>
+                                        <rect key="frame" x="107.5" y="0.0" width="160" height="40"/>
                                         <state key="normal" title="Invisible Button"/>
                                         <connections>
                                             <action selector="logOutButtonTapped:" destination="QDn-rL-xbF" eventType="touchUpInside" id="V18-Nr-FB4"/>
@@ -428,7 +428,7 @@
                                     <constraint firstItem="tmL-Wu-OHy" firstAttribute="width" secondItem="tIr-sg-bbH" secondAttribute="width" constant="20" id="3XT-Hd-STX"/>
                                     <constraint firstItem="c6g-G5-ckw" firstAttribute="top" secondItem="tIr-sg-bbH" secondAttribute="top" id="59k-f1-YIs"/>
                                     <constraint firstItem="tIr-sg-bbH" firstAttribute="centerY" secondItem="jwy-5s-qhz" secondAttribute="centerY" id="5KH-cl-SEO"/>
-                                    <constraint firstAttribute="height" constant="60" id="GwX-Sh-EZb"/>
+                                    <constraint firstAttribute="height" constant="40" id="GwX-Sh-EZb"/>
                                     <constraint firstItem="tmL-Wu-OHy" firstAttribute="centerY" secondItem="tIr-sg-bbH" secondAttribute="centerY" id="Prt-5m-rea"/>
                                     <constraint firstItem="tIr-sg-bbH" firstAttribute="centerX" secondItem="jwy-5s-qhz" secondAttribute="centerX" id="Ujh-tA-p3J"/>
                                     <constraint firstItem="tmL-Wu-OHy" firstAttribute="centerX" secondItem="tIr-sg-bbH" secondAttribute="centerX" id="VEV-PI-pNg"/>
@@ -441,15 +441,15 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ivk-cb-90t" userLabel="Profile Content View">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="230"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" image="userfigure" translatesAutoresizingMaskIntoConstraints="NO" id="o2i-xB-Gof" userLabel="User Profile Image View">
-                                        <rect key="frame" x="142.5" y="30" width="90" height="90"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="249" verticalHuggingPriority="249" image="userfigure" translatesAutoresizingMaskIntoConstraints="NO" id="o2i-xB-Gof" userLabel="User Profile Image View">
+                                        <rect key="frame" x="144.5" y="30" width="86" height="86"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="o2i-xB-Gof" secondAttribute="height" multiplier="1:1" id="3q5-4u-4ax"/>
-                                            <constraint firstAttribute="width" constant="90" id="p8n-AT-bR5"/>
+                                            <constraint firstAttribute="width" constant="86" id="p8n-AT-bR5"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is you" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u4p-KT-t8T" userLabel="User Name Label">
-                                        <rect key="frame" x="147.5" y="124" width="81" height="20"/>
+                                        <rect key="frame" x="147.5" y="120" width="81" height="20"/>
                                         <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="16"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -479,7 +479,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PGk-Jj-Bmy" userLabel="Invisible Photo Usage Button">
-                                        <rect key="frame" x="142.5" y="30" width="90" height="90"/>
+                                        <rect key="frame" x="144.5" y="30" width="86" height="86"/>
                                         <state key="normal" title="Invisible Button"/>
                                         <connections>
                                             <action selector="invisiblePhotoUsageButtonTapped:" destination="QDn-rL-xbF" eventType="touchUpInside" id="759-eR-y88"/>
@@ -534,7 +534,7 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="L6t-KH-VJ3">
-                                <rect key="frame" x="0.0" y="300" width="375" height="307"/>
+                                <rect key="frame" x="0.0" y="300" width="375" height="327"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HistoryCell" id="hbi-cD-5x0" customClass="HistoryTableViewCell" customModule="MelodySampling" customModuleProvider="target">
@@ -761,17 +761,17 @@
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BG" translatesAutoresizingMaskIntoConstraints="NO" id="NYn-fY-lCm" userLabel="Background Image View">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="215"/>
                                     </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fire_yellow" translatesAutoresizingMaskIntoConstraints="NO" id="smp-c4-Ud6" userLabel="Left User Image View">
-                                        <rect key="frame" x="48" y="22" width="90" height="90"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fire_yellow" translatesAutoresizingMaskIntoConstraints="NO" id="smp-c4-Ud6" userLabel="Left User Image View">
+                                        <rect key="frame" x="52" y="22" width="86" height="86"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="smp-c4-Ud6" secondAttribute="height" multiplier="1:1" id="2c6-G1-csU"/>
-                                            <constraint firstAttribute="width" constant="90" id="gyl-Wv-jPZ"/>
+                                            <constraint firstAttribute="width" constant="86" id="gyl-Wv-jPZ"/>
                                         </constraints>
                                     </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="userfigure" translatesAutoresizingMaskIntoConstraints="NO" id="rGL-HO-tDk" userLabel="Right User Image View">
-                                        <rect key="frame" x="238" y="22" width="90" height="90"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="userfigure" translatesAutoresizingMaskIntoConstraints="NO" id="rGL-HO-tDk" userLabel="Right User Image View">
+                                        <rect key="frame" x="238" y="22" width="86" height="86"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="90" id="RSA-6q-VvR"/>
+                                            <constraint firstAttribute="width" constant="86" id="RSA-6q-VvR"/>
                                             <constraint firstAttribute="width" secondItem="rGL-HO-tDk" secondAttribute="height" multiplier="1:1" id="TYQ-pt-CGB"/>
                                         </constraints>
                                     </imageView>
@@ -805,7 +805,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5678" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="owN-SQ-VoR" userLabel="Right Points Label">
-                                        <rect key="frame" x="242" y="135" width="74" height="37"/>
+                                        <rect key="frame" x="242" y="131" width="74" height="45"/>
                                         <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="30"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -817,7 +817,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is you" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Yb-tz-7Q9" userLabel="Right User Name Label">
-                                        <rect key="frame" x="238.5" y="120" width="81" height="20"/>
+                                        <rect key="frame" x="238.5" y="124" width="81" height="20"/>
                                         <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="16"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -843,7 +843,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="8Ee-vt-Ipm" userLabel="Right Stars Stack View">
-                                        <rect key="frame" x="228" y="178" width="101" height="17"/>
+                                        <rect key="frame" x="228" y="182" width="101" height="17"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Star" translatesAutoresizingMaskIntoConstraints="NO" id="2cj-HZ-BHN">
                                                 <rect key="frame" x="0.0" y="0.0" width="17" height="17"/>
@@ -887,7 +887,6 @@
                                     <constraint firstItem="NYn-fY-lCm" firstAttribute="leading" secondItem="WXg-dK-XIq" secondAttribute="leading" id="jbO-0v-ySS"/>
                                     <constraint firstItem="owN-SQ-VoR" firstAttribute="top" secondItem="rGL-HO-tDk" secondAttribute="bottom" constant="23" id="kFE-Fu-79z"/>
                                     <constraint firstItem="3WZ-YD-gEw" firstAttribute="top" secondItem="45D-kh-MVL" secondAttribute="bottom" constant="6" id="mvh-Vj-ZWD"/>
-                                    <constraint firstItem="45D-kh-MVL" firstAttribute="top" secondItem="smp-c4-Ud6" secondAttribute="bottom" constant="23" id="ral-9a-c9c"/>
                                     <constraint firstItem="tz2-Dr-SDE" firstAttribute="top" secondItem="i1f-nt-LNi" secondAttribute="bottom" constant="25" id="tOG-g3-8aT"/>
                                     <constraint firstItem="rGL-HO-tDk" firstAttribute="top" secondItem="WXg-dK-XIq" secondAttribute="top" constant="22" id="ucb-sx-ph1"/>
                                     <constraint firstItem="hd5-Aa-tvV" firstAttribute="centerX" secondItem="tz2-Dr-SDE" secondAttribute="centerX" id="uqb-hX-xdp"/>
