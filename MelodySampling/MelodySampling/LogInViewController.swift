@@ -14,7 +14,7 @@ class LogInViewController: UIViewController {
     @IBOutlet weak var opacityView: UIView!
 
     @IBOutlet weak var titleLabel: UILabel!
-    
+
     @IBOutlet weak var forgetPasswordLabel: UILabel!
 
     @IBOutlet weak var loginLabel: UILabel!
@@ -117,21 +117,21 @@ class LogInViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         opacityView.frame = UIScreen.main.bounds
 
         self.navigationController?.isNavigationBarHidden = false
-        
+
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        
+
         self.navigationController?.navigationBar.shadowImage = UIImage()
-        
+
         self.navigationController?.navigationBar.isTranslucent = true
-        
+
         createTitleLabelShadow(target: titleLabel)
-        
+
         createSignUpPageGradient(target: opacityView)
-        
+
         emailResetButtonOutlet.setTitleColor(UIColor.clear, for: .normal)
 
         forgetPasswordLabel.backgroundColor = UIColor.clear

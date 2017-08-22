@@ -44,7 +44,7 @@ class SignUpViewController: UIViewController {
     @IBAction func gotoLoginButonTapped(_ sender: UIButton) {
 
         guard let loginController = self.storyboard?.instantiateViewController(withIdentifier: "LoginPage") else { return }
-        
+
         self.navigationController?.pushViewController(loginController, animated: true)
     }
 
@@ -115,21 +115,21 @@ class SignUpViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         opacityView.frame = UIScreen.main.bounds
-        
+
         self.navigationController?.isNavigationBarHidden = false
 
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        
+
         self.navigationController?.navigationBar.shadowImage = UIImage()
-        
+
         self.navigationController?.navigationBar.isTranslucent = true
-        
+
         setCornerRadiustTo(signUpLabel)
-        
+
         createSignUpPageGradient(target: opacityView)
-        
+
         goToLoginLabel.backgroundColor = UIColor.clear
 
         signUpButtonOutlet.setTitleColor(UIColor.clear, for: .normal)
