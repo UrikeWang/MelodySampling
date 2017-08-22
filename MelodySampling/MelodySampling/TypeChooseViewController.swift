@@ -111,7 +111,7 @@ class TypeChooseViewController: UIViewController, UITableViewDataSource, UITable
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
 
-        return self.tableView.frame.height / CGFloat(typeList.count)
+        return UIScreen.main.bounds.height / CGFloat(typeList.count)
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
