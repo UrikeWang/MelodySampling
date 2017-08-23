@@ -39,13 +39,22 @@ class SignUpViewController: UIViewController {
 
     @IBOutlet weak var goToLoginLabel: UILabel!
 
+    @IBOutlet weak var gotoLoginLabelBottomConstrain: NSLayoutConstraint!
+
+    @IBAction func backButtonTapped(_ sender: UIButton) {
+
+        self.dismiss(animated: true) { _ in
+            gotoLandingPage(from: self)
+        }
+
+    }
+
     @IBOutlet weak var gotoLoginButonOutlet: UIButton!
 
     @IBAction func gotoLoginButonTapped(_ sender: UIButton) {
 
-        guard let loginController = self.storyboard?.instantiateViewController(withIdentifier: "LoginPage") else { return }
-
-        self.navigationController?.pushViewController(loginController, animated: true)
+            gotoLoginPage(from: self)
+        
     }
 
     @IBAction func signUpButtonTapped(_ sender: UIButton) {
@@ -96,7 +105,9 @@ class SignUpViewController: UIViewController {
                     UserDefaults.standard.set(user.uid, forKey: "uid")
                     UserDefaults.standard.set(self.userFullName, forKey:"userName")
 
-                    gotoTypeChoosePage(from: self)
+                    self.dismiss(animated: true, completion: { _ in
+                        gotoTypeChoosePage(from: self)
+                    })
 
                 }
             } else {
@@ -156,6 +167,12 @@ class SignUpViewController: UIViewController {
            createSignUpPageGradient(target: opacityView, height: 750)
          } else {
             createSignUpPageGradient(target: opacityView, height: 700)
+        }
+
+        if UIScreen.main.bounds.height < 600 {
+            gotoLoginLabelBottomConstrain.constant = CGFloat(10)
+
+            self.view.layoutIfNeeded()
         }
     }
 
