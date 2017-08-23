@@ -14,7 +14,7 @@ class LogInViewController: UIViewController {
     @IBOutlet weak var opacityView: UIView!
 
     @IBOutlet weak var titleLabel: UILabel!
-    
+
     @IBOutlet weak var forgetPasswordLabel: UILabel!
 
     @IBOutlet weak var loginLabel: UILabel!
@@ -28,6 +28,15 @@ class LogInViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
 
     @IBOutlet weak var signUpInvisibleButtonOutlet: UIButton!
+
+    @IBOutlet weak var gotoSignUpLabelBottomConstraint: NSLayoutConstraint!
+
+    @IBAction func backButtonTapped(_ sender: UIButton) {
+
+        self.dismiss(animated: true) { _ in
+            gotoLandingPage(from: self)
+        }
+    }
 
     @IBOutlet weak var emailResetButtonOutlet: UIButton!
 
@@ -66,7 +75,9 @@ class LogInViewController: UIViewController {
 
     @IBAction func signUpInvisibleButtonTapped(_ sender: UIButton) {
 
-        gotoSignupPage(from: self)
+            gotoSignupPage(from: self)
+        
+
     }
 
     @IBAction func loginButtonTapped(_ sender: UIButton) {
@@ -108,7 +119,10 @@ class LogInViewController: UIViewController {
 
                 UserDefaults.standard.set(user.uid, forKey: "uid")
 
-                gotoProfilePage(from: self)
+                self.dismiss(animated: true, completion: { _ in
+                    gotoProfilePage(from: self)
+                })
+
             }
         }
 
@@ -116,13 +130,19 @@ class LogInViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         opacityView.frame = UIScreen.main.bounds
 
+        self.navigationController?.isNavigationBarHidden = false
+
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+
+        self.navigationController?.navigationBar.isTranslucent = true
+
         createTitleLabelShadow(target: titleLabel)
-        
-        createSignUpPageGradient(target: opacityView)
-        
+
         emailResetButtonOutlet.setTitleColor(UIColor.clear, for: .normal)
 
         forgetPasswordLabel.backgroundColor = UIColor.clear
@@ -133,6 +153,22 @@ class LogInViewController: UIViewController {
 
         loginButtonOutlet.setTitleColor(UIColor.clear, for: .normal)
         signUpInvisibleButtonOutlet.setTitleColor(UIColor.clear, for: .normal)
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        if UIScreen.main.bounds.height > 700 {
+            createSignUpPageGradient(target: opacityView, height: 750)
+        } else {
+            createSignUpPageGradient(target: opacityView, height: 680)
+        }
+
+        if UIScreen.main.bounds.height < 600 {
+
+            gotoSignUpLabelBottomConstraint.constant = CGFloat(10)
+            self.view.layoutIfNeeded()
+        }
     }
 
     override func viewDidAppear(_ animated: Bool) {

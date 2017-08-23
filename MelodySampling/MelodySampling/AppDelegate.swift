@@ -49,7 +49,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         } else {
 
-            let registerVC = storyboard.instantiateViewController(withIdentifier: "LandingPage")
+            let registerVC = storyboard.instantiateViewController(withIdentifier: "LandingNavigation")
 
             self.window?.rootViewController = registerVC
         }

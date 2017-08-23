@@ -47,8 +47,6 @@ class ResultPageViewController: UIViewController, UITableViewDelegate, UITableVi
     }
 
     @IBOutlet weak var tableView: UITableView!
-    
-    
 
     @IBOutlet weak var profilePageView: UIView!
 
@@ -68,12 +66,15 @@ class ResultPageViewController: UIViewController, UITableViewDelegate, UITableVi
 
     @IBOutlet weak var userStarsStackView: UIStackView!
 
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-
-        createProfileViewOfResult(target: self.profilePageView)
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
 
         createNextBattleOfResult(target: nextBattleLabel)
+
+        let imageDiameter = self.userProfileImageView.frame.width
+
+        userProfileImageView.layer.cornerRadius = imageDiameter / 2
+
     }
 
     override func viewDidLoad() {
@@ -91,6 +92,12 @@ class ResultPageViewController: UIViewController, UITableViewDelegate, UITableVi
 
         tableView.dataSource = self
 
+        if UIScreen.main.bounds.height > 700 {
+            createResultBackground(target: self.view, height: 750)
+        } else {
+            createResultBackground(target: self.view, height: 680)
+        }
+
         invisibleNextGameButtonOutlet.setTitleColor(UIColor.clear, for: .normal)
 
         userProfileImageView.layer.shadowColor = UIColor.mldBlack50.cgColor
@@ -104,7 +111,6 @@ class ResultPageViewController: UIViewController, UITableViewDelegate, UITableVi
         } else {
             userNameLabel.text = "This is you"
         }
-        invisibleGoHomeButtonOutlet.setTitleColor(UIColor.clear, for: .normal)
 
         score = (userDefault.object(forKey: "Score") as? Double)!
 
@@ -226,7 +232,7 @@ class ResultPageViewController: UIViewController, UITableViewDelegate, UITableVi
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
 
         if Double(UIScreen.main.bounds.height) > 665 {
-        
+
         let screenSize = UIScreen.main.bounds
 
         let screenHeight = screenSize.height
@@ -235,7 +241,7 @@ class ResultPageViewController: UIViewController, UITableViewDelegate, UITableVi
 
         return tableHeight / CGFloat(questions.count)
         }
-        
+
         return 80
     }
 

@@ -228,8 +228,10 @@ class DownloadManager {
 
                     if downloadPercentage < 80 {
                         downloadPercentage += progress.fractionCompleted
-                    } else {
+                    } else if downloadPercentage < 95 {
                         downloadPercentage += 1
+                    } else {
+                        downloadPercentage = 99
                     }
 
                     progressRing.setProgress(value: CGFloat(downloadPercentage), animationDuration: 0.01) {}

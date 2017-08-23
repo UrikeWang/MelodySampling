@@ -21,7 +21,7 @@ class LandingPageViewController: UIViewController {
     var startTime: Double?
 
     var userFullName = ""
-    
+
     @IBOutlet weak var titleLabel: UILabel!
 
     @IBOutlet weak var loginLabel: UILabel!
@@ -29,16 +29,20 @@ class LandingPageViewController: UIViewController {
     @IBOutlet weak var signupLabel: UILabel!
 
     @IBOutlet weak var anonymousLoginLabel: UILabel!
-    
+
     @IBOutlet weak var anonymousLoginTextLabel: UILabel!
 
     @IBOutlet weak var loginButtonOutlet: UIButton!
 
     @IBAction func loginButtonTapped(_ sender: UIButton) {
 
+        print("Login button tapped")
+
         let currentTime = Date().timeIntervalSince1970
 
         guard let startTime = self.startTime else { return }
+
+        gotoLoginPage(from: self)
 
         Analytics.logEvent("UserGotoLoginPage", parameters: ["timePassed": currentTime - startTime])
 
@@ -48,11 +52,15 @@ class LandingPageViewController: UIViewController {
 
     @IBAction func signUpButtonTapped(_ sender: UIButton) {
 
+        print("Sign up button tapped")
+
         let currentTime = Date().timeIntervalSince1970
 
         guard let startTime = self.startTime else { return }
 
-        Analytics.logEvent("UserGotoLoginPage", parameters: ["timePassed": currentTime - startTime])
+        gotoSignupPage(from: self)
+
+        Analytics.logEvent("UserGotoSignUpPage", parameters: ["timePassed": currentTime - startTime])
     }
 
     @IBOutlet weak var anonymousLoginButtonOutlet: UIButton!
@@ -60,12 +68,15 @@ class LandingPageViewController: UIViewController {
     @IBAction func anonymousLoginButtonTapped(_ sender: UIButton) {
         print("Anonymous login button tapped")
 
+        self.anonymousLoginButtonOutlet.isEnabled = false
+
         Auth.auth().signInAnonymously { (user, error) in
 
             guard let user = user else {
                 if let error = error {
                     print(error)
 
+                    self.anonymousLoginButtonOutlet.isEnabled = true
                 }
             return
 
@@ -101,21 +112,22 @@ class LandingPageViewController: UIViewController {
                 ])
 
             gotoProfilePage(from: self)
+
         }
 
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
+        self.navigationController?.isNavigationBarHidden = true
+
         createTitleLabelShadow(target: titleLabel)
-        
+
         setCornerRadiustTo(loginLabel)
         loginLabel.layer.borderColor = UIColor.white.cgColor
         loginLabel.layer.borderWidth = 2
         loginLabel.backgroundColor = UIColor.clear
-
-        self.startTime = Date().timeIntervalSince1970
 
         setCornerRadiustTo(signupLabel)
 
@@ -141,6 +153,14 @@ class LandingPageViewController: UIViewController {
 
         })
 
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        self.navigationController?.isNavigationBarHidden = true
+
+        self.startTime = Date().timeIntervalSince1970
     }
 
     override func viewDidAppear(_ animated: Bool) {

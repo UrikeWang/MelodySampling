@@ -102,7 +102,7 @@
 "cq8-dZ-1az.text" = "登入";
 
 /* Class = "UILabel"; text = "暱名登入"; ObjectID = "dnJ-zN-H9u"; */
-"dnJ-zN-H9u.text" = "暱名登入";
+"dnJ-zN-H9u.text" = "這一個 label 要檢查";
 
 /* Class = "UIButton"; normalTitle = "Invisible SignUp Button"; ObjectID = "eNZ-KW-APm"; */
 "eNZ-KW-APm.normalTitle" = "Invisible SignUp Button";
