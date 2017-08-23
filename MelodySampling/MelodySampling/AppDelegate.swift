@@ -24,12 +24,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         case mandarinPop, taiwanesePop, cantoPop, billboardPop
     }
 
-    override init() {
-        super.init()
-        
-        FirebaseApp.configure()
-    }
-    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
 
@@ -49,7 +43,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         if UserDefaults.standard.value(forKey: "uid") != nil {
 
-            let registerVC = storyboard.instantiateViewController(withIdentifier: "RootNavigation")
+            let registerVC = storyboard.instantiateViewController(withIdentifier: "ProfilePage")
 
             self.window?.rootViewController = registerVC
 

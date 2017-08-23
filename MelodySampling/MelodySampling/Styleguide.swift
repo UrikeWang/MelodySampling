@@ -77,6 +77,14 @@ extension UIColor {
     class var mldLighterPurpleTwo: UIColor {
         return UIColor(red: 143.0 / 255.0, green: 69.0 / 255.0, blue: 240.0 / 255.0, alpha: 1.0)
     }
+
+    class var mldDarkIndigo40: UIColor {
+        return UIColor(red: 25.0 / 255.0, green: 13.0 / 255.0, blue: 94.0 / 255.0, alpha: 0.4)
+    }
+
+    class var mldLightRose: UIColor {
+        return UIColor(red: 254.0 / 255.0, green: 205.0 / 255.0, blue: 211.0 / 255.0, alpha: 1.0)
+    }
 }
 
 // Text styles

@@ -307,7 +307,9 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
 
             print(resultList)
 
-            self.gotoResultPageByNavigation()
+            let registerVC = self.storyboard?.instantiateViewController(withIdentifier: "ResultPage")
+
+            self.present(registerVC!, animated: true, completion: nil)
 
         } else {
 
@@ -315,7 +317,7 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
 
             var fakeList: [[String]] = []
 
-            while fakeList.count < 5 {
+            while fakeList.count != 5 {
 
                 var eachFakeList: [String] = []
 
@@ -419,7 +421,12 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
-        self.navigationController?.isNavigationBarHidden = true
+        let leftUserDiameter = self.leftUserImageView.frame.width
+        let rightUserDiameter = self.rightUserImageView.frame.width
+
+        leftUserImageView.layer.cornerRadius = leftUserDiameter / 2
+
+        rightUserImageView.layer.cornerRadius = rightUserDiameter / 2
 
         let tableViewHeight = Double(UIScreen.main.bounds.height) - Double(profileBackgroundContentView.frame.height) - 31 - 32
 
@@ -438,16 +445,6 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
         super.viewDidDisappear(animated)
         let clearDistractorData = CheckQuestionInCoreData()
         clearDistractorData.clearDistractorMO()
-    }
-
-    func gotoResultPageByNavigation() {
-
-        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-
-        let resultViewController = storyBoard.instantiateViewController(withIdentifier: "PlayNavigation")
-
-        self.navigationController?.pushViewController(resultViewController, animated: true)
-
     }
 
 }

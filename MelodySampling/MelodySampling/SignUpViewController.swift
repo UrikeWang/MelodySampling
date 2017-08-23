@@ -39,13 +39,22 @@ class SignUpViewController: UIViewController {
 
     @IBOutlet weak var goToLoginLabel: UILabel!
 
+    @IBOutlet weak var gotoLoginLabelBottomConstrain: NSLayoutConstraint!
+
+    @IBAction func backButtonTapped(_ sender: UIButton) {
+
+        self.dismiss(animated: true) { _ in
+            gotoLandingPage(from: self)
+        }
+
+    }
+
     @IBOutlet weak var gotoLoginButonOutlet: UIButton!
 
     @IBAction func gotoLoginButonTapped(_ sender: UIButton) {
 
-        guard let loginController = self.storyboard?.instantiateViewController(withIdentifier: "LoginPage") else { return }
-
-        self.navigationController?.pushViewController(loginController, animated: true)
+            gotoLoginPage(from: self)
+        
     }
 
     @IBAction func signUpButtonTapped(_ sender: UIButton) {
@@ -96,7 +105,9 @@ class SignUpViewController: UIViewController {
                     UserDefaults.standard.set(user.uid, forKey: "uid")
                     UserDefaults.standard.set(self.userFullName, forKey:"userName")
 
-                    gotoTypeChoosePage(from: self)
+                    self.dismiss(animated: true, completion: { _ in
+                        gotoTypeChoosePage(from: self)
+                    })
 
                 }
             } else {
@@ -113,18 +124,13 @@ class SignUpViewController: UIViewController {
         }
     }
 
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         opacityView.frame = UIScreen.main.bounds
-        
+
         self.navigationController?.isNavigationBarHidden = false
-        
+
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
 
         self.navigationController?.navigationBar.shadowImage = UIImage()
@@ -132,8 +138,6 @@ class SignUpViewController: UIViewController {
         self.navigationController?.navigationBar.isTranslucent = true
 
         setCornerRadiustTo(signUpLabel)
-
-        createSignUpPageGradient(target: opacityView)
 
         goToLoginLabel.backgroundColor = UIColor.clear
 
@@ -154,6 +158,22 @@ class SignUpViewController: UIViewController {
             self.addNumber = json["signedUserCount"].intValue
 
         })
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        if UIScreen.main.bounds.height > 700 {
+           createSignUpPageGradient(target: opacityView, height: 750)
+         } else {
+            createSignUpPageGradient(target: opacityView, height: 700)
+        }
+
+        if UIScreen.main.bounds.height < 600 {
+            gotoLoginLabelBottomConstrain.constant = CGFloat(10)
+
+            self.view.layoutIfNeeded()
+        }
     }
 
     override func viewDidAppear(_ animated: Bool) {

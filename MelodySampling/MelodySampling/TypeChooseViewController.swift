@@ -48,11 +48,9 @@ class TypeChooseViewController: UIViewController, UITableViewDataSource, UITable
 
     }
 
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-
-        self.navigationController?.isNavigationBarHidden = true
-
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

@@ -42,11 +42,7 @@ class LandingPageViewController: UIViewController {
 
         guard let startTime = self.startTime else { return }
 
-        let mainStoryboard = UIStoryboard(name: "Main", bundle:nil)
-
-        let loginController = mainStoryboard.instantiateViewController(withIdentifier: "LoginPage")
-
-        self.navigationController?.pushViewController(loginController, animated: true)
+        gotoLoginPage(from: self)
 
         Analytics.logEvent("UserGotoLoginPage", parameters: ["timePassed": currentTime - startTime])
 
@@ -62,10 +58,7 @@ class LandingPageViewController: UIViewController {
 
         guard let startTime = self.startTime else { return }
 
-         let mainStoryboard = UIStoryboard(name: "Main", bundle:nil)
-
-        let signUpController = mainStoryboard.instantiateViewController(withIdentifier: "SignupPage")
-        self.navigationController?.pushViewController(signUpController, animated: true)
+        gotoSignupPage(from: self)
 
         Analytics.logEvent("UserGotoSignUpPage", parameters: ["timePassed": currentTime - startTime])
     }
@@ -75,12 +68,15 @@ class LandingPageViewController: UIViewController {
     @IBAction func anonymousLoginButtonTapped(_ sender: UIButton) {
         print("Anonymous login button tapped")
 
+        self.anonymousLoginButtonOutlet.isEnabled = false
+
         Auth.auth().signInAnonymously { (user, error) in
 
             guard let user = user else {
                 if let error = error {
                     print(error)
 
+                    self.anonymousLoginButtonOutlet.isEnabled = true
                 }
             return
 
@@ -116,6 +112,7 @@ class LandingPageViewController: UIViewController {
                 ])
 
             gotoProfilePage(from: self)
+
         }
 
     }

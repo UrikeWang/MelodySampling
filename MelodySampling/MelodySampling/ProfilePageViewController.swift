@@ -104,11 +104,8 @@ class ProfilePageViewController: UIViewController, UITableViewDelegate, UITableV
 
     @IBAction func invisibleButtonTapped(_ sender: UIButton) {
         print("Play button tapped")
-        let mainStoryboard = UIStoryboard(name: "Main", bundle:nil)
 
-        let signUpController = mainStoryboard.instantiateViewController(withIdentifier: "NewTypeChoosePage")
-
-        self.navigationController?.pushViewController(signUpController, animated: true)
+        gotoTypeChoosePage(from: self)
     }
 
     override func viewDidLoad() {
@@ -233,11 +230,9 @@ class ProfilePageViewController: UIViewController, UITableViewDelegate, UITableV
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
-        self.navigationController?.isNavigationBarHidden = true
-    }
+        let radius = self.userProfileImageView.frame.width
 
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+        userProfileImageView.layer.cornerRadius = radius / 2
 
         createUserProfilePageLogoutBackground(target: logOutView)
 
@@ -245,19 +240,26 @@ class ProfilePageViewController: UIViewController, UITableViewDelegate, UITableV
 
         if historyList.count == 0 {
 
-            let framOfTableView = self.historyTableView.frame
+            let positionY = self.historyTableView.frame.origin.y
+
+            let framOfTableView = CGRect(origin: CGPoint.init(x: 0, y: positionY), size: CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height - positionY - 40))
 
             let emptyView = UIView(frame: framOfTableView)
 
-            createProfilePageHistoryCellBackground(target: emptyView)
-
             let emptyLabel = createLabel(at: emptyView, content: "尚無對戰紀錄", color: UIColor.white, font: UIFont.mldTextStyleEmptyFont()!)
+
+            createProfilePageHistoryCellBackground(target: emptyView)
 
             self.view.addSubview(emptyView)
 
             self.view.addSubview(emptyLabel)
 
         }
+
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
 
     }
 

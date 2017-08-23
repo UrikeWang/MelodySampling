@@ -29,6 +29,15 @@ class LogInViewController: UIViewController {
 
     @IBOutlet weak var signUpInvisibleButtonOutlet: UIButton!
 
+    @IBOutlet weak var gotoSignUpLabelBottomConstraint: NSLayoutConstraint!
+
+    @IBAction func backButtonTapped(_ sender: UIButton) {
+
+        self.dismiss(animated: true) { _ in
+            gotoLandingPage(from: self)
+        }
+    }
+
     @IBOutlet weak var emailResetButtonOutlet: UIButton!
 
     @IBAction func emailResetButtonTapped(_ sender: UIButton) {
@@ -66,8 +75,9 @@ class LogInViewController: UIViewController {
 
     @IBAction func signUpInvisibleButtonTapped(_ sender: UIButton) {
 
-        guard let loginController = self.storyboard?.instantiateViewController(withIdentifier: "SignupPage") else { return }
-        self.navigationController?.pushViewController(loginController, animated: true)
+            gotoSignupPage(from: self)
+        
+
     }
 
     @IBAction func loginButtonTapped(_ sender: UIButton) {
@@ -109,7 +119,10 @@ class LogInViewController: UIViewController {
 
                 UserDefaults.standard.set(user.uid, forKey: "uid")
 
-                gotoProfilePage(from: self)
+                self.dismiss(animated: true, completion: { _ in
+                    gotoProfilePage(from: self)
+                })
+
             }
         }
 
@@ -130,8 +143,6 @@ class LogInViewController: UIViewController {
 
         createTitleLabelShadow(target: titleLabel)
 
-        createSignUpPageGradient(target: opacityView)
-
         emailResetButtonOutlet.setTitleColor(UIColor.clear, for: .normal)
 
         forgetPasswordLabel.backgroundColor = UIColor.clear
@@ -142,6 +153,22 @@ class LogInViewController: UIViewController {
 
         loginButtonOutlet.setTitleColor(UIColor.clear, for: .normal)
         signUpInvisibleButtonOutlet.setTitleColor(UIColor.clear, for: .normal)
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        if UIScreen.main.bounds.height > 700 {
+            createSignUpPageGradient(target: opacityView, height: 750)
+        } else {
+            createSignUpPageGradient(target: opacityView, height: 680)
+        }
+
+        if UIScreen.main.bounds.height < 600 {
+
+            gotoSignUpLabelBottomConstraint.constant = CGFloat(10)
+            self.view.layoutIfNeeded()
+        }
     }
 
     override func viewDidAppear(_ animated: Bool) {

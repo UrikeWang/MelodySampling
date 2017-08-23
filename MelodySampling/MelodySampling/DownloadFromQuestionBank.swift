@@ -121,7 +121,7 @@ class DownloadManager {
 
                             progressRing.setProgress(value: CGFloat(downloadCount * 20), animationDuration: 0.01) {
 
-                                let registerVC = thisView.storyboard?.instantiateViewController(withIdentifier: "PlayNavigation")
+                                let registerVC = thisView.storyboard?.instantiateViewController(withIdentifier: "PlayPage")
 
                                 thisView.present(registerVC!, animated: true, completion: nil)
                             }
@@ -228,8 +228,10 @@ class DownloadManager {
 
                     if downloadPercentage < 80 {
                         downloadPercentage += progress.fractionCompleted
-                    } else {
+                    } else if downloadPercentage < 95 {
                         downloadPercentage += 1
+                    } else {
+                        downloadPercentage = 99
                     }
 
                     progressRing.setProgress(value: CGFloat(downloadPercentage), animationDuration: 0.01) {}
