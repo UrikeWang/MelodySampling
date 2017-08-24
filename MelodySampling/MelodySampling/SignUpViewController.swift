@@ -103,7 +103,11 @@ class SignUpViewController: UIViewController {
 
                     let currentTime = Date().timeIntervalSince1970
 
-                    self.userFullName = "User" + String(2017)
+                    let randomNumber = random(9999)
+                    
+                    let formatRandom = String(format: "%06i", randomNumber)
+                    
+                    self.userFullName = "User" + formatRandom
 
                     userRef.setValue(["fullName": self.userFullName, "createdTime": currentTime, "userAccount": self.userAccount, "profilePicURL": self.profileImageURL, "wasAnonymouse": false])
 

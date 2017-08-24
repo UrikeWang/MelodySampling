@@ -400,8 +400,6 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
                 self.questionList.append(distractor)
             }
         }
-//        
-//        self.questionList = self.fake0
 
         self.questionList.append(self.trackNameArray[self.currentTrack])
 
