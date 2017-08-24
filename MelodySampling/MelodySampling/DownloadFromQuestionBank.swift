@@ -123,7 +123,13 @@ class DownloadManager {
 
                                 let registerVC = thisView.storyboard?.instantiateViewController(withIdentifier: "PlayPage")
 
-                                thisView.present(registerVC!, animated: true, completion: nil)
+                                let delayTime = DispatchTime.now() + .milliseconds(500)
+                                DispatchQueue.global().asyncAfter(deadline: delayTime, execute: {
+                                    
+                                    thisView.present(registerVC!, animated: true, completion: nil)
+                                })
+                                
+
                             }
                         }
                 }

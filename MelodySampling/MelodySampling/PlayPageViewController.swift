@@ -182,11 +182,9 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
 
         playingSongLabel.text = "\(prepareTrack)"
 
-        self.timeStart = Date().timeIntervalSince1970
-
-        self.startGuessing()
-
     }
+    
+    
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
@@ -202,7 +200,7 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
         //swiftlint:disable force_cast
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! AnswerTableViewCell
 
-        cell.answerLabel.text = shuffledList[indexPath.section]
+        cell.answerLabel.text = "\(shuffledList[indexPath.section])"
         //swiftlint:enable
         cell.backgroundColor = UIColor.clear
 
@@ -437,6 +435,23 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
             self.tableViewHeightConstrains.constant = CGFloat(tableViewHeight)
             self.view.layoutIfNeeded()
         }
+        
+        let coverView = UIView()
+        
+        coverView.backgroundColor = UIColor.mldBlack50
+        
+        self.view.insertSubview(coverView, at: 0)
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        
+        self.timeStart = Date().timeIntervalSince1970
+        
+        self.startGuessing()
+        
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
