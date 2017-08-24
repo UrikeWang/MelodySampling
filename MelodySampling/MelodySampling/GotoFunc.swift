@@ -48,7 +48,7 @@ func gotoSignupPage(from viewController: UIViewController) {
 func gotoLandingPage(from viewController: UIViewController) {
     let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
 
-    let registerVC = storyBoard.instantiateViewController(withIdentifier: "LandingPage")
+    let registerVC = storyBoard.instantiateViewController(withIdentifier: "LandingNavigation")
 
     viewController.present(registerVC, animated: true, completion: nil)
 }

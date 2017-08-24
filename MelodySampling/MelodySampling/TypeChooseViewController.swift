@@ -9,7 +9,6 @@
 import UIKit
 import Alamofire
 import Firebase
-import Crashlytics
 
 class TypeChooseViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 

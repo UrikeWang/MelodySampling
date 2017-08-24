@@ -234,7 +234,7 @@ class ProfilePageViewController: UIViewController, UITableViewDelegate, UITableV
 
         userProfileImageView.layer.cornerRadius = radius / 2
 
-        createUserProfilePageLogoutBackground(target: logOutView)
+        createUserProfilePageLogoutBackground(target: logOutView, screen: UIScreen.main)
 
         createNextBattleOfResult(target: playButtonLabel)
 

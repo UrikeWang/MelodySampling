@@ -123,7 +123,7 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
         if let userName = userDefault.object(forKey: "userName") as? String {
             userNameLabel.text = userName
         } else {
-            userNameLabel.text = "This is you"
+            userNameLabel.text = "Player"
         }
 
         let fetchRequest: NSFetchRequest<QuestionMO> = QuestionMO.fetchRequest()
@@ -307,13 +307,17 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
 
             print(resultList)
 
-            let registerVC = self.storyboard?.instantiateViewController(withIdentifier: "ResultPage")
+            let delayTime = DispatchTime.now() + .milliseconds(800)
 
-            self.present(registerVC!, animated: true, completion: nil)
+            DispatchQueue.global().asyncAfter(deadline: delayTime, execute: {
+
+                let registerVC = self.storyboard?.instantiateViewController(withIdentifier: "ResultPage")
+
+                self.present(registerVC!, animated: true, completion: nil)
+
+            })
 
         } else {
-
-//            var fakeList = [fake0, fake1, fake2, fake3, fake4]
 
             var fakeList: [[String]] = []
 
@@ -396,8 +400,6 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
                 self.questionList.append(distractor)
             }
         }
-//        
-//        self.questionList = self.fake0
 
         self.questionList.append(self.trackNameArray[self.currentTrack])
 
