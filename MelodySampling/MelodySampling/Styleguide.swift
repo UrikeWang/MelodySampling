@@ -98,4 +98,8 @@ extension UIFont {
         return UIFont(name: "Montserrat-Medium", size: 30.0)
     }
 
+    class func mldTextStyleCountDownFont() -> UIFont? {
+        return UIFont(name: "Montserrat-Medium", size: 40.0)
+    }
+
 }

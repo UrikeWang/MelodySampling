@@ -14,6 +14,10 @@ import Alamofire
 
 class PlayPageViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate {
 
+    var coverView = UIView()
+
+    var countDownLabel = UILabel()
+
     var fetchResultController: NSFetchedResultsController<QuestionMO>!
 
     var fetchDistractorController: NSFetchedResultsController<DistractorMO>!
@@ -183,8 +187,6 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
         playingSongLabel.text = "\(prepareTrack)"
 
     }
-    
-    
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
@@ -200,7 +202,10 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
         //swiftlint:disable force_cast
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! AnswerTableViewCell
 
-        cell.answerLabel.text = "\(shuffledList[indexPath.section])"
+        if shuffledList != nil && shuffledList.count != 0 {
+
+            cell.answerLabel.text = "\(shuffledList[indexPath.section])"
+        }
         //swiftlint:enable
         cell.backgroundColor = UIColor.clear
 
@@ -388,6 +393,8 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
         print("現在在第 \(currentTrack) 首")
         print("接下來是第 \(prepareTrack) 首")
 
+        self.shuffledList = []
+
         for index in 0..<3 {
             print(index)
             let distractorItem = distractors[index]
@@ -435,23 +442,39 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
             self.tableViewHeightConstrains.constant = CGFloat(tableViewHeight)
             self.view.layoutIfNeeded()
         }
-        
-        let coverView = UIView()
-        
+
+        coverView.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+
         coverView.backgroundColor = UIColor.mldBlack50
-        
-        self.view.insertSubview(coverView, at: 0)
-        
+
+        countDownLabel.frame = CGRect(x: UIScreen.main.bounds.width / 2 - 40, y: UIScreen.main.bounds.height / 2 - 40, width: 80, height: 80)
+
+        countDownLabel.layer.cornerRadius = 40
+
+        countDownLabel.clipsToBounds = true
+
+        countDownLabel.backgroundColor = UIColor.white
+
+        countDownLabel.text = "3"
+
+        countDownLabel.textColor = UIColor.black
+
+        countDownLabel.textAlignment = .center
+
+        countDownLabel.font = UIFont.mldTextStyleCountDownFont()
+
+        self.view.addSubview(coverView)
+
+        self.view.addSubview(countDownLabel)
     }
-    
+
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
-        
+
         self.timeStart = Date().timeIntervalSince1970
-        
+
         self.startGuessing()
-        
+
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
