@@ -17,6 +17,8 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
     var coverView = UIView()
 
     var countDownLabel = UILabel()
+    
+    var timeCoutdown: Int = 3
 
     var fetchResultController: NSFetchedResultsController<QuestionMO>!
 
@@ -276,6 +278,8 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
             let currentResult = EachSongResult(index: Int16(currentTrack), result: true, usedTime: timePassed)
 
             self.resultList.append(currentResult)
+            
+            
 
             print("答對了")
         } else {
@@ -443,25 +447,11 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
             self.view.layoutIfNeeded()
         }
 
-        coverView.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+        setCoverView(coverView, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
 
-        coverView.backgroundColor = UIColor.mldBlack50
+        setCountDownLabelStyle(countDownLabel, screen: UIScreen.main, height: 80, width: 80)
 
-        countDownLabel.frame = CGRect(x: UIScreen.main.bounds.width / 2 - 40, y: UIScreen.main.bounds.height / 2 - 40, width: 80, height: 80)
-
-        countDownLabel.layer.cornerRadius = 40
-
-        countDownLabel.clipsToBounds = true
-
-        countDownLabel.backgroundColor = UIColor.white
-
-        countDownLabel.text = "3"
-
-        countDownLabel.textColor = UIColor.black
-
-        countDownLabel.textAlignment = .center
-
-        countDownLabel.font = UIFont.mldTextStyleCountDownFont()
+        countDownLabel.text = "\(timeCoutdown)"
 
         self.view.addSubview(coverView)
 
@@ -470,10 +460,19 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        
+        for i in 1..<4 {
+            let delayTime = DispatchTime.now() + .seconds(i)
+            DispatchQueue.main.asyncAfter(deadline: delayTime, execute: {
+                self.timeCoutdown -= 1
+                self.countDownLabel.text = "\(self.timeCoutdown)"
+                
+                if self.timeCoutdown == 0 {
+                    self.countingTrigger()
+                }
+            })
 
-        self.timeStart = Date().timeIntervalSince1970
-
-        self.startGuessing()
+        }
 
     }
 
@@ -485,6 +484,16 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
         super.viewDidDisappear(animated)
         let clearDistractorData = CheckQuestionInCoreData()
         clearDistractorData.clearDistractorMO()
+    }
+    
+    func countingTrigger() {
+            
+            countDownLabel.isHidden = true
+            coverView.isHidden = true
+            
+            self.timeStart = Date().timeIntervalSince1970
+            
+            self.startGuessing()
     }
 
 }

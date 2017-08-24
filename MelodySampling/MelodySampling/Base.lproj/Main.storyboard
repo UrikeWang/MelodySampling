@@ -944,7 +944,7 @@
                             </stackView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="79" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="Su0-ql-6ml">
                                 <rect key="frame" x="12" y="278" width="351" height="339"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="339" id="ULy-2y-1Up"/>
                                 </constraints>
@@ -975,9 +975,7 @@
                                                     </constraints>
                                                 </view>
                                             </subviews>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstItem="Q2e-P0-GVP" firstAttribute="centerX" secondItem="Q35-Pz-Djb" secondAttribute="centerX" id="DG1-Np-Dot"/>
                                             <constraint firstItem="Q2e-P0-GVP" firstAttribute="centerY" secondItem="Q35-Pz-Djb" secondAttribute="centerY" id="W4L-r3-y5p"/>
