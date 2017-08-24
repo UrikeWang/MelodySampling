@@ -118,13 +118,10 @@ class LogInViewController: UIViewController {
 
                 UserDefaults.standard.set(user.uid, forKey: "uid")
 
-                self.dismiss(animated: true, completion: { _ in
-                    gotoProfilePage(from: self)
-                })
+                gotoProfilePage(from: self)
 
             }
         }
-
     }
 
     override func viewDidLoad() {

@@ -182,9 +182,6 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
 
         playingSongLabel.text = "\(prepareTrack)"
 
-        
-        
-        
         self.timeStart = Date().timeIntervalSince1970
 
         self.startGuessing()

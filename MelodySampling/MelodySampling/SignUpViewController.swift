@@ -86,6 +86,15 @@ class SignUpViewController: UIViewController {
 
                         if let error = error {
                             print(error)
+
+                            let warningAlert = UIAlertController(title: "Something Wrong", message: "Please check email, password, confirm passwork again.", preferredStyle: .alert)
+
+                            let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+
+                            warningAlert.addAction(okAction)
+
+                            self.present(warningAlert, animated: true, completion: nil)
+
                         }
                         return
                     }
@@ -98,16 +107,16 @@ class SignUpViewController: UIViewController {
 
                     userRef.setValue(["fullName": self.userFullName, "createdTime": currentTime, "userAccount": self.userAccount, "profilePicURL": self.profileImageURL, "wasAnonymouse": false])
 
+                    // MARK: I am going to fix these later
+                    /*
                     let defaultSetting = self.ref.child("users/defaultSetting")
 
                     defaultSetting.updateChildValues(["signedUserCount": self.addNumber! + 1])
 
+ */
                     UserDefaults.standard.set(user.uid, forKey: "uid")
                     UserDefaults.standard.set(self.userFullName, forKey:"userName")
-
-                    self.dismiss(animated: true, completion: { _ in
-                        gotoTypeChoosePage(from: self)
-                    })
+                    gotoTypeChoosePage(from: self)
 
                 }
             } else {

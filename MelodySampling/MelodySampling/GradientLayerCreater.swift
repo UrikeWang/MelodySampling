@@ -87,11 +87,13 @@ func createUserProfileImage(targe uIImageView: UIImageView) {
     uIImageView.layer.shadowRadius = 4
 }
 
-func createUserProfilePageLogoutBackground(target uIView: UIView) {
+func createUserProfilePageLogoutBackground(target uIView: UIView, screen screenW: UIScreen) {
 
     gradientLayer = CAGradientLayer()
 
-    gradientLayer.frame = uIView.bounds
+    let width = UIScreen.main.bounds.width
+
+    gradientLayer.frame = CGRect(x: CGFloat(0), y: uIView.bounds.origin.y, width: CGFloat(width), height: CGFloat(uIView.bounds.height))
 
     gradientLayer.colors = [UIColor.mldLightPurple.cgColor, UIColor.mldLighterPurple.cgColor, UIColor.mldLighterPurpleTwo.cgColor]
 

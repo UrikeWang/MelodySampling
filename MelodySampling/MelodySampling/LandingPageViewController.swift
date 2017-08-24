@@ -161,12 +161,12 @@ class LandingPageViewController: UIViewController {
         self.navigationController?.isNavigationBarHidden = true
 
         self.startTime = Date().timeIntervalSince1970
-        
-        createGradientOnLabel(target: anonymousLoginLabel)
     }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+
+        createGradientOnLabel(target: anonymousLoginLabel)
     }
 
     override func didReceiveMemoryWarning() {
