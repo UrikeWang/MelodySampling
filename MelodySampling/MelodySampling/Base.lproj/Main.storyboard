@@ -45,8 +45,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="music" translatesAutoresizingMaskIntoConstraints="NO" id="O1P-lZ-xSE" userLabel="Landing Main Image View">
-                                <rect key="frame" x="0.0" y="204" width="375" height="292"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="landing_bg" translatesAutoresizingMaskIntoConstraints="NO" id="O1P-lZ-xSE" userLabel="Landing Main Image View">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Log in" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nRs-tJ-aaB">
                                 <rect key="frame" x="47" y="421" width="281" height="50"/>
@@ -117,20 +117,21 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.25882352941176467" green="0.13333333333333333" blue="0.99607843137254903" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="Q4z-3t-cIg" firstAttribute="centerX" secondItem="ow1-Bl-mtg" secondAttribute="centerX" id="14Z-Ex-rNG"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="O1P-lZ-xSE" secondAttribute="bottom" id="1Qz-Ya-GUS"/>
+                            <constraint firstAttribute="trailing" secondItem="O1P-lZ-xSE" secondAttribute="trailing" id="4pP-23-EkC"/>
+                            <constraint firstItem="O1P-lZ-xSE" firstAttribute="top" secondItem="ow1-Bl-mtg" secondAttribute="topMargin" id="8pi-Uq-eVt"/>
                             <constraint firstItem="eNZ-KW-APm" firstAttribute="width" secondItem="C8j-OD-UCA" secondAttribute="width" constant="40" id="9wd-NO-zFV"/>
                             <constraint firstItem="dnJ-zN-H9u" firstAttribute="top" secondItem="C8j-OD-UCA" secondAttribute="bottom" constant="10" id="A2U-ZK-fzV"/>
                             <constraint firstItem="eNZ-KW-APm" firstAttribute="centerY" secondItem="C8j-OD-UCA" secondAttribute="centerY" id="DI7-A9-Hne"/>
-                            <constraint firstItem="O1P-lZ-xSE" firstAttribute="width" secondItem="ow1-Bl-mtg" secondAttribute="width" id="EuD-7n-8lB"/>
+                            <constraint firstItem="O1P-lZ-xSE" firstAttribute="leading" secondItem="ow1-Bl-mtg" secondAttribute="leading" id="IB7-gG-xkH"/>
                             <constraint firstItem="C8j-OD-UCA" firstAttribute="height" secondItem="dnJ-zN-H9u" secondAttribute="height" id="KO8-kt-0xb"/>
                             <constraint firstItem="C8j-OD-UCA" firstAttribute="width" secondItem="dnJ-zN-H9u" secondAttribute="width" id="MkP-YK-VRo"/>
                             <constraint firstItem="LX4-z7-ioz" firstAttribute="centerY" secondItem="dnJ-zN-H9u" secondAttribute="centerY" id="OG2-gA-mZC"/>
                             <constraint firstItem="nRs-tJ-aaB" firstAttribute="width" secondItem="C8j-OD-UCA" secondAttribute="width" id="REK-Pq-5gT"/>
                             <constraint firstItem="fFo-OY-1Rb" firstAttribute="centerX" secondItem="nRs-tJ-aaB" secondAttribute="centerX" id="SrI-DG-Iul"/>
                             <constraint firstItem="LX4-z7-ioz" firstAttribute="centerX" secondItem="dnJ-zN-H9u" secondAttribute="centerX" id="TBg-VB-jeE"/>
-                            <constraint firstItem="O1P-lZ-xSE" firstAttribute="top" secondItem="o7g-XZ-Nzz" secondAttribute="bottom" id="TsT-CV-b4s"/>
                             <constraint firstItem="nRs-tJ-aaB" firstAttribute="centerX" secondItem="C8j-OD-UCA" secondAttribute="centerX" id="Twg-s8-Sit"/>
                             <constraint firstItem="G2v-2P-JoN" firstAttribute="height" secondItem="dnJ-zN-H9u" secondAttribute="height" id="VJt-nK-waf"/>
                             <constraint firstItem="eNZ-KW-APm" firstAttribute="centerX" secondItem="C8j-OD-UCA" secondAttribute="centerX" id="ZqE-EI-Dkc"/>
@@ -141,7 +142,6 @@
                             <constraint firstItem="fFo-OY-1Rb" firstAttribute="width" secondItem="nRs-tJ-aaB" secondAttribute="width" constant="40" id="cz7-a5-cfn"/>
                             <constraint firstItem="o7g-XZ-Nzz" firstAttribute="width" secondItem="ow1-Bl-mtg" secondAttribute="height" multiplier="110:667" id="dC8-YW-MsJ"/>
                             <constraint firstItem="Q4z-3t-cIg" firstAttribute="top" secondItem="o7g-XZ-Nzz" secondAttribute="bottom" constant="30" id="eJU-r2-hRG"/>
-                            <constraint firstItem="O1P-lZ-xSE" firstAttribute="centerX" secondItem="ow1-Bl-mtg" secondAttribute="centerX" id="evS-Ua-z2i"/>
                             <constraint firstItem="eNZ-KW-APm" firstAttribute="height" secondItem="C8j-OD-UCA" secondAttribute="height" id="gOd-Xc-0jd"/>
                             <constraint firstAttribute="bottomMargin" secondItem="dnJ-zN-H9u" secondAttribute="bottom" constant="76" id="hlh-qI-W7A"/>
                             <constraint firstItem="G2v-2P-JoN" firstAttribute="centerY" secondItem="dnJ-zN-H9u" secondAttribute="centerY" id="kSJ-AE-d5y"/>
@@ -1549,7 +1549,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5kK-QP-zCT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2258" y="-953"/>
+            <point key="canvasLocation" x="2265" y="-953"/>
         </scene>
     </scenes>
     <resources>
@@ -1564,8 +1564,8 @@
         <image name="fire_yellow" width="98" height="98"/>
         <image name="icon_CD-pink" width="34" height="34"/>
         <image name="icon_CD_line_new" width="31" height="31"/>
+        <image name="landing_bg" width="414" height="736"/>
         <image name="logouticon" width="58" height="60"/>
-        <image name="music" width="370" height="292"/>
         <image name="play" width="22" height="22"/>
         <image name="right" width="22" height="22"/>
         <image name="score_bg" width="414" height="736"/>
