@@ -965,12 +965,21 @@
                                                             <color key="textColor" red="0.25882352939999997" green="0.1333333333" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oel-FU-e1f">
+                                                            <rect key="frame" x="20" y="21.5" width="22" height="22"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="22" id="Hcb-lk-dxx"/>
+                                                                <constraint firstAttribute="height" constant="22" id="jV4-qP-q9m"/>
+                                                            </constraints>
+                                                        </imageView>
                                                     </subviews>
                                                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstItem="iJw-td-DcI" firstAttribute="width" secondItem="Q2e-P0-GVP" secondAttribute="width" id="AOx-ba-8ta"/>
                                                         <constraint firstItem="iJw-td-DcI" firstAttribute="height" secondItem="Q2e-P0-GVP" secondAttribute="height" id="eew-hs-Vw7"/>
                                                         <constraint firstItem="iJw-td-DcI" firstAttribute="centerY" secondItem="Q2e-P0-GVP" secondAttribute="centerY" id="mBP-a5-Dfv"/>
+                                                        <constraint firstItem="oel-FU-e1f" firstAttribute="centerY" secondItem="iJw-td-DcI" secondAttribute="centerY" id="muK-1J-Dky"/>
+                                                        <constraint firstItem="oel-FU-e1f" firstAttribute="leading" secondItem="iJw-td-DcI" secondAttribute="leading" constant="20" id="vcZ-dD-v9E"/>
                                                         <constraint firstItem="iJw-td-DcI" firstAttribute="centerX" secondItem="Q2e-P0-GVP" secondAttribute="centerX" id="wbB-bS-oS6"/>
                                                     </constraints>
                                                 </view>
@@ -990,6 +999,7 @@
                                         <connections>
                                             <outlet property="answerLabel" destination="iJw-td-DcI" id="wOT-WD-4yt"/>
                                             <outlet property="answerView" destination="Q2e-P0-GVP" id="1cv-na-Ha7"/>
+                                            <outlet property="judgeImageView" destination="oel-FU-e1f" id="CTJ-2B-mv0"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

@@ -10,6 +10,7 @@ import UIKit
 
 class AnswerTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var judgeImageView: UIImageView!
     @IBOutlet weak var answerView: UIView! {
         didSet {
             answerView.layer.cornerRadius = 10
