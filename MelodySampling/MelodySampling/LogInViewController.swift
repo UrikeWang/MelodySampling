@@ -76,7 +76,6 @@ class LogInViewController: UIViewController {
     @IBAction func signUpInvisibleButtonTapped(_ sender: UIButton) {
 
             gotoSignupPage(from: self)
-        
 
     }
 

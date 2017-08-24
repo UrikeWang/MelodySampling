@@ -54,7 +54,7 @@ class SignUpViewController: UIViewController {
     @IBAction func gotoLoginButonTapped(_ sender: UIButton) {
 
             gotoLoginPage(from: self)
-        
+
     }
 
     @IBAction func signUpButtonTapped(_ sender: UIButton) {
