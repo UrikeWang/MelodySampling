@@ -219,7 +219,7 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+
         tableView.isUserInteractionEnabled = false
 
         let currentTime = Date().timeIntervalSince1970
@@ -265,7 +265,7 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
         print("你在 \(currentTrack) 首")
 
         player?.pause()
-        
+
         //swiftlint:disable force_cast
         if judgeAnswer(input: selectedAnswer, compare: answer) {
 
@@ -292,13 +292,13 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
             selectedCell.judgeImageView.isHidden = false
 
             selectedCell.judgeImageView.alpha = 1
-            
+
             selectedCell.answerView.layer.borderColor = UIColor.mldAppleGreen.cgColor
-            
+
             UIView.animate(withDuration: 1.0, animations: {
                 selectedCell.judgeImageView.alpha = 0
                 selectedCell.answerView.layer.borderColor = UIColor.white.cgColor
-                
+
             })
 
             print("答對了")
@@ -310,12 +310,12 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
             self.resultList.append(currentResult)
 
             var selectedCell = tableView.cellForRow(at: indexPath) as! AnswerTableViewCell
-            
+
             var correctCell = tableView.cellForRow(at: correctIndex) as! AnswerTableViewCell
 
             selectedCell.judgeImageView.image = UIImage(named: "wrong")
             correctCell.judgeImageView.image = UIImage(named: "right")
-            
+
             selectedCell.judgeImageView.alpha = 1
             correctCell.judgeImageView.alpha = 1
 
@@ -324,11 +324,11 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
 
             selectedCell.answerView.layer.borderColor = UIColor.mldOrangeRed.cgColor
             correctCell.answerView.layer.borderColor = UIColor.mldAppleGreen.cgColor
-            
+
             UIView.animate(withDuration: 1.0, animations: {
                 selectedCell.judgeImageView.alpha = 0
                 selectedCell.answerView.layer.borderColor = UIColor.white.cgColor
-                
+
                 correctCell.judgeImageView.alpha = 0
                 correctCell.answerView.layer.borderColor = UIColor.white.cgColor
 
@@ -402,7 +402,7 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
             shuffledList = questionList.shuffled()
 
             let delayTime = DispatchTime.now() + .milliseconds(1500)
-            
+
             let fileName = self.path + self.songFileNameList[self.prepareTrack]
 
             DispatchQueue.main.asyncAfter(deadline: delayTime, execute: {
@@ -411,8 +411,6 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
 
                 self.player?.pause()
 
-
-
                 do {
 
                     self.player = try AVAudioPlayer(contentsOf: URL(string: fileName)!)
@@ -420,7 +418,7 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
                 } catch {
                     self.player = nil
                 }
-                
+
                 tableView.isUserInteractionEnabled = true
 
                 self.player?.play()

@@ -85,11 +85,11 @@ extension UIColor {
     class var mldLightRose: UIColor {
         return UIColor(red: 254.0 / 255.0, green: 205.0 / 255.0, blue: 211.0 / 255.0, alpha: 1.0)
     }
-    
+
     class var mldOrangeRed: UIColor {
         return UIColor(red: 254.0 / 255.0, green: 56.0 / 255.0, blue: 36.0 / 255.0, alpha: 1.0)
     }
-    
+
     class var mldAppleGreen: UIColor {
         return UIColor(red: 126.0 / 255.0, green: 211.0 / 255.0, blue: 33.0 / 255.0, alpha: 1.0)
     }

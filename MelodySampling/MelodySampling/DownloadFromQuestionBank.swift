@@ -40,9 +40,9 @@ class DownloadManager {
 
         progressRing.outerRingColor = UIColor.mldAppleGreen
         progressRing.innerRingColor = UIColor.mldOrangeRed
-        
+
         progressContentView.backgroundColor = UIColor.playPageBackground
-        
+
         createProgressBackground(target: progressContentView)
 
         progressContentView.insertSubview(progressRing, at: 1)
@@ -150,13 +150,13 @@ class DownloadManager {
         progressRing.outerRingColor = UIColor.green
 
         progressRing.innerRingColor = UIColor.blue
-        
+
         progressContentView.backgroundColor = UIColor.mldLightPurple
 
         progressContentView.addSubview(progressRing)
 
         progressRing.backgroundColor = UIColor.red
-        
+
         thisView.view.addSubview(progressContentView)
 
         ref = Database.database().reference()
