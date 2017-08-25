@@ -8,15 +8,14 @@
 
 import Foundation
 
-
 // MARK: - Properties
 public extension FloatingPoint {
-	
+
 	/// SwifterSwift: Absolute of number.
 	public var abs: Self {
 		return Swift.abs(self)
 	}
-	
+
 	/// SwifterSwift: String with number and current locale currency.
 	public var asLocaleCurrency: String {
 		let formatter = NumberFormatter()
@@ -24,48 +23,47 @@ public extension FloatingPoint {
 		formatter.locale = Locale.current
 		return formatter.string(from: self as! NSNumber)!
 	}
-	
+
 	/// SwifterSwift: Ceil of number.
 	public var ceil: Self {
 		return Foundation.ceil(self)
 	}
-	
+
 	/// SwifterSwift: Radian value of degree input.
 	public var degreesToRadians: Self {
 		return Self.pi * self / Self(180)
 	}
-	
+
 	/// SwifterSwift: Floor of number.
 	public var floor: Self {
 		return Foundation.floor(self)
 	}
-	
+
 	/// SwifterSwift: Check if number is positive.
 	public var isPositive: Bool {
 		return self > 0
 	}
-	
+
 	/// SwifterSwift: Check if number is negative.
 	public var isNegative: Bool {
 		return self < 0
 	}
-	
+
 	/// SwifterSwift: String.
 	public var string: String {
 		return String(describing: self as! NSNumber)
 	}
-	
+
 	/// SwifterSwift: Degree value of radian input.
 	public var radiansToDegrees: Self {
 		return self * Self(180) / Self.pi
 	}
-	
-}
 
+}
 
 // MARK: - Methods
 public extension FloatingPoint {
-	
+
 	/// SwifterSwift: Random number between two number.
 	///
 	/// - Parameters:
@@ -78,7 +76,7 @@ public extension FloatingPoint {
 		let delta = aMax - aMin
 		return Self(arc4random()) / Self(UInt64(UINT32_MAX)) * delta + aMin
 	}
-	
+
 	/// SwifterSwift: Random number in a closed interval range.
 	///
 	/// - Parameter range: closed interval range.
@@ -87,13 +85,12 @@ public extension FloatingPoint {
 		let delta = range.upperBound - range.lowerBound
 		return Self(arc4random()) / Self(UInt64(UINT32_MAX)) * delta + range.lowerBound
 	}
-	
-}
 
+}
 
 // MARK: - Initializers
 public extension FloatingPoint {
-	
+
 	/// SwifterSwift: Created a random number between two numbers.
 	///
 	/// - Parameters:
@@ -105,7 +102,7 @@ public extension FloatingPoint {
 		let delta = aMax - aMin
 		self = Self(arc4random()) / Self(UInt64(UINT32_MAX)) * delta + aMin
 	}
-	
+
 	/// SwifterSwift: Create a random number in a closed interval range.
 	///
 	/// - Parameter range: closed interval range.
@@ -113,9 +110,8 @@ public extension FloatingPoint {
 		let delta = range.upperBound - range.lowerBound
 		self = Self(arc4random()) / Self(UInt64(UINT32_MAX)) * delta + range.lowerBound
 	}
-	
-}
 
+}
 
 // MARK: - Operators
 infix operator ±
