@@ -207,6 +207,8 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
         if shuffledList != nil && shuffledList.count != 0 {
 
             cell.answerLabel.text = "\(shuffledList[indexPath.section])"
+        } else {
+            cell.answerLabel.text = "=========="
         }
         //swiftlint:enable
 
@@ -289,6 +291,8 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
 
             selectedCell.judgeImageView.isHidden = false
 
+            selectedCell.judgeImageView.alpha = 1
+            
             selectedCell.answerView.layer.borderColor = UIColor.mldAppleGreen.cgColor
             
             UIView.animate(withDuration: 1.0, animations: {
@@ -302,19 +306,31 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
 
             let currentResult = EachSongResult(index: Int16(currentTrack), result: false, usedTime: timePassed)
 
+            let correctIndex = IndexPath(row: 0, section: shuffledList.index(of: answer)!)
             self.resultList.append(currentResult)
 
             var selectedCell = tableView.cellForRow(at: indexPath) as! AnswerTableViewCell
+            
+            var correctCell = tableView.cellForRow(at: correctIndex) as! AnswerTableViewCell
 
             selectedCell.judgeImageView.image = UIImage(named: "wrong")
+            correctCell.judgeImageView.image = UIImage(named: "right")
+            
+            selectedCell.judgeImageView.alpha = 1
+            correctCell.judgeImageView.alpha = 1
 
             selectedCell.judgeImageView.isHidden = false
+            correctCell.judgeImageView.isHidden = false
 
             selectedCell.answerView.layer.borderColor = UIColor.mldOrangeRed.cgColor
+            correctCell.answerView.layer.borderColor = UIColor.mldAppleGreen.cgColor
             
-            UIView.animate(withDuration: 2.0, animations: {
+            UIView.animate(withDuration: 1.0, animations: {
                 selectedCell.judgeImageView.alpha = 0
                 selectedCell.answerView.layer.borderColor = UIColor.white.cgColor
+                
+                correctCell.judgeImageView.alpha = 0
+                correctCell.answerView.layer.borderColor = UIColor.white.cgColor
 
             })
 
