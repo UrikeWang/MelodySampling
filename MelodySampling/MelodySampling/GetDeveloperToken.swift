@@ -15,8 +15,6 @@ func getDeveloperToken() {
 
     ref = Database.database().reference()
 
-    ref = Database.database().reference()
-
     ref.child("tokens").child("developerToken").child("token").observe(.value, with: { (snapshot) in
 
         //回家後動這裡，把他寫成一個 func

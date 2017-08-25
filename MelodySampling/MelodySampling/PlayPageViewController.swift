@@ -14,6 +14,8 @@ import Alamofire
 
 class PlayPageViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate {
 
+    var ref: DatabaseReference!
+
     var coverView = UIView()
 
     var countDownLabel = UILabel()
@@ -281,7 +283,7 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
 
             rightUserScoreLabel.text = "\(formatPrice)"
 
-            let currentResult = EachSongResult(index: Int16(currentTrack), result: true, usedTime: timePassed)
+            let currentResult = EachSongResult(index: Int16(currentTrack), result: true, usedTime: timePassed, selectedAnswer: selectedAnswer)
 
             self.resultList.append(currentResult)
 
@@ -304,7 +306,7 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
             print("答對了")
         } else {
 
-            let currentResult = EachSongResult(index: Int16(currentTrack), result: false, usedTime: timePassed)
+            let currentResult = EachSongResult(index: Int16(currentTrack), result: false, usedTime: timePassed, selectedAnswer: selectedAnswer)
 
             let correctIndex = IndexPath(row: 0, section: shuffledList.index(of: answer)!)
             self.resultList.append(currentResult)
@@ -344,6 +346,44 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
 
             userDefault.set(score, forKey: "Score")
 
+            guard let uid = userDefault.object(forKey: "uid") as? String else { return }
+
+            self.ref = Database.database().reference()
+
+            var prepareForUpload = [SendToFirebase]()
+
+            let historyRef = self.ref.child("gameHistory").child(uid).childByAutoId()
+
+            for i in 0..<resultList.count {
+
+                let trackName = "track" + String(i)
+
+                historyRef.child(trackName).setValue([
+                    "artistID": questions[i].artistID,
+                    "artistName": questions[i].artistName,
+                    "trackID": questions[i].trackID,
+                    "trackName": questions[i].trackName,
+                    "artworkUrl": questions[i].artworkUrl,
+                    "previewUrl": questions[i].previewUrl,
+                    "result": resultList[i].result,
+                    "collectionID": questions[i].collectionID,
+                    "collectionName": questions[i].collectionName,
+                    "primaryGenreName": questions[i].primaryGenreName,
+                    "index": Int(resultList[i].index),
+                    "usedTime": resultList[i].usedTime,
+                    "selectedAnswer": resultList[i].selectedAnswer
+
+                    ])
+            }
+
+            let now = Date().timeIntervalSince1970
+
+            let formatedScore = String(format: "%.0f", score)
+            let formatedTime = String(format: "%.0f", now)
+
+            historyRef.child("score").setValue(formatedScore)
+            historyRef.child("date").setValue(formatedTime)
+
             for eachResult in resultList {
 
                 if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
@@ -353,6 +393,7 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
                     self.resultMO.index = eachResult.index
                     self.resultMO.result = eachResult.result
                     self.resultMO.usedTime = eachResult.usedTime
+                    self.resultMO.selectedAnswer = eachResult.selectedAnswer
 
                     appDelegate.saveContext()
 
