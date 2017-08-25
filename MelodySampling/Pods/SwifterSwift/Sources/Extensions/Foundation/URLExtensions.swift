@@ -8,9 +8,8 @@
 
 import Foundation
 
-
 public extension URL {
-	
+
 	/// SwifterSwift: URL with appending query parameters.
 	///
 	///		let url = URL(string: "https://google.com")!
@@ -26,7 +25,7 @@ public extension URL {
 		urlComponents.queryItems = items
 		return urlComponents.url!
 	}
-	
+
 	/// SwifterSwift: Append query parameters to URL.
 	///
 	///		var url = URL(string: "https://google.com")!
@@ -38,5 +37,5 @@ public extension URL {
 	public mutating func appendQueryParameters(_ parameters: [String: String]) {
 		self = appendingQueryParameters(parameters)
 	}
-	
+
 }

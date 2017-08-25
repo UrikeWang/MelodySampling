@@ -12,27 +12,25 @@
 	import UIKit
 #endif
 
-
 // MARK: - Properties
 public extension Double {
-	
+
 	/// SwifterSwift: Int.
 	public var int: Int {
 		return Int(self)
 	}
-	
+
 	/// SwifterSwift: Float.
 	public var float: Float {
 		return Float(self)
 	}
-	
+
 	/// SwifterSwift: CGFloat.
 	public var cgFloat: CGFloat {
 		return CGFloat(self)
 	}
-	
-}
 
+}
 
 // MARK: - Operators
 

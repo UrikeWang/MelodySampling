@@ -8,10 +8,9 @@
 
 import Foundation
 
-
 // MARK: - Properties
 public extension Bool {
-	
+
 	/// SwifterSwift: Return 1 if true, or 0 if false.
 	///
 	///		false.int -> 0
@@ -20,7 +19,7 @@ public extension Bool {
 	public var int: Int {
 		return self ? 1 : 0
 	}
-	
+
 	/// SwifterSwift: Return "true" if true, or "false" if false.
 	///
 	///		false.string -> "false"
@@ -29,7 +28,7 @@ public extension Bool {
 	public var string: String {
 		return description
 	}
-	
+
 	/// SwifterSwift: Return inversed value of bool.
 	///
 	///		false.toggled -> true
@@ -38,12 +37,12 @@ public extension Bool {
 	public var toggled: Bool {
 		return !self
 	}
-	
+
 }
 
 // MARK: - Methods
 public extension Bool {
-	
+
 	/// SwifterSwift: Toggle value for bool.
 	///
 	///		var bool = false
@@ -55,5 +54,5 @@ public extension Bool {
 		self = !self
 		return self
 	}
-	
+
 }

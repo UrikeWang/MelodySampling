@@ -8,10 +8,9 @@
 
 import Foundation
 
-
 // MARK: - Methods
 public extension Collection {
-	
+
 	private func indicesArray() -> [Self.Index] {
 		var indices: [Self.Index] = []
 		var anIndex = startIndex
@@ -21,7 +20,7 @@ public extension Collection {
 		}
 		return indices
 	}
-	
+
 	/// SwifterSwift: Performs `each` closure for each element of collection in parallel.
 	///
 	///		array.forEachInParallel { item in
@@ -29,15 +28,15 @@ public extension Collection {
 	///		}
 	///
 	/// - Parameter each: closure to run for each element.
-	public func forEachInParallel(_ each: (Self.Iterator.Element) -> ()) {
+	public func forEachInParallel(_ each: (Self.Iterator.Element) -> Void) {
 		let indices = indicesArray()
-		
+
 		DispatchQueue.concurrentPerform(iterations: indices.count) { (index) in
 			let elementIndex = indices[index]
 			each(self[elementIndex])
 		}
 	}
-	
+
 }
 
 public extension Collection where Indices.Iterator.Element == Index {
@@ -52,11 +51,11 @@ public extension Collection where Indices.Iterator.Element == Index {
 	public subscript (safe index: Index) -> Iterator.Element? {
 		return indices.contains(index) ? self[index] : nil
 	}
-	
+
 }
 
 public extension Collection where Index == Int, IndexDistance == Int {
-	
+
 	/// SwifterSwift: Random item from array.
 	public var randomItem: Generator.Element {
 		let index = Int(arc4random_uniform(UInt32(count)))
@@ -75,6 +74,5 @@ public extension Collection where Iterator.Element == Int, Index == Int {
 		// http://stackoverflow.com/questions/28288148/making-my-function-calculate-average-of-array-swift
 		return isEmpty ? 0 : Double(reduce(0, +)) / Double(endIndex-startIndex)
 	}
-	
-}
 
+}
