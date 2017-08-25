@@ -177,7 +177,18 @@ class ResultPageViewController: UIViewController, UITableViewDelegate, UITableVi
         }
 
         for result in results {
-            let temp = EachSongResult(index: result.index, result: result.result, usedTime: result.usedTime)
+            
+            guard let selectedAnswer = result.selectedAnswer else { let selectedAnswer = "Didn't cath selectedAnswer"; continue }
+            
+            /*
+            if result.selectedAnswer != nil {
+                let selectedAnswer = result.selectedAnswer
+            } else {
+                let selectedAnswer = "Didn't cath selectedAnswer"
+            }
+            
+ */
+            let temp = EachSongResult(index: result.index, result: result.result, usedTime: result.usedTime, selectedAnswer: selectedAnswer)
             resultsArray.append(temp)
 
         }

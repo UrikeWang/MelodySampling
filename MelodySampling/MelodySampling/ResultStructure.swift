@@ -25,6 +25,7 @@ struct EachSongResult {
     let index: Int16
     let result: Bool
     let usedTime: Double
+    let selectedAnswer: String
 }
 
 struct SendToFirebase {
@@ -40,6 +41,6 @@ struct SendToFirebase {
     let index: Int
     let result: Bool
     let usedTime: Double
-    let choosedAnswer: String
+    let selectedAnswer: String
     
 }

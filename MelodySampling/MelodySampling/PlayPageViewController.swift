@@ -281,7 +281,7 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
 
             rightUserScoreLabel.text = "\(formatPrice)"
 
-            let currentResult = EachSongResult(index: Int16(currentTrack), result: true, usedTime: timePassed)
+            let currentResult = EachSongResult(index: Int16(currentTrack), result: true, usedTime: timePassed, selectedAnswer: selectedAnswer)
 
             self.resultList.append(currentResult)
 
@@ -304,7 +304,7 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
             print("答對了")
         } else {
 
-            let currentResult = EachSongResult(index: Int16(currentTrack), result: false, usedTime: timePassed)
+            let currentResult = EachSongResult(index: Int16(currentTrack), result: false, usedTime: timePassed, selectedAnswer: selectedAnswer)
 
             let correctIndex = IndexPath(row: 0, section: shuffledList.index(of: answer)!)
             self.resultList.append(currentResult)
@@ -353,6 +353,7 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
                     self.resultMO.index = eachResult.index
                     self.resultMO.result = eachResult.result
                     self.resultMO.usedTime = eachResult.usedTime
+                    self.resultMO.selectedAnswer = eachResult.selectedAnswer
 
                     appDelegate.saveContext()
 
