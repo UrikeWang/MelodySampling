@@ -42,5 +42,5 @@ struct SendToFirebase {
     let result: Bool
     let usedTime: Double
     let selectedAnswer: String
-    
+
 }

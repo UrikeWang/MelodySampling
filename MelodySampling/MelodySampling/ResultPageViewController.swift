@@ -177,9 +177,9 @@ class ResultPageViewController: UIViewController, UITableViewDelegate, UITableVi
         }
 
         for result in results {
-            
+
             guard let selectedAnswer = result.selectedAnswer else { let selectedAnswer = "Didn't cath selectedAnswer"; continue }
-            
+
             /*
             if result.selectedAnswer != nil {
                 let selectedAnswer = result.selectedAnswer
