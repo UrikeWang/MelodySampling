@@ -10,11 +10,13 @@ import UIKit
 
 class AnswerTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var judgeImageView: UIImageView!
+
     @IBOutlet weak var answerView: UIView! {
         didSet {
             answerView.layer.cornerRadius = 10
             answerView.layer.masksToBounds = true
-            answerView.layer.borderColor = UIColor.playPageBackground.cgColor
+            answerView.layer.borderColor = UIColor.white.cgColor
             answerView.layer.borderWidth = 2
             answerView.backgroundColor = UIColor.white
         }

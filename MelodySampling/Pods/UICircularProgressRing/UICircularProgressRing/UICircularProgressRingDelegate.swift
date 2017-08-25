@@ -23,7 +23,6 @@
 //  CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
 
-
 /**
  This is the protocol declaration for the UICircularProgressRingView delegate property
  
@@ -45,7 +44,7 @@ public protocol UICircularProgressRingDelegate: class {
      
     */
     func finishedUpdatingProgress(forRing ring: UICircularProgressRingView)
-    
+
     /**
      This method is called whenever the value is updated, this means during animation this method will be called in real time.
      This can be used to update another label or do some other work, whenever you need the exact current value of the ring
@@ -60,7 +59,6 @@ public protocol UICircularProgressRingDelegate: class {
      */
     func didUpdateProgressValue(to newValue: CGFloat)
 }
-
 
 /// Protocol extension to add default conformance
 public extension UICircularProgressRingDelegate {

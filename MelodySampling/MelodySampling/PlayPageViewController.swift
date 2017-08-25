@@ -14,6 +14,12 @@ import Alamofire
 
 class PlayPageViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate {
 
+    var coverView = UIView()
+
+    var countDownLabel = UILabel()
+
+    var timeCoutdown: Int = 3
+
     var fetchResultController: NSFetchedResultsController<QuestionMO>!
 
     var fetchDistractorController: NSFetchedResultsController<DistractorMO>!
@@ -182,10 +188,6 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
 
         playingSongLabel.text = "\(prepareTrack)"
 
-        self.timeStart = Date().timeIntervalSince1970
-
-        self.startGuessing()
-
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -202,9 +204,13 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
         //swiftlint:disable force_cast
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! AnswerTableViewCell
 
-        cell.answerLabel.text = shuffledList[indexPath.section]
+        if shuffledList != nil && shuffledList.count != 0 {
+
+            cell.answerLabel.text = "\(shuffledList[indexPath.section])"
+        } else {
+            cell.answerLabel.text = "=========="
+        }
         //swiftlint:enable
-        cell.backgroundColor = UIColor.clear
 
         cell.selectionStyle = .none
 
@@ -214,12 +220,7 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
-        let selectedAnswer = shuffledList[indexPath.section]
-
-        let answer = trackNameArray[currentTrack]
-
-        print("你選了 \(selectedAnswer) 個選項")
-        print("你在 \(currentTrack) 首")
+        tableView.isUserInteractionEnabled = false
 
         let currentTime = Date().timeIntervalSince1970
 
@@ -256,6 +257,16 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
 
         }
 
+        let selectedAnswer = shuffledList[indexPath.section]
+
+        let answer = trackNameArray[currentTrack]
+
+        print("你選了 \(selectedAnswer) 個選項")
+        print("你在 \(currentTrack) 首")
+
+        player?.pause()
+
+        //swiftlint:disable force_cast
         if judgeAnswer(input: selectedAnswer, compare: answer) {
 
             let currentScoreString = rightUserScoreLabel.text
@@ -274,15 +285,58 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
 
             self.resultList.append(currentResult)
 
+            let selectedCell = tableView.cellForRow(at: indexPath) as! AnswerTableViewCell
+
+            selectedCell.judgeImageView.image = UIImage(named: "right")
+
+            selectedCell.judgeImageView.isHidden = false
+
+            selectedCell.judgeImageView.alpha = 1
+
+            selectedCell.answerView.layer.borderColor = UIColor.mldAppleGreen.cgColor
+
+            UIView.animate(withDuration: 1.0, animations: {
+                selectedCell.judgeImageView.alpha = 0
+                selectedCell.answerView.layer.borderColor = UIColor.white.cgColor
+
+            })
+
             print("答對了")
         } else {
 
             let currentResult = EachSongResult(index: Int16(currentTrack), result: false, usedTime: timePassed)
 
+            let correctIndex = IndexPath(row: 0, section: shuffledList.index(of: answer)!)
             self.resultList.append(currentResult)
+
+            var selectedCell = tableView.cellForRow(at: indexPath) as! AnswerTableViewCell
+
+            var correctCell = tableView.cellForRow(at: correctIndex) as! AnswerTableViewCell
+
+            selectedCell.judgeImageView.image = UIImage(named: "wrong")
+            correctCell.judgeImageView.image = UIImage(named: "right")
+
+            selectedCell.judgeImageView.alpha = 1
+            correctCell.judgeImageView.alpha = 1
+
+            selectedCell.judgeImageView.isHidden = false
+            correctCell.judgeImageView.isHidden = false
+
+            selectedCell.answerView.layer.borderColor = UIColor.mldOrangeRed.cgColor
+            correctCell.answerView.layer.borderColor = UIColor.mldAppleGreen.cgColor
+
+            UIView.animate(withDuration: 1.0, animations: {
+                selectedCell.judgeImageView.alpha = 0
+                selectedCell.answerView.layer.borderColor = UIColor.white.cgColor
+
+                correctCell.judgeImageView.alpha = 0
+                correctCell.answerView.layer.borderColor = UIColor.white.cgColor
+
+            })
 
             print("答錯了，正解是 \(answer)")
         }
+        //swiftlint:enable
 
         if prepareTrack == 5 {
 
@@ -347,41 +401,38 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
 
             shuffledList = questionList.shuffled()
 
-            tableView.reloadData()
+            let delayTime = DispatchTime.now() + .milliseconds(1500)
 
-            player?.pause()
+            let fileName = self.path + self.songFileNameList[self.prepareTrack]
 
-            let fileName = self.path + songFileNameList[prepareTrack]
+            DispatchQueue.main.asyncAfter(deadline: delayTime, execute: {
 
-            do {
+                tableView.reloadData()
 
-                player = try AVAudioPlayer(contentsOf: URL(string: fileName)!)
+                self.player?.pause()
 
-            } catch {
-                player = nil
-            }
+                do {
 
-            player?.play()
+                    self.player = try AVAudioPlayer(contentsOf: URL(string: fileName)!)
 
-            currentTrack = prepareTrack
+                } catch {
+                    self.player = nil
+                }
 
-            print("現在是 \(currentTrack) 首")
+                tableView.isUserInteractionEnabled = true
 
-            if currentTrack == 5 {
+                self.player?.play()
 
-                performSegue(withIdentifier: "goToResultPage", sender: self)
+                self.currentTrack = self.prepareTrack
 
-                player?.pause()
+                print("現在是 \(self.currentTrack) 首")
 
-                player = nil
+                self.prepareTrack += 1
 
-            } else {
+                self.playingSongLabel.text = "\(self.prepareTrack)"
 
-                prepareTrack += 1
+            })
 
-                playingSongLabel.text = "\(prepareTrack)"
-
-            }
         }
     }
 
@@ -389,6 +440,8 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
 
         print("現在在第 \(currentTrack) 首")
         print("接下來是第 \(prepareTrack) 首")
+
+        self.shuffledList = []
 
         for index in 0..<3 {
             print(index)
@@ -437,6 +490,34 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
             self.tableViewHeightConstrains.constant = CGFloat(tableViewHeight)
             self.view.layoutIfNeeded()
         }
+
+        setCoverView(coverView, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+
+        setCountDownLabelStyle(countDownLabel, screen: UIScreen.main, height: 80, width: 80)
+
+        countDownLabel.text = "\(timeCoutdown)"
+
+        self.view.addSubview(coverView)
+
+        self.view.addSubview(countDownLabel)
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        for i in 1..<4 {
+            let delayTime = DispatchTime.now() + .seconds(i)
+            DispatchQueue.main.asyncAfter(deadline: delayTime, execute: {
+                self.timeCoutdown -= 1
+                self.countDownLabel.text = "\(self.timeCoutdown)"
+
+                if self.timeCoutdown == 0 {
+                    self.countingTrigger()
+                }
+            })
+
+        }
+
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -447,6 +528,16 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
         super.viewDidDisappear(animated)
         let clearDistractorData = CheckQuestionInCoreData()
         clearDistractorData.clearDistractorMO()
+    }
+
+    func countingTrigger() {
+
+            countDownLabel.isHidden = true
+            coverView.isHidden = true
+
+            self.timeStart = Date().timeIntervalSince1970
+
+            self.startGuessing()
     }
 
 }

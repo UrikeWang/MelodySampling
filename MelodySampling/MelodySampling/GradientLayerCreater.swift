@@ -111,3 +111,15 @@ func createResultBackground(target uIView: UIView, height screenH: Int) {
     uIView.layer.insertSublayer(gradientLayer, at: 0)
 
 }
+
+func createProgressBackground(target uIView: UIView) {
+
+    gradientLayer = CAGradientLayer()
+
+    gradientLayer.frame = uIView.bounds
+
+    gradientLayer.colors = [UIColor.mldLightRoyalBlue.cgColor, UIColor.mldLightRose.cgColor]
+
+    uIView.layer.insertSublayer(gradientLayer, at: 0)
+
+}

@@ -32,19 +32,20 @@ class DownloadManager {
 
         print("目標題庫是 \(language)")
 
-        let progressContentView = UIView(frame: CGRect(x: 0, y: 0, width: thisView.view.frame.width, height: thisView.view.frame.height))
+        var progressContentView = UIView(frame: CGRect(x: 0, y: 0, width: thisView.view.frame.width, height: thisView.view.frame.height))
 
         let progressRing = UICircularProgressRingView(frame: CGRect(x: thisView.view.frame.width / 2 - 120, y: thisView.view.frame.height / 2 - 120, width: 240, height: 240))
 
         progressRing.maxValue = 100
 
-        progressRing.outerRingColor = UIColor.green
+        progressRing.outerRingColor = UIColor.mldAppleGreen
+        progressRing.innerRingColor = UIColor.mldOrangeRed
 
-        progressRing.innerRingColor = UIColor.blue
+        progressContentView.backgroundColor = UIColor.playPageBackground
 
-        progressContentView.backgroundColor = UIColor.white
+        createProgressBackground(target: progressContentView)
 
-        progressContentView.addSubview(progressRing)
+        progressContentView.insertSubview(progressRing, at: 1)
 
         thisView.view.addSubview(progressContentView)
 
@@ -123,7 +124,8 @@ class DownloadManager {
 
                                 let registerVC = thisView.storyboard?.instantiateViewController(withIdentifier: "PlayPage")
 
-                                thisView.present(registerVC!, animated: true, completion: nil)
+                                    thisView.present(registerVC!, animated: true, completion: nil)
+
                             }
                         }
                 }
@@ -149,9 +151,11 @@ class DownloadManager {
 
         progressRing.innerRingColor = UIColor.blue
 
-        progressContentView.backgroundColor = UIColor.white
+        progressContentView.backgroundColor = UIColor.mldLightPurple
 
         progressContentView.addSubview(progressRing)
+
+        progressRing.backgroundColor = UIColor.red
 
         thisView.view.addSubview(progressContentView)
 

@@ -11,7 +11,7 @@ import UIKit
 
 // MARK: - Enums
 public extension UITextField {
-	
+
 	/// SwifterSwift: UITextField text type.
 	///
 	/// - emailAddress: UITextField is used to enter email addresses.
@@ -22,13 +22,12 @@ public extension UITextField {
 		case password
 		case generic
 	}
-	
+
 }
-	
-	
+
 // MARK: - Properties
 public extension UITextField {
-	
+
 	/// SwifterSwift: Set textField for common text types.
 	public var textType: TextType {
 		get {
@@ -47,32 +46,31 @@ public extension UITextField {
 				autocapitalizationType = .none
 				isSecureTextEntry = false
 				placeholder = "Email Address"
-				
+
 			case .password:
 				keyboardType = .asciiCapable
 				autocorrectionType = .no
 				autocapitalizationType = .none
 				isSecureTextEntry = true
 				placeholder = "Password"
-				
+
 			case .generic:
 				isSecureTextEntry = false
-				
+
 			}
 		}
 	}
-	
-	
+
 	/// SwifterSwift: Check if text field is empty.
 	public var isEmpty: Bool {
 		return text?.isEmpty == true
 	}
-	
+
 	/// SwifterSwift: Return text with no spaces or new lines in beginning and end.
 	public var trimmedText: String? {
 		return text?.trimmingCharacters(in: .whitespacesAndNewlines)
 	}
-	
+
 	/// SwifterSwift: Check if textFields text is a valid email format.
 	///
 	///		textField.text = "john@doe.com"
@@ -87,7 +85,7 @@ public extension UITextField {
 		                   options: String.CompareOptions.regularExpression,
 		                   range: nil, locale: nil) != nil
 	}
-	
+
 	@IBInspectable
 	/// SwifterSwift: Left view tint color.
 	public var leftViewTintColor: UIColor? {
@@ -128,13 +126,13 @@ public extension UITextField {
 
 // MARK: - Methods
 public extension UITextField {
-	
+
 	/// SwifterSwift: Clear text.
 	public func clear() {
 		text = ""
 		attributedText = NSAttributedString(string: "")
 	}
-	
+
 	/// SwifterSwift: Set placeholder text color.
 	///
 	/// - Parameter color: placeholder text color.
@@ -144,7 +142,7 @@ public extension UITextField {
 		}
 		self.attributedPlaceholder = NSAttributedString(string: holder, attributes: [NSForegroundColorAttributeName: color])
 	}
-  
+
     /// SwifterSwift: Add padding to the left of the textfield rect.
     ///
     /// - Parameter padding: amount of padding to apply to the left of the textfield rect.
@@ -153,7 +151,7 @@ public extension UITextField {
     leftView = paddingView
     leftViewMode = .always
     }
-    
+
     /// SwifterSwift: Add padding to the left of the textfield rect.
     ///
     /// - Parameters:
@@ -168,5 +166,5 @@ public extension UITextField {
     }
 
 }
-	
+
 #endif
