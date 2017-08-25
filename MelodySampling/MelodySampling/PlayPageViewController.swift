@@ -212,19 +212,16 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
         cell.backgroundColor = UIColor.clear
 
         cell.selectionStyle = .none
+        
+        if cell.isSelected {
+            
+        }
 
         return cell
 
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
-        let selectedAnswer = shuffledList[indexPath.section]
-
-        let answer = trackNameArray[currentTrack]
-
-        print("你選了 \(selectedAnswer) 個選項")
-        print("你在 \(currentTrack) 首")
 
         let currentTime = Date().timeIntervalSince1970
 
@@ -260,6 +257,13 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
             leftUserScoreLabel.text = "\(aiScore)"
 
         }
+        
+        let selectedAnswer = shuffledList[indexPath.section]
+        
+        let answer = trackNameArray[currentTrack]
+        
+        print("你選了 \(selectedAnswer) 個選項")
+        print("你在 \(currentTrack) 首")
 
         if judgeAnswer(input: selectedAnswer, compare: answer) {
 
