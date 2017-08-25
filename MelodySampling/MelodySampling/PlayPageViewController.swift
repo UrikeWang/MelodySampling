@@ -212,10 +212,6 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
         cell.backgroundColor = UIColor.clear
 
         cell.selectionStyle = .none
-        
-        if cell.isSelected {
-            
-        }
 
         return cell
 
@@ -265,6 +261,7 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
         print("你選了 \(selectedAnswer) 個選項")
         print("你在 \(currentTrack) 首")
 
+        //swiftlint:disable force_cast
         if judgeAnswer(input: selectedAnswer, compare: answer) {
 
             let currentScoreString = rightUserScoreLabel.text
@@ -282,7 +279,16 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
             let currentResult = EachSongResult(index: Int16(currentTrack), result: true, usedTime: timePassed)
 
             self.resultList.append(currentResult)
+
+            let selectedCell = tableView.cellForRow(at: indexPath) as! AnswerTableViewCell
             
+            selectedCell.judgeImageView.image = UIImage(named: "right")
+            
+            selectedCell.judgeImageView.isHidden = false
+            
+            UIView.animate(withDuration: 1.0, animations: { 
+                selectedCell.judgeImageView.alpha = 0
+            })
             
 
             print("答對了")
@@ -291,10 +297,22 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
             let currentResult = EachSongResult(index: Int16(currentTrack), result: false, usedTime: timePassed)
 
             self.resultList.append(currentResult)
+            
+            var selectedCell = tableView.cellForRow(at: indexPath) as! AnswerTableViewCell
+            
+            selectedCell.judgeImageView.image = UIImage(named: "wrong")
+            
+            selectedCell.judgeImageView.isHidden = false
+            
+            UIView.animate(withDuration: 2.0, animations: {
+                selectedCell.judgeImageView.alpha = 0
+                
+            })
 
             print("答錯了，正解是 \(answer)")
         }
-
+        //swiftlint:enable
+        
         if prepareTrack == 5 {
 
             player?.pause()
@@ -358,41 +376,38 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
 
             shuffledList = questionList.shuffled()
 
-            tableView.reloadData()
+            let delayTime = DispatchTime.now() + .milliseconds(1500)
+            
+            DispatchQueue.main.asyncAfter(deadline: delayTime, execute: {
+                
+                tableView.reloadData()
+                
+                self.player?.pause()
+                
+                let fileName = self.path + self.songFileNameList[self.prepareTrack]
+                
+                do {
+                    
+                    self.player = try AVAudioPlayer(contentsOf: URL(string: fileName)!)
+                    
+                } catch {
+                    self.player = nil
+                }
+                
+                self.player?.play()
+                
+                self.currentTrack = self.prepareTrack
+                
+                print("現在是 \(self.currentTrack) 首")
+                
+                self.prepareTrack += 1
+                
+                self.playingSongLabel.text = "\(self.prepareTrack)"
+                
+            })
+            
+            
 
-            player?.pause()
-
-            let fileName = self.path + songFileNameList[prepareTrack]
-
-            do {
-
-                player = try AVAudioPlayer(contentsOf: URL(string: fileName)!)
-
-            } catch {
-                player = nil
-            }
-
-            player?.play()
-
-            currentTrack = prepareTrack
-
-            print("現在是 \(currentTrack) 首")
-
-            if currentTrack == 5 {
-
-                performSegue(withIdentifier: "goToResultPage", sender: self)
-
-                player?.pause()
-
-                player = nil
-
-            } else {
-
-                prepareTrack += 1
-
-                playingSongLabel.text = "\(prepareTrack)"
-
-            }
         }
     }
 
