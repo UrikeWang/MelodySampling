@@ -25,4 +25,22 @@ struct EachSongResult {
     let index: Int16
     let result: Bool
     let usedTime: Double
+    let selectedAnswer: String
+}
+
+struct SendToFirebase {
+    let artistID: Int
+    let artistName: String
+    let trackID: Int
+    let trackName: String
+    let artworkUrl: String
+    let previewUrl: String
+    let collectionID: Int
+    let collectionName: String
+    let primaryGenreName: String
+    let index: Int
+    let result: Bool
+    let usedTime: Double
+    let selectedAnswer: String
+
 }
