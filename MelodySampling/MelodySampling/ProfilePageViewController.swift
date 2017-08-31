@@ -45,6 +45,10 @@ class ProfilePageViewController: UIViewController, UITableViewDelegate, UITableV
     @IBOutlet weak var userNameLabel: UILabel!
 
     @IBOutlet weak var invisiblePhotoUsageButtonOutlet: UIButton!
+    
+    @IBOutlet weak var historyLabel: UILabel!
+    
+    @IBOutlet weak var logoutTextLabel: UILabel!
 
     @IBAction func invisiblePhotoUsageButtonTapped(_ sender: UIButton) {
 
@@ -58,7 +62,6 @@ class ProfilePageViewController: UIViewController, UITableViewDelegate, UITableV
     }
 
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        print("使用者選完照片了")
 
         let image = info[UIImagePickerControllerOriginalImage] as? UIImage
 
@@ -72,7 +75,6 @@ class ProfilePageViewController: UIViewController, UITableViewDelegate, UITableV
     }
 
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        print("使用者取消選取")
 
         dismiss(animated: true, completion: nil)
     }
@@ -111,6 +113,10 @@ class ProfilePageViewController: UIViewController, UITableViewDelegate, UITableV
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        historyLabel.text = NSLocalizedString("History", comment: "History segament controller label")
+        logoutTextLabel.text = NSLocalizedString("Log out", comment: "Log out text at profile page.")
+        playTextLabel.text = NSLocalizedString("Play", comment: "Play button text at profile page.")
+        
         print("===== Profile Page =====")
 
         invisiblePhotoUsageButtonOutlet.setTitleColor(UIColor.clear, for: .normal)

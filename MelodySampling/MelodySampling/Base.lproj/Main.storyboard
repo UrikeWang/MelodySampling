@@ -645,12 +645,14 @@
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
                     <connections>
+                        <outlet property="historyLabel" destination="PMV-h8-dSS" id="M40-fB-AkS"/>
                         <outlet property="historyTableView" destination="L6t-KH-VJ3" id="JCm-B6-FfF"/>
                         <outlet property="invisibleButton" destination="cl4-Gv-Xij" id="siV-L5-7fB"/>
                         <outlet property="invisiblePhotoUsageButtonOutlet" destination="PGk-Jj-Bmy" id="8Rg-Xn-X4s"/>
                         <outlet property="logOutButtonOutlet" destination="tmL-Wu-OHy" id="2QG-jd-Hnh"/>
                         <outlet property="logOutContentView" destination="tIr-sg-bbH" id="AAp-1Q-OFv"/>
                         <outlet property="logOutView" destination="jwy-5s-qhz" id="4gM-ca-39F"/>
+                        <outlet property="logoutTextLabel" destination="c6g-G5-ckw" id="QJb-at-zj8"/>
                         <outlet property="playButtonLabel" destination="IOU-Oy-gG4" id="wDg-th-Hy1"/>
                         <outlet property="playTextLabel" destination="6CE-oi-zf6" id="u1A-z5-6bk"/>
                         <outlet property="userNameLabel" destination="u4p-KT-t8T" id="0gF-q5-87H"/>
