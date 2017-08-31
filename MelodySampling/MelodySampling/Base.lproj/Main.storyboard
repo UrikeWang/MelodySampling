@@ -1297,6 +1297,7 @@
                         <outlet property="invisibleNextGameButtonOutlet" destination="lii-t7-KCO" id="nJO-hQ-aJF"/>
                         <outlet property="lowerView" destination="tAC-Hl-2rc" id="7Lm-0q-sRQ"/>
                         <outlet property="nextBattleLabel" destination="c0u-Mm-fIx" id="Dlo-od-yZo"/>
+                        <outlet property="nextBattleTextLabel" destination="Bw0-qO-mzr" id="gtM-E7-Jl6"/>
                         <outlet property="profilePageView" destination="Yur-Rj-fPA" id="r6A-8I-g45"/>
                         <outlet property="scoreLabel" destination="Ky9-KW-jMO" id="v0x-t9-yAQ"/>
                         <outlet property="tableView" destination="ON0-XX-kiJ" id="Mfs-pn-nbo"/>
