@@ -127,6 +127,14 @@ class LogInViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        titleLabel.text = NSLocalizedString("King of Song Quiz", comment: "Title label at login page.")
+        emailTextField.placeholder = NSLocalizedString("Email", comment: "Email textfield placeholder at login page.")
+        passwordTextField.placeholder = NSLocalizedString("Password", comment: "Password textfield placeholder at login page.")
+        forgetPasswordLabel.text = NSLocalizedString("Forget password", comment: "Forget password label at login page.")
+        loginLabel.text = NSLocalizedString("Log in", comment: "Login label at login page.")
+        gotoSignUpLabel.text = NSLocalizedString("Don't have an account? Sign up", comment: "Goto signup page at login page.")
+        
+        
         opacityView.frame = UIScreen.main.bounds
 
         self.navigationController?.isNavigationBarHidden = false

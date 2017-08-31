@@ -1,9 +1,5 @@
-
 /* Class = "UILabel"; text = "This is you"; ObjectID = "3Yb-tz-7Q9"; */
 "3Yb-tz-7Q9.text" = "This is you";
-
-/* Class = "UILabel"; text = "1234"; ObjectID = "45D-kh-MVL"; */
-"45D-kh-MVL.text" = "1234";
 
 /* Class = "UITextField"; placeholder = "Password"; ObjectID = "4JM-xJ-G7m"; */
 "4JM-xJ-G7m.placeholder" = "Password";
@@ -20,6 +16,9 @@
 /* Class = "UILabel"; text = "Forget password?"; ObjectID = "9tS-ZU-rY7"; */
 "9tS-ZU-rY7.text" = "Forget password?";
 
+/* Class = "UILabel"; text = "1234"; ObjectID = "45D-kh-MVL"; */
+"45D-kh-MVL.text" = "1234";
+
 /* Class = "UILabel"; text = "S"; ObjectID = "AwK-YC-eoE"; */
 "AwK-YC-eoE.text" = "S";
 
@@ -27,7 +26,7 @@
 "Bw0-qO-mzr.text" = "Play Again";
 
 /* Class = "UILabel"; text = "Sign up"; ObjectID = "C8j-OD-UCA"; */
-"C8j-OD-UCA.text" = "Sign up";
+"C8j-OD-UCA.text" = "註冊";
 
 /* Class = "UIButton"; normalTitle = "Shadow"; ObjectID = "CdL-T6-5JE"; */
 "CdL-T6-5JE.normalTitle" = "Shadow";
@@ -120,7 +119,7 @@
 "lii-t7-KCO.normalTitle" = "Button";
 
 /* Class = "UILabel"; text = "Log in"; ObjectID = "nRs-tJ-aaB"; */
-"nRs-tJ-aaB.text" = "Log in";
+"nRs-tJ-aaB.text" = "登入";
 
 /* Class = "UILabel"; text = "5678"; ObjectID = "owN-SQ-VoR"; */
 "owN-SQ-VoR.text" = "5678";
@@ -145,3 +144,4 @@
 
 /* Class = "UITextField"; placeholder = "Email"; ObjectID = "zpD-dh-a8g"; */
 "zpD-dh-a8g.placeholder" = "Email";
+
