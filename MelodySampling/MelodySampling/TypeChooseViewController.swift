@@ -83,25 +83,25 @@ class TypeChooseViewController: UIViewController, UITableViewDataSource, UITable
 
             cell.backgroundImageView.image = UIImage(named: "pic_Cpop_new")
 
-            cell.genreButtonOutlet.setTitle("Mandarin Pop", for: .normal)
+            cell.genreButtonOutlet.setTitle(NSLocalizedString("Mandarin Pop", comment: "Mandarin pop cell at genre type choose page."), for: .normal)
 
         case .taiwanesePop:
 
             cell.backgroundImageView.image = UIImage(named: "pic_Tpop_new")
 
-            cell.genreButtonOutlet.setTitle("Taiwanese Pop", for: .normal)
+            cell.genreButtonOutlet.setTitle(NSLocalizedString("Taiwanese Pop", comment: "Taiwanese pop cell at genre type choose page."), for: .normal)
 
         case .cantoPop:
 
             cell.backgroundImageView.image = UIImage(named: "pic_Can_new")
 
-            cell.genreButtonOutlet.setTitle("Cantonese Pop", for: .normal)
+            cell.genreButtonOutlet.setTitle(NSLocalizedString("Cantonese Pop", comment: "Cantonese pop cell at genre type choose page."), for: .normal)
 
         case .billboardPop:
 
             cell.backgroundImageView.image = UIImage(named: "pic_Wpop_new")
 
-            cell.genreButtonOutlet.setTitle("Billboard Pop", for: .normal)
+            cell.genreButtonOutlet.setTitle(NSLocalizedString("Billboard Pop", comment: "Billboard pop cell at genre type choose page."), for: .normal)
 
         }
 
