@@ -66,7 +66,7 @@ class SignUpViewController: UIViewController {
 
         if email == "" || password == "" || confirmPassword == "" {
 
-            let emptyInputAlert = UIAlertController(title: "Empty field found!", message: "Please input all text field", preferredStyle: .alert)
+            let emptyInputAlert = UIAlertController(title: NSLocalizedString("Empty field found!", comment: "Empty field warning at signup page"), message: NSLocalizedString("Please input all text field", comment: "Subtitle of empty field warning at signup page."), preferredStyle: .alert)
 
             let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
 
@@ -89,7 +89,7 @@ class SignUpViewController: UIViewController {
                         if let error = error {
                             print(error)
 
-                            let warningAlert = UIAlertController(title: "Something Wrong", message: "Please check email, password, confirm passwork again.", preferredStyle: .alert)
+                            let warningAlert = UIAlertController(title: NSLocalizedString("Something Wrong", comment: "Sign up error message at signup page"), message: NSLocalizedString("Please check email, password, confirm passwork again.", comment: "Subtitle of sign up error message at signup page."), preferredStyle: .alert)
 
                             let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
 
@@ -109,7 +109,7 @@ class SignUpViewController: UIViewController {
 
                     let formatRandom = String(format: "%06i", randomNumber)
 
-                    self.userFullName = "User" + formatRandom
+                    self.userFullName = NSLocalizedString("User", comment: "for user label") + formatRandom
 
                     userRef.setValue(["fullName": self.userFullName, "createdTime": currentTime, "userAccount": self.userAccount, "profilePicURL": self.profileImageURL, "wasAnonymouse": false])
 
@@ -127,7 +127,7 @@ class SignUpViewController: UIViewController {
                 }
             } else {
 
-                let passwordInputAlert = UIAlertController(title: "Password Input Alert", message: "Please confirm your password again", preferredStyle: .alert)
+                let passwordInputAlert = UIAlertController(title: NSLocalizedString("Password Input Alert", comment: "Password input alert at signup page"), message: NSLocalizedString("Please confirm your password again", comment: "Confirm password again at signup page."), preferredStyle: .alert)
 
                 let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
 

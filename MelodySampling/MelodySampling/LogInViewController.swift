@@ -50,7 +50,7 @@ class LogInViewController: UIViewController {
 
             Auth.auth().sendPasswordReset(withEmail: email, completion: { (_) in
 
-                let errorAlert = UIAlertController(title: "Error", message: "Something Wrong, please check your input again", preferredStyle: .alert)
+                let errorAlert = UIAlertController(title: NSLocalizedString("Error", comment: "Error title at login page."), message: NSLocalizedString("Something Wrong, please check your input again", comment: "Subtitle of error message at login page."), preferredStyle: .alert)
 
                 let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
 
@@ -62,7 +62,7 @@ class LogInViewController: UIViewController {
 
         } else {
 
-            let errorAlert = UIAlertController(title: "Email is empty!", message: "Please input your email.", preferredStyle: .alert)
+            let errorAlert = UIAlertController(title: NSLocalizedString("Email is empty!", comment: "Email empty warning"), message: NSLocalizedString("Please input your email.", comment: "Subtitle of email empty warning message"), preferredStyle: .alert)
 
             let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
 
@@ -86,7 +86,7 @@ class LogInViewController: UIViewController {
 
         if email == "" || password == "" {
 
-            let emptyInputAlert = UIAlertController(title: "Empty field found!", message: "Please input all text field", preferredStyle: .alert)
+            let emptyInputAlert = UIAlertController(title: NSLocalizedString("Empty field found!", comment: "Empty field warning at login page"), message: NSLocalizedString("Please input all text field", comment: "Subtitle of empty field warning at login page."), preferredStyle: .alert)
 
             let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
 
@@ -103,7 +103,7 @@ class LogInViewController: UIViewController {
                     //這裡的 error 之後要重新設計，原始 message 太長
                     if let error = error {
 
-                        let loginErrorAlert = UIAlertController(title: "Login Error", message: "\(error)", preferredStyle: .alert)
+                        let loginErrorAlert = UIAlertController(title: NSLocalizedString("Login Error", comment: "Login error message at login page."), message: "\(error)", preferredStyle: .alert)
 
                         let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
 
