@@ -22,15 +22,31 @@ class LandingPageViewController: UIViewController {
 
     var userFullName = ""
 
-    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var titleLabel: UILabel! {
+        didSet {
+            titleLabel.text = NSLocalizedString("King of Song Quiz", comment: "Title label text")
+        }
+    }
 
-    @IBOutlet weak var loginLabel: UILabel!
+    @IBOutlet weak var loginLabel: UILabel! {
+        didSet {
+            loginLabel.text = NSLocalizedString("Log In", comment: "Login label text.")
+        }
+    }
 
-    @IBOutlet weak var signupLabel: UILabel!
+    @IBOutlet weak var signupLabel: UILabel! {
+        didSet {
+            signupLabel.text = NSLocalizedString("Sign Up", comment: "Signup label text.")
+        }
+    }
 
     @IBOutlet weak var anonymousLoginLabel: UILabel!
 
-    @IBOutlet weak var anonymousLoginTextLabel: UILabel!
+    @IBOutlet weak var anonymousLoginTextLabel: UILabel! {
+        didSet {
+            anonymousLoginTextLabel.text = NSLocalizedString("Log in Anonymously ", comment: "For anonymous login.")
+        }
+    }
 
     @IBOutlet weak var loginButtonOutlet: UIButton!
 
@@ -121,7 +137,7 @@ class LandingPageViewController: UIViewController {
         super.viewDidLoad()
 
         self.navigationController?.isNavigationBarHidden = true
-
+        
         createTitleLabelShadow(target: titleLabel)
 
         setCornerRadiustTo(loginLabel)

@@ -83,25 +83,25 @@ class TypeChooseViewController: UIViewController, UITableViewDataSource, UITable
 
             cell.backgroundImageView.image = UIImage(named: "pic_Cpop_new")
 
-            cell.genreButtonOutlet.setTitle("華語流行", for: .normal)
+            cell.genreButtonOutlet.setTitle("Mandarin Pop", for: .normal)
 
         case .taiwanesePop:
 
             cell.backgroundImageView.image = UIImage(named: "pic_Tpop_new")
 
-            cell.genreButtonOutlet.setTitle("台語流行", for: .normal)
+            cell.genreButtonOutlet.setTitle("Taiwanese Pop", for: .normal)
 
         case .cantoPop:
 
             cell.backgroundImageView.image = UIImage(named: "pic_Can_new")
 
-            cell.genreButtonOutlet.setTitle("粵語流行", for: .normal)
+            cell.genreButtonOutlet.setTitle("Cantonese Pop", for: .normal)
 
         case .billboardPop:
 
             cell.backgroundImageView.image = UIImage(named: "pic_Wpop_new")
 
-            cell.genreButtonOutlet.setTitle("全球流行", for: .normal)
+            cell.genreButtonOutlet.setTitle("Billboard Pop", for: .normal)
 
         }
 
