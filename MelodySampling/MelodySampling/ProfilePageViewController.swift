@@ -45,9 +45,9 @@ class ProfilePageViewController: UIViewController, UITableViewDelegate, UITableV
     @IBOutlet weak var userNameLabel: UILabel!
 
     @IBOutlet weak var invisiblePhotoUsageButtonOutlet: UIButton!
-    
+
     @IBOutlet weak var historyLabel: UILabel!
-    
+
     @IBOutlet weak var logoutTextLabel: UILabel!
 
     @IBAction func invisiblePhotoUsageButtonTapped(_ sender: UIButton) {
@@ -116,7 +116,7 @@ class ProfilePageViewController: UIViewController, UITableViewDelegate, UITableV
         historyLabel.text = NSLocalizedString("History", comment: "History segament controller label")
         logoutTextLabel.text = NSLocalizedString("Log out", comment: "Log out text at profile page.")
         playTextLabel.text = NSLocalizedString("Play", comment: "Play button text at profile page.")
-        
+
         print("===== Profile Page =====")
 
         invisiblePhotoUsageButtonOutlet.setTitleColor(UIColor.clear, for: .normal)

@@ -53,9 +53,9 @@ class ResultPageViewController: UIViewController, UITableViewDelegate, UITableVi
     @IBOutlet weak var lowerView: UIView!
 
     @IBOutlet weak var nextBattleLabel: UILabel!
-    
+
     @IBOutlet weak var nextBattleTextLabel: UILabel!
-    
+
     let userDefault = UserDefaults.standard
 
     @IBOutlet weak var userNameLabel: UILabel!
@@ -81,7 +81,7 @@ class ResultPageViewController: UIViewController, UITableViewDelegate, UITableVi
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         nextBattleTextLabel.text = NSLocalizedString("Play Again", comment: "Play again text at result page.")
 
         if let userProfileImageData = userDefault.object(forKey: "UserProfileImage") as? Data {

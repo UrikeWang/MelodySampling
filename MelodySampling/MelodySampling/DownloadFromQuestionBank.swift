@@ -51,7 +51,7 @@ class DownloadManager {
 
         // MARK: Download starting time for Google analytic
         let downloadStartTime = Date().timeIntervalSince1970
-        
+
         for counter in 0..<5 {
             let trackIndex = random(bankMaxNumber)
 
@@ -127,9 +127,9 @@ class DownloadManager {
 
                                 // MARK: Timepassed for Google analytics
                                 let downloadPassedTime = Date().timeIntervalSince1970 - downloadStartTime
-                                
-                                Analytics.logEvent("DownloadTime", parameters: [language : downloadPassedTime as NSObject, "DownloadPassedTime": downloadPassedTime as NSObject])
-                                
+
+                                Analytics.logEvent("DownloadTime", parameters: [language: downloadPassedTime as NSObject, "DownloadPassedTime": downloadPassedTime as NSObject])
+
                                 let registerVC = thisView.storyboard?.instantiateViewController(withIdentifier: "PlayPage")
 
                                     thisView.present(registerVC!, animated: true, completion: nil)

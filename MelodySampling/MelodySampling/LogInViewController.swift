@@ -133,8 +133,7 @@ class LogInViewController: UIViewController {
         forgetPasswordLabel.text = NSLocalizedString("Forget password", comment: "Forget password label at login page.")
         loginLabel.text = NSLocalizedString("Log in", comment: "Login label at login page.")
         gotoSignUpLabel.text = NSLocalizedString("Don't have an account? Sign up", comment: "Goto signup page at login page.")
-        
-        
+
         opacityView.frame = UIScreen.main.bounds
 
         self.navigationController?.isNavigationBarHidden = false

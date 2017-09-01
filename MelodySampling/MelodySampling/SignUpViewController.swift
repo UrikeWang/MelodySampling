@@ -26,7 +26,7 @@ class SignUpViewController: UIViewController {
     var addNumber: Int?
 
     @IBOutlet weak var titleLabel: UILabel!
-    
+
     @IBOutlet weak var opacityView: UIView!
 
     @IBOutlet weak var signUpLabel: UILabel!
@@ -148,7 +148,7 @@ class SignUpViewController: UIViewController {
         confirmPasswordTextField.placeholder = NSLocalizedString("Confirm Password", comment: "Confirm Password at signup page")
         signUpLabel.text = NSLocalizedString("Sign up", comment: "Signup label at signup page.")
         goToLoginLabel.text = NSLocalizedString("Already have an account? Log in", comment: "Goto login page at signup page.")
-        
+
         opacityView.frame = UIScreen.main.bounds
 
         self.navigationController?.isNavigationBarHidden = false

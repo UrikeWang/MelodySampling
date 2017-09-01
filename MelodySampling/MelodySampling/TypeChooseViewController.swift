@@ -116,11 +116,11 @@ class TypeChooseViewController: UIViewController, UITableViewDataSource, UITable
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
         let languageSelected = typeList[indexPath.row].rawValue
-        
-        Analytics.logEvent("GenreOfUserChoosed", parameters: [languageSelected : languageSelected as NSObject])
-        
-        Analytics.logEvent("GenreWhichUserChoosed", parameters: ["Genre" : languageSelected as NSObject])
-        
+
+        Analytics.logEvent("GenreOfUserChoosed", parameters: [languageSelected: languageSelected as NSObject])
+
+        Analytics.logEvent("GenreWhichUserChoosed", parameters: ["Genre": languageSelected as NSObject])
+
         UserDefaults.standard.set(languageSelected, forKey: "selectedGenre")
 
         triggerToStart(selected: languageSelected)
