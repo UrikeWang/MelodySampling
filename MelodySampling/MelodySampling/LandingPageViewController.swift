@@ -107,7 +107,6 @@ class LandingPageViewController: UIViewController {
             guard let startTime = self.startTime else { return }
 
             Analytics.logEvent("AnonymousUserSignUp", parameters: [
-                "time": currentTime as NSObject,
                 "timePassed": currentTime - startTime as NSObject
                 ])
             Analytics.logEvent("AnonymousUser", parameters: ["count": 1 as NSObject])

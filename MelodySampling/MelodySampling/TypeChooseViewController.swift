@@ -120,6 +120,8 @@ class TypeChooseViewController: UIViewController, UITableViewDataSource, UITable
         Analytics.logEvent("GenreOfUserChoosed", parameters: [languageSelected : languageSelected as NSObject])
         
         Analytics.logEvent("GenreWhichUserChoosed", parameters: ["Genre" : languageSelected as NSObject])
+        
+        UserDefaults.standard.set(languageSelected, forKey: "selectedGenre")
 
         triggerToStart(selected: languageSelected)
 

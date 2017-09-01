@@ -16,6 +16,8 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
 
     var ref: DatabaseReference!
 
+    var totalTimeStart: Double = 0.0
+    
     var coverView = UIView()
 
     var countDownLabel = UILabel()
@@ -297,6 +299,8 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
 
             selectedCell.answerView.layer.borderColor = UIColor.mldAppleGreen.cgColor
 
+//            Analytics.logEvent(, parameters: <#T##[String : Any]?#>)
+            
             UIView.animate(withDuration: 1.0, animations: {
                 selectedCell.judgeImageView.alpha = 0
                 selectedCell.answerView.layer.borderColor = UIColor.white.cgColor
@@ -374,6 +378,39 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
                     "selectedAnswer": resultList[i].selectedAnswer
 
                     ])
+                
+                if let selectedGenre = userDefault.object(forKey: "selectedGenre") as? String {
+                    
+                    Analytics.logEvent( selectedGenre, parameters: [
+                        "ArtistID": questions[i].artistID as? NSObject,
+                        "ArtistName": questions[i].artistName as? NSObject,
+                        "trackID": questions[i].trackID as? NSObject,
+                        "trackName": questions[i].trackName as? NSObject,
+                        "result": resultList[i].result as? NSObject,
+                        "collectionID": questions[i].collectionID as? NSObject,
+                        "collectionName": questions[i].collectionName as? NSObject,
+                        "primaryGenreName": questions[i].primaryGenreName as? NSObject,
+                        "usedTime": resultList[i].usedTime as? NSObject,
+                        "selectedAnswer": resultList[i].selectedAnswer as? NSObject
+                        ])
+                    
+                }
+                
+                Analytics.logEvent("song\(i)", parameters: [
+                    "QuestionIndex": "song\(i)" as NSObject,
+                    "ArtistID": questions[i].artistID as? NSObject,
+                    "ArtistName": questions[i].artistName as? NSObject,
+                    "trackID": questions[i].trackID as? NSObject,
+                    "trackName": questions[i].trackName as? NSObject,
+                    "result": resultList[i].result as? NSObject,
+                    "collectionID": questions[i].collectionID as? NSObject,
+                    "collectionName": questions[i].collectionName as? NSObject,
+                    "primaryGenreName": questions[i].primaryGenreName as? NSObject,
+                    "usedTime": resultList[i].usedTime as? NSObject,
+                    "selectedAnswer": resultList[i].selectedAnswer as? NSObject
+                    ])
+                
+                
             }
 
             let now = Date().timeIntervalSince1970
@@ -401,6 +438,16 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
             }
 
             print(resultList)
+            
+            let totalTimePassed = now - totalTimeStart
+            
+            // MARK: Total playing time for Google analytics
+            Analytics.logEvent("TotalPlayingTime", parameters: ["PlayingTime": totalTimePassed as NSObject])
+            
+            if let selectedGenrer = userDefault.object(forKey: "selectedGenre") as? String {
+                
+                Analytics.logEvent("TotalPlayingTimeWithGenre", parameters: [selectedGenrer: totalTimePassed as NSObject])
+            }
 
             let delayTime = DispatchTime.now() + .milliseconds(800)
 
@@ -439,6 +486,10 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
             questionList = fakeList[prepareTrack]
 
             questionList.append(trackNameArray[prepareTrack])
+            
+            for eachDistractor in questionList {
+                Analytics.logEvent("distractors", parameters: ["distractor" : eachDistractor as NSObject])
+            }
 
             shuffledList = questionList.shuffled()
 
@@ -493,6 +544,10 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
             if self.questionList.contains(distractor) == false {
                 self.questionList.append(distractor)
             }
+        }
+        
+        for eachDistractor in self.questionList {
+            Analytics.logEvent("distractors", parameters: ["distractor" : eachDistractor as NSObject])
         }
 
         self.questionList.append(self.trackNameArray[self.currentTrack])
@@ -578,6 +633,8 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
 
             self.timeStart = Date().timeIntervalSince1970
 
+            totalTimeStart = self.timeStart
+        
             self.startGuessing()
     }
 
