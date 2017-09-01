@@ -49,6 +49,9 @@ class DownloadManager {
 
         thisView.view.addSubview(progressContentView)
 
+        // MARK: Download starting time for Google analytic
+        let downloadStartTime = Date().timeIntervalSince1970
+        
         for counter in 0..<5 {
             let trackIndex = random(bankMaxNumber)
 
@@ -120,8 +123,13 @@ class DownloadManager {
 
                         if downloadCount == 5 {
 
-                            progressRing.setProgress(value: CGFloat(downloadCount * 20), animationDuration: 0.01) {
+                            progressRing.setProgress(value: CGFloat(100), animationDuration: 0.01) {
 
+                                // MARK: Timepassed for Google analytics
+                                let downloadPassedTime = Date().timeIntervalSince1970 - downloadStartTime
+                                
+                                Analytics.logEvent("DownloadTime", parameters: [language : downloadPassedTime as NSObject, "DownloadPassedTime": downloadPassedTime as NSObject])
+                                
                                 let registerVC = thisView.storyboard?.instantiateViewController(withIdentifier: "PlayPage")
 
                                     thisView.present(registerVC!, animated: true, completion: nil)
@@ -202,7 +210,6 @@ class DownloadManager {
                     appDelegate.saveContext()
                 }
 
-//                print("\(eachQuestion.artistName) is appended")
                 print("==== Type Genre Page =====")
                 print("第 \(counter) 個是 \(eachQuestion.artistName), trackID: \(eachQuestion.trackID), artistID: \(eachQuestion.artistID)")
                 counter += 1

@@ -110,6 +110,7 @@ class LandingPageViewController: UIViewController {
                 "time": currentTime as NSObject,
                 "timePassed": currentTime - startTime as NSObject
                 ])
+            Analytics.logEvent("AnonymousUser", parameters: ["count": 1 as NSObject])
 
             gotoProfilePage(from: self)
 
