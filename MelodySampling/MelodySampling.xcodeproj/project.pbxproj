@@ -32,6 +32,7 @@
 		732FC4801F4ADE2500427B3A /* UIShadowCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732FC47F1F4ADE2500427B3A /* UIShadowCreator.swift */; };
 		7346B9FB1F5826EF00A9487C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7346B9FD1F5826EF00A9487C /* InfoPlist.strings */; };
 		7346BA001F586A1600A9487C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7346BA021F586A1600A9487C /* Localizable.strings */; };
+		7346BA091F58FE9E00A9487C /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7346BA081F58FE9E00A9487C /* StoreKit.framework */; };
 		735575991F3D87AC00A0E271 /* ResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735575981F3D87AC00A0E271 /* ResultTableViewCell.swift */; };
 		7355759F1F3DB8FF00A0E271 /* ProfilePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7355759E1F3DB8FF00A0E271 /* ProfilePageViewController.swift */; };
 		736271021F3A9CF00002206B /* QuestionFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 736271011F3A9CF00002206B /* QuestionFactory.swift */; };
@@ -97,6 +98,8 @@
 		7346BA011F586A1600A9487C /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		7346BA031F58FCB500A9487C /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		7346BA041F58FCB700A9487C /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		7346BA071F58FE9500A9487C /* MelodySampling.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MelodySampling.entitlements; sourceTree = "<group>"; };
+		7346BA081F58FE9E00A9487C /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		735575981F3D87AC00A0E271 /* ResultTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultTableViewCell.swift; sourceTree = "<group>"; };
 		7355759E1F3DB8FF00A0E271 /* ProfilePageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfilePageViewController.swift; sourceTree = "<group>"; };
 		736271011F3A9CF00002206B /* QuestionFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionFactory.swift; sourceTree = "<group>"; };
@@ -145,6 +148,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E9121496FD42D46E60BF274E /* Pods_MelodySampling.framework in Frameworks */,
+				7346BA091F58FE9E00A9487C /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -154,6 +158,7 @@
 		0A18D233EA848DDC7DD770F7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7346BA081F58FE9E00A9487C /* StoreKit.framework */,
 				DCE8237F816AFC43B6CA66DF /* Pods_MelodySampling.framework */,
 			);
 			name = Frameworks;
@@ -233,6 +238,7 @@
 		73744D021F2ED94200C1FAEA /* MelodySampling */ = {
 			isa = PBXGroup;
 			children = (
+				7346BA071F58FE9500A9487C /* MelodySampling.entitlements */,
 				7346BA021F586A1600A9487C /* Localizable.strings */,
 				7346B9FD1F5826EF00A9487C /* InfoPlist.strings */,
 				736271001F3A9CC60002206B /* Factory */,
@@ -363,6 +369,14 @@
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = PJPD95M4QP;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+							com.apple.InAppPurchase = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -679,6 +693,7 @@
 			baseConfigurationReference = 7AEB0E68990119E1DCEEFF7C /* Pods-MelodySampling.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = MelodySampling/MelodySampling.entitlements;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = PJPD95M4QP;
 				INFOPLIST_FILE = MelodySampling/Info.plist;
@@ -696,6 +711,7 @@
 			baseConfigurationReference = 744E2D9810A745B7407345E5 /* Pods-MelodySampling.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = MelodySampling/MelodySampling.entitlements;
 				DEVELOPMENT_TEAM = PJPD95M4QP;
 				INFOPLIST_FILE = MelodySampling/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
