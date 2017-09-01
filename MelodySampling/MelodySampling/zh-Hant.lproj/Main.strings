@@ -14,7 +14,7 @@
 "7bs-t6-MOK.normalTitle" = "Invisible Button";
 
 /* Class = "UILabel"; text = "Forget password?"; ObjectID = "9tS-ZU-rY7"; */
-"9tS-ZU-rY7.text" = "Forget password?";
+"9tS-ZU-rY7.text" = "忘記密碼了嗎?";
 
 /* Class = "UILabel"; text = "1234"; ObjectID = "45D-kh-MVL"; */
 "45D-kh-MVL.text" = "1234";
@@ -23,7 +23,7 @@
 "AwK-YC-eoE.text" = "S";
 
 /* Class = "UILabel"; text = "Play Again"; ObjectID = "Bw0-qO-mzr"; */
-"Bw0-qO-mzr.text" = "Play Again";
+"Bw0-qO-mzr.text" = "重新選曲";
 
 /* Class = "UILabel"; text = "Sign up"; ObjectID = "C8j-OD-UCA"; */
 "C8j-OD-UCA.text" = "註冊";
@@ -35,7 +35,7 @@
 "D8m-Q9-iDm.text" = "AI";
 
 /* Class = "UILabel"; text = "Sign up"; ObjectID = "EgF-uP-uhz"; */
-"EgF-uP-uhz.text" = "Sign up";
+"EgF-uP-uhz.text" = "註冊";
 
 /* Class = "UIButton"; normalTitle = "Invisible Anonymous Login Button"; ObjectID = "G2v-2P-JoN"; */
 "G2v-2P-JoN.normalTitle" = "Invisible Anonymous Login Button";
@@ -56,10 +56,10 @@
 "PGk-Jj-Bmy.normalTitle" = "Invisible Button";
 
 /* Class = "UILabel"; text = "History"; ObjectID = "PMV-h8-dSS"; */
-"PMV-h8-dSS.text" = "History";
+"PMV-h8-dSS.text" = "對戰紀綠";
 
 /* Class = "UILabel"; text = "King of Song Quiz"; ObjectID = "Q4z-3t-cIg"; */
-"Q4z-3t-cIg.text" = "King of Song Quiz";
+"Q4z-3t-cIg.text" = "猜歌之王";
 
 /* Class = "UILabel"; text = "This is you"; ObjectID = "SC7-Qh-2YV"; */
 "SC7-Qh-2YV.text" = "This is you";
@@ -77,7 +77,7 @@
 "VIX-oo-t59.placeholder" = "Password";
 
 /* Class = "UILabel"; text = "King of Song Quiz"; ObjectID = "VPg-UZ-Ctf"; */
-"VPg-UZ-Ctf.text" = "King of Song Quiz";
+"VPg-UZ-Ctf.text" = "猜歌之王";
 
 /* Class = "UILabel"; text = "Track Name Label Mig"; ObjectID = "XP6-0W-sTJ"; */
 "XP6-0W-sTJ.text" = "Track Name Label Mig";
@@ -89,19 +89,22 @@
 "bmC-gg-dzb.normalTitle" = "Invisible Button";
 
 /* Class = "UILabel"; text = "Log out"; ObjectID = "c6g-G5-ckw"; */
-"c6g-G5-ckw.text" = "Log out";
+"c6g-G5-ckw.text" = "登出";
 
 /* Class = "UIButton"; normalTitle = "Invisible Button"; ObjectID = "cl4-Gv-Xij"; */
 "cl4-Gv-Xij.normalTitle" = "Invisible Button";
 
 /* Class = "UILabel"; text = "Log in"; ObjectID = "cq8-dZ-1az"; */
-"cq8-dZ-1az.text" = "Log in";
+"cq8-dZ-1az.text" = "登入";
+
+/* (No Commment) */
+"dnJ-zN-H9u.text" = "暱名登入";
 
 /* Class = "UIButton"; normalTitle = "Invisible SignUp Button"; ObjectID = "eNZ-KW-APm"; */
 "eNZ-KW-APm.normalTitle" = "Invisible SignUp Button";
 
 /* Class = "UILabel"; text = "King of Song Quiz"; ObjectID = "em1-6Q-aom"; */
-"em1-6Q-aom.text" = "King of Song Quiz";
+"em1-6Q-aom.text" = "猜歌之王";
 
 /* Class = "UIButton"; normalTitle = "Invisible Login Button"; ObjectID = "fFo-OY-1Rb"; */
 "fFo-OY-1Rb.normalTitle" = "Invisible Login Button";
