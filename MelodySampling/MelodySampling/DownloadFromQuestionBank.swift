@@ -32,7 +32,7 @@ class DownloadManager {
 
         print("目標題庫是 \(language)")
 
-        var progressContentView = UIView(frame: CGRect(x: 0, y: 0, width: thisView.view.frame.width, height: thisView.view.frame.height))
+        let progressContentView = UIView(frame: CGRect(x: 0, y: 0, width: thisView.view.frame.width, height: thisView.view.frame.height))
 
         let progressRing = UICircularProgressRingView(frame: CGRect(x: thisView.view.frame.width / 2 - 120, y: thisView.view.frame.height / 2 - 120, width: 240, height: 240))
 
@@ -53,6 +53,7 @@ class DownloadManager {
         let downloadStartTime = Date().timeIntervalSince1970
 
         for counter in 0..<5 {
+
             let trackIndex = random(bankMaxNumber)
 
             let finder = "track" + String(trackIndex)
@@ -75,7 +76,17 @@ class DownloadManager {
                 print(json["primaryGenreName"].stringValue)
                 print(counter)
 
-                let eachQuestion = EachQuestion(artistID: json["artistId"].intValue, artistName: json["artistName"].stringValue, trackID: json["trackId"].intValue, trackName: json["trackName"].stringValue, artworkUrl: json["artworkUrl100"].stringValue, previewUrl: json["previewUrl"].stringValue, collectionID: json["collectionId"].intValue, collectionName: json["collectionName"].stringValue, primaryGenreName: json["primaryGenreName"].stringValue)
+                let eachQuestion = EachQuestion(
+                    artistID: json["artistId"].intValue,
+                    artistName: json["artistName"].stringValue,
+                    trackID: json["trackId"].intValue,
+                    trackName: json["trackName"].stringValue,
+                    artworkUrl: json["artworkUrl100"].stringValue,
+                    previewUrl: json["previewUrl"].stringValue,
+                    collectionID: json["collectionId"].intValue,
+                    collectionName: json["collectionName"].stringValue,
+                    primaryGenreName: json["primaryGenreName"].stringValue
+                )
 
                 if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
 
@@ -97,7 +108,18 @@ class DownloadManager {
 
                 let destination: DownloadRequest.DownloadFileDestination = { _, _ in
                     let documentsURL = NSHomeDirectory() + "/Documents/"
-                    let fileURL = URL(fileURLWithPath: documentsURL.appending("song\(counter).m4a"))
+                    let pathName = "song" + String(counter) + ".m4a"
+                    let fileURL = URL(fileURLWithPath: documentsURL.appending(pathName))
+
+                    let fileManager = FileManager.default
+
+                        do {
+                            try fileManager.removeItem(at: fileURL)
+                            print("song\(counter).m4a was deleted")
+                        } catch {
+                            print("song\(counter).m4a is not exist")
+                        }
+
                     print("song\(counter).m4a is downloading")
 
                     return (fileURL, [.removePreviousFile, .createIntermediateDirectories])
