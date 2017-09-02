@@ -123,7 +123,7 @@ class LandingPageViewController: UIViewController {
         self.navigationController?.isNavigationBarHidden = true
 
         titleLabel.text = NSLocalizedString("King of Song Quiz", comment: "Title label text at landing page.")
-        loginLabel.text = NSLocalizedString("Log In", comment: "Login label text at landing page.")
+        loginLabel.text = NSLocalizedString("Sign In", comment: "SignIn label text at landing page.")
         signupLabel.text = NSLocalizedString("Sign Up", comment: "Signup label text at landing page.")
         anonymousLoginTextLabel.text = NSLocalizedString("Log in Anonymously ", comment: "For anonymous login.")
 
