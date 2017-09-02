@@ -41,7 +41,7 @@
 "Log in Anonymously " = "暱名登入";
 
 /* Log out text at profile page. */
-"Log out" = "登出";
+"Sign out" = "登出";
 
 /* Login error message at login page. */
 "Login Error" = "登入發生錯誤";

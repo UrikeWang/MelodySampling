@@ -114,7 +114,7 @@ class ProfilePageViewController: UIViewController, UITableViewDelegate, UITableV
         super.viewDidLoad()
 
         historyLabel.text = NSLocalizedString("History", comment: "History segament controller label")
-        logoutTextLabel.text = NSLocalizedString("Log out", comment: "Log out text at profile page.")
+        logoutTextLabel.text = NSLocalizedString("Sign out", comment: "Log out text at profile page.")
         playTextLabel.text = NSLocalizedString("Play", comment: "Play button text at profile page.")
 
         print("===== Profile Page =====")
