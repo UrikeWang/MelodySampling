@@ -102,7 +102,7 @@ class LandingPageViewController: UIViewController {
             print("\(user.uid) was registered")
 
             UserDefaults.standard.set(user.uid, forKey: "uid")
-            UserDefaults.standard.set(NSLocalizedString("Anonymous User", comment: "User name of who logged in anonymously"), forKey: "userName")
+            UserDefaults.standard.set(NSLocalizedString("Anonymous", comment: "User name of who logged in anonymously"), forKey: "userName")
 
             guard let startTime = self.startTime else { return }
 

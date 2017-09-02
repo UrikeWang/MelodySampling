@@ -1,9 +1,6 @@
 /* Goto login page at signup page. */
 "Already have an account? Log in" = "己经有帐号了吗?进入登入页";
 
-/* User name of who logged in anonymously */
-"Anonymous User" = "昵名玩家";
-
 /* Billboard pop cell at genre type choose page. */
 "Billboard Pop" = "世界流行曲";
 
@@ -99,6 +96,9 @@
 
 /* Taiwanese pop cell at genre type choose page. */
 "Taiwanese Pop" = "台湾流行曲";
+
+/* No battle record yet */
+"Tap Play Button" = "尚无对战纪录";
 
 /* for user label */
 "User" = "玩家";

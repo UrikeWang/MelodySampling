@@ -252,7 +252,7 @@ class ProfilePageViewController: UIViewController, UITableViewDelegate, UITableV
 
             let emptyView = UIView(frame: framOfTableView)
 
-            let emptyLabel = createLabel(at: emptyView, content: "尚無對戰紀錄", color: UIColor.white, font: UIFont.mldTextStyleEmptyFont()!)
+            let emptyLabel = createLabel(at: emptyView, content: NSLocalizedString("Tap Play Button", comment: "No battle record yet"), color: UIColor.white, font: UIFont.mldTextStyleEmptyFont()!)
 
             createProfilePageHistoryCellBackground(target: emptyView)
 

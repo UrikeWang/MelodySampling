@@ -12,6 +12,7 @@ import IQKeyboardManagerSwift
 import CoreData
 import Fabric
 import Crashlytics
+import UserNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -53,6 +54,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
             self.window?.rootViewController = registerVC
         }
+        
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge], completionHandler:  { (granted, error) in
+            
+            if granted {
+                
+//                Analytics.handleUserActivity("UserNotificationGranted")
+                Analytics.setUserProperty("UserNotificationGranted", forName: "UserNotification")
+                
+            } else {
+                
+//                Analytics.handleUserActivity("UserNotificationDenied")
+                Analytics.setUserProperty("UserNotificationDenied", forName: "UserNotification")
+                
+            }
+            
+        })
 
         return true
     }
