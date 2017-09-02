@@ -102,7 +102,6 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
 
     @IBOutlet weak var tableViewHeightConstrains: NSLayoutConstraint!
 
-    //開始把 playingSongLabel 換成 trackTimeCountdownLabel
     @IBOutlet weak var trackTimeCountdownLabel: UILabel!
 
     @IBOutlet weak var leftStarsStackView: UIStackView!
@@ -196,7 +195,6 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
         }
 
         trackTimeCountdownLabel.text = "\(trackTimeCountdown)"
-
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -310,9 +308,7 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
 
             selectedCell.answerView.layer.borderColor = UIColor.mldAppleGreen.cgColor
 
-//            Analytics.logEvent(, parameters: <#T##[String : Any]?#>)
-
-            UIView.animate(withDuration: 1.0, animations: {
+            UIView.animate(withDuration: 0.8, animations: {
                 selectedCell.judgeImageView.alpha = 0
                 selectedCell.answerView.layer.borderColor = UIColor.white.cgColor
 
@@ -538,9 +534,6 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
                 self.runTime()
 
                 })
-
-//                self.trackTimeCountdownLabel.text = "\(self.trackTimeCountdown)"
-
             })
 
         }
@@ -629,9 +622,7 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
                     self.countingTrigger()
                 }
             })
-
         }
-
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
