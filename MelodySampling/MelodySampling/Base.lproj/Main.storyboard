@@ -848,7 +848,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is you" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Yb-tz-7Q9" userLabel="Right User Name Label">
-                                        <rect key="frame" x="238.5" y="124" width="81" height="20"/>
+                                        <rect key="frame" x="238.5" y="120" width="81" height="20"/>
                                         <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="16"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -897,7 +897,7 @@
                                 <constraints>
                                     <constraint firstItem="owN-SQ-VoR" firstAttribute="centerY" secondItem="45D-kh-MVL" secondAttribute="centerY" id="4pe-pZ-y45"/>
                                     <constraint firstItem="8Ee-vt-Ipm" firstAttribute="centerX" secondItem="owN-SQ-VoR" secondAttribute="centerX" id="Dek-1g-eJw"/>
-                                    <constraint firstItem="8Ee-vt-Ipm" firstAttribute="top" secondItem="3Yb-tz-7Q9" secondAttribute="bottom" constant="38" id="HnT-o7-s0B"/>
+                                    <constraint firstItem="8Ee-vt-Ipm" firstAttribute="top" secondItem="3Yb-tz-7Q9" secondAttribute="bottom" constant="42" id="HnT-o7-s0B"/>
                                     <constraint firstItem="i1f-nt-LNi" firstAttribute="top" secondItem="WXg-dK-XIq" secondAttribute="top" constant="49" id="KqE-93-DDO"/>
                                     <constraint firstAttribute="height" constant="215" id="Lpa-8v-KXK"/>
                                     <constraint firstItem="45D-kh-MVL" firstAttribute="top" secondItem="i1f-nt-LNi" secondAttribute="bottom" constant="49" id="OkD-5H-K11"/>
@@ -1550,7 +1550,7 @@
                     <toolbarItems/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="667"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="59b-Li-pjM">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="59b-Li-pjM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
