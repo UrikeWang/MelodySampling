@@ -22,7 +22,7 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
 
     var countDownLabel = UILabel()
 
-    var timeCoutdown: Int = 3
+    var timeCountdown: Int = 3
 
     var fetchResultController: NSFetchedResultsController<QuestionMO>!
 
@@ -53,6 +53,8 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
     var artistList = [String]()
 
     var resultList = [EachSongResult]()
+    
+    var timer = Timer()
 
     var timeStart: Double = 0
 
@@ -98,7 +100,8 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
 
     @IBOutlet weak var tableViewHeightConstrains: NSLayoutConstraint!
 
-    @IBOutlet weak var playingSongLabel: UILabel!
+    //開始把 playingSongLabel 換成 trackTimeCountdownLabel
+    @IBOutlet weak var trackTimeCountdownLabel: UILabel!
 
     @IBOutlet weak var leftStarsStackView: UIStackView!
 
@@ -190,7 +193,7 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
             }
         }
 
-        playingSongLabel.text = "\(prepareTrack)"
+        trackTimeCountdownLabel.text = "\(prepareTrack)"
 
     }
 
@@ -520,7 +523,7 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
 
                 self.prepareTrack += 1
 
-                self.playingSongLabel.text = "\(self.prepareTrack)"
+                self.trackTimeCountdownLabel.text = "\(self.prepareTrack)"
 
             })
 
@@ -590,7 +593,7 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
 
         setCountDownLabelStyle(countDownLabel, screen: UIScreen.main, height: 80, width: 80)
 
-        countDownLabel.text = "\(timeCoutdown)"
+        countDownLabel.text = "\(timeCountdown)"
 
         self.view.addSubview(coverView)
 
@@ -603,10 +606,10 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
         for i in 1..<4 {
             let delayTime = DispatchTime.now() + .seconds(i)
             DispatchQueue.main.asyncAfter(deadline: delayTime, execute: {
-                self.timeCoutdown -= 1
-                self.countDownLabel.text = "\(self.timeCoutdown)"
+                self.timeCountdown -= 1
+                self.countDownLabel.text = "\(self.timeCountdown)"
 
-                if self.timeCoutdown == 0 {
+                if self.timeCountdown == 0 {
                     self.countingTrigger()
                 }
             })
@@ -635,6 +638,24 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
             totalTimeStart = self.timeStart
 
             self.startGuessing()
+    }
+    
+    func runTime() {
+        
+    }
+    
+    func updateTime() {
+        if timeCountdown < 1 {
+            timer.invalidate()
+            countDownLabel.text = "0"
+
+        } else {
+            var trackTimeCountdown = 30.0 - (Date().timeIntervalSince1970 - self.timeStart)
+            let trackTimeCountDownString = String(format: "%.0f", trackTimeCountdown)
+            countDownLabel.text = "\(trackTimeCountDownString)"
+        }
+    
+
     }
 
 }
