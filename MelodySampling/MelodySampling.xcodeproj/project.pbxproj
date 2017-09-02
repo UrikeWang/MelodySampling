@@ -10,6 +10,7 @@
 		730D0E5A1F3AEBFD0099DA0F /* AddSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 730D0E591F3AEBFD0099DA0F /* AddSpace.swift */; };
 		730D0E5C1F3AFEA20099DA0F /* JudgeAnswer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 730D0E5B1F3AFEA20099DA0F /* JudgeAnswer.swift */; };
 		731F2ADF1F4537BF00690316 /* LabelCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731F2ADE1F4537BF00690316 /* LabelCreator.swift */; };
+		7326E8DB1F5B047800332BE7 /* UpdateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7326E8DA1F5B047800332BE7 /* UpdateManager.swift */; };
 		732AE4731F39817A009746CA /* Montserrat-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 732AE4611F39817A009746CA /* Montserrat-Black.ttf */; };
 		732AE4741F39817A009746CA /* Montserrat-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 732AE4621F39817A009746CA /* Montserrat-BlackItalic.ttf */; };
 		732AE4751F39817A009746CA /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 732AE4631F39817A009746CA /* Montserrat-Bold.ttf */; };
@@ -71,6 +72,7 @@
 		730D0E591F3AEBFD0099DA0F /* AddSpace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddSpace.swift; sourceTree = "<group>"; };
 		730D0E5B1F3AFEA20099DA0F /* JudgeAnswer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JudgeAnswer.swift; sourceTree = "<group>"; };
 		731F2ADE1F4537BF00690316 /* LabelCreator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelCreator.swift; sourceTree = "<group>"; };
+		7326E8DA1F5B047800332BE7 /* UpdateManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateManager.swift; sourceTree = "<group>"; };
 		732AE4611F39817A009746CA /* Montserrat-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Black.ttf"; sourceTree = "<group>"; };
 		732AE4621F39817A009746CA /* Montserrat-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-BlackItalic.ttf"; sourceTree = "<group>"; };
 		732AE4631F39817A009746CA /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
@@ -164,6 +166,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		7326E8D91F5B045500332BE7 /* UpdateManager */ = {
+			isa = PBXGroup;
+			children = (
+				7326E8DA1F5B047800332BE7 /* UpdateManager.swift */,
+			);
+			name = UpdateManager;
+			sourceTree = "<group>";
+		};
 		732AE4601F398137009746CA /* FontResource */ = {
 			isa = PBXGroup;
 			children = (
@@ -249,6 +259,7 @@
 				7399DB861F3D82ED00E2A4B2 /* ResultPage */,
 				732AE4601F398137009746CA /* FontResource */,
 				73AF80211F384B3400CA31FB /* StyleguideRelative */,
+				7326E8D91F5B045500332BE7 /* UpdateManager */,
 				73744D2D1F2F788900C1FAEA /* FunctionAndStruct */,
 				73744D071F2ED94300C1FAEA /* Main.storyboard */,
 				73744D031F2ED94200C1FAEA /* AppDelegate.swift */,
@@ -542,6 +553,7 @@
 				73AF80261F384E3B00CA31FB /* LandingPageViewController.swift in Sources */,
 				73B122F71F431536006DE065 /* PrintUID.swift in Sources */,
 				730D0E5C1F3AFEA20099DA0F /* JudgeAnswer.swift in Sources */,
+				7326E8DB1F5B047800332BE7 /* UpdateManager.swift in Sources */,
 				73AF80231F384B7900CA31FB /* Styleguide.swift in Sources */,
 				7382742C1F40992E00CD718E /* FirebaseExtension.swift in Sources */,
 				73865FBA1F3C547F004E3594 /* AnswerTableViewCell.swift in Sources */,

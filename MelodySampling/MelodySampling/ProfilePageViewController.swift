@@ -61,8 +61,20 @@ class ProfilePageViewController: UIViewController, UITableViewDelegate, UITableV
             let renameTextField = alertController.textFields![0] as UITextField
             
             self.userNameLabel.text = renameTextField.text
+            
+            self.userDefault.set(renameTextField.text, forKey: "userName")
 
-            print("Username is \(renameTextField)")
+            let updateManager = UpdateManager()
+            
+            if let uid = self.userDefault.object(forKey: "uid") as? String {
+            
+                // TODO: 之後要修掉這個地方的驚嘆號
+                updateManager.updateUserName(uid, update: renameTextField.text!)
+                
+                print("Uid is \(uid),Username is \(renameTextField)")
+            }
+            
+            
         }
 
         let cancelAction = UIAlertAction(title: NSLocalizedString("Cancel", comment: "Cancel for rename action"), style: .default) { (_) in
