@@ -55,6 +55,8 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
     var resultList = [EachSongResult]()
     
     var timer = Timer()
+    
+    var trackTimeCountdown: Int = 30
 
     var timeStart: Double = 0
 
@@ -193,7 +195,7 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
             }
         }
 
-        trackTimeCountdownLabel.text = "\(prepareTrack)"
+        trackTimeCountdownLabel.text = "\(trackTimeCountdown)"
 
     }
 
@@ -228,7 +230,13 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
         tableView.isUserInteractionEnabled = false
-
+        
+        timer.invalidate()
+        
+        self.trackTimeCountdown = 30
+        
+        trackTimeCountdownLabel.text = "\(self.trackTimeCountdown)"
+        
         let currentTime = Date().timeIntervalSince1970
 
         timePassed = currentTime - timeStart
@@ -514,16 +522,26 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
                 }
 
                 tableView.isUserInteractionEnabled = true
-
+                
                 self.player?.play()
-
+                
                 self.currentTrack = self.prepareTrack
 
                 print("現在是 \(self.currentTrack) 首")
 
                 self.prepareTrack += 1
+                
+                let delayTime = DispatchTime.now() + .milliseconds(800)
+                
+                DispatchQueue.main.asyncAfter(deadline: delayTime, execute: {
+                
+                self.runTime()
+                    
+                })
+                    
+                
 
-                self.trackTimeCountdownLabel.text = "\(self.prepareTrack)"
+//                self.trackTimeCountdownLabel.text = "\(self.trackTimeCountdown)"
 
             })
 
@@ -637,25 +655,30 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
 
             totalTimeStart = self.timeStart
 
+            self.runTime()
+        
             self.startGuessing()
     }
     
     func runTime() {
         
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self,   selector: (#selector(self.updateTimer)), userInfo: nil, repeats: true)
+        
     }
     
-    func updateTime() {
-        if timeCountdown < 1 {
+    func updateTimer() {
+        if trackTimeCountdown < 1 {
+            print("timer 停了")
+            
             timer.invalidate()
-            countDownLabel.text = "0"
+            
+            trackTimeCountdownLabel.text = "\(0)"
 
         } else {
-            var trackTimeCountdown = 30.0 - (Date().timeIntervalSince1970 - self.timeStart)
-            let trackTimeCountDownString = String(format: "%.0f", trackTimeCountdown)
-            countDownLabel.text = "\(trackTimeCountDownString)"
+            self.trackTimeCountdown -= 1
+            
+            trackTimeCountdownLabel.text = "\(self.trackTimeCountdown)"
         }
-    
 
     }
-
 }
