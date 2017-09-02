@@ -168,9 +168,7 @@ class LandingPageViewController: UIViewController {
         self.startTime = Date().timeIntervalSince1970
     }
 
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-
+    override func viewDidLayoutSubviews() {
         createGradientOnLabel(target: anonymousLoginLabel)
     }
 
