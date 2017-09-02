@@ -54,21 +54,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
             self.window?.rootViewController = registerVC
         }
-        
-        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge], completionHandler:  { (granted, error) in
-            
+
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge], completionHandler: { (granted, _) in
+
             if granted {
-                
-//                Analytics.handleUserActivity("UserNotificationGranted")
+
                 Analytics.setUserProperty("UserNotificationGranted", forName: "UserNotification")
-                
+
             } else {
-                
-//                Analytics.handleUserActivity("UserNotificationDenied")
+
                 Analytics.setUserProperty("UserNotificationDenied", forName: "UserNotification")
-                
+
             }
-            
         })
 
         return true
