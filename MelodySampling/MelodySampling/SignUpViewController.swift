@@ -111,7 +111,14 @@ class SignUpViewController: UIViewController {
 
                     self.userFullName = NSLocalizedString("User", comment: "for user label") + formatRandom
 
-                    userRef.setValue(["fullName": self.userFullName, "createdTime": currentTime, "userAccount": self.userAccount, "profilePicURL": self.profileImageURL, "wasAnonymouse": false])
+                    userRef.setValue([
+                        "fullName": self.userFullName,
+                        "createdTime": currentTime,
+                        "userAccount": self.userAccount,
+                        "profilePicURL": self.profileImageURL,
+                        "wasAnonymouse": false,
+                        "isAnonymouse": false
+                        ])
 
                     // MARK: I am going to fix these later
                     /*
@@ -122,6 +129,7 @@ class SignUpViewController: UIViewController {
  */
                     UserDefaults.standard.set(user.uid, forKey: "uid")
                     UserDefaults.standard.set(self.userFullName, forKey:"userName")
+                    UserDefaults.standard.set(user.isAnonymous, forKey:"isAnonymous")
                     gotoTypeChoosePage(from: self)
 
                 }

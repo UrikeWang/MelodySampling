@@ -17,7 +17,7 @@ class UpdateManager {
 
         ref = Database.database().reference()
 
-        ref.child("anonymousUsers").child(uid).updateChildValues(["fullName": rename])
+        ref.child("users").child(uid).updateChildValues(["fullName": rename])
 
     }
 

@@ -92,19 +92,31 @@ class LandingPageViewController: UIViewController {
             
             let currentTime = Date().timeIntervalSince1970
 
-            if let seedNumber = self.seedNumber, let addNumber = self.addNumber {
+            self.userFullName = "Anonymous"
+            
+            anonymousRef.setValue([
+                "createdTime": currentTime,
+                "isAnonymous": isAnonymous,
+                "fullName": self.userFullName
+                ])
 
-                self.userFullName = "User" + String(seedNumber + addNumber + 1)
-            } else {
-                self.userFullName = "Anonymous"
-            }
-
-            anonymousRef.setValue(["createdTime": currentTime, "isAnonymous": isAnonymous, "fullName": self.userFullName])
-
+            
+            let userRef = self.ref.child("users/\(user.uid)")
+            
+            userRef.setValue([
+                "createdTime": currentTime,
+                "isAnonymous": isAnonymous,
+                "fullName": self.userFullName,
+                "wasAnonymous": true,
+                "userAccount": "",
+                "profilePicURL": ""
+                ])
+            
             print("\(user.uid) was registered")
 
             UserDefaults.standard.set(user.uid, forKey: "uid")
             UserDefaults.standard.set(NSLocalizedString("Anonymous", comment: "User name of who logged in anonymously"), forKey: "userName")
+            UserDefaults.standard.set(user.isAnonymous, forKey:"isAnonymous")
 
             guard let startTime = self.startTime else { return }
 

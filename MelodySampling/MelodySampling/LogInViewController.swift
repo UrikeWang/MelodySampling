@@ -117,6 +117,7 @@ class LogInViewController: UIViewController {
                 }
 
                 UserDefaults.standard.set(user.uid, forKey: "uid")
+                UserDefaults.standard.set(user.isAnonymous, forKey:"isAnonymous")
 
                 gotoProfilePage(from: self)
 
