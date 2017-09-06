@@ -238,6 +238,15 @@ class ProfilePageViewController: UIViewController, UITableViewDelegate, UITableV
         cell.backgroundColor = UIColor.clear
 
     }
+    
+    func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        
+        if let customCell = cell as? HistoryTableViewCell {
+            
+            customCell.artworkImageView.image = nil
+        }
+        
+    }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
