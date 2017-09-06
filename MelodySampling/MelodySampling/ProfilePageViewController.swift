@@ -59,22 +59,21 @@ class ProfilePageViewController: UIViewController, UITableViewDelegate, UITableV
         let saveAction = UIAlertAction(title: NSLocalizedString("Confirm", comment: "Confirm input for rename action"), style: .default) { (_) in
 
             let renameTextField = alertController.textFields![0] as UITextField
-            
+
             self.userNameLabel.text = renameTextField.text
-            
+
             self.userDefault.set(renameTextField.text, forKey: "userName")
 
             let updateManager = UpdateManager()
-            
+
             if let uid = self.userDefault.object(forKey: "uid") as? String {
-            
+
                 // TODO: 之後要修掉這個地方的驚嘆號
                 updateManager.updateUserName(uid, update: renameTextField.text!)
-                
+
                 print("Uid is \(uid),Username is \(renameTextField)")
             }
-            
-            
+
         }
 
         let cancelAction = UIAlertAction(title: NSLocalizedString("Cancel", comment: "Cancel for rename action"), style: .default) { (_) in
@@ -85,7 +84,7 @@ class ProfilePageViewController: UIViewController, UITableViewDelegate, UITableV
         }
 
         alertController.addAction(cancelAction)
-        
+
         alertController.addAction(saveAction)
 
         self.present(alertController, animated: true, completion: nil)
@@ -160,7 +159,7 @@ class ProfilePageViewController: UIViewController, UITableViewDelegate, UITableV
         playTextLabel.text = NSLocalizedString("Play", comment: "Play button text at profile page.")
 
         invisibleUserNameButtonOutlet.setTitleColor(UIColor.clear, for: .normal)
-        
+
         print("===== Profile Page =====")
 
         invisiblePhotoUsageButtonOutlet.setTitleColor(UIColor.clear, for: .normal)

@@ -88,6 +88,8 @@ class LandingPageViewController: UIViewController {
 
             let anonymousRef = self.ref.child("anonymousUsers/\(user.uid)")
 
+            //歷史錯誤,以前在設定資料庫的時候,把 anonymousUsers 加入
+            
             let currentTime = Date().timeIntervalSince1970
 
             if let seedNumber = self.seedNumber, let addNumber = self.addNumber {

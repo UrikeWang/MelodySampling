@@ -10,15 +10,15 @@ import Foundation
 import Firebase
 
 class UpdateManager {
-    
+
     var ref: DatabaseReference!
-    
+
     func updateUserName(_ uid: String, update rename: String) {
-        
+
         ref = Database.database().reference()
-        
-        ref.child("anonymousUsers").child(uid).updateChildValues(["fullName" : rename])
-        
+
+        ref.child("anonymousUsers").child(uid).updateChildValues(["fullName": rename])
+
     }
-    
+
 }
