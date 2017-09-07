@@ -127,7 +127,7 @@ class DownloadManager {
 
                 let distractorManager = DistractorManager()
 
-                _ = distractorManager.getDistractorIDArray(distractorArrayCount: 40, distractorBankCount: 400, genre: language)
+                _ = distractorManager.getDistractorIDArray(distractorArrayCount: 40, distractorBankCount: 1400, genre: language)
 
                 Alamofire.download(eachQuestion.previewUrl, to: destination).downloadProgress { progress in
 

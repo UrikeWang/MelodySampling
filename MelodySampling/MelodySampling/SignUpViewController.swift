@@ -154,7 +154,7 @@ class SignUpViewController: UIViewController {
         emailTextField.placeholder = NSLocalizedString("Email", comment: "Email textfield placeholder at signup page.")
         passwordTextField.placeholder = NSLocalizedString("Password", comment: "Password textfield placeholder at signup page.")
         confirmPasswordTextField.placeholder = NSLocalizedString("Confirm Password", comment: "Confirm Password at signup page")
-        signUpLabel.text = NSLocalizedString("Sign up", comment: "Signup label at signup page.")
+        signUpLabel.text = NSLocalizedString("Sign Up", comment: "Signup label at signup page.")
         goToLoginLabel.text = NSLocalizedString("Already have an account? Log in", comment: "Goto login page at signup page.")
 
         opacityView.frame = UIScreen.main.bounds

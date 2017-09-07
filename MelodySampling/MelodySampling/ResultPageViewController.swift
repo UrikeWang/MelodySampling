@@ -72,24 +72,15 @@ class ResultPageViewController: UIViewController, UITableViewDelegate, UITableVi
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
-//        createNextBattleOfResult(target: nextBattleLabel)
-        
         let imageDiameter = self.userProfileImageView.frame.width
         
         userProfileImageView.layer.cornerRadius = imageDiameter / 2
-        
-//        if UIScreen.main.bounds.height > 700 {
-//            createResultBackground(target: self.view, height: 750)
-//        } else {
-//            createResultBackground(target: self.view, height: 680)
-//        }
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-//        nextBattleLabel.text = NSLocalizedString("Play Again", comment: "Play again text at result page.")
-        
+
         invisibleNextGameButtonOutlet.setTitleColor(UIColor.mldLightRoyalBlue, for: .normal)
         
         invisibleNextGameButtonOutlet.backgroundColor = UIColor.mldTiffanyBlue
@@ -103,12 +94,6 @@ class ResultPageViewController: UIViewController, UITableViewDelegate, UITableVi
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-//        nextBattleLabel.backgroundColor = UIColor.mldDuckEggBlue
-        
-//        nextBattleTextLabel.backgroundColor = UIColor.mldTiffanyBlue
-        
-//        nextBattleTextLabel.text = NSLocalizedString("Play Again", comment: "Play again text at result page.")
         
         if let userProfileImageData = userDefault.object(forKey: "UserProfileImage") as? Data {
 
@@ -121,14 +106,6 @@ class ResultPageViewController: UIViewController, UITableViewDelegate, UITableVi
         tableView.delegate = self
 
         tableView.dataSource = self
-
-//        if UIScreen.main.bounds.height > 700 {
-//            createResultBackground(target: self.view, height: 750)
-//        } else {
-//            createResultBackground(target: self.view, height: 680)
-//        }
-
-
         
         userProfileImageView.layer.shadowColor = UIColor.mldBlack50.cgColor
 
@@ -210,14 +187,6 @@ class ResultPageViewController: UIViewController, UITableViewDelegate, UITableVi
 
             guard let selectedAnswer = result.selectedAnswer else { let selectedAnswer = "Didn't cath selectedAnswer"; continue }
 
-            /*
-            if result.selectedAnswer != nil {
-                let selectedAnswer = result.selectedAnswer
-            } else {
-                let selectedAnswer = "Didn't cath selectedAnswer"
-            }
-            
- */
             let temp = EachSongResult(index: result.index, result: result.result, usedTime: result.usedTime, selectedAnswer: selectedAnswer)
             resultsArray.append(temp)
 
@@ -320,8 +289,6 @@ class ResultPageViewController: UIViewController, UITableViewDelegate, UITableVi
                     appDelegate.saveContext()
                 }
             }
-
         }
-
     }
 }

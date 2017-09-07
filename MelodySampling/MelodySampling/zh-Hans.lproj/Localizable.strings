@@ -36,7 +36,7 @@
 /* Title label at login page.
    Title Label of Sign Up Page
    Title label text at landing page. */
-"King of Song Quiz" = "猜歌之王";
+"King of Song Quiz" = "歌曲知识王";
 
 /* Login label text at landing page. */
 "Sign In" = "登入";
@@ -48,7 +48,7 @@
 "Log in Anonymously " = "昵名登入";
 
 /* Log out text at profile page. */
-"Sign out" = "登出";
+"Sign Out" = "登出";
 
 /* Login error message at login page. */
 "Login Error" = "登入发生错误";
@@ -86,7 +86,7 @@
 "Sign Up" = "登录";
 
 /* Signup label at signup page. */
-"Sign up" = "登录";
+"Sign Up" = "登录";
 
 /* Sign up error message at signup page */
 "Something Wrong" = "有错误发生!";

@@ -12,9 +12,6 @@ import Firebase
 import CoreData
 import SwiftyJSON
 
-//失敗了，重新想一個方式
-//如果我只要15個，那就直接使用 random，範圍就在 firebase 上的題庫最大值，然後塞入 seedArray, while seedArray.count <15, 就不斷的取值，每一次取值都要比對 seedArray 裡面的值，沒出現過的才塞入。
-
 protocol DistractorManagerDelegate: class {
 
     func manager(_ manager: DistractorManager, didGet distractors: [String])
