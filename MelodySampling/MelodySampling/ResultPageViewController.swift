@@ -34,6 +34,7 @@ class ResultPageViewController: UIViewController, UITableViewDelegate, UITableVi
     @IBOutlet weak var userImageView: UIImageView!
 
     @IBOutlet weak var invisibleNextGameButtonOutlet: UIButton!
+    
     @IBAction func invisibleNextGameButtonTapped(_ sender: UIButton) {
         saveResultToHistory()
         gotoTypeChoosePage(from: self)
@@ -68,22 +69,47 @@ class ResultPageViewController: UIViewController, UITableViewDelegate, UITableVi
 
     @IBOutlet weak var userStarsStackView: UIStackView!
 
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+//        createNextBattleOfResult(target: nextBattleLabel)
+        
+        let imageDiameter = self.userProfileImageView.frame.width
+        
+        userProfileImageView.layer.cornerRadius = imageDiameter / 2
+        
+//        if UIScreen.main.bounds.height > 700 {
+//            createResultBackground(target: self.view, height: 750)
+//        } else {
+//            createResultBackground(target: self.view, height: 680)
+//        }
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-
-        createNextBattleOfResult(target: nextBattleLabel)
-
-        let imageDiameter = self.userProfileImageView.frame.width
-
-        userProfileImageView.layer.cornerRadius = imageDiameter / 2
-
+        
+//        nextBattleLabel.text = NSLocalizedString("Play Again", comment: "Play again text at result page.")
+        
+        invisibleNextGameButtonOutlet.setTitleColor(UIColor.mldLightRoyalBlue, for: .normal)
+        
+        invisibleNextGameButtonOutlet.backgroundColor = UIColor.mldTiffanyBlue
+        
+        invisibleNextGameButtonOutlet.setTitle(NSLocalizedString("Play Again", comment: "Play again text at result page."), for: .normal)
+        
+        invisibleNextGameButtonOutlet.layer.cornerRadius = 25
+        
+        invisibleNextGameButtonOutlet.clipsToBounds = true
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        nextBattleTextLabel.text = NSLocalizedString("Play Again", comment: "Play again text at result page.")
-
+//        nextBattleLabel.backgroundColor = UIColor.mldDuckEggBlue
+        
+//        nextBattleTextLabel.backgroundColor = UIColor.mldTiffanyBlue
+        
+//        nextBattleTextLabel.text = NSLocalizedString("Play Again", comment: "Play again text at result page.")
+        
         if let userProfileImageData = userDefault.object(forKey: "UserProfileImage") as? Data {
 
             userProfileImageView.image = UIImage(data: userProfileImageData)
@@ -96,14 +122,14 @@ class ResultPageViewController: UIViewController, UITableViewDelegate, UITableVi
 
         tableView.dataSource = self
 
-        if UIScreen.main.bounds.height > 700 {
-            createResultBackground(target: self.view, height: 750)
-        } else {
-            createResultBackground(target: self.view, height: 680)
-        }
+//        if UIScreen.main.bounds.height > 700 {
+//            createResultBackground(target: self.view, height: 750)
+//        } else {
+//            createResultBackground(target: self.view, height: 680)
+//        }
 
-        invisibleNextGameButtonOutlet.setTitleColor(UIColor.clear, for: .normal)
 
+        
         userProfileImageView.layer.shadowColor = UIColor.mldBlack50.cgColor
 
         userProfileImageView.layer.shadowOffset = CGSize(width: 2, height: 2)

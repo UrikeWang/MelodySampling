@@ -60,11 +60,11 @@ func createNextBattleOfResult(target uILabel: UILabel) {
 
     gradientLayer.colors = [UIColor.mldDuckEggBlue.cgColor, UIColor.mldTiffanyBlue.cgColor]
 
-    uILabel.layer.insertSublayer(gradientLayer, at: 0)
-
     uILabel.layer.cornerRadius = 25
 
     uILabel.layer.masksToBounds = true
+    
+    uILabel.layer.insertSublayer(gradientLayer, at: 0)
 
 }
 

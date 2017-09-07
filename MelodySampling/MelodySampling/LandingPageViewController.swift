@@ -88,21 +88,35 @@ class LandingPageViewController: UIViewController {
 
             let anonymousRef = self.ref.child("anonymousUsers/\(user.uid)")
 
+            //歷史錯誤,以前在設定資料庫的時候,把 anonymousUsers 加入
+            
             let currentTime = Date().timeIntervalSince1970
 
-            if let seedNumber = self.seedNumber, let addNumber = self.addNumber {
+            self.userFullName = "Anonymous"
+            
+            anonymousRef.setValue([
+                "createdTime": currentTime,
+                "isAnonymous": isAnonymous,
+                "fullName": self.userFullName
+                ])
 
-                self.userFullName = "User" + String(seedNumber + addNumber + 1)
-            } else {
-                self.userFullName = "Anonymous"
-            }
-
-            anonymousRef.setValue(["createdTime": currentTime, "isAnonymous": isAnonymous, "fullName": self.userFullName])
-
+            
+            let userRef = self.ref.child("users/\(user.uid)")
+            
+            userRef.setValue([
+                "createdTime": currentTime,
+                "isAnonymous": isAnonymous,
+                "fullName": self.userFullName,
+                "wasAnonymous": true,
+                "userAccount": "",
+                "profilePicURL": ""
+                ])
+            
             print("\(user.uid) was registered")
 
             UserDefaults.standard.set(user.uid, forKey: "uid")
             UserDefaults.standard.set(NSLocalizedString("Anonymous", comment: "User name of who logged in anonymously"), forKey: "userName")
+            UserDefaults.standard.set(user.isAnonymous, forKey:"isAnonymous")
 
             guard let startTime = self.startTime else { return }
 
@@ -123,7 +137,7 @@ class LandingPageViewController: UIViewController {
         self.navigationController?.isNavigationBarHidden = true
 
         titleLabel.text = NSLocalizedString("King of Song Quiz", comment: "Title label text at landing page.")
-        loginLabel.text = NSLocalizedString("Log In", comment: "Login label text at landing page.")
+        loginLabel.text = NSLocalizedString("Sign In", comment: "SignIn label text at landing page.")
         signupLabel.text = NSLocalizedString("Sign Up", comment: "Signup label text at landing page.")
         anonymousLoginTextLabel.text = NSLocalizedString("Log in Anonymously ", comment: "For anonymous login.")
 

@@ -32,16 +32,16 @@
 "King of Song Quiz" = "猜歌之王";
 
 /* Login label text at landing page. */
-"Log In" = "登入";
+"Sign In" = "登入";
 
 /* Login label at login page. */
-"Log in" = "登入";
+"Sign In" = "登入";
 
 /* For anonymous login. */
 "Log in Anonymously " = "暱名登入";
 
 /* Log out text at profile page. */
-"Log out" = "登出";
+"Sign out" = "登出";
 
 /* Login error message at login page. */
 "Login Error" = "登入發生錯誤";
