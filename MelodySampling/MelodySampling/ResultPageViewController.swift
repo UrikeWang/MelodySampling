@@ -34,6 +34,7 @@ class ResultPageViewController: UIViewController, UITableViewDelegate, UITableVi
     @IBOutlet weak var userImageView: UIImageView!
 
     @IBOutlet weak var invisibleNextGameButtonOutlet: UIButton!
+
     @IBAction func invisibleNextGameButtonTapped(_ sender: UIButton) {
         saveResultToHistory()
         gotoTypeChoosePage(from: self)
@@ -68,10 +69,8 @@ class ResultPageViewController: UIViewController, UITableViewDelegate, UITableVi
 
     @IBOutlet weak var userStarsStackView: UIStackView!
 
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-
-        createNextBattleOfResult(target: nextBattleLabel)
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
 
         let imageDiameter = self.userProfileImageView.frame.width
 
@@ -79,10 +78,25 @@ class ResultPageViewController: UIViewController, UITableViewDelegate, UITableVi
 
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        nextBattleLabel.isHidden = true
+
+        nextBattleLabel.isHidden = true
+        invisibleNextGameButtonOutlet.setTitleColor(UIColor.mldLightRoyalBlue, for: .normal)
+
+        invisibleNextGameButtonOutlet.backgroundColor = UIColor.mldTiffanyBlue
+
+        invisibleNextGameButtonOutlet.setTitle(NSLocalizedString("Play Again", comment: "Play again text at result page."), for: .normal)
+
+        invisibleNextGameButtonOutlet.layer.cornerRadius = 25
+
+        invisibleNextGameButtonOutlet.clipsToBounds = true
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        nextBattleTextLabel.text = NSLocalizedString("Play Again", comment: "Play again text at result page.")
 
         if let userProfileImageData = userDefault.object(forKey: "UserProfileImage") as? Data {
 
@@ -95,14 +109,6 @@ class ResultPageViewController: UIViewController, UITableViewDelegate, UITableVi
         tableView.delegate = self
 
         tableView.dataSource = self
-
-        if UIScreen.main.bounds.height > 700 {
-            createResultBackground(target: self.view, height: 750)
-        } else {
-            createResultBackground(target: self.view, height: 680)
-        }
-
-        invisibleNextGameButtonOutlet.setTitleColor(UIColor.clear, for: .normal)
 
         userProfileImageView.layer.shadowColor = UIColor.mldBlack50.cgColor
 
@@ -184,14 +190,6 @@ class ResultPageViewController: UIViewController, UITableViewDelegate, UITableVi
 
             guard let selectedAnswer = result.selectedAnswer else { let selectedAnswer = "Didn't cath selectedAnswer"; continue }
 
-            /*
-            if result.selectedAnswer != nil {
-                let selectedAnswer = result.selectedAnswer
-            } else {
-                let selectedAnswer = "Didn't cath selectedAnswer"
-            }
-            
- */
             let temp = EachSongResult(index: result.index, result: result.result, usedTime: result.usedTime, selectedAnswer: selectedAnswer)
             resultsArray.append(temp)
 

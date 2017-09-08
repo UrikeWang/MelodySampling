@@ -50,6 +50,47 @@ class ProfilePageViewController: UIViewController, UITableViewDelegate, UITableV
 
     @IBOutlet weak var logoutTextLabel: UILabel!
 
+    @IBOutlet weak var invisibleUserNameButtonOutlet: UIButton!
+
+    @IBAction func invisibleUserNameButtonTapped(_ sender: UIButton) {
+
+        let alertController = UIAlertController(title: NSLocalizedString("Rename", comment: "Tapping for rename action"), message: "", preferredStyle: .alert)
+
+        let saveAction = UIAlertAction(title: NSLocalizedString("Confirm", comment: "Confirm input for rename action"), style: .default) { (_) in
+
+            let renameTextField = alertController.textFields![0] as UITextField
+
+            self.userNameLabel.text = renameTextField.text
+
+            self.userDefault.set(renameTextField.text, forKey: "userName")
+
+            let updateManager = UpdateManager()
+
+            if let uid = self.userDefault.object(forKey: "uid") as? String {
+
+                // TODO: 之後要修掉這個地方的驚嘆號
+                updateManager.updateUserName(uid, update: renameTextField.text!)
+
+                print("Uid is \(uid),Username is \(renameTextField)")
+            }
+
+        }
+
+        let cancelAction = UIAlertAction(title: NSLocalizedString("Cancel", comment: "Cancel for rename action"), style: .default) { (_) in
+        }
+
+        alertController.addTextField { (textField: UITextField!) -> Void in
+            textField.placeholder = "Input  username you like."
+        }
+
+        alertController.addAction(cancelAction)
+
+        alertController.addAction(saveAction)
+
+        self.present(alertController, animated: true, completion: nil)
+
+    }
+
     @IBAction func invisiblePhotoUsageButtonTapped(_ sender: UIButton) {
 
         let imagePicker = UIImagePickerController()
@@ -116,6 +157,8 @@ class ProfilePageViewController: UIViewController, UITableViewDelegate, UITableV
         historyLabel.text = NSLocalizedString("History", comment: "History segament controller label")
         logoutTextLabel.text = NSLocalizedString("Sign out", comment: "Log out text at profile page.")
         playTextLabel.text = NSLocalizedString("Play", comment: "Play button text at profile page.")
+
+        invisibleUserNameButtonOutlet.setTitleColor(UIColor.clear, for: .normal)
 
         print("===== Profile Page =====")
 
@@ -193,6 +236,15 @@ class ProfilePageViewController: UIViewController, UITableViewDelegate, UITableV
 
         cell.layer.insertSublayer(gradientLayer, at: 0)
         cell.backgroundColor = UIColor.clear
+
+    }
+
+    func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+
+        if let customCell = cell as? HistoryTableViewCell {
+
+            customCell.artworkImageView.image = nil
+        }
 
     }
 

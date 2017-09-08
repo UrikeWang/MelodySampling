@@ -117,6 +117,7 @@ class LogInViewController: UIViewController {
                 }
 
                 UserDefaults.standard.set(user.uid, forKey: "uid")
+                UserDefaults.standard.set(user.isAnonymous, forKey:"isAnonymous")
 
                 gotoProfilePage(from: self)
 
@@ -131,7 +132,7 @@ class LogInViewController: UIViewController {
         emailTextField.placeholder = NSLocalizedString("Email", comment: "Email textfield placeholder at login page.")
         passwordTextField.placeholder = NSLocalizedString("Password", comment: "Password textfield placeholder at login page.")
         forgetPasswordLabel.text = NSLocalizedString("Forget password", comment: "Forget password label at login page.")
-        loginLabel.text = NSLocalizedString("Sign in", comment: "Login label at login page.")
+        loginLabel.text = NSLocalizedString("Sign In", comment: "Login label at login page.")
         gotoSignUpLabel.text = NSLocalizedString("Don't have an account? Sign up", comment: "Goto signup page at login page.")
 
         opacityView.frame = UIScreen.main.bounds

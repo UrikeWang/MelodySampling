@@ -36,13 +36,13 @@
 /* Title label at login page.
    Title Label of Sign Up Page
    Title label text at landing page. */
-"King of Song Quiz" = "猜歌之王";
+"King of Song Quiz" = "歌曲知識王";
 
 /* Login label text at landing page. */
-"Log In" = "登入";
+"Sign In" = "登入";
 
 /* Login label at login page. */
-"Log in" = "登入";
+"Sign In" = "登入";
 
 /* For anonymous login. */
 "Log in Anonymously " = "昵名登入";

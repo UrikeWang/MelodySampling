@@ -448,11 +448,16 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
             let totalTimePassed = now - totalTimeStart
 
             // MARK: Total playing time for Google analytics
-            Analytics.logEvent("TotalPlayingTime", parameters: ["PlayingTime": totalTimePassed as NSObject])
 
             if let selectedGenrer = userDefault.object(forKey: "selectedGenre") as? String {
 
                 Analytics.logEvent("TotalPlayingTimeWithGenre", parameters: [selectedGenrer: totalTimePassed as NSObject])
+
+                Analytics.logEvent("TotalPlayingTime",
+                                   parameters: [
+                                    "PlayingTime": totalTimePassed as NSObject,
+                                    "SelectedGenre": selectedGenrer as NSObject
+                    ])
             }
 
             let delayTime = DispatchTime.now() + .milliseconds(800)
