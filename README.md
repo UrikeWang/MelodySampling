@@ -1,9 +1,3 @@
-# MelodySampling
+# 歌曲知識王(King of Song Quiz)
 
-開始使用模式設計
-
-1. 工廠模式
-
-2. 觀察者模式
-
-3. Singleton
+![](https://github.com/MoonAndEye/MelodySampling/blob/master/LandingPage.png) ![](https://github.com/MoonAndEye/MelodySampling/blob/master/GenreTypePage.png) ![](https://github.com/MoonAndEye/MelodySampling/blob/master/PlayingPage.png) ![](https://github.com/MoonAndEye/MelodySampling/blob/master/ResultPage.png)
