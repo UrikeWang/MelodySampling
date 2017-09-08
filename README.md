@@ -1,5 +1,5 @@
 # 歌曲知識王(King of Song Quiz)
-想嘗試聽聽不同的歌?或是你自認對歌曲的領域非常了解，都可以來試試看。<br>
+一款好玩的猜歌App,內含大量的華人歌手題庫。想嘗試聽聽不同的歌?或是你自認對歌曲的領域非常了解，都可以來試試看。<br>
 
 [![MyIcno](https://github.com/MoonAndEye/MelodySampling/blob/master/DownloadAppStoreBadge.png)](https://itunes.apple.com/us/app/id1273605195)
 
