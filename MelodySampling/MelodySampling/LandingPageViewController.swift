@@ -89,20 +89,19 @@ class LandingPageViewController: UIViewController {
             let anonymousRef = self.ref.child("anonymousUsers/\(user.uid)")
 
             //歷史錯誤,以前在設定資料庫的時候,把 anonymousUsers 加入
-            
+
             let currentTime = Date().timeIntervalSince1970
 
             self.userFullName = "Anonymous"
-            
+
             anonymousRef.setValue([
                 "createdTime": currentTime,
                 "isAnonymous": isAnonymous,
                 "fullName": self.userFullName
                 ])
 
-            
             let userRef = self.ref.child("users/\(user.uid)")
-            
+
             userRef.setValue([
                 "createdTime": currentTime,
                 "isAnonymous": isAnonymous,
@@ -111,7 +110,7 @@ class LandingPageViewController: UIViewController {
                 "userAccount": "",
                 "profilePicURL": ""
                 ])
-            
+
             print("\(user.uid) was registered")
 
             UserDefaults.standard.set(user.uid, forKey: "uid")

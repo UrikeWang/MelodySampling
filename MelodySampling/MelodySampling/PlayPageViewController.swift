@@ -452,7 +452,7 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
             if let selectedGenrer = userDefault.object(forKey: "selectedGenre") as? String {
 
                 Analytics.logEvent("TotalPlayingTimeWithGenre", parameters: [selectedGenrer: totalTimePassed as NSObject])
-                
+
                 Analytics.logEvent("TotalPlayingTime",
                                    parameters: [
                                     "PlayingTime": totalTimePassed as NSObject,

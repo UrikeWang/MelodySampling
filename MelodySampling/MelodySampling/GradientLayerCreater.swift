@@ -63,7 +63,7 @@ func createNextBattleOfResult(target uILabel: UILabel) {
     uILabel.layer.cornerRadius = 25
 
     uILabel.layer.masksToBounds = true
-    
+
     uILabel.layer.insertSublayer(gradientLayer, at: 0)
 
 }
