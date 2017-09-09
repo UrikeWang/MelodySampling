@@ -6,28 +6,28 @@
 ![](https://github.com/MoonAndEye/MelodySampling/blob/master/ScreenShot.png)
 
 
-## Feature
+## Features
 -----
-  - 使用者可以挑選四種種類的題庫，這些題庫未來會擴充。
-  - 選完題庫後，猜歌即開始。
-  - 每題有 30 秒的時間。
-  - 答題所花的時間愈少，得分愈高，但如果時間用完仍答對，會有基本分。
-  - 如果答錯，該題得分為0。
+- 使用者可以挑選四種種類的題庫，這些題庫未來會擴充。
+- 選完題庫後，猜歌即開始。
+- 每題有 30 秒的時間。
+- 答題所花的時間愈少，得分愈高，但如果時間用完仍答對，會有基本分。
+- 如果答錯，該題得分為0。
   
   
-## Library
+## Libraries
 -----
-  - Alamofire
-  - IQKeyboardManagerSwift
-  - SwifterSwift
-  - SwiftyJSON
-  - UICircularProgressRing
+- Alamofire
+- IQKeyboardManagerSwift
+- SwifterSwift
+- SwiftyJSON
+- UICircularProgressRing
   
 ## Requirements
 -----
-  - iOS 10.0+
-  - XCode 8.3+
-  - pod isntall
+- iOS 10.0+
+- XCode 8.3+
+- pod isntall
 
 ## Contacts
 -----
