@@ -68,7 +68,7 @@ class ProfilePageViewController: UIViewController, UITableViewDelegate, UITableV
 
             if let uid = self.userDefault.object(forKey: "uid") as? String {
 
-                // TODO: 之後要修掉這個地方的驚嘆號
+                // TODO: Revise unwrap later.
                 updateManager.updateUserName(uid, update: renameTextField.text!)
 
                 print("Uid is \(uid),Username is \(renameTextField)")
@@ -122,26 +122,41 @@ class ProfilePageViewController: UIViewController, UITableViewDelegate, UITableV
 
     @IBAction func logOutButtonTapped(_ sender: UIButton) {
 
+        let alertController = UIAlertController(title: NSLocalizedString("Sign Out", comment: "Sign out button on profile page"), message: NSLocalizedString("Are you going to sign out?", comment: "Sign Out Message on profile page"), preferredStyle: .alert)
+
+        let logoutAction = UIAlertAction(title: NSLocalizedString("Sign Out", comment: "Sign out from profile page"), style: .default) { (_) in
+
+            let userDefault = UserDefaults.standard
+
+            let keysInArray = Array(userDefault.dictionaryRepresentation().keys)
+
+            for each in keysInArray {
+                userDefault.removeObject(forKey: "\(each)")
+            }
+
+            let checkCoredata = CheckQuestionInCoreData()
+
+            checkCoredata.clearHistoryMO()
+
+            gotoLandingPage(from: self)
+        }
+
+        let cancelAction = UIAlertAction(title: NSLocalizedString("Cancel", comment: "Cancel on sign out action"), style: .default) { (_) in
+
+        }
+
+        alertController.addAction(cancelAction)
+
+        alertController.addAction(logoutAction)
+
+        self.present(alertController, animated: true, completion: nil)
+
         let firebaseAuth = Auth.auth()
         do {
             try firebaseAuth.signOut()
         } catch let signOutError as NSError {
             print ("Error signing out: %@", signOutError)
         }
-
-        let userDefault = UserDefaults.standard
-
-        let keysInArray = Array(userDefault.dictionaryRepresentation().keys)
-
-        for each in keysInArray {
-            userDefault.removeObject(forKey: "\(each)")
-        }
-
-        let checkCoredata = CheckQuestionInCoreData()
-
-        checkCoredata.clearHistoryMO()
-
-        gotoLandingPage(from: self)
 
     }
 
