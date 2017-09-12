@@ -12,6 +12,8 @@ import Firebase
 import CoreData
 import Alamofire
 
+// MARK: Type_body_length, solve this within this week
+//swiftlint:disable type_body_length
 class PlayPageViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate {
 
     var ref: DatabaseReference!
@@ -65,6 +67,8 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
     var timePassed: Double = 0
 
     var score: Double = 0
+
+    var aiTotalScore: Int = 0
 
     let userDefault = UserDefaults.standard
 
@@ -254,7 +258,7 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
             trackIndicator4.image = UIImage(named: "icon_CD_white_new")
         }
 
-        let aiResult = random(4)
+        let aiResult = random(3)
 
         if aiResult > 0 {
 
@@ -262,11 +266,13 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
 
             guard var aiScore = Int(aiScoreStr) else { return }
 
-            let aiGet = 600 + random(3000)
+            let aiGet = 600 + random(2000)
 
             aiScore += aiGet
 
             leftUserScoreLabel.text = "\(aiScore)"
+
+            self.aiTotalScore = aiScore
 
         }
 
@@ -403,6 +409,8 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
 
                 }
 
+                Analytics.logEvent("AIResults", parameters: ["AIScore": aiTotalScore])
+
                 Analytics.logEvent("song\(i)", parameters: [
                     "QuestionIndex": "song\(i)" as NSObject,
                     "ArtistID": questions[i].artistID as? NSObject,
@@ -416,7 +424,6 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
                     "usedTime": resultList[i].usedTime as? NSObject,
                     "selectedAnswer": resultList[i].selectedAnswer as? NSObject
                     ])
-
             }
 
             let now = Date().timeIntervalSince1970
@@ -540,14 +547,12 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
 
                 })
             })
-
         }
     }
 
     func startGuessing() {
 
         print("現在在第 \(currentTrack) 首")
-        print("接下來是第 \(prepareTrack) 首")
 
         self.shuffledList = []
 
@@ -673,6 +678,6 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
 
             trackTimeCountdownLabel.text = "\(self.trackTimeCountdown)"
         }
-
     }
 }
+//swiftlint:enable
