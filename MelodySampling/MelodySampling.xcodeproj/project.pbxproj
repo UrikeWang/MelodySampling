@@ -110,7 +110,9 @@
 		7364EF9F1F428B3C00D65D64 /* IBOutletFunction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IBOutletFunction.swift; sourceTree = "<group>"; };
 		736503DE1F46C44000A975EB /* RandomFunc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RandomFunc.swift; sourceTree = "<group>"; };
 		736503E01F46C58D00A975EB /* DistractorManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DistractorManager.swift; sourceTree = "<group>"; };
-		73744D001F2ED94200C1FAEA /* MelodySampling.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MelodySampling.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		736FC3861F68F46000AE4C80 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		736FC3871F68F46600AE4C80 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		73744D001F2ED94200C1FAEA /* King of Song Quiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "King of Song Quiz.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		73744D031F2ED94200C1FAEA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		73744D081F2ED94300C1FAEA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		73744D0B1F2ED94300C1FAEA /* MelodySampling.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MelodySampling.xcdatamodel; sourceTree = "<group>"; };
@@ -240,7 +242,7 @@
 		73744D011F2ED94200C1FAEA /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				73744D001F2ED94200C1FAEA /* MelodySampling.app */,
+				73744D001F2ED94200C1FAEA /* King of Song Quiz.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -344,9 +346,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		73744CFF1F2ED94200C1FAEA /* MelodySampling */ = {
+		73744CFF1F2ED94200C1FAEA /* King of Song Quiz */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 73744D151F2ED94300C1FAEA /* Build configuration list for PBXNativeTarget "MelodySampling" */;
+			buildConfigurationList = 73744D151F2ED94300C1FAEA /* Build configuration list for PBXNativeTarget "King of Song Quiz" */;
 			buildPhases = (
 				C144A0710A68808904C41D15 /* [CP] Check Pods Manifest.lock */,
 				73744CFC1F2ED94200C1FAEA /* Sources */,
@@ -361,9 +363,9 @@
 			);
 			dependencies = (
 			);
-			name = MelodySampling;
+			name = "King of Song Quiz";
 			productName = MelodySampling;
-			productReference = 73744D001F2ED94200C1FAEA /* MelodySampling.app */;
+			productReference = 73744D001F2ED94200C1FAEA /* King of Song Quiz.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -407,7 +409,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				73744CFF1F2ED94200C1FAEA /* MelodySampling */,
+				73744CFF1F2ED94200C1FAEA /* King of Song Quiz */,
 			);
 		};
 /* End PBXProject section */
@@ -571,6 +573,8 @@
 			children = (
 				7346B9FC1F5826EF00A9487C /* zh-Hant */,
 				7346BA041F58FCB700A9487C /* zh-Hans */,
+				736FC3861F68F46000AE4C80 /* Base */,
+				736FC3871F68F46600AE4C80 /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -750,7 +754,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		73744D151F2ED94300C1FAEA /* Build configuration list for PBXNativeTarget "MelodySampling" */ = {
+		73744D151F2ED94300C1FAEA /* Build configuration list for PBXNativeTarget "King of Song Quiz" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				73744D161F2ED94300C1FAEA /* Debug */,
