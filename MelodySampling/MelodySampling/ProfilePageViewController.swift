@@ -38,8 +38,6 @@ class ProfilePageViewController: UIViewController, UITableViewDelegate, UITableV
 
     @IBOutlet weak var logOutView: UIView!
 
-    @IBOutlet weak var logOutContentView: UIView!
-
     @IBOutlet weak var logOutButtonOutlet: UIButton!
 
     @IBOutlet weak var userNameLabel: UILabel!
@@ -47,8 +45,6 @@ class ProfilePageViewController: UIViewController, UITableViewDelegate, UITableV
     @IBOutlet weak var invisiblePhotoUsageButtonOutlet: UIButton!
 
     @IBOutlet weak var historyLabel: UILabel!
-
-    @IBOutlet weak var logoutTextLabel: UILabel!
 
     @IBOutlet weak var invisibleUserNameButtonOutlet: UIButton!
 
@@ -170,7 +166,9 @@ class ProfilePageViewController: UIViewController, UITableViewDelegate, UITableV
         super.viewDidLoad()
 
         historyLabel.text = NSLocalizedString("History", comment: "History segament controller label")
-        logoutTextLabel.text = NSLocalizedString("Sign out", comment: "Log out text at profile page.")
+        
+        logOutButtonOutlet.setTitle(NSLocalizedString("Sign out", comment: "Log out text at profile page."), for: .normal)
+        
         playTextLabel.text = NSLocalizedString("Play", comment: "Play button text at profile page.")
 
         invisibleUserNameButtonOutlet.setTitleColor(UIColor.clear, for: .normal)
@@ -179,7 +177,7 @@ class ProfilePageViewController: UIViewController, UITableViewDelegate, UITableV
 
         invisiblePhotoUsageButtonOutlet.setTitleColor(UIColor.clear, for: .normal)
 
-        logOutButtonOutlet.setTitleColor(UIColor.clear, for: .normal)
+        logOutButtonOutlet.setTitleColor(UIColor.white, for: .normal)
 
         invisibleButton.setTitleColor(UIColor.clear, for: .normal)
 
@@ -188,8 +186,6 @@ class ProfilePageViewController: UIViewController, UITableViewDelegate, UITableV
         historyTableView.dataSource = self
 
         createUserProfileImage(targe: userProfileImageView)
-
-        logOutContentView.backgroundColor = UIColor.clear
 
         if let userProfileImageData = userDefault.object(forKey: "UserProfileImage") as? Data {
 
