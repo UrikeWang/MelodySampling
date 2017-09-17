@@ -451,7 +451,7 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h52-og-nE7">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h52-og-nE7" userLabel="Separator Bar View">
                                         <rect key="frame" x="107.5" y="194" width="160" height="2"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -467,11 +467,11 @@
                                     <constraint firstItem="u4p-KT-t8T" firstAttribute="top" secondItem="o2i-xB-Gof" secondAttribute="bottom" constant="4" id="AGU-X2-BY7"/>
                                     <constraint firstItem="hDt-NX-0Yq" firstAttribute="top" secondItem="u4p-KT-t8T" secondAttribute="top" id="Ewc-FJ-TMT"/>
                                     <constraint firstItem="PGk-Jj-Bmy" firstAttribute="leading" secondItem="o2i-xB-Gof" secondAttribute="leading" id="KPd-ZA-gmT"/>
+                                    <constraint firstItem="h52-og-nE7" firstAttribute="centerX" secondItem="Ivk-cb-90t" secondAttribute="centerX" id="Kjw-MT-dNg"/>
                                     <constraint firstItem="hDt-NX-0Yq" firstAttribute="bottom" secondItem="u4p-KT-t8T" secondAttribute="bottom" constant="10" id="KlL-A9-fNZ"/>
                                     <constraint firstAttribute="height" constant="200" id="Kw3-qV-K3O"/>
                                     <constraint firstItem="h52-og-nE7" firstAttribute="top" secondItem="PMV-h8-dSS" secondAttribute="bottom" constant="12" id="LI0-WM-uWk"/>
                                     <constraint firstItem="u4p-KT-t8T" firstAttribute="centerX" secondItem="o2i-xB-Gof" secondAttribute="centerX" id="LnT-p4-FUt"/>
-                                    <constraint firstItem="h52-og-nE7" firstAttribute="centerX" secondItem="PMV-h8-dSS" secondAttribute="centerX" id="Sh7-rM-pfu"/>
                                     <constraint firstItem="PGk-Jj-Bmy" firstAttribute="bottom" secondItem="o2i-xB-Gof" secondAttribute="bottom" id="Sjp-oN-Jc0"/>
                                     <constraint firstItem="o2i-xB-Gof" firstAttribute="centerX" secondItem="Ivk-cb-90t" secondAttribute="centerX" id="UPq-iq-U7X"/>
                                     <constraint firstItem="PGk-Jj-Bmy" firstAttribute="top" secondItem="o2i-xB-Gof" secondAttribute="top" id="VOY-BG-7Jg"/>
@@ -550,41 +550,65 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jwy-5s-qhz">
                                 <rect key="frame" x="0.0" y="583" width="375" height="84"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tmL-Wu-OHy" userLabel="Invisible Logout Button">
-                                        <rect key="frame" x="40" y="5" width="140" height="50"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Log out"/>
-                                        <connections>
-                                            <action selector="logOutButtonTapped:" destination="QDn-rL-xbF" eventType="touchUpInside" id="V18-Nr-FB4"/>
-                                        </connections>
-                                    </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IOU-Oy-gG4" userLabel="Play Button Label">
-                                        <rect key="frame" x="194" y="8" width="173" height="25"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="18"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cl4-Gv-Xij">
-                                        <rect key="frame" x="197" y="4" width="166" height="37"/>
+                                        <rect key="frame" x="277" y="4" width="86" height="37"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Invisible Play Button"/>
                                         <connections>
                                             <action selector="invisibleButtonTapped:" destination="QDn-rL-xbF" eventType="touchUpInside" id="Poi-Qz-MGD"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Play" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6CE-oi-zf6" userLabel="Play Text Label">
-                                        <rect key="frame" x="224" y="8" width="37" height="22"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="18"/>
-                                        <color key="textColor" red="0.25882352941176467" green="0.13333333333333333" blue="0.99607843137254903" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Whq-Am-Tfk">
+                                        <rect key="frame" x="10" y="12" width="355" height="60"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JP2-vN-qFy" userLabel="Invisible View">
+                                                <rect key="frame" x="0.0" y="0.0" width="167.5" height="60"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tmL-Wu-OHy" userLabel="Logout Button">
+                                                        <rect key="frame" x="0.0" y="0.0" width="167.5" height="60"/>
+                                                        <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="18"/>
+                                                        <state key="normal" title="Log out">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="logOutButtonTapped:" destination="QDn-rL-xbF" eventType="touchUpInside" id="V18-Nr-FB4"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="tmL-Wu-OHy" firstAttribute="leading" secondItem="JP2-vN-qFy" secondAttribute="leading" id="3Tl-WW-Qgh"/>
+                                                    <constraint firstItem="tmL-Wu-OHy" firstAttribute="top" secondItem="JP2-vN-qFy" secondAttribute="top" id="Ol6-Z6-wnt"/>
+                                                    <constraint firstAttribute="bottom" secondItem="tmL-Wu-OHy" secondAttribute="bottom" id="QrH-Ww-oPD"/>
+                                                    <constraint firstAttribute="trailing" secondItem="tmL-Wu-OHy" secondAttribute="trailing" id="Yqk-mx-cb0"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lyv-za-5E0" userLabel="Play View">
+                                                <rect key="frame" x="187.5" y="0.0" width="167.5" height="60"/>
+                                                <subviews>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon_fight" translatesAutoresizingMaskIntoConstraints="NO" id="EDF-ek-RTi" userLabel="Fight Icon Image View">
+                                                        <rect key="frame" x="8" y="5" width="50" height="50"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    </imageView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Play" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6CE-oi-zf6" userLabel="Play Text Label">
+                                                        <rect key="frame" x="89" y="19" width="37" height="22"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="18"/>
+                                                        <color key="textColor" red="0.25882352941176467" green="0.13333333333333333" blue="0.99607843137254903" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
-                                <color key="backgroundColor" red="0.40000000600000002" green="1" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.25882352939999997" green="0.1333333333" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstItem="Whq-Am-Tfk" firstAttribute="leading" secondItem="jwy-5s-qhz" secondAttribute="leading" constant="10" id="5kw-SU-RaX"/>
+                                    <constraint firstAttribute="bottom" secondItem="Whq-Am-Tfk" secondAttribute="bottom" constant="12" id="AIH-vc-Kmk"/>
                                     <constraint firstAttribute="height" constant="84" id="Kdv-cU-R4m"/>
+                                    <constraint firstItem="Whq-Am-Tfk" firstAttribute="top" secondItem="jwy-5s-qhz" secondAttribute="top" constant="12" id="jD1-qy-Ote"/>
+                                    <constraint firstAttribute="trailing" secondItem="Whq-Am-Tfk" secondAttribute="trailing" constant="10" id="utE-TX-ixn"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -611,7 +635,7 @@
                         <outlet property="invisibleUserNameButtonOutlet" destination="hDt-NX-0Yq" id="SYE-Qc-CTv"/>
                         <outlet property="logOutButtonOutlet" destination="tmL-Wu-OHy" id="2QG-jd-Hnh"/>
                         <outlet property="logOutView" destination="jwy-5s-qhz" id="4gM-ca-39F"/>
-                        <outlet property="playButtonLabel" destination="IOU-Oy-gG4" id="wDg-th-Hy1"/>
+                        <outlet property="playContentView" destination="Lyv-za-5E0" id="FiC-87-TRX"/>
                         <outlet property="playTextLabel" destination="6CE-oi-zf6" id="u1A-z5-6bk"/>
                         <outlet property="userNameLabel" destination="u4p-KT-t8T" id="0gF-q5-87H"/>
                         <outlet property="userProfileImageView" destination="o2i-xB-Gof" id="k7s-gp-mCp"/>
@@ -1511,7 +1535,7 @@
                     <toolbarItems/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="667"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="59b-Li-pjM">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="59b-Li-pjM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1535,6 +1559,7 @@
         <image name="crowd" width="375" height="667"/>
         <image name="fire_yellow" width="98" height="98"/>
         <image name="icon_CD_line_new" width="31" height="31"/>
+        <image name="icon_fight" width="50" height="50"/>
         <image name="icon_player" width="90" height="90"/>
         <image name="landing_bg" width="414" height="736"/>
         <image name="play" width="22" height="22"/>
