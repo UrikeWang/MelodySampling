@@ -481,9 +481,8 @@
                                     <constraint firstItem="hDt-NX-0Yq" firstAttribute="leading" secondItem="u4p-KT-t8T" secondAttribute="leading" constant="-10" id="u6R-mW-kS1"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="L6t-KH-VJ3">
-                                <rect key="frame" x="0.0" y="203" width="375" height="424"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="L6t-KH-VJ3">
+                                <rect key="frame" x="0.0" y="200" width="375" height="383"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HistoryCell" id="hbi-cD-5x0" customClass="HistoryTableViewCell" customModule="King_of_Song_Quiz" customModuleProvider="target">
@@ -493,26 +492,27 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wJN-js-IpA" userLabel="Cell Background View">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wJN-js-IpA" userLabel="Cell Background View">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="y20-cB-bA9">
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="y20-cB-bA9">
                                                             <rect key="frame" x="35" y="5" width="50" height="50"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="50" id="2rH-uv-nHT"/>
+                                                                <constraint firstAttribute="width" secondItem="y20-cB-bA9" secondAttribute="height" multiplier="1:1" id="kiM-Xt-kmw"/>
+                                                            </constraints>
                                                         </imageView>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="VSo-bx-c9k">
-                                                            <rect key="frame" x="125" y="10" width="174.5" height="42"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="VSo-bx-c9k">
+                                                            <rect key="frame" x="125" y="9" width="174.5" height="42"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="SongSongSongSong" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zoX-V0-eI6" userLabel="Track Name Label">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SongSongSongSong" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zoX-V0-eI6" userLabel="Track Name Label">
                                                                     <rect key="frame" x="0.0" y="0.0" width="174.5" height="21"/>
                                                                     <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="17"/>
                                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="SingerSingerSinger" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Yd-bq-46u" userLabel="Artist Name Label">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SingerSingerSinger" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Yd-bq-46u" userLabel="Artist Name Label">
                                                                     <rect key="frame" x="0.0" y="21" width="174.5" height="21"/>
                                                                     <fontDescription key="fontDescription" name="Montserrat-LightItalic" family="Montserrat" pointSize="17"/>
                                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -520,14 +520,22 @@
                                                                 </label>
                                                             </subviews>
                                                         </stackView>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="play-1" translatesAutoresizingMaskIntoConstraints="NO" id="12e-qO-pNx">
-                                                            <rect key="frame" x="46" y="18" width="26" height="24"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                        </imageView>
                                                     </subviews>
                                                     <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <constraints>
+                                                        <constraint firstItem="y20-cB-bA9" firstAttribute="centerY" secondItem="wJN-js-IpA" secondAttribute="centerY" id="FII-FN-KMK"/>
+                                                        <constraint firstItem="VSo-bx-c9k" firstAttribute="top" secondItem="y20-cB-bA9" secondAttribute="top" constant="4" id="K1z-bL-adM"/>
+                                                        <constraint firstItem="VSo-bx-c9k" firstAttribute="leading" secondItem="y20-cB-bA9" secondAttribute="trailing" constant="40" id="hZV-rW-a4n"/>
+                                                        <constraint firstItem="y20-cB-bA9" firstAttribute="leading" secondItem="wJN-js-IpA" secondAttribute="leading" constant="35" id="rFt-IX-tdu"/>
+                                                    </constraints>
                                                 </view>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="wJN-js-IpA" secondAttribute="trailing" id="PPo-hg-DgT"/>
+                                                <constraint firstAttribute="bottom" secondItem="wJN-js-IpA" secondAttribute="bottom" id="Rc8-mK-zvg"/>
+                                                <constraint firstItem="wJN-js-IpA" firstAttribute="top" secondItem="cVx-fr-ZQD" secondAttribute="top" id="WfF-Mg-rDe"/>
+                                                <constraint firstItem="wJN-js-IpA" firstAttribute="leading" secondItem="cVx-fr-ZQD" secondAttribute="leading" id="izI-Lw-76Y"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="artistNameLabel" destination="6Yd-bq-46u" id="c87-p4-0MA"/>
@@ -539,9 +547,8 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jwy-5s-qhz">
-                                <rect key="frame" x="0.0" y="595" width="375" height="72"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jwy-5s-qhz">
+                                <rect key="frame" x="0.0" y="583" width="375" height="84"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tmL-Wu-OHy" userLabel="Invisible Logout Button">
                                         <rect key="frame" x="40" y="5" width="140" height="50"/>
@@ -576,12 +583,22 @@
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.40000000600000002" green="1" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="84" id="Kdv-cU-R4m"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="L6t-KH-VJ3" secondAttribute="trailing" constant="-16" id="A1z-UG-Fb6"/>
                             <constraint firstItem="Ivk-cb-90t" firstAttribute="top" secondItem="JtC-HI-0ca" secondAttribute="bottom" id="M3Y-Ey-4oU"/>
+                            <constraint firstItem="jEY-qv-fzz" firstAttribute="top" secondItem="jwy-5s-qhz" secondAttribute="bottom" id="Uab-Os-tbL"/>
+                            <constraint firstItem="jwy-5s-qhz" firstAttribute="top" secondItem="L6t-KH-VJ3" secondAttribute="bottom" id="hma-RL-TTc"/>
+                            <constraint firstItem="jwy-5s-qhz" firstAttribute="leading" secondItem="4a3-MA-wp4" secondAttribute="leadingMargin" constant="-16" id="ihk-lx-GVH"/>
                             <constraint firstItem="Ivk-cb-90t" firstAttribute="leading" secondItem="4a3-MA-wp4" secondAttribute="leadingMargin" constant="-16" id="j5s-HG-gJs"/>
+                            <constraint firstItem="L6t-KH-VJ3" firstAttribute="leading" secondItem="4a3-MA-wp4" secondAttribute="leadingMargin" constant="-16" id="pbQ-MN-Ufj"/>
+                            <constraint firstItem="L6t-KH-VJ3" firstAttribute="top" secondItem="Ivk-cb-90t" secondAttribute="bottom" id="qUf-sc-HuV"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="jwy-5s-qhz" secondAttribute="trailing" constant="-16" id="uL8-xK-fY5"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Ivk-cb-90t" secondAttribute="trailing" constant="-16" id="zva-LQ-tEp"/>
                         </constraints>
                     </view>
@@ -1494,7 +1511,7 @@
                     <toolbarItems/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="667"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="59b-Li-pjM">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="59b-Li-pjM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1521,7 +1538,6 @@
         <image name="icon_player" width="90" height="90"/>
         <image name="landing_bg" width="414" height="736"/>
         <image name="play" width="22" height="22"/>
-        <image name="play-1" width="22" height="22"/>
         <image name="right" width="22" height="22"/>
         <image name="score_bg" width="414" height="736"/>
         <image name="usericon_new" width="50" height="50"/>
