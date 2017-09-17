@@ -36,7 +36,7 @@
         <!--Landing Page View Controller-->
         <scene sceneID="vYB-Hh-43r">
             <objects>
-                <viewController storyboardIdentifier="LandingPage" modalTransitionStyle="flipHorizontal" useStoryboardIdentifierAsRestorationIdentifier="YES" id="bgG-UJ-6ec" customClass="LandingPageViewController" customModule="MelodySampling" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LandingPage" modalTransitionStyle="flipHorizontal" useStoryboardIdentifierAsRestorationIdentifier="YES" id="bgG-UJ-6ec" customClass="LandingPageViewController" customModule="King_of_Song_Quiz" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="MwV-VO-dhb"/>
                         <viewControllerLayoutGuide type="bottom" id="EZh-xy-gZm"/>
@@ -178,7 +178,7 @@
         <!--Sign Up View Controller-->
         <scene sceneID="aAP-Md-uWi">
             <objects>
-                <viewController storyboardIdentifier="SignupPage" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y5G-1b-riF" customClass="SignUpViewController" customModule="MelodySampling" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignupPage" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y5G-1b-riF" customClass="SignUpViewController" customModule="King_of_Song_Quiz" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="nKW-T5-MpE"/>
                         <viewControllerLayoutGuide type="bottom" id="1O6-L0-CqL"/>
@@ -403,7 +403,7 @@
         <!--Profile Page View Controller-->
         <scene sceneID="ycO-Oa-d5U">
             <objects>
-                <viewController storyboardIdentifier="ProfilePage" useStoryboardIdentifierAsRestorationIdentifier="YES" id="QDn-rL-xbF" customClass="ProfilePageViewController" customModule="MelodySampling" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProfilePage" useStoryboardIdentifierAsRestorationIdentifier="YES" id="QDn-rL-xbF" customClass="ProfilePageViewController" customModule="King_of_Song_Quiz" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="JtC-HI-0ca"/>
                         <viewControllerLayoutGuide type="bottom" id="jEY-qv-fzz"/>
@@ -415,7 +415,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ivk-cb-90t" userLabel="Profile Content View">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="230"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="249" verticalHuggingPriority="249" image="userfigure" translatesAutoresizingMaskIntoConstraints="NO" id="o2i-xB-Gof" userLabel="User Profile Image View">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="249" verticalHuggingPriority="249" image="icon_player" translatesAutoresizingMaskIntoConstraints="NO" id="o2i-xB-Gof" userLabel="User Profile Image View">
                                         <rect key="frame" x="144.5" y="30" width="86" height="86"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="o2i-xB-Gof" secondAttribute="height" multiplier="1:1" id="3q5-4u-4ax"/>
@@ -522,7 +522,7 @@
                                 <rect key="frame" x="0.0" y="300" width="375" height="327"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HistoryCell" id="hbi-cD-5x0" customClass="HistoryTableViewCell" customModule="MelodySampling" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HistoryCell" id="hbi-cD-5x0" customClass="HistoryTableViewCell" customModule="King_of_Song_Quiz" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hbi-cD-5x0" id="cVx-fr-ZQD">
@@ -678,7 +678,7 @@
         <!--Type Choose View Controller-->
         <scene sceneID="CBg-b8-mju">
             <objects>
-                <viewController storyboardIdentifier="NewTypeChoosePage" useStoryboardIdentifierAsRestorationIdentifier="YES" id="DwJ-ua-HvI" customClass="TypeChooseViewController" customModule="MelodySampling" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NewTypeChoosePage" useStoryboardIdentifierAsRestorationIdentifier="YES" id="DwJ-ua-HvI" customClass="TypeChooseViewController" customModule="King_of_Song_Quiz" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="wem-S8-hd3"/>
                         <viewControllerLayoutGuide type="bottom" id="PXk-IO-FRh"/>
@@ -691,7 +691,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="GenreCell" id="9jp-uK-r69" customClass="StandardTableViewCell" customModule="MelodySampling" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="GenreCell" id="9jp-uK-r69" customClass="StandardTableViewCell" customModule="King_of_Song_Quiz" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="177"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9jp-uK-r69" id="nsF-VU-6g2">
@@ -786,7 +786,7 @@
         <!--Play Page View Controller-->
         <scene sceneID="BZk-Uo-QSu">
             <objects>
-                <viewController storyboardIdentifier="PlayPage" id="0yZ-uh-ktt" customClass="PlayPageViewController" customModule="MelodySampling" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PlayPage" id="0yZ-uh-ktt" customClass="PlayPageViewController" customModule="King_of_Song_Quiz" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="yzg-T8-E23"/>
                         <viewControllerLayoutGuide type="bottom" id="mRu-LV-13g"/>
@@ -811,7 +811,7 @@
                                             <constraint firstAttribute="width" constant="86" id="gyl-Wv-jPZ"/>
                                         </constraints>
                                     </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="userfigure" translatesAutoresizingMaskIntoConstraints="NO" id="rGL-HO-tDk" userLabel="Right User Image View">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_player" translatesAutoresizingMaskIntoConstraints="NO" id="rGL-HO-tDk" userLabel="Right User Image View">
                                         <rect key="frame" x="238" y="22" width="86" height="86"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="86" id="RSA-6q-VvR"/>
@@ -836,7 +836,7 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="30" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hd5-Aa-tvV" userLabel="Track Time Countdown Label">
-                                        <rect key="frame" x="163" y="114" width="50" height="44"/>
+                                        <rect key="frame" x="164" y="114" width="50" height="44"/>
                                         <fontDescription key="fontDescription" name="Montserrat-MediumItalic" family="Montserrat" pointSize="36"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -964,7 +964,7 @@
                                     <constraint firstAttribute="height" constant="339" id="ULy-2y-1Up"/>
                                 </constraints>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="AnswerCell" rowHeight="79" id="Q35-Pz-Djb" customClass="AnswerTableViewCell" customModule="MelodySampling" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="AnswerCell" rowHeight="79" id="Q35-Pz-Djb" customClass="AnswerTableViewCell" customModule="King_of_Song_Quiz" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="1" width="351" height="79"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Q35-Pz-Djb" id="QfC-c9-lpe">
@@ -1062,7 +1062,7 @@
         <!--Result Page View Controller-->
         <scene sceneID="EM0-rn-YA1">
             <objects>
-                <viewController storyboardIdentifier="ResultPage" useStoryboardIdentifierAsRestorationIdentifier="YES" id="sgS-eJ-ZD6" customClass="ResultPageViewController" customModule="MelodySampling" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ResultPage" useStoryboardIdentifierAsRestorationIdentifier="YES" id="sgS-eJ-ZD6" customClass="ResultPageViewController" customModule="King_of_Song_Quiz" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="0nc-Tv-cGR"/>
                         <viewControllerLayoutGuide type="bottom" id="M1q-uf-LuF"/>
@@ -1152,7 +1152,7 @@
                                             </imageView>
                                         </subviews>
                                     </stackView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="userfigure" translatesAutoresizingMaskIntoConstraints="NO" id="b5y-y9-ROk" userLabel="Profile Image View">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_player" translatesAutoresizingMaskIntoConstraints="NO" id="b5y-y9-ROk" userLabel="Profile Image View">
                                         <rect key="frame" x="86" y="45" width="86" height="86"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="86" id="Tau-TG-J26"/>
@@ -1176,7 +1176,7 @@
                                 <rect key="frame" x="0.0" y="180" width="375" height="400"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ResultCell" id="ygb-vP-tHp" customClass="ResultTableViewCell" customModule="MelodySampling" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ResultCell" id="ygb-vP-tHp" customClass="ResultTableViewCell" customModule="King_of_Song_Quiz" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ygb-vP-tHp" id="xXb-VQ-vLC">
@@ -1329,7 +1329,7 @@
         <!--Log In View Controller-->
         <scene sceneID="Ya5-e6-AmV">
             <objects>
-                <viewController storyboardIdentifier="LoginPage" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Tjb-TR-M1w" customClass="LogInViewController" customModule="MelodySampling" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginPage" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Tjb-TR-M1w" customClass="LogInViewController" customModule="King_of_Song_Quiz" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="p1u-Qx-lcN"/>
                         <viewControllerLayoutGuide type="bottom" id="kyw-IN-eGu"/>
@@ -1591,12 +1591,12 @@
         <image name="fire_yellow" width="98" height="98"/>
         <image name="icon_CD-pink" width="34" height="34"/>
         <image name="icon_CD_line_new" width="31" height="31"/>
+        <image name="icon_player" width="90" height="90"/>
         <image name="landing_bg" width="414" height="736"/>
         <image name="logouticon" width="58" height="60"/>
         <image name="play" width="22" height="22"/>
         <image name="right" width="22" height="22"/>
         <image name="score_bg" width="414" height="736"/>
-        <image name="userfigure" width="98" height="98"/>
         <image name="usericon_new" width="50" height="50"/>
     </resources>
 </document>

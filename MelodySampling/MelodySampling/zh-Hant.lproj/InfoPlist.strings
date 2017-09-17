@@ -1,6 +1,8 @@
 /* (No Commment) */
 "CFBundleName" = "歌曲知識王";
 
+"CFBundleDisplayName" = "歌曲知識王";
+
 /* (No Commment) */
 "CFBundleShortVersionString" = "1.1.7";
 
