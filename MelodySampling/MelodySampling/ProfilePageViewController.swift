@@ -30,15 +30,16 @@ class ProfilePageViewController: UIViewController, UITableViewDelegate, UITableV
 
     let userDefault = UserDefaults.standard
 
+    //這個東西砍掉連結,要換成 View
     @IBOutlet weak var playButtonLabel: UILabel!
 
+    @IBOutlet weak var playContentView: UIView!
+    
     @IBOutlet weak var playTextLabel: UILabel!
 
     @IBOutlet weak var invisibleButton: UIButton!
 
     @IBOutlet weak var logOutView: UIView!
-
-    @IBOutlet weak var logOutContentView: UIView!
 
     @IBOutlet weak var logOutButtonOutlet: UIButton!
 
@@ -47,8 +48,6 @@ class ProfilePageViewController: UIViewController, UITableViewDelegate, UITableV
     @IBOutlet weak var invisiblePhotoUsageButtonOutlet: UIButton!
 
     @IBOutlet weak var historyLabel: UILabel!
-
-    @IBOutlet weak var logoutTextLabel: UILabel!
 
     @IBOutlet weak var invisibleUserNameButtonOutlet: UIButton!
 
@@ -170,16 +169,18 @@ class ProfilePageViewController: UIViewController, UITableViewDelegate, UITableV
         super.viewDidLoad()
 
         historyLabel.text = NSLocalizedString("History", comment: "History segament controller label")
-        logoutTextLabel.text = NSLocalizedString("Sign out", comment: "Log out text at profile page.")
+        
+        logOutButtonOutlet.setTitle(NSLocalizedString("Sign out", comment: "Log out text at profile page."), for: .normal)
+        
         playTextLabel.text = NSLocalizedString("Play", comment: "Play button text at profile page.")
-
+        
         invisibleUserNameButtonOutlet.setTitleColor(UIColor.clear, for: .normal)
 
         print("===== Profile Page =====")
 
         invisiblePhotoUsageButtonOutlet.setTitleColor(UIColor.clear, for: .normal)
 
-        logOutButtonOutlet.setTitleColor(UIColor.clear, for: .normal)
+        logOutButtonOutlet.setTitleColor(UIColor.white, for: .normal)
 
         invisibleButton.setTitleColor(UIColor.clear, for: .normal)
 
@@ -188,8 +189,6 @@ class ProfilePageViewController: UIViewController, UITableViewDelegate, UITableV
         historyTableView.dataSource = self
 
         createUserProfileImage(targe: userProfileImageView)
-
-        logOutContentView.backgroundColor = UIColor.clear
 
         if let userProfileImageData = userDefault.object(forKey: "UserProfileImage") as? Data {
 
@@ -237,6 +236,8 @@ class ProfilePageViewController: UIViewController, UITableViewDelegate, UITableV
         }
     }
 
+
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return historyList.count
     }
@@ -306,11 +307,15 @@ class ProfilePageViewController: UIViewController, UITableViewDelegate, UITableV
         let radius = self.userProfileImageView.frame.width
 
         userProfileImageView.layer.cornerRadius = radius / 2
+        
+        logOutButtonOutlet.layer.borderColor = UIColor.white.cgColor
+        logOutButtonOutlet.layer.borderWidth = 2
+        logOutButtonOutlet.layer.cornerRadius = 30.0
+        
+        //createNextBattleOfResult(target: playButtonLabel)
 
-        createUserProfilePageLogoutBackground(target: logOutView, screen: UIScreen.main)
-
-        createNextBattleOfResult(target: playButtonLabel)
-
+        playContentView.layer.cornerRadius = 30.0
+        
         if historyList.count == 0 {
 
             let positionY = self.historyTableView.frame.origin.y
