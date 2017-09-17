@@ -116,7 +116,7 @@ class SignUpViewController: UIViewController {
                         "createdTime": currentTime,
                         "userAccount": self.userAccount,
                         "profilePicURL": self.profileImageURL,
-                        "wasAnonymouse": false,
+                        "wasAnonymous": false,
                         "isAnonymous": false
                         ])
 
