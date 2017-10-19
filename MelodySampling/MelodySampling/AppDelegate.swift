@@ -44,7 +44,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         if UserDefaults.standard.value(forKey: "uid") != nil {
 
-            let registerVC = storyboard.instantiateViewController(withIdentifier: "ProfilePage")
+            let registerVC = storyboard.instantiateViewController(withIdentifier: "PlayingNavigation")
 
             self.window?.rootViewController = registerVC
 
