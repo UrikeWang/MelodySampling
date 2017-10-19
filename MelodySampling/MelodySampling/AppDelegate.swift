@@ -18,6 +18,10 @@ import UserNotifications
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    
+    var ref: DatabaseReference!
+    
+    let userDefault = UserDefaults.standard
 
     var questionCounter: Int?
 
@@ -33,12 +37,46 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Fabric.with([Crashlytics.self])
 
         IQKeyboardManager.sharedManager().enable = true
+        
+        ref = Database.database().reference()
+        
+        ref.child("counter").observeSingleEvent(of: .value, with: { (snapshot) in
+            
+            guard let counterDictionary = snapshot.value as? [String: Int] else {
+                print("Something wrong in cast snapshot")
+                return
+                
+            }
+            
+            var counterArray = [Int]()
+            
+            for each in counterDictionary {
+                counterArray.append(each.value)
+            }
+            
+            var trackCounter: Int
+            
+            if let unwrapCounterArray = counterArray.min() {
+                
+                trackCounter = unwrapCounterArray
+                
+            } else {
+                trackCounter = 1200
+            }
+            
+            self.userDefault.set(trackCounter, forKey: "trackCounter")
+            
+            print("CounterMin: \(trackCounter)")
+            
+            
+        })
 
+
+//        let downloadManager = DownloadManager()
+//
+//        downloadManager.getCounter()
+        
         self.window = UIWindow(frame: UIScreen.main.bounds)
-
-        let downloadManager = DownloadManager()
-
-        downloadManager.getCounter()
 
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
 
