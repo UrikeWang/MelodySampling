@@ -65,6 +65,7 @@
 		73AF802E1F38764300CA31FB /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73AF802D1F38764300CA31FB /* LogInViewController.swift */; };
 		73B122F51F42FD3E006DE065 /* GotoFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73B122F41F42FD3E006DE065 /* GotoFunc.swift */; };
 		73B122F71F431536006DE065 /* PrintUID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73B122F61F431536006DE065 /* PrintUID.swift */; };
+		73B20BB11F98F1580018D7EF /* PlayPageViewController+GameLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73B20BB01F98F1570018D7EF /* PlayPageViewController+GameLogic.swift */; };
 		73FDE6681F3DC35400D9A3FC /* TypeChooseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73FDE6671F3DC35400D9A3FC /* TypeChooseViewController.swift */; };
 		E9121496FD42D46E60BF274E /* Pods_MelodySampling.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCE8237F816AFC43B6CA66DF /* Pods_MelodySampling.framework */; };
 /* End PBXBuildFile section */
@@ -146,6 +147,7 @@
 		73AF802D1F38764300CA31FB /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		73B122F41F42FD3E006DE065 /* GotoFunc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GotoFunc.swift; sourceTree = "<group>"; };
 		73B122F61F431536006DE065 /* PrintUID.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrintUID.swift; sourceTree = "<group>"; };
+		73B20BB01F98F1570018D7EF /* PlayPageViewController+GameLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlayPageViewController+GameLogic.swift"; sourceTree = "<group>"; };
 		73FDE6671F3DC35400D9A3FC /* TypeChooseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeChooseViewController.swift; sourceTree = "<group>"; };
 		744E2D9810A745B7407345E5 /* Pods-MelodySampling.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MelodySampling.release.xcconfig"; path = "Pods/Target Support Files/Pods-MelodySampling/Pods-MelodySampling.release.xcconfig"; sourceTree = "<group>"; };
 		7AEB0E68990119E1DCEEFF7C /* Pods-MelodySampling.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MelodySampling.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MelodySampling/Pods-MelodySampling.debug.xcconfig"; sourceTree = "<group>"; };
@@ -315,6 +317,7 @@
 			children = (
 				73865FB71F3C4D32004E3594 /* PlayPageViewController.swift */,
 				73865FB91F3C547F004E3594 /* AnswerTableViewCell.swift */,
+				73B20BB01F98F1570018D7EF /* PlayPageViewController+GameLogic.swift */,
 			);
 			name = PlayPage;
 			sourceTree = "<group>";
@@ -559,6 +562,7 @@
 				739019DF1F41463F006DEFFD /* ClearCoreDataQuestion.swift in Sources */,
 				736271041F3AAB210002206B /* ArrayShuffle.swift in Sources */,
 				73AF802C1F386D4400CA31FB /* SignUpViewController.swift in Sources */,
+				73B20BB11F98F1580018D7EF /* PlayPageViewController+GameLogic.swift in Sources */,
 				73AF802A1F385EAE00CA31FB /* GradientLayerCreater.swift in Sources */,
 				735575991F3D87AC00A0E271 /* ResultTableViewCell.swift in Sources */,
 				73744D2F1F2F78C000C1FAEA /* GetDeveloperToken.swift in Sources */,

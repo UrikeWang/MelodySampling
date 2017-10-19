@@ -20,7 +20,7 @@ class TypeChooseViewController: UIViewController, UITableViewDataSource, UITable
     
     @IBAction func invisibleButtonTapped(_ sender: UIButton) {
         
-        print("dismiss func triggered")
+        print("popToRootViewController func triggered")
         
         userIconBackgroundView.isHidden = true
         self.navigationController?.popToRootViewController(animated: true)

@@ -756,6 +756,7 @@
                         <outlet property="invisibleButton" destination="wIo-6v-FjZ" id="11b-YT-7iF"/>
                         <outlet property="tableView" destination="JmA-u8-RS4" id="Mt7-I1-H2Q"/>
                         <outlet property="userIconBackgroundView" destination="oXp-Z9-xfB" id="fCy-C5-5DL"/>
+                        <segue destination="0yZ-uh-ktt" kind="show" id="a6F-3C-iBb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="meu-zt-sSq" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -811,37 +812,37 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="30" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hd5-Aa-tvV" userLabel="Track Time Countdown Label">
-                                        <rect key="frame" x="163.5" y="114" width="50" height="44"/>
+                                        <rect key="frame" x="168.5" y="115" width="40.5" height="42"/>
                                         <fontDescription key="fontDescription" name="Montserrat-MediumItalic" family="Montserrat" pointSize="36"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1234" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="45D-kh-MVL" userLabel="Left Points Label">
-                                        <rect key="frame" x="69" y="135" width="65" height="37"/>
+                                        <rect key="frame" x="67" y="135" width="67" height="35"/>
                                         <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="30"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5678" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="owN-SQ-VoR" userLabel="Right Points Label">
-                                        <rect key="frame" x="242" y="131" width="74" height="45"/>
+                                        <rect key="frame" x="242" y="131" width="67" height="43"/>
                                         <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="30"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AI" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D8m-Q9-iDm" userLabel="Left User Name Label">
-                                        <rect key="frame" x="93.5" y="121" width="17" height="20"/>
+                                        <rect key="frame" x="93.5" y="120" width="15" height="19"/>
                                         <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="16"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is you" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Yb-tz-7Q9" userLabel="Right User Name Label">
-                                        <rect key="frame" x="238.5" y="120" width="81" height="20"/>
+                                        <rect key="frame" x="237.5" y="119" width="76.5" height="19"/>
                                         <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="16"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="3WZ-YD-gEw" userLabel="Left Stars Stack View">
-                                        <rect key="frame" x="51" y="178" width="101" height="17"/>
+                                        <rect key="frame" x="50" y="176" width="101" height="17"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Star" translatesAutoresizingMaskIntoConstraints="NO" id="800-Fo-0cP">
                                                 <rect key="frame" x="0.0" y="0.0" width="17" height="17"/>
@@ -861,7 +862,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="8Ee-vt-Ipm" userLabel="Right Stars Stack View">
-                                        <rect key="frame" x="228.5" y="182" width="101" height="17"/>
+                                        <rect key="frame" x="225" y="180" width="101" height="17"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Star" translatesAutoresizingMaskIntoConstraints="NO" id="2cj-HZ-BHN">
                                                 <rect key="frame" x="0.0" y="0.0" width="17" height="17"/>
