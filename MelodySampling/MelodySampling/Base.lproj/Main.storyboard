@@ -109,7 +109,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="King of Song Quiz" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q4z-3t-cIg" userLabel="Title Label">
-                                <rect key="frame" x="58" y="254" width="259" height="39.5"/>
+                                <rect key="frame" x="46" y="254" width="283" height="41.5"/>
                                 <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="32"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -117,7 +117,7 @@
                                 <size key="shadowOffset" width="0.0" height="2"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Log in Anonymously" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LX4-z7-ioz">
-                                <rect key="frame" x="106.5" y="555.5" width="163.5" height="21"/>
+                                <rect key="frame" x="98.5" y="555" width="180" height="22"/>
                                 <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="18"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -206,7 +206,7 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="King of Song Quiz" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="em1-6Q-aom" userLabel="Title Label">
-                                        <rect key="frame" x="58" y="149.5" width="259" height="40"/>
+                                        <rect key="frame" x="46" y="149.5" width="283" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="2HJ-D1-JOM"/>
                                         </constraints>
@@ -419,7 +419,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ivk-cb-90t" userLabel="Profile Content View">
-                                <rect key="frame" x="0.0" y="64" width="375" height="200"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="200"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="249" verticalHuggingPriority="249" image="icon_player" translatesAutoresizingMaskIntoConstraints="NO" id="o2i-xB-Gof" userLabel="User Profile Image View">
                                         <rect key="frame" x="144.5" y="30" width="86" height="86"/>
@@ -429,7 +429,7 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is you" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u4p-KT-t8T" userLabel="User Name Label">
-                                        <rect key="frame" x="145" y="120" width="85" height="20"/>
+                                        <rect key="frame" x="135" y="120" width="105" height="30"/>
                                         <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="16"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -449,13 +449,13 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="History" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PMV-h8-dSS">
-                                        <rect key="frame" x="162" y="162" width="51" height="19"/>
+                                        <rect key="frame" x="157.5" y="172" width="60" height="20"/>
                                         <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="16"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h52-og-nE7" userLabel="Separator Bar View">
-                                        <rect key="frame" x="107.5" y="193" width="160" height="2"/>
+                                        <rect key="frame" x="107.5" y="204" width="160" height="2"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="160" id="1hv-9S-r2D"/>
@@ -466,26 +466,26 @@
                                 <color key="backgroundColor" red="0.25882352939999997" green="0.1333333333" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="PMV-h8-dSS" firstAttribute="top" secondItem="u4p-KT-t8T" secondAttribute="bottom" constant="22" id="2y1-cO-kE6"/>
-                                    <constraint firstItem="hDt-NX-0Yq" firstAttribute="trailing" secondItem="u4p-KT-t8T" secondAttribute="trailing" constant="10" id="7S7-u1-DMx"/>
                                     <constraint firstItem="u4p-KT-t8T" firstAttribute="top" secondItem="o2i-xB-Gof" secondAttribute="bottom" constant="4" id="AGU-X2-BY7"/>
-                                    <constraint firstItem="hDt-NX-0Yq" firstAttribute="top" secondItem="u4p-KT-t8T" secondAttribute="top" id="Ewc-FJ-TMT"/>
+                                    <constraint firstItem="hDt-NX-0Yq" firstAttribute="trailing" secondItem="u4p-KT-t8T" secondAttribute="trailing" id="FcA-sw-vk6"/>
                                     <constraint firstItem="PGk-Jj-Bmy" firstAttribute="leading" secondItem="o2i-xB-Gof" secondAttribute="leading" id="KPd-ZA-gmT"/>
                                     <constraint firstItem="h52-og-nE7" firstAttribute="centerX" secondItem="Ivk-cb-90t" secondAttribute="centerX" id="Kjw-MT-dNg"/>
-                                    <constraint firstItem="hDt-NX-0Yq" firstAttribute="bottom" secondItem="u4p-KT-t8T" secondAttribute="bottom" constant="10" id="KlL-A9-fNZ"/>
                                     <constraint firstAttribute="height" constant="200" id="Kw3-qV-K3O"/>
+                                    <constraint firstItem="hDt-NX-0Yq" firstAttribute="top" secondItem="u4p-KT-t8T" secondAttribute="top" id="LAy-ai-tHu"/>
                                     <constraint firstItem="h52-og-nE7" firstAttribute="top" secondItem="PMV-h8-dSS" secondAttribute="bottom" constant="12" id="LI0-WM-uWk"/>
                                     <constraint firstItem="u4p-KT-t8T" firstAttribute="centerX" secondItem="o2i-xB-Gof" secondAttribute="centerX" id="LnT-p4-FUt"/>
+                                    <constraint firstItem="hDt-NX-0Yq" firstAttribute="bottom" secondItem="u4p-KT-t8T" secondAttribute="bottom" id="NfS-Lr-9Fu"/>
                                     <constraint firstItem="PGk-Jj-Bmy" firstAttribute="bottom" secondItem="o2i-xB-Gof" secondAttribute="bottom" id="Sjp-oN-Jc0"/>
                                     <constraint firstItem="o2i-xB-Gof" firstAttribute="centerX" secondItem="Ivk-cb-90t" secondAttribute="centerX" id="UPq-iq-U7X"/>
                                     <constraint firstItem="PGk-Jj-Bmy" firstAttribute="top" secondItem="o2i-xB-Gof" secondAttribute="top" id="VOY-BG-7Jg"/>
                                     <constraint firstItem="o2i-xB-Gof" firstAttribute="top" secondItem="Ivk-cb-90t" secondAttribute="top" constant="30" id="VoA-Lp-LjL"/>
+                                    <constraint firstItem="hDt-NX-0Yq" firstAttribute="leading" secondItem="u4p-KT-t8T" secondAttribute="leading" id="ejA-27-5V1"/>
                                     <constraint firstItem="PMV-h8-dSS" firstAttribute="centerX" secondItem="u4p-KT-t8T" secondAttribute="centerX" id="fB2-dd-mqa"/>
                                     <constraint firstItem="PGk-Jj-Bmy" firstAttribute="trailing" secondItem="o2i-xB-Gof" secondAttribute="trailing" id="hlh-Ed-WR8"/>
-                                    <constraint firstItem="hDt-NX-0Yq" firstAttribute="leading" secondItem="u4p-KT-t8T" secondAttribute="leading" constant="-10" id="u6R-mW-kS1"/>
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="L6t-KH-VJ3">
-                                <rect key="frame" x="0.0" y="264" width="375" height="319"/>
+                                <rect key="frame" x="0.0" y="220" width="375" height="363"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HistoryCell" id="hbi-cD-5x0" customClass="HistoryTableViewCell" customModule="King_of_Song_Quiz" customModuleProvider="target">
@@ -507,16 +507,16 @@
                                                             </constraints>
                                                         </imageView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="VSo-bx-c9k">
-                                                            <rect key="frame" x="125" y="9" width="160" height="40"/>
+                                                            <rect key="frame" x="125" y="9" width="174.5" height="42"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SongSongSongSong" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zoX-V0-eI6" userLabel="Track Name Label">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="160" height="20"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="174.5" height="21"/>
                                                                     <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="17"/>
                                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SingerSingerSinger" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Yd-bq-46u" userLabel="Artist Name Label">
-                                                                    <rect key="frame" x="0.0" y="20" width="160" height="20"/>
+                                                                    <rect key="frame" x="0.0" y="21" width="174.5" height="21"/>
                                                                     <fontDescription key="fontDescription" name="Montserrat-LightItalic" family="Montserrat" pointSize="17"/>
                                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                     <nil key="highlightedColor"/>
@@ -550,17 +550,15 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please Tap Play Button" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vf5-tp-bRy">
+                                <rect key="frame" x="100.5" y="325" width="174.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jwy-5s-qhz">
                                 <rect key="frame" x="0.0" y="583" width="375" height="84"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cl4-Gv-Xij">
-                                        <rect key="frame" x="277" y="4" width="86" height="37"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Invisible Play Button"/>
-                                        <connections>
-                                            <action selector="invisibleButtonTapped:" destination="QDn-rL-xbF" eventType="touchUpInside" id="Poi-Qz-MGD"/>
-                                        </connections>
-                                    </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Whq-Am-Tfk">
                                         <rect key="frame" x="10" y="12" width="355" height="60"/>
                                         <subviews>
@@ -599,8 +597,21 @@
                                                         <color key="textColor" red="0.25882352941176467" green="0.13333333333333333" blue="0.99607843137254903" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3yc-bF-sOh" userLabel="Invisible Button">
+                                                        <rect key="frame" x="0.0" y="0.0" width="168" height="60"/>
+                                                        <state key="normal" title="Invisible Button"/>
+                                                        <connections>
+                                                            <segue destination="DwJ-ua-HvI" kind="show" id="bkz-Ca-ORS"/>
+                                                        </connections>
+                                                    </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="bottom" secondItem="3yc-bF-sOh" secondAttribute="bottom" id="4Cp-QM-KjQ"/>
+                                                    <constraint firstItem="3yc-bF-sOh" firstAttribute="top" secondItem="Lyv-za-5E0" secondAttribute="top" id="9e3-Nt-t3V"/>
+                                                    <constraint firstAttribute="trailing" secondItem="3yc-bF-sOh" secondAttribute="trailing" constant="-0.5" id="If8-9e-tNV"/>
+                                                    <constraint firstItem="3yc-bF-sOh" firstAttribute="leading" secondItem="Lyv-za-5E0" secondAttribute="leading" id="W4p-uu-2GN"/>
+                                                </constraints>
                                             </view>
                                         </subviews>
                                     </stackView>
@@ -618,8 +629,10 @@
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="L6t-KH-VJ3" secondAttribute="trailing" constant="-16" id="A1z-UG-Fb6"/>
+                            <constraint firstItem="Vf5-tp-bRy" firstAttribute="centerX" secondItem="Ivk-cb-90t" secondAttribute="centerX" id="CIZ-nK-tvX"/>
                             <constraint firstItem="Ivk-cb-90t" firstAttribute="top" secondItem="JtC-HI-0ca" secondAttribute="bottom" id="M3Y-Ey-4oU"/>
                             <constraint firstItem="jEY-qv-fzz" firstAttribute="top" secondItem="jwy-5s-qhz" secondAttribute="bottom" id="Uab-Os-tbL"/>
+                            <constraint firstItem="Vf5-tp-bRy" firstAttribute="top" secondItem="Ivk-cb-90t" secondAttribute="bottom" constant="105" id="bbl-6c-Zsd"/>
                             <constraint firstItem="jwy-5s-qhz" firstAttribute="top" secondItem="L6t-KH-VJ3" secondAttribute="bottom" id="hma-RL-TTc"/>
                             <constraint firstItem="jwy-5s-qhz" firstAttribute="leading" secondItem="4a3-MA-wp4" secondAttribute="leadingMargin" constant="-16" id="ihk-lx-GVH"/>
                             <constraint firstItem="Ivk-cb-90t" firstAttribute="leading" secondItem="4a3-MA-wp4" secondAttribute="leadingMargin" constant="-16" id="j5s-HG-gJs"/>
@@ -631,11 +644,13 @@
                     </view>
                     <navigationItem key="navigationItem" id="yCC-Oa-rQ8"/>
                     <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <connections>
+                        <outlet property="emptyLabel" destination="Vf5-tp-bRy" id="C3x-i2-yVW"/>
                         <outlet property="historyLabel" destination="PMV-h8-dSS" id="M40-fB-AkS"/>
                         <outlet property="historyTableView" destination="L6t-KH-VJ3" id="JCm-B6-FfF"/>
-                        <outlet property="invisibleButton" destination="cl4-Gv-Xij" id="siV-L5-7fB"/>
                         <outlet property="invisiblePhotoUsageButtonOutlet" destination="PGk-Jj-Bmy" id="8Rg-Xn-X4s"/>
+                        <outlet property="invisiblePlayButton" destination="3yc-bF-sOh" id="l37-Up-1gM"/>
                         <outlet property="invisibleUserNameButtonOutlet" destination="hDt-NX-0Yq" id="SYE-Qc-CTv"/>
                         <outlet property="logOutButtonOutlet" destination="tmL-Wu-OHy" id="2QG-jd-Hnh"/>
                         <outlet property="logOutView" destination="jwy-5s-qhz" id="4gM-ca-39F"/>
@@ -676,7 +691,7 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="177"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Genre Label Pop" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Law-og-2Je">
-                                                    <rect key="frame" x="75" y="61" width="226" height="35"/>
+                                                    <rect key="frame" x="65.5" y="61" width="245.5" height="37"/>
                                                     <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="30"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -810,37 +825,37 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="30" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hd5-Aa-tvV" userLabel="Track Time Countdown Label">
-                                        <rect key="frame" x="168" y="115" width="40.5" height="42"/>
+                                        <rect key="frame" x="163.5" y="114" width="50" height="44"/>
                                         <fontDescription key="fontDescription" name="Montserrat-MediumItalic" family="Montserrat" pointSize="36"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1234" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="45D-kh-MVL" userLabel="Left Points Label">
-                                        <rect key="frame" x="67" y="135" width="67" height="35"/>
+                                        <rect key="frame" x="69" y="135" width="65" height="37"/>
                                         <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="30"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5678" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="owN-SQ-VoR" userLabel="Right Points Label">
-                                        <rect key="frame" x="242" y="131" width="67" height="43"/>
+                                        <rect key="frame" x="242" y="131" width="74" height="45"/>
                                         <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="30"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AI" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D8m-Q9-iDm" userLabel="Left User Name Label">
-                                        <rect key="frame" x="93.5" y="120" width="15" height="19"/>
+                                        <rect key="frame" x="93.5" y="121" width="17" height="20"/>
                                         <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="16"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is you" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Yb-tz-7Q9" userLabel="Right User Name Label">
-                                        <rect key="frame" x="238" y="119" width="76.5" height="19"/>
+                                        <rect key="frame" x="239.5" y="120" width="81" height="20"/>
                                         <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="16"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="3WZ-YD-gEw" userLabel="Left Stars Stack View">
-                                        <rect key="frame" x="50" y="176" width="101" height="17"/>
+                                        <rect key="frame" x="51" y="178" width="101" height="17"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Star" translatesAutoresizingMaskIntoConstraints="NO" id="800-Fo-0cP">
                                                 <rect key="frame" x="0.0" y="0.0" width="17" height="17"/>
@@ -860,7 +875,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="8Ee-vt-Ipm" userLabel="Right Stars Stack View">
-                                        <rect key="frame" x="225" y="180" width="101" height="17"/>
+                                        <rect key="frame" x="228.5" y="182" width="101" height="17"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Star" translatesAutoresizingMaskIntoConstraints="NO" id="2cj-HZ-BHN">
                                                 <rect key="frame" x="0.0" y="0.0" width="17" height="17"/>
@@ -1095,19 +1110,19 @@
                                 <rect key="frame" x="0.0" y="20" width="375" height="180"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="99999" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ky9-KW-jMO" userLabel="Score Label">
-                                        <rect key="frame" x="199" y="71" width="83.5" height="35"/>
+                                        <rect key="frame" x="199" y="70" width="95" height="37"/>
                                         <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="30"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is you" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SC7-Qh-2YV" userLabel="User Name Label">
-                                        <rect key="frame" x="203" y="52" width="76.5" height="19"/>
+                                        <rect key="frame" x="206.5" y="50" width="81" height="20"/>
                                         <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="16"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="P3p-ob-hIJ">
-                                        <rect key="frame" x="191" y="112" width="101" height="17"/>
+                                        <rect key="frame" x="197" y="113" width="101" height="17"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Star" translatesAutoresizingMaskIntoConstraints="NO" id="cJS-dk-1MD">
                                                 <rect key="frame" x="0.0" y="0.0" width="17" height="17"/>
@@ -1176,13 +1191,13 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Artist Name Label Mig" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UPs-QP-Ldm" userLabel="Artist Name Label">
-                                                                    <rect key="frame" x="124" y="40" width="198" height="20"/>
+                                                                    <rect key="frame" x="124" y="40" width="198" height="21"/>
                                                                     <fontDescription key="fontDescription" name="Montserrat-LightItalic" family="Montserrat" pointSize="17"/>
                                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12.3" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VAI-NH-UbF" userLabel="Time Used Label">
-                                                                    <rect key="frame" x="321" y="46" width="31" height="14"/>
+                                                                    <rect key="frame" x="321" y="46" width="31" height="15"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="31" id="vq9-uo-2Fp"/>
                                                                     </constraints>
@@ -1319,7 +1334,7 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="King of Song Quiz" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VPg-UZ-Ctf">
-                                        <rect key="frame" x="58.5" y="145" width="259" height="39"/>
+                                        <rect key="frame" x="45.5" y="145" width="285.5" height="39"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="39" id="VOf-GY-Ocl"/>
                                         </constraints>
@@ -1368,14 +1383,14 @@
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Forget password?" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9tS-ZU-rY7" userLabel="ForgetPwLabel">
-                                        <rect key="frame" x="197.5" y="367" width="129.5" height="19"/>
+                                        <rect key="frame" x="189" y="367" width="138" height="20"/>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="16"/>
                                         <color key="textColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.94901960784313721" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Log in" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cq8-dZ-1az" userLabel="Login Label">
-                                        <rect key="frame" x="47" y="408.5" width="280" height="50"/>
+                                        <rect key="frame" x="47" y="407.5" width="280" height="50"/>
                                         <color key="backgroundColor" red="0.92549019607843142" green="0.31764705882352939" blue="0.8784313725490196" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="iT4-iI-7QZ"/>
@@ -1385,7 +1400,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KN3-9H-4bf" userLabel="Goto Sign Up Label">
-                                        <rect key="frame" x="47" y="489.5" width="280" height="21"/>
+                                        <rect key="frame" x="47" y="488.5" width="280" height="22"/>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <attributedString key="attributedText">
                                             <fragment content="Don't have an account?">
@@ -1414,14 +1429,14 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zn7-Zg-UeU">
-                                        <rect key="frame" x="47" y="408.5" width="280" height="50"/>
+                                        <rect key="frame" x="47" y="407.5" width="280" height="50"/>
                                         <state key="normal" title="Invisible Login Button"/>
                                         <connections>
                                             <action selector="loginButtonTapped:" destination="Tjb-TR-M1w" eventType="touchUpInside" id="pxK-Ls-hyJ"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="paE-ln-Lmo">
-                                        <rect key="frame" x="67" y="479.5" width="280" height="60"/>
+                                        <rect key="frame" x="67" y="478.5" width="280" height="60"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="2pq-n4-oFe"/>
                                         </constraints>
@@ -1431,7 +1446,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bmC-gg-dzb" userLabel="Reset Email Password Button">
-                                        <rect key="frame" x="177.5" y="367" width="149.5" height="39"/>
+                                        <rect key="frame" x="169" y="367" width="158" height="40"/>
                                         <state key="normal" title="Invisible Button"/>
                                         <connections>
                                             <action selector="emailResetButtonTapped:" destination="Tjb-TR-M1w" eventType="touchUpInside" id="9gl-z4-eq0"/>
@@ -1555,10 +1570,9 @@
         <!--Playing Navigation Controller-->
         <scene sceneID="p3e-Pm-QAn">
             <objects>
-                <navigationController storyboardIdentifier="PlayingNavigation" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="KPe-Iu-Bpz" customClass="PlayingNavigationController" customModule="King_of_Song_Quiz" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="PlayingNavigation" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" navigationBarHidden="YES" id="KPe-Iu-Bpz" customClass="PlayingNavigationController" customModule="King_of_Song_Quiz" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Sjf-xU-2CA">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -1589,4 +1603,7 @@
         <image name="score_bg" width="414" height="736"/>
         <image name="usericon_new" width="50" height="50"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="bkz-Ca-ORS"/>
+    </inferredMetricsTieBreakers>
 </document>

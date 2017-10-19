@@ -80,7 +80,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
 
-        if UserDefaults.standard.value(forKey: "uid") != nil {
+        if userDefault.value(forKey: "uid") != nil {
 
             let registerVC = storyboard.instantiateViewController(withIdentifier: "PlayingNavigation")
 

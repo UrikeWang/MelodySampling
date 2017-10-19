@@ -31,13 +31,10 @@ class ProfilePageViewController: UIViewController, UITableViewDelegate, UITableV
     let userDefault = UserDefaults.standard
 
     //這個東西砍掉連結,要換成 View
-    @IBOutlet weak var playButtonLabel: UILabel!
 
     @IBOutlet weak var playContentView: UIView!
     
     @IBOutlet weak var playTextLabel: UILabel!
-
-    @IBOutlet weak var invisibleButton: UIButton!
 
     @IBOutlet weak var logOutView: UIView!
 
@@ -48,9 +45,13 @@ class ProfilePageViewController: UIViewController, UITableViewDelegate, UITableV
     @IBOutlet weak var invisiblePhotoUsageButtonOutlet: UIButton!
 
     @IBOutlet weak var historyLabel: UILabel!
+    
+    @IBOutlet weak var emptyLabel: UILabel!
 
     @IBOutlet weak var invisibleUserNameButtonOutlet: UIButton!
 
+    @IBOutlet weak var invisiblePlayButton: UIButton!
+    
     @IBAction func invisibleUserNameButtonTapped(_ sender: UIButton) {
 
         let alertController = UIAlertController(title: NSLocalizedString("Rename", comment: "Tapping for rename action"), message: "", preferredStyle: .alert)
@@ -159,12 +160,6 @@ class ProfilePageViewController: UIViewController, UITableViewDelegate, UITableV
 
     }
 
-    @IBAction func invisibleButtonTapped(_ sender: UIButton) {
-        print("Play button tapped")
-
-        gotoTypeChoosePage(from: self)
-    }
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -174,6 +169,8 @@ class ProfilePageViewController: UIViewController, UITableViewDelegate, UITableV
         
         playTextLabel.text = NSLocalizedString("Play", comment: "Play button text at profile page.")
         
+        invisiblePlayButton.setTitleColor(UIColor.clear, for: .normal)
+        
         invisibleUserNameButtonOutlet.setTitleColor(UIColor.clear, for: .normal)
 
         print("===== Profile Page =====")
@@ -181,8 +178,6 @@ class ProfilePageViewController: UIViewController, UITableViewDelegate, UITableV
         invisiblePhotoUsageButtonOutlet.setTitleColor(UIColor.clear, for: .normal)
 
         logOutButtonOutlet.setTitleColor(UIColor.white, for: .normal)
-
-        invisibleButton.setTitleColor(UIColor.clear, for: .normal)
 
         historyTableView.delegate = self
 
@@ -199,7 +194,7 @@ class ProfilePageViewController: UIViewController, UITableViewDelegate, UITableV
         if let userName = userDefault.object(forKey: "userName") as? String {
             userNameLabel.text = userName
         } else {
-            userNameLabel.text = "This is you"
+            userNameLabel.text = "Player"
         }
 
         let fetchRequest: NSFetchRequest<HistoryMO> = HistoryMO.fetchRequest()
@@ -304,6 +299,8 @@ class ProfilePageViewController: UIViewController, UITableViewDelegate, UITableV
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
+        emptyLabel.isHidden = true
+        
         let radius = self.userProfileImageView.frame.width
 
         userProfileImageView.layer.cornerRadius = radius / 2
@@ -317,21 +314,15 @@ class ProfilePageViewController: UIViewController, UITableViewDelegate, UITableV
         playContentView.layer.cornerRadius = 30.0
         
         if historyList.count == 0 {
-
-            let positionY = self.historyTableView.frame.origin.y
-
-            let framOfTableView = CGRect(origin: CGPoint.init(x: 0, y: positionY), size: CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height - positionY - 40))
-
-            let emptyView = UIView(frame: framOfTableView)
-
-            let emptyLabel = createLabel(at: emptyView, content: NSLocalizedString("Tap Play Button", comment: "No battle record yet"), color: UIColor.white, font: UIFont.mldTextStyleEmptyFont()!)
-
-            createProfilePageHistoryCellBackground(target: emptyView)
-
-            self.view.addSubview(emptyView)
-
-            self.view.addSubview(emptyLabel)
-
+            
+            emptyLabel.isHidden = false
+            
+            emptyLabel.text = NSLocalizedString("Please Tap Play Button", comment: "No battle record yet")
+            emptyLabel.textColor = UIColor.white
+            emptyLabel.font = UIFont.mldTextStyleEmptyFont()!
+            emptyLabel.textAlignment = .center
+            emptyLabel.numberOfLines = 0
+            
         }
 
     }
