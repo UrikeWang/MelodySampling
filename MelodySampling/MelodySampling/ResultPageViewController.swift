@@ -11,17 +11,21 @@ import CoreData
 
 class ResultPageViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate {
 
-    var fetchQuestionController: NSFetchedResultsController<QuestionMO>!
+//    var fetchQuestionController: NSFetchedResultsController<QuestionMO>!
+//
+//    var fetchResultsController: NSFetchedResultsController<ResultMO>!
 
-    var fetchResultsController: NSFetchedResultsController<ResultMO>!
-
+    let userDefault = UserDefaults.standard
+    
     var historyMO: HistoryMO!
 
-    var questions: [QuestionMO] = []
-
-    var resultMO: ResultMO!
-
-    var results: [ResultMO] = []
+//    var questions: [QuestionMO] = []
+//
+//    var resultMO: ResultMO!
+//
+//    var results: [ResultMO] = []
+    
+    var navigationResults = [ResultToShow]()
 
     var trackNameArray = [String]()
 
@@ -30,6 +34,12 @@ class ResultPageViewController: UIViewController, UITableViewDelegate, UITableVi
     var resultsArray = [EachSongResult]()
 
     let documentsURL = NSHomeDirectory() + "/Documents/"
+    
+    var player: AVAudioPlayer?
+    
+    let path: String = NSHomeDirectory() + "/Documents/"
+    
+    let songFileNameList = ["song0.m4a", "song1.m4a", "song2.m4a", "song3.m4a", "song4.m4a"]
 
     @IBOutlet weak var userImageView: UIImageView!
 
@@ -37,7 +47,16 @@ class ResultPageViewController: UIViewController, UITableViewDelegate, UITableVi
 
     @IBAction func invisibleNextGameButtonTapped(_ sender: UIButton) {
         saveResultToHistory()
-        gotoTypeChoosePage(from: self)
+        
+        // MARK: The [1] is TypeChooseViewController
+        //swiftlint:disable force_cast
+        let navigationViewControllers: [UIViewController] = self.navigationController?.viewControllers as! [UIViewController]
+        //swiftlint:enable
+        print("Pop to navigationControllers[1], and seet player to nil")
+        
+        self.player?.pause()
+        
+        self.navigationController?.popToViewController(navigationViewControllers[1], animated: true)
     }
 
     @IBOutlet weak var invisibleGoHomeButtonOutlet: UIButton!
