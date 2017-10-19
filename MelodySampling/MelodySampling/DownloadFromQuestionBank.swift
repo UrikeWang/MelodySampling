@@ -24,17 +24,24 @@ class DownloadManager {
 
     let userDefault = UserDefaults.standard
 
-    func downloadRandomQuestion(selected language: String, max bankMaxNumber: Int, viewController thisView: UIViewController) {
+    func downloadRandomQuestion(selected language: String, max bankMaxNumber: Int, viewController thisController: UIViewController) {
 
         var downloadCount = 0
 
         var downloadPercentage: Double = 0
-
+        
+        // MARK: Init the question array of Navigation here
+        let selfNavigation = thisController.navigationController as? PlayingNavigationController
+        
+        selfNavigation?.questionArray = [EachQuestion]()
+        selfNavigation?.distractorArray = [String]()
+        
+        print("questionArray in navigation was inited")
         print("目標題庫是 \(language)")
 
-        let progressContentView = UIView(frame: CGRect(x: 0, y: 0, width: thisView.view.frame.width, height: thisView.view.frame.height))
+        let progressContentView = UIView(frame: CGRect(x: 0, y: 0, width: thisController.view.frame.width, height: thisController.view.frame.height))
 
-        let progressRing = UICircularProgressRingView(frame: CGRect(x: thisView.view.frame.width / 2 - 120, y: thisView.view.frame.height / 2 - 120, width: 240, height: 240))
+        let progressRing = UICircularProgressRingView(frame: CGRect(x: thisController.view.frame.width / 2 - 120, y: thisController.view.frame.height / 2 - 120, width: 240, height: 240))
 
         progressRing.maxValue = 100
 
@@ -47,7 +54,7 @@ class DownloadManager {
 
         progressContentView.insertSubview(progressRing, at: 1)
 
-        thisView.view.addSubview(progressContentView)
+        thisController.view.addSubview(progressContentView)
 
         // MARK: Download starting time for Google analytic
         let downloadStartTime = Date().timeIntervalSince1970
@@ -88,6 +95,7 @@ class DownloadManager {
                     primaryGenreName: json["primaryGenreName"].stringValue
                 )
 
+                // MARK: Delete the code after navigation pass value func done
                 if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
 
                     self.questionMO = QuestionMO(context: appDelegate.persistentContainer.viewContext)
@@ -127,7 +135,17 @@ class DownloadManager {
 
                 let distractorManager = DistractorManager()
 
-                _ = distractorManager.getDistractorIDArray(distractorArrayCount: 40, distractorBankCount: 400, genre: language)
+                var distractorCounter: Int
+                
+                if let unwrapCounter = UserDefaults.standard.object(forKey: "trackCounter") as? Int {
+                    
+                    distractorCounter = unwrapCounter
+                    
+                } else {
+                    distractorCounter = 1200
+                }
+                
+                _ = distractorManager.getDistractorIDArray(distractorArrayCount: 40, distractorBankCount: distractorCounter, genre: language)
 
                 Alamofire.download(eachQuestion.previewUrl, to: destination).downloadProgress { progress in
 
@@ -152,9 +170,16 @@ class DownloadManager {
 
                                 Analytics.logEvent("DownloadTime", parameters: [language: downloadPassedTime as NSObject, "DownloadPassedTime": downloadPassedTime as NSObject])
 
-                                let registerVC = thisView.storyboard?.instantiateViewController(withIdentifier: "PlayPage")
-
-                                    thisView.present(registerVC!, animated: true, completion: nil)
+                                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                                
+                                let destinationViewController = storyboard.instantiateViewController(withIdentifier: "PlayPage")
+                                thisController.navigationController?.pushViewController(destinationViewController, animated: true)
+                                
+                                let delayTime = DispatchTime.now() + .seconds(1)
+                                
+                                DispatchQueue.main.asyncAfter(deadline: delayTime, execute: {
+                                    progressContentView.removeFromSuperview()
+                                })
 
                             }
                         }

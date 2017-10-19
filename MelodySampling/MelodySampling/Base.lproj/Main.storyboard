@@ -410,7 +410,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ivk-cb-90t" userLabel="Profile Content View">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="200"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="249" verticalHuggingPriority="249" image="icon_player" translatesAutoresizingMaskIntoConstraints="NO" id="o2i-xB-Gof" userLabel="User Profile Image View">
                                         <rect key="frame" x="144.5" y="30" width="86" height="86"/>
@@ -474,7 +474,7 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="L6t-KH-VJ3">
-                                <rect key="frame" x="0.0" y="200" width="375" height="383"/>
+                                <rect key="frame" x="0.0" y="220" width="375" height="363"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HistoryCell" id="hbi-cD-5x0" customClass="HistoryTableViewCell" customModule="King_of_Song_Quiz" customModuleProvider="target">
@@ -540,7 +540,7 @@
                                 </prototypes>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please Tap Play Button" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vf5-tp-bRy">
-                                <rect key="frame" x="100.5" y="305" width="174.5" height="20.5"/>
+                                <rect key="frame" x="100.5" y="325" width="174.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -620,7 +620,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="L6t-KH-VJ3" secondAttribute="trailing" constant="-16" id="A1z-UG-Fb6"/>
                             <constraint firstItem="Vf5-tp-bRy" firstAttribute="centerX" secondItem="Ivk-cb-90t" secondAttribute="centerX" id="CIZ-nK-tvX"/>
                             <constraint firstItem="UnQ-dc-PVg" firstAttribute="bottom" secondItem="jwy-5s-qhz" secondAttribute="bottom" id="Uab-Os-tbL"/>
-                            <constraint firstItem="UnQ-dc-PVg" firstAttribute="top" secondItem="Ivk-cb-90t" secondAttribute="top" constant="20" id="YFs-fH-RXp"/>
+                            <constraint firstItem="UnQ-dc-PVg" firstAttribute="top" secondItem="Ivk-cb-90t" secondAttribute="top" id="YFs-fH-RXp"/>
                             <constraint firstItem="Vf5-tp-bRy" firstAttribute="top" secondItem="Ivk-cb-90t" secondAttribute="bottom" constant="105" id="bbl-6c-Zsd"/>
                             <constraint firstItem="Ivk-cb-90t" firstAttribute="leading" secondItem="UnQ-dc-PVg" secondAttribute="leading" id="dnd-PK-dL9"/>
                             <constraint firstItem="UnQ-dc-PVg" firstAttribute="trailing" secondItem="Ivk-cb-90t" secondAttribute="trailing" id="gUU-Hb-oCV"/>
@@ -677,7 +677,7 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="177"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Genre Label Pop" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Law-og-2Je">
-                                                    <rect key="frame" x="65.5" y="61" width="245.5" height="37"/>
+                                                    <rect key="frame" x="74.5" y="61" width="226" height="35"/>
                                                     <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="30"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -728,23 +728,26 @@
                                     <constraint firstAttribute="height" constant="60" id="toP-2H-nse"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wIo-6v-FjZ" userLabel="Invisible Button">
-                                <rect key="frame" x="-17" y="0.0" width="127" height="75"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wIo-6v-FjZ" userLabel="Invisible Button">
+                                <rect key="frame" x="-39" y="51" width="125" height="40"/>
                                 <state key="normal" title="Invisible"/>
                                 <connections>
-                                    <segue destination="KPe-Iu-Bpz" kind="show" id="kLS-fL-JEV"/>
+                                    <action selector="invisibleButtonTapped:" destination="DwJ-ua-HvI" eventType="touchUpInside" id="soE-OS-JIx"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="wIo-6v-FjZ" firstAttribute="leading" secondItem="oXp-Z9-xfB" secondAttribute="leading" id="3CC-SU-yxJ"/>
                             <constraint firstItem="oXp-Z9-xfB" firstAttribute="top" secondItem="wvd-T2-0bu" secondAttribute="top" constant="11" id="CXF-BK-NF2"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="JmA-u8-RS4" secondAttribute="bottom" id="XnT-AW-7RQ"/>
-                            <constraint firstItem="wvd-T2-0bu" firstAttribute="trailing" secondItem="JmA-u8-RS4" secondAttribute="trailing" id="bOi-Ae-wbD"/>
-                            <constraint firstAttribute="topMargin" secondItem="JmA-u8-RS4" secondAttribute="top" id="gUe-v7-Van"/>
+                            <constraint firstItem="wvd-T2-0bu" firstAttribute="top" secondItem="JmA-u8-RS4" secondAttribute="top" id="K12-io-eC0"/>
+                            <constraint firstItem="wIo-6v-FjZ" firstAttribute="bottom" secondItem="oXp-Z9-xfB" secondAttribute="bottom" id="MfN-hj-pgp"/>
+                            <constraint firstItem="JmA-u8-RS4" firstAttribute="leading" secondItem="wvd-T2-0bu" secondAttribute="leading" id="NIO-20-k4o"/>
+                            <constraint firstItem="wIo-6v-FjZ" firstAttribute="top" secondItem="oXp-Z9-xfB" secondAttribute="top" constant="20" id="NK1-b6-qsD"/>
+                            <constraint firstItem="wvd-T2-0bu" firstAttribute="bottom" secondItem="JmA-u8-RS4" secondAttribute="bottom" id="ORb-js-veZ"/>
+                            <constraint firstItem="wvd-T2-0bu" firstAttribute="trailing" secondItem="JmA-u8-RS4" secondAttribute="trailing" id="XrM-t4-tWC"/>
+                            <constraint firstItem="wIo-6v-FjZ" firstAttribute="trailing" secondItem="oXp-Z9-xfB" secondAttribute="trailing" constant="10" id="smC-jq-OiA"/>
                             <constraint firstItem="oXp-Z9-xfB" firstAttribute="leading" secondItem="PXI-UN-PbM" secondAttribute="leadingMargin" constant="-55" id="wWp-4n-00n"/>
-                            <constraint firstItem="JmA-u8-RS4" firstAttribute="leading" secondItem="wvd-T2-0bu" secondAttribute="leading" id="yTx-O0-5dQ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="wvd-T2-0bu"/>
                     </view>
@@ -1581,7 +1584,4 @@
         <image name="score_bg" width="414" height="736"/>
         <image name="usericon_new" width="50" height="50"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="bkz-Ca-ORS"/>
-    </inferredMetricsTieBreakers>
 </document>
