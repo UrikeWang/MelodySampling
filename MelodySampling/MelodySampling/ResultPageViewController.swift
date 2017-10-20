@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import AVFoundation
 
 class ResultPageViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate {
 
@@ -30,7 +31,11 @@ class ResultPageViewController: UIViewController, UITableViewDelegate, UITableVi
     var trackNameArray = [String]()
 
     var artistNameArray = [String]()
-
+    
+    @IBOutlet weak var nextGameContentView: UIView!
+    
+    @IBOutlet weak var sameGenreContentView: UIView!
+    
     var resultsArray = [EachSongResult]()
 
     let documentsURL = NSHomeDirectory() + "/Documents/"
@@ -72,17 +77,18 @@ class ResultPageViewController: UIViewController, UITableViewDelegate, UITableVi
 
     @IBOutlet weak var lowerView: UIView!
 
-    @IBOutlet weak var nextBattleLabel: UILabel!
-
-    @IBOutlet weak var nextBattleTextLabel: UILabel!
-
-    let userDefault = UserDefaults.standard
+    // MARK: Delete this
+//    @IBOutlet weak var nextBattleLabel: UILabel!
+//
+//    @IBOutlet weak var nextBattleTextLabel: UILabel!
 
     @IBOutlet weak var userNameLabel: UILabel!
 
     var score: Double = 0
 
     @IBOutlet weak var scoreLabel: UILabel!
+    
+    @IBOutlet weak var playAgainLabel: UILabel!
 
     @IBOutlet weak var userProfileImageView: UIImageView!
 
