@@ -1057,36 +1057,41 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N7c-UD-ptc" userLabel="Next Game Container View">
                                                 <rect key="frame" x="0.0" y="0.0" width="170" height="63"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bw0-qO-mzr" userLabel="Next Game Text Label">
-                                                        <rect key="frame" x="38" y="3" width="102" height="50"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose Category" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bw0-qO-mzr" userLabel="Next Game Text Label">
+                                                        <rect key="frame" x="66" y="5" width="96" height="53"/>
                                                         <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="18"/>
                                                         <color key="textColor" red="0.25882352939999997" green="0.1333333333" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c0u-Mm-fIx" userLabel="Next Game Content Label">
-                                                        <rect key="frame" x="38" y="3" width="101" height="50"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                        <color key="backgroundColor" red="0.80392156862745101" green="0.97254901960784312" blue="0.94901960784313721" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <color key="textColor" red="0.25882352941176467" green="0.13333333333333333" blue="0.99607843137254903" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lii-t7-KCO" userLabel="Invisible Next Game Button">
-                                                        <rect key="frame" x="38" y="3" width="102" height="50"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_fight" translatesAutoresizingMaskIntoConstraints="NO" id="GON-DS-O69">
+                                                        <rect key="frame" x="5" y="5" width="53" height="53"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" secondItem="GON-DS-O69" secondAttribute="height" multiplier="1:1" id="rwe-PI-xId"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lii-t7-KCO" userLabel="Invisible Next Game Button">
+                                                        <rect key="frame" x="0.0" y="0.0" width="170" height="63"/>
                                                         <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="18"/>
-                                                        <state key="normal" title="Play again"/>
+                                                        <state key="normal" title="Choose Category"/>
                                                         <connections>
                                                             <action selector="invisibleNextGameButtonTapped:" destination="sgS-eJ-ZD6" eventType="touchUpInside" id="KWf-FW-OuR"/>
                                                         </connections>
                                                     </button>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon_fight" translatesAutoresizingMaskIntoConstraints="NO" id="GON-DS-O69">
-                                                        <rect key="frame" x="8" y="8" width="37" height="40"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    </imageView>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="bottom" secondItem="lii-t7-KCO" secondAttribute="bottom" id="2Eb-Gk-DLL"/>
+                                                    <constraint firstItem="Bw0-qO-mzr" firstAttribute="height" secondItem="GON-DS-O69" secondAttribute="height" id="2rZ-g3-kqq"/>
+                                                    <constraint firstAttribute="trailing" secondItem="lii-t7-KCO" secondAttribute="trailing" id="La6-Ly-R7J"/>
+                                                    <constraint firstItem="GON-DS-O69" firstAttribute="leading" secondItem="N7c-UD-ptc" secondAttribute="leading" constant="5" id="LtG-7n-HNW"/>
+                                                    <constraint firstItem="lii-t7-KCO" firstAttribute="leading" secondItem="N7c-UD-ptc" secondAttribute="leading" id="aPD-0r-IUw"/>
+                                                    <constraint firstAttribute="trailing" secondItem="Bw0-qO-mzr" secondAttribute="trailing" constant="8" id="b0B-Kg-XwI"/>
+                                                    <constraint firstItem="GON-DS-O69" firstAttribute="top" secondItem="N7c-UD-ptc" secondAttribute="top" constant="5" id="c6N-Sy-D2b"/>
+                                                    <constraint firstItem="Bw0-qO-mzr" firstAttribute="leading" secondItem="GON-DS-O69" secondAttribute="trailing" constant="8" id="cTZ-q3-iTv"/>
+                                                    <constraint firstItem="lii-t7-KCO" firstAttribute="top" secondItem="N7c-UD-ptc" secondAttribute="top" id="fKT-Os-gtZ"/>
+                                                    <constraint firstItem="Bw0-qO-mzr" firstAttribute="top" secondItem="N7c-UD-ptc" secondAttribute="top" constant="5" id="ljD-Tk-i2a"/>
+                                                    <constraint firstItem="GON-DS-O69" firstAttribute="centerY" secondItem="N7c-UD-ptc" secondAttribute="centerY" id="p0O-3Q-dhN"/>
+                                                </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="psb-U3-WSd" userLabel="Same Genre View">
                                                 <rect key="frame" x="185" y="0.0" width="170" height="63"/>
@@ -1100,6 +1105,9 @@
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oYh-LV-ga7" userLabel="Play Again Button">
                                                         <rect key="frame" x="0.0" y="0.0" width="170" height="63"/>
                                                         <state key="normal" title="Button"/>
+                                                        <connections>
+                                                            <action selector="invisiblePlayAgainButtonTapped:" destination="sgS-eJ-ZD6" eventType="touchUpInside" id="WjC-fW-0tf"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1141,7 +1149,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="P3p-ob-hIJ">
-                                        <rect key="frame" x="191" y="112" width="101" height="17"/>
+                                        <rect key="frame" x="190.5" y="112" width="101" height="17"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Star" translatesAutoresizingMaskIntoConstraints="NO" id="cJS-dk-1MD">
                                                 <rect key="frame" x="0.0" y="0.0" width="17" height="17"/>
@@ -1180,7 +1188,7 @@
                                     <constraint firstItem="Ky9-KW-jMO" firstAttribute="centerY" secondItem="b5y-y9-ROk" secondAttribute="centerY" id="tqh-RE-KXi"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="80" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ON0-XX-kiJ">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="80" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ON0-XX-kiJ">
                                 <rect key="frame" x="0.0" y="200" width="375" height="380"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -1318,7 +1326,9 @@
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
                     <connections>
+                        <outlet property="chooseCategoryLabel" destination="Bw0-qO-mzr" id="f1M-fT-0bp"/>
                         <outlet property="invisibleNextGameButtonOutlet" destination="lii-t7-KCO" id="nJO-hQ-aJF"/>
+                        <outlet property="invisiblePlayAgainButtonOutlet" destination="oYh-LV-ga7" id="duq-ym-vum"/>
                         <outlet property="lowerView" destination="tAC-Hl-2rc" id="7Lm-0q-sRQ"/>
                         <outlet property="nextGameContentView" destination="N7c-UD-ptc" id="DRb-zt-Sme"/>
                         <outlet property="playAgainLabel" destination="snN-PL-QaV" id="qt3-Eu-TMw"/>

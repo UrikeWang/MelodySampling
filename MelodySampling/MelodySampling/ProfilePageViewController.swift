@@ -169,69 +169,34 @@ class ProfilePageViewController: UIViewController, UITableViewDelegate, UITableV
         
         playTextLabel.text = NSLocalizedString("Play", comment: "Play button text at profile page.")
         
+        invisibleUserNameButtonOutlet.setTitleColor(UIColor.clear, for: .normal)
+        
+        print("===== Profile Page =====")
+        
+        invisiblePhotoUsageButtonOutlet.setTitleColor(UIColor.clear, for: .normal)
+        
+        logOutButtonOutlet.setTitleColor(UIColor.white, for: .normal)
+        
         invisiblePlayButton.setTitleColor(UIColor.clear, for: .normal)
         
-        invisibleUserNameButtonOutlet.setTitleColor(UIColor.clear, for: .normal)
-
-        print("===== Profile Page =====")
-
-        invisiblePhotoUsageButtonOutlet.setTitleColor(UIColor.clear, for: .normal)
-
-        logOutButtonOutlet.setTitleColor(UIColor.white, for: .normal)
-
         historyTableView.delegate = self
-
+        
         historyTableView.dataSource = self
-
+        
         createUserProfileImage(targe: userProfileImageView)
-
+        
         if let userProfileImageData = userDefault.object(forKey: "UserProfileImage") as? Data {
-
+            
             userProfileImageView.image = UIImage(data: userProfileImageData)
-
+            
         }
-
+        
         if let userName = userDefault.object(forKey: "userName") as? String {
             userNameLabel.text = userName
         } else {
             userNameLabel.text = "Player"
         }
-
-        let fetchRequest: NSFetchRequest<HistoryMO> = HistoryMO.fetchRequest()
-
-        let sortDescriptor = NSSortDescriptor(key: "timeIndex", ascending: false)
-
-        fetchRequest.sortDescriptors = [sortDescriptor]
-
-        if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
-
-            let context = appDelegate.persistentContainer.viewContext
-
-            fetchResultController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
-
-            fetchResultController.delegate = self
-
-            do {
-
-                try fetchResultController.performFetch()
-
-                if let fetchedObjects = fetchResultController.fetchedObjects {
-
-                    historyList = fetchedObjects
-
-                    historyTableView.reloadData()
-
-                }
-
-            } catch {
-                historyList = []
-                print(error)
-            }
-
-        }
     }
-
-
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return historyList.count
@@ -278,7 +243,12 @@ class ProfilePageViewController: UIViewController, UITableViewDelegate, UITableV
 
             DispatchQueue.global().async {
 
-                guard let artworkUrl = self.historyList[indexPath.row].artworkUrl, let url = URL(string: artworkUrl) else { return }
+                guard
+                    let artworkUrl = self.historyList[indexPath.row].artworkUrl,
+                    let url = URL(string: artworkUrl)
+                    else {
+                        return
+                    }
 
                 if let data = try? Data(contentsOf: url) {
 
@@ -312,6 +282,40 @@ class ProfilePageViewController: UIViewController, UITableViewDelegate, UITableV
         //createNextBattleOfResult(target: playButtonLabel)
 
         playContentView.layer.cornerRadius = 30.0
+        
+        // ====== fetch history CoreData here =====
+        
+        let fetchRequest: NSFetchRequest<HistoryMO> = HistoryMO.fetchRequest()
+        
+        let sortDescriptor = NSSortDescriptor(key: "timeIndex", ascending: false)
+        
+        fetchRequest.sortDescriptors = [sortDescriptor]
+        
+        if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
+            
+            let context = appDelegate.persistentContainer.viewContext
+            
+            fetchResultController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
+            
+            fetchResultController.delegate = self
+            
+            do {
+                
+                try fetchResultController.performFetch()
+                
+                if let fetchedObjects = fetchResultController.fetchedObjects {
+                    
+                    historyList = fetchedObjects
+                    
+                    historyTableView.reloadData()
+                    
+                }
+                
+            } catch {
+                historyList = []
+                print(error)
+            }
+        }
         
         if historyList.count == 0 {
             
