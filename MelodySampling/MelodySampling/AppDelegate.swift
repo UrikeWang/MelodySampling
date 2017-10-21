@@ -108,6 +108,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         return true
     }
+    
+    func switchToPlayNavigationController() {
+        
+        let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
+        let navigationController = storyboard.instantiateViewController(withIdentifier: "PlayingNavigation")
+        self.window?.rootViewController = navigationController
+    }
+    
+    func switchToLandingNavigationController() {
+        
+        let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
+        let navigationController = storyboard.instantiateViewController(withIdentifier: "LandingNavigation")
+        self.window?.rootViewController = navigationController
+    }
 
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

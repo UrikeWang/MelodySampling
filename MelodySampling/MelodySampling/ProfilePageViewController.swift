@@ -138,7 +138,11 @@ class ProfilePageViewController: UIViewController, UITableViewDelegate, UITableV
 
             checkCoredata.clearHistoryMO()
 
-            gotoLandingPage(from: self)
+//            gotoLandingPage(from: self)
+            //swiftlint:disable force_cast
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            appDelegate.switchToLandingNavigationController()
+            //swiftlint:enable
         }
 
         let cancelAction = UIAlertAction(title: NSLocalizedString("Cancel", comment: "Cancel on sign out action"), style: .default) { (_) in

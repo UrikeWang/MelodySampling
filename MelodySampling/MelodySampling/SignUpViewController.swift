@@ -45,9 +45,11 @@ class SignUpViewController: UIViewController {
 
     @IBAction func backButtonTapped(_ sender: UIButton) {
 
-        self.dismiss(animated: true) { _ in
-            gotoLandingPage(from: self)
-        }
+//        self.dismiss(animated: true) { _ in
+//            gotoLandingPage(from: self)
+//        }
+        
+        self.navigationController?.popToRootViewController(animated: true)
 
     }
 
@@ -55,7 +57,12 @@ class SignUpViewController: UIViewController {
 
     @IBAction func gotoLoginButonTapped(_ sender: UIButton) {
 
-            gotoLoginPage(from: self)
+//            gotoLoginPage(from: self)
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        let destinationViewController = storyboard.instantiateViewController(withIdentifier: "LoginPage")
+        
+        self.navigationController?.pushViewController(destinationViewController, animated: true)
 
     }
 
@@ -130,7 +137,14 @@ class SignUpViewController: UIViewController {
                     UserDefaults.standard.set(user.uid, forKey: "uid")
                     UserDefaults.standard.set(self.userFullName, forKey:"userName")
                     UserDefaults.standard.set(user.isAnonymous, forKey:"isAnonymous")
-                    gotoTypeChoosePage(from: self)
+//                    gotoTypeChoosePage(from: self)
+                    
+                    print("appdelegate.switchToPlayNavigationController was triggered.")
+                    
+                    //swiftlint:disable force_cast
+                    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                    appDelegate.switchToPlayNavigationController()
+                    //swiftlint:enable
 
                 }
             } else {
@@ -159,7 +173,7 @@ class SignUpViewController: UIViewController {
 
         opacityView.frame = UIScreen.main.bounds
 
-        self.navigationController?.isNavigationBarHidden = false
+        self.navigationController?.isNavigationBarHidden = true
 
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
 

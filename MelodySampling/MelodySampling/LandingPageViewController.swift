@@ -42,8 +42,14 @@ class LandingPageViewController: UIViewController {
 
         guard let startTime = self.startTime else { return }
 
-        gotoLoginPage(from: self)
-
+//        gotoLoginPage(from: self)
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        let destinationViewController = storyboard.instantiateViewController(withIdentifier: "LoginPage")
+        
+        self.navigationController?.pushViewController(destinationViewController, animated: true)
+        
         Analytics.logEvent("UserGotoLoginPage", parameters: ["timePassed": currentTime - startTime])
 
     }
@@ -58,7 +64,13 @@ class LandingPageViewController: UIViewController {
 
         guard let startTime = self.startTime else { return }
 
-        gotoSignupPage(from: self)
+//        gotoSignupPage(from: self)
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        let destinationViewController = storyboard.instantiateViewController(withIdentifier: "SignupPage")
+        
+        self.navigationController?.pushViewController(destinationViewController, animated: true)
 
         Analytics.logEvent("UserGotoSignUpPage", parameters: ["timePassed": currentTime - startTime])
     }
@@ -124,7 +136,14 @@ class LandingPageViewController: UIViewController {
                 ])
             Analytics.logEvent("AnonymousUser", parameters: ["count": 1 as NSObject])
 
-            gotoProfilePage(from: self)
+            print("appdelegate.switchToPlayNavigationController was triggered.")
+            
+            //swiftlint:disable force_cast
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            appDelegate.switchToPlayNavigationController()
+            //swiftlint:enable
+            
+//            gotoProfilePage(from: self)
 
         }
 
