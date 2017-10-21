@@ -17,6 +17,15 @@ class TypeChooseViewController: UIViewController, UITableViewDataSource, UITable
     @IBOutlet weak var userIconBackgroundView: UIView!
 
     @IBOutlet weak var invisibleButton: UIButton!
+    
+    @IBAction func invisibleButtonTapped(_ sender: UIButton) {
+        
+        print("popToRootViewController func triggered")
+        
+        userIconBackgroundView.isHidden = true
+        self.navigationController?.popToRootViewController(animated: true)
+        
+    }
 
     @IBOutlet weak var tableView: UITableView!
 
@@ -45,6 +54,15 @@ class TypeChooseViewController: UIViewController, UITableViewDataSource, UITable
 
         invisibleButton.setTitleColor(UIColor.clear, for: .normal)
 
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        let delayTime = DispatchTime.now() + .milliseconds(350)
+        DispatchQueue.main.asyncAfter(deadline: delayTime, execute: {
+            self.userIconBackgroundView.isHidden = false
+        })
     }
 
     override func didReceiveMemoryWarning() {
@@ -129,6 +147,7 @@ class TypeChooseViewController: UIViewController, UITableViewDataSource, UITable
 
     func triggerToStart(selected language: String) {
 
+        // MARK: Delete CoreData code aft 1.1.10 or later
         let checkQuestion = CheckQuestionInCoreData()
 
         checkQuestion.clearQuestionMO()
@@ -136,9 +155,20 @@ class TypeChooseViewController: UIViewController, UITableViewDataSource, UITable
         checkQuestion.clearResultMO()
 
         let downloadManager = DownloadManager()
+        
+        var trackCounter: Int
+        
+        if let unwrapCounter = UserDefaults.standard.object(forKey: "trackCounter") as? Int {
+            
+            trackCounter = unwrapCounter
+            
+        } else {
+            trackCounter = 1200
+        }
+        
+        print("trackCounter: \(trackCounter)")
 
-        downloadManager.downloadRandomQuestion(selected: language, max: 1200, viewController: self)
+        downloadManager.downloadRandomQuestion(selected: language, max: trackCounter, viewController: self)
 
     }
-
 }

@@ -16,6 +16,7 @@ xcuserdata/
 *.xcuserstate
 UserInterfaceState.xcuserstate
 tokens.swift
-*.plist
+Info.plist
+GoogleService-Info.plist
 
 

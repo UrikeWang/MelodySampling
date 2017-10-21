@@ -26,17 +26,21 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
 
     var timeCountdown: Int = 3
 
-    var fetchResultController: NSFetchedResultsController<QuestionMO>!
+//    var fetchResultController: NSFetchedResultsController<QuestionMO>!
+//
+//    var fetchDistractorController: NSFetchedResultsController<DistractorMO>!
 
-    var fetchDistractorController: NSFetchedResultsController<DistractorMO>!
-
-    var resultMO: ResultMO!
-
-    var distractorMO: DistractorMO!
-
-    var distractors: [DistractorMO] = []
-
-    var questions: [QuestionMO] = []
+    var distractors = [String]()
+    
+    var fakeList = [[String]]()
+    
+//    var resultMO: ResultMO!
+//
+//    var distractorMO: DistractorMO!
+//
+//    var distractors: [DistractorMO] = []
+//
+//    var questions: [QuestionMO] = []
 
     var player: AVAudioPlayer?
 
@@ -47,14 +51,18 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
     var currentTrack: Int = 0
 
     var prepareTrack: Int = 1
-
+    // MARK: What if one day, the source is not m4a file?
     let songFileNameList = ["song0.m4a", "song1.m4a", "song2.m4a", "song3.m4a", "song4.m4a"]
 
     var shuffledList = [String]()
 
     var artistList = [String]()
 
+    var sendToNavigation = [ResultToShow]()
+
     var resultList = [EachSongResult]()
+    
+    var navigationQuestionArray = [EachQuestion]()
 
     var timer = Timer()
 
@@ -118,6 +126,61 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let selfNavigation = self.navigationController as? PlayingNavigationController
+        
+        if let questions = selfNavigation?.questionArray,
+            let selfDistractors = selfNavigation?.distractorArray {
+            
+            print("===== This is test Navigation stored property =====")
+            
+            navigationQuestionArray = questions
+            
+            distractors = selfDistractors
+            
+            let fakeList0 = [
+                distractors[0],
+                distractors[1],
+                distractors[2]
+            ]
+            
+            let fakeList1 = [
+                distractors[3],
+                distractors[4],
+                distractors[5]
+            ]
+            
+            let fakeList2 = [
+                distractors[6],
+                distractors[7],
+                distractors[8]
+            ]
+            
+            let fakeList3 = [
+                distractors[9],
+                distractors[10],
+                distractors[11]
+            ]
+            
+            let fakeList4 = [
+                distractors[12],
+                distractors[13],
+                distractors[14]
+            ]
+            
+            fakeList = [
+                fakeList0,
+                fakeList1,
+                fakeList2,
+                fakeList3,
+                fakeList4
+            ]
+            
+            print(navigationQuestionArray)
+        } else {
+            // TODO: Error handling here, if something wrong, present a UIAlertwindow with "OK" button, after user touch the button, self.navigationController.popToRootViewController activate.
+            print("Something wrong in navigation stored property")
+        }
 
         if let userProfileImageData = userDefault.object(forKey: "UserProfileImage") as? Data {
 
@@ -144,58 +207,60 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
             userNameLabel.text = "Player"
         }
 
-        let fetchRequest: NSFetchRequest<QuestionMO> = QuestionMO.fetchRequest()
-
-        let sortDescriptor = NSSortDescriptor(key: "indexNo", ascending: true)
-
-        fetchRequest.sortDescriptors = [sortDescriptor]
-
-        if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
-
-            let context = appDelegate.persistentContainer.viewContext
-
-            fetchResultController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
-
-            fetchResultController.delegate = self
-
-            do {
-
-                try fetchResultController.performFetch()
-
-                if let fetchedObjects = fetchResultController.fetchedObjects {
-
-                    questions = fetchedObjects
-
-                }
-
-            } catch {
-                print(error)
-            }
-
-            let distractorRequest: NSFetchRequest<DistractorMO> = DistractorMO.fetchRequest()
-
-            do {
-
-                distractors = try context.fetch(distractorRequest)
-
-            } catch {
-                print(error)
-            }
-
-        }
-        print("現在 CoreData 中有 \(questions.count) 筆資料")
+//        let fetchRequest: NSFetchRequest<QuestionMO> = QuestionMO.fetchRequest()
+//
+//        let sortDescriptor = NSSortDescriptor(key: "indexNo", ascending: true)
+//
+//        fetchRequest.sortDescriptors = [sortDescriptor]
+//
+//        if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
+//
+//            let context = appDelegate.persistentContainer.viewContext
+//
+//            fetchResultController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
+//
+//            fetchResultController.delegate = self
+//
+//            do {
+//
+//                try fetchResultController.performFetch()
+//
+//                if let fetchedObjects = fetchResultController.fetchedObjects {
+//
+//                    questions = fetchedObjects
+//
+//                }
+//
+//            } catch {
+//                print(error)
+//            }
+//
+//            let distractorRequest: NSFetchRequest<DistractorMO> = DistractorMO.fetchRequest()
+//
+//            do {
+//
+//                distractors = try context.fetch(distractorRequest)
+//
+//            } catch {
+//                print(error)
+//            }
+//
+//        }
+//        print("現在 CoreData 中有 \(questions.count) 筆資料")
 
         var counter = 0
 
-        for question in questions {
-            if let trackName = question.trackName, let artistName = question.artistName, let _ = questions.index(of: question) {
+        for question in navigationQuestionArray {
+            let trackName = question.trackName
+            let artistName = question.artistName
+
                 trackNameArray.append(trackName)
                 artistNameArray.append(artistName)
 
                 print("===== Play Page =====")
                 print("第 \(counter) 首, artistName: \(String(describing: question.artistName)), trackName: \(String(describing: question.trackName))")
                 counter += 1
-            }
+
         }
 
         trackTimeCountdownLabel.text = "\(trackTimeCountdown)"
@@ -215,7 +280,7 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
         //swiftlint:disable force_cast
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! AnswerTableViewCell
 
-        if shuffledList != nil && shuffledList.count != 0 {
+        if shuffledList.count == 4 {
 
             cell.answerLabel.text = "\(shuffledList[indexPath.section])"
         } else {
@@ -357,6 +422,7 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
         }
         //swiftlint:enable
 
+        // MARK: If finished one round, execute here.
         if prepareTrack == 5 {
 
             player?.pause()
@@ -376,16 +442,16 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
                 let trackName = "track" + String(i)
 
                 historyRef.child(trackName).setValue([
-                    "artistID": questions[i].artistID,
-                    "artistName": questions[i].artistName,
-                    "trackID": questions[i].trackID,
-                    "trackName": questions[i].trackName,
-                    "artworkUrl": questions[i].artworkUrl,
-                    "previewUrl": questions[i].previewUrl,
+                    "artistID": navigationQuestionArray[i].artistID,
+                    "artistName": navigationQuestionArray[i].artistName,
+                    "trackID": navigationQuestionArray[i].trackID,
+                    "trackName": navigationQuestionArray[i].trackName,
+                    "artworkUrl": navigationQuestionArray[i].artworkUrl,
+                    "previewUrl": navigationQuestionArray[i].previewUrl,
                     "result": resultList[i].result,
-                    "collectionID": questions[i].collectionID,
-                    "collectionName": questions[i].collectionName,
-                    "primaryGenreName": questions[i].primaryGenreName,
+                    "collectionID": navigationQuestionArray[i].collectionID,
+                    "collectionName": navigationQuestionArray[i].collectionName,
+                    "primaryGenreName": navigationQuestionArray[i].primaryGenreName,
                     "index": Int(resultList[i].index),
                     "usedTime": resultList[i].usedTime,
                     "selectedAnswer": resultList[i].selectedAnswer
@@ -395,14 +461,14 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
                 if let selectedGenre = userDefault.object(forKey: "selectedGenre") as? String {
 
                     Analytics.logEvent( selectedGenre, parameters: [
-                        "ArtistID": questions[i].artistID as? NSObject,
-                        "ArtistName": questions[i].artistName as? NSObject,
-                        "trackID": questions[i].trackID as? NSObject,
-                        "trackName": questions[i].trackName as? NSObject,
+                        "ArtistID": navigationQuestionArray[i].artistID as? NSObject,
+                        "ArtistName": navigationQuestionArray[i].artistName as? NSObject,
+                        "trackID": navigationQuestionArray[i].trackID as? NSObject,
+                        "trackName": navigationQuestionArray[i].trackName as? NSObject,
                         "result": resultList[i].result as? NSObject,
-                        "collectionID": questions[i].collectionID as? NSObject,
-                        "collectionName": questions[i].collectionName as? NSObject,
-                        "primaryGenreName": questions[i].primaryGenreName as? NSObject,
+                        "collectionID": navigationQuestionArray[i].collectionID as? NSObject,
+                        "collectionName": navigationQuestionArray[i].collectionName as? NSObject,
+                        "primaryGenreName": navigationQuestionArray[i].primaryGenreName as? NSObject,
                         "usedTime": resultList[i].usedTime as? NSObject,
                         "selectedAnswer": resultList[i].selectedAnswer as? NSObject
                         ])
@@ -413,18 +479,46 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
 
                 Analytics.logEvent("song\(i)", parameters: [
                     "QuestionIndex": "song\(i)" as NSObject,
-                    "ArtistID": questions[i].artistID as? NSObject,
-                    "ArtistName": questions[i].artistName as? NSObject,
-                    "trackID": questions[i].trackID as? NSObject,
-                    "trackName": questions[i].trackName as? NSObject,
+                    "ArtistID": navigationQuestionArray[i].artistID as? NSObject,
+                    "ArtistName": navigationQuestionArray[i].artistName as? NSObject,
+                    "trackID": navigationQuestionArray[i].trackID as? NSObject,
+                    "trackName": navigationQuestionArray[i].trackName as? NSObject,
                     "result": resultList[i].result as? NSObject,
-                    "collectionID": questions[i].collectionID as? NSObject,
-                    "collectionName": questions[i].collectionName as? NSObject,
-                    "primaryGenreName": questions[i].primaryGenreName as? NSObject,
+                    "collectionID": navigationQuestionArray[i].collectionID as? NSObject,
+                    "collectionName": navigationQuestionArray[i].collectionName as? NSObject,
+                    "primaryGenreName": navigationQuestionArray[i].primaryGenreName as? NSObject,
                     "usedTime": resultList[i].usedTime as? NSObject,
                     "selectedAnswer": resultList[i].selectedAnswer as? NSObject
                     ])
             }
+            
+            let selfNavigation = self.navigationController as? PlayingNavigationController
+            
+            selfNavigation?.resultArray = [ResultToShow]()
+            
+            for index in 0..<resultList.count {
+                let resultToShow = ResultToShow(
+                    artistID: navigationQuestionArray[index].artistID,
+                    artistName: navigationQuestionArray[index].artistName,
+                    trackID: navigationQuestionArray[index].trackID,
+                    trackName: navigationQuestionArray[index].trackName,
+                    artworkUrl: navigationQuestionArray[index].artworkUrl,
+                    previewUrl: navigationQuestionArray[index].previewUrl,
+                    collectionID: navigationQuestionArray[index].collectionID,
+                    collectionName: navigationQuestionArray[index].collectionName,
+                    primaryGenreName: navigationQuestionArray[index].primaryGenreName,
+                    result: resultList[index].result,
+                    usedTime: resultList[index].usedTime
+                )
+                
+                sendToNavigation.append(resultToShow)
+            }
+            
+            selfNavigation?.resultArray = sendToNavigation
+            
+            print("===== Below is NavigationResult =====")
+            print(selfNavigation?.resultArray)
+
 
             let now = Date().timeIntervalSince1970
 
@@ -434,21 +528,21 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
             historyRef.child("score").setValue(formatedScore)
             historyRef.child("date").setValue(formatedTime)
 
-            for eachResult in resultList {
-
-                if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
-
-                    self.resultMO = ResultMO(context: appDelegate.persistentContainer.viewContext)
-
-                    self.resultMO.index = eachResult.index
-                    self.resultMO.result = eachResult.result
-                    self.resultMO.usedTime = eachResult.usedTime
-                    self.resultMO.selectedAnswer = eachResult.selectedAnswer
-
-                    appDelegate.saveContext()
-
-                }
-            }
+//            for eachResult in resultList {
+//
+//                if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
+//
+//                    self.resultMO = ResultMO(context: appDelegate.persistentContainer.viewContext)
+//
+//                    self.resultMO.index = eachResult.index
+//                    self.resultMO.result = eachResult.result
+//                    self.resultMO.usedTime = eachResult.usedTime
+//                    self.resultMO.selectedAnswer = eachResult.selectedAnswer
+//
+//                    appDelegate.saveContext()
+//
+//                }
+//            }
 
             print(resultList)
 
@@ -467,40 +561,44 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
                     ])
             }
 
-            let delayTime = DispatchTime.now() + .milliseconds(800)
+            let delayTime = DispatchTime.now() + .milliseconds(500)
 
-            DispatchQueue.global().asyncAfter(deadline: delayTime, execute: {
-
-                let registerVC = self.storyboard?.instantiateViewController(withIdentifier: "ResultPage")
-
-                self.present(registerVC!, animated: true, completion: nil)
+            DispatchQueue.main.asyncAfter(deadline: delayTime, execute: {
+                
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                
+                let resultViewController = storyboard.instantiateViewController(withIdentifier: "ResultPage")
+                self.navigationController?.pushViewController(resultViewController, animated: true)
+                //self.present(registerVC!, animated: true, completion: nil)
 
             })
 
         } else {
 
-            var fakeList: [[String]] = []
+            
+//            var fakeList: [[String]] = []
+//
+//            while fakeList.count != 5 {
+//
+//                var eachFakeList: [String] = []
+//
+//                while eachFakeList.count != 3 {
+//
+//                    let firstItem = distractors.first
+//
+//                    guard let distractor = firstItem?.distractorStr else { return }
+//                    eachFakeList.append(distractor)
+//
+//                    distractors.remove(at: 0)
+//
+//                }
+//
+//                fakeList.append(eachFakeList)
+//
+//                print(eachFakeList)
+//            }
 
-            while fakeList.count != 5 {
-
-                var eachFakeList: [String] = []
-
-                while eachFakeList.count != 3 {
-
-                    let firstItem = distractors.first
-
-                    guard let distractor = firstItem?.distractorStr else { return }
-                    eachFakeList.append(distractor)
-
-                    distractors.remove(at: 0)
-
-                }
-
-                fakeList.append(eachFakeList)
-
-                print(eachFakeList)
-            }
-
+            // MARK: If not finished one round, go here
             questionList = fakeList[prepareTrack]
 
             questionList.append(trackNameArray[prepareTrack])
@@ -548,46 +646,6 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
                 })
             })
         }
-    }
-
-    func startGuessing() {
-
-        print("現在在第 \(currentTrack) 首")
-
-        self.shuffledList = []
-
-        for index in 0..<3 {
-            print(index)
-            let distractorItem = distractors[index]
-
-            guard let distractor = distractorItem.distractorStr else { return }
-
-            if self.questionList.contains(distractor) == false {
-                self.questionList.append(distractor)
-            }
-        }
-
-        for eachDistractor in self.questionList {
-            Analytics.logEvent("distractors", parameters: ["distractor": eachDistractor as NSObject])
-        }
-
-        self.questionList.append(self.trackNameArray[self.currentTrack])
-
-        self.shuffledList = self.questionList.shuffled()
-
-        self.tableView.reloadData()
-
-        let fileName = self.path + self.songFileNameList[self.currentTrack]
-
-        do {
-
-            self.player = try AVAudioPlayer(contentsOf: URL(string: fileName)!)
-
-        } catch {
-            self.player = nil
-        }
-
-        self.player?.play()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -643,41 +701,6 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
         super.viewDidDisappear(animated)
         let clearDistractorData = CheckQuestionInCoreData()
         clearDistractorData.clearDistractorMO()
-    }
-
-    func countingTrigger() {
-
-            countDownLabel.isHidden = true
-            coverView.isHidden = true
-
-            self.timeStart = Date().timeIntervalSince1970
-
-            totalTimeStart = self.timeStart
-
-            self.runTime()
-
-            self.startGuessing()
-    }
-
-    func runTime() {
-
-        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: (#selector(self.updateTimer)), userInfo: nil, repeats: true)
-
-    }
-
-    func updateTimer() {
-        if trackTimeCountdown < 1 {
-            print("timer 停了")
-
-            timer.invalidate()
-
-            trackTimeCountdownLabel.text = "\(0)"
-
-        } else {
-            self.trackTimeCountdown -= 1
-
-            trackTimeCountdownLabel.text = "\(self.trackTimeCountdown)"
-        }
     }
 }
 //swiftlint:enable

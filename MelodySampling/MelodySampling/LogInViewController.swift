@@ -33,9 +33,10 @@ class LogInViewController: UIViewController {
 
     @IBAction func backButtonTapped(_ sender: UIButton) {
 
-        self.dismiss(animated: true) { _ in
-            gotoLandingPage(from: self)
-        }
+        self.navigationController?.popToRootViewController(animated: true)
+//        self.dismiss(animated: true) { _ in
+//            gotoLandingPage(from: self)
+//        }
     }
 
     @IBOutlet weak var emailResetButtonOutlet: UIButton!
@@ -75,7 +76,12 @@ class LogInViewController: UIViewController {
 
     @IBAction func signUpInvisibleButtonTapped(_ sender: UIButton) {
 
-            gotoSignupPage(from: self)
+//            gotoSignupPage(from: self)
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        let destinationViewController = storyboard.instantiateViewController(withIdentifier: "SignupPage")
+        
+        self.navigationController?.pushViewController(destinationViewController, animated: true)
 
     }
 
@@ -119,7 +125,13 @@ class LogInViewController: UIViewController {
                 UserDefaults.standard.set(user.uid, forKey: "uid")
                 UserDefaults.standard.set(user.isAnonymous, forKey:"isAnonymous")
 
-                gotoProfilePage(from: self)
+//                gotoProfilePage(from: self)
+                print("appdelegate.switchToPlayNavigationController was triggered.")
+                
+                //swiftlint:disable force_cast
+                let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                appDelegate.switchToPlayNavigationController()
+                //swiftlint:enable
 
             }
         }
@@ -137,7 +149,7 @@ class LogInViewController: UIViewController {
 
         opacityView.frame = UIScreen.main.bounds
 
-        self.navigationController?.isNavigationBarHidden = false
+        self.navigationController?.isNavigationBarHidden = true
 
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
 
