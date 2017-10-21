@@ -1,11 +1,11 @@
 /* Class = "UILabel"; text = "This is you"; ObjectID = "3Yb-tz-7Q9"; */
-"3Yb-tz-7Q9.text" = "This is you";
+"3Yb-tz-7Q9.text" = "玩家";
 
 /* Class = "UITextField"; placeholder = "Password"; ObjectID = "4JM-xJ-G7m"; */
 "4JM-xJ-G7m.placeholder" = "密码";
 
 /* Class = "UILabel"; text = "Play"; ObjectID = "6CE-oi-zf6"; */
-"6CE-oi-zf6.text" = "开始玩";
+"6CE-oi-zf6.text" = "开始";
 
 /* Class = "UILabel"; text = "SingerSingerSinger"; ObjectID = "6Yd-bq-46u"; */
 "6Yd-bq-46u.text" = "SingerSingerSinger";
@@ -22,7 +22,7 @@
 /* Class = "UILabel"; text = "S"; ObjectID = "AwK-YC-eoE"; */
 "AwK-YC-eoE.text" = "S";
 
-/* Class = "UILabel"; text = "Play Again"; ObjectID = "Bw0-qO-mzr"; */
+/* Class = "UILabel"; text = "Choose Category"; ObjectID = "Bw0-qO-mzr"; */
 "Bw0-qO-mzr.text" = "再玩一局";
 
 /* Class = "UILabel"; text = "Sign up"; ObjectID = "C8j-OD-UCA"; */
@@ -62,7 +62,7 @@
 "Q4z-3t-cIg.text" = "猜歌之王";
 
 /* Class = "UILabel"; text = "This is you"; ObjectID = "SC7-Qh-2YV"; */
-"SC7-Qh-2YV.text" = "This is you";
+"SC7-Qh-2YV.text" = "玩家";
 
 /* Class = "UITextField"; placeholder = "Email"; ObjectID = "SX9-8t-gFK"; */
 "SX9-8t-gFK.placeholder" = "邮件信箱";
@@ -79,6 +79,9 @@
 /* Class = "UILabel"; text = "King of Song Quiz"; ObjectID = "VPg-UZ-Ctf"; */
 "VPg-UZ-Ctf.text" = "猜歌之王";
 
+/* Class = "UILabel"; text = "Please Tap Play Button"; ObjectID = "Vf5-tp-bRy"; */
+"Vf5-tp-bRy.text" = "尚无对战纪录";
+
 /* Class = "UILabel"; text = "Track Name Label Mig"; ObjectID = "XP6-0W-sTJ"; */
 "XP6-0W-sTJ.text" = "Track Name Label Mig";
 
@@ -88,16 +91,16 @@
 /* Class = "UIButton"; normalTitle = "Invisible Button"; ObjectID = "bmC-gg-dzb"; */
 "bmC-gg-dzb.normalTitle" = "Invisible Button";
 
-/* Class = "UILabel"; text = "Log out"; ObjectID = "c6g-G5-ckw"; */
+/* (No Comment) */
 "c6g-G5-ckw.text" = "登出";
 
-/* Class = "UIButton"; normalTitle = "Invisible Button"; ObjectID = "cl4-Gv-Xij"; */
+/* (No Comment) */
 "cl4-Gv-Xij.normalTitle" = "Invisible Button";
 
 /* Class = "UILabel"; text = "Log in"; ObjectID = "cq8-dZ-1az"; */
 "cq8-dZ-1az.text" = "登入";
 
-/* (No Commment) */
+/* (No Comment) */
 "dnJ-zN-H9u.text" = "一键开始";
 
 /* Class = "UIButton"; normalTitle = "Invisible SignUp Button"; ObjectID = "eNZ-KW-APm"; */
@@ -109,7 +112,7 @@
 /* Class = "UIButton"; normalTitle = "Invisible Login Button"; ObjectID = "fFo-OY-1Rb"; */
 "fFo-OY-1Rb.normalTitle" = "Invisible Login Button";
 
-/* Class = "UILabel"; text = "3"; ObjectID = "hd5-Aa-tvV"; */
+/* Class = "UILabel"; text = "30"; ObjectID = "hd5-Aa-tvV"; */
 "hd5-Aa-tvV.text" = "3";
 
 /* Class = "UILabel"; text = "vs"; ObjectID = "i1f-nt-LNi"; */
@@ -118,14 +121,17 @@
 /* Class = "UILabel"; text = "-----------"; ObjectID = "iJw-td-DcI"; */
 "iJw-td-DcI.text" = "-----------";
 
-/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "lii-t7-KCO"; */
+/* Class = "UIButton"; normalTitle = "Choose Category"; ObjectID = "lii-t7-KCO"; */
 "lii-t7-KCO.normalTitle" = "Button";
 
-/* Class = "UILabel"; text = "Log in"; ObjectID = "nRs-tJ-aaB"; */
+/* Class = "UILabel"; text = "Sign in"; ObjectID = "nRs-tJ-aaB"; */
 "nRs-tJ-aaB.text" = "登入";
 
 /* Class = "UILabel"; text = "5678"; ObjectID = "owN-SQ-VoR"; */
 "owN-SQ-VoR.text" = "5678";
+
+/* Class = "UILabel"; text = "⬇︎Touch to replay song"; ObjectID = "pN4-6F-LdB"; */
+"pN4-6F-LdB.text" = "⬇︎点击後可重听题目";
 
 /* Class = "UIButton"; normalTitle = "Invisible Button"; ObjectID = "paE-ln-Lmo"; */
 "paE-ln-Lmo.normalTitle" = "Invisible Button";
@@ -133,11 +139,14 @@
 /* Class = "UITextField"; placeholder = "Confirm Password"; ObjectID = "pfT-LV-HHY"; */
 "pfT-LV-HHY.placeholder" = "请重复输入密码";
 
-/* Class = "UIButton"; normalTitle = "Invisible Button"; ObjectID = "tmL-Wu-OHy"; */
+/* Class = "UILabel"; text = "Play again"; ObjectID = "snN-PL-QaV"; */
+"snN-PL-QaV.text" = "再玩一次";
+
+/* Class = "UIButton"; normalTitle = "Log out"; ObjectID = "tmL-Wu-OHy"; */
 "tmL-Wu-OHy.normalTitle" = "Invisible Button";
 
 /* Class = "UILabel"; text = "This is you"; ObjectID = "u4p-KT-t8T"; */
-"u4p-KT-t8T.text" = "This is you";
+"u4p-KT-t8T.text" = "玩家";
 
 /* Class = "UIButton"; normalTitle = "Invisible"; ObjectID = "wIo-6v-FjZ"; */
 "wIo-6v-FjZ.normalTitle" = "Invisible";

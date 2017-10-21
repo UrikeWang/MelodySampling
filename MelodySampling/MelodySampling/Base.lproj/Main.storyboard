@@ -1153,7 +1153,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="P3p-ob-hIJ">
-                                        <rect key="frame" x="197" y="113" width="101" height="17"/>
+                                        <rect key="frame" x="196" y="113" width="101" height="17"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Star" translatesAutoresizingMaskIntoConstraints="NO" id="cJS-dk-1MD">
                                                 <rect key="frame" x="0.0" y="0.0" width="17" height="17"/>
@@ -1179,6 +1179,13 @@
                                             <constraint firstAttribute="width" secondItem="b5y-y9-ROk" secondAttribute="height" multiplier="1:1" id="qNE-8b-Xff"/>
                                         </constraints>
                                     </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="⬇︎Touch to replay song" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pN4-6F-LdB" userLabel="Touch Hint Label">
+                                        <rect key="frame" x="22" y="151" width="345" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="16"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="P3p-ob-hIJ" firstAttribute="top" secondItem="Ky9-KW-jMO" secondAttribute="bottom" constant="6" id="77J-o9-HPC"/>
@@ -1340,6 +1347,7 @@
                         <outlet property="sameGenreContentView" destination="psb-U3-WSd" id="sDN-1f-vee"/>
                         <outlet property="scoreLabel" destination="Ky9-KW-jMO" id="v0x-t9-yAQ"/>
                         <outlet property="tableView" destination="ON0-XX-kiJ" id="Mfs-pn-nbo"/>
+                        <outlet property="touchHintLabel" destination="pN4-6F-LdB" id="oIg-fI-uDc"/>
                         <outlet property="userImageView" destination="b5y-y9-ROk" id="oVq-qI-XqC"/>
                         <outlet property="userNameLabel" destination="SC7-Qh-2YV" id="ZhR-Uk-FUk"/>
                         <outlet property="userProfileImageView" destination="b5y-y9-ROk" id="B8I-tD-MH6"/>

@@ -103,6 +103,8 @@ class ResultPageViewController: UIViewController, UITableViewDelegate, UITableVi
 
     @IBOutlet weak var userStarsStackView: UIStackView!
 
+    @IBOutlet weak var touchHintLabel: UILabel!
+    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
 
@@ -118,6 +120,8 @@ class ResultPageViewController: UIViewController, UITableViewDelegate, UITableVi
         sameGenreContentView.layer.cornerRadius = 30
         
         nextGameContentView.layer.cornerRadius = 30
+        
+        addOpacityAnimation(label: touchHintLabel)
     }
 
     override func viewDidLoad() {
@@ -146,6 +150,8 @@ class ResultPageViewController: UIViewController, UITableViewDelegate, UITableVi
         self.playAgainLabel.text = NSLocalizedString("Play again", comment: "Play again label on result page")
         
         self.chooseCategoryLabel.text = NSLocalizedString("Choose Category", comment: "Choose category label on result page")
+        
+        self.touchHintLabel.text = NSLocalizedString("⬇︎Tap to replay song", comment: "Touch Hint Label")
         
         if let userProfileImageData = userDefault.object(forKey: "UserProfileImage") as? Data {
             

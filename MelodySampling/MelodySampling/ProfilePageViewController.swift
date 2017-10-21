@@ -12,6 +12,8 @@ import CoreData
 
 class ProfilePageViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
+    @IBOutlet weak var testLabel: UILabel!
+    
     var imageCache = NSCache<NSString, UIImage>()
 
     @IBOutlet weak var historyTableView: UITableView! {
@@ -332,7 +334,6 @@ class ProfilePageViewController: UIViewController, UITableViewDelegate, UITableV
             emptyLabel.numberOfLines = 0
             
         }
-
     }
 
     override func viewDidAppear(_ animated: Bool) {
