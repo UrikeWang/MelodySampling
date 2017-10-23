@@ -58,6 +58,7 @@
 		73865FBA1F3C547F004E3594 /* AnswerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73865FB91F3C547F004E3594 /* AnswerTableViewCell.swift */; };
 		73865FBC1F3C7F5A004E3594 /* ResultStructure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73865FBB1F3C7F5A004E3594 /* ResultStructure.swift */; };
 		739019DF1F41463F006DEFFD /* ClearCoreDataQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 739019DE1F41463F006DEFFD /* ClearCoreDataQuestion.swift */; };
+		7393F7C21F9D9B00009EB5D5 /* UIViewController+KeyboardDismiss.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7393F7C11F9D9B00009EB5D5 /* UIViewController+KeyboardDismiss.swift */; };
 		7399DB881F3D835900E2A4B2 /* ResultPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7399DB871F3D835900E2A4B2 /* ResultPageViewController.swift */; };
 		73AF80231F384B7900CA31FB /* Styleguide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73AF80221F384B7900CA31FB /* Styleguide.swift */; };
 		73AF80261F384E3B00CA31FB /* LandingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73AF80251F384E3B00CA31FB /* LandingPageViewController.swift */; };
@@ -141,6 +142,7 @@
 		73865FB91F3C547F004E3594 /* AnswerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnswerTableViewCell.swift; sourceTree = "<group>"; };
 		73865FBB1F3C7F5A004E3594 /* ResultStructure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultStructure.swift; sourceTree = "<group>"; };
 		739019DE1F41463F006DEFFD /* ClearCoreDataQuestion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClearCoreDataQuestion.swift; sourceTree = "<group>"; };
+		7393F7C11F9D9B00009EB5D5 /* UIViewController+KeyboardDismiss.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+KeyboardDismiss.swift"; sourceTree = "<group>"; };
 		7399DB871F3D835900E2A4B2 /* ResultPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultPageViewController.swift; sourceTree = "<group>"; };
 		73AF80221F384B7900CA31FB /* Styleguide.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Styleguide.swift; sourceTree = "<group>"; };
 		73AF80251F384E3B00CA31FB /* LandingPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandingPageViewController.swift; sourceTree = "<group>"; };
@@ -311,6 +313,7 @@
 				731F2ADE1F4537BF00690316 /* LabelCreator.swift */,
 				736503DE1F46C44000A975EB /* RandomFunc.swift */,
 				7343937E1F9BA83E00F3B504 /* AnimationFunc.swift */,
+				7393F7C11F9D9B00009EB5D5 /* UIViewController+KeyboardDismiss.swift */,
 			);
 			name = FunctionAndStruct;
 			sourceTree = "<group>";
@@ -583,6 +586,7 @@
 				73AF80231F384B7900CA31FB /* Styleguide.swift in Sources */,
 				7382742C1F40992E00CD718E /* FirebaseExtension.swift in Sources */,
 				73865FBA1F3C547F004E3594 /* AnswerTableViewCell.swift in Sources */,
+				7393F7C21F9D9B00009EB5D5 /* UIViewController+KeyboardDismiss.swift in Sources */,
 				73AF802E1F38764300CA31FB /* LogInViewController.swift in Sources */,
 				7399DB881F3D835900E2A4B2 /* ResultPageViewController.swift in Sources */,
 				73530AE11F98B062007DFC7C /* PlayingNavigationController.swift in Sources */,

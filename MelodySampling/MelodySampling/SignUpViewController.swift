@@ -202,6 +202,8 @@ class SignUpViewController: UIViewController {
             self.addNumber = json["signedUserCount"].intValue
 
         })
+        
+        self.hideKeyboardWhenTappedAround() 
     }
 
     override func viewWillAppear(_ animated: Bool) {
