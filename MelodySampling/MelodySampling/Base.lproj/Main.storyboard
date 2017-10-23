@@ -114,12 +114,13 @@
                                 <size key="shadowOffset" width="0.0" height="2"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Log in Anonymously" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LX4-z7-ioz">
-                                <rect key="frame" x="98.5" y="555" width="180" height="22"/>
+                                <rect key="frame" x="97.5" y="555" width="180" height="22"/>
                                 <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="18"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Q4z-3t-cIg" firstAttribute="centerX" secondItem="Lse-jO-vwg" secondAttribute="centerX" id="14Z-Ex-rNG"/>
                             <constraint firstAttribute="bottomMargin" secondItem="O1P-lZ-xSE" secondAttribute="bottom" id="1Qz-Ya-GUS"/>
@@ -368,7 +369,7 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="topMargin" secondItem="uRX-Ec-B1g" secondAttribute="top" id="E2k-DJ-wRF"/>
                             <constraint firstItem="U1h-ID-cdY" firstAttribute="bottom" secondItem="uRX-Ec-B1g" secondAttribute="bottom" id="P3J-lv-iA5"/>
@@ -1332,11 +1333,11 @@
                             <constraint firstItem="Cht-jH-BHa" firstAttribute="trailing" secondItem="IJq-Tz-Jzt" secondAttribute="trailing" id="ArH-jj-BnS"/>
                             <constraint firstItem="Yur-Rj-fPA" firstAttribute="leading" secondItem="Cht-jH-BHa" secondAttribute="leading" id="B8X-5N-DTB"/>
                             <constraint firstItem="IJq-Tz-Jzt" firstAttribute="leading" secondItem="Cht-jH-BHa" secondAttribute="leading" id="Bq7-GW-lM7"/>
+                            <constraint firstItem="Cht-jH-BHa" firstAttribute="bottom" secondItem="tAC-Hl-2rc" secondAttribute="bottom" id="Cml-BE-8gb"/>
                             <constraint firstItem="ON0-XX-kiJ" firstAttribute="top" secondItem="Yur-Rj-fPA" secondAttribute="bottom" id="FgF-di-TE3"/>
                             <constraint firstItem="ON0-XX-kiJ" firstAttribute="leading" secondItem="Cht-jH-BHa" secondAttribute="leading" id="KY7-f4-eQC"/>
                             <constraint firstItem="Yur-Rj-fPA" firstAttribute="top" secondItem="Cht-jH-BHa" secondAttribute="top" id="SPh-wI-bKO"/>
                             <constraint firstItem="tAC-Hl-2rc" firstAttribute="leading" secondItem="Cht-jH-BHa" secondAttribute="leading" id="TDn-8w-OGf"/>
-                            <constraint firstAttribute="bottom" secondItem="tAC-Hl-2rc" secondAttribute="bottom" id="dIN-Rb-5un"/>
                             <constraint firstItem="Cht-jH-BHa" firstAttribute="trailing" secondItem="Yur-Rj-fPA" secondAttribute="trailing" id="rRP-bb-j98"/>
                             <constraint firstAttribute="bottomMargin" secondItem="IJq-Tz-Jzt" secondAttribute="bottom" id="w2N-PF-KPe"/>
                             <constraint firstItem="Cht-jH-BHa" firstAttribute="trailing" secondItem="tAC-Hl-2rc" secondAttribute="trailing" id="zGr-Ke-qYZ"/>
@@ -1561,7 +1562,7 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="HPz-KQ-fFq" firstAttribute="trailing" secondItem="uFm-6v-RYX" secondAttribute="trailing" id="ENp-OI-ysd"/>
                             <constraint firstItem="uFm-6v-RYX" firstAttribute="leading" secondItem="HPz-KQ-fFq" secondAttribute="leading" id="EhZ-S3-SJQ"/>
