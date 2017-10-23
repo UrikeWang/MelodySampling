@@ -169,6 +169,8 @@ class LogInViewController: UIViewController {
 
         loginButtonOutlet.setTitleColor(UIColor.clear, for: .normal)
         signUpInvisibleButtonOutlet.setTitleColor(UIColor.clear, for: .normal)
+        
+        self.hideKeyboardWhenTappedAround()
     }
 
     override func viewWillAppear(_ animated: Bool) {
