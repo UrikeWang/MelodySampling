@@ -85,6 +85,8 @@ extension PlayPageViewController {
         
         do {
             
+            try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
+            
             self.player = try AVAudioPlayer(contentsOf: URL(string: fileName)!)
             
         } catch {

@@ -260,6 +260,8 @@ class ResultPageViewController: UIViewController, UITableViewDelegate, UITableVi
         let fileName = self.path + self.songFileNameList[indexPath.row]
         
         do {
+            try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
+            
             
             self.player = try AVAudioPlayer(contentsOf: URL(string: fileName)!)
             
