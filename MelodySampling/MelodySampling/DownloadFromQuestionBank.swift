@@ -10,6 +10,7 @@ import UIKit
 import Foundation
 import Alamofire
 import Firebase
+// Starting remove UICircular progress Ring
 import UICircularProgressRing
 import CoreData
 import SwiftyJSON
@@ -38,18 +39,30 @@ class DownloadManager {
         print("questionArray in navigation was inited")
         print("目標題庫是 \(language)")
         
-        let progressContentView = UIView(frame: CGRect(x: 0, y: 0, width: thisController.view.frame.width, height: thisController.view.frame.height))
         
-        let progressRing = UICircularProgressRingView(frame: CGRect(x: thisController.view.frame.width / 2 - 120, y: thisController.view.frame.height / 2 - 120, width: 240, height: 240))
+        let progressContentView = UIView(frame: CGRect(
+            x: 0,
+            y: 0,
+            width: thisController.view.frame.width,
+            height: thisController.view.frame.height))
+        
+        createProgressBackground(target: progressContentView)
+        
+        // progress view starts from here
+        let progressRing = UICircularProgressRingView(frame: CGRect(
+            x: thisController.view.frame.width / 2 - 120,
+            y: thisController.view.frame.height / 2 - 120,
+            width: 240,
+            height: 240))
         
         progressRing.maxValue = 100
         
         progressRing.outerRingColor = UIColor.mldDarkIndigo40
         progressRing.innerRingColor = UIColor.mldUltramarine
         
-        progressContentView.backgroundColor = UIColor.playPageBackground
+        // progress view ends here
         
-        createProgressBackground(target: progressContentView)
+        progressContentView.backgroundColor = UIColor.playPageBackground
         
         progressContentView.insertSubview(progressRing, at: 1)
         
@@ -98,6 +111,7 @@ class DownloadManager {
                 
                 selfNavigation?.questionArray.append(eachQuestion)
                 
+                //這個 QuestionMO 要拿掉
                 if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
                     
                     self.questionMO = QuestionMO(context: appDelegate.persistentContainer.viewContext)
@@ -140,6 +154,8 @@ class DownloadManager {
                 _ = distractorManager.getDistractorIDArray(distractorArrayCount: 40, distractorBankCount: 1200, genre: language, controller: thisController)
                 
                 Alamofire.download(eachQuestion.previewUrl, to: destination).downloadProgress { progress in
+                    
+                    // The progress status muse be removed
                     
                     if downloadPercentage < 80 {
                         downloadPercentage += progress.fractionCompleted
