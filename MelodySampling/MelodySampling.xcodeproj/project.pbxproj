@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4B31135A206A2723DD7AA78F /* Pods_King_of_Song_Quiz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA3400BEFAB462864150B0CF /* Pods_King_of_Song_Quiz.framework */; };
 		730D0E5A1F3AEBFD0099DA0F /* AddSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 730D0E591F3AEBFD0099DA0F /* AddSpace.swift */; };
 		730D0E5C1F3AFEA20099DA0F /* JudgeAnswer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 730D0E5B1F3AFEA20099DA0F /* JudgeAnswer.swift */; };
 		731F2ADF1F4537BF00690316 /* LabelCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731F2ADE1F4537BF00690316 /* LabelCreator.swift */; };
@@ -73,6 +74,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		26492B0B8074D004C6B86659 /* Pods-King of Song Quiz.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-King of Song Quiz.release.xcconfig"; path = "Pods/Target Support Files/Pods-King of Song Quiz/Pods-King of Song Quiz.release.xcconfig"; sourceTree = "<group>"; };
 		730D0E591F3AEBFD0099DA0F /* AddSpace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddSpace.swift; sourceTree = "<group>"; };
 		730D0E5B1F3AFEA20099DA0F /* JudgeAnswer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JudgeAnswer.swift; sourceTree = "<group>"; };
 		731F2ADE1F4537BF00690316 /* LabelCreator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelCreator.swift; sourceTree = "<group>"; };
@@ -155,7 +157,9 @@
 		73FDE6671F3DC35400D9A3FC /* TypeChooseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeChooseViewController.swift; sourceTree = "<group>"; };
 		744E2D9810A745B7407345E5 /* Pods-MelodySampling.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MelodySampling.release.xcconfig"; path = "Pods/Target Support Files/Pods-MelodySampling/Pods-MelodySampling.release.xcconfig"; sourceTree = "<group>"; };
 		7AEB0E68990119E1DCEEFF7C /* Pods-MelodySampling.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MelodySampling.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MelodySampling/Pods-MelodySampling.debug.xcconfig"; sourceTree = "<group>"; };
+		BA3400BEFAB462864150B0CF /* Pods_King_of_Song_Quiz.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_King_of_Song_Quiz.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCE8237F816AFC43B6CA66DF /* Pods_MelodySampling.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MelodySampling.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F49DE2F495118009987F02A6 /* Pods-King of Song Quiz.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-King of Song Quiz.debug.xcconfig"; path = "Pods/Target Support Files/Pods-King of Song Quiz/Pods-King of Song Quiz.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +169,7 @@
 			files = (
 				E9121496FD42D46E60BF274E /* Pods_MelodySampling.framework in Frameworks */,
 				7346BA091F58FE9E00A9487C /* StoreKit.framework in Frameworks */,
+				4B31135A206A2723DD7AA78F /* Pods_King_of_Song_Quiz.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -176,6 +181,7 @@
 			children = (
 				7346BA081F58FE9E00A9487C /* StoreKit.framework */,
 				DCE8237F816AFC43B6CA66DF /* Pods_MelodySampling.framework */,
+				BA3400BEFAB462864150B0CF /* Pods_King_of_Song_Quiz.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -363,6 +369,8 @@
 			children = (
 				7AEB0E68990119E1DCEEFF7C /* Pods-MelodySampling.debug.xcconfig */,
 				744E2D9810A745B7407345E5 /* Pods-MelodySampling.release.xcconfig */,
+				F49DE2F495118009987F02A6 /* Pods-King of Song Quiz.debug.xcconfig */,
+				26492B0B8074D004C6B86659 /* Pods-King of Song Quiz.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -514,7 +522,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MelodySampling/Pods-MelodySampling-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-King of Song Quiz/Pods-King of Song Quiz-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		C144A0710A68808904C41D15 /* [CP] Check Pods Manifest.lock */ = {
@@ -544,7 +552,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MelodySampling/Pods-MelodySampling-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-King of Song Quiz/Pods-King of Song Quiz-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -742,7 +750,7 @@
 		};
 		73744D161F2ED94300C1FAEA /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7AEB0E68990119E1DCEEFF7C /* Pods-MelodySampling.debug.xcconfig */;
+			baseConfigurationReference = F49DE2F495118009987F02A6 /* Pods-King of Song Quiz.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = MelodySampling/MelodySampling.entitlements;
@@ -763,7 +771,7 @@
 		};
 		73744D171F2ED94300C1FAEA /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 744E2D9810A745B7407345E5 /* Pods-MelodySampling.release.xcconfig */;
+			baseConfigurationReference = 26492B0B8074D004C6B86659 /* Pods-King of Song Quiz.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = MelodySampling/MelodySampling.entitlements;

@@ -1,21 +1,18 @@
 # Uncomment the next line to define a global platform for your project
 platform :ios, '10.0'
 
-target 'MelodySampling' do
+target 'King of Song Quiz' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
 
-  # Pods for MelodySampling
+  # Pods for King of Song Quiz
 
 pod 'Firebase/Auth'
 pod 'Firebase/Core'
 pod 'Firebase/Database'
 pod 'Firebase/Crash'
-pod 'Alamofire'
-pod 'SwifterSwift'
-pod 'IQKeyboardManagerSwift'
-pod 'UICircularProgressRing'
-pod 'SwiftyJSON'
+pod 'Alamofire', '~> 4.5.0'
+pod 'SwiftyJSON', '~> 3.1.0'
 pod 'Fabric'
 pod 'Crashlytics'
 
