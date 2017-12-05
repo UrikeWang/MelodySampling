@@ -63,7 +63,7 @@ PODS:
   - UICircularProgressRing (1.7.4)
 
 DEPENDENCIES:
-  - Alamofire (~> 4.5.0)
+  - Alamofire
   - Crashlytics
   - Fabric
   - Firebase/Auth
@@ -71,7 +71,7 @@ DEPENDENCIES:
   - Firebase/Crash
   - Firebase/Database
   - IQKeyboardManagerSwift
-  - SwiftyJSON (~> 3.1.0)
+  - SwiftyJSON
   - UICircularProgressRing
 
 SPEC CHECKSUMS:
@@ -94,6 +94,6 @@ SPEC CHECKSUMS:
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
   UICircularProgressRing: 5aca63423d913dc967661370e94e2af0770dd9cd
 
-PODFILE CHECKSUM: eb4539dc2f0ddd02a51541bffa78aa5e7730b067
+PODFILE CHECKSUM: 4ae34981dcd7442b3a5d55797f3bde8912496adf
 
 COCOAPODS: 1.2.1

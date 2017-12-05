@@ -10,7 +10,6 @@ import UIKit
 import Foundation
 import Alamofire
 import Firebase
-// Starting remove UICircular progress Ring
 import UICircularProgressRing
 import CoreData
 import SwiftyJSON
@@ -18,13 +17,11 @@ import SwiftyJSON
 class DownloadManager {
     
     var ref: DatabaseReference!
-    
     var questionMO: QuestionMO!
-    
     var questionArray = [EachQuestion]()
-    
     let userDefault = UserDefaults.standard
-    
+    private let downloadQueue = DispatchQueue(label: "downloading")
+
     func downloadRandomQuestion(selected language: String, max bankMaxNumber: Int, viewController thisController: UIViewController) {
         
         var downloadCount = 0
@@ -157,13 +154,20 @@ class DownloadManager {
                     
                     // The progress status muse be removed
                     
-                    if downloadPercentage < 80 {
-                        downloadPercentage += progress.fractionCompleted
-                    } else {
-                        downloadPercentage += 1
+                    self.downloadQueue.sync {
+                        
+                        if downloadPercentage < 80 {
+                            
+                            downloadPercentage += progress.fractionCompleted
+                        
+                        } else {
+                        
+                            downloadPercentage += 1
+                        
+                        }
+                        
+                        progressRing.setProgress(value: CGFloat(downloadPercentage), animationDuration: 0.01) {}
                     }
-                    
-                    progressRing.setProgress(value: CGFloat(downloadPercentage), animationDuration: 0.01) {}
                     
                     }.response { _ in
                         
