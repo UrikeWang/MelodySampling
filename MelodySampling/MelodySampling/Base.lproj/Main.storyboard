@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -1103,13 +1103,20 @@
                                                 <rect key="frame" x="185" y="0.0" width="170" height="63"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Play again" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="snN-PL-QaV">
-                                                        <rect key="frame" x="0.0" y="0.0" width="170" height="63"/>
+                                                        <rect key="frame" x="66" y="0.0" width="96" height="63"/>
                                                         <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="18"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oYh-LV-ga7" userLabel="Play Again Button">
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="replayicon" translatesAutoresizingMaskIntoConstraints="NO" id="MHh-Nh-anE">
+                                                        <rect key="frame" x="5" y="5" width="53" height="53"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" secondItem="MHh-Nh-anE" secondAttribute="height" multiplier="1:1" id="1Ig-W6-4vu"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oYh-LV-ga7" userLabel="Play Again Button">
                                                         <rect key="frame" x="0.0" y="0.0" width="170" height="63"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <state key="normal" title="Button"/>
                                                         <connections>
                                                             <action selector="invisiblePlayAgainButtonTapped:" destination="sgS-eJ-ZD6" eventType="touchUpInside" id="WjC-fW-0tf"/>
@@ -1118,14 +1125,13 @@
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
-                                                    <constraint firstItem="oYh-LV-ga7" firstAttribute="top" secondItem="snN-PL-QaV" secondAttribute="top" id="05T-M2-Mbm"/>
-                                                    <constraint firstItem="oYh-LV-ga7" firstAttribute="leading" secondItem="snN-PL-QaV" secondAttribute="leading" id="WKE-iZ-EeD"/>
-                                                    <constraint firstItem="snN-PL-QaV" firstAttribute="leading" secondItem="psb-U3-WSd" secondAttribute="leading" id="bi9-3p-GWg"/>
-                                                    <constraint firstAttribute="trailing" secondItem="snN-PL-QaV" secondAttribute="trailing" id="d5z-xN-viJ"/>
-                                                    <constraint firstItem="oYh-LV-ga7" firstAttribute="bottom" secondItem="snN-PL-QaV" secondAttribute="bottom" id="jUA-5Q-x9V"/>
-                                                    <constraint firstItem="snN-PL-QaV" firstAttribute="top" secondItem="psb-U3-WSd" secondAttribute="top" id="jiS-OQ-zyk"/>
-                                                    <constraint firstItem="oYh-LV-ga7" firstAttribute="trailing" secondItem="snN-PL-QaV" secondAttribute="trailing" id="kwl-A4-vNw"/>
-                                                    <constraint firstAttribute="bottom" secondItem="snN-PL-QaV" secondAttribute="bottom" id="pE0-K6-79S"/>
+                                                    <constraint firstItem="snN-PL-QaV" firstAttribute="top" secondItem="psb-U3-WSd" secondAttribute="top" id="IcN-gD-5I4"/>
+                                                    <constraint firstItem="MHh-Nh-anE" firstAttribute="centerY" secondItem="psb-U3-WSd" secondAttribute="centerY" id="V8H-TM-iFi"/>
+                                                    <constraint firstItem="snN-PL-QaV" firstAttribute="leading" secondItem="MHh-Nh-anE" secondAttribute="trailing" constant="8" id="WWQ-sa-2cr"/>
+                                                    <constraint firstAttribute="bottom" secondItem="snN-PL-QaV" secondAttribute="bottom" id="f1M-td-gtT"/>
+                                                    <constraint firstItem="MHh-Nh-anE" firstAttribute="top" secondItem="psb-U3-WSd" secondAttribute="top" constant="5" id="ha3-BB-DWc"/>
+                                                    <constraint firstAttribute="trailing" secondItem="snN-PL-QaV" secondAttribute="trailing" constant="8" id="iML-vX-qHX"/>
+                                                    <constraint firstItem="MHh-Nh-anE" firstAttribute="leading" secondItem="psb-U3-WSd" secondAttribute="leading" constant="5" id="mxW-T1-2yB"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
@@ -1647,6 +1653,7 @@
         <image name="icon_player" width="90" height="90"/>
         <image name="landing_bg" width="414" height="736"/>
         <image name="play" width="22" height="22"/>
+        <image name="replayicon" width="50" height="50"/>
         <image name="right" width="22" height="22"/>
         <image name="score_bg" width="414" height="736"/>
         <image name="usericon_new" width="50" height="50"/>
