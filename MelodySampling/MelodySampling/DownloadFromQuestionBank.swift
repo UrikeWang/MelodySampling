@@ -17,13 +17,11 @@ import SwiftyJSON
 class DownloadManager {
     
     var ref: DatabaseReference!
-    
     var questionMO: QuestionMO!
-    
     var questionArray = [EachQuestion]()
-    
     let userDefault = UserDefaults.standard
-    
+    private let downloadQueue = DispatchQueue(label: "downloading")
+
     func downloadRandomQuestion(selected language: String, max bankMaxNumber: Int, viewController thisController: UIViewController) {
         
         var downloadCount = 0
@@ -38,18 +36,30 @@ class DownloadManager {
         print("questionArray in navigation was inited")
         print("目標題庫是 \(language)")
         
-        let progressContentView = UIView(frame: CGRect(x: 0, y: 0, width: thisController.view.frame.width, height: thisController.view.frame.height))
         
-        let progressRing = UICircularProgressRingView(frame: CGRect(x: thisController.view.frame.width / 2 - 120, y: thisController.view.frame.height / 2 - 120, width: 240, height: 240))
+        let progressContentView = UIView(frame: CGRect(
+            x: 0,
+            y: 0,
+            width: thisController.view.frame.width,
+            height: thisController.view.frame.height))
+        
+        createProgressBackground(target: progressContentView)
+        
+        // progress view starts from here
+        let progressRing = UICircularProgressRingView(frame: CGRect(
+            x: thisController.view.frame.width / 2 - 120,
+            y: thisController.view.frame.height / 2 - 120,
+            width: 240,
+            height: 240))
         
         progressRing.maxValue = 100
         
         progressRing.outerRingColor = UIColor.mldDarkIndigo40
         progressRing.innerRingColor = UIColor.mldUltramarine
         
-        progressContentView.backgroundColor = UIColor.playPageBackground
+        // progress view ends here
         
-        createProgressBackground(target: progressContentView)
+        progressContentView.backgroundColor = UIColor.playPageBackground
         
         progressContentView.insertSubview(progressRing, at: 1)
         
@@ -98,6 +108,7 @@ class DownloadManager {
                 
                 selfNavigation?.questionArray.append(eachQuestion)
                 
+                //這個 QuestionMO 要拿掉
                 if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
                     
                     self.questionMO = QuestionMO(context: appDelegate.persistentContainer.viewContext)
@@ -141,13 +152,22 @@ class DownloadManager {
                 
                 Alamofire.download(eachQuestion.previewUrl, to: destination).downloadProgress { progress in
                     
-                    if downloadPercentage < 80 {
-                        downloadPercentage += progress.fractionCompleted
-                    } else {
-                        downloadPercentage += 1
-                    }
+                    // The progress status muse be removed
                     
-                    progressRing.setProgress(value: CGFloat(downloadPercentage), animationDuration: 0.01) {}
+                    self.downloadQueue.sync {
+                        
+                        if downloadPercentage < 80 {
+                            
+                            downloadPercentage += progress.fractionCompleted
+                        
+                        } else {
+                        
+                            downloadPercentage += 1
+                        
+                        }
+                        
+                        progressRing.setProgress(value: CGFloat(downloadPercentage), animationDuration: 0.01) {}
+                    }
                     
                     }.response { _ in
                         
