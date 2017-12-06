@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:/Users/moon/2swift/AppWorks/MelodySampling/MelodySampling/MelodySampling.xcodeproj">
+      location = "group:MelodySampling.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">

@@ -140,7 +140,6 @@ class ProfilePageViewController: UIViewController, UITableViewDelegate, UITableV
 
             checkCoredata.clearHistoryMO()
 
-//            gotoLandingPage(from: self)
             //swiftlint:disable force_cast
             let appDelegate = UIApplication.shared.delegate as! AppDelegate
             appDelegate.switchToLandingNavigationController()
