@@ -1,0 +1,126 @@
+/* Goto login page at signup page. */
+"Already have an account? Log in" = "己经有帐号了吗?进入登入页";
+
+/* User name of who logged in anonymously */
+"Anonymous" = "无名玩家";
+
+/* Sign Out Message on profile page */
+"Are you going to sign out?" = "请问确定要登出吗?";
+
+/* Billboard pop cell at genre type choose page. */
+"Billboard Pop" = "世界流行曲";
+
+/* Cancel for rename action
+   Cancel on sign out action */
+"Cancel" = "取消";
+
+/* Cantonese pop cell at genre type choose page. */
+"Cantonese Pop" = "粤语流行曲";
+
+/* Choose category label on result page */
+"Choose Category" = "重选题库";
+
+/* Confirm input for rename action */
+"Confirm" = "确定";
+
+/* Confirm Password at signup page */
+"Confirm Password" = "请重复输入密码";
+
+/* Goto signup page at login page. */
+"Don't have an account? Sign up" = "还没有帐号吗?进入登录页";
+
+/* Email textfield placeholder at login page.
+   Email textfield placeholder at signup page. */
+"Email" = "邮箱";
+
+/* Email empty warning */
+"Email is empty!" = "密码栏空白";
+
+/* Empty field warning at login page
+   Empty field warning at signup page */
+"Empty field found!" = "密码栏是空白的,请填密码";
+
+/* Error title at login page. */
+"Error" = "错误!";
+
+/* Forget password label at login page. */
+"Forget password" = "忘记密码";
+
+/* History segament controller label */
+"History" = "对战纪录";
+
+/* Title label at login page.
+   Title Label of Sign Up Page
+   Title label text at landing page. */
+"King of Song Quiz" = "歌曲知識王";
+
+/* For anonymous login. */
+"Log in Anonymously " = "一键开始";
+
+/* Login error message at login page. */
+"Login Error" = "登入发生错误";
+
+/* Mandarin pop cell at genre type choose page. */
+"Mandarin Pop" = "华语流行曲";
+
+/* Password textfield placeholder at login page.
+   Password textfield placeholder at signup page. */
+"Password" = "密码";
+
+/* Password input alert at signup page */
+"Password Input Alert" = "密码输入有问题";
+
+/* Play button text at profile page. */
+"Play" = "开始游戏";
+
+/* Play again label on result page */
+"Play again" = "再玩一次";
+
+/* No battle record yet */
+"Please Tap Play Button" = "尚无对战纪录";
+
+/* Subtitle of sign up error message at signup page. */
+"Please check email, password, confirm passwork again." = "请再确认一次信箱,密码栏,及确认密码栏";
+
+/* Confirm password again at signup page. */
+"Please confirm your password again" = "请再确认一次您的密码输入栏位";
+
+/* Subtitle of empty field warning at login page.
+   Subtitle of empty field warning at signup page. */
+"Please input all text field" = "请确认所有栏位有输入";
+
+/* Subtitle of email empty warning message */
+"Please input your email." = "请输入你的邮件地位";
+
+/* Login label at login page.
+   SignIn label text at landing page. */
+"Sign In" = "登入";
+
+/* Sign out button on profile page
+   Sign out from profile page */
+"Sign Out" = "登出";
+
+/* Signup label text at landing page. */
+"Sign Up" = "登录";
+
+/* Log out text at profile page. */
+"Sign out" = "登出";
+
+/* Signup label at signup page. */
+"Sign up" = "登录";
+
+/* Sign up error message at signup page */
+"Something Wrong" = "有错误发生!";
+
+/* Subtitle of error message at login page. */
+"Something Wrong, please check your input again" = "有错误发生,请确认你的输入";
+
+/* Taiwanese pop cell at genre type choose page. */
+"Taiwanese Pop" = "台湾流行曲";
+
+/* for user label */
+"User" = "玩家";
+
+/* Touch Hint Label */
+"⬇︎Tap to replay song" = "⬇︎点击後可重听题目";
+
