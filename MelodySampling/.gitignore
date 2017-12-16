@@ -1,0 +1,6 @@
+# Ignore xcuserstate
+
+*.xcuserstate
+UserInterfaceState.xcuserstate
+tokens.swift
+/Keys/

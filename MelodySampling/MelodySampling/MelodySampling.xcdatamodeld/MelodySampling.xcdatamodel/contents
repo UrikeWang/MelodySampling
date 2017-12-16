@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="12141" systemVersion="16E195" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="DistractorMO" representedClassName="DistractorMO" syncable="YES" codeGenerationType="class">
+        <attribute name="distractorStr" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="HistoryMO" representedClassName="HistoryMO" syncable="YES" codeGenerationType="class">
+        <attribute name="artistID" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="artistName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="artworkImage" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="artworkUrl" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="collectionID" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="collectionName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="previewUrl" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="primaryGenreName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="score" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="timeIndex" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="trackID" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="trackName" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="QuestionMO" representedClassName="QuestionMO" syncable="YES" codeGenerationType="class">
+        <attribute name="artistID" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="artistName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="artworkUrl" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="collectionID" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="collectionName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="indexNo" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="previewUrl" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="primaryGenreName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="trackID" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="trackName" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="ResultMO" representedClassName="ResultMO" syncable="YES" codeGenerationType="class">
+        <attribute name="index" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="result" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="selectedAnswer" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="usedTime" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="DistractorMO" positionX="-72" positionY="-108" width="128" height="60"/>
+        <element name="HistoryMO" positionX="-29" positionY="-198" width="128" height="225"/>
+        <element name="QuestionMO" positionX="-189" positionY="-168" width="128" height="195"/>
+        <element name="ResultMO" positionX="-189" positionY="-270" width="128" height="105"/>
+    </elements>
+</model>
