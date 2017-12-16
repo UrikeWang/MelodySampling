@@ -1,6 +1,0 @@
-framework module Pods_King_of_Song_Quiz {
-  umbrella header "Pods-King of Song Quiz-umbrella.h"
-
-  export *
-  module * { export * }
-}
