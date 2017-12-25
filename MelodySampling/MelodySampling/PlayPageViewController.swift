@@ -24,22 +24,10 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
     var countDownLabel = UILabel()
 
     var timeCountdown: Int = 3
-
-//    var fetchResultController: NSFetchedResultsController<QuestionMO>!
-//
-//    var fetchDistractorController: NSFetchedResultsController<DistractorMO>!
-
+    
     var distractors = [String]()
     
     var fakeList = [[String]]()
-    
-//    var resultMO: ResultMO!
-//
-//    var distractorMO: DistractorMO!
-//
-//    var distractors: [DistractorMO] = []
-//
-//    var questions: [QuestionMO] = []
 
     var player: AVAudioPlayer?
 
