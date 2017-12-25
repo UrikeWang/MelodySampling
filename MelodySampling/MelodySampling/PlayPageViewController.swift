@@ -18,103 +18,63 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
     var ref: DatabaseReference!
 
     var totalTimeStart: Double = 0.0
-
     var coverView = UIView()
-
     var countDownLabel = UILabel()
-
     var timeCountdown: Int = 3
-    
     var distractors = [String]()
-    
     var fakeList = [[String]]()
-
     var player: AVAudioPlayer?
-
     let path: String = NSHomeDirectory() + "/Documents/"
-
     var questionList = [String]()
-
     var currentTrack: Int = 0
-
     var prepareTrack: Int = 1
     // MARK: What if one day, the source is not m4a file?
     let songFileNameList = ["song0.m4a", "song1.m4a", "song2.m4a", "song3.m4a", "song4.m4a"]
-
     var shuffledList = [String]()
-
     var artistList = [String]()
-
     var sendToNavigation = [ResultToShow]()
-
     var resultList = [EachSongResult]()
-    
     var navigationQuestionArray = [EachQuestion]()
-
     weak var timer = Timer()
-
     var trackTimeCountdown: Int = 30
-
     var timeStart: Double = 0
-
     var timeEnd: Double = 0
-
     var timePassed: Double = 0
-
     var score: Double = 0
-
     var aiTotalScore: Int = 0 {
         didSet {
             leftUserScoreLabel.text = "\(aiTotalScore)"
         }
     }
-
+    var aiTargetScore: Int = 0
     let userDefault = UserDefaults.standard
-
     var trackNameArray = [String]()
-
     var artistNameArray = [String]()
 
     @IBOutlet weak var profileBackgroundContentView: UIView!
-
     @IBOutlet weak var userNameLabel: UILabel!
-
     @IBOutlet weak var randomUserNameLabel: UILabel!
-    
     @IBOutlet weak var trackIndicator0: UIImageView!
-
     @IBOutlet weak var trackIndicator1: UIImageView!
-
     @IBOutlet weak var trackIndicator2: UIImageView!
-
     @IBOutlet weak var trackIndicator3: UIImageView!
-
     @IBOutlet weak var trackIndicator4: UIImageView!
-
     @IBOutlet weak var rightUserScoreLabel: UILabel! {
         didSet {
             rightUserScoreLabel.text = "0000"
         }
     }
-
     @IBOutlet weak var leftUserScoreLabel: UILabel! {
         didSet {
             leftUserScoreLabel.text = "0000"
         }
     }
-
     @IBOutlet weak var tableView: UITableView!
-
     @IBOutlet weak var tableViewHeightConstrains: NSLayoutConstraint!
-
     @IBOutlet weak var trackTimeCountdownLabel: UILabel!
-
     @IBOutlet weak var leftStarsStackView: UIStackView!
-
     @IBOutlet weak var rightStarsStackView: UIStackView!
-
     @IBOutlet weak var rightUserImageView: UIImageView!
-
     @IBOutlet weak var leftUserImageView: UIImageView!
     
     override func viewDidLoad() {
@@ -280,16 +240,14 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
         let aiResult = random(3)
 
         if aiResult > 0 {
-
+            // MARK: - AI Score animate
             guard let aiScoreStr = leftUserScoreLabel.text, var aiScore = Int(aiScoreStr) else { return }
 
             let aiGet = 600 + random(2000)
 
-            aiTotalScore += aiGet
-
-//            leftUserScoreLabel.text = "\(aiScore)"
-
-//            self.aiTotalScore = aiScore
+            aiTargetScore = aiTotalScore + aiGet
+            
+            var scoreAddTimer = Timer.scheduledTimer(timeInterval: 0.0001, target: self, selector: #selector(updateRandomUserScore), userInfo: nil, repeats: true)
 
         }
 
@@ -374,7 +332,7 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
         }
         //swiftlint:enable
 
-        // MARK: If finished one round, execute here.
+        // MARK: - If finished one round, execute here.
         if prepareTrack == 5 {
 
             player?.pause()
@@ -625,6 +583,16 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
         
         selfNavigation?.randomUser = nil
         print("Set random user to nil")
+    }
+    
+    @objc func updateRandomUserScore() {
+        if aiTotalScore != aiTargetScore {
+            aiTotalScore += 1
+        }
+    }
+    
+    @objc func updateUserScore() {
+        
     }
 }
 //swiftlint:enable
