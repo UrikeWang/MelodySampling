@@ -285,11 +285,11 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
 
             let aiGet = 600 + random(2000)
 
-            aiScore += aiGet
+            aiTotalScore += aiGet
 
 //            leftUserScoreLabel.text = "\(aiScore)"
 
-            self.aiTotalScore = aiScore
+//            self.aiTotalScore = aiScore
 
         }
 
