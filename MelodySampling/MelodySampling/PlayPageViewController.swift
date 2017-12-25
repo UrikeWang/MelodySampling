@@ -91,6 +91,8 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
 
     @IBOutlet weak var userNameLabel: UILabel!
 
+    @IBOutlet weak var randomUserNameLabel: UILabel!
+    
     @IBOutlet weak var trackIndicator0: UIImageView!
 
     @IBOutlet weak var trackIndicator1: UIImageView!
@@ -126,11 +128,13 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
     @IBOutlet weak var rightUserImageView: UIImageView!
 
     @IBOutlet weak var leftUserImageView: UIImageView!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let selfNavigation = self.navigationController as? PlayingNavigationController
+        
+        print(selfNavigation?.randomUser)
         
         if let questions = selfNavigation?.questionArray,
             let selfDistractors = selfNavigation?.distractorArray {
@@ -226,6 +230,7 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
 
         trackTimeCountdownLabel.text = "\(trackTimeCountdown)"
     }
+
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
@@ -576,7 +581,6 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
         let rightUserDiameter = self.rightUserImageView.frame.width
 
         leftUserImageView.layer.cornerRadius = leftUserDiameter / 2
-
         rightUserImageView.layer.cornerRadius = rightUserDiameter / 2
 
         let tableViewHeight = Double(UIScreen.main.bounds.height) - Double(profileBackgroundContentView.frame.height) - 31 - 32
@@ -586,7 +590,12 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
             self.tableViewHeightConstrains.constant = CGFloat(tableViewHeight)
             self.view.layoutIfNeeded()
         }
-
+        
+        if let randomUserImageData = userDefault.data(forKey: "RandomUserImageData"), let randomUserName = userDefault.object(forKey: "RandomUserName") as? String {
+            leftUserImageView.image = UIImage(data: randomUserImageData)
+            randomUserNameLabel.text = randomUserName
+        }
+        
         setCoverView(coverView, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
 
         setCountDownLabelStyle(countDownLabel, screen: UIScreen.main, height: 80, width: 80)
@@ -622,6 +631,12 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
         super.viewDidDisappear(animated)
         let clearDistractorData = CheckQuestionInCoreData()
         clearDistractorData.clearDistractorMO()
+        
+        
+        let selfNavigation = self.navigationController as? PlayingNavigationController
+        
+        selfNavigation?.randomUser = nil
+        print("Set random user to nil")
     }
 }
 //swiftlint:enable

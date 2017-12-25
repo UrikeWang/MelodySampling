@@ -1026,6 +1026,7 @@
                         <outlet property="leftUserImageView" destination="smp-c4-Ud6" id="YHU-0E-he2"/>
                         <outlet property="leftUserScoreLabel" destination="45D-kh-MVL" id="top-oo-nWb"/>
                         <outlet property="profileBackgroundContentView" destination="WXg-dK-XIq" id="zMl-3C-xdZ"/>
+                        <outlet property="randomUserNameLabel" destination="D8m-Q9-iDm" id="yij-62-lvF"/>
                         <outlet property="rightStarsStackView" destination="8Ee-vt-Ipm" id="Lvg-8O-ATL"/>
                         <outlet property="rightUserImageView" destination="rGL-HO-tDk" id="bU0-nr-hEJ"/>
                         <outlet property="rightUserScoreLabel" destination="owN-SQ-VoR" id="48p-SX-EHm"/>

@@ -80,6 +80,10 @@ class ResultPageViewController: UIViewController, UITableViewDelegate, UITableVi
             
             print("trackCounter: \(trackCounter)")
             
+            let randomUserManager = RandomUserManager()
+            
+            randomUserManager.requestAUser()
+            
             downloadManager.downloadRandomQuestion(selected: languageSelected, max: trackCounter, viewController: self)
         }
         
