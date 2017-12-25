@@ -12,7 +12,6 @@ import Firebase
 import CoreData
 import Alamofire
 
-// MARK: Type_body_length, solve this within this week
 //swiftlint:disable type_body_length
 class PlayPageViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate {
 
@@ -64,7 +63,7 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
     
     var navigationQuestionArray = [EachQuestion]()
 
-    var timer = Timer()
+    weak var timer = Timer()
 
     var trackTimeCountdown: Int = 30
 
@@ -76,7 +75,11 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
 
     var score: Double = 0
 
-    var aiTotalScore: Int = 0
+    var aiTotalScore: Int = 0 {
+        didSet {
+            leftUserScoreLabel.text = "\(aiTotalScore)"
+        }
+    }
 
     let userDefault = UserDefaults.standard
 
@@ -192,7 +195,6 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
         rightStarsStackView.isHidden = true
 
         self.tableView.delegate = self
-
         self.tableView.dataSource = self
 
         trackIndicator0.tag = 0
@@ -206,48 +208,7 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
         } else {
             userNameLabel.text = "Player"
         }
-
-//        let fetchRequest: NSFetchRequest<QuestionMO> = QuestionMO.fetchRequest()
-//
-//        let sortDescriptor = NSSortDescriptor(key: "indexNo", ascending: true)
-//
-//        fetchRequest.sortDescriptors = [sortDescriptor]
-//
-//        if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
-//
-//            let context = appDelegate.persistentContainer.viewContext
-//
-//            fetchResultController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
-//
-//            fetchResultController.delegate = self
-//
-//            do {
-//
-//                try fetchResultController.performFetch()
-//
-//                if let fetchedObjects = fetchResultController.fetchedObjects {
-//
-//                    questions = fetchedObjects
-//
-//                }
-//
-//            } catch {
-//                print(error)
-//            }
-//
-//            let distractorRequest: NSFetchRequest<DistractorMO> = DistractorMO.fetchRequest()
-//
-//            do {
-//
-//                distractors = try context.fetch(distractorRequest)
-//
-//            } catch {
-//                print(error)
-//            }
-//
-//        }
-//        print("現在 CoreData 中有 \(questions.count) 筆資料")
-
+        
         var counter = 0
 
         for question in navigationQuestionArray {
@@ -298,7 +259,7 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
 
         tableView.isUserInteractionEnabled = false
 
-        timer.invalidate()
+        timer?.invalidate()
 
         self.trackTimeCountdown = 30
 
@@ -327,15 +288,13 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
 
         if aiResult > 0 {
 
-            guard let aiScoreStr = leftUserScoreLabel.text else { return }
-
-            guard var aiScore = Int(aiScoreStr) else { return }
+            guard let aiScoreStr = leftUserScoreLabel.text, var aiScore = Int(aiScoreStr) else { return }
 
             let aiGet = 600 + random(2000)
 
             aiScore += aiGet
 
-            leftUserScoreLabel.text = "\(aiScore)"
+//            leftUserScoreLabel.text = "\(aiScore)"
 
             self.aiTotalScore = aiScore
 
@@ -528,22 +487,6 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
             historyRef.child("score").setValue(formatedScore)
             historyRef.child("date").setValue(formatedTime)
 
-//            for eachResult in resultList {
-//
-//                if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
-//
-//                    self.resultMO = ResultMO(context: appDelegate.persistentContainer.viewContext)
-//
-//                    self.resultMO.index = eachResult.index
-//                    self.resultMO.result = eachResult.result
-//                    self.resultMO.usedTime = eachResult.usedTime
-//                    self.resultMO.selectedAnswer = eachResult.selectedAnswer
-//
-//                    appDelegate.saveContext()
-//
-//                }
-//            }
-
             print(resultList)
 
             let totalTimePassed = now - totalTimeStart
@@ -569,34 +512,10 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
                 
                 let resultViewController = storyboard.instantiateViewController(withIdentifier: "ResultPage")
                 self.navigationController?.pushViewController(resultViewController, animated: true)
-                //self.present(registerVC!, animated: true, completion: nil)
 
             })
 
         } else {
-
-            
-//            var fakeList: [[String]] = []
-//
-//            while fakeList.count != 5 {
-//
-//                var eachFakeList: [String] = []
-//
-//                while eachFakeList.count != 3 {
-//
-//                    let firstItem = distractors.first
-//
-//                    guard let distractor = firstItem?.distractorStr else { return }
-//                    eachFakeList.append(distractor)
-//
-//                    distractors.remove(at: 0)
-//
-//                }
-//
-//                fakeList.append(eachFakeList)
-//
-//                print(eachFakeList)
-//            }
 
             // MARK: If not finished one round, go here
             questionList = fakeList[prepareTrack]
@@ -641,9 +560,9 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
 
                 let delayTime = DispatchTime.now() + .milliseconds(800)
 
-                DispatchQueue.main.asyncAfter(deadline: delayTime, execute: {
+                DispatchQueue.main.asyncAfter(deadline: delayTime, execute: { [weak self] in
 
-                self.runTime()
+                    self?.runTime()
 
                 })
             })

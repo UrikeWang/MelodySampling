@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		075203FE1FF130B60037A0BB /* male.json in Resources */ = {isa = PBXBuildFile; fileRef = 075203FD1FF130B60037A0BB /* male.json */; };
+		075204001FF131940037A0BB /* female.json in Resources */ = {isa = PBXBuildFile; fileRef = 075203FF1FF131940037A0BB /* female.json */; };
+		075204021FF132D60037A0BB /* RandomUserStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075204011FF132D60037A0BB /* RandomUserStruct.swift */; };
 		730D0E5A1F3AEBFD0099DA0F /* AddSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 730D0E591F3AEBFD0099DA0F /* AddSpace.swift */; };
 		730D0E5C1F3AFEA20099DA0F /* JudgeAnswer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 730D0E5B1F3AFEA20099DA0F /* JudgeAnswer.swift */; };
 		731F2ADF1F4537BF00690316 /* LabelCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731F2ADE1F4537BF00690316 /* LabelCreator.swift */; };
@@ -73,6 +76,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		075203FD1FF130B60037A0BB /* male.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = male.json; sourceTree = "<group>"; };
+		075203FF1FF131940037A0BB /* female.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = female.json; sourceTree = "<group>"; };
+		075204011FF132D60037A0BB /* RandomUserStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomUserStruct.swift; sourceTree = "<group>"; };
 		45D5F6F531796264F2302DC0 /* Pods-King of Song Quiz.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-King of Song Quiz.release.xcconfig"; path = "Pods/Target Support Files/Pods-King of Song Quiz/Pods-King of Song Quiz.release.xcconfig"; sourceTree = "<group>"; };
 		730D0E591F3AEBFD0099DA0F /* AddSpace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddSpace.swift; sourceTree = "<group>"; };
 		730D0E5B1F3AFEA20099DA0F /* JudgeAnswer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JudgeAnswer.swift; sourceTree = "<group>"; };
@@ -171,6 +177,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		075203FC1FF12FC80037A0BB /* RandomUser */ = {
+			isa = PBXGroup;
+			children = (
+				075203FD1FF130B60037A0BB /* male.json */,
+				075203FF1FF131940037A0BB /* female.json */,
+				075204011FF132D60037A0BB /* RandomUserStruct.swift */,
+			);
+			name = RandomUser;
+			sourceTree = "<group>";
+		};
 		0A18D233EA848DDC7DD770F7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -284,6 +300,7 @@
 				73AF80211F384B3400CA31FB /* StyleguideRelative */,
 				7326E8D91F5B045500332BE7 /* UpdateManager */,
 				73744D2D1F2F788900C1FAEA /* FunctionAndStruct */,
+				075203FC1FF12FC80037A0BB /* RandomUser */,
 				73744D071F2ED94300C1FAEA /* Main.storyboard */,
 				73744D031F2ED94200C1FAEA /* AppDelegate.swift */,
 				73744D0D1F2ED94300C1FAEA /* Assets.xcassets */,
@@ -445,6 +462,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				732AE4801F39817A009746CA /* Montserrat-Regular.ttf in Resources */,
+				075204001FF131940037A0BB /* female.json in Resources */,
 				7346B9FB1F5826EF00A9487C /* InfoPlist.strings in Resources */,
 				732AE47C1F39817A009746CA /* Montserrat-Light.ttf in Resources */,
 				732AE4761F39817A009746CA /* Montserrat-BoldItalic.ttf in Resources */,
@@ -459,6 +477,7 @@
 				732AE47F1F39817A009746CA /* Montserrat-MediumItalic.ttf in Resources */,
 				7346BA001F586A1600A9487C /* Localizable.strings in Resources */,
 				732AE4791F39817A009746CA /* Montserrat-ExtraLight.ttf in Resources */,
+				075203FE1FF130B60037A0BB /* male.json in Resources */,
 				732AE4831F39817A009746CA /* Montserrat-Thin.ttf in Resources */,
 				73744D091F2ED94300C1FAEA /* Main.storyboard in Resources */,
 				732AE4781F39817A009746CA /* Montserrat-ExtraBoldItalic.ttf in Resources */,
@@ -584,6 +603,7 @@
 				730D0E5C1F3AFEA20099DA0F /* JudgeAnswer.swift in Sources */,
 				7326E8DB1F5B047800332BE7 /* UpdateManager.swift in Sources */,
 				73AF80231F384B7900CA31FB /* Styleguide.swift in Sources */,
+				075204021FF132D60037A0BB /* RandomUserStruct.swift in Sources */,
 				7382742C1F40992E00CD718E /* FirebaseExtension.swift in Sources */,
 				73865FBA1F3C547F004E3594 /* AnswerTableViewCell.swift in Sources */,
 				7393F7C21F9D9B00009EB5D5 /* UIViewController+KeyboardDismiss.swift in Sources */,

@@ -18,7 +18,7 @@ extension PlayPageViewController {
         if trackTimeCountdown < 1 {
             print("timer 停了")
             
-            timer.invalidate()
+            timer?.invalidate()
             
             trackTimeCountdownLabel.text = "\(0)"
             
