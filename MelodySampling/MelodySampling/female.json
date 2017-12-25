@@ -1,0 +1,48 @@
+
+{
+    "results": [
+                {
+                "gender": "female",
+                "name": {
+                "title": "miss",
+                "first": "angèle",
+                "last": "deschamps"
+                },
+                "location": {
+                "street": "9246 avenue tony-garnier",
+                "city": "nanterre",
+                "state": "hérault",
+                "postcode": 47520
+                },
+                "email": "angèle.deschamps@example.com",
+                "login": {
+                "username": "organicladybug500",
+                "password": "gothic",
+                "salt": "YXqfWOQT",
+                "md5": "c835c03107ca1438afc9fce5240555d4",
+                "sha1": "c8572f4d962a847ef3e713c008f3ddd2f3077eb0",
+                "sha256": "8956f9fcc48533d3dd26416ad139162e4bf576dd6905bd712ee6201a09a5cea0"
+                },
+                "dob": "1984-07-20 20:58:31",
+                "registered": "2005-08-02 03:52:16",
+                "phone": "01-83-11-69-80",
+                "cell": "06-57-74-32-02",
+                "id": {
+                "name": "INSEE",
+                "value": "284695198508 93"
+                },
+                "picture": {
+                "large": "https://randomuser.me/api/portraits/women/79.jpg",
+                "medium": "https://randomuser.me/api/portraits/med/women/79.jpg",
+                "thumbnail": "https://randomuser.me/api/portraits/thumb/women/79.jpg"
+                },
+                "nat": "FR"
+                }
+                ],
+    "info": {
+        "seed": "9c2e925898b7df5a",
+        "results": 1,
+        "page": 1,
+        "version": "1.1"
+    }
+}
