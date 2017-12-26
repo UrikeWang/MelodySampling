@@ -59,16 +59,8 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
     @IBOutlet weak var trackIndicator2: UIImageView!
     @IBOutlet weak var trackIndicator3: UIImageView!
     @IBOutlet weak var trackIndicator4: UIImageView!
-    @IBOutlet weak var rightUserScoreLabel: UILabel! {
-        didSet {
-            rightUserScoreLabel.text = "0000"
-        }
-    }
-    @IBOutlet weak var leftUserScoreLabel: UILabel! {
-        didSet {
-            leftUserScoreLabel.text = "0000"
-        }
-    }
+    @IBOutlet weak var rightUserScoreLabel: UILabel!
+    @IBOutlet weak var leftUserScoreLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var tableViewHeightConstrains: NSLayoutConstraint!
     @IBOutlet weak var trackTimeCountdownLabel: UILabel!
@@ -177,6 +169,8 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
         }
 
         trackTimeCountdownLabel.text = "\(trackTimeCountdown)"
+        rightUserScoreLabel.text = "0000"
+        leftUserScoreLabel.text = "0000"
     }
 
 
@@ -247,7 +241,7 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
 
             aiTargetScore = aiTotalScore + aiGet
             
-            var scoreAddTimer = Timer.scheduledTimer(timeInterval: 0.0001, target: self, selector: #selector(updateRandomUserScore), userInfo: nil, repeats: true)
+            var scoreAddTimer = Timer.scheduledTimer(timeInterval: 0.0001, target: self, selector: #selector(updateRandomUserScore(_:)), userInfo: nil, repeats: true)
 
         }
 
@@ -585,9 +579,11 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
         print("Set random user to nil")
     }
     
-    @objc func updateRandomUserScore() {
+    @objc func updateRandomUserScore(_ sender: Timer) {
         if aiTotalScore != aiTargetScore {
             aiTotalScore += 1
+        } else {
+            sender.invalidate()
         }
     }
     
