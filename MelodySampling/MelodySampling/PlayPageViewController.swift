@@ -40,12 +40,24 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
     var timeStart: Double = 0
     var timeEnd: Double = 0
     var timePassed: Double = 0
-    var score: Double = 0
+    
+    var userScore: Int = 0 {
+        didSet {
+            if userScore != 0 {
+                rightUserScoreLabel.text = "\(userScore)"
+            } else {
+                rightUserScoreLabel.text = "0000"
+            }
+        }
+    }
+    var userTargetScore: Int = 0
+    
     var aiTotalScore: Int = 0 {
         didSet {
             leftUserScoreLabel.text = "\(aiTotalScore)"
         }
     }
+    
     var aiTargetScore: Int = 0
     let userDefault = UserDefaults.standard
     var trackNameArray = [String]()
@@ -235,13 +247,13 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
 
         if aiResult > 0 {
             // MARK: - AI Score animate
-            guard let aiScoreStr = leftUserScoreLabel.text, var aiScore = Int(aiScoreStr) else { return }
+            guard let aiScoreStr = leftUserScoreLabel.text else { return }
 
             let aiGet = 600 + random(2000)
 
             aiTargetScore = aiTotalScore + aiGet
             
-            var scoreAddTimer = Timer.scheduledTimer(timeInterval: 0.0001, target: self, selector: #selector(updateRandomUserScore(_:)), userInfo: nil, repeats: true)
+            _ = Timer.scheduledTimer(timeInterval: 0.00005, target: self, selector: #selector(updateRandomUserScore(_:)), userInfo: nil, repeats: true)
 
         }
 
@@ -256,19 +268,13 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
 
         //swiftlint:disable force_cast
         if judgeAnswer(input: selectedAnswer, compare: answer) {
+            
+            let scoreYouGot = Int(scoreAfterOneSong(time: timePassed))
+            
+            userTargetScore = userScore + scoreYouGot
 
-            let currentScoreString = rightUserScoreLabel.text
-
-            let currentScore = Double(currentScoreString!) ?? 0.0
-
-            let scoreYouGot = scoreAfterOneSong(time: timePassed)
-
-            score = Double(currentScore + scoreYouGot)
-
-            let formatPrice = String(format:"%.0f", score)
-
-            rightUserScoreLabel.text = "\(formatPrice)"
-
+            _ = Timer.scheduledTimer(timeInterval: 0.00005, target: self, selector: #selector(updateUserScore(_:)), userInfo: nil, repeats: true)
+            
             let currentResult = EachSongResult(index: Int16(currentTrack), result: true, usedTime: timePassed, selectedAnswer: selectedAnswer)
 
             self.resultList.append(currentResult)
@@ -276,11 +282,8 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
             let selectedCell = tableView.cellForRow(at: indexPath) as! AnswerTableViewCell
 
             selectedCell.judgeImageView.image = UIImage(named: "right")
-
             selectedCell.judgeImageView.isHidden = false
-
             selectedCell.judgeImageView.alpha = 1
-
             selectedCell.answerView.layer.borderColor = UIColor.mldAppleGreen.cgColor
 
             UIView.animate(withDuration: 0.8, animations: {
@@ -331,7 +334,7 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
 
             player?.pause()
 
-            userDefault.set(score, forKey: "Score")
+            userDefault.set(userTargetScore, forKey: "Score")
 
             guard let uid = userDefault.object(forKey: "uid") as? String else { return }
 
@@ -426,7 +429,7 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
 
             let now = Date().timeIntervalSince1970
 
-            let formatedScore = String(format: "%.0f", score)
+            let formatedScore = String(format: "%.0f", userScore)
             let formatedTime = String(format: "%.0f", now)
 
             historyRef.child("score").setValue(formatedScore)
@@ -587,8 +590,12 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
         }
     }
     
-    @objc func updateUserScore() {
-        
+    @objc func updateUserScore(_ sender: Timer) {
+        if userScore != userTargetScore {
+            userScore += 1
+        } else {
+            sender.invalidate()
+        }
     }
 }
 //swiftlint:enable
