@@ -131,6 +131,10 @@ class ResultPageViewController: UIViewController, UITableViewDelegate, UITableVi
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        let winOrLose = userDefault.bool(forKey: "WinOrLose")
+        
+        print("WinOrLose: \(winOrLose)")
+        
         let selfNavigation = self.navigationController as? PlayingNavigationController
         
         if let results = selfNavigation?.resultArray {

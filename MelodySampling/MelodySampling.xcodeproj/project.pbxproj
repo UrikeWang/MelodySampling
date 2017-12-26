@@ -11,6 +11,7 @@
 		075204001FF131940037A0BB /* female.json in Resources */ = {isa = PBXBuildFile; fileRef = 075203FF1FF131940037A0BB /* female.json */; };
 		075204021FF132D60037A0BB /* RandomUserStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075204011FF132D60037A0BB /* RandomUserStruct.swift */; };
 		075204041FF135CB0037A0BB /* RandomUserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075204031FF135CB0037A0BB /* RandomUserManager.swift */; };
+		075204081FF296470037A0BB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 075204071FF296460037A0BB /* GoogleService-Info.plist */; };
 		730D0E5A1F3AEBFD0099DA0F /* AddSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 730D0E591F3AEBFD0099DA0F /* AddSpace.swift */; };
 		730D0E5C1F3AFEA20099DA0F /* JudgeAnswer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 730D0E5B1F3AFEA20099DA0F /* JudgeAnswer.swift */; };
 		731F2ADF1F4537BF00690316 /* LabelCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731F2ADE1F4537BF00690316 /* LabelCreator.swift */; };
@@ -53,7 +54,6 @@
 		73744D0C1F2ED94300C1FAEA /* MelodySampling.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 73744D0A1F2ED94300C1FAEA /* MelodySampling.xcdatamodeld */; };
 		73744D0E1F2ED94300C1FAEA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 73744D0D1F2ED94300C1FAEA /* Assets.xcassets */; };
 		73744D111F2ED94300C1FAEA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 73744D0F1F2ED94300C1FAEA /* LaunchScreen.storyboard */; };
-		73744D191F2EDEA400C1FAEA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 73744D181F2EDEA400C1FAEA /* GoogleService-Info.plist */; };
 		73744D2F1F2F78C000C1FAEA /* GetDeveloperToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73744D2E1F2F78C000C1FAEA /* GetDeveloperToken.swift */; };
 		7377838D1F42C34F00B9EEBF /* StandardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7377838C1F42C34F00B9EEBF /* StandardTableViewCell.swift */; };
 		7382740C1F3EAF8D00CD718E /* DownloadFromQuestionBank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7382740B1F3EAF8D00CD718E /* DownloadFromQuestionBank.swift */; };
@@ -81,6 +81,7 @@
 		075203FF1FF131940037A0BB /* female.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = female.json; sourceTree = "<group>"; };
 		075204011FF132D60037A0BB /* RandomUserStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomUserStruct.swift; sourceTree = "<group>"; };
 		075204031FF135CB0037A0BB /* RandomUserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomUserManager.swift; sourceTree = "<group>"; };
+		075204071FF296460037A0BB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		45D5F6F531796264F2302DC0 /* Pods-King of Song Quiz.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-King of Song Quiz.release.xcconfig"; path = "Pods/Target Support Files/Pods-King of Song Quiz/Pods-King of Song Quiz.release.xcconfig"; sourceTree = "<group>"; };
 		730D0E591F3AEBFD0099DA0F /* AddSpace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddSpace.swift; sourceTree = "<group>"; };
 		730D0E5B1F3AFEA20099DA0F /* JudgeAnswer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JudgeAnswer.swift; sourceTree = "<group>"; };
@@ -138,7 +139,6 @@
 		73744D0D1F2ED94300C1FAEA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		73744D101F2ED94300C1FAEA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		73744D121F2ED94300C1FAEA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		73744D181F2EDEA400C1FAEA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		73744D2E1F2F78C000C1FAEA /* GetDeveloperToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetDeveloperToken.swift; sourceTree = "<group>"; };
 		7377838C1F42C34F00B9EEBF /* StandardTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StandardTableViewCell.swift; sourceTree = "<group>"; };
 		737A713C1F56E8E700E6CFBF /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
@@ -309,8 +309,8 @@
 				73744D0D1F2ED94300C1FAEA /* Assets.xcassets */,
 				73744D0F1F2ED94300C1FAEA /* LaunchScreen.storyboard */,
 				73744D121F2ED94300C1FAEA /* Info.plist */,
+				075204071FF296460037A0BB /* GoogleService-Info.plist */,
 				73744D0A1F2ED94300C1FAEA /* MelodySampling.xcdatamodeld */,
-				73744D181F2EDEA400C1FAEA /* GoogleService-Info.plist */,
 			);
 			path = MelodySampling;
 			sourceTree = "<group>";
@@ -471,13 +471,13 @@
 				732AE4761F39817A009746CA /* Montserrat-BoldItalic.ttf in Resources */,
 				73744D111F2ED94300C1FAEA /* LaunchScreen.storyboard in Resources */,
 				732AE4731F39817A009746CA /* Montserrat-Black.ttf in Resources */,
-				73744D191F2EDEA400C1FAEA /* GoogleService-Info.plist in Resources */,
 				732AE4741F39817A009746CA /* Montserrat-BlackItalic.ttf in Resources */,
 				732AE47A1F39817A009746CA /* Montserrat-ExtraLightItalic.ttf in Resources */,
 				73744D0E1F2ED94300C1FAEA /* Assets.xcassets in Resources */,
 				732AE47D1F39817A009746CA /* Montserrat-LightItalic.ttf in Resources */,
 				732AE4811F39817A009746CA /* Montserrat-SemiBold.ttf in Resources */,
 				732AE47F1F39817A009746CA /* Montserrat-MediumItalic.ttf in Resources */,
+				075204081FF296470037A0BB /* GoogleService-Info.plist in Resources */,
 				7346BA001F586A1600A9487C /* Localizable.strings in Resources */,
 				732AE4791F39817A009746CA /* Montserrat-ExtraLight.ttf in Resources */,
 				075203FE1FF130B60037A0BB /* male.json in Resources */,

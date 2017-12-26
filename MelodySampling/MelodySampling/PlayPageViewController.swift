@@ -334,6 +334,12 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
 
             player?.pause()
 
+            if userTargetScore > aiTargetScore {
+                userDefault.set(true, forKey: "WinOrLose")
+            } else {
+                userDefault.set(false, forKey: "WinOrLose")
+            }
+            
             userDefault.set(userTargetScore, forKey: "Score")
 
             guard let uid = userDefault.object(forKey: "uid") as? String else { return }
