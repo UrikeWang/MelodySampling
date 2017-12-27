@@ -230,19 +230,8 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
 
         timeStart = currentTime
 
-        switch currentTrack {
-        case trackIndicator0.tag:
-            trackIndicator0.image = UIImage(named: "icon_CD_white_new")
-        case trackIndicator1.tag:
-            trackIndicator1.image = UIImage(named: "icon_CD_white_new")
-        case trackIndicator2.tag:
-            trackIndicator2.image = UIImage(named: "icon_CD_white_new")
-        case trackIndicator3.tag:
-            trackIndicator3.image = UIImage(named: "icon_CD_white_new")
-        default:
-            trackIndicator4.image = UIImage(named: "icon_CD_white_new")
-        }
-
+        updateTrackPic(input: currentTrack)
+        
         let aiResult = random(3)
 
         if aiResult > 0 {
@@ -588,6 +577,29 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
         print("Set random user to nil")
     }
     
+    @IBAction func exitButtonTapped(_ sender: UIButton) {
+        
+        let exitAlert = UIAlertController(title: NSLocalizedString("Exit", comment: "Exit alert title at playing page"), message: NSLocalizedString("Do you really want to exit this round?", comment:"Exit alert message at playing page"), preferredStyle: .alert)
+        
+        let resumeAction = UIAlertAction(title: NSLocalizedString(NSLocalizedString("Resume", comment: "Resume action in alert controller of playing page"), comment: "Resume"), style: .default) { (_) in
+            
+            exitAlert.dismiss(animated: true, completion: nil)
+        }
+        
+        let exitAction = UIAlertAction(title: NSLocalizedString(NSLocalizedString("Exit", comment: "Exit action in alert controller of playing page"), comment: "Exit"), style: .default) { (_) in
+            
+            self.player?.pause()
+            self.timer?.invalidate()
+            let selfNavigation = self.navigationController as? PlayingNavigationController
+            selfNavigation?.popToRootViewController(animated: true)
+        }
+        
+        exitAlert.addAction(exitAction)
+        exitAlert.addAction(resumeAction)
+        
+        self.present(exitAlert, animated: true, completion: nil)
+        
+    }
     @objc func updateRandomUserScore(_ sender: Timer) {
         if aiTotalScore != aiTargetScore {
             aiTotalScore += 1
