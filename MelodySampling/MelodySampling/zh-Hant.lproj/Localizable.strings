@@ -4,14 +4,30 @@
 /* User name of who logged in anonymously */
 "Anonymous" = "匿名玩家";
 
+/* Sign Out Message on profile page */
+"Are you going to sign out?" = "請問確定要登出嗎?";
+
 /* Billboard pop cell at genre type choose page. */
 "Billboard Pop" = "世界流行樂";
+
+/* Cancel for rename action
+   Cancel on sign out action */
+"Cancel" = "取消";
 
 /* Cantonese pop cell at genre type choose page. */
 "Cantonese Pop" = "粵語流行樂";
 
 /* Choose category label on result page */
 "Choose Category" = "重新選曲";
+
+/* Confirm input for rename action */
+"Confirm" = "確定";
+
+/* You Lose */
+"Defeated!" = "輸了~~";
+
+/* Exit alert message at playing page */
+"Do you really want to exit this round?" = "請問確定要放棄這回合嗎?";
 
 /* Goto signup page at login page. */
 "Don't have an account? Sign up" = "還沒有帳號嗎? 轉到登錄頁";
@@ -25,6 +41,11 @@
 
 /* Error title at login page. */
 "Error" = "錯誤!";
+
+/* Exit
+   Exit action in alert controller of playing page
+   Exit alert title at playing page */
+"Exit" = "放棄";
 
 /* Forget password label at login page. */
 "Forget password" = "忘記密碼";
@@ -68,6 +89,10 @@
 /* Subtitle of email empty warning message */
 "Please input your email." = "請輸入電子郵件信箱";
 
+/* Resume
+   Resume action in alert controller of playing page */
+"Resume" = "繼續";
+
 /* Login label at login page.
    SignIn label text at landing page. */
 "Sign In" = "登入";
@@ -96,6 +121,9 @@
 
 /* for user label */
 "User" = "玩家";
+
+/* You Win */
+"Victory!" = "勝利!!!";
 
 /* Touch Hint Label */
 "⬇︎Tap to replay song" = "⬇︎點擊後可重聽題目";

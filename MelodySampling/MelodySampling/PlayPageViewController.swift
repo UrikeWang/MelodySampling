@@ -242,7 +242,7 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
 
             aiTargetScore = aiTotalScore + aiGet
             
-            _ = Timer.scheduledTimer(timeInterval: 0.00005, target: self, selector: #selector(updateRandomUserScore(_:)), userInfo: nil, repeats: true)
+            _ = Timer.scheduledTimer(timeInterval: 0.00001, target: self, selector: #selector(updateRandomUserScore(_:)), userInfo: nil, repeats: true)
 
         }
 
@@ -262,7 +262,7 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
             
             userTargetScore = userScore + scoreYouGot
 
-            _ = Timer.scheduledTimer(timeInterval: 0.00005, target: self, selector: #selector(updateUserScore(_:)), userInfo: nil, repeats: true)
+            _ = Timer.scheduledTimer(timeInterval: 0.00001, target: self, selector: #selector(updateUserScore(_:)), userInfo: nil, repeats: true)
             
             let currentResult = EachSongResult(index: Int16(currentTrack), result: true, usedTime: timePassed, selectedAnswer: selectedAnswer)
 
@@ -447,7 +447,7 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
                     ])
             }
 
-            let delayTime = DispatchTime.now() + .milliseconds(500)
+            let delayTime = DispatchTime.now() + .milliseconds(1500)
 
             DispatchQueue.main.asyncAfter(deadline: delayTime, execute: {
                 

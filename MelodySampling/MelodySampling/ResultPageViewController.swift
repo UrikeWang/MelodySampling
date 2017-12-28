@@ -90,11 +90,9 @@ class ResultPageViewController: UIViewController, UITableViewDelegate, UITableVi
     }
 
     @IBOutlet weak var tableView: UITableView!
-
     @IBOutlet weak var profilePageView: UIView!
-
     @IBOutlet weak var lowerView: UIView!
-
+    @IBOutlet weak var winOrLoseLabel: UILabel!
     @IBOutlet weak var userNameLabel: UILabel!
 
     var score: Double = 0
@@ -115,7 +113,14 @@ class ResultPageViewController: UIViewController, UITableViewDelegate, UITableVi
         let imageDiameter = self.userProfileImageView.frame.width
 
         userProfileImageView.layer.cornerRadius = imageDiameter / 2
+        
+        let winOrLose = userDefault.bool(forKey: "WinOrLose")
 
+        if winOrLose {
+            winOrLoseLabel.text = NSLocalizedString("Victory!", comment: "You Win")
+        } else {
+            winOrLoseLabel.text = NSLocalizedString("Defeated!", comment: "You Lose")
+        }
     }
 
     override func viewWillAppear(_ animated: Bool) {
