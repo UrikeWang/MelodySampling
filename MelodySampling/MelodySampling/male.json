@@ -1,0 +1,48 @@
+
+{
+    "results": [
+                {
+                "gender": "male",
+                "name": {
+                "title": "mr",
+                "first": "leo",
+                "last": "turner"
+                },
+                "location": {
+                "street": "6229 kahikatea drive",
+                "city": "hastings",
+                "state": "southland",
+                "postcode": 49298
+                },
+                "email": "leo.turner@example.com",
+                "login": {
+                "username": "redleopard156",
+                "password": "cardinal",
+                "salt": "8IeQNa6e",
+                "md5": "c2fbff1f2d4d76e2d618b89709859650",
+                "sha1": "a9c318464b33ada98b36b5673d751819b6dbe23c",
+                "sha256": "c6a28aa22eb9fb47a762b6309ca51d55d9d6ce22c05f801833467fc493934821"
+                },
+                "dob": "1946-06-16 07:57:02",
+                "registered": "2009-09-25 14:10:17",
+                "phone": "(388)-199-7662",
+                "cell": "(824)-980-1586",
+                "id": {
+                "name": "",
+                "value": null
+                },
+                "picture": {
+                "large": "https://randomuser.me/api/portraits/men/11.jpg",
+                "medium": "https://randomuser.me/api/portraits/med/men/11.jpg",
+                "thumbnail": "https://randomuser.me/api/portraits/thumb/men/11.jpg"
+                },
+                "nat": "NZ"
+                }
+                ],
+    "info": {
+        "seed": "a4c308f7681b7874",
+        "results": 1,
+        "page": 1,
+        "version": "1.1"
+    }
+}

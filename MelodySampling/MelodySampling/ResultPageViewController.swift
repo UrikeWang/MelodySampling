@@ -80,17 +80,19 @@ class ResultPageViewController: UIViewController, UITableViewDelegate, UITableVi
             
             print("trackCounter: \(trackCounter)")
             
+            let randomUserManager = RandomUserManager()
+            
+            randomUserManager.requestAUser()
+            
             downloadManager.downloadRandomQuestion(selected: languageSelected, max: trackCounter, viewController: self)
         }
         
     }
 
     @IBOutlet weak var tableView: UITableView!
-
     @IBOutlet weak var profilePageView: UIView!
-
     @IBOutlet weak var lowerView: UIView!
-
+    @IBOutlet weak var winOrLoseLabel: UILabel!
     @IBOutlet weak var userNameLabel: UILabel!
 
     var score: Double = 0
@@ -111,7 +113,14 @@ class ResultPageViewController: UIViewController, UITableViewDelegate, UITableVi
         let imageDiameter = self.userProfileImageView.frame.width
 
         userProfileImageView.layer.cornerRadius = imageDiameter / 2
+        
+        let winOrLose = userDefault.bool(forKey: "WinOrLose")
 
+        if winOrLose {
+            winOrLoseLabel.text = NSLocalizedString("Victory!", comment: "You Win")
+        } else {
+            winOrLoseLabel.text = NSLocalizedString("Defeated!", comment: "You Lose")
+        }
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -127,6 +136,10 @@ class ResultPageViewController: UIViewController, UITableViewDelegate, UITableVi
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        let winOrLose = userDefault.bool(forKey: "WinOrLose")
+        
+        print("WinOrLose: \(winOrLose)")
+        
         let selfNavigation = self.navigationController as? PlayingNavigationController
         
         if let results = selfNavigation?.resultArray {

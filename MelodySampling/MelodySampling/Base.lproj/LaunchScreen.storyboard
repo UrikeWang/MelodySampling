@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -13,25 +15,38 @@
         <scene sceneID="EHf-IW-A2E">
             <objects>
                 <viewController id="01J-lp-oVM" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Llm-lL-Icb"/>
-                        <viewControllerLayoutGuide type="bottom" id="xb3-aO-Qok"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="score_bg" translatesAutoresizingMaskIntoConstraints="NO" id="YFo-9Y-5ZU">
+                            <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="crowd" translatesAutoresizingMaskIntoConstraints="NO" id="aRC-10-zwI">
+                                <rect key="frame" x="0.0" y="-20" width="375" height="727"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="K_logo" translatesAutoresizingMaskIntoConstraints="NO" id="tpW-cK-3wF" userLabel="App Icon Image View">
+                                <rect key="frame" x="132" y="20" width="110" height="110"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="tpW-cK-3wF" secondAttribute="height" multiplier="1:1" id="fmN-24-Ijo"/>
+                                    <constraint firstAttribute="width" constant="110" id="raC-Mv-ukr"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" alpha="0.55000000000000004" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="landing_bg" translatesAutoresizingMaskIntoConstraints="NO" id="6vG-y9-elW" userLabel="Landing Image View">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="YFo-9Y-5ZU" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="0cb-Do-geJ"/>
-                            <constraint firstAttribute="trailing" secondItem="YFo-9Y-5ZU" secondAttribute="trailing" id="XAt-Yh-Mb9"/>
-                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="YFo-9Y-5ZU" secondAttribute="bottom" id="lQB-nh-65E"/>
-                            <constraint firstItem="YFo-9Y-5ZU" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="vhf-lS-h2N"/>
+                            <constraint firstItem="ACL-AH-WcZ" firstAttribute="bottom" secondItem="6vG-y9-elW" secondAttribute="bottom" id="9EM-9h-HhS"/>
+                            <constraint firstItem="ACL-AH-WcZ" firstAttribute="top" secondItem="aRC-10-zwI" secondAttribute="top" constant="40" id="Cv6-Cf-RrA"/>
+                            <constraint firstItem="ACL-AH-WcZ" firstAttribute="bottom" secondItem="aRC-10-zwI" secondAttribute="bottom" constant="-40" id="EUe-E2-VDg"/>
+                            <constraint firstItem="ACL-AH-WcZ" firstAttribute="trailing" secondItem="aRC-10-zwI" secondAttribute="trailing" id="G3S-Mi-exm"/>
+                            <constraint firstItem="ACL-AH-WcZ" firstAttribute="trailing" secondItem="6vG-y9-elW" secondAttribute="trailing" id="HKc-qw-sGj"/>
+                            <constraint firstItem="tpW-cK-3wF" firstAttribute="top" secondItem="ACL-AH-WcZ" secondAttribute="top" id="da0-Bj-NKb"/>
+                            <constraint firstItem="tpW-cK-3wF" firstAttribute="centerX" secondItem="ACL-AH-WcZ" secondAttribute="centerX" id="eSx-tJ-LPP"/>
+                            <constraint firstItem="aRC-10-zwI" firstAttribute="leading" secondItem="ACL-AH-WcZ" secondAttribute="leading" id="fsa-tB-7jF"/>
+                            <constraint firstItem="ACL-AH-WcZ" firstAttribute="top" secondItem="6vG-y9-elW" secondAttribute="top" constant="20" id="mft-ga-azh"/>
+                            <constraint firstItem="6vG-y9-elW" firstAttribute="leading" secondItem="ACL-AH-WcZ" secondAttribute="leading" id="rHV-jx-RWO"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="ACL-AH-WcZ"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -40,6 +55,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="score_bg" width="414" height="736"/>
+        <image name="K_logo" width="97" height="115"/>
+        <image name="crowd" width="375" height="667"/>
+        <image name="landing_bg" width="414" height="736"/>
     </resources>
 </document>

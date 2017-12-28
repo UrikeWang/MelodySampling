@@ -18,7 +18,7 @@ extension PlayPageViewController {
         if trackTimeCountdown < 1 {
             print("timer 停了")
             
-            timer.invalidate()
+            timer?.invalidate()
             
             trackTimeCountdownLabel.text = "\(0)"
             
@@ -96,5 +96,20 @@ extension PlayPageViewController {
         self.player?.play()
     }
     
+    func updateTrackPic(input currentTrack: Int) {
+        
+        switch currentTrack {
+        case trackIndicator0.tag:
+            trackIndicator0.image = UIImage(named: "icon_CD_white_new")
+        case trackIndicator1.tag:
+            trackIndicator1.image = UIImage(named: "icon_CD_white_new")
+        case trackIndicator2.tag:
+            trackIndicator2.image = UIImage(named: "icon_CD_white_new")
+        case trackIndicator3.tag:
+            trackIndicator3.image = UIImage(named: "icon_CD_white_new")
+        default:
+            trackIndicator4.image = UIImage(named: "icon_CD_white_new")
+        }
+    }
 }
 

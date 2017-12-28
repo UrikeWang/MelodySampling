@@ -13,6 +13,8 @@ import Firebase
 class TypeChooseViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     var ref: DatabaseReference!
+    
+    let randomUserManager = RandomUserManager()
 
     @IBOutlet weak var userIconBackgroundView: UIView!
 
@@ -45,11 +47,9 @@ class TypeChooseViewController: UIViewController, UITableViewDataSource, UITable
         self.questionCounter = UserDefaults.standard.object(forKey: "questionCounter") as? Int ?? 1
 
         tableView.delegate = self
-
         tableView.dataSource = self
-
+        
         userIconBackgroundView.layer.cornerRadius = 30
-
         userIconBackgroundView.layer.masksToBounds = true
 
         invisibleButton.setTitleColor(UIColor.clear, for: .normal)
@@ -155,6 +155,10 @@ class TypeChooseViewController: UIViewController, UITableViewDataSource, UITable
         checkQuestion.clearResultMO()
 
         let downloadManager = DownloadManager()
+        
+        randomUserManager.requestAUser()
+        
+        print("開始要求 npc")
         
         var trackCounter: Int
         
