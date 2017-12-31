@@ -12,122 +12,81 @@ import Firebase
 import CoreData
 import Alamofire
 
-// MARK: Type_body_length, solve this within this week
 //swiftlint:disable type_body_length
 class PlayPageViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate {
 
     var ref: DatabaseReference!
 
     var totalTimeStart: Double = 0.0
-
     var coverView = UIView()
-
     var countDownLabel = UILabel()
-
     var timeCountdown: Int = 3
-
-//    var fetchResultController: NSFetchedResultsController<QuestionMO>!
-//
-//    var fetchDistractorController: NSFetchedResultsController<DistractorMO>!
-
     var distractors = [String]()
-    
     var fakeList = [[String]]()
-    
-//    var resultMO: ResultMO!
-//
-//    var distractorMO: DistractorMO!
-//
-//    var distractors: [DistractorMO] = []
-//
-//    var questions: [QuestionMO] = []
-
     var player: AVAudioPlayer?
-
     let path: String = NSHomeDirectory() + "/Documents/"
-
     var questionList = [String]()
-
     var currentTrack: Int = 0
-
     var prepareTrack: Int = 1
     // MARK: What if one day, the source is not m4a file?
     let songFileNameList = ["song0.m4a", "song1.m4a", "song2.m4a", "song3.m4a", "song4.m4a"]
-
     var shuffledList = [String]()
-
     var artistList = [String]()
-
     var sendToNavigation = [ResultToShow]()
-
     var resultList = [EachSongResult]()
-    
     var navigationQuestionArray = [EachQuestion]()
-
-    var timer = Timer()
-
+    weak var timer = Timer()
     var trackTimeCountdown: Int = 30
-
     var timeStart: Double = 0
-
     var timeEnd: Double = 0
-
     var timePassed: Double = 0
-
-    var score: Double = 0
-
-    var aiTotalScore: Int = 0
-
+    
+    var userScore: Int = 0 {
+        didSet {
+            if userScore != 0 {
+                rightUserScoreLabel.text = "\(userScore)"
+            } else {
+                rightUserScoreLabel.text = "0000"
+            }
+        }
+    }
+    var userTargetScore: Int = 0
+    
+    var aiTotalScore: Int = 0 {
+        didSet {
+            leftUserScoreLabel.text = "\(aiTotalScore)"
+        }
+    }
+    
+    var aiTargetScore: Int = 0
     let userDefault = UserDefaults.standard
-
     var trackNameArray = [String]()
-
     var artistNameArray = [String]()
 
     @IBOutlet weak var profileBackgroundContentView: UIView!
-
     @IBOutlet weak var userNameLabel: UILabel!
-
+    @IBOutlet weak var randomUserNameLabel: UILabel!
     @IBOutlet weak var trackIndicator0: UIImageView!
-
     @IBOutlet weak var trackIndicator1: UIImageView!
-
     @IBOutlet weak var trackIndicator2: UIImageView!
-
     @IBOutlet weak var trackIndicator3: UIImageView!
-
     @IBOutlet weak var trackIndicator4: UIImageView!
-
-    @IBOutlet weak var rightUserScoreLabel: UILabel! {
-        didSet {
-            rightUserScoreLabel.text = "0000"
-        }
-    }
-
-    @IBOutlet weak var leftUserScoreLabel: UILabel! {
-        didSet {
-            leftUserScoreLabel.text = "0000"
-        }
-    }
-
+    @IBOutlet weak var rightUserScoreLabel: UILabel!
+    @IBOutlet weak var leftUserScoreLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
-
     @IBOutlet weak var tableViewHeightConstrains: NSLayoutConstraint!
-
     @IBOutlet weak var trackTimeCountdownLabel: UILabel!
-
     @IBOutlet weak var leftStarsStackView: UIStackView!
-
     @IBOutlet weak var rightStarsStackView: UIStackView!
-
     @IBOutlet weak var rightUserImageView: UIImageView!
-
     @IBOutlet weak var leftUserImageView: UIImageView!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let selfNavigation = self.navigationController as? PlayingNavigationController
+        
+        print(selfNavigation?.randomUser)
         
         if let questions = selfNavigation?.questionArray,
             let selfDistractors = selfNavigation?.distractorArray {
@@ -192,7 +151,6 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
         rightStarsStackView.isHidden = true
 
         self.tableView.delegate = self
-
         self.tableView.dataSource = self
 
         trackIndicator0.tag = 0
@@ -206,48 +164,7 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
         } else {
             userNameLabel.text = "Player"
         }
-
-//        let fetchRequest: NSFetchRequest<QuestionMO> = QuestionMO.fetchRequest()
-//
-//        let sortDescriptor = NSSortDescriptor(key: "indexNo", ascending: true)
-//
-//        fetchRequest.sortDescriptors = [sortDescriptor]
-//
-//        if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
-//
-//            let context = appDelegate.persistentContainer.viewContext
-//
-//            fetchResultController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
-//
-//            fetchResultController.delegate = self
-//
-//            do {
-//
-//                try fetchResultController.performFetch()
-//
-//                if let fetchedObjects = fetchResultController.fetchedObjects {
-//
-//                    questions = fetchedObjects
-//
-//                }
-//
-//            } catch {
-//                print(error)
-//            }
-//
-//            let distractorRequest: NSFetchRequest<DistractorMO> = DistractorMO.fetchRequest()
-//
-//            do {
-//
-//                distractors = try context.fetch(distractorRequest)
-//
-//            } catch {
-//                print(error)
-//            }
-//
-//        }
-//        print("現在 CoreData 中有 \(questions.count) 筆資料")
-
+        
         var counter = 0
 
         for question in navigationQuestionArray {
@@ -264,7 +181,10 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
         }
 
         trackTimeCountdownLabel.text = "\(trackTimeCountdown)"
+        rightUserScoreLabel.text = "0000"
+        leftUserScoreLabel.text = "0000"
     }
+
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
@@ -298,7 +218,7 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
 
         tableView.isUserInteractionEnabled = false
 
-        timer.invalidate()
+        timer?.invalidate()
 
         self.trackTimeCountdown = 30
 
@@ -310,34 +230,19 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
 
         timeStart = currentTime
 
-        switch currentTrack {
-        case trackIndicator0.tag:
-            trackIndicator0.image = UIImage(named: "icon_CD_white_new")
-        case trackIndicator1.tag:
-            trackIndicator1.image = UIImage(named: "icon_CD_white_new")
-        case trackIndicator2.tag:
-            trackIndicator2.image = UIImage(named: "icon_CD_white_new")
-        case trackIndicator3.tag:
-            trackIndicator3.image = UIImage(named: "icon_CD_white_new")
-        default:
-            trackIndicator4.image = UIImage(named: "icon_CD_white_new")
-        }
-
+        updateTrackPic(input: currentTrack)
+        
         let aiResult = random(3)
 
         if aiResult > 0 {
-
+            // MARK: - AI Score animate
             guard let aiScoreStr = leftUserScoreLabel.text else { return }
-
-            guard var aiScore = Int(aiScoreStr) else { return }
 
             let aiGet = 600 + random(2000)
 
-            aiScore += aiGet
-
-            leftUserScoreLabel.text = "\(aiScore)"
-
-            self.aiTotalScore = aiScore
+            aiTargetScore = aiTotalScore + aiGet
+            
+            _ = Timer.scheduledTimer(timeInterval: 0.00001, target: self, selector: #selector(updateRandomUserScore(_:)), userInfo: nil, repeats: true)
 
         }
 
@@ -352,19 +257,13 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
 
         //swiftlint:disable force_cast
         if judgeAnswer(input: selectedAnswer, compare: answer) {
+            
+            let scoreYouGot = Int(scoreAfterOneSong(time: timePassed))
+            
+            userTargetScore = userScore + scoreYouGot
 
-            let currentScoreString = rightUserScoreLabel.text
-
-            let currentScore = Double(currentScoreString!) ?? 0.0
-
-            let scoreYouGot = scoreAfterOneSong(time: timePassed)
-
-            score = Double(currentScore + scoreYouGot)
-
-            let formatPrice = String(format:"%.0f", score)
-
-            rightUserScoreLabel.text = "\(formatPrice)"
-
+            _ = Timer.scheduledTimer(timeInterval: 0.00001, target: self, selector: #selector(updateUserScore(_:)), userInfo: nil, repeats: true)
+            
             let currentResult = EachSongResult(index: Int16(currentTrack), result: true, usedTime: timePassed, selectedAnswer: selectedAnswer)
 
             self.resultList.append(currentResult)
@@ -372,11 +271,8 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
             let selectedCell = tableView.cellForRow(at: indexPath) as! AnswerTableViewCell
 
             selectedCell.judgeImageView.image = UIImage(named: "right")
-
             selectedCell.judgeImageView.isHidden = false
-
             selectedCell.judgeImageView.alpha = 1
-
             selectedCell.answerView.layer.borderColor = UIColor.mldAppleGreen.cgColor
 
             UIView.animate(withDuration: 0.8, animations: {
@@ -422,12 +318,18 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
         }
         //swiftlint:enable
 
-        // MARK: If finished one round, execute here.
+        // MARK: - If finished one round, execute here.
         if prepareTrack == 5 {
 
             player?.pause()
 
-            userDefault.set(score, forKey: "Score")
+            if userTargetScore > aiTargetScore {
+                userDefault.set(true, forKey: "WinOrLose")
+            } else {
+                userDefault.set(false, forKey: "WinOrLose")
+            }
+            
+            userDefault.set(userTargetScore, forKey: "Score")
 
             guard let uid = userDefault.object(forKey: "uid") as? String else { return }
 
@@ -522,27 +424,11 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
 
             let now = Date().timeIntervalSince1970
 
-            let formatedScore = String(format: "%.0f", score)
+            let formatedScore = String(format: "%.0f", userScore)
             let formatedTime = String(format: "%.0f", now)
 
             historyRef.child("score").setValue(formatedScore)
             historyRef.child("date").setValue(formatedTime)
-
-//            for eachResult in resultList {
-//
-//                if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
-//
-//                    self.resultMO = ResultMO(context: appDelegate.persistentContainer.viewContext)
-//
-//                    self.resultMO.index = eachResult.index
-//                    self.resultMO.result = eachResult.result
-//                    self.resultMO.usedTime = eachResult.usedTime
-//                    self.resultMO.selectedAnswer = eachResult.selectedAnswer
-//
-//                    appDelegate.saveContext()
-//
-//                }
-//            }
 
             print(resultList)
 
@@ -561,7 +447,7 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
                     ])
             }
 
-            let delayTime = DispatchTime.now() + .milliseconds(500)
+            let delayTime = DispatchTime.now() + .milliseconds(1500)
 
             DispatchQueue.main.asyncAfter(deadline: delayTime, execute: {
                 
@@ -569,34 +455,10 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
                 
                 let resultViewController = storyboard.instantiateViewController(withIdentifier: "ResultPage")
                 self.navigationController?.pushViewController(resultViewController, animated: true)
-                //self.present(registerVC!, animated: true, completion: nil)
 
             })
 
         } else {
-
-            
-//            var fakeList: [[String]] = []
-//
-//            while fakeList.count != 5 {
-//
-//                var eachFakeList: [String] = []
-//
-//                while eachFakeList.count != 3 {
-//
-//                    let firstItem = distractors.first
-//
-//                    guard let distractor = firstItem?.distractorStr else { return }
-//                    eachFakeList.append(distractor)
-//
-//                    distractors.remove(at: 0)
-//
-//                }
-//
-//                fakeList.append(eachFakeList)
-//
-//                print(eachFakeList)
-//            }
 
             // MARK: If not finished one round, go here
             questionList = fakeList[prepareTrack]
@@ -641,9 +503,9 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
 
                 let delayTime = DispatchTime.now() + .milliseconds(800)
 
-                DispatchQueue.main.asyncAfter(deadline: delayTime, execute: {
+                DispatchQueue.main.asyncAfter(deadline: delayTime, execute: { [weak self] in
 
-                self.runTime()
+                    self?.runTime()
 
                 })
             })
@@ -657,7 +519,6 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
         let rightUserDiameter = self.rightUserImageView.frame.width
 
         leftUserImageView.layer.cornerRadius = leftUserDiameter / 2
-
         rightUserImageView.layer.cornerRadius = rightUserDiameter / 2
 
         let tableViewHeight = Double(UIScreen.main.bounds.height) - Double(profileBackgroundContentView.frame.height) - 31 - 32
@@ -667,7 +528,12 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
             self.tableViewHeightConstrains.constant = CGFloat(tableViewHeight)
             self.view.layoutIfNeeded()
         }
-
+        
+        if let randomUserImageData = userDefault.data(forKey: "RandomUserImageData"), let randomUserName = userDefault.object(forKey: "RandomUserName") as? String {
+            leftUserImageView.image = UIImage(data: randomUserImageData)
+            randomUserNameLabel.text = randomUserName
+        }
+        
         setCoverView(coverView, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
 
         setCountDownLabelStyle(countDownLabel, screen: UIScreen.main, height: 80, width: 80)
@@ -703,6 +569,51 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
         super.viewDidDisappear(animated)
         let clearDistractorData = CheckQuestionInCoreData()
         clearDistractorData.clearDistractorMO()
+        
+        
+        let selfNavigation = self.navigationController as? PlayingNavigationController
+        
+        selfNavigation?.randomUser = nil
+        print("Set random user to nil")
+    }
+    
+    @IBAction func exitButtonTapped(_ sender: UIButton) {
+        
+        let exitAlert = UIAlertController(title: NSLocalizedString("Exit", comment: "Exit alert title at playing page"), message: NSLocalizedString("Do you really want to exit this round?", comment:"Exit alert message at playing page"), preferredStyle: .alert)
+        
+        let resumeAction = UIAlertAction(title: NSLocalizedString(NSLocalizedString("Resume", comment: "Resume action in alert controller of playing page"), comment: "Resume"), style: .default) { (_) in
+            
+            exitAlert.dismiss(animated: true, completion: nil)
+        }
+        
+        let exitAction = UIAlertAction(title: NSLocalizedString(NSLocalizedString("Exit", comment: "Exit action in alert controller of playing page"), comment: "Exit"), style: .default) { (_) in
+            
+            self.player?.pause()
+            self.timer?.invalidate()
+            let selfNavigation = self.navigationController as? PlayingNavigationController
+            selfNavigation?.popToRootViewController(animated: true)
+        }
+        
+        exitAlert.addAction(exitAction)
+        exitAlert.addAction(resumeAction)
+        
+        self.present(exitAlert, animated: true, completion: nil)
+        
+    }
+    @objc func updateRandomUserScore(_ sender: Timer) {
+        if aiTotalScore != aiTargetScore {
+            aiTotalScore += 1
+        } else {
+            sender.invalidate()
+        }
+    }
+    
+    @objc func updateUserScore(_ sender: Timer) {
+        if userScore != userTargetScore {
+            userScore += 1
+        } else {
+            sender.invalidate()
+        }
     }
 }
 //swiftlint:enable
