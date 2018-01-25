@@ -23,6 +23,8 @@ class PlayingNavigationController: UINavigationController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
+        
     }
 
 }

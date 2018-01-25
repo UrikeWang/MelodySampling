@@ -82,7 +82,7 @@ class ProfilePageViewController: UIViewController, UITableViewDelegate, UITableV
         }
 
         alertController.addTextField { (textField: UITextField!) -> Void in
-            textField.placeholder = "Input  username you like."
+            textField.placeholder = "Input username you like."
         }
 
         alertController.addAction(cancelAction)
