@@ -86,8 +86,6 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
         
         let selfNavigation = self.navigationController as? PlayingNavigationController
         
-        print(selfNavigation?.randomUser)
-        
         if let questions = selfNavigation?.questionArray,
             let selfDistractors = selfNavigation?.distractorArray {
             
@@ -242,7 +240,7 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
 
             aiTargetScore = aiTotalScore + aiGet
             
-            _ = Timer.scheduledTimer(timeInterval: 0.00001, target: self, selector: #selector(updateRandomUserScore(_:)), userInfo: nil, repeats: true)
+            _ = Timer.scheduledTimer(timeInterval: 0.000001, target: self, selector: #selector(updateRandomUserScore(_:)), userInfo: nil, repeats: true)
 
         }
 
@@ -262,7 +260,7 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
             
             userTargetScore = userScore + scoreYouGot
 
-            _ = Timer.scheduledTimer(timeInterval: 0.00001, target: self, selector: #selector(updateUserScore(_:)), userInfo: nil, repeats: true)
+            _ = Timer.scheduledTimer(timeInterval: 0.000001, target: self, selector: #selector(updateUserScore(_:)), userInfo: nil, repeats: true)
             
             let currentResult = EachSongResult(index: Int16(currentTrack), result: true, usedTime: timePassed, selectedAnswer: selectedAnswer)
 
@@ -289,9 +287,9 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
             let correctIndex = IndexPath(row: 0, section: shuffledList.index(of: answer)!)
             self.resultList.append(currentResult)
 
-            var selectedCell = tableView.cellForRow(at: indexPath) as! AnswerTableViewCell
+            let selectedCell = tableView.cellForRow(at: indexPath) as! AnswerTableViewCell
 
-            var correctCell = tableView.cellForRow(at: correctIndex) as! AnswerTableViewCell
+            let correctCell = tableView.cellForRow(at: correctIndex) as! AnswerTableViewCell
 
             selectedCell.judgeImageView.image = UIImage(named: "wrong")
             correctCell.judgeImageView.image = UIImage(named: "right")
@@ -569,12 +567,9 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
         super.viewDidDisappear(animated)
         let clearDistractorData = CheckQuestionInCoreData()
         clearDistractorData.clearDistractorMO()
-        
-        
+
         let selfNavigation = self.navigationController as? PlayingNavigationController
-        
         selfNavigation?.randomUser = nil
-        print("Set random user to nil")
     }
     
     @IBAction func exitButtonTapped(_ sender: UIButton) {

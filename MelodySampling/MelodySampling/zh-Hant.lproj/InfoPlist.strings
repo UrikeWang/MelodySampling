@@ -5,5 +5,8 @@
 "CFBundleName" = "歌曲知識王";
 
 /* (No Comment) */
+"CFBundleShortVersionString" = "2.0.1";
+
+/* (No Comment) */
 "NSPhotoLibraryUsageDescription" = "此服務需要你的同意取得相簿權限";
 
