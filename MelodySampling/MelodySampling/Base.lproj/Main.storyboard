@@ -48,14 +48,14 @@
             <objects>
                 <viewController storyboardIdentifier="LandingPage" modalTransitionStyle="flipHorizontal" useStoryboardIdentifierAsRestorationIdentifier="YES" id="bgG-UJ-6ec" customClass="LandingPageViewController" customModule="King_of_Song_Quiz" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ow1-Bl-mtg">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="834" height="1112"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="landing_bg" translatesAutoresizingMaskIntoConstraints="NO" id="O1P-lZ-xSE" userLabel="Landing Main Image View">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="20" width="834" height="1092"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign in" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nRs-tJ-aaB" userLabel="Signin Label">
-                                <rect key="frame" x="47" y="421" width="281" height="50"/>
+                                <rect key="frame" x="47" y="866" width="740" height="50"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="had-PP-tLd"/>
@@ -65,14 +65,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign up" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C8j-OD-UCA">
-                                <rect key="frame" x="47" y="481" width="281" height="50"/>
+                                <rect key="frame" x="47" y="926" width="740" height="50"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dnJ-zN-H9u">
-                                <rect key="frame" x="47" y="541" width="281" height="50"/>
+                                <rect key="frame" x="47" y="986" width="740" height="50"/>
                                 <color key="backgroundColor" red="1" green="0.40000000600000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="jkZ-j6-mao"/>
@@ -82,34 +82,34 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fFo-OY-1Rb">
-                                <rect key="frame" x="27" y="421" width="321" height="50"/>
+                                <rect key="frame" x="27" y="866" width="780" height="50"/>
                                 <state key="normal" title="Invisible Login Button"/>
                                 <connections>
                                     <action selector="loginButtonTapped:" destination="bgG-UJ-6ec" eventType="touchUpInside" id="Hev-2m-VjC"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eNZ-KW-APm" userLabel="Invisible SignUp Button">
-                                <rect key="frame" x="27" y="481" width="321" height="50"/>
+                                <rect key="frame" x="27" y="926" width="780" height="50"/>
                                 <state key="normal" title="Invisible SignUp Button"/>
                                 <connections>
                                     <action selector="signUpButtonTapped:" destination="bgG-UJ-6ec" eventType="touchUpInside" id="DKy-Fh-b19"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G2v-2P-JoN">
-                                <rect key="frame" x="27" y="541" width="321" height="50"/>
+                                <rect key="frame" x="27" y="986" width="780" height="50"/>
                                 <state key="normal" title="Invisible Anonymous Login Button"/>
                                 <connections>
                                     <action selector="anonymousLoginButtonTapped:" destination="bgG-UJ-6ec" eventType="touchUpInside" id="BKD-bO-AWR"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="K_logo" translatesAutoresizingMaskIntoConstraints="NO" id="o7g-XZ-Nzz" userLabel="Logo Image View">
-                                <rect key="frame" x="132.5" y="70" width="110" height="110"/>
+                                <rect key="frame" x="325.5" y="70" width="183" height="183.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="o7g-XZ-Nzz" secondAttribute="height" multiplier="1:1" id="PfZ-eB-FR7"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="King of Song Quiz" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q4z-3t-cIg" userLabel="Title Label">
-                                <rect key="frame" x="46" y="210" width="283" height="41.5"/>
+                                <rect key="frame" x="275.5" y="283.5" width="283" height="41.5"/>
                                 <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="32"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -117,7 +117,7 @@
                                 <size key="shadowOffset" width="0.0" height="2"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Log in Anonymously" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LX4-z7-ioz">
-                                <rect key="frame" x="98" y="555" width="180" height="22"/>
+                                <rect key="frame" x="327.5" y="1000" width="180" height="22"/>
                                 <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="18"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -165,7 +165,6 @@
                     <navigationItem key="navigationItem" id="zX6-Hm-per"/>
                     <nil key="simulatedStatusBarMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="375" height="667"/>
                     <connections>
                         <outlet property="anonymousLoginButtonOutlet" destination="G2v-2P-JoN" id="pzj-2d-lNQ"/>
                         <outlet property="anonymousLoginLabel" destination="dnJ-zN-H9u" id="ygb-c9-ApS"/>
@@ -188,23 +187,23 @@
             <objects>
                 <viewController storyboardIdentifier="SignupPage" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y5G-1b-riF" customClass="SignUpViewController" customModule="King_of_Song_Quiz" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="H2Z-3R-i1H">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="834" height="1112"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="crowd" translatesAutoresizingMaskIntoConstraints="NO" id="uRX-Ec-B1g" userLabel="Sign Up Main Image View">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="64" width="834" height="1048"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U1h-ID-cdY" userLabel="Opacity View">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="64" width="834" height="1048"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" image="K_logo" translatesAutoresizingMaskIntoConstraints="NO" id="msz-AP-Yda" userLabel="Logo Image View">
-                                        <rect key="frame" x="130" y="30" width="115" height="115"/>
+                                        <rect key="frame" x="130" y="30" width="574" height="574"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="msz-AP-Yda" secondAttribute="height" multiplier="1:1" id="qgA-SR-sRP"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="King of Song Quiz" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="em1-6Q-aom" userLabel="Title Label">
-                                        <rect key="frame" x="46" y="149.5" width="283" height="40"/>
+                                        <rect key="frame" x="275.5" y="608.5" width="283" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="2HJ-D1-JOM"/>
                                         </constraints>
@@ -215,7 +214,7 @@
                                         <size key="shadowOffset" width="0.0" height="2"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="249" verticalCompressionResistancePriority="753" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Hx-aM-5VR" userLabel="Goto Login Label">
-                                        <rect key="frame" x="64" y="489.5" width="248.5" height="20"/>
+                                        <rect key="frame" x="293.5" y="934.5" width="248.5" height="20"/>
                                         <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <attributedString key="attributedText">
                                             <fragment content="Already have an account? ">
@@ -237,7 +236,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="249" text="Sign up" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EgF-uP-uhz" userLabel="Sign Up Label">
-                                        <rect key="frame" x="49" y="409.5" width="277.5" height="50"/>
+                                        <rect key="frame" x="49" y="854.5" width="736.5" height="50"/>
                                         <color key="backgroundColor" red="0.61960784313725492" green="0.93725490196078431" blue="0.88235294117647056" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="2SW-G2-5LD"/>
@@ -247,17 +246,17 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KBV-Wk-wQJ">
-                                        <rect key="frame" x="49" y="409.5" width="278" height="50"/>
+                                        <rect key="frame" x="49" y="854.5" width="737" height="50"/>
                                         <state key="normal" title="Invisible Sign Up Button"/>
                                         <connections>
                                             <action selector="signUpButtonTapped:" destination="Y5G-1b-riF" eventType="touchUpInside" id="pi2-8U-wNj"/>
                                         </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b7u-pU-XkO" userLabel="Email Content View">
-                                        <rect key="frame" x="49" y="218" width="277" height="40"/>
+                                        <rect key="frame" x="49" y="677" width="736" height="40"/>
                                         <subviews>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zpD-dh-a8g" userLabel="Email Text Field">
-                                                <rect key="frame" x="13" y="9" width="250.5" height="22"/>
+                                                <rect key="frame" x="13" y="9" width="709.5" height="22"/>
                                                 <color key="textColor" red="0.25882352941176467" green="0.13333333333333333" blue="0.99607843137254903" alpha="0.90402932363013699" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -273,10 +272,10 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vRG-Wl-ebV" userLabel="Password Content View">
-                                        <rect key="frame" x="49" y="278" width="277" height="40"/>
+                                        <rect key="frame" x="49" y="737" width="736" height="40"/>
                                         <subviews>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VIX-oo-t59" userLabel="Password Text Field">
-                                                <rect key="frame" x="13" y="9" width="252" height="22"/>
+                                                <rect key="frame" x="13" y="9" width="711" height="22"/>
                                                 <color key="textColor" red="0.25882352939999997" green="0.1333333333" blue="0.99607843139999996" alpha="0.90402932359999999" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES"/>
@@ -292,10 +291,10 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hbT-kz-Sgv" userLabel="Confirm Password Content View">
-                                        <rect key="frame" x="49" y="338" width="277" height="40"/>
+                                        <rect key="frame" x="49" y="797" width="736" height="40"/>
                                         <subviews>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Confirm Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pfT-LV-HHY" userLabel="Confirm Password Text Field">
-                                                <rect key="frame" x="12" y="9" width="252" height="22"/>
+                                                <rect key="frame" x="12" y="9" width="711" height="22"/>
                                                 <color key="textColor" red="0.25882352939999997" green="0.1333333333" blue="0.99607843139999996" alpha="0.90402932359999999" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES"/>
@@ -311,7 +310,7 @@
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7bs-t6-MOK">
-                                        <rect key="frame" x="202.5" y="489" width="124.5" height="50"/>
+                                        <rect key="frame" x="661.5" y="934" width="124.5" height="50"/>
                                         <state key="normal" title="Invisible Button"/>
                                         <connections>
                                             <action selector="gotoLoginButonTapped:" destination="Y5G-1b-riF" eventType="touchUpInside" id="eCf-bO-1wm"/>
@@ -387,7 +386,6 @@
                     </view>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="375" height="667"/>
                     <connections>
                         <outlet property="confirmPasswordTextField" destination="pfT-LV-HHY" id="BJH-cB-qIp"/>
                         <outlet property="emailTextField" destination="zpD-dh-a8g" id="cHe-HC-Yy3"/>
@@ -1461,17 +1459,17 @@
             <objects>
                 <viewController storyboardIdentifier="LoginPage" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Tjb-TR-M1w" customClass="LogInViewController" customModule="King_of_Song_Quiz" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uZa-I5-XJG">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="834" height="1112"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="crowd" translatesAutoresizingMaskIntoConstraints="NO" id="uFm-6v-RYX" userLabel="Sign Up Main Image View">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="20" width="834" height="1092"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KXI-mi-P6b" userLabel="Opacity View">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="20" width="834" height="1092"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="King of Song Quiz" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VPg-UZ-Ctf">
-                                        <rect key="frame" x="45" y="145" width="285.5" height="39"/>
+                                        <rect key="frame" x="274.5" y="145" width="285.5" height="39"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="39" id="VOf-GY-Ocl"/>
                                         </constraints>
@@ -1482,10 +1480,10 @@
                                         <size key="shadowOffset" width="0.0" height="2"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ufH-qg-LiI" userLabel="Email Content View">
-                                        <rect key="frame" x="47" y="232" width="280" height="40"/>
+                                        <rect key="frame" x="47" y="232" width="739" height="40"/>
                                         <subviews>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SX9-8t-gFK" userLabel="Email Text Field">
-                                                <rect key="frame" x="13" y="12" width="254" height="16"/>
+                                                <rect key="frame" x="13" y="12" width="713" height="16"/>
                                                 <color key="textColor" red="0.25882352939999997" green="0.1333333333" blue="0.99607843139999996" alpha="0.90402932359999999" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -1501,10 +1499,10 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CLK-nL-DhG" userLabel="Password Content View">
-                                        <rect key="frame" x="47" y="302" width="280" height="40"/>
+                                        <rect key="frame" x="47" y="302" width="739" height="40"/>
                                         <subviews>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4JM-xJ-G7m" userLabel="Password Text Field">
-                                                <rect key="frame" x="13" y="10" width="254" height="20"/>
+                                                <rect key="frame" x="13" y="10" width="713" height="20"/>
                                                 <color key="textColor" red="0.25882352939999997" green="0.1333333333" blue="0.99607843139999996" alpha="0.90402932359999999" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES"/>
@@ -1520,14 +1518,14 @@
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Forget password?" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9tS-ZU-rY7" userLabel="ForgetPwLabel">
-                                        <rect key="frame" x="189" y="367" width="138" height="20"/>
+                                        <rect key="frame" x="648" y="367" width="138" height="20"/>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="16"/>
                                         <color key="textColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.94901960784313721" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Log in" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cq8-dZ-1az" userLabel="Login Label">
-                                        <rect key="frame" x="47" y="452.5" width="280" height="50"/>
+                                        <rect key="frame" x="47" y="897.5" width="739" height="50"/>
                                         <color key="backgroundColor" red="0.92549019607843142" green="0.31764705882352939" blue="0.8784313725490196" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="iT4-iI-7QZ"/>
@@ -1537,7 +1535,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KN3-9H-4bf" userLabel="Goto Sign Up Label">
-                                        <rect key="frame" x="47" y="533.5" width="280" height="21"/>
+                                        <rect key="frame" x="47" y="978.5" width="739" height="21"/>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <attributedString key="attributedText">
                                             <fragment content="Don't have an account?">
@@ -1566,14 +1564,14 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zn7-Zg-UeU">
-                                        <rect key="frame" x="47" y="452.5" width="280" height="50"/>
+                                        <rect key="frame" x="47" y="897.5" width="739" height="50"/>
                                         <state key="normal" title="Invisible Login Button"/>
                                         <connections>
                                             <action selector="loginButtonTapped:" destination="Tjb-TR-M1w" eventType="touchUpInside" id="pxK-Ls-hyJ"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="paE-ln-Lmo">
-                                        <rect key="frame" x="67" y="523.5" width="280" height="60"/>
+                                        <rect key="frame" x="67" y="968.5" width="739" height="60"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="2pq-n4-oFe"/>
                                         </constraints>
@@ -1583,14 +1581,14 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bmC-gg-dzb" userLabel="Reset Email Password Button">
-                                        <rect key="frame" x="169" y="367" width="158" height="40"/>
+                                        <rect key="frame" x="628" y="367" width="158" height="40"/>
                                         <state key="normal" title="Invisible Button"/>
                                         <connections>
                                             <action selector="emailResetButtonTapped:" destination="Tjb-TR-M1w" eventType="touchUpInside" id="9gl-z4-eq0"/>
                                         </connections>
                                     </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="K_logo" translatesAutoresizingMaskIntoConstraints="NO" id="pfo-lE-6Vq" userLabel="Logo Image View">
-                                        <rect key="frame" x="129.5" y="30" width="115" height="115"/>
+                                        <rect key="frame" x="359" y="30" width="115" height="115"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="pfo-lE-6Vq" secondAttribute="height" multiplier="1:1" id="d7I-p9-qTe"/>
                                         </constraints>
@@ -1616,7 +1614,6 @@
                                 <constraints>
                                     <constraint firstItem="CLK-nL-DhG" firstAttribute="top" secondItem="ufH-qg-LiI" secondAttribute="bottom" constant="30" id="15a-dB-4D6"/>
                                     <constraint firstItem="k8F-IK-keI" firstAttribute="leading" secondItem="KXI-mi-P6b" secondAttribute="leading" constant="20" id="2hs-2g-3Hv"/>
-                                    <constraint firstItem="pfo-lE-6Vq" firstAttribute="leading" secondItem="KXI-mi-P6b" secondAttribute="leading" constant="129.5" id="4Eq-7B-w5a"/>
                                     <constraint firstItem="cq8-dZ-1az" firstAttribute="centerX" secondItem="CLK-nL-DhG" secondAttribute="centerX" id="50B-gc-jVE"/>
                                     <constraint firstItem="paE-ln-Lmo" firstAttribute="trailing" secondItem="9tS-ZU-rY7" secondAttribute="trailing" constant="20" id="8Dd-Hk-GTF"/>
                                     <constraint firstItem="paE-ln-Lmo" firstAttribute="width" secondItem="KN3-9H-4bf" secondAttribute="width" id="EGB-Go-9Bs"/>
@@ -1665,8 +1662,6 @@
                         <viewLayoutGuide key="safeArea" id="HPz-KQ-fFq"/>
                     </view>
                     <navigationItem key="navigationItem" id="EFe-Yl-HoX"/>
-                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="375" height="667"/>
                     <connections>
                         <outlet property="emailResetButtonOutlet" destination="bmC-gg-dzb" id="b2D-Vg-fbj"/>
                         <outlet property="emailTextField" destination="SX9-8t-gFK" id="txk-jC-hD1"/>
@@ -1690,8 +1685,6 @@
             <objects>
                 <navigationController storyboardIdentifier="LandingNavigation" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" navigationBarHidden="YES" hidesBarsWhenKeyboardAppears="YES" id="0jJ-PK-wW3" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="375" height="667"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="59b-Li-pjM">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

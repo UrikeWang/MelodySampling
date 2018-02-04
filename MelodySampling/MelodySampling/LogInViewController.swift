@@ -12,43 +12,24 @@ import Firebase
 class LogInViewController: UIViewController {
 
     @IBOutlet weak var opacityView: UIView!
-
     @IBOutlet weak var titleLabel: UILabel!
-
     @IBOutlet weak var forgetPasswordLabel: UILabel!
-
     @IBOutlet weak var loginLabel: UILabel!
-
     @IBOutlet weak var gotoSignUpLabel: UILabel!
-
     @IBOutlet weak var loginButtonOutlet: UIButton!
-
     @IBOutlet weak var emailTextField: UITextField!
-
     @IBOutlet weak var passwordTextField: UITextField!
-
     @IBOutlet weak var signUpInvisibleButtonOutlet: UIButton!
-
     @IBOutlet weak var gotoSignUpLabelBottomConstraint: NSLayoutConstraint!
-
     @IBAction func backButtonTapped(_ sender: UIButton) {
-
         self.navigationController?.popToRootViewController(animated: true)
-//        self.dismiss(animated: true) { _ in
-//            gotoLandingPage(from: self)
-//        }
     }
-
     @IBOutlet weak var emailResetButtonOutlet: UIButton!
-
     @IBAction func emailResetButtonTapped(_ sender: UIButton) {
-
         if emailTextField.text != "" && emailTextField.text != nil {
-
             guard let email = emailTextField.text else {
                 return
             }
-
             Auth.auth().sendPasswordReset(withEmail: email, completion: { (_) in
 
                 let errorAlert = UIAlertController(title: NSLocalizedString("Error", comment: "Error title at login page."), message: NSLocalizedString("Something Wrong, please check your input again", comment: "Subtitle of error message at login page."), preferredStyle: .alert)
@@ -147,8 +128,6 @@ class LogInViewController: UIViewController {
         loginLabel.text = NSLocalizedString("Sign In", comment: "Login label at login page.")
         gotoSignUpLabel.text = NSLocalizedString("Don't have an account? Sign up", comment: "Goto signup page at login page.")
 
-        opacityView.frame = UIScreen.main.bounds
-
         self.navigationController?.isNavigationBarHidden = true
 
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
@@ -176,26 +155,23 @@ class LogInViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
+        /*
         if UIScreen.main.bounds.height > 700 {
             createSignUpPageGradient(target: opacityView, height: 750)
         } else {
             createSignUpPageGradient(target: opacityView, height: 680)
         }
-
+*/
         if UIScreen.main.bounds.height < 600 {
 
             gotoSignUpLabelBottomConstraint.constant = CGFloat(10)
             self.view.layoutIfNeeded()
         }
-    }
-
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
 
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    override func viewDidLayoutSubviews() {
+        opacityView.frame = UIScreen.main.bounds
+        createSignUpPageGradient(target: opacityView, height: Int(UIScreen.main.bounds.height))
     }
 }

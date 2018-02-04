@@ -310,8 +310,8 @@ extension ProfilePageViewController: UITableViewDelegate, UITableViewDataSource 
 
         if let imageFromCache = imageCache.object(forKey: historyList[indexPath.row].artworkUrl! as NSString) {
 
-            cell.artworkImageView.image = imageFromCache
-
+//            cell.artworkImageView.image = imageFromCache
+            cell.artworkImageView.image = UIImage(named: "icPlaceHolderDisc")
         } else {
 
             DispatchQueue.global().async {
@@ -331,7 +331,8 @@ extension ProfilePageViewController: UITableViewDelegate, UITableViewDataSource 
 
                         self.imageCache.setObject(imageToCache, forKey: artworkUrl as NSString)
 
-                        cell.artworkImageView.image = imageToCache
+//                        cell.artworkImageView.image = imageToCache
+                        cell.artworkImageView.image = UIImage(named: "icPlaceHolderDisc")
                     }
                 }
             }
