@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 import CoreData
 
-class ProfilePageViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class ProfilePageViewController: UIViewController, NSFetchedResultsControllerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet weak var testLabel: UILabel!
     
@@ -203,74 +203,6 @@ class ProfilePageViewController: UIViewController, UITableViewDelegate, UITableV
             userNameLabel.text = "Player"
         }
     }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return historyList.count
-    }
-
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-
-        gradientLayer = CAGradientLayer()
-
-        gradientLayer.frame = cell.bounds
-
-        gradientLayer.colors = [UIColor.mldUltramarineBlueTwo.cgColor, UIColor.mldUltramarine.cgColor]
-
-        cell.layer.insertSublayer(gradientLayer, at: 0)
-        cell.backgroundColor = UIColor.clear
-
-    }
-
-    func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-
-        if let customCell = cell as? HistoryTableViewCell {
-
-            customCell.artworkImageView.image = nil
-        }
-
-    }
-
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-
-        let cellIdentifier = "HistoryCell"
-
-        //swiftlint:disable force_cast
-        let cell = historyTableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! HistoryTableViewCell
-        //swiftlint:enable
-
-        cell.artistNameLabel.text = historyList[indexPath.row].artistName
-        cell.trackNameLabel.text = historyList[indexPath.row].trackName
-
-        if let imageFromCache = imageCache.object(forKey: historyList[indexPath.row].artworkUrl! as NSString) {
-
-            cell.artworkImageView.image = imageFromCache
-
-        } else {
-
-            DispatchQueue.global().async {
-
-                guard
-                    let artworkUrl = self.historyList[indexPath.row].artworkUrl,
-                    let url = URL(string: artworkUrl)
-                    else {
-                        return
-                    }
-
-                if let data = try? Data(contentsOf: url) {
-
-                    DispatchQueue.main.async {
-
-                        guard let imageToCache = UIImage(data: data) else {return}
-
-                        self.imageCache.setObject(imageToCache, forKey: artworkUrl as NSString)
-
-                        cell.artworkImageView.image = imageToCache
-                    }
-                }
-            }
-        }
-        return cell
-    }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -335,10 +267,85 @@ class ProfilePageViewController: UIViewController, UITableViewDelegate, UITableV
             
         }
     }
+}
 
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+extension ProfilePageViewController: UITableViewDelegate, UITableViewDataSource {
 
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return historyList.count
+    }
+
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+
+        gradientLayer = CAGradientLayer()
+
+        gradientLayer.frame = cell.bounds
+
+        gradientLayer.colors = [UIColor.mldUltramarineBlueTwo.cgColor, UIColor.mldUltramarine.cgColor]
+
+        cell.layer.insertSublayer(gradientLayer, at: 0)
+        cell.backgroundColor = UIColor.clear
+
+    }
+
+    func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+
+        if let customCell = cell as? HistoryTableViewCell {
+
+            customCell.artworkImageView.image = nil
+        }
+
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+
+        let cellIdentifier = "HistoryCell"
+
+        //swiftlint:disable force_cast
+        let cell = historyTableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! HistoryTableViewCell
+        //swiftlint:enable
+
+        cell.artistNameLabel.text = historyList[indexPath.row].artistName
+        cell.trackNameLabel.text = historyList[indexPath.row].trackName
+
+        if let imageFromCache = imageCache.object(forKey: historyList[indexPath.row].artworkUrl! as NSString) {
+
+            cell.artworkImageView.image = imageFromCache
+
+        } else {
+
+            DispatchQueue.global().async {
+
+                guard
+                    let artworkUrl = self.historyList[indexPath.row].artworkUrl,
+                    let url = URL(string: artworkUrl)
+                    else {
+                        return
+                }
+
+                if let data = try? Data(contentsOf: url) {
+
+                    DispatchQueue.main.async {
+
+                        guard let imageToCache = UIImage(data: data) else {return}
+
+                        self.imageCache.setObject(imageToCache, forKey: artworkUrl as NSString)
+
+                        cell.artworkImageView.image = imageToCache
+                    }
+                }
+            }
+        }
+        return cell
+    }
+
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        switch UIScreen.main.bounds.height {
+        case let x where x > 800:
+            return 100
+        default:
+            return 60
+        }
     }
 
 }
