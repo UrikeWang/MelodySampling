@@ -189,7 +189,7 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
     }
 
     func numberOfSections(in tableView: UITableView) -> Int {
-        return trackNameArray.count
+        return 4
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

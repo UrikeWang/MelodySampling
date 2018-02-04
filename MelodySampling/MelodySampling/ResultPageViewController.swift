@@ -13,35 +13,20 @@ import AVFoundation
 class ResultPageViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate {
 
     let userDefault = UserDefaults.standard
-    
     var historyMO: HistoryMO!
-    
     @IBOutlet weak var chooseCategoryLabel: UILabel!
-    
     var navigationResults = [ResultToShow]()
-
     var trackNameArray = [String]()
-
     var artistNameArray = [String]()
-    
     @IBOutlet weak var nextGameContentView: UIView!
-    
     @IBOutlet weak var sameGenreContentView: UIView!
-    
     var resultsArray = [EachSongResult]()
-
     let documentsURL = NSHomeDirectory() + "/Documents/"
-    
     var player: AVAudioPlayer?
-    
     let path: String = NSHomeDirectory() + "/Documents/"
-    
     let songFileNameList = ["song0.m4a", "song1.m4a", "song2.m4a", "song3.m4a", "song4.m4a"]
-
     @IBOutlet weak var userImageView: UIImageView!
-
     @IBOutlet weak var invisibleNextGameButtonOutlet: UIButton!
-
     @IBAction func invisibleNextGameButtonTapped(_ sender: UIButton) {
         saveResultToHistory()
         
@@ -57,7 +42,6 @@ class ResultPageViewController: UIViewController, UITableViewDelegate, UITableVi
     }
     
     @IBOutlet weak var invisiblePlayAgainButtonOutlet: UIButton!
-    
     @IBAction func invisiblePlayAgainButtonTapped(_ sender: UIButton) {
         
         saveResultToHistory()
@@ -98,13 +82,9 @@ class ResultPageViewController: UIViewController, UITableViewDelegate, UITableVi
     var score: Double = 0
 
     @IBOutlet weak var scoreLabel: UILabel!
-    
     @IBOutlet weak var playAgainLabel: UILabel!
-
     @IBOutlet weak var userProfileImageView: UIImageView!
-
     @IBOutlet weak var userStarsStackView: UIStackView!
-
     @IBOutlet weak var touchHintLabel: UILabel!
     
     override func viewDidLayoutSubviews() {
@@ -236,11 +216,13 @@ class ResultPageViewController: UIViewController, UITableViewDelegate, UITableVi
                 DispatchQueue.main.async {
                     
                     cell.artworkImageView.image = UIImage(data: data)
-                    
+
                 }
             }
         }
-        
+
+        cell.trackNameLeadingConstraint.constant = cell.frame.height + 50
+
         let backGroundView = UIView()
         
         backGroundView.backgroundColor = UIColor.mldBlueBlue

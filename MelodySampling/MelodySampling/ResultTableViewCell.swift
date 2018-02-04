@@ -11,14 +11,12 @@ import UIKit
 class ResultTableViewCell: UITableViewCell {
 
     @IBOutlet weak var trackNameLabel: UILabel!
-
     @IBOutlet weak var artistNameLabel: UILabel!
-
     @IBOutlet weak var artworkImageView: UIImageView!
-
     @IBOutlet weak var judgementImageView: UIImageView!
-
     @IBOutlet weak var usedTimeLabel: UILabel!
+    @IBOutlet weak var trackNameLeadingConstraint: NSLayoutConstraint!
+
 
     override func awakeFromNib() {
         super.awakeFromNib()
