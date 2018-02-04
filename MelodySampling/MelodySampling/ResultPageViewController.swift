@@ -215,7 +215,8 @@ class ResultPageViewController: UIViewController, UITableViewDelegate, UITableVi
                 
                 DispatchQueue.main.async {
                     
-                    cell.artworkImageView.image = UIImage(data: data)
+//                    cell.artworkImageView.image = UIImage(data: data)
+                    cell.artworkImageView.image = UIImage(named: "icPlaceHolderDisc")
 
                 }
             }

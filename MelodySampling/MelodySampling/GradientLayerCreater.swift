@@ -30,11 +30,11 @@ func createSignUpPageGradient(target uIView: UIView, height screenH: Int) {
 
     gradientLayer = CAGradientLayer()
 
-    gradientLayer.frame = CGRect(x: 0, y: 0, width: 600, height: screenH)
+    gradientLayer.frame = CGRect(x: 0, y: 0, width: Int(uIView.frame.width), height: screenH)
 
     gradientLayer.colors = [UIColor.mldLightRoyalBlue.cgColor, UIColor.mldLightRoyalBlue.cgColor, UIColor.mldPurplePink.cgColor]
 
-    gradientLayer.opacity = 0.5
+    gradientLayer.opacity = 0.2
 
     uIView.layer.insertSublayer(gradientLayer, at: 0)
 

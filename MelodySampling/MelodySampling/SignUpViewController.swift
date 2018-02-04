@@ -26,38 +26,20 @@ class SignUpViewController: UIViewController {
     var addNumber: Int?
 
     @IBOutlet weak var titleLabel: UILabel!
-
     @IBOutlet weak var opacityView: UIView!
-
     @IBOutlet weak var signUpLabel: UILabel!
-
     @IBOutlet weak var emailTextField: UITextField!
-
     @IBOutlet weak var passwordTextField: UITextField!
-
     @IBOutlet weak var confirmPasswordTextField: UITextField!
-
     @IBOutlet weak var signUpButtonOutlet: UIButton!
-
     @IBOutlet weak var goToLoginLabel: UILabel!
-
     @IBOutlet weak var gotoLoginLabelBottomConstrain: NSLayoutConstraint!
-
     @IBAction func backButtonTapped(_ sender: UIButton) {
-
-//        self.dismiss(animated: true) { _ in
-//            gotoLandingPage(from: self)
-//        }
-        
         self.navigationController?.popToRootViewController(animated: true)
-
     }
-
     @IBOutlet weak var gotoLoginButonOutlet: UIButton!
-
     @IBAction func gotoLoginButonTapped(_ sender: UIButton) {
 
-//            gotoLoginPage(from: self)
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
         let destinationViewController = storyboard.instantiateViewController(withIdentifier: "LoginPage")
@@ -171,8 +153,6 @@ class SignUpViewController: UIViewController {
         signUpLabel.text = NSLocalizedString("Sign up", comment: "Signup label at signup page.")
         goToLoginLabel.text = NSLocalizedString("Already have an account? Log in", comment: "Goto login page at signup page.")
 
-        opacityView.frame = UIScreen.main.bounds
-
         self.navigationController?.isNavigationBarHidden = true
 
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
@@ -209,11 +189,13 @@ class SignUpViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
+        /*
         if UIScreen.main.bounds.height > 700 {
            createSignUpPageGradient(target: opacityView, height: 750)
          } else {
             createSignUpPageGradient(target: opacityView, height: 700)
         }
+ */
 
         if UIScreen.main.bounds.height < 600 {
             gotoLoginLabelBottomConstrain.constant = CGFloat(10)
@@ -222,13 +204,10 @@ class SignUpViewController: UIViewController {
         }
     }
 
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-    }
+    override func viewDidLayoutSubviews() {
+        opacityView.heightAnchor.constraint(equalToConstant: UIScreen.main.bounds.height).isActive = true
+        opacityView.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width).isActive = true
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        createSignUpPageGradient(target: opacityView, height: Int(UIScreen.main.bounds.height))
     }
-
 }
