@@ -308,10 +308,9 @@ extension ProfilePageViewController: UITableViewDelegate, UITableViewDataSource 
         cell.artistNameLabel.text = historyList[indexPath.row].artistName
         cell.trackNameLabel.text = historyList[indexPath.row].trackName
 
-        if let imageFromCache = imageCache.object(forKey: historyList[indexPath.row].artworkUrl! as NSString) {
+        if let url = historyList[indexPath.row].artworkUrl as NSString?, let imageFromCache = imageCache.object(forKey: url) {
 
-//            cell.artworkImageView.image = imageFromCache
-            cell.artworkImageView.image = UIImage(named: "icPlaceHolderDisc")
+            cell.artworkImageView.image = imageFromCache
         } else {
 
             DispatchQueue.global().async {
@@ -331,8 +330,7 @@ extension ProfilePageViewController: UITableViewDelegate, UITableViewDataSource 
 
                         self.imageCache.setObject(imageToCache, forKey: artworkUrl as NSString)
 
-//                        cell.artworkImageView.image = imageToCache
-                        cell.artworkImageView.image = UIImage(named: "icPlaceHolderDisc")
+                        cell.artworkImageView.image = imageToCache
                     }
                 }
             }
