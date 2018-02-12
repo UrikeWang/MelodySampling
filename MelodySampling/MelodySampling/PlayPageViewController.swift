@@ -74,7 +74,6 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
     @IBOutlet weak var rightUserScoreLabel: UILabel!
     @IBOutlet weak var leftUserScoreLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var tableViewHeightConstrains: NSLayoutConstraint!
     @IBOutlet weak var trackTimeCountdownLabel: UILabel!
     @IBOutlet weak var leftStarsStackView: UIStackView!
     @IBOutlet weak var rightStarsStackView: UIStackView!
@@ -510,8 +509,8 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
         }
     }
 
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
 
         let leftUserDiameter = self.leftUserImageView.frame.width
         let rightUserDiameter = self.rightUserImageView.frame.width
@@ -521,17 +520,11 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
 
         let tableViewHeight = Double(UIScreen.main.bounds.height) - Double(profileBackgroundContentView.frame.height) - 31 - 32
 
-        if tableViewHeight < 310.0 {
-
-            self.tableViewHeightConstrains.constant = CGFloat(tableViewHeight)
-            self.view.layoutIfNeeded()
-        }
-        
         if let randomUserImageData = userDefault.data(forKey: "RandomUserImageData"), let randomUserName = userDefault.object(forKey: "RandomUserName") as? String {
             leftUserImageView.image = UIImage(data: randomUserImageData)
             randomUserNameLabel.text = randomUserName
         }
-        
+
         setCoverView(coverView, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
 
         setCountDownLabelStyle(countDownLabel, screen: UIScreen.main, height: 80, width: 80)
@@ -541,7 +534,9 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
         self.view.addSubview(coverView)
 
         self.view.addSubview(countDownLabel)
+
     }
+
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
