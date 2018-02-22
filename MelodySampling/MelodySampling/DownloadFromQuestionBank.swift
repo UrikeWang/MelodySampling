@@ -52,7 +52,7 @@ class DownloadManager {
             width: 240,
             height: 240))
         
-        progressRing.maxValue = 100
+//        progressRing.maxValue = 100
         
         progressRing.outerRingColor = UIColor.mldDarkIndigo40
         progressRing.innerRingColor = UIColor.mldUltramarine
@@ -160,10 +160,14 @@ class DownloadManager {
                             
                             downloadPercentage += progress.fractionCompleted
                         
+                        } else if downloadPercentage >= 99 {
+                        
+                            downloadPercentage = 99
+                        
                         } else {
-                        
+                            
                             downloadPercentage += 1
-                        
+                            
                         }
                         
                         progressRing.setProgress(value: CGFloat(downloadPercentage), animationDuration: 0.01) {}
