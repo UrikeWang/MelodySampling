@@ -270,14 +270,15 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
             selectedCell.judgeImageView.image = UIImage(named: "right")
             selectedCell.judgeImageView.isHidden = false
             selectedCell.judgeImageView.alpha = 1
-            selectedCell.answerView.layer.borderColor = UIColor.mldAppleGreen.cgColor
-
+            selectedCell.answerView.backgroundColor = .sqCelery
+            
             UIView.animate(withDuration: 0.8, animations: {
                 selectedCell.judgeImageView.alpha = 0
                 selectedCell.answerView.layer.borderColor = UIColor.white.cgColor
-
+                selectedCell.answerView.backgroundColor = .white
+                
             })
-
+            
             print("答對了")
         } else {
 
@@ -301,6 +302,9 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
 
             selectedCell.answerView.layer.borderColor = UIColor.mldOrangeRed.cgColor
             correctCell.answerView.layer.borderColor = UIColor.mldAppleGreen.cgColor
+            
+            correctCell.answerView.backgroundColor = .sqCelery
+            selectedCell.answerView.backgroundColor = .sqPaleSalmon
 
             UIView.animate(withDuration: 1.0, animations: {
                 selectedCell.judgeImageView.alpha = 0
@@ -308,8 +312,13 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
 
                 correctCell.judgeImageView.alpha = 0
                 correctCell.answerView.layer.borderColor = UIColor.white.cgColor
+                
+                correctCell.answerView.backgroundColor = .white
+                selectedCell.answerView.backgroundColor = .white
 
             })
+            
+            
 
             print("答錯了，正解是 \(answer)")
         }

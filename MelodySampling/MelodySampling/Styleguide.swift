@@ -93,6 +93,23 @@ extension UIColor {
     class var mldAppleGreen: UIColor {
         return UIColor(red: 126.0 / 255.0, green: 211.0 / 255.0, blue: 33.0 / 255.0, alpha: 1.0)
     }
+    
+    class var sqOrangeRed: UIColor {
+        return UIColor(red: 254.0 / 255.0, green: 56.0 / 255.0, blue: 36.0 / 255.0, alpha: 1.0)
+    }
+    
+    class var sqAppleGreen: UIColor {
+        return UIColor(red: 126.0 / 255.0, green: 211.0 / 255.0, blue: 33.0 / 255.0, alpha: 1.0)
+    }
+    
+    class var sqCelery: UIColor {
+        return UIColor(red: 208.0 / 255.0, green: 255.0 / 255.0, blue: 157.0 / 255.0, alpha: 1.0)
+    }
+    
+    class var sqPaleSalmon: UIColor {
+        return UIColor(red: 255.0 / 255.0, green: 184.0 / 255.0, blue: 177.0 / 255.0, alpha: 1.0)
+    }
+
 }
 
 // Text styles
