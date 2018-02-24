@@ -11,8 +11,6 @@ import Firebase
 import CoreData
 
 class ProfilePageViewController: UIViewController, NSFetchedResultsControllerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-
-    @IBOutlet weak var testLabel: UILabel!
     
     var imageCache = NSCache<NSString, UIImage>()
 
@@ -23,36 +21,130 @@ class ProfilePageViewController: UIViewController, NSFetchedResultsControllerDel
     }
 
     @IBOutlet weak var userProfileImageView: UIImageView!
-
-    var fetchResultController: NSFetchedResultsController<HistoryMO>!
-
-    var historyList: [HistoryMO] = []
-
-    var distracorList = [String]()
-
-    let userDefault = UserDefaults.standard
-
-    //這個東西砍掉連結,要換成 View
-
+    @IBOutlet var versionLabel: UILabel!
     @IBOutlet weak var playContentView: UIView!
-    
     @IBOutlet weak var playTextLabel: UILabel!
-
     @IBOutlet weak var logOutView: UIView!
-
     @IBOutlet weak var logOutButtonOutlet: UIButton!
-
     @IBOutlet weak var userNameLabel: UILabel!
-
     @IBOutlet weak var invisiblePhotoUsageButtonOutlet: UIButton!
-
     @IBOutlet weak var historyLabel: UILabel!
-    
     @IBOutlet weak var emptyLabel: UILabel!
-
     @IBOutlet weak var invisibleUserNameButtonOutlet: UIButton!
-
     @IBOutlet weak var invisiblePlayButton: UIButton!
+    
+    var fetchResultController: NSFetchedResultsController<HistoryMO>!
+    var historyList: [HistoryMO] = []
+    var distracorList = [String]()
+    let userDefault = UserDefaults.standard
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        historyLabel.text = NSLocalizedString("History", comment: "History segament controller label")
+        
+        logOutButtonOutlet.setTitle(NSLocalizedString("Sign out", comment: "Log out text at profile page."), for: .normal)
+        
+        playTextLabel.text = NSLocalizedString("Play", comment: "Play button text at profile page.")
+        
+        invisibleUserNameButtonOutlet.setTitleColor(UIColor.clear, for: .normal)
+        
+        print("===== Profile Page =====")
+        
+        invisiblePhotoUsageButtonOutlet.setTitleColor(UIColor.clear, for: .normal)
+        
+        logOutButtonOutlet.setTitleColor(UIColor.white, for: .normal)
+        
+        invisiblePlayButton.setTitleColor(UIColor.clear, for: .normal)
+        
+        historyTableView.delegate = self
+        
+        historyTableView.dataSource = self
+        
+        createUserProfileImage(targe: userProfileImageView)
+        
+        if let userProfileImageData = userDefault.object(forKey: "UserProfileImage") as? Data {
+            
+            userProfileImageView.image = UIImage(data: userProfileImageData)
+            
+        }
+        
+        if let userName = userDefault.object(forKey: "userName") as? String {
+            userNameLabel.text = userName
+        } else {
+            userNameLabel.text = "Player"
+        }
+        
+        if let currentVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String {
+            versionLabel.text = "V\(currentVersion)"
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        emptyLabel.isHidden = true
+        
+        let radius = self.userProfileImageView.frame.width
+        
+        userProfileImageView.layer.cornerRadius = radius / 2
+        
+        logOutButtonOutlet.layer.borderColor = UIColor.white.cgColor
+        logOutButtonOutlet.layer.borderWidth = 2
+        logOutButtonOutlet.layer.cornerRadius = 30.0
+        
+        //createNextBattleOfResult(target: playButtonLabel)
+        
+        playContentView.layer.cornerRadius = 30.0
+        
+        // ====== fetch history CoreData here =====
+        
+        let fetchRequest: NSFetchRequest<HistoryMO> = HistoryMO.fetchRequest()
+        
+        let sortDescriptor = NSSortDescriptor(key: "timeIndex", ascending: false)
+        
+        fetchRequest.sortDescriptors = [sortDescriptor]
+        
+        if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
+            
+            let context = appDelegate.persistentContainer.viewContext
+            
+            fetchResultController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
+            
+            fetchResultController.delegate = self
+            
+            do {
+                
+                try fetchResultController.performFetch()
+                
+                if let fetchedObjects = fetchResultController.fetchedObjects {
+                    
+                    historyList = fetchedObjects
+                    
+                    historyTableView.reloadData()
+                    
+                }
+                
+            } catch {
+                historyList = []
+                print(error)
+            }
+        }
+        
+        if historyList.count == 0 {
+            
+            emptyLabel.isHidden = false
+            
+            emptyLabel.text = NSLocalizedString("Please Tap Play Button", comment: "No battle record yet")
+            emptyLabel.textColor = UIColor.white
+            emptyLabel.font = UIFont.mldTextStyleEmptyFont()!
+            emptyLabel.textAlignment = .center
+            emptyLabel.numberOfLines = 0
+            
+        }
+    }
+    
+    // MARK: - IBAction
     
     @IBAction func invisibleUserNameButtonTapped(_ sender: UIButton) {
 
@@ -166,107 +258,6 @@ class ProfilePageViewController: UIViewController, NSFetchedResultsControllerDel
 
     }
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        historyLabel.text = NSLocalizedString("History", comment: "History segament controller label")
-        
-        logOutButtonOutlet.setTitle(NSLocalizedString("Sign out", comment: "Log out text at profile page."), for: .normal)
-        
-        playTextLabel.text = NSLocalizedString("Play", comment: "Play button text at profile page.")
-        
-        invisibleUserNameButtonOutlet.setTitleColor(UIColor.clear, for: .normal)
-        
-        print("===== Profile Page =====")
-        
-        invisiblePhotoUsageButtonOutlet.setTitleColor(UIColor.clear, for: .normal)
-        
-        logOutButtonOutlet.setTitleColor(UIColor.white, for: .normal)
-        
-        invisiblePlayButton.setTitleColor(UIColor.clear, for: .normal)
-        
-        historyTableView.delegate = self
-        
-        historyTableView.dataSource = self
-        
-        createUserProfileImage(targe: userProfileImageView)
-        
-        if let userProfileImageData = userDefault.object(forKey: "UserProfileImage") as? Data {
-            
-            userProfileImageView.image = UIImage(data: userProfileImageData)
-            
-        }
-        
-        if let userName = userDefault.object(forKey: "userName") as? String {
-            userNameLabel.text = userName
-        } else {
-            userNameLabel.text = "Player"
-        }
-    }
-
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-
-        emptyLabel.isHidden = true
-        
-        let radius = self.userProfileImageView.frame.width
-
-        userProfileImageView.layer.cornerRadius = radius / 2
-        
-        logOutButtonOutlet.layer.borderColor = UIColor.white.cgColor
-        logOutButtonOutlet.layer.borderWidth = 2
-        logOutButtonOutlet.layer.cornerRadius = 30.0
-        
-        //createNextBattleOfResult(target: playButtonLabel)
-
-        playContentView.layer.cornerRadius = 30.0
-        
-        // ====== fetch history CoreData here =====
-        
-        let fetchRequest: NSFetchRequest<HistoryMO> = HistoryMO.fetchRequest()
-        
-        let sortDescriptor = NSSortDescriptor(key: "timeIndex", ascending: false)
-        
-        fetchRequest.sortDescriptors = [sortDescriptor]
-        
-        if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
-            
-            let context = appDelegate.persistentContainer.viewContext
-            
-            fetchResultController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
-            
-            fetchResultController.delegate = self
-            
-            do {
-                
-                try fetchResultController.performFetch()
-                
-                if let fetchedObjects = fetchResultController.fetchedObjects {
-                    
-                    historyList = fetchedObjects
-                    
-                    historyTableView.reloadData()
-                    
-                }
-                
-            } catch {
-                historyList = []
-                print(error)
-            }
-        }
-        
-        if historyList.count == 0 {
-            
-            emptyLabel.isHidden = false
-            
-            emptyLabel.text = NSLocalizedString("Please Tap Play Button", comment: "No battle record yet")
-            emptyLabel.textColor = UIColor.white
-            emptyLabel.font = UIFont.mldTextStyleEmptyFont()!
-            emptyLabel.textAlignment = .center
-            emptyLabel.numberOfLines = 0
-            
-        }
-    }
 }
 
 extension ProfilePageViewController: UITableViewDelegate, UITableViewDataSource {
