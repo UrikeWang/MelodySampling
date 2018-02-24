@@ -119,7 +119,6 @@ class SignUpViewController: UIViewController {
                     UserDefaults.standard.set(user.uid, forKey: "uid")
                     UserDefaults.standard.set(self.userFullName, forKey:"userName")
                     UserDefaults.standard.set(user.isAnonymous, forKey:"isAnonymous")
-//                    gotoTypeChoosePage(from: self)
                     
                     print("appdelegate.switchToPlayNavigationController was triggered.")
                     

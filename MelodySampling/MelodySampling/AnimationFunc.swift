@@ -17,6 +17,6 @@ func addOpacityAnimation(label: UILabel) {
     animation.duration = 0.5
     animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
     animation.autoreverses = true
-    animation.repeatCount = FLT_MAX
+    animation.repeatCount = .greatestFiniteMagnitude
     label.layer.add(animation, forKey: key)
 }
