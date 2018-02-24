@@ -12,7 +12,7 @@ import FirebaseRemoteConfig
 
 enum RemoteConfigValueKey: String {
     case appVersion
-    case appStoreURL = "itms://itunes.apple.com/tw/app/id1273605195"
+    case appStoreURL = "itms-apps://itunes.apple.com/tw/app/id1273605195"
 }
 
 class RemoteConfigValues {
