@@ -37,6 +37,7 @@
 		732AE4841F39817A009746CA /* Montserrat-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 732AE4721F39817A009746CA /* Montserrat-ThinItalic.ttf */; };
 		732AE4891F399258009746CA /* ScoresFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732AE4881F399258009746CA /* ScoresFunc.swift */; };
 		732FC4801F4ADE2500427B3A /* UIShadowCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732FC47F1F4ADE2500427B3A /* UIShadowCreator.swift */; };
+		73321FB72041B90B002C3624 /* DateUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73321FB62041B90B002C3624 /* DateUtility.swift */; };
 		7343937F1F9BA83E00F3B504 /* AnimationFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7343937E1F9BA83E00F3B504 /* AnimationFunc.swift */; };
 		7346B9FB1F5826EF00A9487C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7346B9FD1F5826EF00A9487C /* InfoPlist.strings */; };
 		7346BA001F586A1600A9487C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7346BA021F586A1600A9487C /* Localizable.strings */; };
@@ -112,6 +113,7 @@
 		732FC4651F4A84B000427B3A /* NotoSansMonoCJKtc-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansMonoCJKtc-Regular.otf"; sourceTree = "<group>"; };
 		732FC4761F4AC5CB00427B3A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		732FC47F1F4ADE2500427B3A /* UIShadowCreator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIShadowCreator.swift; sourceTree = "<group>"; };
+		73321FB62041B90B002C3624 /* DateUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtility.swift; sourceTree = "<group>"; };
 		7336D28D1F6E60CC00D4F4C7 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main.strings; sourceTree = "<group>"; };
 		7336D28E1F6E60CC00D4F4C7 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		7336D28F1F6E60CC00D4F4C7 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -244,6 +246,14 @@
 			name = FontResource;
 			sourceTree = "<group>";
 		};
+		73321FB52041B8BE002C3624 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				73321FB62041B90B002C3624 /* DateUtility.swift */,
+			);
+			name = Utility;
+			sourceTree = "<group>";
+		};
 		73530ADF1F98B030007DFC7C /* Navigation */ = {
 			isa = PBXGroup;
 			children = (
@@ -299,6 +309,7 @@
 		73744D021F2ED94200C1FAEA /* MelodySampling */ = {
 			isa = PBXGroup;
 			children = (
+				73321FB52041B8BE002C3624 /* Utility */,
 				73744D031F2ED94200C1FAEA /* AppDelegate.swift */,
 				7346BA071F58FE9500A9487C /* MelodySampling.entitlements */,
 				7346BA021F586A1600A9487C /* Localizable.strings */,
@@ -642,6 +653,7 @@
 				7326E8DB1F5B047800332BE7 /* UpdateManager.swift in Sources */,
 				73AF80231F384B7900CA31FB /* Styleguide.swift in Sources */,
 				075204021FF132D60037A0BB /* RandomUserStruct.swift in Sources */,
+				73321FB72041B90B002C3624 /* DateUtility.swift in Sources */,
 				7382742C1F40992E00CD718E /* FirebaseExtension.swift in Sources */,
 				73865FBA1F3C547F004E3594 /* AnswerTableViewCell.swift in Sources */,
 				7393F7C21F9D9B00009EB5D5 /* UIViewController+KeyboardDismiss.swift in Sources */,
