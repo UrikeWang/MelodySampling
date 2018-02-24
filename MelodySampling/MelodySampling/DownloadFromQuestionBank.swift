@@ -108,25 +108,6 @@ class DownloadManager {
                 
                 selfNavigation?.questionArray.append(eachQuestion)
                 
-                //這個 QuestionMO 要拿掉
-                if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
-                    
-                    self.questionMO = QuestionMO(context: appDelegate.persistentContainer.viewContext)
-                    
-                    self.questionMO.indexNo = Int16(counter)
-                    self.questionMO.artistID = String(eachQuestion.artistID)
-                    self.questionMO.artistName = eachQuestion.artistName
-                    self.questionMO.trackID = String(eachQuestion.trackID)
-                    self.questionMO.trackName = eachQuestion.trackName
-                    self.questionMO.artworkUrl = eachQuestion.artworkUrl
-                    self.questionMO.previewUrl = eachQuestion.previewUrl
-                    self.questionMO.collectionID = String(eachQuestion.collectionID)
-                    self.questionMO.collectionName = eachQuestion.collectionName
-                    self.questionMO.primaryGenreName = eachQuestion.primaryGenreName
-                    
-                    appDelegate.saveContext()
-                }
-                
                 let destination: DownloadRequest.DownloadFileDestination = { _, _ in
                     let documentsURL = NSHomeDirectory() + "/Documents/"
                     let pathName = "song" + String(counter) + ".m4a"
