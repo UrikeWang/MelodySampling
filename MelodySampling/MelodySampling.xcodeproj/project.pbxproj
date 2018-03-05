@@ -324,12 +324,7 @@
 				7346B9FD1F5826EF00A9487C /* InfoPlist.strings */,
 				07F23922201702A700801491 /* RemoteConfig */,
 				736271001F3A9CC60002206B /* Factory */,
-				73AF80241F384E1E00CA31FB /* LandingToSignIn */,
-				73530ADF1F98B030007DFC7C /* Navigation */,
-				7355759D1F3DB8D400A0E271 /* ProfilePage */,
-				7355759A1F3DADFC00A0E271 /* GenreChoosePage */,
-				73865FB61F3C4D13004E3594 /* PlayPage */,
-				7399DB861F3D82ED00E2A4B2 /* ResultPage */,
+				73AAA146204D489E0062B5A3 /* ViewControllers */,
 				732AE4601F398137009746CA /* FontResource */,
 				73AF80211F384B3400CA31FB /* StyleguideRelative */,
 				7326E8D91F5B045500332BE7 /* UpdateManager */,
@@ -372,6 +367,19 @@
 				735575981F3D87AC00A0E271 /* ResultTableViewCell.swift */,
 			);
 			name = ResultPage;
+			sourceTree = "<group>";
+		};
+		73AAA146204D489E0062B5A3 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				73AF80241F384E1E00CA31FB /* LandingToSignIn */,
+				73530ADF1F98B030007DFC7C /* Navigation */,
+				7355759D1F3DB8D400A0E271 /* ProfilePage */,
+				7355759A1F3DADFC00A0E271 /* GenreChoosePage */,
+				73865FB61F3C4D13004E3594 /* PlayPage */,
+				7399DB861F3D82ED00E2A4B2 /* ResultPage */,
+			);
+			name = ViewControllers;
 			sourceTree = "<group>";
 		};
 		73AF80211F384B3400CA31FB /* StyleguideRelative */ = {
