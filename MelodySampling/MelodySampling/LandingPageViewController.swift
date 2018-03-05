@@ -92,8 +92,6 @@ class LandingPageViewController: UIViewController {
 
         guard let startTime = self.startTime else { return }
 
-//        gotoLoginPage(from: self)
-        
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
         let destinationViewController = storyboard.instantiateViewController(withIdentifier: "LoginPage")
@@ -111,8 +109,6 @@ class LandingPageViewController: UIViewController {
         let currentTime = Date().timeIntervalSince1970
 
         guard let startTime = self.startTime else { return }
-
-//        gotoSignupPage(from: self)
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         

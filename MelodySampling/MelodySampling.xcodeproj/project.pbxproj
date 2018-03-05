@@ -37,6 +37,7 @@
 		732AE4841F39817A009746CA /* Montserrat-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 732AE4721F39817A009746CA /* Montserrat-ThinItalic.ttf */; };
 		732AE4891F399258009746CA /* ScoresFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732AE4881F399258009746CA /* ScoresFunc.swift */; };
 		732FC4801F4ADE2500427B3A /* UIShadowCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732FC47F1F4ADE2500427B3A /* UIShadowCreator.swift */; };
+		73321FB72041B90B002C3624 /* DateUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73321FB62041B90B002C3624 /* DateUtility.swift */; };
 		7343937F1F9BA83E00F3B504 /* AnimationFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7343937E1F9BA83E00F3B504 /* AnimationFunc.swift */; };
 		7346B9FB1F5826EF00A9487C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7346B9FD1F5826EF00A9487C /* InfoPlist.strings */; };
 		7346BA001F586A1600A9487C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7346BA021F586A1600A9487C /* Localizable.strings */; };
@@ -70,7 +71,6 @@
 		73AF802A1F385EAE00CA31FB /* GradientLayerCreater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73AF80291F385EAE00CA31FB /* GradientLayerCreater.swift */; };
 		73AF802C1F386D4400CA31FB /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73AF802B1F386D4400CA31FB /* SignUpViewController.swift */; };
 		73AF802E1F38764300CA31FB /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73AF802D1F38764300CA31FB /* LogInViewController.swift */; };
-		73B122F51F42FD3E006DE065 /* GotoFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73B122F41F42FD3E006DE065 /* GotoFunc.swift */; };
 		73B122F71F431536006DE065 /* PrintUID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73B122F61F431536006DE065 /* PrintUID.swift */; };
 		73B20BB11F98F1580018D7EF /* PlayPageViewController+GameLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73B20BB01F98F1570018D7EF /* PlayPageViewController+GameLogic.swift */; };
 		73FDE6681F3DC35400D9A3FC /* TypeChooseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73FDE6671F3DC35400D9A3FC /* TypeChooseViewController.swift */; };
@@ -112,6 +112,7 @@
 		732FC4651F4A84B000427B3A /* NotoSansMonoCJKtc-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansMonoCJKtc-Regular.otf"; sourceTree = "<group>"; };
 		732FC4761F4AC5CB00427B3A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		732FC47F1F4ADE2500427B3A /* UIShadowCreator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIShadowCreator.swift; sourceTree = "<group>"; };
+		73321FB62041B90B002C3624 /* DateUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtility.swift; sourceTree = "<group>"; };
 		7336D28D1F6E60CC00D4F4C7 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main.strings; sourceTree = "<group>"; };
 		7336D28E1F6E60CC00D4F4C7 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		7336D28F1F6E60CC00D4F4C7 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -160,7 +161,6 @@
 		73AF80291F385EAE00CA31FB /* GradientLayerCreater.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientLayerCreater.swift; sourceTree = "<group>"; };
 		73AF802B1F386D4400CA31FB /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		73AF802D1F38764300CA31FB /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
-		73B122F41F42FD3E006DE065 /* GotoFunc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GotoFunc.swift; sourceTree = "<group>"; };
 		73B122F61F431536006DE065 /* PrintUID.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrintUID.swift; sourceTree = "<group>"; };
 		73B20BB01F98F1570018D7EF /* PlayPageViewController+GameLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlayPageViewController+GameLogic.swift"; sourceTree = "<group>"; };
 		73FDE6671F3DC35400D9A3FC /* TypeChooseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeChooseViewController.swift; sourceTree = "<group>"; };
@@ -184,9 +184,9 @@
 		075203FC1FF12FC80037A0BB /* RandomUser */ = {
 			isa = PBXGroup;
 			children = (
+				075204011FF132D60037A0BB /* RandomUserStruct.swift */,
 				075203FD1FF130B60037A0BB /* male.json */,
 				075203FF1FF131940037A0BB /* female.json */,
-				075204011FF132D60037A0BB /* RandomUserStruct.swift */,
 				075204031FF135CB0037A0BB /* RandomUserManager.swift */,
 			);
 			name = RandomUser;
@@ -244,6 +244,24 @@
 			name = FontResource;
 			sourceTree = "<group>";
 		};
+		73321FB52041B8BE002C3624 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				73321FB62041B90B002C3624 /* DateUtility.swift */,
+				732AE4881F399258009746CA /* ScoresFunc.swift */,
+				736271031F3AAB210002206B /* ArrayShuffle.swift */,
+				730D0E591F3AEBFD0099DA0F /* AddSpace.swift */,
+				730D0E5B1F3AFEA20099DA0F /* JudgeAnswer.swift */,
+				7393F7C11F9D9B00009EB5D5 /* UIViewController+KeyboardDismiss.swift */,
+				73744D2E1F2F78C000C1FAEA /* GetDeveloperToken.swift */,
+				7343937E1F9BA83E00F3B504 /* AnimationFunc.swift */,
+				73B122F61F431536006DE065 /* PrintUID.swift */,
+				731F2ADE1F4537BF00690316 /* LabelCreator.swift */,
+				736503DE1F46C44000A975EB /* RandomFunc.swift */,
+			);
+			name = Utility;
+			sourceTree = "<group>";
+		};
 		73530ADF1F98B030007DFC7C /* Navigation */ = {
 			isa = PBXGroup;
 			children = (
@@ -299,23 +317,19 @@
 		73744D021F2ED94200C1FAEA /* MelodySampling */ = {
 			isa = PBXGroup;
 			children = (
+				73321FB52041B8BE002C3624 /* Utility */,
 				73744D031F2ED94200C1FAEA /* AppDelegate.swift */,
 				7346BA071F58FE9500A9487C /* MelodySampling.entitlements */,
 				7346BA021F586A1600A9487C /* Localizable.strings */,
 				7346B9FD1F5826EF00A9487C /* InfoPlist.strings */,
 				07F23922201702A700801491 /* RemoteConfig */,
 				736271001F3A9CC60002206B /* Factory */,
-				73AF80241F384E1E00CA31FB /* LandingToSignIn */,
-				73530ADF1F98B030007DFC7C /* Navigation */,
-				7355759D1F3DB8D400A0E271 /* ProfilePage */,
-				7355759A1F3DADFC00A0E271 /* GenreChoosePage */,
-				73865FB61F3C4D13004E3594 /* PlayPage */,
-				7399DB861F3D82ED00E2A4B2 /* ResultPage */,
+				73AAA146204D489E0062B5A3 /* ViewControllers */,
 				732AE4601F398137009746CA /* FontResource */,
 				73AF80211F384B3400CA31FB /* StyleguideRelative */,
 				7326E8D91F5B045500332BE7 /* UpdateManager */,
-				73744D2D1F2F788900C1FAEA /* FunctionAndStruct */,
-				075203FC1FF12FC80037A0BB /* RandomUser */,
+				73744D2D1F2F788900C1FAEA /* Instance */,
+				73B409B22041D4B200FBFCAA /* Model */,
 				73744D071F2ED94300C1FAEA /* Main.storyboard */,
 				73744D0D1F2ED94300C1FAEA /* Assets.xcassets */,
 				73744D0F1F2ED94300C1FAEA /* LaunchScreen.storyboard */,
@@ -326,27 +340,14 @@
 			path = MelodySampling;
 			sourceTree = "<group>";
 		};
-		73744D2D1F2F788900C1FAEA /* FunctionAndStruct */ = {
+		73744D2D1F2F788900C1FAEA /* Instance */ = {
 			isa = PBXGroup;
 			children = (
-				732AE4881F399258009746CA /* ScoresFunc.swift */,
-				73744D2E1F2F78C000C1FAEA /* GetDeveloperToken.swift */,
-				736271031F3AAB210002206B /* ArrayShuffle.swift */,
-				730D0E591F3AEBFD0099DA0F /* AddSpace.swift */,
-				730D0E5B1F3AFEA20099DA0F /* JudgeAnswer.swift */,
-				73865FBB1F3C7F5A004E3594 /* ResultStructure.swift */,
 				7382740B1F3EAF8D00CD718E /* DownloadFromQuestionBank.swift */,
 				736503E01F46C58D00A975EB /* DistractorManager.swift */,
-				7382742B1F40992E00CD718E /* FirebaseExtension.swift */,
 				739019DE1F41463F006DEFFD /* ClearCoreDataQuestion.swift */,
-				73B122F41F42FD3E006DE065 /* GotoFunc.swift */,
-				73B122F61F431536006DE065 /* PrintUID.swift */,
-				731F2ADE1F4537BF00690316 /* LabelCreator.swift */,
-				736503DE1F46C44000A975EB /* RandomFunc.swift */,
-				7343937E1F9BA83E00F3B504 /* AnimationFunc.swift */,
-				7393F7C11F9D9B00009EB5D5 /* UIViewController+KeyboardDismiss.swift */,
 			);
-			name = FunctionAndStruct;
+			name = Instance;
 			sourceTree = "<group>";
 		};
 		73865FB61F3C4D13004E3594 /* PlayPage */ = {
@@ -368,6 +369,19 @@
 			name = ResultPage;
 			sourceTree = "<group>";
 		};
+		73AAA146204D489E0062B5A3 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				73AF80241F384E1E00CA31FB /* LandingToSignIn */,
+				73530ADF1F98B030007DFC7C /* Navigation */,
+				7355759D1F3DB8D400A0E271 /* ProfilePage */,
+				7355759A1F3DADFC00A0E271 /* GenreChoosePage */,
+				73865FB61F3C4D13004E3594 /* PlayPage */,
+				7399DB861F3D82ED00E2A4B2 /* ResultPage */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
 		73AF80211F384B3400CA31FB /* StyleguideRelative */ = {
 			isa = PBXGroup;
 			children = (
@@ -387,6 +401,16 @@
 				73AF802D1F38764300CA31FB /* LogInViewController.swift */,
 			);
 			name = LandingToSignIn;
+			sourceTree = "<group>";
+		};
+		73B409B22041D4B200FBFCAA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7382742B1F40992E00CD718E /* FirebaseExtension.swift */,
+				73865FBB1F3C7F5A004E3594 /* ResultStructure.swift */,
+				075203FC1FF12FC80037A0BB /* RandomUser */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 		EBAF40AB02134D5376522537 /* Pods */ = {
@@ -613,7 +637,6 @@
 				730D0E5A1F3AEBFD0099DA0F /* AddSpace.swift in Sources */,
 				7343937F1F9BA83E00F3B504 /* AnimationFunc.swift in Sources */,
 				7382740C1F3EAF8D00CD718E /* DownloadFromQuestionBank.swift in Sources */,
-				73B122F51F42FD3E006DE065 /* GotoFunc.swift in Sources */,
 				732FC4801F4ADE2500427B3A /* UIShadowCreator.swift in Sources */,
 				7355759F1F3DB8FF00A0E271 /* ProfilePageViewController.swift in Sources */,
 				7377838D1F42C34F00B9EEBF /* StandardTableViewCell.swift in Sources */,
@@ -642,6 +665,7 @@
 				7326E8DB1F5B047800332BE7 /* UpdateManager.swift in Sources */,
 				73AF80231F384B7900CA31FB /* Styleguide.swift in Sources */,
 				075204021FF132D60037A0BB /* RandomUserStruct.swift in Sources */,
+				73321FB72041B90B002C3624 /* DateUtility.swift in Sources */,
 				7382742C1F40992E00CD718E /* FirebaseExtension.swift in Sources */,
 				73865FBA1F3C547F004E3594 /* AnswerTableViewCell.swift in Sources */,
 				7393F7C21F9D9B00009EB5D5 /* UIViewController+KeyboardDismiss.swift in Sources */,

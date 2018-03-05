@@ -17,7 +17,7 @@ func getDeveloperToken() {
 
     ref.child("tokens").child("developerToken").child("token").observe(.value, with: { (snapshot) in
 
-        //回家後動這裡，把他寫成一個 func
+        // TODO: 這一部分是要連動 Apple music 目前沒這功能
 
         guard let devToken = snapshot.value
             else {

@@ -57,7 +57,6 @@ class LogInViewController: UIViewController {
 
     @IBAction func signUpInvisibleButtonTapped(_ sender: UIButton) {
 
-//            gotoSignupPage(from: self)
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
         let destinationViewController = storyboard.instantiateViewController(withIdentifier: "SignupPage")
@@ -106,7 +105,6 @@ class LogInViewController: UIViewController {
                 UserDefaults.standard.set(user.uid, forKey: "uid")
                 UserDefaults.standard.set(user.isAnonymous, forKey:"isAnonymous")
 
-//                gotoProfilePage(from: self)
                 print("appdelegate.switchToPlayNavigationController was triggered.")
                 
                 //swiftlint:disable force_cast
