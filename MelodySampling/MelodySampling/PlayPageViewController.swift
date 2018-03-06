@@ -531,7 +531,13 @@ class PlayPageViewController: UIViewController, UITableViewDelegate, UITableView
 
         if let randomUserImageData = userDefault.data(forKey: "RandomUserImageData"), let randomUserName = userDefault.object(forKey: "RandomUserName") as? String {
             leftUserImageView.image = UIImage(data: randomUserImageData)
-            randomUserNameLabel.text = randomUserName
+            
+            // FIXME: 不能這樣 call 因為這裡有在使用 tableview 所以這個 class 會被 call 很多次，整段拿到 viewWillAppear 比較好
+            // username 的名字太長了,加入跑馬燈效果
+            let randomUserMarqueeView = MarqueeView(frame: randomUserNameLabel.frame, title: randomUserName)
+            profileBackgroundContentView.addSubview(randomUserMarqueeView)
+            randomUserNameLabel.isHidden = true
+//            randomUserNameLabel.text = randomUserName
         }
 
         setCoverView(coverView, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
