@@ -73,6 +73,7 @@
 		73AF802E1F38764300CA31FB /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73AF802D1F38764300CA31FB /* LogInViewController.swift */; };
 		73B122F71F431536006DE065 /* PrintUID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73B122F61F431536006DE065 /* PrintUID.swift */; };
 		73B20BB11F98F1580018D7EF /* PlayPageViewController+GameLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73B20BB01F98F1570018D7EF /* PlayPageViewController+GameLogic.swift */; };
+		73ECCED3204E9BAD00AC7721 /* MarqueeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73ECCED2204E9BAD00AC7721 /* MarqueeView.swift */; };
 		73FDE6681F3DC35400D9A3FC /* TypeChooseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73FDE6671F3DC35400D9A3FC /* TypeChooseViewController.swift */; };
 		C2AF0422FA9549D395EFC0A0 /* Pods_King_of_Song_Quiz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83C22C39D96C2FA7F8C16BC5 /* Pods_King_of_Song_Quiz.framework */; };
 /* End PBXBuildFile section */
@@ -163,6 +164,7 @@
 		73AF802D1F38764300CA31FB /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		73B122F61F431536006DE065 /* PrintUID.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrintUID.swift; sourceTree = "<group>"; };
 		73B20BB01F98F1570018D7EF /* PlayPageViewController+GameLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlayPageViewController+GameLogic.swift"; sourceTree = "<group>"; };
+		73ECCED2204E9BAD00AC7721 /* MarqueeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarqueeView.swift; sourceTree = "<group>"; };
 		73FDE6671F3DC35400D9A3FC /* TypeChooseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeChooseViewController.swift; sourceTree = "<group>"; };
 		83C22C39D96C2FA7F8C16BC5 /* Pods_King_of_Song_Quiz.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_King_of_Song_Quiz.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F87418D17B45CB0C93FDBE5 /* Pods-King of Song Quiz.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-King of Song Quiz.debug.xcconfig"; path = "Pods/Target Support Files/Pods-King of Song Quiz/Pods-King of Song Quiz.debug.xcconfig"; sourceTree = "<group>"; };
@@ -258,6 +260,7 @@
 				73B122F61F431536006DE065 /* PrintUID.swift */,
 				731F2ADE1F4537BF00690316 /* LabelCreator.swift */,
 				736503DE1F46C44000A975EB /* RandomFunc.swift */,
+				73ECCED2204E9BAD00AC7721 /* MarqueeView.swift */,
 			);
 			name = Utility;
 			sourceTree = "<group>";
@@ -669,6 +672,7 @@
 				7382742C1F40992E00CD718E /* FirebaseExtension.swift in Sources */,
 				73865FBA1F3C547F004E3594 /* AnswerTableViewCell.swift in Sources */,
 				7393F7C21F9D9B00009EB5D5 /* UIViewController+KeyboardDismiss.swift in Sources */,
+				73ECCED3204E9BAD00AC7721 /* MarqueeView.swift in Sources */,
 				73AF802E1F38764300CA31FB /* LogInViewController.swift in Sources */,
 				7399DB881F3D835900E2A4B2 /* ResultPageViewController.swift in Sources */,
 				73530AE11F98B062007DFC7C /* PlayingNavigationController.swift in Sources */,

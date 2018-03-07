@@ -126,5 +126,9 @@ extension UIFont {
     class func mldTextStyleCountDownFont() -> UIFont? {
         return UIFont(name: "Montserrat-Medium", size: 40.0)
     }
+    
+    class func mldTextStyleUser() -> UIFont? {
+        return UIFont(name: "Montserrat-Medium", size: 16.0)
+    }
 
 }
