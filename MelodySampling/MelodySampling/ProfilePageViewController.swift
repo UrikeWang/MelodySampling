@@ -152,7 +152,7 @@ class ProfilePageViewController: UIViewController, NSFetchedResultsControllerDel
         
         let timePathGet = ref.child("currentTime")
         
-        timePathGet.observe( .value, with: { (snapshot) in
+        timePathGet.observeSingleEvent(of: .value, with: { (snapshot) in
             guard let value = snapshot.value as? [String: Any],
                 let timestamp = value["timestamp"] as? Double else { return }
             
