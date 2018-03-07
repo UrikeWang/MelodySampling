@@ -32,11 +32,13 @@ class ProfilePageViewController: UIViewController, NSFetchedResultsControllerDel
     @IBOutlet weak var emptyLabel: UILabel!
     @IBOutlet weak var invisibleUserNameButtonOutlet: UIButton!
     @IBOutlet weak var invisiblePlayButton: UIButton!
+    var unixTimestamp: Double?
     
     var fetchResultController: NSFetchedResultsController<HistoryMO>!
     var historyList: [HistoryMO] = []
     var distracorList = [String]()
     let userDefault = UserDefaults.standard
+    var ref: DatabaseReference!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -141,6 +143,29 @@ class ProfilePageViewController: UIViewController, NSFetchedResultsControllerDel
             emptyLabel.textAlignment = .center
             emptyLabel.numberOfLines = 0
             
+        }
+        
+        self.ref = Database.database().reference()
+        let timePathPush = ref.child("currentTime")
+        let timeDict = ["timestamp": ServerValue.timestamp()] as [String: Any]
+        timePathPush.updateChildValues(timeDict)
+        
+        let timePathGet = ref.child("currentTime")
+        
+        timePathGet.observe( .value, with: { (snapshot) in
+            guard let value = snapshot.value as? [String: Any],
+                let timestamp = value["timestamp"] as? Double else { return }
+            
+            self.unixTimestamp = timestamp / 1000
+            let date = Date(timeIntervalSince1970: self.unixTimestamp!)
+            let strDate = DateUtility.getStrDate(from: date)
+            let weekOfYear = DateUtility.getWeekOfYear(from: date)
+            
+            print("目前聽到的時間: \(timestamp)")
+            print("轉換後的時間: \(strDate)")
+            print("週數: \(weekOfYear)")
+        }) { (err) in
+            print("error :\(err)")
         }
     }
     
