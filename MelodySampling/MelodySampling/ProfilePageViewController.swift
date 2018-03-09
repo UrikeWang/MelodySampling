@@ -20,6 +20,8 @@ class ProfilePageViewController: UIViewController, NSFetchedResultsControllerDel
         }
     }
 
+    
+    @IBOutlet weak var profileContentView: UIView!
     @IBOutlet weak var userProfileImageView: UIImageView!
     @IBOutlet var versionLabel: UILabel!
     @IBOutlet weak var playContentView: UIView!
@@ -33,6 +35,7 @@ class ProfilePageViewController: UIViewController, NSFetchedResultsControllerDel
     @IBOutlet weak var invisibleUserNameButtonOutlet: UIButton!
     @IBOutlet weak var invisiblePlayButton: UIButton!
     var unixTimestamp: Double?
+    var userMarqueeView = MarqueeView()
     
     var fetchResultController: NSFetchedResultsController<HistoryMO>!
     var historyList: [HistoryMO] = []
@@ -72,10 +75,13 @@ class ProfilePageViewController: UIViewController, NSFetchedResultsControllerDel
         }
         
         if let userName = userDefault.object(forKey: "userName") as? String {
-            userNameLabel.text = userName
+            self.userMarqueeView = MarqueeView(frame: userNameLabel.frame, title: userName)
         } else {
-            userNameLabel.text = "Player"
+            self.userMarqueeView = MarqueeView(frame: userNameLabel.frame, title: "Player")
         }
+        
+        profileContentView.insertSubview(self.userMarqueeView, at: 1)
+        userNameLabel.isHidden = true
         
         if let currentVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String {
             versionLabel.text = "V\(currentVersion)"
@@ -172,6 +178,8 @@ class ProfilePageViewController: UIViewController, NSFetchedResultsControllerDel
     // MARK: - IBAction
     
     @IBAction func invisibleUserNameButtonTapped(_ sender: UIButton) {
+        
+        print("self.userMarqueeView.marqueeTitle111: \(self.userMarqueeView.marqueeTitle)")
 
         let alertController = UIAlertController(title: NSLocalizedString("Rename", comment: "Tapping for rename action"), message: "", preferredStyle: .alert)
 
@@ -179,7 +187,13 @@ class ProfilePageViewController: UIViewController, NSFetchedResultsControllerDel
 
             let renameTextField = alertController.textFields![0] as UITextField
 
-            self.userNameLabel.text = renameTextField.text
+            self.userMarqueeView.marqueeTitle = renameTextField.text!
+            
+            print("self.userMarqueeView.marqueeTitle22222: \(renameTextField.text!)")
+            print("self.userMarqueeView.marqueeTitle33333: \(self.userMarqueeView.marqueeTitle)")
+            
+//            self.profileContentView.insertSubview(self.userMarqueeView, at: 1)
+            self.userNameLabel.isHidden = true
 
             self.userDefault.set(renameTextField.text, forKey: "userName")
 
