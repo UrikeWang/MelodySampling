@@ -124,3 +124,9 @@
 /* Touch Hint Label */
 "⬇︎Tap to replay song" = "⬇︎点击後可重听题目";
 
+/* Network traffic alert at login page */
+"Network traffic alert" = "互联网流量提醒";
+
+/* Subtitle of etwork traffic alert at login page. */
+"When you enter the game, there will be internet traffic." = "进入游戏时，会有互联网流量！";
+

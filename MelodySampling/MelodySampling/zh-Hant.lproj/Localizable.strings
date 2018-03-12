@@ -128,3 +128,9 @@
 /* Touch Hint Label */
 "⬇︎Tap to replay song" = "⬇︎點擊後可重聽題目";
 
+/* Network traffic alert at login page */
+"Network traffic alert" = "網路流量提醒";
+
+/* Subtitle of etwork traffic alert at login page. */
+"When you enter the game, there will be internet traffic." = "進入遊戲時，會有網路流量產生喔！";
+

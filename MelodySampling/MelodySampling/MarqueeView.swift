@@ -30,7 +30,6 @@ class MarqueeView: UIView {
         let lab = UILabel()
         lab.frame = CGRect(x: 0, y: 0, width: 0, height: 0)
         lab.textColor = UIColor.white
-        lab.backgroundColor = UIColor.yellow
         lab.font = UIFont.mldTextStyleUser()
         lab.text = marqueeTitle
         
@@ -48,7 +47,6 @@ class MarqueeView: UIView {
             
             let reserveTextLb = UILabel(frame: mark2)
             reserveTextLb.textColor = UIColor.white
-            reserveTextLb.backgroundColor = UIColor.red
             reserveTextLb.font = UIFont.mldTextStyleUser()
             reserveTextLb.text = marqueeTitle;
             self.addSubview(reserveTextLb)

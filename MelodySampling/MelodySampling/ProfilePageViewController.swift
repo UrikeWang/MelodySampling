@@ -179,7 +179,7 @@ class ProfilePageViewController: UIViewController, NSFetchedResultsControllerDel
     
     @IBAction func invisibleUserNameButtonTapped(_ sender: UIButton) {
         
-        print("self.userMarqueeView.marqueeTitle111: \(self.userMarqueeView.marqueeTitle)")
+        print("111self.userMarqueeView.marqueeTitle111: \(self.userMarqueeView.marqueeTitle)")
 
         let alertController = UIAlertController(title: NSLocalizedString("Rename", comment: "Tapping for rename action"), message: "", preferredStyle: .alert)
 
@@ -189,8 +189,8 @@ class ProfilePageViewController: UIViewController, NSFetchedResultsControllerDel
 
             self.userMarqueeView.marqueeTitle = renameTextField.text!
             
-            print("self.userMarqueeView.marqueeTitle22222: \(renameTextField.text!)")
-            print("self.userMarqueeView.marqueeTitle33333: \(self.userMarqueeView.marqueeTitle)")
+            print("111更改名字: \(renameTextField.text!)")
+            print("111self.userMarqueeView.marqueeTitle33333: \(self.userMarqueeView.marqueeTitle)")
             
 //            self.profileContentView.insertSubview(self.userMarqueeView, at: 1)
             self.userNameLabel.isHidden = true
