@@ -116,8 +116,8 @@ class SignUpViewController: UIViewController {
                     defaultSetting.updateChildValues(["signedUserCount": self.addNumber! + 1])
 
  */
-                    let alertController = UIAlertController(title: NSLocalizedString("Network traffic alert", comment: "Network traffic alert title at signup page."), message: NSLocalizedString("When you enter the game, there will be internet traffic.", comment: "Network traffic alert message at signup page"), preferredStyle: .alert)
-                    let alertAction = UIAlertAction(title: NSLocalizedString("Resume", comment: "Resume action in alert controller of signup page"), style: .default, handler: nil)
+                    let alertController = UIAlertController(title: NSLocalizedString("Network traffic alert", comment: "Network traffic alert title at signup page."), message: NSLocalizedString("When you enter the game, there will be internet traffic.", comment: "Network traffic alert message at signup page."), preferredStyle: .alert)
+                    let alertAction = UIAlertAction(title: NSLocalizedString("Resume", comment: "Resume action in alert controller of signup page."), style: .default, handler: nil)
                     alertController.addAction(alertAction)
                     self.present(alertController, animated: true, completion: nil)
                     
