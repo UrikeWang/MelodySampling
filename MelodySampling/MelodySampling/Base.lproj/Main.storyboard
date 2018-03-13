@@ -678,6 +678,7 @@
                         <outlet property="logOutView" destination="jwy-5s-qhz" id="4gM-ca-39F"/>
                         <outlet property="playContentView" destination="Lyv-za-5E0" id="FiC-87-TRX"/>
                         <outlet property="playTextLabel" destination="6CE-oi-zf6" id="u1A-z5-6bk"/>
+                        <outlet property="profileContentView" destination="Ivk-cb-90t" id="9eT-N1-BxH"/>
                         <outlet property="userNameLabel" destination="u4p-KT-t8T" id="0gF-q5-87H"/>
                         <outlet property="userProfileImageView" destination="o2i-xB-Gof" id="k7s-gp-mCp"/>
                         <outlet property="versionLabel" destination="kvi-mz-z7f" id="wLW-77-GOV"/>
