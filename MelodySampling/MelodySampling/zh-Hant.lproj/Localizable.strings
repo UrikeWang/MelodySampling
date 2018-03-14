@@ -136,5 +136,5 @@
 /* Subtitle of network traffic alert at login page
    Subtitle of network traffic alert at signup page
    Subtitle of network traffic alert at landing page when user login anonymously */
-"When you enter the game, there will be internet traffic." = "進入遊戲時，會有網路流量產生喔！";
+"This game may produce amount of data traffic. If possible, please use Wi-Fi or unlimited data plan." = "進入遊戲時，會有網路流量產生喔！";
 

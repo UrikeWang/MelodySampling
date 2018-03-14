@@ -175,11 +175,14 @@ class ProfilePageViewController: UIViewController, NSFetchedResultsControllerDel
         }
     }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        userMarqueeView.frame = userNameLabel.frame
+    }
+    
     // MARK: - IBAction
     
     @IBAction func invisibleUserNameButtonTapped(_ sender: UIButton) {
-        
-        print("111self.userMarqueeView.marqueeTitle111: \(self.userMarqueeView.marqueeTitle)")
 
         let alertController = UIAlertController(title: NSLocalizedString("Rename", comment: "Tapping for rename action"), message: "", preferredStyle: .alert)
 
@@ -187,12 +190,14 @@ class ProfilePageViewController: UIViewController, NSFetchedResultsControllerDel
 
             let renameTextField = alertController.textFields![0] as UITextField
 
-            self.userMarqueeView.marqueeTitle = renameTextField.text!
+            self.userMarqueeView.removeFromSuperview()
             
-            print("111更改名字: \(renameTextField.text!)")
-            print("111self.userMarqueeView.marqueeTitle33333: \(self.userMarqueeView.marqueeTitle)")
+            let newUserMarqueeView = MarqueeView(frame: self.userNameLabel.frame, title: renameTextField.text!)
             
-//            self.profileContentView.insertSubview(self.userMarqueeView, at: 1)
+            self.profileContentView.insertSubview(newUserMarqueeView, at: 1)
+            
+            self.userMarqueeView = newUserMarqueeView
+
             self.userNameLabel.isHidden = true
 
             self.userDefault.set(renameTextField.text, forKey: "userName")
@@ -217,9 +222,7 @@ class ProfilePageViewController: UIViewController, NSFetchedResultsControllerDel
         }
 
         alertController.addAction(cancelAction)
-
         alertController.addAction(saveAction)
-
         self.present(alertController, animated: true, completion: nil)
 
     }
@@ -257,7 +260,7 @@ class ProfilePageViewController: UIViewController, NSFetchedResultsControllerDel
 
         let alertController = UIAlertController(title: NSLocalizedString("Sign Out", comment: "Sign out button on profile page"), message: NSLocalizedString("Are you going to sign out?", comment: "Sign Out Message on profile page"), preferredStyle: .alert)
 
-        let logoutAction = UIAlertAction(title: NSLocalizedString("Sign Out", comment: "Sign out from profile page"), style: .default) { (_) in
+        let logoutAction = UIAlertAction(title: NSLocalizedString("Sign Out", comment: "Sign out from profile page"), style: .destructive) { (_) in
 
             let userDefault = UserDefaults.standard
 

@@ -422,7 +422,10 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is you" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u4p-KT-t8T" userLabel="User Name Label">
-                                        <rect key="frame" x="147" y="120" width="81" height="20"/>
+                                        <rect key="frame" x="112.5" y="120" width="150" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="150" id="j5k-X8-I3F"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="16"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -472,6 +475,7 @@
                                 <constraints>
                                     <constraint firstItem="PMV-h8-dSS" firstAttribute="top" secondItem="u4p-KT-t8T" secondAttribute="bottom" constant="22" id="2y1-cO-kE6"/>
                                     <constraint firstItem="hDt-NX-0Yq" firstAttribute="centerY" secondItem="u4p-KT-t8T" secondAttribute="centerY" id="3KA-5a-Rt2"/>
+                                    <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="u4p-KT-t8T" secondAttribute="trailing" priority="250" constant="50" id="7SD-HD-DGV"/>
                                     <constraint firstItem="u4p-KT-t8T" firstAttribute="top" secondItem="o2i-xB-Gof" secondAttribute="bottom" constant="4" id="AGU-X2-BY7"/>
                                     <constraint firstItem="PGk-Jj-Bmy" firstAttribute="leading" secondItem="o2i-xB-Gof" secondAttribute="leading" id="KPd-ZA-gmT"/>
                                     <constraint firstItem="h52-og-nE7" firstAttribute="centerX" secondItem="Ivk-cb-90t" secondAttribute="centerX" id="Kjw-MT-dNg"/>
@@ -487,6 +491,7 @@
                                     <constraint firstItem="kvi-mz-z7f" firstAttribute="top" secondItem="Ivk-cb-90t" secondAttribute="top" constant="10" id="hxy-ot-GTF"/>
                                     <constraint firstAttribute="trailing" secondItem="kvi-mz-z7f" secondAttribute="trailing" constant="10" id="kdt-LT-8C5"/>
                                     <constraint firstItem="hDt-NX-0Yq" firstAttribute="centerX" secondItem="u4p-KT-t8T" secondAttribute="centerX" id="nhf-zh-JvV"/>
+                                    <constraint firstItem="u4p-KT-t8T" firstAttribute="leading" relation="lessThanOrEqual" secondItem="Ivk-cb-90t" secondAttribute="leading" priority="250" constant="50" id="vjo-oT-CPb"/>
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="L6t-KH-VJ3">
