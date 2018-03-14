@@ -165,6 +165,11 @@ class LandingPageViewController: UIViewController {
                 "profilePicURL": ""
                 ])
 
+            let alertController = UIAlertController(title: NSLocalizedString("Network traffic alert", comment: "Network traffic alert title at landing page(login anonymously)."), message: NSLocalizedString("This game may produce amount of data traffic. If possible, please use Wi-Fi or unlimited data plan.", comment: "Network traffic alert message at landing page(login anonymously)."), preferredStyle: .alert)
+            let alertAction = UIAlertAction(title: NSLocalizedString("Resume", comment: "Resume action in alert controller of landing page(login anonymously)."), style: .default, handler: nil)
+            alertController.addAction(alertAction)
+            self.present(alertController, animated: true, completion: nil)
+            
             UserDefaults.standard.set(user.uid, forKey: "uid")
             UserDefaults.standard.set(NSLocalizedString("Anonymous", comment: "User name of who logged in anonymously"), forKey: "userName")
             UserDefaults.standard.set(user.isAnonymous, forKey:"isAnonymous")

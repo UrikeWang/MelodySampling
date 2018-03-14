@@ -15,6 +15,9 @@
 		07F239242017033300801491 /* RemoteConfigValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F239232017033300801491 /* RemoteConfigValues.swift */; };
 		730D0E5A1F3AEBFD0099DA0F /* AddSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 730D0E591F3AEBFD0099DA0F /* AddSpace.swift */; };
 		730D0E5C1F3AFEA20099DA0F /* JudgeAnswer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 730D0E5B1F3AFEA20099DA0F /* JudgeAnswer.swift */; };
+		73194E0F2052CA8600B9156C /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73194E0E2052CA8600B9156C /* Item.swift */; };
+		73194E112052CAC700B9156C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73194E102052CAC700B9156C /* User.swift */; };
+		73194E142053B37100B9156C /* OneOfTwoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73194E132053B37100B9156C /* OneOfTwoItem.swift */; };
 		731F2ADF1F4537BF00690316 /* LabelCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731F2ADE1F4537BF00690316 /* LabelCreator.swift */; };
 		7326E8DB1F5B047800332BE7 /* UpdateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7326E8DA1F5B047800332BE7 /* UpdateManager.swift */; };
 		732AE4731F39817A009746CA /* Montserrat-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 732AE4611F39817A009746CA /* Montserrat-Black.ttf */; };
@@ -38,6 +41,7 @@
 		732AE4891F399258009746CA /* ScoresFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732AE4881F399258009746CA /* ScoresFunc.swift */; };
 		732FC4801F4ADE2500427B3A /* UIShadowCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732FC47F1F4ADE2500427B3A /* UIShadowCreator.swift */; };
 		73321FB72041B90B002C3624 /* DateUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73321FB62041B90B002C3624 /* DateUtility.swift */; };
+		73410D98205116F5000D460A /* Togglable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73410D97205116F5000D460A /* Togglable.swift */; };
 		7343937F1F9BA83E00F3B504 /* AnimationFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7343937E1F9BA83E00F3B504 /* AnimationFunc.swift */; };
 		7346B9FB1F5826EF00A9487C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7346B9FD1F5826EF00A9487C /* InfoPlist.strings */; };
 		7346BA001F586A1600A9487C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7346BA021F586A1600A9487C /* Localizable.strings */; };
@@ -88,6 +92,9 @@
 		45D5F6F531796264F2302DC0 /* Pods-King of Song Quiz.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-King of Song Quiz.release.xcconfig"; path = "Pods/Target Support Files/Pods-King of Song Quiz/Pods-King of Song Quiz.release.xcconfig"; sourceTree = "<group>"; };
 		730D0E591F3AEBFD0099DA0F /* AddSpace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddSpace.swift; sourceTree = "<group>"; };
 		730D0E5B1F3AFEA20099DA0F /* JudgeAnswer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JudgeAnswer.swift; sourceTree = "<group>"; };
+		73194E0E2052CA8600B9156C /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		73194E102052CAC700B9156C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		73194E132053B37100B9156C /* OneOfTwoItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneOfTwoItem.swift; sourceTree = "<group>"; };
 		731F2ADE1F4537BF00690316 /* LabelCreator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelCreator.swift; sourceTree = "<group>"; };
 		7326E8DA1F5B047800332BE7 /* UpdateManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateManager.swift; sourceTree = "<group>"; };
 		732AE4611F39817A009746CA /* Montserrat-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Black.ttf"; sourceTree = "<group>"; };
@@ -118,6 +125,7 @@
 		7336D28E1F6E60CC00D4F4C7 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		7336D28F1F6E60CC00D4F4C7 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		7336D2901F6E60CC00D4F4C7 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		73410D97205116F5000D460A /* Togglable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Togglable.swift; sourceTree = "<group>"; };
 		7343937E1F9BA83E00F3B504 /* AnimationFunc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationFunc.swift; sourceTree = "<group>"; };
 		7346B9FC1F5826EF00A9487C /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		7346BA011F586A1600A9487C /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
@@ -211,6 +219,23 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		73194E0D2052CA7100B9156C /* User */ = {
+			isa = PBXGroup;
+			children = (
+				73194E102052CAC700B9156C /* User.swift */,
+			);
+			name = User;
+			sourceTree = "<group>";
+		};
+		73194E122052CB3300B9156C /* Item */ = {
+			isa = PBXGroup;
+			children = (
+				73194E0E2052CA8600B9156C /* Item.swift */,
+				73194E132053B37100B9156C /* OneOfTwoItem.swift */,
+			);
+			name = Item;
+			sourceTree = "<group>";
+		};
 		7326E8D91F5B045500332BE7 /* UpdateManager */ = {
 			isa = PBXGroup;
 			children = (
@@ -261,6 +286,7 @@
 				731F2ADE1F4537BF00690316 /* LabelCreator.swift */,
 				736503DE1F46C44000A975EB /* RandomFunc.swift */,
 				73ECCED2204E9BAD00AC7721 /* MarqueeView.swift */,
+				73410D97205116F5000D460A /* Togglable.swift */,
 			);
 			name = Utility;
 			sourceTree = "<group>";
@@ -320,6 +346,8 @@
 		73744D021F2ED94200C1FAEA /* MelodySampling */ = {
 			isa = PBXGroup;
 			children = (
+				73194E122052CB3300B9156C /* Item */,
+				73194E0D2052CA7100B9156C /* User */,
 				73321FB52041B8BE002C3624 /* Utility */,
 				73744D031F2ED94200C1FAEA /* AppDelegate.swift */,
 				7346BA071F58FE9500A9487C /* MelodySampling.entitlements */,
@@ -462,7 +490,7 @@
 				TargetAttributes = {
 					73744CFF1F2ED94200C1FAEA = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = PJPD95M4QP;
+						DevelopmentTeam = 2QFPTG9564;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
@@ -642,6 +670,7 @@
 				7382740C1F3EAF8D00CD718E /* DownloadFromQuestionBank.swift in Sources */,
 				732FC4801F4ADE2500427B3A /* UIShadowCreator.swift in Sources */,
 				7355759F1F3DB8FF00A0E271 /* ProfilePageViewController.swift in Sources */,
+				73194E0F2052CA8600B9156C /* Item.swift in Sources */,
 				7377838D1F42C34F00B9EEBF /* StandardTableViewCell.swift in Sources */,
 				731F2ADF1F4537BF00690316 /* LabelCreator.swift in Sources */,
 				732AE4891F399258009746CA /* ScoresFunc.swift in Sources */,
@@ -667,10 +696,13 @@
 				730D0E5C1F3AFEA20099DA0F /* JudgeAnswer.swift in Sources */,
 				7326E8DB1F5B047800332BE7 /* UpdateManager.swift in Sources */,
 				73AF80231F384B7900CA31FB /* Styleguide.swift in Sources */,
+				73194E112052CAC700B9156C /* User.swift in Sources */,
+				73194E142053B37100B9156C /* OneOfTwoItem.swift in Sources */,
 				075204021FF132D60037A0BB /* RandomUserStruct.swift in Sources */,
 				73321FB72041B90B002C3624 /* DateUtility.swift in Sources */,
 				7382742C1F40992E00CD718E /* FirebaseExtension.swift in Sources */,
 				73865FBA1F3C547F004E3594 /* AnswerTableViewCell.swift in Sources */,
+				73410D98205116F5000D460A /* Togglable.swift in Sources */,
 				7393F7C21F9D9B00009EB5D5 /* UIViewController+KeyboardDismiss.swift in Sources */,
 				73ECCED3204E9BAD00AC7721 /* MarqueeView.swift in Sources */,
 				73AF802E1F38764300CA31FB /* LogInViewController.swift in Sources */,
@@ -835,7 +867,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = PJPD95M4QP;
+				DEVELOPMENT_TEAM = 2QFPTG9564;
 				INFOPLIST_FILE = MelodySampling/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -855,7 +887,7 @@
 				CODE_SIGN_ENTITLEMENTS = MelodySampling/MelodySampling.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = PJPD95M4QP;
+				DEVELOPMENT_TEAM = 2QFPTG9564;
 				INFOPLIST_FILE = MelodySampling/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

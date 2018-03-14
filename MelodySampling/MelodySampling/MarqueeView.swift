@@ -10,7 +10,7 @@ import UIKit
 
 class MarqueeView: UIView {
     
-    private var marqueeTitle:String?
+    var marqueeTitle:String?
     private var mark1:CGRect!
     private var mark2:CGRect!
     //    var bgColor: UIColor?

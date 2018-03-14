@@ -124,3 +124,13 @@
 /* for user label */
 "User" = "User";
 
+/* Network traffic alert at login page
+   Network traffic alert at signup page
+   Network traffic alert at landing page when user login anonymously */
+"Network traffic alert" = "ヒント";
+
+/* Subtitle of network traffic alert at login page
+   Subtitle of network traffic alert at signup page
+   Subtitle of network traffic alert at landing page when user login anonymously */
+"This game may produce amount of data traffic. If possible, please use Wi-Fi or unlimited data plan." = "データ通信量を節約のため、WIFIに繋いでください";
+

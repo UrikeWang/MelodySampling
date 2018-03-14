@@ -20,6 +20,8 @@ class ProfilePageViewController: UIViewController, NSFetchedResultsControllerDel
         }
     }
 
+    
+    @IBOutlet weak var profileContentView: UIView!
     @IBOutlet weak var userProfileImageView: UIImageView!
     @IBOutlet var versionLabel: UILabel!
     @IBOutlet weak var playContentView: UIView!
@@ -33,6 +35,7 @@ class ProfilePageViewController: UIViewController, NSFetchedResultsControllerDel
     @IBOutlet weak var invisibleUserNameButtonOutlet: UIButton!
     @IBOutlet weak var invisiblePlayButton: UIButton!
     var unixTimestamp: Double?
+    var userMarqueeView = MarqueeView()
     
     var fetchResultController: NSFetchedResultsController<HistoryMO>!
     var historyList: [HistoryMO] = []
@@ -72,10 +75,13 @@ class ProfilePageViewController: UIViewController, NSFetchedResultsControllerDel
         }
         
         if let userName = userDefault.object(forKey: "userName") as? String {
-            userNameLabel.text = userName
+            self.userMarqueeView = MarqueeView(frame: userNameLabel.frame, title: userName)
         } else {
-            userNameLabel.text = "Player"
+            self.userMarqueeView = MarqueeView(frame: userNameLabel.frame, title: "Player")
         }
+        
+        profileContentView.insertSubview(self.userMarqueeView, at: 1)
+        userNameLabel.isHidden = true
         
         if let currentVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String {
             versionLabel.text = "V\(currentVersion)"
@@ -169,6 +175,11 @@ class ProfilePageViewController: UIViewController, NSFetchedResultsControllerDel
         }
     }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        userMarqueeView.frame = userNameLabel.frame
+    }
+    
     // MARK: - IBAction
     
     @IBAction func invisibleUserNameButtonTapped(_ sender: UIButton) {
@@ -179,7 +190,15 @@ class ProfilePageViewController: UIViewController, NSFetchedResultsControllerDel
 
             let renameTextField = alertController.textFields![0] as UITextField
 
-            self.userNameLabel.text = renameTextField.text
+            self.userMarqueeView.removeFromSuperview()
+            
+            let newUserMarqueeView = MarqueeView(frame: self.userNameLabel.frame, title: renameTextField.text!)
+            
+            self.profileContentView.insertSubview(newUserMarqueeView, at: 1)
+            
+            self.userMarqueeView = newUserMarqueeView
+
+            self.userNameLabel.isHidden = true
 
             self.userDefault.set(renameTextField.text, forKey: "userName")
 
@@ -203,9 +222,7 @@ class ProfilePageViewController: UIViewController, NSFetchedResultsControllerDel
         }
 
         alertController.addAction(cancelAction)
-
         alertController.addAction(saveAction)
-
         self.present(alertController, animated: true, completion: nil)
 
     }
@@ -243,7 +260,7 @@ class ProfilePageViewController: UIViewController, NSFetchedResultsControllerDel
 
         let alertController = UIAlertController(title: NSLocalizedString("Sign Out", comment: "Sign out button on profile page"), message: NSLocalizedString("Are you going to sign out?", comment: "Sign Out Message on profile page"), preferredStyle: .alert)
 
-        let logoutAction = UIAlertAction(title: NSLocalizedString("Sign Out", comment: "Sign out from profile page"), style: .default) { (_) in
+        let logoutAction = UIAlertAction(title: NSLocalizedString("Sign Out", comment: "Sign out from profile page"), style: .destructive) { (_) in
 
             let userDefault = UserDefaults.standard
 
