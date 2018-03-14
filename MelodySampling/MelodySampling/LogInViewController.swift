@@ -102,7 +102,8 @@ class LogInViewController: UIViewController {
                     return
                 }
                 
-                let alertController = UIAlertController(title: NSLocalizedString("Network traffic alert", comment: "Network traffic alert title at login page."), message: NSLocalizedString("When you enter the game, there will be internet traffic.", comment: "Network traffic alert message at login page."), preferredStyle: .alert)
+                let alertController = UIAlertController(title: NSLocalizedString("Network traffic alert", comment: "Network traffic alert title at login page."), message: NSLocalizedString("This game may produce amount of data traffic. If possible, please use Wi-Fi or unlimited data plan.", comment: "Network traffic alert message at login page."), preferredStyle: .alert)
+                
                 let alertAction = UIAlertAction(title: NSLocalizedString("Resume", comment: "Resume action in alert controller of login page."), style: .default, handler: nil)
                 alertController.addAction(alertAction)
                 self.present(alertController, animated: true, completion: nil)

@@ -258,7 +258,7 @@ class PlayPageViewController: UIViewController, NSFetchedResultsControllerDelega
             exitAlert.dismiss(animated: true, completion: nil)
         }
         
-        let exitAction = UIAlertAction(title: NSLocalizedString(NSLocalizedString("Exit", comment: "Exit action in alert controller of playing page"), comment: "Exit"), style: .default) { (_) in
+        let exitAction = UIAlertAction(title: NSLocalizedString(NSLocalizedString("Exit", comment: "Exit action in alert controller of playing page"), comment: "Exit"), style: .destructive) { (_) in
             
             self.player?.pause()
             self.timer?.invalidate()
