@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import CoreData
+import AVFoundation
 
 class ProfilePageViewController: UIViewController, NSFetchedResultsControllerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
@@ -42,6 +43,8 @@ class ProfilePageViewController: UIViewController, NSFetchedResultsControllerDel
     var distracorList = [String]()
     let userDefault = UserDefaults.standard
     var ref: DatabaseReference!
+    
+    var player: AVPlayer?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -178,8 +181,6 @@ class ProfilePageViewController: UIViewController, NSFetchedResultsControllerDel
     // MARK: - IBAction
     
     @IBAction func invisibleUserNameButtonTapped(_ sender: UIButton) {
-        
-        print("111self.userMarqueeView.marqueeTitle111: \(self.userMarqueeView.marqueeTitle)")
 
         let alertController = UIAlertController(title: NSLocalizedString("Rename", comment: "Tapping for rename action"), message: "", preferredStyle: .alert)
 
@@ -188,9 +189,6 @@ class ProfilePageViewController: UIViewController, NSFetchedResultsControllerDel
             let renameTextField = alertController.textFields![0] as UITextField
 
             self.userMarqueeView.marqueeTitle = renameTextField.text!
-            
-            print("111更改名字: \(renameTextField.text!)")
-            print("111self.userMarqueeView.marqueeTitle33333: \(self.userMarqueeView.marqueeTitle)")
             
 //            self.profileContentView.insertSubview(self.userMarqueeView, at: 1)
             self.userNameLabel.isHidden = true
@@ -275,6 +273,8 @@ class ProfilePageViewController: UIViewController, NSFetchedResultsControllerDel
             let appDelegate = UIApplication.shared.delegate as! AppDelegate
             appDelegate.switchToLandingNavigationController()
             //swiftlint:enable
+            
+            self.player?.pause()
         }
 
         let cancelAction = UIAlertAction(title: NSLocalizedString("Cancel", comment: "Cancel on sign out action"), style: .default) { (_) in
@@ -295,7 +295,12 @@ class ProfilePageViewController: UIViewController, NSFetchedResultsControllerDel
         }
 
     }
-
+    
+    @IBAction func playButtonTapped(_ sender: Any) {
+        
+        self.player?.pause()
+    }
+    
 }
 
 extension ProfilePageViewController: UITableViewDelegate, UITableViewDataSource {
@@ -364,6 +369,7 @@ extension ProfilePageViewController: UITableViewDelegate, UITableViewDataSource 
                 }
             }
         }
+        
         return cell
     }
 
@@ -377,7 +383,22 @@ extension ProfilePageViewController: UITableViewDelegate, UITableViewDataSource 
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        <#code#>
+        
+        let songUrlString = historyList[indexPath.row].previewUrl
+        
+        do {
+            
+            self.player = try AVPlayer(url: URL(string: songUrlString!)!)
+            
+        } catch {
+            
+            print("歷史清單音樂播放錯誤")
+            
+            self.player = nil
+        }
+        
+        self.player?.play()
+        
     }
 
 }

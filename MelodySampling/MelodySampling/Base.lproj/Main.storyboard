@@ -616,6 +616,7 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="168" height="60"/>
                                                         <state key="normal" title="Invisible Button"/>
                                                         <connections>
+                                                            <action selector="playButtonTapped:" destination="QDn-rL-xbF" eventType="touchUpInside" id="z4C-L8-Sz7"/>
                                                             <segue destination="DwJ-ua-HvI" kind="show" id="bkz-Ca-ORS"/>
                                                         </connections>
                                                     </button>
