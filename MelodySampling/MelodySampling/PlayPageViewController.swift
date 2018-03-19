@@ -23,7 +23,7 @@ class PlayPageViewController: UIViewController, NSFetchedResultsControllerDelega
     var timeCountdown: Int = 3
     var distractors = [String]()
     var fakeList = [[String]]()
-    var player: AVAudioPlayer?
+    var player: Player? = Player()
     let path: String = NSHomeDirectory() + "/Documents/"
     var questionList = [String]()
     var currentTrack: Int = 0
@@ -260,7 +260,7 @@ class PlayPageViewController: UIViewController, NSFetchedResultsControllerDelega
         
         let exitAction = UIAlertAction(title: NSLocalizedString(NSLocalizedString("Exit", comment: "Exit action in alert controller of playing page"), comment: "Exit"), style: .default) { (_) in
             
-            self.player?.pause()
+            self.player?.stopAVPlayer()
             self.timer?.invalidate()
             let selfNavigation = self.navigationController as? PlayingNavigationController
             selfNavigation?.popToRootViewController(animated: true)
@@ -363,7 +363,7 @@ extension PlayPageViewController: UITableViewDelegate, UITableViewDataSource {
         print("你選了 \(selectedAnswer) 個選項")
         print("你在 \(currentTrack) 首")
         
-        player?.pause()
+        self.player?.stopAVPlayer()
         
         //swiftlint:disable force_cast
         if judgeAnswer(input: selectedAnswer, compare: answer) {
@@ -440,7 +440,7 @@ extension PlayPageViewController: UITableViewDelegate, UITableViewDataSource {
         // MARK: - If finished one round, execute here.
         if prepareTrack == 5 {
             
-            player?.pause()
+            self.player?.stopAVPlayer()
             
             if userTargetScore > aiTargetScore {
                 userDefault.set(true, forKey: "WinOrLose")
@@ -598,22 +598,13 @@ extension PlayPageViewController: UITableViewDelegate, UITableViewDataSource {
                 
                 tableView.reloadData()
                 
-                self.player?.pause()
-                
-                do {
-
-                    try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
-
-                    self.player = try AVAudioPlayer(contentsOf: URL(string: fileName)!)
-
-                } catch {
-                    self.player = nil
-                }
+                self.player?.stopAVPlayer()
                 
                 tableView.isUserInteractionEnabled = true
                 
-                self.player?.play()
-//                Player.play(songString: fileName)
+                let songUrl = URL(fileURLWithPath: fileName)
+                
+                self.player?.play(songUrl: songUrl)
                 
                 self.currentTrack = self.prepareTrack
                 

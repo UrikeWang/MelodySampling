@@ -15,19 +15,15 @@ class Player: NSObject {
     var error: NSError?
     var player: AVPlayer?
     
-    func play(songString: String) {
+    func play(songUrl: URL) {
         
         do {
             
             try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
             
-            print("播放歌曲url \(songString)")
+            player = AVPlayer(url: songUrl)
             
-            player = AVPlayer(url: URL(string: songString)!)
-            
-            print("即將播放....")
             player?.play()
-            print("播放中....")
             
         } catch {
             
@@ -39,40 +35,10 @@ class Player: NSObject {
         
     }
     
-    func stopAVPLayer() {
-        
-//        var player: AVPlayer?
+    func stopAVPlayer() {
         
         player?.pause()
 
-//        if player?.isPlaying == true {
-//            player?.stop()
         }
 
     }
-//
-//    func toggleAVPlayer() {
-//
-//        if player?.isPlaying == true {
-//            player?.pause()
-//
-//        } else {
-//            player?.play()
-//        }
-//    }
-    
-
-
-//extension Player: AVAudioPlayerDelegate {
-//
-//    func audioPlayerDidFinishPlaying(player: AVAudioPlayer!, successfully flag: Bool) {
-//        print("finished playing \(flag)")
-//    }
-//
-//
-//    func audioPlayerDecodeErrorDidOccur(player: AVAudioPlayer!, error: NSError!) {
-//        print("\(error.localizedDescription)")
-//    }
-//
-//}
-

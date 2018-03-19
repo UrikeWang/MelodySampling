@@ -83,17 +83,9 @@ extension PlayPageViewController {
         
         let fileName = self.path + self.songFileNameList[self.currentTrack]
         
-        do {
-            
-            try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
-            
-            self.player = try AVAudioPlayer(contentsOf: URL(string: fileName)!)
-            
-        } catch {
-            self.player = nil
-        }
+        let songUrl = URL(fileURLWithPath: fileName)
         
-        self.player?.play()
+        self.player?.play(songUrl: songUrl)
     }
     
     func updateTrackPic(input currentTrack: Int) {

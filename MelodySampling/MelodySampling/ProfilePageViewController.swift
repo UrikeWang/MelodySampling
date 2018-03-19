@@ -45,6 +45,7 @@ class ProfilePageViewController: UIViewController, NSFetchedResultsControllerDel
     var ref: DatabaseReference!
     
     var player: Player? = Player()
+    var pl: AVPlayer?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -274,7 +275,7 @@ class ProfilePageViewController: UIViewController, NSFetchedResultsControllerDel
             appDelegate.switchToLandingNavigationController()
             //swiftlint:enable
         
-            self.player?.stopAVPLayer()
+            self.player?.stopAVPlayer()
         }
 
         let cancelAction = UIAlertAction(title: NSLocalizedString("Cancel", comment: "Cancel on sign out action"), style: .default) { (_) in
@@ -298,7 +299,7 @@ class ProfilePageViewController: UIViewController, NSFetchedResultsControllerDel
     
     @IBAction func playButtonTapped(_ sender: Any) {
         
-        self.player?.stopAVPLayer()
+        self.player?.stopAVPlayer()
     }
     
 }
@@ -392,7 +393,9 @@ extension ProfilePageViewController: UITableViewDelegate, UITableViewDataSource 
         
         let songUrlString = historyList[indexPath.row].previewUrl
         
-        self.player?.play(songString: songUrlString!)
+        let songUrl = URL(string: songUrlString!)
+        
+        self.player?.play(songUrl: songUrl!)
         
     }
 

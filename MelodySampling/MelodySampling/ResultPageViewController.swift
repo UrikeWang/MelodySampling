@@ -36,7 +36,7 @@ class ResultPageViewController: UIViewController, UITableViewDelegate, UITableVi
         //swiftlint:enable
         print("Pop to navigationControllers[1], and seet player to nil")
         
-        self.player?.stopAVPLayer()
+        self.player?.stopAVPlayer()
         
         self.navigationController?.popToViewController(navigationViewControllers[1], animated: true)
     }
@@ -46,7 +46,7 @@ class ResultPageViewController: UIViewController, UITableViewDelegate, UITableVi
         
         saveResultToHistory()
         
-        self.player?.stopAVPLayer()
+        self.player?.stopAVPlayer()
         
         let downloadManager = DownloadManager()
         
@@ -252,10 +252,13 @@ class ResultPageViewController: UIViewController, UITableViewDelegate, UITableVi
         // TODO: Play song againg, after user selected
         let historySelected = navigationResults[indexPath.row]
         
-//        let fileName = self.path + self.songFileNameList[indexPath.row]
+        let fileName = self.path + self.songFileNameList[indexPath.row]
         
-        self.player?.play(songString: historySelected.previewUrl)
+        let songUrl = URL(fileURLWithPath: fileName)
         
+        self.player?.play(songUrl: songUrl)
+        
+        print("The song is located: \(songUrl)")
         print("You selected \n \(historySelected.trackName) \n \(historySelected.artistName)")
         print("TrackSong: \(historySelected.previewUrl)")
     }
