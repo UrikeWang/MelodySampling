@@ -37,6 +37,7 @@ class ResultPageViewController: UIViewController, UITableViewDelegate, UITableVi
         print("Pop to navigationControllers[1], and seet player to nil")
         
         self.player?.pause()
+//        Player.stopAVPLayer()
         
         self.navigationController?.popToViewController(navigationViewControllers[1], animated: true)
     }
@@ -47,6 +48,7 @@ class ResultPageViewController: UIViewController, UITableViewDelegate, UITableVi
         saveResultToHistory()
         
         self.player?.pause()
+//        Player.stopAVPLayer()
         
         let downloadManager = DownloadManager()
         
@@ -254,16 +256,18 @@ class ResultPageViewController: UIViewController, UITableViewDelegate, UITableVi
         
         let fileName = self.path + self.songFileNameList[indexPath.row]
         
+//        Player.play(songString: fileName)
+        
         do {
             try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
-            
+
             self.player = try AVAudioPlayer(contentsOf: URL(string: fileName)!)
-            
+
         } catch {
-            
+
             self.player = nil
         }
-        
+
         self.player?.play()
         
         print("You selected \n \(historySelected.trackName) \n \(historySelected.artistName)")

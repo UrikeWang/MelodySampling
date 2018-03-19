@@ -601,11 +601,11 @@ extension PlayPageViewController: UITableViewDelegate, UITableViewDataSource {
                 self.player?.pause()
                 
                 do {
-                    
+
                     try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
-                    
+
                     self.player = try AVAudioPlayer(contentsOf: URL(string: fileName)!)
-                    
+
                 } catch {
                     self.player = nil
                 }
@@ -613,6 +613,7 @@ extension PlayPageViewController: UITableViewDelegate, UITableViewDataSource {
                 tableView.isUserInteractionEnabled = true
                 
                 self.player?.play()
+//                Player.play(songString: fileName)
                 
                 self.currentTrack = self.prepareTrack
                 

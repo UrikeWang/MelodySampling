@@ -44,7 +44,7 @@ class ProfilePageViewController: UIViewController, NSFetchedResultsControllerDel
     let userDefault = UserDefaults.standard
     var ref: DatabaseReference!
     
-    var player: AVPlayer?
+    var player: Player? = Player()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -273,8 +273,8 @@ class ProfilePageViewController: UIViewController, NSFetchedResultsControllerDel
             let appDelegate = UIApplication.shared.delegate as! AppDelegate
             appDelegate.switchToLandingNavigationController()
             //swiftlint:enable
-            
-            self.player?.pause()
+        
+            self.player?.stopAVPLayer()
         }
 
         let cancelAction = UIAlertAction(title: NSLocalizedString("Cancel", comment: "Cancel on sign out action"), style: .default) { (_) in
@@ -298,7 +298,7 @@ class ProfilePageViewController: UIViewController, NSFetchedResultsControllerDel
     
     @IBAction func playButtonTapped(_ sender: Any) {
         
-        self.player?.pause()
+        self.player?.stopAVPLayer()
     }
     
 }
@@ -370,6 +370,12 @@ extension ProfilePageViewController: UITableViewDelegate, UITableViewDataSource 
             }
         }
         
+        let backGroundView = UIView()
+        
+        backGroundView.backgroundColor = UIColor.mldBlueBlue
+        
+        cell.selectedBackgroundView = backGroundView
+        
         return cell
     }
 
@@ -386,18 +392,7 @@ extension ProfilePageViewController: UITableViewDelegate, UITableViewDataSource 
         
         let songUrlString = historyList[indexPath.row].previewUrl
         
-        do {
-            
-            self.player = try AVPlayer(url: URL(string: songUrlString!)!)
-            
-        } catch {
-            
-            print("歷史清單音樂播放錯誤")
-            
-            self.player = nil
-        }
-        
-        self.player?.play()
+        self.player?.play(songString: songUrlString!)
         
     }
 
