@@ -22,4 +22,8 @@ class Competitor: User {
         })
     }
     
+    deinit {
+        print("Competitor was deinit")
+    }
+    
 }
