@@ -22,7 +22,7 @@ class ResultPageViewController: UIViewController, UITableViewDelegate, UITableVi
     @IBOutlet weak var sameGenreContentView: UIView!
     var resultsArray = [EachSongResult]()
     let documentsURL = NSHomeDirectory() + "/Documents/"
-    var player: AVAudioPlayer?
+    var player: Player? = Player()
     let path: String = NSHomeDirectory() + "/Documents/"
     let songFileNameList = ["song0.m4a", "song1.m4a", "song2.m4a", "song3.m4a", "song4.m4a"]
     @IBOutlet weak var userImageView: UIImageView!
@@ -36,8 +36,7 @@ class ResultPageViewController: UIViewController, UITableViewDelegate, UITableVi
         //swiftlint:enable
         print("Pop to navigationControllers[1], and seet player to nil")
         
-        self.player?.pause()
-//        Player.stopAVPLayer()
+        self.player?.stopAVPLayer()
         
         self.navigationController?.popToViewController(navigationViewControllers[1], animated: true)
     }
@@ -47,8 +46,7 @@ class ResultPageViewController: UIViewController, UITableViewDelegate, UITableVi
         
         saveResultToHistory()
         
-        self.player?.pause()
-//        Player.stopAVPLayer()
+        self.player?.stopAVPLayer()
         
         let downloadManager = DownloadManager()
         
@@ -254,21 +252,9 @@ class ResultPageViewController: UIViewController, UITableViewDelegate, UITableVi
         // TODO: Play song againg, after user selected
         let historySelected = navigationResults[indexPath.row]
         
-        let fileName = self.path + self.songFileNameList[indexPath.row]
+//        let fileName = self.path + self.songFileNameList[indexPath.row]
         
-//        Player.play(songString: fileName)
-        
-        do {
-            try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
-
-            self.player = try AVAudioPlayer(contentsOf: URL(string: fileName)!)
-
-        } catch {
-
-            self.player = nil
-        }
-
-        self.player?.play()
+        self.player?.play(songString: historySelected.previewUrl)
         
         print("You selected \n \(historySelected.trackName) \n \(historySelected.artistName)")
         print("TrackSong: \(historySelected.previewUrl)")
