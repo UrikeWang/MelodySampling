@@ -7,21 +7,24 @@
 //
 
 import Foundation
+import Firebase
+
+enum UserState: Int {
+    case justInit = 0
+    case gotUserId
+}
 
 class User {
 
-    // FIXME: 目前是依照現有設定而開 property，但這不符合未來需求，還要再改
+    var ref: DatabaseReference!
+    var userId: String = ""
+    var state = UserState.justInit
     
-    private var userId: String? = nil
-    private let createdTime: Double? = nil
-    private var fullName: String? = nil
-    private var isAnonymous: Bool
-    private var profilePicURL: String? = nil
-    private let userAccount: String? = nil
-    private let wasAnonymous: Bool
+    init() {
+        ref = Database.database().reference()
+    }
     
-    init(isAnonymous: Bool, wasAnonymous: Bool) {
-        self.isAnonymous = isAnonymous
-        self.wasAnonymous = wasAnonymous
+    func requestId() {
+        // FIXME: 要寫成 protocol 嗎
     }
 }

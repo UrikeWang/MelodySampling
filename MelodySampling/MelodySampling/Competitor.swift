@@ -13,8 +13,6 @@ class Competitor: User {
     
     override func requestId() {
         
-        ref = Database.database().reference()
-        
         ref.child(firebaseCompetitor).queryOrderedByKey().observeSingleEvent(of: .value, with: {(snapshot) in
             
             guard let response = snapshot.value as? [String: String], let id = response["competitor1"] else { return }

@@ -70,6 +70,9 @@
 		739019DF1F41463F006DEFFD /* ClearCoreDataQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 739019DE1F41463F006DEFFD /* ClearCoreDataQuestion.swift */; };
 		7393F7C21F9D9B00009EB5D5 /* UIViewController+KeyboardDismiss.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7393F7C11F9D9B00009EB5D5 /* UIViewController+KeyboardDismiss.swift */; };
 		7399DB881F3D835900E2A4B2 /* ResultPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7399DB871F3D835900E2A4B2 /* ResultPageViewController.swift */; };
+		73AB3605205FE31700C39B3F /* MSUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73AB3604205FE31700C39B3F /* MSUser.swift */; };
+		73AB3607205FE32600C39B3F /* Competitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73AB3606205FE32600C39B3F /* Competitor.swift */; };
+		73AB360B205FE43400C39B3F /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73AB360A205FE43400C39B3F /* Constant.swift */; };
 		73AF80231F384B7900CA31FB /* Styleguide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73AF80221F384B7900CA31FB /* Styleguide.swift */; };
 		73AF80261F384E3B00CA31FB /* LandingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73AF80251F384E3B00CA31FB /* LandingPageViewController.swift */; };
 		73AF802A1F385EAE00CA31FB /* GradientLayerCreater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73AF80291F385EAE00CA31FB /* GradientLayerCreater.swift */; };
@@ -165,6 +168,9 @@
 		739019DE1F41463F006DEFFD /* ClearCoreDataQuestion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClearCoreDataQuestion.swift; sourceTree = "<group>"; };
 		7393F7C11F9D9B00009EB5D5 /* UIViewController+KeyboardDismiss.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+KeyboardDismiss.swift"; sourceTree = "<group>"; };
 		7399DB871F3D835900E2A4B2 /* ResultPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultPageViewController.swift; sourceTree = "<group>"; };
+		73AB3604205FE31700C39B3F /* MSUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSUser.swift; sourceTree = "<group>"; };
+		73AB3606205FE32600C39B3F /* Competitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Competitor.swift; sourceTree = "<group>"; };
+		73AB360A205FE43400C39B3F /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		73AF80221F384B7900CA31FB /* Styleguide.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Styleguide.swift; sourceTree = "<group>"; };
 		73AF80251F384E3B00CA31FB /* LandingPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandingPageViewController.swift; sourceTree = "<group>"; };
 		73AF80291F385EAE00CA31FB /* GradientLayerCreater.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientLayerCreater.swift; sourceTree = "<group>"; };
@@ -223,6 +229,8 @@
 			isa = PBXGroup;
 			children = (
 				73194E102052CAC700B9156C /* User.swift */,
+				73AB3604205FE31700C39B3F /* MSUser.swift */,
+				73AB3606205FE32600C39B3F /* Competitor.swift */,
 			);
 			name = User;
 			sourceTree = "<group>";
@@ -346,6 +354,7 @@
 		73744D021F2ED94200C1FAEA /* MelodySampling */ = {
 			isa = PBXGroup;
 			children = (
+				73AB3609205FE42500C39B3F /* Constant */,
 				73194E122052CB3300B9156C /* Item */,
 				73194E0D2052CA7100B9156C /* User */,
 				73321FB52041B8BE002C3624 /* Utility */,
@@ -411,6 +420,14 @@
 				7399DB861F3D82ED00E2A4B2 /* ResultPage */,
 			);
 			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		73AB3609205FE42500C39B3F /* Constant */ = {
+			isa = PBXGroup;
+			children = (
+				73AB360A205FE43400C39B3F /* Constant.swift */,
+			);
+			name = Constant;
 			sourceTree = "<group>";
 		};
 		73AF80211F384B3400CA31FB /* StyleguideRelative */ = {
@@ -680,6 +697,7 @@
 				736271041F3AAB210002206B /* ArrayShuffle.swift in Sources */,
 				73AF802C1F386D4400CA31FB /* SignUpViewController.swift in Sources */,
 				73B20BB11F98F1580018D7EF /* PlayPageViewController+GameLogic.swift in Sources */,
+				73AB3605205FE31700C39B3F /* MSUser.swift in Sources */,
 				73AF802A1F385EAE00CA31FB /* GradientLayerCreater.swift in Sources */,
 				735575991F3D87AC00A0E271 /* ResultTableViewCell.swift in Sources */,
 				73744D2F1F2F78C000C1FAEA /* GetDeveloperToken.swift in Sources */,
@@ -690,6 +708,7 @@
 				7364EFA01F428B3C00D65D64 /* IBOutletFunction.swift in Sources */,
 				73744D041F2ED94200C1FAEA /* AppDelegate.swift in Sources */,
 				7364EF9E1F4286B200D65D64 /* HistoryTableViewCell.swift in Sources */,
+				73AB3607205FE32600C39B3F /* Competitor.swift in Sources */,
 				73AF80261F384E3B00CA31FB /* LandingPageViewController.swift in Sources */,
 				73B122F71F431536006DE065 /* PrintUID.swift in Sources */,
 				07F239242017033300801491 /* RemoteConfigValues.swift in Sources */,
@@ -697,6 +716,7 @@
 				7326E8DB1F5B047800332BE7 /* UpdateManager.swift in Sources */,
 				73AF80231F384B7900CA31FB /* Styleguide.swift in Sources */,
 				73194E112052CAC700B9156C /* User.swift in Sources */,
+				73AB360B205FE43400C39B3F /* Constant.swift in Sources */,
 				73194E142053B37100B9156C /* OneOfTwoItem.swift in Sources */,
 				075204021FF132D60037A0BB /* RandomUserStruct.swift in Sources */,
 				73321FB72041B90B002C3624 /* DateUtility.swift in Sources */,
