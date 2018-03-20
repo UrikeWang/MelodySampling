@@ -371,12 +371,6 @@ extension ProfilePageViewController: UITableViewDelegate, UITableViewDataSource 
             }
         }
         
-        let backGroundView = UIView()
-        
-        backGroundView.backgroundColor = UIColor.mldBlueBlue
-        
-        cell.selectedBackgroundView = backGroundView
-        
         return cell
     }
 
@@ -396,6 +390,25 @@ extension ProfilePageViewController: UITableViewDelegate, UITableViewDataSource 
         let songUrl = URL(string: songUrlString!)
         
         self.player?.play(songUrl: songUrl!)
+        
+        let selectedCell: UITableViewCell = tableView.cellForRow(at: indexPath)!
+        
+        selectedCell.contentView.backgroundColor = UIColor.mldLightPurple
+        
+    }
+    
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        
+        let deselectedCell: UITableViewCell = tableView.cellForRow(at: indexPath)!
+        
+        gradientLayer = CAGradientLayer()
+        
+        gradientLayer.frame = deselectedCell.bounds
+        
+        gradientLayer.colors = [UIColor.mldUltramarineBlueTwo.cgColor, UIColor.mldUltramarine.cgColor]
+        
+        deselectedCell.layer.insertSublayer(gradientLayer, at: 0)
+        deselectedCell.backgroundColor = UIColor.clear
         
     }
 

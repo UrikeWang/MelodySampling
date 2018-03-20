@@ -224,9 +224,9 @@ class ResultPageViewController: UIViewController, UITableViewDelegate, UITableVi
         cell.trackNameLeadingConstraint.constant = cell.frame.height + 50
 
         let backGroundView = UIView()
-        
+
         backGroundView.backgroundColor = UIColor.mldBlueBlue
-        
+
         cell.selectedBackgroundView = backGroundView
         
         return cell
