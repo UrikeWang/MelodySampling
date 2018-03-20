@@ -222,12 +222,6 @@ class ResultPageViewController: UIViewController, UITableViewDelegate, UITableVi
         }
 
         cell.trackNameLeadingConstraint.constant = cell.frame.height + 50
-
-        let backGroundView = UIView()
-
-        backGroundView.backgroundColor = UIColor.mldBlueBlue
-
-        cell.selectedBackgroundView = backGroundView
         
         return cell
     }
@@ -261,6 +255,19 @@ class ResultPageViewController: UIViewController, UITableViewDelegate, UITableVi
         print("The song is located: \(songUrl)")
         print("You selected \n \(historySelected.trackName) \n \(historySelected.artistName)")
         print("TrackSong: \(historySelected.previewUrl)")
+        
+        let selectedCell: UITableViewCell = tableView.cellForRow(at: indexPath)!
+        
+        selectedCell.contentView.backgroundColor = UIColor.mldBlueBlue
+        
+    }
+    
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        
+        let deselectedCell: UITableViewCell = tableView.cellForRow(at: indexPath)!
+        
+        deselectedCell.contentView.backgroundColor = UIColor.mldLightPurple
+        
     }
 
     func saveResultToHistory() {
