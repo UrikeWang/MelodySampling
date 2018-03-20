@@ -12,7 +12,7 @@ import CoreData
 import AVFoundation
 
 class ProfilePageViewController: UIViewController, NSFetchedResultsControllerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    
+
     var imageCache = NSCache<NSString, UIImage>()
 
     @IBOutlet weak var historyTableView: UITableView! {
@@ -21,7 +21,7 @@ class ProfilePageViewController: UIViewController, NSFetchedResultsControllerDel
         }
     }
 
-    
+
     @IBOutlet weak var profileContentView: UIView!
     @IBOutlet weak var userProfileImageView: UIImageView!
     @IBOutlet var versionLabel: UILabel!
@@ -37,140 +37,140 @@ class ProfilePageViewController: UIViewController, NSFetchedResultsControllerDel
     @IBOutlet weak var invisiblePlayButton: UIButton!
     var unixTimestamp: Double?
     var userMarqueeView = MarqueeView()
-    
+
     var fetchResultController: NSFetchedResultsController<HistoryMO>!
     var historyList: [HistoryMO] = []
     var distracorList = [String]()
     let userDefault = UserDefaults.standard
     var ref: DatabaseReference!
-    
+
     var player: Player? = Player()
     var pl: AVPlayer?
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         historyLabel.text = NSLocalizedString("History", comment: "History segament controller label")
-        
+
         logOutButtonOutlet.setTitle(NSLocalizedString("Sign out", comment: "Log out text at profile page."), for: .normal)
-        
+
         playTextLabel.text = NSLocalizedString("Play", comment: "Play button text at profile page.")
-        
+
         invisibleUserNameButtonOutlet.setTitleColor(UIColor.clear, for: .normal)
-        
+
         print("===== Profile Page =====")
-        
+
         invisiblePhotoUsageButtonOutlet.setTitleColor(UIColor.clear, for: .normal)
-        
+
         logOutButtonOutlet.setTitleColor(UIColor.white, for: .normal)
-        
+
         invisiblePlayButton.setTitleColor(UIColor.clear, for: .normal)
-        
+
         historyTableView.delegate = self
-        
+
         historyTableView.dataSource = self
-        
+
         createUserProfileImage(targe: userProfileImageView)
-        
+
         if let userProfileImageData = userDefault.object(forKey: "UserProfileImage") as? Data {
-            
+
             userProfileImageView.image = UIImage(data: userProfileImageData)
-            
+
         }
-        
+
         if let userName = userDefault.object(forKey: "userName") as? String {
             self.userMarqueeView = MarqueeView(frame: userNameLabel.frame, title: userName)
         } else {
             self.userMarqueeView = MarqueeView(frame: userNameLabel.frame, title: "Player")
         }
-        
+
         profileContentView.insertSubview(self.userMarqueeView, at: 1)
         userNameLabel.isHidden = true
-        
+
         if let currentVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String {
             versionLabel.text = "V\(currentVersion)"
         }
     }
-    
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+
         emptyLabel.isHidden = true
-        
+
         let radius = self.userProfileImageView.frame.width
-        
+
         userProfileImageView.layer.cornerRadius = radius / 2
-        
+
         logOutButtonOutlet.layer.borderColor = UIColor.white.cgColor
         logOutButtonOutlet.layer.borderWidth = 2
         logOutButtonOutlet.layer.cornerRadius = 30.0
-        
+
         //createNextBattleOfResult(target: playButtonLabel)
-        
+
         playContentView.layer.cornerRadius = 30.0
-        
+
         // ====== fetch history CoreData here =====
-        
+
         let fetchRequest: NSFetchRequest<HistoryMO> = HistoryMO.fetchRequest()
-        
+
         let sortDescriptor = NSSortDescriptor(key: "timeIndex", ascending: false)
-        
+
         fetchRequest.sortDescriptors = [sortDescriptor]
-        
+
         if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
-            
+
             let context = appDelegate.persistentContainer.viewContext
-            
+
             fetchResultController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
-            
+
             fetchResultController.delegate = self
-            
+
             do {
-                
+
                 try fetchResultController.performFetch()
-                
+
                 if let fetchedObjects = fetchResultController.fetchedObjects {
-                    
+
                     historyList = fetchedObjects
-                    
+
                     historyTableView.reloadData()
-                    
+
                 }
-                
+
             } catch {
                 historyList = []
                 print(error)
             }
         }
-        
+
         if historyList.count == 0 {
-            
+
             emptyLabel.isHidden = false
-            
+
             emptyLabel.text = NSLocalizedString("Please Tap Play Button", comment: "No battle record yet")
             emptyLabel.textColor = UIColor.white
             emptyLabel.font = UIFont.mldTextStyleEmptyFont()!
             emptyLabel.textAlignment = .center
             emptyLabel.numberOfLines = 0
-            
+
         }
-        
+
         self.ref = Database.database().reference()
         let timePathPush = ref.child("currentTime")
         let timeDict = ["timestamp": ServerValue.timestamp()] as [String: Any]
         timePathPush.updateChildValues(timeDict)
-        
+
         let timePathGet = ref.child("currentTime")
-        
+
         timePathGet.observeSingleEvent(of: .value, with: { (snapshot) in
             guard let value = snapshot.value as? [String: Any],
                 let timestamp = value["timestamp"] as? Double else { return }
-            
+
             self.unixTimestamp = timestamp / 1000
             let date = Date(timeIntervalSince1970: self.unixTimestamp!)
             let strDate = DateUtility.getStrDate(from: date)
             let weekOfYear = DateUtility.getWeekOfYear(from: date)
-            
+
             print("目前聽到的時間: \(timestamp)")
             print("轉換後的時間: \(strDate)")
             print("週數: \(weekOfYear)")
@@ -178,9 +178,14 @@ class ProfilePageViewController: UIViewController, NSFetchedResultsControllerDel
             print("error :\(err)")
         }
     }
-    
+
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        userMarqueeView.frame = userNameLabel.frame
+    }
+
     // MARK: - IBAction
-    
+
     @IBAction func invisibleUserNameButtonTapped(_ sender: UIButton) {
 
         let alertController = UIAlertController(title: NSLocalizedString("Rename", comment: "Tapping for rename action"), message: "", preferredStyle: .alert)
@@ -189,9 +194,14 @@ class ProfilePageViewController: UIViewController, NSFetchedResultsControllerDel
 
             let renameTextField = alertController.textFields![0] as UITextField
 
-            self.userMarqueeView.marqueeTitle = renameTextField.text!
-            
-//            self.profileContentView.insertSubview(self.userMarqueeView, at: 1)
+            self.userMarqueeView.removeFromSuperview()
+
+            let newUserMarqueeView = MarqueeView(frame: self.userNameLabel.frame, title: renameTextField.text!)
+
+            self.profileContentView.insertSubview(newUserMarqueeView, at: 1)
+
+            self.userMarqueeView = newUserMarqueeView
+
             self.userNameLabel.isHidden = true
 
             self.userDefault.set(renameTextField.text, forKey: "userName")
@@ -216,9 +226,7 @@ class ProfilePageViewController: UIViewController, NSFetchedResultsControllerDel
         }
 
         alertController.addAction(cancelAction)
-
         alertController.addAction(saveAction)
-
         self.present(alertController, animated: true, completion: nil)
 
     }
@@ -256,7 +264,7 @@ class ProfilePageViewController: UIViewController, NSFetchedResultsControllerDel
 
         let alertController = UIAlertController(title: NSLocalizedString("Sign Out", comment: "Sign out button on profile page"), message: NSLocalizedString("Are you going to sign out?", comment: "Sign Out Message on profile page"), preferredStyle: .alert)
 
-        let logoutAction = UIAlertAction(title: NSLocalizedString("Sign Out", comment: "Sign out from profile page"), style: .default) { (_) in
+        let logoutAction = UIAlertAction(title: NSLocalizedString("Sign Out", comment: "Sign out from profile page"), style: .destructive) { (_) in
 
             let userDefault = UserDefaults.standard
 
@@ -274,7 +282,7 @@ class ProfilePageViewController: UIViewController, NSFetchedResultsControllerDel
             let appDelegate = UIApplication.shared.delegate as! AppDelegate
             appDelegate.switchToLandingNavigationController()
             //swiftlint:enable
-        
+
             self.player?.stopAVPlayer()
         }
 
@@ -296,12 +304,12 @@ class ProfilePageViewController: UIViewController, NSFetchedResultsControllerDel
         }
 
     }
-    
+
     @IBAction func playButtonTapped(_ sender: Any) {
-        
+
         self.player?.stopAVPlayer()
     }
-    
+
 }
 
 extension ProfilePageViewController: UITableViewDelegate, UITableViewDataSource {
@@ -370,7 +378,7 @@ extension ProfilePageViewController: UITableViewDelegate, UITableViewDataSource 
                 }
             }
         }
-        
+
         return cell
     }
 
@@ -382,34 +390,34 @@ extension ProfilePageViewController: UITableViewDelegate, UITableViewDataSource 
             return 60
         }
     }
-    
+
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+
         let songUrlString = historyList[indexPath.row].previewUrl
-        
+
         let songUrl = URL(string: songUrlString!)
-        
+
         self.player?.play(songUrl: songUrl!)
-        
+
         let selectedCell: UITableViewCell = tableView.cellForRow(at: indexPath)!
-        
+
         selectedCell.contentView.backgroundColor = UIColor.mldLightPurple
-        
+
     }
-    
+
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-        
+
         let deselectedCell: UITableViewCell = tableView.cellForRow(at: indexPath)!
-        
+
         gradientLayer = CAGradientLayer()
-        
+
         gradientLayer.frame = deselectedCell.bounds
-        
+
         gradientLayer.colors = [UIColor.mldUltramarineBlueTwo.cgColor, UIColor.mldUltramarine.cgColor]
-        
+
         deselectedCell.layer.insertSublayer(gradientLayer, at: 0)
         deselectedCell.backgroundColor = UIColor.clear
-        
+
     }
 
 }
