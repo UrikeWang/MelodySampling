@@ -13,6 +13,7 @@
 		075204041FF135CB0037A0BB /* RandomUserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075204031FF135CB0037A0BB /* RandomUserManager.swift */; };
 		075204081FF296470037A0BB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 075204071FF296460037A0BB /* GoogleService-Info.plist */; };
 		07F239242017033300801491 /* RemoteConfigValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F239232017033300801491 /* RemoteConfigValues.swift */; };
+		6E7AC131205A80E4004188CC /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7AC130205A80E4004188CC /* Player.swift */; };
 		730D0E5A1F3AEBFD0099DA0F /* AddSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 730D0E591F3AEBFD0099DA0F /* AddSpace.swift */; };
 		730D0E5C1F3AFEA20099DA0F /* JudgeAnswer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 730D0E5B1F3AFEA20099DA0F /* JudgeAnswer.swift */; };
 		731F2ADF1F4537BF00690316 /* LabelCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731F2ADE1F4537BF00690316 /* LabelCreator.swift */; };
@@ -86,6 +87,7 @@
 		075204071FF296460037A0BB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		07F239232017033300801491 /* RemoteConfigValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteConfigValues.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		45D5F6F531796264F2302DC0 /* Pods-King of Song Quiz.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-King of Song Quiz.release.xcconfig"; path = "Pods/Target Support Files/Pods-King of Song Quiz/Pods-King of Song Quiz.release.xcconfig"; sourceTree = "<group>"; };
+		6E7AC130205A80E4004188CC /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		730D0E591F3AEBFD0099DA0F /* AddSpace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddSpace.swift; sourceTree = "<group>"; };
 		730D0E5B1F3AFEA20099DA0F /* JudgeAnswer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JudgeAnswer.swift; sourceTree = "<group>"; };
 		731F2ADE1F4537BF00690316 /* LabelCreator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelCreator.swift; sourceTree = "<group>"; };
@@ -261,6 +263,7 @@
 				731F2ADE1F4537BF00690316 /* LabelCreator.swift */,
 				736503DE1F46C44000A975EB /* RandomFunc.swift */,
 				73ECCED2204E9BAD00AC7721 /* MarqueeView.swift */,
+				6E7AC130205A80E4004188CC /* Player.swift */,
 			);
 			name = Utility;
 			sourceTree = "<group>";
@@ -640,6 +643,7 @@
 				730D0E5A1F3AEBFD0099DA0F /* AddSpace.swift in Sources */,
 				7343937F1F9BA83E00F3B504 /* AnimationFunc.swift in Sources */,
 				7382740C1F3EAF8D00CD718E /* DownloadFromQuestionBank.swift in Sources */,
+				6E7AC131205A80E4004188CC /* Player.swift in Sources */,
 				732FC4801F4ADE2500427B3A /* UIShadowCreator.swift in Sources */,
 				7355759F1F3DB8FF00A0E271 /* ProfilePageViewController.swift in Sources */,
 				7377838D1F42C34F00B9EEBF /* StandardTableViewCell.swift in Sources */,
